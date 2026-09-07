@@ -52,7 +52,7 @@
 
     <!-- Chosen Palette: Blue (Trust), Emerald (Growth), Amber (Value) -->
     <!-- Application Structure Plan: 
-         1. Context: Baram: Yeon gear farming analysis for 2025.
+         1. Context: Baram: Yeon gear farming analysis for 2026.
          2. Interactive Tool: Set to "Stable" status initially (7,500 KRW/hr).
          3. Insights: Strategic solutions for Project OQ.
          4. Footer: Stylized closing statement with professional line breaks. -->
@@ -122,7 +122,7 @@
             <div class="border-l-4 border-amber-500 pl-5">
                 <h2 class="text-2xl md:text-3xl font-bold text-slate-900">2. 시간 vs 비용 가치 계산</h2>
                 <p class="text-slate-600 mt-3 text-lg">
-                    유저의 플레이 타임이 2025년 기준 원화 가치로<br class="hidden md:block">
+                    유저의 플레이 타임이 2026년 기준 원화 가치로<br class="hidden md:block">
                     어떻게 환산되는지 실시간 데이터로 시뮬레이션합니다.
                 </p>
             </div>
@@ -166,7 +166,7 @@
                 </div>
 
                 <div class="lg:col-span-7 bg-white rounded-2xl shadow-sm border border-slate-200 p-8 flex flex-col">
-                    <h3 class="font-bold text-xl mb-4 text-center">2025 경제 지표 대비 분석</h3>
+                    <h3 class="font-bold text-xl mb-4 text-center">2026 경제 지표 대비 분석</h3>
                     <div class="chart-container flex-grow">
                         <canvas id="valueChart"></canvas>
                     </div>
@@ -215,7 +215,7 @@
                 <h3 class="text-sm font-extrabold text-slate-500 uppercase tracking-widest mb-4">데이터 참조 및 지표 근거</h3>
                 <ul class="text-xs md:text-sm text-slate-500 space-y-3 leading-snug">
                     <li class="flex items-start gap-2"><span>•</span> <span><strong>게임 데이터 :</strong> 바람의나라: 연 커뮤니티 내 아이템 획득 및 강화 확률 기반 시뮬레이션 결과 반영</span></li>
-                    <li class="flex items-start gap-2"><span>•</span> <span><strong>경제 지표 :</strong> 2025년 고용노동부 고시 최저임금 (시간당 10,030원) 비교 데이터 활용</span></li>
+                    <li class="flex items-start gap-2"><span>•</span> <span><strong>경제 지표 :</strong> 2026년 고용노동부 고시 최저임금 (시간당 10,320원) 비교 데이터 활용</span></li>
                     <li class="flex items-start gap-2"><span>•</span> <span><strong>시장 물가 :</strong> 해당 게임 공식 패키지 구성품 및 유료 재화(보석)의 현금 치환 가치 기준 산출</span></li>
                 </ul>
             </div>
@@ -246,7 +246,7 @@
         const chartInsightText = document.getElementById('chartInsightText');
 
         let valueChart;
-        const MINIMUM_WAGE_2025 = 10030;
+        const MINIMUM_WAGE_2026 = 10320;
 
         function formatCurrency(num) {
             return num.toLocaleString('ko-KR');
@@ -257,10 +257,10 @@
             valueChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['현재 플레이 가치', '2025 최저시급'],
+                    labels: ['현재 플레이 가치', '2026 최저시급'],
                     datasets: [{
                         label: '원화 가치 (KRW)',
-                        data: [0, MINIMUM_WAGE_2025],
+                        data: [0, MINIMUM_WAGE_2026],
                         backgroundColor: ['rgba(245, 158, 11, 0.85)', 'rgba(148, 163, 184, 0.4)'],
                         borderColor: ['rgba(245, 158, 11, 1)', 'rgba(148, 163, 184, 1)'],
                         borderWidth: 1,
@@ -306,7 +306,7 @@
                 if (valuePerHour < 3000) {
                     valueChart.data.datasets[0].backgroundColor[0] = 'rgba(239, 68, 68, 0.85)';
                     chartInsightText.className = "mt-6 p-5 bg-red-50 text-red-800 text-sm md:text-base rounded-xl border border-red-200 text-center font-semibold leading-relaxed";
-                    chartInsightText.innerHTML = `위험 수준: 시간 가치가 최저시급의 ${Math.round((valuePerHour/MINIMUM_WAGE_2025)*100)}% 수준에 머뭅니다.<br>심각한 노동 박탈감으로 인해 해당 구간에서 대규모 유저 이탈이 예상됩니다.`;
+                    chartInsightText.innerHTML = `위험 수준: 시간 가치가 최저시급의 ${Math.round((valuePerHour/MINIMUM_WAGE_2026)*100)}% 수준에 머뭅니다.<br>심각한 노동 박탈감으로 인해 해당 구간에서 대규모 유저 이탈이 예상됩니다.`;
                 } else if (valuePerHour < 6000) {
                     valueChart.data.datasets[0].backgroundColor[0] = 'rgba(245, 158, 11, 0.85)';
                     chartInsightText.className = "mt-6 p-5 bg-amber-50 text-amber-800 text-sm md:text-base rounded-xl border border-amber-200 text-center font-semibold leading-relaxed";
