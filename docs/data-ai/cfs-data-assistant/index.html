@@ -424,27 +424,6 @@
                     AI라는 강력한 도구를 무기로 삼아 복잡한 데이터를 단순화하고,<br class="hidden sm:block">
                     물류 현장에 필요한 오퍼레이션 개선안을 정리했습니다.
                 </p>
-                
-                <!-- Contact Action Area -->
-                <div id="contact-area" class="w-full flex justify-center relative min-h-[72px]">
-                    
-                    <!-- Initial Button -->
-                    <button id="show-contact-btn" onclick="revealContact()" class="bg-brand-blue hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] flex items-center justify-center gap-2 mx-auto w-full sm:w-auto hover:-translate-y-1 absolute z-10">
-                        <span class="text-lg">🚀</span>
-                        <span>프로젝트 제안을 위한 연락처 확인</span>
-                    </button>
-
-                    <!-- Revealed Contact Info (Replaces the button) -->
-                    <div id="contact-info-card" class="hidden flex-col sm:flex-row gap-4 animate-fade-in-up w-full justify-center absolute top-0 left-0 right-0 z-0 opacity-0 transition-opacity duration-500 mx-auto max-w-[600px]">
-                        <!-- Email -->
-                        <button onclick="copyTextDirect('wotjr423@naver.com', '이메일이 복사되었습니다!')" class="group relative bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-6 py-4 rounded-full font-mono text-lg transition-all flex items-center justify-center gap-3 w-full sm:w-auto hover:-translate-y-1 shadow-lg">
-                            <span class="text-xl">✉️</span>
-                            <span class="font-bold text-slate-100">wotjr423@naver.com</span>
-                            <span class="absolute -top-3 right-0 bg-brand-blue text-xs font-sans font-bold px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">복사하기</span>
-                        </button>
-                    </div>
-
-                </div>
             </div>
         </section>
 
@@ -482,29 +461,6 @@
             navigator.clipboard.writeText(text).then(() => {
                 showToast(msg);
             });
-        }
-
-        // Contact Reveal Logic (Morphing style)
-        function revealContact() {
-            const btn = document.getElementById('show-contact-btn');
-            const card = document.getElementById('contact-info-card');
-            
-            // Fade out the button
-            btn.style.opacity = '0';
-            btn.style.transform = 'translateY(10px) scale(0.95)';
-            btn.style.pointerEvents = 'none';
-            
-            // Wait for fade out, then show the contact buttons
-            setTimeout(() => {
-                btn.style.display = 'none';
-                card.classList.remove('hidden');
-                card.classList.add('flex');
-                
-                // Trigger CSS transition for opacity
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                }, 50); 
-            }, 300);
         }
 
         // --- Scenario 1 (Excel Data) ---
