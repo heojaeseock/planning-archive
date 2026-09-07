@@ -5,7 +5,7 @@
 
 **첫 화면(전체 목록):** [index.html](./index.html)
 
-- 문서 46건 / 4개 분야
+- 문서 45건 / 4개 분야
 - 각 문서는 별도 설치 없이 브라우저에서 바로 열리는 단일 HTML입니다.
 
 ---
@@ -32,7 +32,7 @@
 | [프로젝트 C 타겟 유저 분석 및 콘텐츠 전략](docs/game-design/project-c-content-strategy/index.html) | 타겟 유저 정의 후 콘텐츠 로드맵 도출 |
 | [프로젝트 N 기획 제안서](docs/game-design/project-n-proposal/index.html) | 방치형 파견 시스템을 중심으로 한 기획 제안 |
 
-### 2. 라이브 운영·이벤트·리스크 (8건)
+### 2. 라이브 운영·이벤트·리스크 (7건)
 `docs/live-ops/`
 
 | 문서 | 내용 |
@@ -43,7 +43,6 @@
 | [방치형 RPG 기획·운영 기록](docs/live-ops/idle-rpg-liveops/index.html) | 지표와 민심을 함께 보는 라이브 운영 기록 |
 | [던파 모바일 중국 운영 전략 리포트](docs/live-ops/dnf-mobile-cn-ops/index.html) | 1주년 업데이트와 성장 가속 정책의 운영 성과 분석 |
 | [타사 라이브 이슈 대응 분석 보고서](docs/live-ops/competitor-live-issue-response/index.html) | 경쟁 서비스의 장애·이슈 대응 방식 비교 분석 |
-| [운영 가이드 인수인계 매뉴얼](docs/live-ops/ops-handover-manual/index.html) | 담당자 교체 시 누락 없이 넘기는 운영 매뉴얼 |
 | [커뮤니티 플랫폼 리스크 관리 기획](docs/live-ops/community-risk-management/index.html) | 거래 분쟁·사기 피해를 사전에 예측하고 방어하는 체계 |
 
 ### 3. 데이터 분석·AI 활용 (10건)
