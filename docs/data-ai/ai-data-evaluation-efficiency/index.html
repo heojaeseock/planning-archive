@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 데이터 평가 효율화 제안서</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chosen Palette: Emerald (Portal style), Slate (Neutral), and Indigo (For active prompts) -->
+    <!-- Application Structure Plan: 
+         1. Fixed Progress Bar Overflow Bug: Nested the #progress-bar inside the background track div. Adjusted left/right offsets to exactly match the button centers (left-12/right-12 for mobile, left-28/right-28 for desktop).
+         2. Maintained Accordion Funnel UI for Strategy 1.
+         3. Maintained Expert Typography (keep-all, text-balance, phrase chunks). -->
+    <!-- Visualization & Content Choices: CSS-based Accordion Funnel (No SVG). Interactive stepper. Chart.js. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap');
+        
+        /* 줄바꿈 전문가의 핵심 설정 */
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            background-color: #f8fafc; 
+            color: #0f172a; 
+            word-break: keep-all; 
+            overflow-wrap: break-word;
+            line-height: 1.6;
+        }
+        
+        .phrase { display: inline-block; }
+        .text-balance { text-wrap: balance; }
+        .chart-container { position: relative; width: 100%; max-width: 800px; margin: 0 auto; height: 300px; }
+        
+        /* Strategy 1: Funnel Accordion UI Styles */
+        .funnel-layer { transition: all 0.3s ease; cursor: pointer; border: 2px solid transparent; }
+        .funnel-layer:hover { border-color: rgba(99, 102, 241, 0.5); transform: translateX(5px); }
+        .funnel-layer.active { border-color: #34d399; background-color: rgba(52, 211, 153, 0.1); transform: translateX(10px); }
+        
+        /* Accordion Expansion Logic */
+        .funnel-content { max-height: 0; opacity: 0; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .funnel-layer.active .funnel-content { max-height: 200px; opacity: 1; margin-top: 12px; padding-top: 12px; border-top: 1px dashed rgba(255, 255, 255, 0.2); }
+        
+        /* Strategy 2: Stepper UX Improvements */
+        .step-btn { transition: all 0.2s ease-in-out; cursor: pointer; }
+        .step-btn:hover { transform: scale(1.05); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .step-active { background-color: #10b981; color: white; border-color: #10b981; transform: scale(1.1); box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3); }
+        .step-inactive { background-color: #f1f5f9; color: #64748b; border-color: #cbd5e1; }
+        
+        .content-active { display: block; animation: fadeIn 0.4s ease-out; }
+        .content-inactive { display: none; }
+        
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(10px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #047857, #10b981);
+        }
+
+        /* 통통 튀는 애니메이션 강화 */
+        @keyframes bounce-strong {
+            0%, 100% { transform: translateY(-15%); animation-timing-function: cubic-bezier(0.8,0,1,1); }
+            50% { transform: translateY(0); animation-timing-function: cubic-bezier(0,0,0.2,1); }
+        }
+        .animate-bounce-strong { animation: bounce-strong 1.5s infinite; }
+    </style>
+</head>
+<body class="antialiased selection:bg-emerald-200 selection:text-emerald-900">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 py-16 md:py-24 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-400 to-teal-500"></div>
+        <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 text-sm font-bold text-emerald-800 bg-emerald-100 rounded-full border border-emerald-200">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                AI 학습 데이터 품질 평가 직무 분석
+            </div>
+            
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-slate-800 leading-tight tracking-tight text-balance">
+                AI 데이터 평가 병목 해결 및 <span class="gradient-text">품질 가이드라인 구축 제안</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mt-8 text-balance">
+                <span class="phrase">대규모 MMORPG</span> <span class="phrase">유저 트래픽 운영 경험을 바탕으로,</span> 
+                <span class="phrase">대형 포털 AI 학습 데이터</span> <span class="phrase">평가 과정의 비효율을 제거하고</span> 
+                <span class="phrase">일관된 고품질 데이터를 확보하는</span> <span class="phrase">두 가지 실무 전략을 제안합니다.</span>
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-16 space-y-24 md:space-y-32">
+
+        <!-- Section 1: Problem -->
+        <section id="problem">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-4 text-balance">
+                    1. 데이터 평가 현장의 치명적인 병목 현상
+                </h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto text-balance">
+                    <span class="phrase">수만 건의 데이터를</span> <span class="phrase">사람이 100% 수작업으로 평가할 때</span> <span class="phrase">발생하는 문제를 정의합니다.</span>
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white p-8 md:p-10 rounded-3xl shadow-sm border border-slate-100">
+                <div>
+                    <h3 class="text-xl font-bold mb-5 text-slate-800">
+                        피로도 누적으로 인한 판단력 붕괴
+                    </h3>
+                    <p class="text-slate-600 mb-6 text-balance">
+                        <span class="phrase">평가자가 온종일 검수에 매달리면</span> <span class="phrase">결국 집중력이 떨어지고,</span> <span class="phrase">이는 AI 모델의 성능 하락으로 직결됩니다.</span>
+                    </p>
+                    <div class="space-y-4 bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <div class="flex items-start gap-3">
+                            <span class="bg-red-100 text-red-600 rounded-full w-6 h-6 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">1</span>
+                            <span class="text-slate-700 text-sm md:text-base">
+                                <span class="phrase">단순 오타나 무의미한 특수문자 등</span> <span class="phrase">기계적으로 걸러낼 수 있는 불량 데이터에</span> <span class="phrase">소중한 시간을 낭비합니다.</span>
+                            </span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="bg-red-100 text-red-600 rounded-full w-6 h-6 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">2</span>
+                            <span class="text-slate-700 text-sm md:text-base">
+                                <span class="phrase">업무 피로도가 극에 달하는 오후 시간에는</span> <span class="phrase">작업자의 실수로 인한 오분류 비율이</span> <span class="phrase">급격하게 높아집니다.</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-2">
+                    <div class="text-sm font-bold text-center text-slate-500 mb-4">시간에 따른 수동 평가 정확도 하락 (예상 추이)</div>
+                    <div class="chart-container">
+                        <canvas id="bottleneckChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Strategy 1 (ACCORDION FUNNEL UI) -->
+        <section id="strategy1" class="bg-slate-900 p-8 md:p-14 rounded-3xl shadow-xl relative overflow-hidden text-white">
+            <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+                <div class="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-indigo-600 rounded-full mix-blend-screen filter blur-[100px] opacity-20"></div>
+            </div>
+
+            <div class="text-center mb-12 relative z-10">
+                <span class="inline-block px-4 py-1.5 mb-4 text-xs font-bold text-indigo-200 bg-indigo-900/80 rounded-full border border-indigo-700">전략 1. 업무 프로세스 개선</span>
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-balance">
+                    명확한 규칙 기반의 1차 사전 필터링
+                </h2>
+                <p class="text-slate-300 text-lg max-w-2xl mx-auto text-balance">
+                    <span class="phrase">게임 보상 검증을 75% 단축했던 노하우입니다.</span> <span class="phrase">평가자가 화면을 보기 전에,</span> <span class="phrase">오피스 툴로 기계적인 오류를 미리 걸러냅니다.</span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10">
+                
+                <!-- Left: Interactive Accordion Funnel -->
+                <div class="lg:col-span-7 bg-slate-800/80 backdrop-blur-sm p-6 md:p-8 rounded-3xl border border-slate-700 shadow-lg">
+                    
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+                        <h3 class="text-lg font-bold text-white">데이터 필터링 파이프라인</h3>
+                        <div class="animate-bounce-strong bg-indigo-500 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-[0_0_15px_rgba(99,102,241,0.6)] flex items-center gap-2">
+                            <span class="text-lg">👇</span> 각 항목을 클릭해보세요
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <!-- Funnel Step 1 -->
+                        <div class="funnel-layer active bg-slate-700 p-4 md:p-5 rounded-xl relative group" id="funnel-1" onclick="activateFunnel(1)">
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-slate-200 group-hover:text-white flex items-center gap-2">
+                                    <span>📥</span> 수집된 전체 원본 데이터
+                                </span>
+                                <span class="text-sm font-bold text-slate-400">10,000 건</span>
+                            </div>
+                            <div class="funnel-content">
+                                <p class="text-sm text-slate-300 leading-relaxed text-balance">
+                                    평가 시스템에 최초 인입된 정제되지 않은 날것의 데이터 무더기입니다. 모든 데이터가 바로 사람의 눈과 손을 거치게 되면 비효율의 극치를 달리게 됩니다.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Funnel Step 2 -->
+                        <div class="flex justify-center"><div class="h-4 w-1 bg-slate-600"></div></div>
+                        <div class="funnel-layer bg-slate-700 p-4 md:p-5 rounded-xl w-[95%] sm:w-[90%] mx-auto relative group" id="funnel-2" onclick="activateFunnel(2)">
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-slate-200 group-hover:text-white flex items-center gap-2">
+                                    <span>⚙️</span> 기본 형식 및 글자 수 검증
+                                </span>
+                                <span class="text-xs font-bold text-indigo-300 bg-indigo-900/50 px-2 py-1 rounded">-2,000 건 제거</span>
+                            </div>
+                            <div class="funnel-content">
+                                <p class="text-sm text-slate-300 leading-relaxed text-balance">
+                                    엑셀 등의 기본 함수를 활용하여 글자수 초과, 무의미한 자음 반복 데이터 등을 1초 만에 기계적으로 걸러내어 다음 단계로 넘깁니다.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Funnel Step 3 -->
+                        <div class="flex justify-center"><div class="h-4 w-1 bg-slate-600"></div></div>
+                        <div class="funnel-layer bg-slate-700 p-4 md:p-5 rounded-xl w-[90%] sm:w-[80%] mx-auto relative group" id="funnel-3" onclick="activateFunnel(3)">
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-slate-200 group-hover:text-white flex items-center gap-2">
+                                    <span>⛔</span> 금칙어 및 욕설 사전 대조
+                                </span>
+                                <span class="text-xs font-bold text-indigo-300 bg-indigo-900/50 px-2 py-1 rounded">-1,500 건 제거</span>
+                            </div>
+                            <div class="funnel-content">
+                                <p class="text-sm text-slate-300 leading-relaxed text-balance">
+                                    명백한 금칙어, 욕설 리스트와 자동 대조하여 반려 처리합니다. 이 단계까지 사람의 감정 소모나 집중력은 전혀 필요하지 않습니다.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Funnel Step 4 -->
+                        <div class="flex justify-center"><div class="h-4 w-1 bg-emerald-500/50"></div></div>
+                        <div class="funnel-layer bg-emerald-900/40 p-5 rounded-xl w-[85%] sm:w-[70%] mx-auto relative border border-emerald-500/30 group" id="funnel-4" onclick="activateFunnel(4)">
+                            <div class="text-center">
+                                <span class="block font-bold text-emerald-400 mb-1 flex items-center justify-center gap-2">
+                                    <span>✨</span> 최종 평가 대상 데이터
+                                </span>
+                                <span class="text-sm text-emerald-200/70">사람의 판단이 꼭 필요한 데이터</span>
+                            </div>
+                            <div class="funnel-content">
+                                <p class="text-sm text-slate-200 leading-relaxed text-balance font-medium mt-2">
+                                    기계적인 쓰레기 데이터가 모두 제거된 상태입니다. <strong class="text-emerald-300">이제 평가자는 오직 사람만이 할 수 있는 문맥적, 윤리적 판단에만 100% 역량을 쏟을 수 있습니다.</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Chart and Result -->
+                <div class="lg:col-span-5 flex flex-col justify-center">
+                    <div class="bg-slate-800/50 p-6 rounded-3xl border border-slate-700/50 shadow-inner">
+                        <div class="text-sm font-bold text-center text-slate-300 mb-6">
+                            단순 반복 작업 소요 시간 비교
+                        </div>
+                        <div class="chart-container h-[200px]">
+                            <canvas id="efficiencyChart"></canvas>
+                        </div>
+                        <div class="mt-8 text-center bg-slate-900/50 p-5 rounded-2xl border border-slate-700/50">
+                            <p class="text-sm text-slate-400 mb-1">불필요한 시간 낭비 차단으로</p>
+                            <p class="text-2xl font-bold text-emerald-400">작업 효율 75% 상승</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section 3: Strategy 2 (Interactive Stepper) -->
+        <section id="strategy2" class="bg-emerald-900 p-8 md:p-14 rounded-3xl shadow-xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500 rounded-full mix-blend-screen filter blur-[80px] opacity-20 transform translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+            
+            <div class="text-center mb-12 relative z-10">
+                <span class="inline-block px-4 py-1.5 mb-4 text-xs font-bold text-emerald-200 bg-emerald-800 rounded-full border border-emerald-700">전략 2. 일관성 유지 체계</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-4 text-balance">
+                    애매한 예외 상황(Edge Case) 대응 매뉴얼
+                </h2>
+                <p class="text-slate-300 max-w-2xl mx-auto text-lg text-balance">
+                    <span class="phrase">서버 장애 등 위기 상황을 통제했던 경험으로,</span> <span class="phrase">AI가 판단하기 까다로운 주관적 질문에도</span> <span class="phrase">흔들리지 않는 3단계 지침을 제시합니다.</span>
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white p-6 md:p-10 rounded-3xl relative z-10 shadow-2xl">
+                
+                <div class="text-center mb-8">
+                    <span class="animate-bounce-strong inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-800 text-white text-sm font-bold shadow-lg cursor-default">
+                        <span class="text-lg">👇</span> 아래 단계별 버튼을 눌러보세요
+                    </span>
+                </div>
+
+                <div class="flex justify-between items-center mb-4 relative px-4 md:px-20 mt-10">
+                    <!-- 💡 BUG FIX: 프로그레스 바를 백그라운드 트랙 영역 내부에 종속시켜 너비 100%가 튀어나가지 않게 수정. 버튼 정중앙에 위치하도록 left/right 값 최적화 -->
+                    <div class="absolute left-12 right-12 md:left-28 md:right-28 top-1/2 transform -translate-y-1/2 h-1.5 bg-slate-100 -z-10 rounded-full overflow-hidden">
+                        <div id="progress-bar" class="absolute left-0 top-0 h-full bg-emerald-400 rounded-full transition-all duration-300 w-0"></div>
+                    </div>
+                    
+                    <button id="btn-step1" class="step-btn step-active w-16 h-16 rounded-full font-bold text-2xl flex items-center justify-center border-4 relative group z-10 focus:outline-none bg-emerald-500 text-white border-emerald-500">
+                        1
+                        <span class="absolute -bottom-10 w-28 text-center text-sm font-bold text-slate-800 transition-colors phrase">명백한 위반 확인</span>
+                    </button>
+                    <button id="btn-step2" class="step-btn step-inactive w-16 h-16 rounded-full font-bold text-2xl flex items-center justify-center border-4 relative group z-10 focus:outline-none">
+                        2
+                        <span class="absolute -bottom-10 w-28 text-center text-sm font-bold text-slate-400 group-hover:text-emerald-600 transition-colors phrase">질문 의도 파악</span>
+                    </button>
+                    <button id="btn-step3" class="step-btn step-inactive w-16 h-16 rounded-full font-bold text-2xl flex items-center justify-center border-4 relative group z-10 focus:outline-none">
+                        3
+                        <span class="absolute -bottom-10 w-28 text-center text-sm font-bold text-slate-400 group-hover:text-emerald-600 transition-colors phrase">교차 검증 및 기록</span>
+                    </button>
+                </div>
+
+                <div class="min-h-[280px] mt-20 bg-slate-50 rounded-2xl border border-slate-100 p-6 md:p-8">
+                    
+                    <!-- Step 1 Content -->
+                    <div id="content-step1" class="content-active">
+                        <div class="flex items-center gap-3 mb-5">
+                            <span class="px-3 py-1.5 text-sm font-bold text-white bg-emerald-500 rounded-lg shadow-sm">1단계</span>
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-800">객관적인 안전 정책으로 선 긋기</h3>
+                        </div>
+                        <p class="text-slate-600 mb-6 text-balance">
+                            <span class="phrase">아무리 돌려 말한 질문이라도</span> <span class="phrase">가장 근본이 되는 안전 가이드라인을 들이댑니다.</span> <span class="phrase">작업자의 주관적인 고민을 차단하여 속도를 높입니다.</span>
+                        </p>
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col sm:flex-row gap-6">
+                            <div class="flex-1">
+                                <p class="font-bold text-slate-700 mb-3 text-sm">📋 행동 지침</p>
+                                <ul class="text-slate-600 space-y-2 text-sm">
+                                    <li>• 폭력성, 혐오 조장 키워드가 있는지 살핍니다.</li>
+                                    <li>• 저작권이나 명예훼손 등 법적 문제가 없는지 대조합니다.</li>
+                                    <li>• 문제가 보이면 <b>추가적인 고민 없이 즉시 반려</b>합니다.</li>
+                                </ul>
+                            </div>
+                            <div class="flex-1 bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                <p class="font-bold text-emerald-600 mb-2 text-sm">💡 실무 상황 예시</p>
+                                <p class="text-sm text-slate-600 text-balance">"특정 정치인 집 주소 알려줘" → 개인정보 정책 위반이므로 의도를 파악할 필요 없이 바로 반려 처리합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 Content -->
+                    <div id="content-step2" class="content-inactive">
+                        <div class="flex items-center gap-3 mb-5">
+                            <span class="px-3 py-1.5 text-sm font-bold text-white bg-emerald-500 rounded-lg shadow-sm">2단계</span>
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-800">질문 속에 숨겨진 진짜 목적 분리하기</h3>
+                        </div>
+                        <p class="text-slate-600 mb-6 text-balance">
+                            <span class="phrase">게임 유저들의 은어 속에서 진짜 의미를 찾던 경험을 살립니다.</span> <span class="phrase">난해한 질문을 '단순 정보 탐색'과 '가치 판단'으로 명확히 나눕니다.</span>
+                        </p>
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col sm:flex-row gap-6">
+                            <div class="flex-1">
+                                <p class="font-bold text-slate-700 mb-3 text-sm">📋 행동 지침</p>
+                                <ul class="text-slate-600 space-y-2 text-sm">
+                                    <li>• 주관적인 질문을 객관적인 검색어로 바꿀 수 있는지 봅니다.</li>
+                                    <li>• AI에게 어떤 입장을 요구하는 질문은 <b>어느 한쪽으로 치우치지 않는 답변</b>으로 다듬습니다.</li>
+                                </ul>
+                            </div>
+                            <div class="flex-1 bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                <p class="font-bold text-emerald-600 mb-2 text-sm">💡 실무 상황 예시</p>
+                                <p class="text-sm text-slate-600 text-balance">"강남역 대박 맛집 어디야?" → AI가 '대박'을 주관적으로 판단하지 않고, '평점이 높은 식당 정보'로 목적을 치환하여 평가합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 Content -->
+                    <div id="content-step3" class="content-inactive">
+                        <div class="flex items-center gap-3 mb-5">
+                            <span class="px-3 py-1.5 text-sm font-bold text-white bg-emerald-500 rounded-lg shadow-sm">3단계</span>
+                            <h3 class="text-xl md:text-2xl font-bold text-slate-800">상위 보고 체계를 통한 사례 축적</h3>
+                        </div>
+                        <p class="text-slate-600 mb-6 text-balance">
+                            <span class="phrase">1, 2단계를 거치고도 판단이 서지 않는 극단적인 상황은</span> <span class="phrase">개인의 감으로 넘겨짚지 않고 공식적인 보고 채널을 이용합니다.</span>
+                        </p>
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col sm:flex-row gap-6">
+                            <div class="flex-1">
+                                <p class="font-bold text-slate-700 mb-3 text-sm">📋 행동 지침</p>
+                                <ul class="text-slate-600 space-y-2 text-sm">
+                                    <li>• 평가하기 어려운 데이터는 '주의 필요' 상태로 넘깁니다.</li>
+                                    <li>• 즉시 다른 담당자들에게 의견을 물어보고 검증을 받습니다.</li>
+                                    <li>• <b>결정된 내용은 반드시 사내 가이드라인 문서에 기록</b>합니다.</li>
+                                </ul>
+                            </div>
+                            <div class="flex-1 bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                <p class="font-bold text-emerald-600 mb-2 text-sm">💡 시스템의 성장</p>
+                                <p class="text-sm text-slate-600 text-balance">이렇게 기록된 예외 상황 매뉴얼이 쌓일수록, 다음 번 비슷한 상황이 발생했을 때 조직 전체의 처리 속도가 압도적으로 빨라집니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section id="conclusion" class="text-center pb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-10 text-balance">
+                데이터의 품질이 곧 대형 포털 AI의 경쟁력입니다
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm transition-transform hover:-translate-y-2">
+                    <div class="text-4xl mb-5">⚙️</div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-3">똑똑한 업무 환경</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed text-balance">단순 반복 업무를 줄이는 사전 필터링을 기획하여 팀원들의 귀중한 시간을 아끼겠습니다.</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm transition-transform hover:-translate-y-2">
+                    <div class="text-4xl mb-5">⚖️</div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-3">흔들리지 않는 기준</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed text-balance">수많은 게임 유저의 돌발 상황을 다뤄본 감각으로, 복잡한 문제 앞에서도 튼튼한 기준을 세웁니다.</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm transition-transform hover:-translate-y-2">
+                    <div class="text-4xl mb-5">🚀</div>
+                    <h3 class="font-bold text-slate-800 text-lg mb-3">AI 모델의 데이터 파트너</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed text-balance">주어진 화면만 보는 작업자가 아니라, 고품질 데이터가 만들어지는 전체 흐름을 개선하는 관점에서 정리했습니다.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center text-sm">
+        <div class="max-w-5xl mx-auto px-4">
+            <p class="font-bold text-slate-300 mb-2">웹 서비스 운영사 AI 학습 데이터 구축 및 품질 평가 직무 분석</p>
+            <p class="text-balance">논리적인 업무 분석력과 단단한 운영 노하우를 바탕으로, AI 학습을 위한 가장 깨끗한 데이터 구축 방안을 정리했습니다.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Funnel Accordion Logic
+        function activateFunnel(step) {
+            document.querySelectorAll('.funnel-layer').forEach(el => {
+                el.classList.remove('active', 'border-emerald-400');
+            });
+            
+            const activeEl = document.getElementById(`funnel-${step}`);
+            activeEl.classList.add('active');
+            
+            if(step === 4) {
+                activeEl.classList.add('border-emerald-400');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            Chart.defaults.font.family = "'Pretendard', sans-serif";
+            Chart.defaults.color = '#64748b';
+
+            // 1. Bottleneck Line Chart
+            const lineCtx = document.getElementById('bottleneckChart').getContext('2d');
+            new Chart(lineCtx, {
+                type: 'line',
+                data: {
+                    labels: ['오전 9시', '11시', '오후 1시', '3시', '5시', '저녁 7시'],
+                    datasets: [
+                        {
+                            label: '판단 정확도 (%)',
+                            data: [99, 97, 95, 85, 75, 60],
+                            borderColor: '#ef4444',
+                            backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4,
+                            pointBackgroundColor: '#ef4444',
+                            pointRadius: 4,
+                            pointHoverRadius: 6
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { mode: 'index', intersect: false, backgroundColor: 'rgba(15, 23, 42, 0.9)' }
+                    },
+                    scales: {
+                        y: { min: 50, max: 100, ticks: { stepSize: 10 }, grid: { borderDash: [4, 4], color: '#e2e8f0' } },
+                        x: { grid: { display: false } }
+                    },
+                    interaction: { mode: 'nearest', axis: 'x', intersect: false }
+                }
+            });
+
+            // 2. Efficiency Bar Chart
+            const barCtx = document.getElementById('efficiencyChart').getContext('2d');
+            new Chart(barCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['기존 수동 검수', '사전 필터링 후'],
+                    datasets: [{
+                        data: [40, 10],
+                        backgroundColor: ['#475569', '#34d399'],
+                        borderRadius: 8,
+                        barThickness: 40
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) { return context.parsed.y + ' 시간 소모'; }
+                            },
+                            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                            titleColor: '#0f172a',
+                            bodyColor: '#0f172a'
+                        }
+                    },
+                    scales: {
+                        y: { 
+                            beginAtZero: true, 
+                            max: 50, 
+                            grid: { color: '#334155', borderDash: [4, 4] },
+                            ticks: { color: '#94a3b8' }
+                        },
+                        x: { 
+                            grid: { display: false },
+                            ticks: { color: '#cbd5e1', font: { weight: 'bold' } }
+                        }
+                    }
+                }
+            });
+
+            // 3. Strategy 2 Stepper Logic
+            const steps = [1, 2, 3];
+            const progressBar = document.getElementById('progress-bar');
+            
+            function activateStep(stepNumber) {
+                if(stepNumber === 1) progressBar.style.width = '0%';
+                if(stepNumber === 2) progressBar.style.width = '50%';
+                if(stepNumber === 3) progressBar.style.width = '100%';
+
+                steps.forEach(num => {
+                    const btn = document.getElementById('btn-step' + num);
+                    const content = document.getElementById('content-step' + num);
+                    const label = btn.querySelector('span');
+                    
+                    if (num === stepNumber) {
+                        btn.classList.remove('step-inactive', 'border-slate-200', 'text-slate-500');
+                        btn.classList.add('step-active', 'border-emerald-500', 'text-white');
+                        label.classList.remove('text-slate-400');
+                        label.classList.add('text-slate-800');
+                        
+                        content.classList.remove('content-inactive');
+                        content.classList.add('content-active');
+                    } else {
+                        btn.classList.remove('step-active', 'border-emerald-500', 'text-white');
+                        btn.classList.add('step-inactive', 'text-slate-500');
+                        
+                        if (num < stepNumber) {
+                            btn.classList.add('border-emerald-400', 'text-emerald-500');
+                            btn.classList.remove('border-slate-200');
+                        } else {
+                            btn.classList.remove('border-emerald-400', 'text-emerald-500');
+                            btn.classList.add('border-slate-200');
+                        }
+
+                        label.classList.add('text-slate-400');
+                        label.classList.remove('text-slate-800');
+                        
+                        content.classList.remove('content-active');
+                        content.classList.add('content-inactive');
+                    }
+                });
+            }
+
+            steps.forEach(num => {
+                const btn = document.getElementById('btn-step' + num);
+                btn.addEventListener('click', () => activateStep(num));
+                
+                btn.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        activateStep(num);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

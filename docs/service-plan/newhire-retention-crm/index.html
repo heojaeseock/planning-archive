@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>합격자 3개월 근속 케어 CRM 운영안</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <style>
+        body { font-family: 'Pretendard', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .brand-blue { color: #2b5dff; }
+        .bg-brand-blue { background-color: #2b5dff; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .chart-container { position: relative; width: 100%; height: 350px; }
+        
+        /* 실행 과제 카드 스타일 개선 */
+        .action-item-card {
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        .action-item-card:hover {
+            background-color: #2b5dff;
+            transform: translateX(10px);
+        }
+        .action-item-card:hover p, 
+        .action-item-card:hover span {
+            color: #ffffff !important;
+        }
+        .action-item-card:hover .step-num {
+            background-color: #ffffff;
+            color: #2b5dff;
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
+    <!-- Chosen Palette: 채용 플랫폼 블루(#2B5DFF)와 슬레이트 그레이를 조합한 전문적이고 깔끔한 테마 -->
+    <!-- Application Structure Plan: 
+         1. 현황 분석: 입사 초기 퇴사 통계 및 심리 위험 구간 시각화
+         2. 게임 기법 벤치마킹: 게임의 '튜토리얼'과 '보상' 시스템을 HR에 이식
+         3. CRM 운영 제안: 추가 비용 0원, 자사 자산(아티클, 채용 플랫폼+)을 활용한 시나리오
+         4. 기대 효과 및 실행 과제: 비즈니스 임팩트와 운영 매니저의 체크리스트 (호버 효과 개선)
+    -->
+    <!-- Visualization & Content Choices: 
+         - 감정 굴곡 차트: 90일간의 심리 안정도와 이탈 위험도를 선 그래프로 대조
+         - 게임 기법 카드: 게임 용어와 HR 실무를 직접 매칭하여 기획의 창의성 강조
+         - 실행 과제 리스트: 호버 시 배경색 반전을 통해 가독성과 클릭감을 높인 디자인
+         CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. 
+    -->
+</head>
+<body class="antialiased">
+
+    <!-- 상단 바 -->
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="font-black text-2xl tracking-tighter bg-brand-blue text-white px-2 py-0.5 rounded shadow-sm">W</span>
+                <span class="font-bold text-lg">채용 플랫폼 채용사업팀</span>
+            </div>
+            <div class="hidden sm:flex gap-8 text-sm font-semibold text-gray-500">
+                <a href="#analysis" class="hover:text-brand-blue transition-colors">원인 분석</a>
+                <a href="#gaming" class="hover:text-brand-blue transition-colors">게임 기법</a>
+                <a href="#roadmap" class="hover:text-brand-blue transition-colors">운영안</a>
+                <a href="#action" class="hover:text-brand-blue transition-colors">실행 과제</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 py-16 space-y-24">
+
+        <!-- 도입부 -->
+        <header class="text-center space-y-6">
+            <div class="inline-block px-4 py-1.5 bg-blue-50 rounded-full text-brand-blue text-sm font-bold border border-blue-100">
+                비즈니스 전략 제안: 정산율 안정화
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+                게임 리텐션 공식을 이식한<br>
+                <span class="brand-blue">합격자 3개월 밀착 케어 운영안</span>
+            </h1>
+            <p class="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
+                합격자의 초기 이탈은 곧 매출 손실로 이어집니다.<br>
+                채용 플랫폼 내부 자산을 활용해 <strong>추가 비용 0원</strong>으로 근속률을 끌어올립니다.
+            </p>
+        </header>
+
+        <!-- 1. 초기 퇴사 원인 분석 -->
+        <section id="analysis" class="scroll-mt-24">
+            <div class="flex items-center gap-3 mb-10">
+                <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
+                <h2 class="text-2xl font-bold italic text-gray-800">1. 초기 퇴사 원인 및 감정 변화 흐름</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                    <div class="text-3xl mb-4">📋</div>
+                    <h3 class="font-bold mb-2">직무 기대치 불일치</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">면접 시 안내받은 업무와 실제 배정이 다를 때 MZ세대는 즉각 이탈을 결심합니다.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                    <div class="text-3xl mb-4">🧊</div>
+                    <h3 class="font-bold mb-2">온보딩 방치 및 소외감</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">체계적인 적응 가이드가 부족할 때 조직에 대한 신뢰를 잃고 이방인이라 결론 내립니다.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                    <div class="text-3xl mb-4">📉</div>
+                    <h3 class="font-bold mb-2">불확실한 피드백</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">자신의 업무 성과나 적응 상태를 확인할 길이 없을 때 무력감을 느끼며 이직을 재개합니다.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-10 border border-gray-100 shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8">
+                    <div class="flex gap-4 text-[10px] font-bold">
+                        <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-brand-blue"></span> 심리적 안정감</div>
+                        <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-red-400"></span> 이탈 위험도</div>
+                    </div>
+                </div>
+                <h4 class="font-bold text-gray-700 mb-8 text-sm uppercase tracking-widest">입사 후 90일간의 리텐션 위기 구간 분석</h4>
+                <div class="chart-container">
+                    <canvas id="emotionChart"></canvas>
+                </div>
+                <div class="mt-4 flex justify-between text-[10px] font-black text-gray-400">
+                    <span>1주 차: 불안기</span>
+                    <span>1개월 차: 자각 및 회의기</span>
+                    <span>3개월 차: 결단기</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 게임 기법 벤치마킹 -->
+        <section id="gaming" class="scroll-mt-24 space-y-10">
+            <div class="flex items-center gap-3">
+                <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
+                <h2 class="text-2xl font-bold italic text-gray-800">2. 게임 라이브 운영 기법 벤치마킹</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-900 text-white p-10 rounded-3xl relative overflow-hidden group border-2 border-transparent hover:border-brand-blue transition-all">
+                    <div class="text-4xl mb-6">🔔</div>
+                    <h3 class="text-xl font-bold mb-4">단계별 튜토리얼 넛지</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-8">
+                        신규 유저가 복잡한 기능을 한 번에 배우지 않도록, 레벨에 맞춰 정보를 하나씩 해금하듯 시기별 필수 정보를 자동으로 전달합니다.
+                    </p>
+                    <div class="bg-white/10 p-5 rounded-2xl border border-white/20 text-xs">
+                        <span class="text-brand-blue font-bold">적용:</span> 입사 3일, 7일 차 등 시기에 맞는 적응 팁(회의 문화, 협업 툴 등)을 발송합니다.
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-white p-10 rounded-3xl relative overflow-hidden group border-2 border-transparent hover:border-yellow-400 transition-all">
+                    <div class="text-4xl mb-6">🏅</div>
+                    <h3 class="text-xl font-bold mb-4">퀘스트 보상과 명예 뱃지</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-8">
+                        현금성 보상이 없더라도 유저에게 '칭호'나 '뱃지'를 주어 성취감을 주듯, 합격자가 조직에 안착했음을 시각적으로 증명해줍니다.
+                    </p>
+                    <div class="bg-white/10 p-5 rounded-2xl border border-white/20 text-xs">
+                        <span class="text-yellow-400 font-bold">적용:</span> "첫 주 완주 뱃지", "1개월 안착 뱃지"를 플랫폼 내 프로필에 자동 부여합니다.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. CRM 운영 로드맵 -->
+        <section id="roadmap" class="scroll-mt-24 space-y-10">
+            <div class="flex items-center gap-3">
+                <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
+                <h2 class="text-2xl font-bold italic text-gray-800">3. 채용 플랫폼 맞춤형 자동화 CRM 운영 로드맵</h2>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
+                <div class="flex border-b border-gray-100 bg-gray-50/50">
+                    <button onclick="changeTab('tab1')" id="btn-tab1" class="tab-btn flex-1 py-6 text-sm font-bold border-b-2 border-brand-blue brand-blue bg-white transition-all">Phase 1: 입사 1주 차 (불안 해소)</button>
+                    <button onclick="changeTab('tab2')" id="btn-tab2" class="tab-btn flex-1 py-6 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:bg-gray-100 transition-all">Phase 2: 입사 1개월 차 (위기 관리)</button>
+                </div>
+
+                <!-- 단계 1 -->
+                <div id="tab1" class="tab-content active p-12 animate-fadeIn">
+                    <div class="flex flex-col md:flex-row gap-16 items-center">
+                        <div class="flex-1 space-y-6">
+                            <h4 class="text-2xl font-bold text-gray-900">"첫 주 완주 응원 및 아티클 제안"</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                가장 불안한 시기인 금요일 오후, 따뜻한 격려 메시지와 함께 채용 플랫폼만의 고퀄리티 직무 아티클을 자동으로 발송합니다.
+                            </p>
+                            <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                                <p class="text-xs font-bold text-brand-blue mb-2">알림 내용:</p>
+                                <p class="text-sm italic text-gray-600 leading-relaxed">"첫 주 무사히 보내셨나요? 적응을 돕는 '똑똑하게 질문하는 법' 아티클을 준비했어요."</p>
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 rounded-full w-56 h-56 flex flex-col items-center justify-center text-center p-6 border border-blue-100 shadow-inner">
+                            <div class="text-5xl mb-4">💌</div>
+                            <span class="text-xs font-bold brand-blue">D+5 자동 발송</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 단계 2 -->
+                <div id="tab2" class="tab-content p-12 animate-fadeIn">
+                    <div class="flex flex-col md:flex-row gap-16 items-center">
+                        <div class="flex-1 space-y-6">
+                            <h4 class="text-2xl font-bold text-gray-900">"회의감 극복을 위한 무료 교육권"</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                업무 권태가 올 수 있는 1개월 차에 성장을 지원하는 보상을 제공합니다. 자사 서비스인 채용 플랫폼+ 패스권을 활용해 실질적인 도움을 줍니다.
+                            </p>
+                            <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                                <p class="text-xs font-bold text-orange-500 mb-2">알림 내용:</p>
+                                <p class="text-sm italic text-gray-600 leading-relaxed">"벌써 한 달! 당신의 성장을 위해 채용 플랫폼+ 7일 무료 패스권을 선물로 드립니다."</p>
+                            </div>
+                        </div>
+                        <div class="bg-orange-50 rounded-full w-56 h-56 flex flex-col items-center justify-center text-center p-6 border border-orange-100 shadow-inner">
+                            <div class="text-5xl mb-4">🎟️</div>
+                            <span class="text-xs font-bold text-orange-600">D+30 자동 지급</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 기대 효과 및 실행 과제 -->
+        <section id="action" class="grid grid-cols-1 lg:grid-cols-2 gap-10 scroll-mt-24">
+            <!-- 기대 효과 -->
+            <div class="bg-brand-blue text-white p-12 rounded-3xl shadow-xl space-y-10">
+                <h2 class="text-2xl font-bold border-b border-white/20 pb-4 italic">Business Impact</h2>
+                <div class="space-y-8">
+                    <div class="flex items-start gap-5">
+                        <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center text-2xl">📈</div>
+                        <div>
+                            <h4 class="font-bold text-lg">수수료 정산율 15% 상승</h4>
+                            <p class="text-xs text-blue-100">조기 이탈 방어를 통해 수수료 환불 리스크를 줄이고 안정적 매출을 보전합니다.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-5">
+                        <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center text-2xl">🤝</div>
+                        <div>
+                            <h4 class="font-bold text-lg">고객사 만족도 극대화</h4>
+                            <p class="text-xs text-blue-100">"채용 플랫폼에서 뽑은 인재는 적응력이 좋다"는 평판을 쌓아 고객사 락인을 유도합니다.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-5">
+                        <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center text-2xl">🚀</div>
+                        <div>
+                            <h4 class="font-bold text-lg">플랫폼 생태계 활성화</h4>
+                            <p class="text-xs text-blue-100">합격자를 콘텐츠 및 교육 유저로 전환시켜 서비스 간 선순환 구조를 구축합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 실행 과제 (Action Items) -->
+            <div class="bg-white p-12 rounded-3xl border border-gray-100 shadow-sm space-y-8">
+                <h2 class="text-2xl font-bold text-gray-800 border-b border-gray-100 pb-4 italic">Action Items</h2>
+                <div class="space-y-3">
+                    <div class="action-item-card p-5 bg-gray-50 rounded-2xl border border-transparent">
+                        <div class="flex items-center gap-4">
+                            <span class="step-num w-8 h-8 bg-brand-blue text-white text-[10px] font-black rounded-full flex items-center justify-center shrink-0 transition-colors">1</span>
+                            <p class="text-sm font-bold text-gray-800 transition-colors">데이터 연동: 합격자 '출근일' 기준 트리거 자동화 (개발팀)</p>
+                        </div>
+                    </div>
+                    <div class="action-item-card p-5 bg-gray-50 rounded-2xl border border-transparent">
+                        <div class="flex items-center gap-4">
+                            <span class="step-num w-8 h-8 bg-brand-blue text-white text-[10px] font-black rounded-full flex items-center justify-center shrink-0 transition-colors">2</span>
+                            <p class="text-sm font-bold text-gray-800 transition-colors">CRM 세팅: 알림톡 템플릿 및 시나리오 구축 (마케팅팀)</p>
+                        </div>
+                    </div>
+                    <div class="action-item-card p-5 bg-gray-50 rounded-2xl border border-transparent">
+                        <div class="flex items-center gap-4">
+                            <span class="step-num w-8 h-8 bg-brand-blue text-white text-[10px] font-black rounded-full flex items-center justify-center shrink-0 transition-colors">3</span>
+                            <p class="text-sm font-bold text-gray-800 transition-colors">콘텐츠 큐레이션: 직군별 아티클 및 교육 리스트업 (운영팀)</p>
+                        </div>
+                    </div>
+                    <div class="action-item-card p-5 bg-gray-50 rounded-2xl border border-transparent">
+                        <div class="flex items-center gap-4">
+                            <span class="step-num w-8 h-8 bg-brand-blue text-white text-[10px] font-black rounded-full flex items-center justify-center shrink-0 transition-colors">4</span>
+                            <p class="text-sm font-bold text-gray-800 transition-colors">지표 모니터링: 메시지 오픈율 및 3개월 근속 코호트 분석</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-100 py-16 text-center text-gray-400 text-xs font-bold tracking-widest uppercase">
+        PLATFORM Recruitment Business Strategy 2026 | Game-Inspired Retention
+    </footer>
+
+    <script>
+        // 1. 심리 굴곡 차트
+        const ctx = document.getElementById('emotionChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['입사일', 'D+7', 'D+14', 'D+30', 'D+60', 'D+90'],
+                datasets: [{
+                    label: '심리적 안정감',
+                    data: [100, 55, 75, 45, 60, 30],
+                    borderColor: '#2b5dff',
+                    borderWidth: 4,
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 6,
+                    tension: 0.4,
+                    fill: true,
+                    backgroundColor: 'rgba(43, 93, 255, 0.05)'
+                }, {
+                    label: '이탈 위험도',
+                    data: [0, 30, 20, 65, 40, 90],
+                    borderColor: '#f87171',
+                    borderWidth: 2,
+                    borderDash: [5, 5],
+                    pointRadius: 0,
+                    tension: 0.4,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { display: false, min: 0, max: 100 },
+                    x: { grid: { display: false }, ticks: { font: { weight: 'black', size: 11 }, color: '#94a3b8' } }
+                }
+            }
+        });
+
+        // 2. 탭 전환 로직
+        function changeTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active', 'brand-blue', 'border-brand-blue', 'bg-white');
+                btn.classList.add('text-gray-400', 'border-transparent');
+            });
+
+            document.getElementById(tabId).classList.add('active');
+            const btn = document.getElementById('btn-' + tabId);
+            btn.classList.add('active', 'brand-blue', 'border-brand-blue', 'bg-white');
+            btn.classList.remove('text-gray-400', 'border-transparent');
+        }
+    </script>
+</body>
+</html>

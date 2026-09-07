@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리셀 커머스 플랫폼 IP & Entertainment Operations - Archive</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js & DataLabels Plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <!-- Pretendard Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Application Structure Plan: Highly polished Executive Dashboard. -->
+    <!-- Visualization & Content Choices: Removed unnecessary English acronyms and parentheses. Translated chart labels to Korean. Maintained smooth scroll and perfect vertical alignment for lists. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <style>
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            background-color: #f4f5f7; 
+            color: #111; 
+            word-break: keep-all; 
+            -webkit-font-smoothing: antialiased;
+        }
+        .chart-container { 
+            position: relative; 
+            width: 100%; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            height: 380px; 
+        }
+        @media (max-width: 768px) { .chart-container { height: 280px; } }
+        
+        /* Navigation Styles */
+        .nav-item { transition: all 0.2s ease; border-left: 4px solid transparent; }
+        .nav-item.active { background-color: #111; color: #fff; font-weight: 700; border-left: 4px solid #3b82f6; }
+        .nav-item:hover:not(.active) { background-color: #e2e8f0; border-left: 4px solid #cbd5e1; }
+        
+        /* Custom UI Boxes */
+        .insight-box { border-left: 4px solid #111; background-color: #f8fafc; }
+        
+        /* Typography */
+        .text-body { line-height: 1.7; letter-spacing: -0.01em; }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
+    </style>
+</head>
+<body class="flex flex-col md:flex-row h-screen overflow-hidden selection:bg-black selection:text-white">
+
+    <!-- Sidebar Navigation -->
+    <nav class="w-full md:w-72 bg-white border-r border-gray-200 flex flex-col md:h-full z-20 shadow-md flex-shrink-0">
+        <div class="p-7 border-b border-gray-100">
+            <h1 class="text-4xl font-extrabold tracking-tighter text-black">리셀 커머스 플랫폼</h1>
+            <p class="text-xs text-gray-500 mt-2 font-bold tracking-widest">IP & 엔터테인먼트 운영</p>
+            <div class="mt-5 inline-block px-3 py-1.5 bg-black text-white text-[11px] font-bold rounded shadow-sm">
+                운영 고도화 제안서
+            </div>
+        </div>
+        
+        <div class="flex-1 overflow-y-auto py-5 scroll-smooth">
+            <ul class="space-y-2 px-4" id="nav-menu">
+                <li><button data-target="section-1" class="nav-item active w-full text-left px-5 py-3.5 rounded-lg text-sm">1. 운영 관점의 문제 정의</button></li>
+                <li><button data-target="section-2" class="nav-item w-full text-left px-5 py-3.5 rounded-lg text-sm">2. 데이터 온보딩 자동화</button></li>
+                <li><button data-target="section-3" class="nav-item w-full text-left px-5 py-3.5 rounded-lg text-sm">3. 애자일 현장 플레이북</button></li>
+                <li><button data-target="section-4" class="nav-item w-full text-left px-5 py-3.5 rounded-lg text-sm">4. 실시간 위기 대응망</button></li>
+            </ul>
+        </div>
+
+        <!-- Analyst Skill Summary -->
+        <div class="p-6 border-t border-gray-100 bg-gray-50">
+            <h4 class="text-[11px] font-bold text-gray-500 mb-4 tracking-wider">핵심 직무 역량</h4>
+            <div class="space-y-4">
+                <div>
+                    <div class="flex justify-between text-xs mb-1.5"><span class="font-bold text-gray-700">데이터 정제 및 자동화</span><span class="text-gray-500">능숙</span></div>
+                    <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="bg-blue-600 h-1.5 rounded-full" style="width: 95%"></div></div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-xs mb-1.5"><span class="font-bold text-gray-700">실시간 위기 대응</span><span class="text-gray-500">능숙</span></div>
+                    <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="bg-black h-1.5 rounded-full" style="width: 90%"></div></div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-xs mb-1.5"><span class="font-bold text-gray-700">오프라인 현장 관제</span><span class="text-gray-500">우수</span></div>
+                    <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="bg-gray-700 h-1.5 rounded-full" style="width: 75%"></div></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 overflow-y-auto p-6 md:p-12 lg:p-16 relative" id="main-content">
+        
+        <!-- Section 1: Background -->
+        <section id="section-1" class="content-section max-w-5xl mx-auto block animate-fade-in">
+            <div class="mb-12">
+                <span class="inline-block px-3 py-1 bg-black text-white text-xs font-bold rounded-full mb-5 shadow-sm">1. 배경 및 문제 정의</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight leading-[1.3] text-gray-900">
+                    게임 라이브 서비스의 '통제력'을<br>
+                    리셀 커머스 플랫폼의 한정판 트래픽으로 치환하다.
+                </h2>
+                <p class="text-gray-600 text-lg md:text-xl text-body font-medium">
+                    리셀 커머스 플랫폼의 IP 및 엔터테인먼트 비즈니스는 상시 커머스와 근본적으로 다릅니다.<br>
+                    특정 시간에 쏠리는 기형적 트래픽 양상은 <b>MMORPG의 대규모 서버 패치</b>와 완벽히 맞닿아 있습니다.
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-200 mb-8">
+                <h3 class="text-2xl font-bold mb-8 text-gray-900 border-b border-gray-100 pb-4">운영 환경의 구조적 유사성 진단</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-xl overflow-hidden mb-10 shadow-sm">
+                    <div class="p-8 md:p-10 bg-gray-50 border-b md:border-b-0 md:border-r border-gray-200 relative">
+                        <div class="absolute top-0 right-0 w-16 h-16 bg-gray-200 rounded-bl-full opacity-50"></div>
+                        <div class="text-4xl mb-5">🎮</div>
+                        <h4 class="font-bold text-gray-900 text-xl mb-4">MMORPG 라이브 서비스</h4>
+                        <ul class="text-base text-gray-600 space-y-3 list-disc pl-5 text-body">
+                            <li>특정 시간대 대규모 서버 패치 및 접속 폭주</li>
+                            <li>퍼블리셔와 개발사 간의 복잡한 데이터 동기화</li>
+                            <li>e스포츠 오프라인 대회 시 예측 불허의 현장 변수</li>
+                            <li>단 1분의 서버 다운도 치명적인 고객 불만으로 직결</li>
+                        </ul>
+                    </div>
+                    <div class="p-8 md:p-10 bg-white relative">
+                        <div class="absolute top-0 right-0 w-16 h-16 bg-blue-100 rounded-bl-full opacity-50"></div>
+                        <div class="text-4xl mb-5">👟</div>
+                        <h4 class="font-bold text-gray-900 text-xl mb-4">리셀 커머스 플랫폼 한정판 드랍 & 팝업</h4>
+                        <ul class="text-base text-gray-600 space-y-3 list-disc pl-5 text-body">
+                            <li>드랍 및 티켓팅 시점의 기형적 트래픽 집중 현상</li>
+                            <li>다양한 IP 파트너사의 비표준화된 상품 데이터 온보딩</li>
+                            <li>팝업 대기열 지연 및 QR 인증 서버 오류 등 현장 변수</li>
+                            <li>결제 오류나 품절 이슈가 즉각적인 바이럴 리스크로 확산</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="insight-box p-8 rounded-xl shadow-inner">
+                    <h4 class="font-bold mb-4 text-lg text-black flex items-center gap-2">
+                        <span class="text-2xl">💡</span> 핵심 제안: 커머스 도메인으로의 역량 확장
+                    </h4>
+                    <p class="text-base text-gray-700 text-body">
+                        물류 및 배송 등 커머스 특화 인프라 지식은 추가 학습이 필요한 영역으로 정리했습니다.<br><br>
+                        대신, 리셀 커머스 플랫폼 IP 비즈니스에서 가장 치명적인 리스크인 <b>'트래픽 병목 통제'</b>, <b>'방대한 데이터 정합성 유지'</b>, <b>'돌발 상황에서의 오프라인 관제력'</b>은 제가 지난 1년 5개월간 가장 치열하게 다루어 온 무기로 당장 내일부터 해결할 수 있습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Data Automation -->
+        <section id="section-2" class="content-section max-w-5xl mx-auto hidden animate-fade-in">
+            <div class="mb-12">
+                <span class="inline-block px-3 py-1 bg-black text-white text-xs font-bold rounded-full mb-5 shadow-sm">2. 데이터 온보딩 자동화</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight leading-[1.3] text-gray-900">
+                    파트너사 데이터 무결점 온보딩 시스템
+                </h2>
+                <p class="text-gray-600 text-lg md:text-xl text-body font-medium">
+                    단순히 엑셀을 빠르게 다루는 것이 아닙니다.<br>
+                    시스템 업로드 이전에 <b>휴먼 에러를 원천 차단</b>하는 데이터 파이프라인을 구축합니다.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-200 mb-8">
+                <h3 class="text-2xl font-bold mb-5 text-gray-900">어떻게 '오류율 0%'를 보장하는가?</h3>
+                <p class="text-lg text-gray-600 mb-10 text-body">
+                    다양한 파트너사가 전달하는 비표준 데이터, 예를 들어 상품 코드나 가격 등을 수기로 취합하는 것은 필연적인 사고를 낳습니다. <b>3단계 엑셀 데이터 엔지니어링</b>을 통해 리스크를 완벽히 통제합니다.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <div class="p-7 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="flex items-center justify-center w-6 h-6 rounded bg-blue-100 text-blue-700 font-extrabold text-sm shrink-0">1</div>
+                            <h4 class="font-extrabold text-lg text-blue-600 leading-none mt-0.5">유효성 검사 강제</h4>
+                        </div>
+                        <p class="text-sm text-gray-600 text-body">
+                            파트너사 입력 템플릿 단계부터 데이터 유효성 검사를 적용해 규격 외 사이즈나 음수 금액 등의 오기입을 시스템적으로 저장 불가 처리합니다.
+                        </p>
+                    </div>
+                    <div class="p-7 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="flex items-center justify-center w-6 h-6 rounded bg-green-100 text-green-700 font-extrabold text-sm shrink-0">2</div>
+                            <h4 class="font-extrabold text-lg text-green-600 leading-none mt-0.5">복합 함수 맵핑</h4>
+                        </div>
+                        <p class="text-sm text-gray-600 text-body">
+                            INDEX/MATCH, IFERROR 등의 함수를 조합하여 파트너사의 고유 상품 코드를 리셀 커머스 플랫폼의 내부 시스템 표준 코드와 자동으로 맵핑합니다.
+                        </p>
+                    </div>
+                    <div class="p-7 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="flex items-center justify-center w-6 h-6 rounded bg-red-100 text-red-700 font-extrabold text-sm shrink-0">3</div>
+                            <h4 class="font-extrabold text-lg text-red-600 leading-none mt-0.5">교차 검증 시각화</h4>
+                        </div>
+                        <p class="text-sm text-gray-600 text-body">
+                            조건부 서식을 활용해 재고 수량 불일치나 필수 값 누락 등 잠재적 오류가 발생한 셀을 붉은색으로 강제 표시하여 검수자의 실수를 차단합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100">
+                    <h4 class="font-bold text-center text-gray-900 mb-6 text-lg">📊 검증 템플릿 도입 전후 오류 발생 빈도 비교</h4>
+                    <div class="chart-container">
+                        <canvas id="errorChart"></canvas>
+                    </div>
+                    <div class="text-right text-[11px] text-gray-400 mt-4 font-semibold">
+                        * 출처: 이전 직무 실무 성과 지표 (보안 규정 준수를 위해 원본 수치를 가공 및 비율화함)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Offline Manual -->
+        <section id="section-3" class="content-section max-w-5xl mx-auto hidden animate-fade-in">
+            <div class="mb-12">
+                <span class="inline-block px-3 py-1 bg-black text-white text-xs font-bold rounded-full mb-5 shadow-sm">3. 오프라인 현장 매뉴얼</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight leading-[1.3] text-gray-900">
+                    병목 없는 현장을 위한 '분산형 액션 플레이북'
+                </h2>
+                <p class="text-gray-600 text-lg md:text-xl text-body font-medium">
+                    현장의 단기 스태프들이 중앙 지휘부의 지시를 기다리느라 발생하는<br>
+                    <b>초동 대응의 골든타임 누수</b>를 선제적으로 방어합니다.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-200">
+                <div class="insight-box p-8 mb-10 rounded-xl shadow-inner border-l-blue-600 bg-blue-50">
+                    <h4 class="font-bold text-blue-900 mb-3 text-lg flex items-center gap-2"><span>💡</span> 오프라인 현장 관제 인사이트</h4>
+                    <p class="text-base text-gray-800 text-body">
+                        대규모 팝업이나 e스포츠 행사 시 가장 큰 리스크는 <b>'중앙 지휘부와의 소통이 지연될 때'</b> 발생합니다.<br><br>
+                        QR 인증 서버가 마비되거나 특정 굿즈가 예상보다 빨리 품절되었을 때, 스태프가 지시를 기다리지 않고 스스로 판단하여 즉각 행동할 수 있는 <b>'상황별 권한 위임 매뉴얼'</b>이 고객 경험 훼손을 막는 유일한 방패입니다.
+                    </p>
+                    <div class="text-right text-[11px] text-blue-400 mt-3 font-semibold">
+                        * 출처: 2023년 대형 오프라인 스튜디오 총괄 운영 회고 발췌
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-bold mb-4 text-center text-gray-900">팝업 및 티켓팅 위기 대응 시뮬레이터</h3>
+                <p class="text-base text-center text-gray-500 mb-8">스태프용 모바일 가이드라인 예시입니다. 버튼을 클릭하여 상황별 대응을 확인하세요.</p>
+                
+                <div class="flex flex-wrap gap-3 justify-center mb-8">
+                    <button class="playbook-btn active bg-black text-white border border-gray-900 px-6 py-3 rounded-lg text-sm font-bold transition shadow-md" data-scenario="pos">💳 결제망 마비</button>
+                    <button class="playbook-btn bg-white text-gray-700 border border-gray-300 px-6 py-3 rounded-lg text-sm font-bold hover:bg-gray-50 transition shadow-sm" data-scenario="stock">🚫 굿즈 품절 항의</button>
+                    <button class="playbook-btn bg-white text-gray-700 border border-gray-300 px-6 py-3 rounded-lg text-sm font-bold hover:bg-gray-50 transition shadow-sm" data-scenario="safety">⚠️ 대기열 인파 밀집</button>
+                </div>
+
+                <!-- Playbook Result Area -->
+                <div id="playbook-result" class="bg-white p-8 rounded-xl border border-gray-200 min-h-[300px] shadow-sm">
+                    <!-- Default content loaded via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Live Tracking -->
+        <section id="section-4" class="content-section max-w-5xl mx-auto hidden animate-fade-in">
+            <div class="mb-12">
+                <span class="inline-block px-3 py-1 bg-black text-white text-xs font-bold rounded-full mb-5 shadow-sm">4. 실시간 위기 대응망</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight leading-[1.3] text-gray-900">
+                    보안 리스크를 배제한 AI 위기 대응망
+                </h2>
+                <p class="text-gray-600 text-lg md:text-xl text-body font-medium">
+                    트래픽이 폭증하는 한정판 드랍 시기,<br>
+                    기업의 <b>데이터 보안 규정을 완벽히 준수</b>하며 AI로 위기 대응 속도를 극대화합니다.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-200 mb-8">
+                
+                <div class="border-l-4 border-red-500 bg-red-50 p-8 mb-10 rounded-r-xl shadow-inner">
+                    <h4 class="font-bold text-red-800 mb-3 text-lg flex items-center gap-2">
+                        <span class="text-2xl">🛡️</span> 핵심 방어: AI 도입 시 데이터 컴플라이언스 준수
+                    </h4>
+                    <p class="text-base text-gray-800 text-body">
+                        생성형 AI를 실무에 도입할 때 가장 경계해야 할 부분은 <b>'고객 개인정보 및 결제 데이터 유출'</b>입니다.<br><br>
+                        제가 기획하는 시스템은 개인식별정보를 철저히 배제합니다. 오직 <b>'에러 코드명(예: PG_Timeout_504)'</b>과 <b>'초당 에러 발생 건수'</b>라는 익명화된 메타 데이터만을 프롬프트로 전송하여, 외부 유출 위험 없이 유관 부서 전파용 리포트와 고객센터 공지 초안을 안전하게 자동 생성합니다.
+                    </p>
+                </div>
+
+                <h3 class="text-2xl font-bold mb-8 text-center text-gray-900">드랍 및 티켓팅 실시간 관제 대시보드</h3>
+                
+                <div class="chart-container mb-8">
+                    <canvas id="liveTrackingChart"></canvas>
+                </div>
+                <div class="text-right text-[11px] text-gray-400 mb-10 font-semibold">
+                    * 출처: MMORPG 대규모 패치 트래픽 및 에러 로그 상관관계 분석 데이터 (보안을 위해 임의 수치 적용)
+                </div>
+
+                <!-- Terminal UI -->
+                <div class="bg-gray-900 text-green-400 p-8 rounded-xl font-mono text-base leading-relaxed shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-red-500"></div>
+                    <div class="flex justify-between items-center mb-6 border-b border-gray-700 pb-4">
+                        <span class="text-gray-400 font-bold text-sm tracking-widest">// AI 시스템 알림 (메타데이터 기반 자동 생성)</span>
+                        <span class="text-xs bg-red-600 text-white px-3 py-1 rounded-full font-bold animate-pulse">긴급</span>
+                    </div>
+                    <p class="mb-2">> [발생 시간] 14:03:22 (드랍 오픈 3분 경과)</p>
+                    <p class="mb-5">> [이상 감지] 결제 API <span class="text-red-400 font-bold">'Timeout_Error_504'</span> 1분 내 500건 돌파</p>
+                    
+                    <p class="mb-3 font-bold text-white bg-gray-800 inline-block px-2 py-1 rounded">> [AI 분석 기반 즉각 조치 권고안]</p>
+                    <div class="pl-4 space-y-3">
+                        <p class="text-gray-300"><span class="text-blue-300">1. 개발 및 인프라팀:</span> 대기열 서버 진입 기준 상향 조정 및 트래픽 분산 요청 요망</p>
+                        <p class="text-gray-300"><span class="text-yellow-300">2. 운영팀:</span> 결제 지연 공지 초안 도출 완료 (아래 텍스트를 즉시 공지사항에 등록하세요)</p>
+                        <div class="bg-gray-800 p-4 rounded text-gray-200 text-sm mt-2 border border-gray-700 cursor-pointer hover:border-gray-500 transition">
+                            "안녕하세요 리셀 커머스 플랫폼입니다. 현재 접속량 급증으로 결제가 일시 지연되고 있습니다. 고객님의 결제 내역은 안전하게 보관 중이며..." <span class="text-gray-500 text-xs ml-2">(클릭하여 복사)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Register ChartDataLabels plugin
+        Chart.register(ChartDataLabels);
+        Chart.defaults.font.family = "'Pretendard', sans-serif";
+
+        // Tab Navigation Logic with Smooth Scroll to Top
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('.content-section');
+        const mainContent = document.getElementById('main-content');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Update active state
+                navItems.forEach(nav => nav.classList.remove('active'));
+                item.classList.add('active');
+
+                // Toggle sections
+                const targetId = item.getAttribute('data-target');
+                sections.forEach(section => {
+                    if (section.id === targetId) {
+                        section.classList.remove('hidden');
+                        section.classList.add('block');
+                    } else {
+                        section.classList.remove('block');
+                        section.classList.add('hidden');
+                    }
+                });
+
+                // Scroll to top smoothly
+                if (mainContent) {
+                    mainContent.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Playbook Interactive Logic
+        const playbookBtns = document.querySelectorAll('.playbook-btn');
+        const playbookResult = document.getElementById('playbook-result');
+        
+        const scenarios = {
+            'pos': `<div class="text-left animate-fade-in">
+                        <div class="flex items-center gap-3 font-extrabold text-gray-900 mb-6 border-b border-gray-200 pb-4 text-xl">
+                            <span class="text-3xl">🚨</span> [상황] 현장 결제망 및 단말기 마비
+                        </div>
+                        <div class="mb-6 text-base font-bold text-red-700 bg-red-50 p-4 rounded-lg border border-red-100 text-body flex gap-2">
+                            <span>❌</span> <span><b>잘못된 대응:</b> "네트워크가 안됩니다. 본부팀 어떻게 할까요?" (지시 대기 중 고객 대기열 폭증)</span>
+                        </div>
+                        <div class="mb-4 text-base font-bold text-blue-700">✅ 올바른 대응 (사전 권한 위임 프로세스):</div>
+                        <ul class="list-none text-base text-gray-800 space-y-5 text-body pl-1">
+                            <li class="flex gap-4 items-start">
+                                <span class="text-lg bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">1</span> 
+                                <span class="pt-1"><b>즉각 매체 전환:</b> 사전 배포된 오프라인 전용 바코드 스캐너 및 수기 장부로 즉시 결제 내역 기록을 시작합니다.</span>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <span class="text-lg bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">2</span> 
+                                <span class="pt-1"><b>초동 고객 안내:</b> "통신 지연으로 수기 결제 진행 중이며, 영수증은 추후 일괄 발송됩니다." 스크립트를 즉각 발성합니다.</span>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <span class="text-lg bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">3</span> 
+                                <span class="pt-1"><b>사후 보고 원칙:</b> 현장 라인 통제가 정상화된 직후, 중앙 지휘부에 사후 보고를 진행합니다.</span>
+                            </li>
+                        </ul>
+                    </div>`,
+            'stock': `<div class="text-left animate-fade-in">
+                        <div class="flex items-center gap-3 font-extrabold text-gray-900 mb-6 border-b border-gray-200 pb-4 text-xl">
+                            <span class="text-3xl">⚠️</span> [상황] 핵심 굿즈 조기 품절로 인한 대기열 고객 항의
+                        </div>
+                        <div class="mb-6 text-base font-bold text-red-700 bg-red-50 p-4 rounded-lg border border-red-100 text-body flex gap-2">
+                            <span>❌</span> <span><b>잘못된 대응:</b> "저희도 어쩔 수 없습니다. 수량이 없어요." (부정적 브랜드 경험 확산 및 언쟁 발생)</span>
+                        </div>
+                        <div class="mb-4 text-base font-bold text-blue-700">✅ 올바른 대응 (고객 경험 방어 중심):</div>
+                        <ul class="list-none text-base text-gray-800 space-y-5 text-body pl-1">
+                            <li class="flex gap-4 items-start">
+                                <span class="text-lg bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">1</span> 
+                                <span class="pt-1"><b>시각적 차단:</b> 즉시 현장 안내판 및 외부 태블릿에 '품절' 라벨을 부착하여, 후미 진입 고객의 기대감을 조기에 차단합니다.</span>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <span class="text-lg bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">2</span> 
+                                <span class="pt-1"><b>우회로 제공:</b> "해당 상품은 리셀 커머스 플랫폼 앱 내 온라인 드랍 이벤트로 추가 확보될 예정입니다"라고 안내하며 전용 명함을 배포합니다.</span>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <span class="text-lg bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">3</span> 
+                                <span class="pt-1"><b>보상 전환:</b> 현장 대기 고객 한정 '무료 배송 쿠폰' 등 사전에 책정된 혜택 지급 프로세스로 즉각 전환합니다.</span>
+                            </li>
+                        </ul>
+                    </div>`,
+            'safety': `<div class="text-left animate-fade-in">
+                        <div class="flex items-center gap-3 font-extrabold text-gray-900 mb-6 border-b border-gray-200 pb-4 text-xl">
+                            <span class="text-3xl">🚧</span> [상황] 예상치 못한 외부 인파 밀집 (안전 리스크 감지)
+                        </div>
+                        <div class="mb-6 text-base font-bold text-red-700 bg-red-50 p-4 rounded-lg border border-red-100 text-body flex gap-2">
+                            <span>❌</span> <span><b>잘못된 대응:</b> "밀지 마세요! 위험합니다!" 고성만 지르며 물리적 통제를 시도 (통제력 상실 및 사고 위험 증가)</span>
+                        </div>
+                        <div class="mb-4 text-base font-bold text-blue-700">✅ 올바른 대응 (매뉴얼 기반 즉각 행동):</div>
+                        <ul class="list-none text-base text-gray-800 space-y-5 text-body pl-1">
+                            <li class="flex gap-4 items-start">
+                                <span class="text-lg bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">1</span> 
+                                <span class="pt-1"><b>물리적 동선 차단:</b> 팝업 내부 입장을 전면 대기시키고, 외부 대기열 통제 인력을 즉시 2배수로 전진 배치합니다.</span>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <span class="text-lg bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">2</span> 
+                                <span class="pt-1"><b>비상 동선 전개:</b> 사전에 기획된 '지그재그형 바리케이드'를 즉각 확충하여 직선형 압력을 분산시킵니다.</span>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <span class="text-lg bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">3</span> 
+                                <span class="pt-1"><b>긴급 연락망 가동:</b> 본부 보고를 생략하고, 주변 보안 요원 및 관할 관청(경찰 및 소방) 직통 연락망을 즉각 가동합니다.</span>
+                            </li>
+                        </ul>
+                    </div>`
+        };
+
+        // Initialize Playbook with first scenario
+        playbookResult.innerHTML = scenarios['pos'];
+
+        playbookBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // UI update
+                playbookBtns.forEach(b => {
+                    b.classList.remove('bg-black', 'text-white', 'border-gray-900', 'shadow-md');
+                    b.classList.add('bg-white', 'text-gray-700', 'border-gray-300', 'shadow-sm');
+                });
+                btn.classList.remove('bg-white', 'text-gray-700', 'border-gray-300', 'shadow-sm');
+                btn.classList.add('bg-black', 'text-white', 'border-gray-900', 'shadow-md');
+                
+                // Content update
+                const type = btn.getAttribute('data-scenario');
+                playbookResult.innerHTML = scenarios[type];
+            });
+        });
+
+        // Chart 1: Error Type Reduction
+        const ctxError = document.getElementById('errorChart').getContext('2d');
+        new Chart(ctxError, {
+            type: 'bar',
+            data: {
+                labels: ['필수값 누락', '상품코드 오기입', '수량 및 단가 오류', '업로드 포맷 에러'],
+                datasets: [
+                    {
+                        label: '수작업 시 발생 빈도',
+                        data: [45, 30, 15, 10],
+                        backgroundColor: '#e2e8f0', // gray-200
+                        borderRadius: 4,
+                        datalabels: {
+                            display: false 
+                        }
+                    },
+                    {
+                        label: '템플릿 도입 후 (완벽 통제)',
+                        data: [0.5, 0.5, 0.5, 0.5], // Anchor for label
+                        backgroundColor: '#111827', // black
+                        borderRadius: 4,
+                        datalabels: {
+                            display: true,
+                            color: '#111827',
+                            anchor: 'end',
+                            align: 'end',
+                            offset: 2,
+                            font: { weight: 'bold', size: 14 },
+                            formatter: function() {
+                                return '0건'; 
+                            }
+                        }
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                layout: {
+                    padding: { top: 30 } 
+                },
+                scales: { 
+                    y: { 
+                        beginAtZero: true, 
+                        max: 50, 
+                        title: { display: true, text: '월평균 발생 건수', font: { weight: 'bold'} },
+                        grid: { borderDash: [5, 5], color: '#f1f5f9' },
+                        ticks: { font: { size: 12 } }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { font: { size: 13, weight: '600' } }
+                    }
+                },
+                plugins: {
+                    legend: { 
+                        position: 'top', 
+                        labels: { usePointStyle: true, boxWidth: 8, font: { size: 13, weight: 'bold' }, padding: 20 } 
+                    },
+                    tooltip: {
+                        padding: 12,
+                        backgroundColor: 'rgba(0,0,0,0.8)',
+                        titleFont: { size: 14 },
+                        bodyFont: { size: 13 },
+                        callbacks: {
+                            label: function(context) {
+                                if(context.datasetIndex === 1) return '도입 후: 0건 달성 (100% 감소)';
+                                return context.dataset.label + ': ' + context.raw + '건';
+                            },
+                            afterBody: function(context) {
+                                if(context[0].datasetIndex === 1) return ''; 
+                                const tips = [
+                                    "해결책: 데이터 유효성 검사 적용",
+                                    "해결책: 엑셀 함수 자동화",
+                                    "해결책: 조건부 서식 시각화",
+                                    "해결책: 매크로 기반 포맷 추출"
+                                ];
+                                return '\n💡 ' + tips[context[0].dataIndex];
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart 2: Live Tracking
+        const ctxLive = document.getElementById('liveTrackingChart').getContext('2d');
+        new Chart(ctxLive, {
+            type: 'line',
+            data: {
+                labels: ['오픈 10분 전', '오픈 5분 전', '드랍 오픈', '오픈 3분 후 (AI 감지)', '오픈 10분 후', '오픈 30분 후'],
+                datasets: [
+                    {
+                        label: '유저 트래픽 (접속자 지수)',
+                        data: [10, 25, 100, 95, 70, 30],
+                        borderColor: '#94a3b8',
+                        backgroundColor: 'rgba(148, 163, 184, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: '결제 및 통신 에러 발생 건수',
+                        data: [0, 2, 5, 45, 10, 2], // Spike at T+3m
+                        borderColor: '#dc2626', // red-600
+                        borderWidth: 3,
+                        pointBackgroundColor: ['#dc2626', '#dc2626', '#dc2626', '#111', '#dc2626', '#dc2626'],
+                        pointRadius: [4, 4, 4, 10, 4, 4], // Highlight trigger point
+                        pointHoverRadius: 8,
+                        tension: 0.4,
+                        yAxisID: 'y1'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                scales: { 
+                    y: { 
+                        beginAtZero: true, 
+                        type: 'linear', 
+                        display: true, 
+                        position: 'left',
+                        title: { display: true, text: '접속자 지수', font: { weight: 'bold'} },
+                        grid: { borderDash: [5, 5], color: '#f1f5f9' }
+                    },
+                    y1: { 
+                        beginAtZero: true, 
+                        type: 'linear', 
+                        display: true, 
+                        position: 'right',
+                        grid: { drawOnChartArea: false },
+                        title: { display: true, text: '에러 발생 건수', font: { weight: 'bold'} }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { font: { weight: '600', size: 11 } }
+                    }
+                },
+                plugins: {
+                    datalabels: { display: false },
+                    legend: { 
+                        position: 'top', 
+                        labels: { usePointStyle: true, boxWidth: 8, font: { size: 13, weight: 'bold' } } 
+                    },
+                    tooltip: {
+                        padding: 14,
+                        backgroundColor: 'rgba(0,0,0,0.85)',
+                        titleFont: { size: 14 },
+                        bodyFont: { size: 14 },
+                        callbacks: {
+                            title: function(context) {
+                                let title = context[0].label;
+                                if (title === '오픈 3분 후 (AI 감지)') return title + ' 🚨 메타데이터 AI 분석 시작';
+                                return title;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

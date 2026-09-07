@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFS Data Assistant - Interactive Archive</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#2563eb', 
+                            dark: '#0f172a',
+                            light: '#f8fafc',
+                            accent: '#ef4444' 
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', 'sans-serif'],
+                        mono: ['D2Coding', 'Consolas', 'monospace']
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-y': 'bounceY 1.5s infinite',
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                        'float': 'float 3s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        'bounceY': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10%)' },
+                        },
+                        'fadeInUp': {
+                            '0%': { opacity: '0', transform: 'translateY(15px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            background-color: #f1f5f9; 
+            color: #334155; 
+            overflow-x: hidden; 
+            /* 한국어 단어 단위 줄바꿈 방지 */
+            word-break: keep-all; 
+        }
+        
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            height: 280px;
+            max-height: 350px;
+        }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        #toast {
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%) translateY(-100px);
+            opacity: 0; transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); z-index: 1000;
+        }
+        #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+    </style>
+</head>
+<body class="antialiased text-slate-800">
+
+    <!-- Toast Notification -->
+    <div id="toast" class="bg-slate-800 text-white px-6 py-3 rounded-full shadow-lg font-bold flex items-center gap-2 z-50">
+        ✅ <span id="toast-msg">복사되었습니다!</span>
+    </div>
+
+    <!-- Main Container -->
+    <main class="max-w-5xl mx-auto px-4 py-12 space-y-24">
+
+        <!-- Header / Hero Section -->
+        <section class="text-center space-y-6 reveal active mt-8">
+            <!-- Trendy Profile Badge -->
+            <div class="inline-flex items-center gap-3 bg-white/80 backdrop-blur border border-blue-100 shadow-sm px-6 py-2 rounded-full mb-4">
+                <span class="flex h-3 w-3 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-blue"></span>
+                </span>
+                <span class="text-slate-800 font-bold text-lg tracking-tight">허재석</span>
+                <span class="text-slate-300">|</span>
+                <span class="text-brand-blue font-medium text-sm">AI Data & Workflow Specialist</span>
+            </div>
+
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                데이터의 흐름을 <span class="text-brand-blue">정확히 읽어내고,</span><br>
+                AI로 최적의 <span class="text-brand-blue">솔루션을 설계</span>합니다.
+            </h1>
+            <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed mt-4">
+                방대한 물류 데이터 정제, 복잡한 DB 쿼리 추출, 긴급 글로벌 커뮤니케이션까지.<br>
+                생성형 AI를 실무 도구로 완벽히 통제하는 압도적인 효율성으로<br>
+                CFS의 업무 프로세스 최적화 방안을 정리했습니다.
+            </p>
+        </section>
+
+        <!-- Interactive Section: Scenario 1 (Excel Data) -->
+        <section class="reveal">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="text-3xl">📊</span>
+                <div>
+                    <h2 class="text-2xl font-bold">도전 1. 수만 건의 복잡한 조건부 데이터 정제</h2>
+                    <p class="text-slate-500 text-sm">목표: 다중 조건 데이터의 정확하고 빠른 추출 및 핵심 지표(불량률) 산출</p>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-2 md:p-6 border-t-4 border-slate-700">
+                <div class="flex flex-col md:flex-row gap-4 items-stretch">
+                    <!-- Left: Problem -->
+                    <div class="flex-1 bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex flex-col">
+                        <div class="text-xs font-bold text-slate-400 mb-2 uppercase tracking-wider">Situation: 로우 데이터(Raw Data) 입수</div>
+                        <div class="flex-1 bg-slate-50 rounded p-4 border border-slate-100 font-mono text-xs overflow-hidden relative">
+                            <div class="text-slate-700 font-bold mb-2 text-sm">📝 일일 재고 현황.xlsx (총 52,140건)</div>
+                            <div class="text-slate-600 leading-relaxed mb-4">
+                                A열: 입고일<br>
+                                B열: 바코드 번호<br>
+                                C열: 유통기한 (일부 데이터 Null)<br>
+                                D열: 검수상태 (정상/에러 등 혼재)
+                            </div>
+                            <div class="text-slate-600 p-3 bg-white rounded border border-slate-200 shadow-sm font-sans leading-relaxed">
+                                <strong class="text-brand-blue font-bold">🎯 요구사항:</strong><br>
+                                "검수상태가 '에러'이면서 유통기한이 '빈칸'인 항목만 필터링하여 일별 불량률 추이를 즉시 보고할 것."
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-50 to-transparent opacity-30 pointer-events-none"></div>
+                        </div>
+                    </div>
+
+                    <!-- Middle: Interaction Button -->
+                    <div class="flex flex-col items-center justify-center py-6 md:py-0 w-full md:w-auto px-4">
+                        <div class="animate-bounce-y mb-3 bg-white px-4 py-2 rounded-full shadow border border-blue-100 text-[12px] font-bold text-brand-blue whitespace-nowrap">
+                            👇 AI 솔루션을 확인해보세요
+                        </div>
+                        <button id="btn-run-1" onclick="runScenario1()" class="group relative bg-brand-blue hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full shadow-lg transition-all hover:scale-105 active:scale-95 flex flex-col items-center gap-1 w-full md:w-auto z-20">
+                            <span class="text-2xl animate-float">✨</span>
+                            <span class="text-sm">엑셀 수식 도출</span>
+                        </button>
+                    </div>
+
+                    <!-- Right: Solution -->
+                    <div id="solution-1" class="flex-1 bg-slate-900 rounded-xl p-4 shadow-lg flex flex-col opacity-50 grayscale transition-all duration-500 relative">
+                        <div id="lock-1" class="absolute inset-0 flex flex-col items-center justify-center bg-slate-900/80 rounded-xl z-10 backdrop-blur-sm transition-opacity">
+                            <span class="text-4xl mb-2">🔒</span>
+                            <span class="text-white text-sm font-bold text-center px-4">버튼을 눌러<br>데이터를 추출하세요</span>
+                        </div>
+                        <div class="flex justify-between items-center mb-2">
+                            <div class="text-xs font-bold text-green-400 uppercase tracking-wider">After: 처리 결과</div>
+                        </div>
+                        <div class="flex-1 bg-black rounded p-3 font-mono text-xs overflow-y-auto flex flex-col">
+                            <div id="terminal-1" class="text-slate-300 leading-relaxed mb-2"></div>
+                            
+                            <!-- Formula Output -->
+                            <div id="formula-result" class="hidden p-3 bg-slate-800 border border-green-500/30 rounded text-green-400 break-all transition-all">
+                                <span class="text-white text-[11px] block mb-1">▶ 도출된 엑셀 수식:</span>
+                                <span class="font-bold text-base">=COUNTIFS(D:D, "에러", C:C, "")</span>
+                            </div>
+
+                            <!-- Simulated Data Dashboard -->
+                            <div id="data-result-1" class="hidden mt-2 p-3 bg-white border border-slate-200 rounded text-slate-800 flex-1 flex-col shadow-inner">
+                                <div class="text-[11px] font-bold text-slate-600 mb-2 flex items-center justify-between border-b border-slate-100 pb-1">
+                                    <span>📊 대시보드 리포트 (추출 완료)</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-3 flex-1">
+                                    <div class="bg-red-50 p-3 rounded border border-red-100 flex flex-col items-center justify-center">
+                                        <div class="text-xs text-slate-500 font-sans whitespace-nowrap mb-1">조건 일치 (에러+빈칸)</div>
+                                        <div class="font-extrabold text-red-600 text-2xl tracking-tight">1,245<span class="text-sm text-red-400 font-medium ml-1">건</span></div>
+                                    </div>
+                                    <div class="bg-blue-50 p-3 rounded border border-blue-100 flex flex-col items-center justify-center">
+                                        <div class="text-xs text-slate-500 font-sans whitespace-nowrap mb-1">전체 대비 불량률</div>
+                                        <div class="font-extrabold text-blue-600 text-2xl tracking-tight">2.38<span class="text-sm text-blue-400 font-medium ml-1">%</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Section: Scenario 2 (SQL Generation) -->
+        <section class="reveal">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="text-3xl">🗄️</span>
+                <div>
+                    <h2 class="text-2xl font-bold">도전 2. 개발자 없이 복잡한 DB 데이터 추출 (SQL)</h2>
+                    <p class="text-slate-500 text-sm">목표: 일상적인 비즈니스 언어로 된 요청을 해석하여 완벽한 SQL JOIN 쿼리로 변환 및 실행</p>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-2 md:p-6 border-t-4 border-indigo-500">
+                <div class="flex flex-col md:flex-row gap-4 items-stretch">
+                    <!-- Left: Problem -->
+                    <div class="flex-1 bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex flex-col">
+                        <div class="text-xs font-bold text-slate-400 mb-2 uppercase tracking-wider">Situation: 매니저의 긴급 데이터 추출 요청</div>
+                        <div class="flex-1 bg-slate-50 rounded p-3 border border-slate-100 font-mono text-xs overflow-hidden relative space-y-3">
+                            <div class="p-3 bg-blue-50 border border-blue-100 rounded text-slate-800 shadow-sm leading-relaxed font-sans text-sm">
+                                "재석님, 이번 주 <strong>출고 지연된 건 중에서 서울 센터 물량만</strong> 센터명과 상품아이디 포함해서 리스트 뽑아주세요!"
+                            </div>
+                            <div class="text-slate-600 mt-2 p-3 bg-white border border-slate-200 rounded leading-relaxed">
+                                [보유 스키마 정보]<br>
+                                - <strong class="text-indigo-600">Orders Table:</strong> id, item_id, center_code, status<br>
+                                - <strong class="text-indigo-600">Centers Table:</strong> center_code, center_name, region
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-50 to-transparent opacity-30 pointer-events-none"></div>
+                        </div>
+                    </div>
+
+                    <!-- Middle: Interaction Button -->
+                    <div class="flex flex-col items-center justify-center py-6 md:py-0 w-full md:w-auto px-4">
+                        <div class="animate-bounce-y mb-3 bg-white px-4 py-2 rounded-full shadow border border-indigo-100 text-[12px] font-bold text-indigo-600 whitespace-nowrap">
+                            👇 클릭 한 번으로 쿼리 생성
+                        </div>
+                        <button id="btn-run-2" onclick="runScenario2()" class="group relative bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded-full shadow-lg transition-all hover:scale-105 active:scale-95 flex flex-col items-center gap-1 w-full md:w-auto z-20">
+                            <span class="text-2xl animate-float">⚡</span>
+                            <span class="text-sm">SQL 데이터 추출</span>
+                        </button>
+                    </div>
+
+                    <!-- Right: Solution -->
+                    <div id="solution-2" class="flex-1 bg-[#1e1e1e] rounded-xl p-4 shadow-lg flex flex-col opacity-50 grayscale transition-all duration-500 relative">
+                        <div id="lock-2" class="absolute inset-0 flex flex-col items-center justify-center bg-[#1e1e1e]/80 rounded-xl z-10 backdrop-blur-sm transition-opacity">
+                            <span class="text-4xl mb-2">🔒</span>
+                            <span class="text-white text-sm font-bold text-center px-4">AI를 통해<br>DB를 조회하세요</span>
+                        </div>
+                        <div class="flex justify-between items-center mb-2">
+                            <div class="text-xs font-bold text-indigo-400 uppercase tracking-wider">After: 쿼리 생성 결과</div>
+                        </div>
+                        <div class="flex-1 bg-[#151515] rounded p-2 font-mono text-xs overflow-y-auto text-slate-300 flex flex-col border border-[#333]">
+                            <div id="terminal-2" class="leading-relaxed px-1 mb-1"></div>
+
+                            <!-- SQL Output -->
+                            <div id="sql-result" class="hidden p-3 bg-[#252526] border-l-2 border-indigo-500 rounded-r break-all transition-all">
+                                <div class="text-slate-400 mb-2 text-[10px] font-sans">▶ 도출된 쿼리문:</div>
+<pre class="text-[13px] text-blue-300 leading-tight">
+<span class="text-indigo-400 font-bold">SELECT</span> o.id, o.item_id, c.center_name 
+<span class="text-indigo-400 font-bold">FROM</span> Orders o
+<span class="text-indigo-400 font-bold">JOIN</span> Centers c <span class="text-indigo-400 font-bold">ON</span> o.center_code = c.center_code
+<span class="text-indigo-400 font-bold">WHERE</span> o.status = <span class="text-yellow-300">'Delayed'</span> 
+  <span class="text-indigo-400 font-bold">AND</span> o.center_code = <span class="text-yellow-300">'SEL'</span>;</pre>
+                            </div>
+
+                            <!-- Simulated Data Table Result -->
+                            <div id="data-result-2" class="hidden mt-2 bg-white rounded overflow-hidden text-slate-800 font-sans flex-1 flex-col shadow-inner border border-slate-300">
+                                <div class="text-[11px] font-bold text-slate-700 bg-slate-100 px-3 py-2 border-b border-slate-300 flex justify-between items-center shadow-sm">
+                                    <span class="flex items-center gap-1"><span class="text-sm">🗃️</span> Result Grid</span>
+                                    <span class="text-green-700 font-mono text-[10px] bg-green-100 px-2 py-0.5 rounded border border-green-200">Success: 3 rows fetched</span>
+                                </div>
+                                <div class="overflow-x-auto bg-slate-50 p-1">
+                                    <table class="w-full text-[13px] text-left border-collapse bg-white border border-slate-200 shadow-sm">
+                                        <thead class="bg-slate-100 text-slate-600 border-b-2 border-slate-300">
+                                            <tr class="divide-x divide-slate-200">
+                                                <th class="px-3 py-1.5 font-bold whitespace-nowrap">id</th>
+                                                <th class="px-3 py-1.5 font-bold whitespace-nowrap">item_id</th>
+                                                <th class="px-3 py-1.5 font-bold whitespace-nowrap">center_name</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-slate-200 text-slate-700">
+                                            <tr class="divide-x divide-slate-200 hover:bg-blue-50 transition-colors">
+                                                <td class="px-3 py-1.5 font-mono">ORD-8911</td>
+                                                <td class="px-3 py-1.5 font-mono">ITM-A102</td>
+                                                <td class="px-3 py-1.5 whitespace-nowrap">서울 센터</td>
+                                            </tr>
+                                            <tr class="divide-x divide-slate-200 hover:bg-blue-50 transition-colors">
+                                                <td class="px-3 py-1.5 font-mono">ORD-8914</td>
+                                                <td class="px-3 py-1.5 font-mono">ITM-B441</td>
+                                                <td class="px-3 py-1.5 whitespace-nowrap">서울 센터</td>
+                                            </tr>
+                                            <tr class="divide-x divide-slate-200 hover:bg-blue-50 transition-colors">
+                                                <td class="px-3 py-1.5 font-mono">ORD-8920</td>
+                                                <td class="px-3 py-1.5 font-mono">ITM-C901</td>
+                                                <td class="px-3 py-1.5 whitespace-nowrap">서울 센터</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Section: Scenario 3 (Global Comm) -->
+        <section class="reveal">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="text-3xl">🌍</span>
+                <div>
+                    <h2 class="text-2xl font-bold">도전 3. 외국인 임원진 대상 긴급 이슈 보고</h2>
+                    <p class="text-slate-500 text-sm">목표: 현장의 파편화된 한국어 상황 보고를 '구조화된 비즈니스 영문 이메일'로 즉각 변환</p>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-2 md:p-6 bg-slate-50 border-t-4 border-yellow-400">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Left: Kakao Input -->
+                    <div class="bg-[#fef01b] rounded-xl p-4 shadow-sm relative flex flex-col">
+                        <div class="text-xs font-bold text-slate-600 mb-3 border-b border-yellow-300 pb-2">💬 현장 매니저 리포트 (02:15 AM)</div>
+                        <div class="space-y-2 flex-1">
+                            <div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm inline-block max-w-[95%] leading-relaxed">
+                                담당자님, 신규 도입 단말기 50대 와이파이 연결 끊김 이슈 발생했습니다.
+                            </div>
+                            <div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm inline-block max-w-[95%] leading-relaxed">
+                                피킹 45분 지연됐는데 구형 기기로 롤백해서 정상화했습니다. 지연 물량은 7시 전까지 커버 가능합니다.
+                            </div>
+                            <div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm inline-block max-w-[95%] leading-relaxed">
+                                디렉터님께 긴급 보고 부탁드립니다. IT팀과는 오전 중 회의 잡겠습니다.
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 flex flex-col items-center justify-center relative">
+                            <div class="animate-bounce-y mb-3 bg-white px-4 py-2 rounded-full shadow border border-yellow-200 text-[12px] font-bold text-slate-700 whitespace-nowrap">
+                                👇 영문 번역 & 구조화 실행
+                            </div>
+                            <button onclick="runScenario3()" class="bg-slate-800 text-white px-6 py-4 rounded-full font-bold shadow-lg hover:bg-slate-700 transition-all flex items-center justify-center gap-2 group w-full z-20">
+                                <span>글로벌 비즈니스 포맷 변환</span>
+                                <span class="group-hover:translate-x-1 transition-transform">➡️</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right: Email Output UI -->
+                    <div id="email-ui" class="bg-white rounded-xl shadow-md border border-slate-200 flex flex-col hidden-scale opacity-50 pointer-events-none transition-all duration-500 h-full min-h-[300px]">
+                        <div class="border-b border-slate-100 p-3 bg-slate-50 rounded-t-xl flex justify-between items-center">
+                            <div class="flex gap-2">
+                                <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                            </div>
+                            <span class="text-xs text-slate-400 font-mono">New Message</span>
+                        </div>
+
+                        <div class="p-4 border-b border-slate-100 space-y-2 text-sm bg-white">
+                            <div class="flex gap-2"><span class="text-slate-400 w-12">To:</span> <span class="font-bold">John.Director@cfs.com</span></div>
+                            <div class="flex gap-2"><span class="text-slate-400 w-12">Subject:</span> <span class="font-bold text-brand-accent">[Urgent] Night Shift Delay Resolved - Network Issue</span></div>
+                        </div>
+                        
+                        <div class="p-4 flex-1 text-sm text-slate-700 space-y-3 overflow-y-auto bg-white" id="email-body">
+                            <!-- Injected by JS -->
+                        </div>
+
+                        <div class="p-3 bg-slate-50 rounded-b-xl border-t border-slate-100 flex justify-end gap-2 opacity-0 transition-opacity duration-500" id="email-actions">
+                            <button onclick="toggleLang()" class="px-4 py-1.5 text-xs font-bold text-slate-600 bg-white border border-slate-200 rounded hover:bg-slate-100 transition-colors shadow-sm">🇰🇷 한국어 번역 보기</button>
+                            <button onclick="copyTextDirect('email-body-text', '보고서가 복사되었습니다!')" class="px-5 py-1.5 text-xs font-bold text-white bg-brand-blue rounded hover:bg-blue-700 shadow flex items-center gap-1 transition-colors">
+                                <span>Copy</span> 📝
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Validation Chart -->
+        <section class="reveal bg-white rounded-2xl p-8 shadow-sm border border-slate-200 text-center">
+            <h3 class="text-2xl font-bold mb-3">성과 요약: 도구 활용이 만드는 압도적인 시간 차이</h3>
+            <p class="text-slate-500 text-base mb-8">업무의 본질을 정확히 이해하고 AI를 활용할 때, <strong>가장 빠르고 완벽한 문제 해결</strong>이 가능합니다.</p>
+            
+            <div class="chart-container">
+                <canvas id="impactChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Final Closing Section & Contact (Morphing Buttons) -->
+        <section class="reveal bg-slate-900 text-white rounded-2xl p-8 md:p-12 text-center shadow-xl mb-12 relative overflow-hidden">
+            <!-- Background Decoration -->
+            <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                <div class="absolute -top-20 -left-20 w-64 h-64 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl"></div>
+                <div class="absolute top-20 -right-20 w-72 h-72 bg-indigo-500 rounded-full mix-blend-screen filter blur-3xl"></div>
+            </div>
+            
+            <div class="relative z-10 flex flex-col items-center">
+                <h3 class="text-3xl font-extrabold mb-4 tracking-tight">업무 효율 개선 효과를 정리했습니다</h3>
+                <p class="text-slate-300 text-sm md:text-base max-w-2xl mx-auto mb-10 leading-relaxed word-break-keep">
+                    기술이나 코딩 지식 자체보다 더 중요한 것은<br class="hidden sm:block">
+                    <strong>'문제를 끝까지 파고들어 해답을 찾아내는 집요함'</strong>이라고 생각합니다.<br><br>
+                    AI라는 강력한 도구를 무기로 삼아 복잡한 데이터를 단순화하고,<br class="hidden sm:block">
+                    CFS 물류 현장에 필요한 오퍼레이션 개선안을 정리했습니다.
+                </p>
+                
+                <!-- Contact Action Area -->
+                <div id="contact-area" class="w-full flex justify-center relative min-h-[72px]">
+                    
+                    <!-- Initial Button -->
+                    <button id="show-contact-btn" onclick="revealContact()" class="bg-brand-blue hover:bg-blue-600 text-white px-8 py-4 rounded-full font-bold transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] flex items-center justify-center gap-2 mx-auto w-full sm:w-auto hover:-translate-y-1 absolute z-10">
+                        <span class="text-lg">🚀</span>
+                        <span>프로젝트 제안을 위한 연락처 확인</span>
+                    </button>
+
+                    <!-- Revealed Contact Info (Replaces the button) -->
+                    <div id="contact-info-card" class="hidden flex-col sm:flex-row gap-4 animate-fade-in-up w-full justify-center absolute top-0 left-0 right-0 z-0 opacity-0 transition-opacity duration-500 mx-auto max-w-[600px]">
+                        <!-- Phone -->
+                        <button onclick="copyTextDirect('010-7913-4992', '전화번호가 복사되었습니다!')" class="group relative bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-6 py-4 rounded-full font-mono text-lg transition-all flex items-center justify-center gap-3 w-full sm:w-auto hover:-translate-y-1 shadow-lg">
+                            <span class="text-xl">📞</span>
+                            <span class="tracking-wider font-bold text-slate-100">010-7913-4992</span>
+                            <span class="absolute -top-3 right-0 bg-brand-blue text-xs font-sans font-bold px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">복사하기</span>
+                        </button>
+                        <!-- Email -->
+                        <button onclick="copyTextDirect('wotjr423@naver.com', '이메일이 복사되었습니다!')" class="group relative bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-6 py-4 rounded-full font-mono text-lg transition-all flex items-center justify-center gap-3 w-full sm:w-auto hover:-translate-y-1 shadow-lg">
+                            <span class="text-xl">✉️</span>
+                            <span class="font-bold text-slate-100">wotjr423@naver.com</span>
+                            <span class="absolute -top-3 right-0 bg-brand-blue text-xs font-sans font-bold px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">복사하기</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // Scroll Reveal Animation (Intersection Observer for smooth performance)
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    }
+                });
+            }, { 
+                threshold: 0.1 
+            });
+
+            document.querySelectorAll(".reveal").forEach((el) => {
+                observer.observe(el);
+            });
+        });
+
+        // Toast Logic
+        function showToast(msg = "복사되었습니다!") {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
+        // Direct Text Copy (For Contact Info and Buttons)
+        function copyTextDirect(text, msg) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(msg);
+            });
+        }
+
+        // Contact Reveal Logic (Morphing style)
+        function revealContact() {
+            const btn = document.getElementById('show-contact-btn');
+            const card = document.getElementById('contact-info-card');
+            
+            // Fade out the button
+            btn.style.opacity = '0';
+            btn.style.transform = 'translateY(10px) scale(0.95)';
+            btn.style.pointerEvents = 'none';
+            
+            // Wait for fade out, then show the contact buttons
+            setTimeout(() => {
+                btn.style.display = 'none';
+                card.classList.remove('hidden');
+                card.classList.add('flex');
+                
+                // Trigger CSS transition for opacity
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                }, 50); 
+            }, 300);
+        }
+
+        // --- Scenario 1 (Excel Data) ---
+        let isScenario1Run = false;
+        async function runScenario1() {
+            if(isScenario1Run) return;
+            isScenario1Run = true;
+
+            const btn = document.getElementById('btn-run-1');
+            const solContainer = document.getElementById('solution-1');
+            const lock = document.getElementById('lock-1');
+            const terminal = document.getElementById('terminal-1');
+            const resultBox = document.getElementById('formula-result');
+            const dataResultBox = document.getElementById('data-result-1');
+
+            btn.innerHTML = '<span class="animate-spin text-2xl">⏳</span><span class="text-sm">분석 중...</span>';
+            btn.classList.replace('bg-brand-blue', 'bg-slate-600');
+            solContainer.classList.remove('grayscale', 'opacity-50');
+            
+            lock.style.opacity = '0';
+            setTimeout(() => lock.style.display = 'none', 300);
+
+            const lines = [
+                "> 비즈니스 언어를 데이터 언어로 번역 중...",
+                "> 구조 파악 완료. 최적화 수식 도출 완료."
+            ];
+
+            terminal.innerHTML = '';
+            for (let i = 0; i < lines.length; i++) {
+                await new Promise(r => setTimeout(r, 200));
+                let p = document.createElement('div');
+                p.className = 'mb-1';
+                terminal.appendChild(p);
+                for(let char of lines[i]) {
+                    p.innerHTML += char;
+                    await new Promise(r => setTimeout(r, 10)); 
+                }
+            }
+
+            // Show Formula
+            await new Promise(r => setTimeout(r, 300));
+            resultBox.classList.remove('hidden');
+            resultBox.classList.add('animate-pulse');
+            setTimeout(() => resultBox.classList.remove('animate-pulse'), 800);
+
+            // Print executing line
+            await new Promise(r => setTimeout(r, 600));
+            let p2 = document.createElement('div');
+            p2.className = 'mb-1 text-green-400 font-bold mt-2';
+            terminal.appendChild(p2);
+            const execLine = "> 도출된 수식 적용. 엑셀 데이터를 추출합니다.";
+            for(let char of execLine) {
+                p2.innerHTML += char;
+                await new Promise(r => setTimeout(r, 15)); 
+            }
+
+            // Show Virtual Data Result
+            await new Promise(r => setTimeout(r, 500));
+            dataResultBox.classList.remove('hidden');
+            dataResultBox.classList.add('animate-fade-in-up', 'flex'); 
+
+            btn.innerHTML = '<span class="text-2xl">✅</span><span class="text-sm">추출 완료</span>';
+            btn.classList.replace('bg-slate-600', 'bg-green-600');
+        }
+
+        // --- Scenario 2 (SQL Generation & DB Result) ---
+        let isScenario2Run = false;
+        async function runScenario2() {
+            if(isScenario2Run) return;
+            isScenario2Run = true;
+
+            const btn = document.getElementById('btn-run-2');
+            const solContainer = document.getElementById('solution-2');
+            const lock = document.getElementById('lock-2');
+            const terminal = document.getElementById('terminal-2');
+            const resultBox = document.getElementById('sql-result');
+            const dataResultBox = document.getElementById('data-result-2');
+
+            btn.innerHTML = '<span class="animate-spin text-2xl">⏳</span><span class="text-sm">작성 중...</span>';
+            btn.classList.replace('bg-indigo-600', 'bg-slate-600');
+            solContainer.classList.remove('grayscale', 'opacity-50');
+            
+            lock.style.opacity = '0';
+            setTimeout(() => lock.style.display = 'none', 300);
+
+            const lines = [
+                "> 비즈니스 요구사항 및 DB 스키마 매칭 중...",
+                "> 테이블 간 JOIN 규칙 도출 완료."
+            ];
+
+            terminal.innerHTML = '';
+            for (let i = 0; i < lines.length; i++) {
+                await new Promise(r => setTimeout(r, 200));
+                let p = document.createElement('div');
+                p.className = 'mb-1';
+                terminal.appendChild(p);
+                for(let char of lines[i]) {
+                    p.innerHTML += char;
+                    await new Promise(r => setTimeout(r, 10)); 
+                }
+            }
+
+            // Show SQL Query
+            await new Promise(r => setTimeout(r, 300));
+            resultBox.classList.remove('hidden');
+
+            // Print executing line
+            await new Promise(r => setTimeout(r, 800));
+            let p2 = document.createElement('div');
+            p2.className = 'mb-1 text-indigo-400 font-bold mt-2';
+            terminal.appendChild(p2);
+            const execLine = "> 가상 데이터베이스(DB)에서 쿼리 실행 완료.";
+            for(let char of execLine) {
+                p2.innerHTML += char;
+                await new Promise(r => setTimeout(r, 15)); 
+            }
+
+            // Show Virtual Table Result
+            await new Promise(r => setTimeout(r, 600));
+            dataResultBox.classList.remove('hidden');
+            dataResultBox.classList.add('animate-fade-in-up', 'flex'); 
+
+            btn.innerHTML = '<span class="text-2xl">✅</span><span class="text-sm">조회 완료</span>';
+            btn.classList.replace('bg-slate-600', 'bg-indigo-500');
+        }
+
+        // --- Scenario 3 (Email Generation) ---
+        let isScenario3Run = false;
+        let isKoreanView = false;
+        
+        const emailEn = `
+            <div id="email-body-text">
+                <p>Dear Director,</p>
+                <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-brand-blue font-bold text-slate-800 text-sm leading-relaxed shadow-sm my-3">
+                    BLUF: Night shift picking was delayed by 45 mins due to Wi-Fi disconnections on 50 new PDAs. We immediately reverted to older devices to resume operations. Backlog will be cleared by 7:00 AM.
+                </div>
+                <ul class="list-disc pl-5 space-y-3 text-sm leading-relaxed">
+                    <li><b>Issue:</b> Network failure on newly deployed PDA units at 02:00 AM.</li>
+                    <li><b>Action Taken:</b> Operations normalized by switching back to legacy models.</li>
+                    <li><b>Next Steps:</b> Scheduled an urgent root-cause analysis meeting with the IT team this morning.</li>
+                </ul>
+            </div>
+        `;
+
+        const emailKo = `
+            <div>
+                <p>디렉터님,</p>
+                <div class="bg-slate-100 p-4 rounded-lg border-l-4 border-slate-400 font-bold text-slate-800 text-sm leading-relaxed shadow-sm my-3">
+                    [핵심 요약] 신규 PDA 와이파이 연결 이슈로 야간조 피킹이 45분 지연되었습니다. 즉시 구형 기기로 롤백하여 현재 정상 운영 중이며, 지연 물량은 오전 7시 전까지 전량 처리 완료 예정입니다.
+                </div>
+                <ul class="list-disc pl-5 space-y-3 text-sm leading-relaxed">
+                    <li><b>이슈:</b> 새벽 2시, 신규 단말기 50대 네트워크 끊김 현상 발생.</li>
+                    <li><b>조치 사항:</b> 기존 구형 단말기로 전면 교체하여 작업 정상화 완료.</li>
+                    <li><b>향후 계획:</b> 근본 원인 파악을 위해 오늘 오전 IT팀과 회의 예정입니다.</li>
+                </ul>
+            </div>
+        `;
+
+        async function runScenario3() {
+            if(isScenario3Run) return;
+            isScenario3Run = true;
+
+            const btn = document.querySelector('button[onclick="runScenario3()"]');
+            const emailUI = document.getElementById('email-ui');
+            const emailBody = document.getElementById('email-body');
+            const actions = document.getElementById('email-actions');
+
+            btn.innerHTML = '<span>문맥 분석 중...</span> <span class="animate-spin">⏳</span>';
+            btn.classList.replace('hover:bg-slate-700', 'bg-slate-600');
+            
+            emailUI.classList.remove('opacity-50', 'pointer-events-none', 'hidden-scale');
+            emailBody.innerHTML = '<div class="typing-cursor h-4 w-4 bg-slate-300 rounded-full animate-bounce"></div>';
+
+            await new Promise(r => setTimeout(r, 1500)); 
+            
+            emailBody.innerHTML = emailEn; 
+            actions.classList.remove('opacity-0');
+            
+            btn.innerHTML = '<span>변환 완료!</span> <span>✅</span>';
+            btn.classList.replace('bg-slate-600', 'bg-green-600');
+        }
+
+        function toggleLang() {
+            const body = document.getElementById('email-body');
+            const btn = document.querySelector('button[onclick="toggleLang()"]');
+            
+            if(isKoreanView) {
+                body.innerHTML = emailEn;
+                btn.innerText = '🇰🇷 한국어 번역 보기';
+                isKoreanView = false;
+            } else {
+                body.innerHTML = emailKo;
+                btn.innerText = '🇺🇸 영문 원본 보기';
+                isKoreanView = true;
+            }
+        }
+
+        // --- Chart.js ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('impactChart').getContext('2d');
+            
+            Chart.defaults.font.family = "'Pretendard', sans-serif";
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['엑셀 조건 검색/정제 (분)', 'DB 쿼리 작성 (SQL) (분)', '글로벌 비즈니스 보고 (분)'],
+                    datasets: [
+                        {
+                            label: '전통적 수동 작업 (검색/학습)',
+                            data: [45, 60, 30],
+                            backgroundColor: '#cbd5e1',
+                            borderRadius: 4
+                        },
+                        {
+                            label: 'AI 프롬프트 활용',
+                            data: [3, 4, 2],
+                            backgroundColor: '#2563eb',
+                            borderRadius: 4
+                        }
+                    ]
+                },
+                options: {
+                    indexAxis: 'y', 
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': 약 ' + context.parsed.x + '분';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: { 
+                            display: true,
+                            title: { display: true, text: '소요 시간 (분)' }
+                        },
+                        y: {
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

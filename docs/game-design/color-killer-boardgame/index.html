@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>허재석 작업 기록 | Color Killer 보드게임 기획</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    
+    <style>
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            background-color: #f8fafc; 
+            color: #334155; 
+            margin: 0;
+            padding: 0;
+            word-break: keep-all; 
+            overflow-wrap: break-word;
+            overflow-x: hidden;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 28px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .tab-content { display: none; opacity: 0; transition: opacity 0.3s ease; }
+        .tab-content.active { display: block; opacity: 1; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* 버튼형 내비게이션 (캐주얼 보드게임 플랫 타일 테마 - 오렌지 톤) */
+        .nav-button-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+        @media (min-width: 768px) {
+            .nav-button-container {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.25rem;
+            }
+        }
+
+        .modern-nav-btn {
+            @apply py-3 px-2 md:py-5 md:px-3 rounded-2xl font-black text-xs md:text-sm flex flex-col items-center justify-center gap-1 md:gap-2;
+            background-color: #f8fafc;
+            border: 2px solid #cbd5e1;
+            border-bottom-width: 6px;
+            color: #475569;
+            transition: all 0.1s ease-out;
+            cursor: pointer;
+        }
+        .modern-nav-btn:hover {
+            background-color: #ffffff;
+            border-color: #fdba74; /* orange-300 */
+            color: #ea580c; /* orange-600 */
+        }
+        .modern-nav-btn.active {
+            background-color: #f97316; /* orange-500 */
+            border-color: #c2410c; /* orange-700 */
+            border-bottom-width: 2px;
+            transform: translateY(4px);
+            color: #ffffff;
+        }
+
+        .img-box {
+            border-radius: 1rem;
+            width: 100%;
+            height: auto;
+            border: 1px solid #e2e8f0;
+            background: white;
+            cursor: zoom-in;
+            transition: transform 0.3s ease;
+        }
+        .img-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 카드 UI 전용 스타일 (박스 크기 고정, 이미지 찌그러짐 방지) */
+        .game-card-img {
+            width: 100%;
+            aspect-ratio: 2/3; 
+            object-fit: contain; 
+            object-position: center;
+            padding: 0.25rem;
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            border: 2px solid #f1f5f9;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .game-card-img:hover {
+            transform: translateY(-5px) scale(1.05);
+            border-color: #fed7aa; /* orange-200 */
+            box-shadow: 0 10px 20px -5px rgba(249, 115, 22, 0.15);
+        }
+
+        /* 이미지 확대 모달 스타일 */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(12px);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .image-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-image-wrapper {
+            max-width: 90%;
+            max-height: 85%;
+            position: relative;
+            transform: scale(0.95);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-modal.active .modal-image-wrapper {
+            transform: scale(1);
+        }
+        .image-modal img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+            border: 4px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* 뒤로가기 버튼: 흰색 배경 & 오렌지 글자 */
+        .modal-back-btn {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            z-index: 1100;
+            @apply flex items-center gap-3 px-8 py-3 bg-white text-orange-600 rounded-full font-black text-base shadow-2xl transition-all cursor-pointer border-2 border-slate-100;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+        .modal-back-btn:hover {
+            @apply bg-orange-50 border-orange-300;
+            transform: translateX(4px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- 이미지 확대 모달 -->
+    <div id="image-modal" class="image-modal" onclick="closeImageModal()">
+        <button class="modal-back-btn" onclick="closeImageModal()">
+            <span class="text-xl">←</span> 뒤로가기
+        </button>
+        <div class="modal-image-wrapper" onclick="event.stopPropagation()">
+            <img id="modal-img" src="" alt="확대 이미지">
+        </div>
+    </div>
+
+    <div class="min-h-screen flex flex-col items-center py-12 px-4 md:px-0">
+        
+        <!-- 헤더 섹션 (에너제틱 오렌지 톤) -->
+        <header class="max-w-5xl w-full mb-14 flex flex-col md:flex-row items-center gap-12 text-center md:text-left">
+            <div class="w-40 h-40 shrink-0 bg-orange-500 rounded-[48px] flex items-center justify-center text-7xl shadow-2xl shadow-orange-200">
+                🎲
+            </div>
+            <div class="flex-1">
+                <div class="inline-block px-4 py-1.5 bg-orange-100 text-orange-700 rounded-full text-xs font-black mb-6 tracking-widest uppercase">
+                    Board Game Project
+                </div>
+                <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight leading-tight">창작 보드게임<br><span class="text-orange-500">컬러킬러 (Color Killer)</span></h1>
+                
+                <p class="text-slate-500 text-lg md:text-xl leading-relaxed max-w-3xl font-medium">
+                    유명 보드게임 '할리갈리'의 기본 규칙을 바탕으로 삼되, 네 종류의 독자적인 특수 카드를 새롭게 추가하여 예상치 못한 변수와 전략적 요소를 극대화한 창작 보드게임 '컬러킬러'를 직접 기획하고 제작했습니다.
+                </p>
+
+                <div class="flex flex-wrap justify-center md:justify-start gap-3 mt-8 text-[11px] font-black text-slate-400">
+                    <span class="bg-white border border-slate-200 px-4 py-2 rounded-2xl shadow-sm tracking-widest">진행: 2023.11 - 12</span>
+                    <span class="bg-white border border-slate-200 px-4 py-2 rounded-2xl shadow-sm tracking-widest">팀원: 3인 (학번다다름조)</span>
+                    <span class="bg-white border border-slate-200 px-4 py-2 rounded-2xl shadow-sm tracking-widest">기여: 기획, 컴포넌트 제작, 영상 편집 (허재석)</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 내비게이션 버튼 바 -->
+        <nav class="max-w-5xl w-full mb-14">
+            <div class="nav-button-container">
+                <button onclick="showProjectTab(event, 'overview')" class="modern-nav-btn active" id="initTab">
+                    <span class="text-2xl">📝</span> 개요 및 핵심 룰
+                </button>
+                <button onclick="showProjectTab(event, 'special-cards')" class="modern-nav-btn">
+                    <span class="text-2xl">🃏</span> 차별화: 특수 카드
+                </button>
+                <button onclick="showProjectTab(event, 'improvements')" class="modern-nav-btn">
+                    <span class="text-2xl">🛠️</span> 테스트 및 개선안
+                </button>
+                <button onclick="showProjectTab(event, 'video')" class="modern-nav-btn">
+                    <span class="text-2xl">🎬</span> 게임 플레이 영상
+                </button>
+            </div>
+        </nav>
+
+        <!-- 섹션 1: 개요 및 핵심 룰 -->
+        <div id="overview" class="max-w-5xl w-full tab-content active space-y-10">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-center">
+                <div class="bg-white p-6 rounded-[2rem] border border-slate-200 shadow-sm flex flex-col items-center justify-center">
+                    <span class="text-3xl mb-3">🎯</span>
+                    <h4 class="font-black text-slate-800 mb-1">타겟 연령</h4>
+                    <p class="text-sm text-slate-500 font-bold">권장 연령 7세 이상</p>
+                </div>
+                <div class="bg-white p-6 rounded-[2rem] border border-slate-200 shadow-sm flex flex-col items-center justify-center">
+                    <span class="text-3xl mb-3">👥</span>
+                    <h4 class="font-black text-slate-800 mb-1">플레이 인원</h4>
+                    <p class="text-sm text-slate-500 font-bold">4인 플레이어용</p>
+                </div>
+                <div class="bg-white p-6 rounded-[2rem] border border-slate-200 shadow-sm flex flex-col items-center justify-center">
+                    <span class="text-3xl mb-3">⏳</span>
+                    <h4 class="font-black text-slate-800 mb-1">플레이 타임</h4>
+                    <p class="text-sm text-slate-500 font-bold">한 판당 10~15분 소요</p>
+                </div>
+            </div>
+
+            <!-- 플레이스홀더 이미지 삭제 및 레이아웃 재구성 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- 텍스트와 이미지 사이 간격 최적화 -->
+                <div class="content-card p-10 h-full flex flex-col gap-6">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-black text-slate-900 flex items-center gap-3">
+                            <span class="w-10 h-10 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center text-lg font-black">1</span>
+                            컴포넌트 구성
+                        </h3>
+                        <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
+                            <p class="text-sm text-slate-600 leading-relaxed font-medium">
+                                <strong class="text-slate-900">일반형 카드 25장</strong>(하트, 물방울, 새싹, 해, 별)과 <strong class="text-slate-900">특수형 카드 10장</strong>을 합쳐 총 35장의 카드로 구성됩니다. 이에 더해 타격용 종 1개와 전용 룰 설명서가 포함됩니다.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 컴포넌트 구성 미리보기 (일반 + 특수) -->
+                    <div class="space-y-3 mt-auto">
+                        <!-- 일반 카드 이미지 -->
+                        <div class="bg-white rounded-xl border border-slate-100 p-4 shadow-sm">
+                            <p class="text-[11px] font-black text-slate-400 uppercase tracking-widest text-center mb-3">일반 카드 구성 (5종)</p>
+                            <img src="cards_normal.png" class="w-full h-auto object-contain mx-auto hover:scale-[1.02] transition-transform cursor-pointer" onclick="openImageModal(this.src)" onerror="this.src='[일반 카드]';">
+                        </div>
+                        
+                        <!-- 특수 카드 이미지 미리보기 (비율 강제 고정 추가) -->
+                        <div class="bg-slate-50 rounded-xl border border-slate-200 p-4 shadow-sm">
+                            <p class="text-[11px] font-black text-slate-500 uppercase tracking-widest text-center mb-3">특수 카드 구성 (4종)</p>
+                            <div class="grid grid-cols-4 gap-2 max-w-[280px] mx-auto mb-2">
+                                <img src="card_white.png" class="w-full aspect-[2/3] object-contain object-center rounded-md cursor-pointer hover:-translate-y-1 transition-transform border border-slate-200 shadow-sm bg-white p-1" onclick="openImageModal(this.src)" onerror="this.src='[흰색 카드]';">
+                                <img src="card_black.png" class="w-full aspect-[2/3] object-contain object-center rounded-md cursor-pointer hover:-translate-y-1 transition-transform border border-slate-200 shadow-sm bg-white p-1" onclick="openImageModal(this.src)" onerror="this.src='[블랙 카드]';">
+                                <img src="card_rainbow.png" class="w-full aspect-[2/3] object-contain object-center rounded-md cursor-pointer hover:-translate-y-1 transition-transform border border-slate-200 shadow-sm bg-white p-1" onclick="openImageModal(this.src)" onerror="this.src='[무지개 카드]';">
+                                <img src="card_plunder.png" class="w-full aspect-[2/3] object-contain object-center rounded-md cursor-pointer hover:-translate-y-1 transition-transform border border-slate-200 shadow-sm bg-white p-1" onclick="openImageModal(this.src)" onerror="this.src='[약탈 카드]';">
+                            </div>
+                            <p class="text-[10px] text-center text-slate-400 font-bold">* 상세 기능은 '차별화: 특수 카드' 탭 참조</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card p-10 space-y-8 h-full flex flex-col">
+                    <div class="space-y-2 mb-2">
+                        <h3 class="text-2xl font-black text-slate-900 flex items-center gap-3">
+                            <span class="w-10 h-10 bg-slate-100 text-slate-700 rounded-xl flex items-center justify-center text-lg font-black">2</span>
+                            핵심 규칙 및 승패
+                        </h3>
+                    </div>
+                    <div class="space-y-4 flex-1">
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 flex gap-4 items-start">
+                            <div class="text-2xl mt-1">🔔</div>
+                            <div>
+                                <h4 class="font-black text-slate-800 text-base mb-2">타격 조건</h4>
+                                <p class="text-sm text-slate-500 leading-relaxed font-medium">바닥에 깔린 그림들의 총합이 정확히 5개가 되거나, 조건에 맞는 특수 카드가 나왔을 때 가장 먼저 중앙의 종을 타격합니다.</p>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 flex gap-4 items-start">
+                            <div class="text-2xl mt-1">⚠️</div>
+                            <div>
+                                <h4 class="font-black text-slate-800 text-base mb-2">페널티 룰</h4>
+                                <p class="text-sm text-slate-500 leading-relaxed font-medium">쳐야 할 타이밍이 아닐 때 종을 잘못 쳤을 경우, 페널티로 나머지 참가자 전원에게 자신의 패를 한 장씩 지불해야 합니다.</p>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 flex gap-4 items-start">
+                            <div class="text-2xl mt-1">🏆</div>
+                            <div>
+                                <h4 class="font-black text-slate-800 text-base mb-2">승패 조건</h4>
+                                <p class="text-sm text-slate-500 leading-relaxed font-medium">손패가 다 떨어지면 패배 처리되며, 최종 생존하거나 획득한 카드가 제일 많은 사람이 우승을 차지합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 섹션 2: 특수 카드 시스템 -->
+        <div id="special-cards" class="max-w-5xl w-full tab-content space-y-12">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h3 class="text-3xl font-black text-slate-900 mb-4">차별화 요소: 특수 카드 시스템</h3>
+                <p class="text-slate-600 text-base leading-relaxed font-medium">
+                    단순한 순발력 게임을 넘어, 플레이어 간의 치열한 눈치싸움과 역전을 가능하게 만드는 고유한 특수 카드를 도입했습니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+                <!-- 흰색 카드 -->
+                <div class="content-card p-5 md:p-6 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 border-t-4 border-t-emerald-400 h-full w-full">
+                    <img src="card_white.png" class="game-card-img mb-6 cursor-pointer shrink-0" onclick="openImageModal(this.src)" onerror="this.src='[흰색 카드]';">
+                    <div class="flex flex-col flex-1 w-full">
+                        <!-- 뱃지 영역 높이 고정 -->
+                        <div class="mb-4 shrink-0 h-6 flex items-center justify-center w-full">
+                            <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-black">흰색 카드</span>
+                        </div>
+                        <!-- 제목 영역 높이 고정 -->
+                        <div class="h-14 flex items-center justify-center w-full mb-3 shrink-0">
+                            <h4 class="font-black text-emerald-600 text-sm leading-snug">한 번 더<br>카드를 낼 수 있음</h4>
+                        </div>
+                        <!-- 설명 영역 -->
+                        <div class="flex-1 flex items-start justify-center w-full">
+                            <p class="text-[11px] text-slate-500 leading-relaxed font-medium">자신의 차례를 넘기지 않고 연속으로 플레이하여 변수를 창출합니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 블랙 카드 -->
+                <div class="content-card p-5 md:p-6 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 border-t-4 border-t-slate-800 h-full w-full">
+                    <img src="card_black.png" class="game-card-img mb-6 cursor-pointer shrink-0" onclick="openImageModal(this.src)" onerror="this.src='[블랙 카드]';">
+                    <div class="flex flex-col flex-1 w-full">
+                        <!-- 뱃지 영역 높이 고정 -->
+                        <div class="mb-4 shrink-0 h-6 flex items-center justify-center w-full">
+                            <span class="inline-block px-3 py-1 bg-slate-800 text-white rounded-full text-xs font-black">블랙 카드</span>
+                        </div>
+                        <!-- 제목 영역 높이 고정 -->
+                        <div class="h-14 flex items-center justify-center w-full mb-3 shrink-0">
+                            <h4 class="font-black text-slate-800 text-sm leading-snug">카드를 낼 경우 다음 턴<br>사람이 카드를 낼 수 없음</h4>
+                        </div>
+                        <!-- 설명 영역 -->
+                        <div class="flex-1 flex items-start justify-center w-full">
+                            <p class="text-[11px] text-slate-500 leading-relaxed font-medium">자신의 바로 다음 순서인 사람의 차례를 강제로 스킵하는 방해 카드입니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 무지개 카드 -->
+                <div class="content-card p-5 md:p-6 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 border-t-4 border-t-orange-400 h-full w-full">
+                    <img src="card_rainbow.png" class="game-card-img mb-6 cursor-pointer shrink-0" onclick="openImageModal(this.src)" onerror="this.src='[무지개 카드]';">
+                    <div class="flex flex-col flex-1 w-full">
+                        <!-- 뱃지 영역 높이 고정 -->
+                        <div class="mb-4 shrink-0 h-6 flex items-center justify-center w-full">
+                            <span class="inline-block px-3 py-1 bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 text-white rounded-full text-xs font-black">무지개 카드</span>
+                        </div>
+                        <!-- 제목 영역 높이 고정 -->
+                        <div class="h-14 flex items-center justify-center w-full mb-3 shrink-0">
+                            <h4 class="font-black text-orange-600 text-sm leading-snug">언제든지<br>종을 칠 수 있음</h4>
+                        </div>
+                        <!-- 설명 영역 -->
+                        <div class="flex-1 flex items-start justify-center w-full">
+                            <p class="text-[11px] text-slate-500 leading-relaxed font-medium">그림 개수 조건과 상관없이 바닥에 깔리는 즉시 1순위로 타격 가능합니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 약탈 카드 -->
+                <div class="content-card p-5 md:p-6 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 border-t-4 border-t-amber-400 h-full w-full">
+                    <img src="card_plunder.png" class="game-card-img mb-6 cursor-pointer shrink-0" onclick="openImageModal(this.src)" onerror="this.src='[약탈 카드]';">
+                    <div class="flex flex-col flex-1 w-full">
+                        <!-- 뱃지 영역 높이 고정 -->
+                        <div class="mb-4 shrink-0 h-6 flex items-center justify-center w-full">
+                            <span class="inline-block px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-black">약탈 카드</span>
+                        </div>
+                        <!-- 제목 영역 높이 고정 -->
+                        <div class="h-14 flex items-center justify-center w-full mb-3 shrink-0">
+                            <h4 class="font-black text-amber-600 text-sm leading-snug">카드 더미에서 카드 한 장을<br>가지고 올 수 있음</h4>
+                        </div>
+                        <!-- 설명 영역 -->
+                        <div class="flex-1 flex items-start justify-center w-full">
+                            <p class="text-[11px] text-slate-500 leading-relaxed font-medium">더미 고갈 시 타인의 패를 뺏어올 수 있는 강력한 역전 카드입니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 섹션 3: 테스트 및 개선안 -->
+        <div id="improvements" class="max-w-5xl w-full tab-content space-y-12">
+            <div class="content-card p-10 md:p-16">
+                <h3 class="text-3xl font-black text-slate-900 border-b-4 border-slate-100 pb-6 mb-12 text-center md:text-left">플레이 테스트 피드백 및 개선안</h3>
+                
+                <div class="grid grid-cols-1 gap-10">
+                    <!-- 개선안 1 -->
+                    <div class="bg-slate-50 rounded-3xl border border-slate-200 p-8 flex flex-col md:flex-row gap-8 items-start">
+                        <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center font-black text-2xl shrink-0 shadow-sm">1</div>
+                        <div class="flex-1 space-y-4">
+                            <h4 class="text-xl font-black text-slate-800">컴포넌트 퀄리티 개선</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="text-sm text-slate-700 font-bold mb-1 flex items-center gap-2"><span class="text-red-500">🔻 문제점</span> (A4 용지 사용)</p>
+                                    <p class="text-sm text-slate-600 leading-relaxed">
+                                        초기 프로토타입 단계에서 일반 A4 용지로 카드를 제작했더니, 뒷면이 투과되어 상대방의 패가 보인다는 치명적인 지적이 접수되었습니다.
+                                    </p>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                                    <p class="text-sm text-slate-700 font-bold mb-1 flex items-center gap-2"><span class="text-emerald-500">💡 해결 방안</span></p>
+                                    <p class="text-sm text-slate-600 leading-relaxed">
+                                        피드백을 즉각 반영하여 실제 시중에 판매되는 보드게임 퀄리티의 두꺼운 전용 용지로 인쇄 방식을 업그레이드하고 게임의 공정성을 확보했습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 개선안 2 -->
+                    <div class="bg-slate-50 rounded-3xl border border-slate-200 p-8 flex flex-col md:flex-row gap-8 items-start">
+                        <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center font-black text-2xl shrink-0 shadow-sm">2</div>
+                        <div class="flex-1 space-y-4">
+                            <h4 class="text-xl font-black text-slate-800">게임 템포 및 룰 최적화</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="text-sm text-slate-700 font-bold mb-1 flex items-center gap-2"><span class="text-red-500">🔻 문제점</span> (진행 속도 저하)</p>
+                                    <p class="text-sm text-slate-600 leading-relaxed">
+                                        원래 기획했던 '투시 능력' 카드가 플레이어들의 장고를 유발해 전체적인 게임 속도가 크게 늘어지는 현상을 플레이 테스트 중 발견했습니다.
+                                    </p>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                                    <p class="text-sm text-slate-700 font-bold mb-1 flex items-center gap-2"><span class="text-emerald-500">💡 해결 방안</span></p>
+                                    <p class="text-sm text-slate-600 leading-relaxed">
+                                        게임 진행 속도를 끌어올리기 위해 템포를 늦추는 투시 능력을 삭제하고, 불리한 상황에서도 단번에 역전의 묘미를 줄 수 있는 '약탈 능력'으로 룰을 전면 수정했습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 섹션 4: 영상 집중형 UI -->
+        <div id="video" class="max-w-5xl w-full tab-content space-y-12">
+            <div class="content-card p-8 md:p-12">
+                <div class="text-center mb-10">
+                    <h3 class="text-3xl font-black text-slate-900 mb-4">게임 플레이 영상</h3>
+                    <p class="text-slate-600 text-base leading-relaxed font-medium">
+                        컬러킬러의 실제 플레이 모습과 특수 카드가 만들어내는 다이나믹한 상황을 확인해 보세요!
+                    </p>
+                </div>
+
+                <!-- 유튜브 링크 집중형 UI -->
+                <div class="text-center bg-orange-50 p-10 md:p-16 rounded-[2rem] border border-orange-100 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 text-8xl opacity-10">🎮</div>
+                    <div class="absolute bottom-0 left-0 p-8 text-8xl opacity-10">🎯</div>
+                    
+                    <div class="relative z-10">
+                        <div class="text-6xl mb-8 animate-bounce">🎬</div>
+                        <a href="https://youtu.be/y3QBjCFaT4M" target="_blank" class="inline-flex items-center gap-3 bg-orange-500 text-white font-bold py-4 px-10 rounded-full shadow-xl hover:bg-orange-600 hover:-translate-y-1 transition-all text-lg md:text-xl">
+                            <span class="text-3xl">📺</span> 유튜브에서 플레이 영상 보기
+                        </a>
+                        <div class="mt-8 bg-white/60 backdrop-blur p-6 rounded-2xl inline-block max-w-xl border border-orange-200">
+                            <p class="text-sm text-slate-700 font-bold leading-relaxed">
+                                💡 플레이어 간의 치열한 눈치싸움과<br>
+                                <strong class="text-orange-600 text-base">특수 카드를 활용한 짜릿한 역전의 순간</strong>을<br>
+                                위 버튼을 클릭해 유튜브 영상으로 생생하게 확인하실 수 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-24 py-16 border-t border-slate-200 text-center w-full max-w-5xl">
+            <p class="text-slate-400 text-xs font-black tracking-[0.6em] uppercase mb-4 text-center">Color Killer Board Game Project</p>
+            <p class="text-slate-300 text-[11px] font-bold tracking-tight text-center">허재석 | 모든 권리 보유</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // 탭 전환 로직
+        function showProjectTab(evt, tabId) {
+            evt.preventDefault();
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(c => c.classList.remove('active'));
+            const links = document.querySelectorAll('.modern-nav-btn');
+            links.forEach(l => l.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        // 이미지 모달 열기
+        function openImageModal(src) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            modalImg.src = src;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        // 이미지 모달 닫기
+        function closeImageModal() {
+            const modal = document.getElementById('image-modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; 
+        }
+    </script>
+</body>
+</html>

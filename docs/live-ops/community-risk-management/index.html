@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지역 커뮤니티 플랫폼 리스크 매니저 분석 기획안 | 데이터 기반 신뢰 보호</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            background-color: #FFFFFF; 
+            color: #212124;
+            line-height: 1.7;
+            word-break: keep-all;
+            overflow-wrap: break-word;
+        }
+
+        .brand-orange { color: #FF7E36; }
+        .bg-brand { background-color: #FF7E36; }
+        .border-brand { border-color: #FF7E36; }
+        
+        .card {
+            background: #FFFFFF;
+            border: 1px solid #F2F3F6;
+            border-radius: 28px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .chart-box {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+
+        /* 채팅 UI 스타일 */
+        .chat-window {
+            background-color: #F2F3F6;
+            border-radius: 40px;
+            border: 8px solid #FFFFFF;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .chat-bubble {
+            max-width: 85%;
+            padding: 12px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+        
+        .nudge-anim {
+            animation: slideUp 0.4s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* 클릭 안내 배지 */
+        .click-guide {
+            display: inline-block;
+            background-color: #FF7E36;
+            color: white;
+            font-size: 11px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 800;
+            margin-top: 8px;
+            animation: bounceIn 1.5s infinite;
+        }
+
+        @keyframes bounceIn {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); box-shadow: 0 0 10px rgba(255, 126, 54, 0.3); }
+        }
+
+        .sim-btn-active {
+            border-color: #FF7E36 !important;
+            background-color: #FFF2EB !important;
+        }
+    </style>
+</head>
+<body class="bg-[#F9FAFB]">
+
+    <!-- 네비게이션 바 -->
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 flex items-center justify-center bg-brand rounded-lg text-white font-bold text-lg">🥕</div>
+                <h1 class="font-bold text-lg tracking-tight">리스크 운영 매니저 작업 기록</h1>
+            </div>
+            <div class="text-xs font-bold text-gray-400 bg-gray-50 px-3 py-1 rounded-full">
+                서비스 운영 1.4년 경력 기반
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-16">
+        
+        <!-- 1. 운영 성과 요약 -->
+        <section id="summary">
+            <div class="bg-white p-10 card border-t-[10px] border-[#FF7E36] mb-8">
+                <span class="inline-block px-3 py-1 bg-orange-50 text-[#FF7E36] text-xs font-bold rounded-full mb-6">라이브 서비스 운영자 출신</span>
+                <h2 class="text-3xl md:text-4xl font-black leading-tight mb-8">
+                    데이터 기반의 정밀 필터링으로<br>
+                    <span class="brand-orange">수작업 검수 업무 75%를 단축</span>했습니다.
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center shrink-0 text-xl">📊</div>
+                        <div>
+                            <p class="font-bold text-lg mb-1">운영 효율화 역량</p>
+                            <p class="text-sm text-gray-500 leading-relaxed">지속적으로 인입되는 서비스 VOC와 유저 활동 데이터를 분석해 어뷰징 패턴을 정의하고, 이를 바탕으로 정교한 데이터 필터링 기준을 체계화하여 반복 검수 수작업을 75% 줄였습니다.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center shrink-0 text-xl">🛡️</div>
+                        <div>
+                            <p class="font-bold text-lg mb-1">문제 해결 및 대응</p>
+                            <p class="text-sm text-gray-500 leading-relaxed">어뷰징 및 거래 사기 의심 정황 발생 시, 명확한 데이터 근거와 정책 판단을 통해 선제적으로 사고를 차단하고 서비스 신뢰도를 확보했습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 성과 데이터 시각화 -->
+            <div class="p-8 card bg-white">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 px-2 gap-4">
+                    <div>
+                        <h4 class="font-bold text-lg">검수 프로세스 개선 성과</h4>
+                        <p class="text-xs text-gray-400 font-medium mt-1">단순 전수 조사 방식 대비 '필터링 검수' 도입 시 업무량 변화</p>
+                    </div>
+                    <div class="bg-orange-50 px-4 py-2 rounded-2xl shrink-0">
+                        <span class="text-2xl font-black brand-orange">75% 절감</span>
+                    </div>
+                </div>
+                <div class="chart-box">
+                    <canvas id="efficiencyChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 리스크 관리 제안 -->
+        <section id="proposal" class="space-y-8">
+            <div class="px-2">
+                <h3 class="text-2xl font-bold mb-2 italic">지역 커뮤니티 플랫폼 맞춤형 리스크 관리 정책 제안</h3>
+                <p class="text-gray-500 text-sm">운영 경험을 바탕으로 지역 커뮤니티 플랫폼의 '안전한 연결'을 위해 제안하는 핵심 전략입니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 💡 수정된 첫 번째 카드 (위치 기반 계정 탈취 방어) -->
+                <div class="p-8 card border-l-8 border-[#FF7E36] hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="text-2xl">🌍</span>
+                        <h4 class="font-bold text-xl">비정상 위치(Geo) 기반 계정 탈취 방어</h4>
+                    </div>
+                    <div class="space-y-4 text-sm text-gray-600 leading-relaxed">
+                        <p><strong>이상 징후 (Impossible Travel):</strong><br> 물리적으로 이동 불가능한 시간(예: 서울 접속 10분 후 제주 IP) 내에 <strong>새로운 기기</strong>로 로그인하여 고액 매물 등록</p>
+                        <p><strong>대응 방향:</strong><br> 단순 여행객과 구분하기 위해 '기기 변경' 및 '이동 소요 시간'을 교차 검증하고, 탈취 의심 시 <strong>추가 본인 인증</strong> 전까지 계정을 보호 조치합니다.</p>
+                    </div>
+                </div>
+
+                <div class="p-8 card border-l-8 border-blue-400 hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="text-2xl">🌡️</span>
+                        <h4 class="font-bold text-xl">매너온도 조작 방지</h4>
+                    </div>
+                    <div class="space-y-4 text-sm text-gray-600 leading-relaxed">
+                        <p><strong>이상 징후:</strong><br> 단기간 무료 나눔 반복으로 신뢰도를 쌓은 후<br class="hidden xl:block"> 고액 물품 등록</p>
+                        <p><strong>대응 방향:</strong><br> 온도 상승 폭 대비 고액 거래 발생 시 <strong>본인 인증</strong> 단계를 추가하고<br class="hidden xl:block"> 관리자 검수 우선순위로 자동 분류합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 단계별 대응 시뮬레이션 (가로형 배치) -->
+        <section id="simulation" class="space-y-8">
+            <div class="px-2">
+                <h3 class="text-2xl font-bold mb-2">고도화된 운영 조치 시뮬레이션</h3>
+                <p class="text-gray-500 text-sm">기존의 단순 경고를 넘어, 사기꾼의 최신 우회 수법을 차단하는 새로운 리스크 관리 시나리오입니다.</p>
+            </div>
+
+            <div class="p-8 md:p-12 card bg-white">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- 왼쪽: 운영 관리자 조치 버튼 -->
+                    <div class="space-y-6">
+                        <div class="mb-4">
+                            <h4 class="font-black text-2xl mb-4 leading-tight">
+                                차별화된 리스크 관리<br>
+                                <span class="brand-orange">솔루션</span> 체험하기
+                            </h4>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <button onclick="runSimulation('cooldown', this)" class="sim-btn w-full py-5 px-6 bg-[#F9FAFB] hover:bg-orange-50 border border-gray-200 hover:border-orange-200 rounded-[28px] text-left transition-all flex items-center justify-between group shadow-sm">
+                                <div>
+                                    <span class="inline-block px-2 py-1 bg-orange-100 text-orange-600 rounded-lg text-[10px] font-bold mb-2">Step 1. 행동 마찰 부여</span>
+                                    <p class="font-bold text-base">송금 전 쿨다운(Cool-down) 팝업</p>
+                                    <p class="text-xs text-gray-400 mt-1">계좌 복사 시 3초 지연시켜 충동적 입금 방지</p>
+                                </div>
+                                <span class="text-2xl group-hover:scale-110 transition-transform">⏳</span>
+                            </button>
+
+                            <button onclick="runSimulation('blur', this)" class="sim-btn w-full py-5 px-6 bg-[#F9FAFB] hover:bg-orange-50 border border-gray-200 hover:border-orange-200 rounded-[28px] text-left transition-all flex items-center justify-between group shadow-sm">
+                                <div>
+                                    <span class="inline-block px-2 py-1 bg-blue-100 text-blue-600 rounded-lg text-[10px] font-bold mb-2">Step 2. 교차 검증</span>
+                                    <p class="font-bold text-base">도용 의심 이미지 블러 처리</p>
+                                    <p class="text-xs text-gray-400 mt-1">타 사이트(중고나라 등) 펌 사진 실시간 판별</p>
+                                </div>
+                                <span class="text-2xl group-hover:scale-110 transition-transform">🖼️</span>
+                            </button>
+                            
+                            <button onclick="runSimulation('ocr', this)" class="sim-btn w-full py-5 px-6 bg-[#F9FAFB] hover:bg-orange-50 border border-gray-200 hover:border-orange-200 rounded-[28px] text-left transition-all flex items-center justify-between group shadow-sm">
+                                <div>
+                                    <span class="inline-block px-2 py-1 bg-red-100 text-red-600 rounded-lg text-[10px] font-bold mb-2">Step 3. 사각지대 차단</span>
+                                    <p class="font-bold text-base">이미지 내 우회 연락처(OCR) 탐지</p>
+                                    <p class="text-xs text-gray-400 mt-1">텍스트 필터링을 피하기 위한 꼼수 이미지 차단</p>
+                                </div>
+                                <span class="text-2xl group-hover:scale-110 transition-transform">👁️‍🗨️</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 오른쪽: 유저 채팅 화면 시연 -->
+                    <div class="chat-window p-5 aspect-[9/16] w-full max-w-[320px] mx-auto flex flex-col relative overflow-hidden bg-[#F2F3F6]">
+                        <div class="flex justify-center mb-6">
+                            <div class="w-16 h-1.5 bg-gray-300 rounded-full"></div>
+                        </div>
+                        
+                        <div class="flex-grow overflow-y-auto" id="chatArea">
+                            <!-- 초기 빈 화면 또는 안내문 -->
+                            <div class="h-full flex flex-col items-center justify-center text-gray-400 text-sm text-center">
+                                <span class="text-3xl mb-4">👈</span>
+                                좌측의 솔루션 버튼을 눌러<br>시뮬레이션을 확인하세요!
+                            </div>
+                        </div>
+
+                        <div class="p-4 bg-white rounded-full mt-4 flex items-center h-12 shadow-inner">
+                            <div class="w-full h-2 bg-gray-100 rounded-full"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 핵심 요약 -->
+        <footer class="bg-gray-900 p-10 md:p-12 rounded-[48px] text-white">
+            <h4 class="text-2xl font-bold mb-10 text-center">핵심 역량 요약</h4>
+            <div class="space-y-8 max-w-2xl mx-auto text-gray-400">
+                <div class="flex gap-4 items-start">
+                    <span class="text-[#FF7E36] font-black italic text-xl">01</span>
+                    <p class="text-sm md:text-base leading-relaxed">이상 거래 탐지 및 <strong>에스크로(안심결제) 분쟁 해결</strong>에 특화된 운영 매니저입니다. 객관적인 데이터 근거를 바탕으로 서비스의 신뢰도를 수호합니다.</p>
+                </div>
+                <div class="flex gap-4 items-start border-t border-gray-800 pt-8">
+                    <span class="text-[#FF7E36] font-black italic text-xl">02</span>
+                    <p class="text-sm md:text-base leading-relaxed">데이터 노이즈를 걸러내는 <strong>필터링 로직을 설계</strong>하여 수작업 업무량을 75% 낮췄던 효율 중심의 운영 경험이 있습니다.</p>
+                </div>
+                <div class="flex gap-4 items-start border-t border-gray-800 pt-8">
+                    <span class="text-[#FF7E36] font-black italic text-xl">03</span>
+                    <p class="text-sm md:text-base leading-relaxed">지역 커뮤니티 플랫폼의 가치에 맞는 <strong>혁신적인 리스크 차단 정책</strong>으로 유저 경험을 보호하며, 따뜻하고 안전한 동네 마켓을 위한 방안을 정리했습니다.</p>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // 차트 렌더링
+        window.onload = function() {
+            const ctx = document.getElementById('efficiencyChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['기존 전수 검수', '필터링 선별 검수'],
+                    datasets: [{
+                        data: [100, 25],
+                        backgroundColor: ['#E5E7EB', '#FF7E36'],
+                        borderRadius: 15,
+                        barThickness: 60
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { display: false }, ticks: { display: false } },
+                        x: { grid: { display: false }, ticks: { font: { size: 14, weight: 'bold', family: 'Pretendard' } } }
+                    }
+                }
+            });
+        };
+
+        // 시뮬레이션 동작 로직
+        function runSimulation(type, btn) {
+            const chatArea = document.getElementById('chatArea');
+            
+            // 버튼 스타일 업데이트
+            document.querySelectorAll('.sim-btn').forEach(b => b.classList.remove('sim-btn-active'));
+            btn.classList.add('sim-btn-active');
+            
+            // 채팅 영역 초기화
+            chatArea.innerHTML = '';
+
+            if (type === 'cooldown') {
+                chatArea.innerHTML = `
+                    <div class="flex gap-2 mb-4">
+                        <div class="w-9 h-9 bg-gray-300 rounded-full flex-shrink-0"></div>
+                        <div class="chat-bubble bg-white text-gray-800 shadow-sm leading-relaxed">
+                            계좌번호 알려드릴게요.<br>카카오뱅크 3333-12-XXXXXX 입니다.
+                        </div>
+                    </div>
+                    <div class="nudge-anim bg-orange-50 border border-orange-200 p-4 rounded-2xl text-xs text-center shadow-sm mx-1 my-4 leading-relaxed">
+                        ⏳ <strong>송금 전 주의! (쿨다운)</strong><br>
+                        해당 계좌번호의 사기 이력을 자동 조회 중입니다. 안전을 위해 잠시 후 <strong>계좌 복사</strong>가 가능합니다.<br>
+                        <div class="mt-3 bg-gray-200 text-gray-400 font-bold py-1.5 px-4 rounded-full shadow-sm w-full">3초 후 복사 활성화...</div>
+                    </div>
+                `;
+            } else if (type === 'blur') {
+                chatArea.innerHTML = `
+                    <div class="flex gap-2 mb-4">
+                        <div class="w-9 h-9 bg-gray-300 rounded-full flex-shrink-0"></div>
+                        <div class="chat-bubble bg-white text-gray-800 shadow-sm leading-relaxed">
+                            실물 사진 좀 볼 수 있을까요?
+                        </div>
+                    </div>
+                    <div class="flex flex-row-reverse gap-2 mb-4">
+                        <div class="chat-bubble bg-white border border-gray-100 shadow-sm p-1">
+                            <div class="relative w-32 h-32 bg-gray-800 rounded-xl overflow-hidden flex items-center justify-center flex-col">
+                                <span class="text-white text-3xl mb-1 filter blur-[1px]">🚫</span>
+                                <span class="text-white text-[11px] font-bold px-2 text-center bg-black/60 rounded py-1 filter blur-[0.5px]">도용 의심 이미지</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nudge-anim bg-blue-50 border border-blue-200 p-4 rounded-2xl text-xs text-center shadow-sm mx-1 my-4 leading-relaxed">
+                        ⚠️ <strong>이미지 도용 주의</strong><br>
+                        타 사이트(중고나라 등)에서 <strong>사용된 적 있는 사진</strong>으로 탐지되었습니다. 사기 피해에 각별히 주의하세요!
+                    </div>
+                `;
+            } else if (type === 'ocr') {
+                chatArea.innerHTML = `
+                    <div class="flex flex-row-reverse gap-2 mb-4">
+                        <div class="chat-bubble bg-brand text-white shadow-sm leading-relaxed">
+                            네 구매할게요! 어떻게 하면 되나요?
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mb-4">
+                        <div class="w-9 h-9 bg-gray-300 rounded-full flex-shrink-0"></div>
+                        <div class="chat-bubble bg-white text-gray-800 shadow-sm p-1">
+                            <div class="w-32 h-20 bg-gray-100 rounded-xl border border-gray-200 flex items-center justify-center">
+                                <span class="text-gray-500 font-bold text-xs">사진: "ㅋr톡문의: SCAM1"</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nudge-anim bg-red-50 border border-red-300 text-red-800 p-4 rounded-2xl text-xs text-center shadow-sm mx-1 my-2 leading-relaxed">
+                        👁️‍🗨️ <strong>우회 연락처 탐지 (OCR)</strong><br>
+                        이미지 내에서 <strong>외부 메신저(카카오톡) 유도 문구</strong>가 식별되어 이미지가 블라인드 처리되었습니다. 지역 커뮤니티 플랫폼 앱 내에서 거래해주세요.
+                    </div>
+                `;
+            }
+
+            chatArea.scrollTop = chatArea.scrollHeight;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지역 정보 서비스 전략 리포트 - 허재석</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#03C75A',
+                            dark: '#02a148',
+                            light: '#e6f9ed',
+                            bg: '#f8fbf9'
+                        },
+                        slate: {
+                            800: '#1e293b',
+                            900: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', 'NanumSquare', 'Apple SD Gothic Neo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" rel="stylesheet">
+
+    <!-- 
+    <!-- Chosen Palette: Portal Tech Green & Professional Slate Gray -->
+    <!-- Application Structure Plan: 
+         1. 텍스트 수정: 작성자 명칭을 '허재석'으로 표기하여 신뢰도를 높였습니다.
+         2. 가독성 최적화: 데스크톱/모바일에서 모두 보기 편한 적정 폰트 사이즈(본문 14-16px)를 적용했습니다.
+         3. 줄바꿈 보정: 히어로 섹션의 요청 문구 줄바꿈을 반영하고 word-break: keep-all로 레이아웃을 정돈했습니다.
+         4. 기호 제거: 모든 강조 기호(**)를 제거하고 폰트 굵기와 컬러로 시각적 계층을 만들었습니다.
+    -->
+    -->
+
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #ffffff;
+            color: #334155;
+            word-break: keep-all;
+            line-height: 1.65;
+            letter-spacing: -0.025em;
+        }
+
+        .keep-all { word-break: keep-all; }
+
+        /* Modal Overlay */
+        #modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background-color: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-action {
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .btn-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px -3px rgba(3, 199, 90, 0.25);
+        }
+        .btn-action:active {
+            transform: scale(0.97);
+        }
+
+        .strategy-card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .strategy-card:hover {
+            border-color: #03C75A;
+            box-shadow: 0 12px 24px -5px rgba(0, 0, 0, 0.07);
+        }
+
+        .nav-link {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #64748b;
+            transition: color 0.2s;
+        }
+        .nav-link:hover { color: #03C75A; }
+
+        .custom-scroll::-webkit-scrollbar { width: 4px; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #03C75A; border-radius: 10px; }
+    </style>
+</head>
+<body class="selection:bg-brand/30">
+
+    <!-- Insight Modal -->
+    <div id="modal-overlay" onclick="closeModal()">
+        <div class="bg-white p-8 md:p-12 rounded-[2.5rem] max-w-xl w-full mx-4 shadow-2xl animate-in zoom-in duration-300 relative border border-slate-100" onclick="event.stopPropagation()">
+            <div id="modal-content" class="text-sm md:text-base leading-relaxed text-slate-600">
+                <!-- Content Injected via JS -->
+            </div>
+            <div class="mt-10 pt-6 border-t border-slate-100 text-center">
+                <button onclick="closeModal()" class="px-12 py-3.5 bg-brand text-white font-bold rounded-full btn-action text-sm">리포트 닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-slate-100 z-50">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-brand rounded-lg flex items-center justify-center text-white font-black text-xs">N</div>
+                <div class="flex flex-col -space-y-0.5">
+                    <span class="font-bold text-slate-900 text-sm tracking-tight leading-none">Live Ops Expert</span>
+                    <span class="text-[9px] text-brand font-bold uppercase tracking-wider leading-none">Strategic Proposal</span>
+                </div>
+            </div>
+            <div class="hidden md:flex gap-6">
+                <a href="#analysis" class="nav-link">리서치 분석</a>
+                <a href="#automation" class="nav-link">운영 효율화</a>
+                <a href="#content" class="nav-link">경험 기획</a>
+                <a href="#impact" class="nav-link">기대 가치</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 px-6 text-center max-w-4xl mx-auto">
+        <div class="inline-block px-3 py-1 bg-brand-light text-brand-dark rounded-full text-[10px] font-black mb-6 uppercase tracking-widest border border-brand/10">
+            Deep Research & Strategy Proposal
+        </div>
+        <h1 class="text-3xl md:text-4xl font-black leading-tight text-slate-900 mb-8 keep-all tracking-tighter">
+            게임 라이브 운영 노하우를 활용한 <br>
+            지역 정보 서비스 <span class="text-brand">데이터 신뢰도 혁신</span> 전략
+        </h1>
+        <p class="text-sm md:text-[17px] text-slate-500 font-medium keep-all max-w-3xl mx-auto leading-relaxed">
+            대규모 유저 동향 데이터를 통합하여 운영 리소스를 98% 절감한 경험을 바탕으로, <br>
+            <span class="text-slate-900 font-bold">지역 정보 서비스의 고품질 로컬 에코시스템 구축 방안을 정리했습니다.</span>
+        </p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-6 space-y-12 pb-32">
+        
+        <!-- Section 1: Analysis -->
+        <section id="analysis" class="strategy-card p-8 md:p-14">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="w-6 h-1 bg-brand rounded-full"></span>
+                        <span class="text-brand font-bold text-[10px] uppercase tracking-widest">Part 1. Problem</span>
+                    </div>
+                    <h2 class="text-xl md:text-2xl font-black text-slate-900 mb-4 leading-snug">
+                        운영 리소스 낭비와 <br> 로컬 데이터의 신뢰도 저하
+                    </h2>
+                    <p class="text-xs md:text-[15px] text-slate-600 mb-8 keep-all leading-relaxed font-medium">
+                        리뷰 이벤트의 성장은 저품질 리뷰 유입과 마케터의 수동 검수 리소스 고갈이라는 결과를 낳았습니다. 게임 운영자 관점에서 이 현상을 정밀 분석했습니다.
+                    </p>
+                    <button onclick="openModal('problem')" class="btn-action px-7 py-3.5 bg-slate-900 text-white rounded-full text-xs font-bold">
+                        분석 결과 확인하기 →
+                    </button>
+                </div>
+                <div class="md:w-1/2 w-full space-y-3">
+                    <div class="p-6 bg-brand-bg rounded-2xl border border-brand/10 flex items-center gap-5">
+                        <span class="text-3xl">⚠️</span>
+                        <div class="keep-all">
+                            <h4 class="font-bold text-slate-800 text-xs">데이터 품질 오염</h4>
+                            <p class="text-[11px] text-slate-400 mt-1 leading-normal">어뷰징 리뷰로 인한 서비스 신뢰도 훼손</p>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-brand-bg rounded-2xl border border-brand/10 flex items-center gap-5">
+                        <span class="text-3xl">⏳</span>
+                        <div class="keep-all">
+                            <h4 class="font-bold text-slate-800 text-xs">운영 리소스 병목</h4>
+                            <p class="text-[11px] text-slate-400 mt-1 leading-normal">검증 작업에 운영 시간의 90% 이상 투입</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Automation -->
+        <section id="automation" class="strategy-card p-8 md:p-14 border-brand/20 bg-brand-bg">
+            <div class="flex flex-col md:flex-row-reverse gap-12 items-center">
+                <div class="md:w-1/2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="w-6 h-1 bg-brand rounded-full"></span>
+                        <span class="text-brand font-bold text-[10px] uppercase tracking-widest">Part 2. Efficiency</span>
+                    </div>
+                    <h2 class="text-xl md:text-2xl font-black text-slate-900 mb-4 leading-snug">
+                        운영 효율 최적화를 위한 <br> 시스템 마케팅 자동화
+                    </h2>
+                    <p class="text-xs md:text-[15px] text-slate-600 mb-8 keep-all leading-relaxed font-medium">
+                        대규모 참여 데이터를 통합 관리하여 리소스를 98% 절감한 운영 노하우를 접목합니다. 고품질 리뷰어 자동 선별 시스템을 구축하여 마케팅 ROI를 높입니다.
+                    </p>
+                    <button onclick="openModal('automation')" class="btn-action px-7 py-3.5 bg-brand text-white rounded-full text-xs font-bold shadow-lg shadow-brand/20">
+                        자동화 가이드 실행하기 →
+                    </button>
+                </div>
+                <div class="md:w-1/2 w-full grid grid-cols-2 gap-4">
+                    <div class="p-8 bg-white rounded-3xl shadow-sm text-center">
+                        <p class="text-[9px] font-black text-slate-300 uppercase mb-2">Centralization</p>
+                        <p class="text-2xl font-black text-brand leading-none">98%</p>
+                        <p class="text-[10px] text-slate-400 mt-2 font-bold">시간 절감</p>
+                    </div>
+                    <div class="p-8 bg-white rounded-3xl shadow-sm text-center">
+                        <p class="text-[9px] font-black text-slate-300 uppercase mb-2">Automation</p>
+                        <p class="text-2xl font-black text-brand leading-none">75%</p>
+                        <p class="text-[10px] text-slate-400 mt-2 font-bold">검증 단축</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Gamification -->
+        <section id="content" class="strategy-card p-8 md:p-14">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="w-6 h-1 bg-brand rounded-full"></span>
+                        <span class="text-brand font-bold text-[10px] uppercase tracking-widest">Part 3. Experience</span>
+                    </div>
+                    <h2 class="text-xl md:text-2xl font-black text-slate-900 mb-4 leading-snug">
+                        유저 성취감을 자극하는 <br> GM 가이드형 경험 설계
+                    </h2>
+                    <p class="text-xs md:text-[15px] text-slate-600 mb-8 keep-all leading-relaxed font-medium">
+                        대형 IP 게임 공지 제작 노하우를 접목하여, 복잡한 리뷰 미션을 인포그래픽 퀘스트로 시각화합니다. 유저의 행동을 쉽고 즐거운 탐험으로 재정의합니다.
+                    </p>
+                    <button onclick="openModal('gamification')" class="btn-action px-7 py-3.5 bg-slate-900 text-white rounded-full text-xs font-bold">
+                        기획 콘텐츠 확인하기 →
+                    </button>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-[280px] h-[460px] bg-slate-900 rounded-[3rem] border-[10px] border-slate-900 shadow-2xl overflow-hidden">
+                        <div class="w-full h-full bg-white p-6 pt-10">
+                            <div class="bg-brand-soft p-5 rounded-2xl mb-6">
+                                <h5 class="text-[11px] font-black text-brand mb-1">성수동 퀘스트 시작! 🗺️</h5>
+                                <p class="text-[9px] font-bold text-slate-800 leading-tight">랜드마크 인증하고 <br> 로컬 마스터 배지를 받으세요.</p>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                                    <span class="text-lg leading-none">📸</span>
+                                    <span class="text-[10px] font-bold text-slate-600">음식 인증샷 3장 포함</span>
+                                </div>
+                                <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                                    <span class="text-lg leading-none">✍️</span>
+                                    <span class="text-[10px] font-bold text-slate-600">나만의 꿀팁 50자 작성</span>
+                                </div>
+                                <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100 opacity-40">
+                                    <span class="text-lg leading-none">🚩</span>
+                                    <span class="text-[10px] font-bold text-slate-600">지역 정보 서비스 저장 완료</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Creative -->
+        <section class="bg-slate-900 rounded-[2.5rem] p-12 md:p-16 text-center text-white border-none overflow-hidden relative">
+            <div class="absolute top-0 right-0 w-80 h-80 bg-brand opacity-5 blur-[100px]"></div>
+            <div class="max-w-2xl mx-auto mb-12 relative z-10">
+                <span class="text-brand font-black text-[10px] tracking-widest uppercase mb-4 block">Part 4. Creative</span>
+                <h2 class="text-2xl md:text-3xl font-black mb-4">행동을 유도하는 푸시 메시지</h2>
+                <p class="text-xs md:text-sm text-slate-400 font-medium italic">게임 운영 공지처럼 설렘을 주는 상황별 카피 전략</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 relative z-10">
+                <button onclick="openModal('push1')" class="p-6 bg-slate-800 rounded-2xl border border-slate-700 hover:border-brand transition-all btn-action flex flex-col items-center">
+                    <span class="text-brand font-black text-[10px] mb-4 uppercase">Type A. 혜택</span>
+                    <span class="text-xs font-bold">카피 미리보기 →</span>
+                </button>
+                <button onclick="openModal('push2')" class="p-6 bg-slate-800 rounded-2xl border border-slate-700 hover:border-brand transition-all btn-action flex flex-col items-center">
+                    <span class="text-brand font-black text-[10px] mb-4 uppercase">Type B. 감성</span>
+                    <span class="text-xs font-bold">카피 미리보기 →</span>
+                </button>
+                <button onclick="openModal('push3')" class="p-6 bg-slate-800 rounded-2xl border border-slate-700 hover:border-brand transition-all btn-action flex flex-col items-center">
+                    <span class="text-brand font-black text-[10px] mb-4 uppercase">Type C. 게임</span>
+                    <span class="text-xs font-bold">카피 미리보기 →</span>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white py-24 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-black mb-12 leading-snug tracking-tighter">
+                데이터로 증명하고 시스템으로 실현하는 방법을 정리했습니다. <br>
+                라이브 운영의 정수를 지역 정보 서비스에 담겠습니다.
+            </h2>
+            <div class="bg-slate-900 p-10 rounded-[3rem] inline-block text-left border border-slate-800 w-full max-w-lg shadow-2xl">
+                <p class="text-slate-500 text-[10px] font-black uppercase tracking-widest mb-8">Live Service Expert Profile</p>
+                <div class="space-y-5">
+                    <div class="flex items-center gap-8 pb-4 border-b border-slate-800">
+                        <span class="text-brand font-black text-[11px] w-12 uppercase tracking-tighter">Email</span>
+                        <span class="text-[15px] font-bold text-slate-300">wotjr423@naver.com</span>
+                    </div>
+                    <div class="flex items-center gap-8">
+                        <span class="text-brand font-black text-[11px] w-12 uppercase tracking-tighter">Phone</span>
+                        <span class="text-[15px] font-bold text-slate-300">010-7913-4992</span>
+                    </div>
+                </div>
+                <button onclick="openModal('contact')" class="mt-12 w-full py-4 bg-brand text-white font-black rounded-2xl btn-action shadow-lg text-[13px] uppercase tracking-widest">허재석 상세 메시지 확인</button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const insights = {
+            problem: `
+                <div class="text-brand font-black text-[10px] mb-5 uppercase tracking-[0.2em]">Deep Research Analysis 01</div>
+                <h3 class="text-xl font-black text-slate-900 mb-6">마케팅 리소스 낭비와 데이터 오염 분석</h3>
+                <div class="space-y-5 text-slate-600 text-sm md:text-[15px] leading-relaxed">
+                    <p>지역 정보 서비스 리뷰 이벤트는 양적 성장에 성공했으나, 리워드만을 목적으로 한 저품질 데이터 유입이라는 부작용을 동반하고 있습니다.</p>
+                    <p>라이브 운영자의 관점에서 볼 때, 마케터가 엑셀로 당첨자를 수동 검증하는 프로세스는 시스템 부재로 인한 <span class="font-bold text-slate-900">운영 리소스 고갈</span>을 초래하며, 기획 업무의 질을 낮추는 핵심 원인이 됩니다.</p>
+                </div>
+            `,
+            automation: `
+                <div class="text-brand font-black text-[10px] mb-5 uppercase tracking-[0.2em]">Deep Research Analysis 02</div>
+                <h3 class="text-xl font-black text-slate-900 mb-6">백오피스 운영 자동화 가이드라인</h3>
+                <div class="space-y-5 text-slate-600 text-sm md:text-[15px] leading-relaxed">
+                    <p>게임 라이브 운영 중 데이터를 중앙화하여 관리 시간을 <span class="font-bold text-brand">98% 절감</span>했던 역량을 활용합니다.</p>
+                    <ul class="space-y-4 font-bold text-slate-800 pt-3">
+                        <li class="flex gap-4 items-start"><span class="text-brand">1.</span> 실시간 데이터 수집 및 자동 스크리닝 파이프라인 구축</li>
+                        <li class="flex gap-4 items-start"><span class="text-brand">2.</span> 이미지 인식 및 키워드 기반 리뷰 품질 지수화</li>
+                        <li class="flex gap-4 items-start"><span class="text-brand">3.</span> 어뷰징 패턴 감지 및 고품질 리뷰어 자동 선정 로직</li>
+                    </ul>
+                </div>
+            `,
+            gamification: `
+                <div class="text-brand font-black text-[10px] mb-5 uppercase tracking-[0.2em]">Deep Research Analysis 03</div>
+                <h3 class="text-xl font-black text-slate-900 mb-6">유저 몰입을 위한 경험 설계</h3>
+                <div class="space-y-5 text-slate-600 text-sm md:text-[15px] leading-relaxed">
+                    <p>대형 게임 업데이트 시 활용했던 <span class="font-bold text-slate-900">GM 가이드 기획 역량</span>을 지역 정보 서비스에 이식합니다.</p>
+                    <p>단순 정보 전달이 아닌 성수동 탐험이라는 세계관을 입히고, 정교한 스토리보드 설계를 통해 디자인 협업 효율을 높이는 동시에 유저에게 <span class="font-bold text-brand">시각적 성취감</span>을 제공하겠습니다.</p>
+                </div>
+            `,
+            push1: `
+                <h4 class="text-[10px] font-black text-brand mb-6 uppercase">Type A. 혜택중심</h4>
+                <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 font-bold text-slate-800 leading-relaxed mb-6 italic text-[15px]">
+                    "성수동 핫플 다녀오셨나요? 지금 사진 인증하면 대형 포털 포인트 500원이 즉시 지급됩니다! 💸"
+                </div>
+                <p class="text-[11px] text-slate-400">데이터 기반 분석: 결제 및 방문 패턴 분석 기반 실시간 발송으로 전환율 극대화.</p>
+            `,
+            push2: `
+                <h4 class="text-[10px] font-black text-brand mb-6 uppercase">Type B. 가치자극</h4>
+                <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 font-bold text-slate-800 leading-relaxed mb-6 italic text-[15px]">
+                    "당신의 리뷰가 동네 카페 사장님께 큰 힘이 됩니다. 소중한 단골집의 마스터가 되어 힘을 보태주세요 ☕"
+                </div>
+                <p class="text-[11px] text-slate-400">전략: 유저의 심리적 보상을 자극하여 포인트 이상의 고품질 데이터 생산 유도.</p>
+            `,
+            push3: `
+                <h4 class="text-[10px] font-black text-brand mb-6 uppercase">Type C. 게임업데이트</h4>
+                <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 font-bold text-slate-800 leading-relaxed mb-6 italic text-[15px]">
+                    "[신규 퀘스트] 성수동 탐험 지도가 열렸습니다! 🗺️ 지금 참여하고 마스터 배지를 획득하세요!"
+                </div>
+                <p class="text-[11px] text-slate-400">전략: 라이브 운영 공지 스타일로 호기심을 유발하여 앱 실행률(CTR) 개선.</p>
+            `,
+            contact: `
+                <h3 class="text-xl font-black text-slate-900 mb-8">허재석의 상세 메시지</h3>
+                <div class="space-y-6 text-slate-600 text-sm md:text-[15px] leading-relaxed">
+                    <p>안녕하세요, 지역 정보 서비스의 고품질 성장 방안을 정리한 허재석입니다.</p>
+                    <p>저는 단순히 주어진 업무를 처리하는 차원을 넘어, <span class="text-brand font-bold">시스템을 설계하여 운영 리소스를 혁신적으로 단축</span>하고 <span class="text-brand font-bold">유저가 몰입할 수 있는 콘텐츠</span>를 기획하는 일에 특화되어 있습니다.</p>
+                    <p>게임 라이브 운영 현장에서 검증된 저의 데이터 핸들링 노하우가 지역 정보 서비스의 로컬 데이터 경쟁력을 한 단계 더 도약시킬 것임을 확신합니다.</p>
+                </div>
+            `
+        };
+
+        function openModal(id) {
+            const modal = document.getElementById('modal-overlay');
+            const content = document.getElementById('modal-content');
+            content.innerHTML = insights[id];
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modal-overlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>

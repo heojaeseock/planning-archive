@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project OQ 경제 밸런스 기획 리포트</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap');
+        
+        body { font-family: 'Pretendard', sans-serif; }
+
+        .chart-container { 
+            position: relative; 
+            width: 100%; 
+            max-width: 800px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            height: 350px; 
+            max-height: 400px; 
+        }
+        @media (max-width: 768px) { 
+            .chart-container { height: 250px; } 
+        }
+
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #2563eb;
+            cursor: pointer;
+            margin-top: -8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 6px;
+            cursor: pointer;
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased leading-relaxed pb-20">
+
+    <!-- Chosen Palette: Blue (Trust), Emerald (Growth), Amber (Value) -->
+    <!-- Application Structure Plan: 
+         1. Context: Baram: Yeon gear farming analysis for 2026.
+         2. Interactive Tool: Set to "Stable" status initially (7,500 KRW/hr).
+         3. Insights: Strategic solutions for Project OQ.
+         4. Footer: Stylized closing statement with professional line breaks. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <header class="bg-blue-900 text-white py-16 px-6 shadow-md border-b-4 border-amber-400">
+        <div class="max-w-5xl mx-auto text-center">
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
+                Project OQ 경제 밸런스 기획 리포트
+            </h1>
+            <p class="text-blue-200 text-lg md:text-xl font-medium">
+                시간과 비용의 가치 치환 분석 및 에코 성장 시스템 제안
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-20">
+
+        <!-- Section 1: Target Analysis -->
+        <section id="section-target" class="space-y-8">
+            <div class="border-l-4 border-blue-600 pl-5">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">1. 분석 타겟 선정 및 상황 설정</h2>
+                <p class="text-slate-600 mt-3 text-lg">
+                    바람의나라: 연의 대표적인 성장 정체 구간인<br class="hidden md:block">
+                    1차 승급 핵심 장비 파밍을 기준으로 경제적 효율을 분석합니다.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-10">
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="w-full md:w-1/3 flex flex-col items-center justify-center p-8 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-300">
+                        <div class="text-6xl mb-4">⚔️</div>
+                        <h3 class="font-bold text-2xl text-center">예리한 금강 무기</h3>
+                        <p class="text-sm text-slate-500 mt-2">성장 밸런스 분석 기준점</p>
+                    </div>
+                    <div class="w-full md:w-2/3 space-y-6">
+                        <p class="text-slate-700 text-lg leading-relaxed">
+                            해당 구간은 상위 사냥터 진입을 위해 반드시 거쳐야 하는 스펙업 단계입니다.<br>
+                            재료 수급의 피로도와 강화 성공 확률이 결합되어 유저의 게임 지속 여부를<br class="hidden md:block">
+                            결정짓는 가장 핵심적인 허들로 작용합니다.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-4">
+                            <div class="bg-emerald-50 p-5 rounded-xl border border-emerald-100">
+                                <h4 class="font-bold text-emerald-800 text-lg mb-2">🏃 무과금 (F2P)</h4>
+                                <ul class="text-sm text-emerald-700 space-y-2 list-disc list-inside">
+                                    <li>던전 반복을 통한 재료 수급</li>
+                                    <li>강화 실패 시 복구 재료 파밍</li>
+                                    <li>시간 투자를 통한 확률적 성장</li>
+                                </ul>
+                            </div>
+                            <div class="bg-blue-50 p-5 rounded-xl border border-blue-100">
+                                <h4 class="font-bold text-blue-800 text-lg mb-2">💎 과금 (P2W)</h4>
+                                <ul class="text-sm text-blue-700 space-y-2 list-disc list-inside">
+                                    <li>상점 패키지 즉시 구매</li>
+                                    <li>강화 보조 아이템으로 리스크 제어</li>
+                                    <li>재화 투자를 통한 즉각적 성장</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Value Calculator -->
+        <section id="section-calculator" class="space-y-8">
+            <div class="border-l-4 border-amber-500 pl-5">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">2. 시간 vs 비용 가치 계산</h2>
+                <p class="text-slate-600 mt-3 text-lg">
+                    유저의 플레이 타임이 2026년 현재 원화 가치로<br class="hidden md:block">
+                    어떻게 환산되는지 실시간 데이터로 시뮬레이션합니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <div class="lg:col-span-5 bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
+                    <h3 class="font-bold text-xl mb-8 border-b pb-4">밸런스 변수 제어</h3>
+                    
+                    <div class="space-y-8">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <label class="text-sm font-bold text-slate-700">목표 달성 소요 일수</label>
+                                <span id="valDays" class="text-base font-extrabold text-emerald-600">10일</span>
+                            </div>
+                            <input type="range" id="inputDays" min="7" max="60" value="10" step="1">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <label class="text-sm font-bold text-slate-700">일일 평균 플레이 시간</label>
+                                <span id="valHours" class="text-base font-extrabold text-emerald-600">8시간</span>
+                            </div>
+                            <input type="range" id="inputHours" min="2" max="14" value="8" step="1">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <label class="text-sm font-bold text-slate-700">패키지 즉시 완성 비용</label>
+                                <span id="valCost" class="text-base font-extrabold text-blue-600">₩600,000</span>
+                            </div>
+                            <input type="range" id="inputCost" min="50000" max="1500000" value="600000" step="10000">
+                        </div>
+                    </div>
+
+                    <div class="mt-10 bg-slate-900 text-white p-6 rounded-2xl text-center">
+                        <p class="text-xs text-slate-400 mb-2 uppercase tracking-widest">Estimated Value</p>
+                        <p class="text-sm text-slate-300 mb-1">총 필요 플레이 타임 : <span id="totalHoursOut" class="text-amber-400 font-bold">80</span> 시간</p>
+                        <p class="text-4xl font-black text-white mt-4">₩ <span id="valuePerHourOut">7,500</span></p>
+                        <p class="text-xs text-slate-400 mt-2">플레이 1시간의 현금 치환 가치</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-white rounded-2xl shadow-sm border border-slate-200 p-8 flex flex-col">
+                    <h3 class="font-bold text-xl mb-4 text-center">2026 경제 지표 대비 분석</h3>
+                    <div class="chart-container flex-grow">
+                        <canvas id="valueChart"></canvas>
+                    </div>
+                    <div id="chartInsightText" class="mt-6 p-5 text-sm md:text-base rounded-xl border text-center font-semibold leading-relaxed">
+                        <!-- JS Dynamic Content -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Insights -->
+        <section id="section-insights" class="space-y-8">
+            <div class="border-l-4 border-emerald-500 pl-5">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">3. Project OQ 경제 설계 방안</h2>
+                <p class="text-slate-600 mt-3 text-lg">
+                    단순 파밍의 한계를 넘어 무과금 유저의 플레이 가치를<br class="hidden md:block">
+                    온전히 보전하기 위한 두 가지 핵심 기제를 제안합니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-10 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-emerald-100 rounded-2xl flex items-center justify-center text-4xl mb-6 shadow-inner">🛡️</div>
+                    <h3 class="font-bold text-xl mb-4">마일리지형 천장 시스템</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                        확률형 성장에서 발생하는 실패 스트레스를 제거합니다.<br>
+                        실패 시마다 누적되는 부산물을 통해 결국 목표 아이템에<br class="hidden lg:block">
+                        도달할 수 있는 '확정 성장 경로'를 제공하여 시간의 가치를 보존합니다.
+                    </p>
+                </div>
+                <div class="bg-white p-10 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center text-center">
+                    <div class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center text-4xl mb-6 shadow-inner">🔄</div>
+                    <h3 class="font-bold text-xl mb-4">거래소 기반 재화 선순환</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                        무과금 유저의 노력이 유료 재화로 변환되도록 설계합니다.<br>
+                        필요한 재료를 과금 유저가 구매하게 함으로써,<br class="hidden lg:block">
+                        플레이 시간이 실제 재화 획득으로 이어지는 건강한 순환을 유도합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Sources -->
+        <section id="section-sources">
+            <div class="bg-slate-100 p-8 rounded-2xl border border-slate-200">
+                <h3 class="text-sm font-extrabold text-slate-500 uppercase tracking-widest mb-4">데이터 참조 및 지표 근거</h3>
+                <ul class="text-xs md:text-sm text-slate-500 space-y-3 leading-snug">
+                    <li class="flex items-start gap-2"><span>•</span> <span><strong>게임 데이터 :</strong> 바람의나라: 연 커뮤니티 내 아이템 획득 및 강화 확률 기반 시뮬레이션 결과 반영</span></li>
+                    <li class="flex items-start gap-2"><span>•</span> <span><strong>경제 지표 :</strong> 2026년 고용노동부 고시 최저임금 결정액 (시간당 10,030원) 비교 데이터 활용</span></li>
+                    <li class="flex items-start gap-2"><span>•</span> <span><strong>시장 물가 :</strong> 게임 개발사 공식 패키지 구성품 및 유료 재화(보석)의 현금 치환 가치 기준 산출</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer: Vision -->
+        <footer class="text-center pt-16 border-t border-slate-200">
+            <h3 class="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-emerald-600 leading-tight">
+                "무과금의 시간과 과금러의 자본이<br class="md:hidden"> 거래소를 통해<br class="hidden md:block">
+                완벽히 맞물려 회전하는<br class="md:hidden"> 에코 성장 시스템을 설계해 보았습니다."
+            </h3>
+        </footer>
+
+    </main>
+
+    <script>
+        // DOM
+        const inputDays = document.getElementById('inputDays');
+        const inputHours = document.getElementById('inputHours');
+        const inputCost = document.getElementById('inputCost');
+        
+        const valDays = document.getElementById('valDays');
+        const valHours = document.getElementById('valHours');
+        const valCost = document.getElementById('valCost');
+        
+        const totalHoursOut = document.getElementById('totalHoursOut');
+        const valuePerHourOut = document.getElementById('valuePerHourOut');
+        const chartInsightText = document.getElementById('chartInsightText');
+
+        let valueChart;
+        const MINIMUM_WAGE_2026 = 10030;
+
+        function formatCurrency(num) {
+            return num.toLocaleString('ko-KR');
+        }
+
+        function initChart() {
+            const ctx = document.getElementById('valueChart').getContext('2d');
+            valueChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['현재 플레이 가치', '2026 최저시급'],
+                    datasets: [{
+                        label: '원화 가치 (KRW)',
+                        data: [0, MINIMUM_WAGE_2026],
+                        backgroundColor: ['rgba(245, 158, 11, 0.85)', 'rgba(148, 163, 184, 0.4)'],
+                        borderColor: ['rgba(245, 158, 11, 1)', 'rgba(148, 163, 184, 1)'],
+                        borderWidth: 1,
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: { label: (context) => ' ₩ ' + formatCurrency(context.raw) }
+                        }
+                    },
+                    scales: {
+                        x: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.03)' } },
+                        y: { grid: { display: false }, ticks: { font: { weight: 'bold' } } }
+                    }
+                }
+            });
+        }
+
+        function updateCalculations() {
+            const days = parseInt(inputDays.value);
+            const hours = parseInt(inputHours.value);
+            const cost = parseInt(inputCost.value);
+
+            valDays.innerText = `${days}일`;
+            valHours.innerText = `${hours}시간`;
+            valCost.innerText = `₩${formatCurrency(cost)}`;
+
+            const totalHours = days * hours;
+            const valuePerHour = Math.round(cost / totalHours);
+
+            totalHoursOut.innerText = formatCurrency(totalHours);
+            valuePerHourOut.innerText = formatCurrency(valuePerHour);
+
+            if(valueChart) {
+                valueChart.data.datasets[0].data[0] = valuePerHour;
+                
+                if (valuePerHour < 3000) {
+                    valueChart.data.datasets[0].backgroundColor[0] = 'rgba(239, 68, 68, 0.85)';
+                    chartInsightText.className = "mt-6 p-5 bg-red-50 text-red-800 text-sm md:text-base rounded-xl border border-red-200 text-center font-semibold leading-relaxed";
+                    chartInsightText.innerHTML = `위험 수준: 시간 가치가 최저시급의 ${Math.round((valuePerHour/MINIMUM_WAGE_2026)*100)}% 수준에 머뭅니다.<br>심각한 노동 박탈감으로 인해 해당 구간에서 대규모 유저 이탈이 예상됩니다.`;
+                } else if (valuePerHour < 6000) {
+                    valueChart.data.datasets[0].backgroundColor[0] = 'rgba(245, 158, 11, 0.85)';
+                    chartInsightText.className = "mt-6 p-5 bg-amber-50 text-amber-800 text-sm md:text-base rounded-xl border border-amber-200 text-center font-semibold leading-relaxed";
+                    chartInsightText.innerHTML = `주의 수준: 플레이를 성장이 아닌 '노동'으로 인식하기 시작하는 임계점입니다.<br>천장 시스템 및 확정적 보상 기제를 통해 플레이 피로도를 경감해야 합니다.`;
+                } else {
+                    valueChart.data.datasets[0].backgroundColor[0] = 'rgba(16, 185, 129, 0.85)';
+                    chartInsightText.className = "mt-6 p-5 bg-emerald-50 text-emerald-800 text-sm md:text-base rounded-xl border border-emerald-200 text-center font-semibold leading-relaxed";
+                    chartInsightText.innerHTML = `안정 수준: 거래소를 통한 재화 창출이 유의미해지는 건강한 구간입니다.<br>무과금 유저가 자신의 시간을 자본으로 변환할 수 있는 충분한 동기가 부여됩니다.`;
+                }
+                
+                valueChart.update();
+            }
+        }
+
+        // Init
+        window.addEventListener('DOMContentLoaded', () => {
+            initChart();
+            updateCalculations();
+            
+            [inputDays, inputHours, inputCost].forEach(input => {
+                input.addEventListener('input', updateCalculations);
+            });
+        });
+
+    </script>
+</body>
+</html>

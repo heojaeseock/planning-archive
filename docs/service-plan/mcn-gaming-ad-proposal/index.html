@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCN Gaming AD 제안서</title>
+    
+    <!-- Application Structure Plan: 
+         밝고 신뢰감을 주는 컨설팅 덱(Deck) 스타일의 구조. 
+         PC 화면에서 문장이 한눈에 들어오도록 의도적인 줄바꿈(<br>) 적용.
+         1. Hero: 직관적인 제목과 작성자의 핵심 무기 요약
+         2. Problem: 대행사와 게임사가 겪는 문제를 명확히 대조
+         3. Solution 1 (자동화): 보안(로컬 AI)을 강조한 인터랙티브 파이프라인
+         4. Solution 2 (리스크 방어): 실무 운영 경험이 돋보이는 3방향 위기 대응 매뉴얼
+         5. Impact: 정량/정성적 기대 효과 강조
+    -->
+    <!-- Visualization & Content Choices: 
+         - 차트: 시인성이 높은 옐로우/다크그레이 조합의 Bar 차트로 개선 후 리소스 변화 직관적 비교
+         - 탭 UI: 밝은 테마에 맞는 부드러운 그림자(Shadow)와 직관적인 활성화(Active) 상태 디자인 적용
+         - NO SVG / Mermaid 사용 안 함
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v3.2.1/dist/web/static/pretendard.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Pretendard', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            DEFAULT: '#FFD100', // MCN 기업 시그니처 옐로우
+                            hover: '#E5BC00',
+                            light: '#FFF5CC'
+                        },
+                        slate: {
+                            850: '#152033',
+                            900: '#0F172A',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #F8FAFC; /* 아주 밝은 쿨그레이 배경 */
+            color: #1E293B; /* 진한 먹색 텍스트로 가독성 확보 */
+        }
+        
+        .chart-container { 
+            position: relative; 
+            width: 100%; 
+            max-width: 600px; 
+            margin: 0 auto; 
+            height: 280px; 
+        }
+
+        /* 탭 버튼 스타일 (밝은 테마) */
+        .tab-btn {
+            transition: all 0.2s ease-in-out;
+            background-color: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            color: #64748B;
+        }
+        .tab-btn:hover {
+            border-color: #FFD100;
+            color: #1E293B;
+        }
+        .tab-btn.active {
+            background-color: #FFD100;
+            border-color: #FFD100;
+            color: #111827;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(255, 209, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* 호버 카드 스타일 (밝은 테마) */
+        .hover-card {
+            background-color: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .hover-card:hover {
+            transform: translateY(-5px);
+            border-color: #FFD100;
+            box-shadow: 0 12px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .fade-in { animation: fadeIn 0.4s ease-in-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 텍스트 가독성 최적화: PC 환경에서 자연스러운 줄바꿈을 유도합니다. */
+        p, li { 
+            word-break: keep-all; 
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-light selection:text-slate-900">
+
+    <!-- 고정 네비게이션 -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="font-extrabold text-xl text-slate-900 flex items-center">
+                <span class="w-4 h-4 bg-brand rounded-sm mr-2 inline-block"></span> SBX PROPOSAL
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold">
+                <a href="#problem" class="text-slate-500 hover:text-slate-900 transition">제안 배경</a>
+                <a href="#solution1" class="text-slate-500 hover:text-slate-900 transition">자동화 기획</a>
+                <a href="#solution2" class="text-slate-500 hover:text-slate-900 transition">위기 대응 매뉴얼</a>
+                <a href="#impact" class="text-slate-500 hover:text-slate-900 transition">기대 효과</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto text-center">
+        <div class="inline-block px-4 py-1.5 rounded-full bg-slate-100 text-slate-600 font-bold text-sm mb-6 border border-slate-200">
+            Gaming AD 사업 기획/운영 제안서
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-8 leading-tight text-slate-900">
+            MCN Gaming AD 맞춤형 <br>
+            <span class="relative inline-block mt-2">
+                <span class="relative z-10">세일즈 자동화 및 리스크 방어 전략</span>
+                <span class="absolute bottom-1 left-0 w-full h-4 bg-brand opacity-40 -z-10"></span>
+            </span>
+        </h1>
+        <p class="text-lg text-slate-600 mb-12 max-w-3xl mx-auto">
+            게임사 운영팀 출신의 시야와 e스포츠 생방송 관제 경험을 바탕으로,<br>
+            영업의 비효율은 제거하고 클라이언트의 불안감은 완벽히 통제하는 솔루션을 제안합니다.
+        </p>
+    </section>
+
+    <!-- 2. 제안 배경 -->
+    <section id="problem" class="py-20 bg-white border-y border-slate-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">현장의 딜레마와 해결 목표</h2>
+                <p class="text-slate-500">
+                    현재 마케팅 대행사와 게임사가 각각 겪고 있는 핵심 고충을 파악하고,<br>이를 해결하여 MCN의 영업 경쟁력을 극대화합니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <!-- 고충 카드 -->
+                <div class="space-y-6">
+                    <div class="hover-card p-8 rounded-2xl">
+                        <div class="text-3xl mb-4">💼</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">대행사의 고충 : 부족한 영업 시간</h3>
+                        <p class="text-slate-600">
+                            매번 신규 게임을 분석하고 크리에이터를 매칭하는 제안서 작성 업무에 치여, 정작 중요한 '신규 게임사 발굴 및 밀착 영업'에 투자할 시간이 절대적으로 부족합니다.
+                        </p>
+                    </div>
+                    <div class="hover-card p-8 rounded-2xl">
+                        <div class="text-3xl mb-4">🏢</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">게임사의 불안 : 생방송 리스크</h3>
+                        <p class="text-slate-600">
+                            거액을 투자한 방송 중 게임 서버가 다운되거나 크리에이터의 말실수로 민심이 폭발할 경우, 브랜드가 훼손될 수 있다는 통제 불가능한 리스크를 가장 두려워합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 차트 영역 -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 flex flex-col justify-center h-full">
+                    <h4 class="text-center font-bold text-slate-800 mb-8 text-lg">솔루션 도입 전후 리소스 변화 (기대치)</h4>
+                    <div class="chart-container">
+                        <canvas id="resourceChart"></canvas>
+                    </div>
+                    <div class="mt-8 p-4 bg-white rounded-lg border-l-4 border-brand shadow-sm">
+                        <p class="text-sm text-slate-600">
+                            <strong class="text-slate-900">데이터 산출 근거:</strong> 반복적인 크리에이터 탐색 및 초안 작성 시간을 단축하여, 확보된 시간을 <span class="font-bold text-slate-900">고부가가치 영업 활동에 90% 집중</span>할 수 있는 환경을 만듭니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 파이프라인 (클릭 UX) -->
+    <section id="solution1" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">1. 신규 영업 자동화 : 기밀 유출 없는 '로컬 AI' 매칭 시스템</h2>
+                <p class="text-slate-500">
+                    노션에 게임 정보만 입력하면, AI가 최적의 크리에이터를 찾고 영업 메일 초안까지 10초 만에 작성합니다.<br>
+                    아래 단계를 클릭하여 자동화 흐름을 확인해 보세요.
+                </p>
+            </div>
+
+            <!-- 핵심: 보안 강조 박스 -->
+            <div class="mb-12 p-6 bg-white border border-slate-200 shadow-sm rounded-2xl flex items-start max-w-4xl mx-auto">
+                <span class="text-2xl mr-4 mt-1">🔒</span>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-3 text-lg">왜 외부 AI가 아닌 '사내 구축형 로컬 AI'인가요?</h4>
+                    <p class="text-slate-600 leading-relaxed">
+                        출시 전인 신작 게임의 정보(세계관, 타겟층, 핵심 비즈니스 모델)는 게임사의 1급 기밀입니다. 외부망으로 데이터가 전송되는 일반 AI 대신, 외부망과 철저히 차단된 사내망 로컬 AI를 활용하여 클라이언트의 정보 유출 불안을 0%로 원천 차단합니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 클릭형 인터랙티브 파이프라인 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 max-w-5xl mx-auto">
+                <button onclick="showPipeline(1)" id="pipe-btn-1" class="tab-btn active p-6 rounded-xl text-center focus:outline-none">
+                    <div class="text-2xl mb-3">📝</div>
+                    <div class="font-bold text-lg">Step 1. 노션에 게임 정보 입력</div>
+                </button>
+                <button onclick="showPipeline(2)" id="pipe-btn-2" class="tab-btn p-6 rounded-xl text-center focus:outline-none">
+                    <div class="text-2xl mb-3">🧠</div>
+                    <div class="font-bold text-lg">Step 2. 로컬 AI 매칭 분석</div>
+                </button>
+                <button onclick="showPipeline(3)" id="pipe-btn-3" class="tab-btn p-6 rounded-xl text-center focus:outline-none">
+                    <div class="text-2xl mb-3">🚀</div>
+                    <div class="font-bold text-lg">Step 3. 영업 메일 자동 완성</div>
+                </button>
+            </div>
+
+            <!-- 파이프라인 상세 내용 출력부 -->
+            <div id="pipeline-content" class="bg-white p-8 md:p-10 rounded-2xl border border-slate-200 shadow-sm max-w-5xl mx-auto min-h-[220px]">
+                <!-- 초기 렌더링을 위해 Step 1 내용 하드코딩 -->
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="bg-slate-50 p-6 rounded-xl w-full md:w-1/3 text-center border border-slate-200">
+                        <p class="font-bold text-slate-900 mb-2">도구: 노션</p>
+                        <p class="text-slate-500 text-sm leading-relaxed">
+                            담당자가 게임사 미팅 후, 신작 게임의 핵심 키워드를 정해진 템플릿에 체크합니다.
+                        </p>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h4 class="text-xl font-bold text-slate-900 mb-4">신규 게임 기초 데이터 입력</h4>
+                        <ul class="space-y-4 text-slate-600">
+                            <li class="flex items-start"><span class="text-brand font-bold mr-3">✔</span> <span><strong>장르 및 타겟:</strong> 서브컬처, 2030 직장인 남성</span></li>
+                            <li class="flex items-start"><span class="text-brand font-bold mr-3">✔</span> <span><strong>게임 특징:</strong> 화려한 궁극기 연출, 방치형 자동 사냥 시스템</span></li>
+                            <li class="flex items-start"><span class="text-brand font-bold mr-3">✔</span> <span><strong>마케팅 목표:</strong> 출시 전 사전 예약자 10만 명 확보</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 위기 대응 매뉴얼 (클릭 탭 UI) -->
+    <section id="solution2" class="py-20 bg-white border-t border-slate-200 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-14 max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">2. 실전 라이브 위기 대응 매뉴얼</h2>
+                <p class="text-slate-500">
+                    e스포츠 관제 시선으로 바라본 3대 돌발 상황과 즉각적인 컨트롤 타워 역할입니다. (발생 가능한 위기 상황을 클릭해 보세요)
+                </p>
+            </div>
+
+            <!-- 탭 버튼 -->
+            <div class="flex flex-col md:flex-row gap-4 mb-10 justify-center">
+                <button onclick="showRisk(1)" id="risk-btn-1" class="tab-btn active px-8 py-4 rounded-xl text-lg focus:outline-none">
+                    🚨 1. 게임 서버 다운
+                </button>
+                <button onclick="showRisk(2)" id="risk-btn-2" class="tab-btn px-8 py-4 rounded-xl text-lg focus:outline-none">
+                    🗣️ 2. 크리에이터 오안내
+                </button>
+                <button onclick="showRisk(3)" id="risk-btn-3" class="tab-btn px-8 py-4 rounded-xl text-lg focus:outline-none">
+                    🔥 3. 악성 채팅 테러
+                </button>
+            </div>
+
+            <!-- 매뉴얼 내용 대시보드 -->
+            <div id="risk-content" class="bg-slate-900 rounded-2xl shadow-xl p-8 md:p-10">
+                <h3 class="text-2xl font-bold text-white mb-8 border-b border-slate-700 pb-5" id="risk-title">
+                    🚨 상황 1. 생방송 중 갑작스러운 게임 서버 다운/접속 불가
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- 대상 1 -->
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                        <h4 class="font-bold text-white mb-5 flex items-center text-lg">
+                            <span class="w-3 h-3 rounded-full bg-brand mr-3"></span> To. 크리에이터
+                        </h4>
+                        <ul class="text-sm text-slate-300 space-y-4" id="risk-target-1">
+                            <li>당황하지 않도록 즉각 인이어 및 메신저로 상황 인지 안내</li>
+                            <li>사전 준비된 '서버 점검/대기' 송출 화면으로 즉각 전환 요청</li>
+                            <li>접속 불가 시간 동안 시간 끌기가 가능한 예비 콘텐츠(Q&A 등) 진행 유도</li>
+                        </ul>
+                    </div>
+                    <!-- 대상 2 -->
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                        <h4 class="font-bold text-white mb-5 flex items-center text-lg">
+                            <span class="w-3 h-3 rounded-full bg-green-400 mr-3"></span> To. 클라이언트
+                        </h4>
+                        <ul class="text-sm text-slate-300 space-y-4" id="risk-target-2">
+                            <li>핫라인을 통해 상황 즉시 브리핑 및 서버 복구 예상 시간(ETA) 확인 요청</li>
+                            <li>광고주의 불안감 선제적 차단을 위해 방송 시간 유연 연장안 1차 제시</li>
+                            <li>시청자 이탈을 막기 위한 시청자 대상 깜짝 보상 쿠폰 발급 긴급 승인 요청</li>
+                        </ul>
+                    </div>
+                    <!-- 대상 3 -->
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                        <h4 class="font-bold text-white mb-5 flex items-center text-lg">
+                            <span class="w-3 h-3 rounded-full bg-blue-400 mr-3"></span> 내부 조치 (AE)
+                        </h4>
+                        <ul class="text-sm text-slate-300 space-y-4" id="risk-target-3">
+                            <li>채팅창에 공식 매니저 계정으로 현재 서버 상황 고정 메시지 노출</li>
+                            <li>MCN 내부 캠페인 운영팀에 이슈 전파 및 후속 일정 조정 준비</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 기대 효과 -->
+    <section id="impact" class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">도입에 따른 기대 효과</h2>
+                <p class="text-slate-500">본 기획안이 MCN Gaming AD 팀에 가져올 실질적인 비즈니스 시너지입니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                <div class="hover-card p-10 rounded-2xl text-center bg-white border-t-4 border-t-brand">
+                    <div class="text-slate-900 font-extrabold text-5xl mb-6">매출 <span class="text-brand">UP</span></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">영업 리소스 전면 재배치</h3>
+                    <p class="text-slate-600">
+                        자동화로 절약된 행정 업무 시간을 온전히 전략 기획과 신규 클라이언트 발굴에 쏟아부어, 동일 인력으로 더 많은 캠페인을 유치합니다.
+                    </p>
+                </div>
+                
+                <div class="hover-card p-10 rounded-2xl text-center bg-white border-t-4 border-t-slate-900">
+                    <div class="text-slate-900 font-extrabold text-5xl mb-6">신뢰도 <span class="text-brand">100%</span></div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">독보적인 파트너십 구축</h3>
+                    <p class="text-slate-600">
+                        기밀 유출 없는 시스템과 돌발 상황을 완벽히 방어하는 매뉴얼은 클라이언트에게 확신을 주어, 단발성 계약을 장기적인 독점 파트너십으로 전환시킵니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-10 text-center border-t border-slate-200">
+        <p class="text-slate-400 text-sm font-medium">본 제안서는 MCN 기업 Gaming AD 직무 분석을 위해 제작되었습니다.</p>
+    </footer>
+
+    <!-- JavaScript 로직 -->
+    <script>
+        // 1. 차트 렌더링 로직 (밝은 테마에 맞게 색상 수정)
+        const renderChart = () => {
+            const ctx = document.getElementById('resourceChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['도입 전 (현재)', '도입 후 (개선)'],
+                    datasets: [
+                        {
+                            label: '단순 반복 업무 (제안서 작성 등)',
+                            data: [70, 10],
+                            backgroundColor: '#94A3B8', // 차분한 회색
+                            borderRadius: 6
+                        },
+                        {
+                            label: '고부가가치 업무 (신규 영업/기획)',
+                            data: [30, 90],
+                            backgroundColor: '#FFD100', // MCN 옐로우
+                            borderRadius: 6
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: { stacked: true, max: 100, grid: { color: '#E2E8F0' }, ticks: { color: '#64748B', callback: function(val) { return val + '%'; } } },
+                        y: { stacked: true, grid: { display: false }, ticks: { color: '#1E293B', font: { size: 15, family: "'Pretendard', sans-serif", weight: 'bold' } } }
+                    },
+                    plugins: {
+                        legend: { labels: { color: '#475569', font: { family: "'Pretendard', sans-serif" } } },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.parsed.x + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        };
+        document.addEventListener('DOMContentLoaded', renderChart);
+
+        // 2. 파이프라인 상호작용 로직 (줄바꿈 <br> 포함)
+        const pipelineData = {
+            1: {
+                tool: "도구: 노션",
+                desc: "담당자가 게임사 미팅 후, 신작 게임의 핵심 키워드를 정해진 템플릿에 체크합니다.",
+                title: "신규 게임 기초 데이터 입력",
+                list: [
+                    "<strong>장르 및 타겟:</strong> 서브컬처, 2030 직장인 남성",
+                    "<strong>게임 특징:</strong> 화려한 궁극기 연출, 방치형 자동 사냥 시스템",
+                    "<strong>마케팅 목표:</strong> 출시 전 사전 예약자 10만 명 확보"
+                ]
+            },
+            2: {
+                tool: "도구: 사내망 구축형 AI",
+                desc: "입력된 신작 데이터를 MCN 소속 260여 팀의 크리에이터 DB와 교차 분석합니다.",
+                title: "크리에이터 매칭 분석",
+                list: [
+                    "<strong>시청자 성향 매칭:</strong> 신작 타겟층과 크리에이터 구독자층의 일치 여부 확인",
+                    "<strong>안전성 검증:</strong> 해당 크리에이터가 과거 타사 게임 방송 중 논란이 없었는지 교차 검증",
+                    "<strong>속도 혁신:</strong> 수십 명의 후보군을 수동으로 찾던 탐색 시간을 10초로 단축"
+                ]
+            },
+            3: {
+                tool: "도구: 제안서 자동 렌더링",
+                desc: "분석 결과를 바탕으로 게임사 담당자에게 당장 보낼 수 있는 수준의 영업 메일 초안이 완성됩니다.",
+                title: "영업 제안 메일 자동 생성",
+                list: [
+                    "<strong>Top 3 추천:</strong> 가장 전환 효율이 높을 것으로 분석된 최적의 크리에이터 3인 리스트업",
+                    "<strong>추천 근거 요약:</strong> 게임사 담당자를 설득할 수 있는 AI의 논리적 추천 사유(3줄 요약) 제공",
+                    "<strong>즉시 발송:</strong> 담당자 이름만 복사/붙여넣기 하여 즉시 전송 가능한 메일 본문 텍스트 완성"
+                ]
+            }
+        };
+
+        function showPipeline(step) {
+            for(let i=1; i<=3; i++) {
+                const btn = document.getElementById(`pipe-btn-${i}`);
+                if(i === step) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            }
+
+            const content = document.getElementById('pipeline-content');
+            const data = pipelineData[step];
+            
+            content.classList.remove('fade-in');
+            void content.offsetWidth;
+            content.classList.add('fade-in');
+
+            content.innerHTML = `
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="bg-slate-50 p-6 rounded-xl w-full md:w-1/3 text-center border border-slate-200">
+                        <p class="font-bold text-slate-900 mb-2">${data.tool}</p>
+                        <p class="text-slate-500 text-sm">${data.desc}</p>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h4 class="text-xl font-bold text-slate-900 mb-4">${data.title}</h4>
+                        <ul class="space-y-4 text-slate-600">
+                            ${data.list.map(item => `<li class="flex items-start"><span class="text-brand font-bold mr-3">✔</span> <span>${item}</span></li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `;
+        }
+
+        // 3. 위기 대응 매뉴얼 상호작용 로직 (줄바꿈 <br> 제거)
+        const riskData = {
+            1: {
+                title: "🚨 상황 1. 생방송 중 갑작스러운 게임 서버 다운/접속 불가",
+                targets: [
+                    ["당황하지 않도록 즉각 인이어 및 메신저로 상황 인지 안내", "사전 준비된 '서버 점검/대기' 송출 화면으로 즉각 전환 요청", "접속 불가 시간 동안 시간 끌기가 가능한 예비 콘텐츠(Q&A 등) 진행 유도"],
+                    ["핫라인을 통해 상황 즉시 브리핑 및 서버 복구 예상 시간 확인 요청", "광고주의 불안감 선제적 차단을 위해 방송 시간 유연 연장안 1차 제시", "시청자 이탈을 막기 위한 시청자 대상 깜짝 보상 쿠폰 발급 긴급 승인 요청"],
+                    ["채팅창에 공식 매니저 계정으로 현재 서버 상황 고정 메시지 노출", "MCN 내부 캠페인 운영팀에 이슈 전파 및 후속 일정 조정 준비"]
+                ]
+            },
+            2: {
+                title: "🗣️ 상황 2. 크리에이터의 치명적인 게임 정보 오안내",
+                targets: [
+                    ["즉각 개별 연락망으로 명확한 '정정 워딩' 전달 (당황하지 않게 비난 자제)", "'아까 설명에 오해가 있어 다시 말씀드린다'는 자연스러운 정정 멘트 유도", "크리에이터가 멘탈이 흔들리지 않도록 텐션 유지 케어"],
+                    ["이슈 발생 즉시 클라이언트에게 상황 인지 및 선제 조치 중임을 보고", "방송 종료 후 VOD 클립 편집 컷오프 약속 및 고정 댓글을 통한 정정 게재 안내", "필요시 커뮤니티 추가 포스팅을 통한 보완 마케팅 방향 제안 (진화 작업)"],
+                    ["채팅창 유저 혼동 방지를 위해 올바른 정보 텍스트 즉시 핑(고정)", "이슈 확산 조짐 시 MCN PR팀 및 위기관리팀에 스탠바이 요청"]
+                ]
+            },
+            3: {
+                title: "🔥 상황 3. 시청자 민심 악화로 인한 악성 채팅 테러",
+                targets: [
+                    ["채팅창 여론에 휘말려 같이 화내지 않도록 강력한 멘탈 가이드 전달", "인게임 화면을 내리고 소통 화면으로 우회하여 게임과 일시적 거리두기 지시", "준비해둔 경품 추첨 이벤트 조기 가동하여 분위기 환전 시도"],
+                    ["실시간 민심 동향(불만 원인)을 빠르게 요약하여 클라이언트에게 즉각 피드백", "브랜드 훼손 방지를 위한 최후의 수단으로 '방송 조기 종료' 가능성 협의", "분위기 진정을 위한 즉각적인 특별 보상안 (사과 쿠폰 등) 배포 제안"],
+                    ["매니저 권한으로 악성 도배 채팅 즉각 블라인드 및 슬로우 모드 발동", "팬카페 및 외부 커뮤니티 모니터링을 통해 2차 불길 확산 방어"]
+                ]
+            }
+        };
+
+        function showRisk(step) {
+            for(let i=1; i<=3; i++) {
+                const btn = document.getElementById(`risk-btn-${i}`);
+                if(i === step) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            }
+
+            const content = document.getElementById('risk-content');
+            const data = riskData[step];
+            
+            content.classList.remove('fade-in');
+            void content.offsetWidth;
+            content.classList.add('fade-in');
+
+            document.getElementById('risk-title').innerText = data.title;
+            
+            for(let i=1; i<=3; i++) {
+                document.getElementById(`risk-target-${i}`).innerHTML = 
+                    data.targets[i-1].map(item => `<li>${item}</li>`).join('');
+            }
+        }
+    </script>
+</body>
+</html>

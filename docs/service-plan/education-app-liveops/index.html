@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교육 콘텐츠 기업 모바일 앱 라이브 운영 작업 기록</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; background-color: #f8fafc; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        
+        /* Chart Container Requirements */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            height: 280px;
+            max-height: 320px;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 320px; }
+        }
+
+        /* Animations for interactive prompts */
+        @keyframes point-right {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(5px); }
+        }
+        .animate-point-right { animation: point-right 1.5s infinite; }
+        
+        @keyframes point-down {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(5px); }
+        }
+        .animate-point-down { animation: point-down 1.5s infinite; }
+
+        /* Smooth Transitions */
+        .interactive-card { transition: all 0.2s ease-in-out; }
+        .interactive-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1); }
+        
+        /* Button Polish */
+        .btn-interactive {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .btn-interactive:active { transform: scale(0.97); }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-blue-200">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-4 h-16 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="font-black text-2xl tracking-tighter text-[#004ea2]">brand</span>
+                <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded font-bold border border-slate-200 mt-1">PM 작업 기록</span>
+            </div>
+            <div class="hidden sm:flex space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#s1" class="hover:text-blue-600 transition-colors">데이터 무결성 검수</a>
+                <a href="#s2" class="hover:text-blue-600 transition-colors">트래픽 관제</a>
+                <a href="#s3" class="hover:text-blue-600 transition-colors">VOC 기획화</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 pb-24">
+        
+        <!-- Hero Section -->
+        <section class="pt-20 pb-16 text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 leading-[1.15] mb-6 tracking-tight">
+                에듀테크의 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">시즌성 트래픽</span>과 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">무결성</span>,<br>
+                게임 운영의 노하우로 완벽히 제어합니다.
+            </h1>
+            <!-- 개선된 메인 카피: 명령조 제거 및 부드러운 안내 -->
+            <p class="text-slate-500 max-w-2xl mx-auto text-base sm:text-lg font-medium leading-relaxed">
+                데이터와 라이브 관제 경험을 바탕으로 한 문제 해결 전략을<br class="hidden sm:block"> 
+                아래 <b class="text-slate-700">인터랙티브 데모</b>를 통해 확인하실 수 있습니다. 👇
+            </p>
+        </section>
+
+        <!-- Strategy 1: Data Integrity (Interactive) -->
+        <section id="s1" class="mb-20 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">
+            <div class="mb-8 flex flex-col md:flex-row md:justify-between md:items-end gap-6 border-b border-slate-100 pb-6">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2">💡 전략 1. 수작업 데이터 검수 자동화</h2>
+                    <p class="text-slate-500 font-medium">수만 개의 인강/교재 메타데이터 검수, 엑셀 함수를 활용한 파이프라인으로 75% 단축합니다.</p>
+                </div>
+                <!-- Interactive Button -->
+                <div class="relative inline-block text-center flex-shrink-0">
+                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-blue-600 font-bold text-sm whitespace-nowrap animate-point-down">
+                        👇 클릭해서 자동화 적용
+                    </div>
+                    <button id="btn-automate" class="btn-interactive bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 px-7 rounded-xl flex items-center gap-2 w-full md:w-auto justify-center">
+                        <span class="text-lg">⚙️</span> 엑셀 자동화 시스템 가동
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-1 space-y-5">
+                    <div id="status-card-1" class="p-5 rounded-2xl border border-slate-200 bg-slate-50 transition-all duration-300">
+                        <div class="text-xs font-bold text-slate-400 mb-1.5 uppercase tracking-wider">현재 검수 상태</div>
+                        <!-- 개선된 텍스트: 글자수 축소 및 break-keep 적용으로 줄바꿈 방지 -->
+                        <div id="status-text-1" class="text-[17px] font-bold text-slate-700 break-keep">⚠️ 수작업 진행 중 (오류 위험)</div>
+                    </div>
+                    <div class="bg-white border border-slate-100 rounded-2xl p-5 shadow-sm">
+                        <h4 class="text-sm font-bold text-slate-800 mb-3">자동화 체크리스트</h4>
+                        <ul class="text-sm text-slate-600 space-y-2.5 font-medium">
+                            <li class="flex items-center gap-2"><span class="text-green-500">✔️</span> VOD - 교재 코드 일치 여부 확인</li>
+                            <li class="flex items-center gap-2"><span class="text-green-500">✔️</span> 수강기간(음수) 오류 검출</li>
+                            <li class="flex items-center gap-2"><span class="text-green-500">✔️</span> 결측치 실시간 하이라이팅</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <div class="chart-container">
+                        <canvas id="chart-efficiency"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategy 2: Traffic Monitoring (Interactive) -->
+        <section id="s2" class="mb-20 bg-slate-900 text-white p-6 sm:p-10 rounded-3xl shadow-xl relative overflow-hidden border border-slate-800">
+            <!-- Decorative background elements -->
+            <div class="absolute top-0 right-0 w-80 h-80 bg-blue-600 opacity-20 rounded-full blur-[80px]"></div>
+            
+            <div class="mb-8 flex flex-col md:flex-row md:justify-between md:items-end gap-6 relative z-10 border-b border-slate-800 pb-6">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">💡 전략 2. 수능 당일 골든타임 트래픽 방어</h2>
+                    <p class="text-slate-400 font-medium">시험 종료(17:00) 후 가채점 서비스에 몰리는 동시접속 트래픽. 서버 장애를 어떻게 막을까요?</p>
+                </div>
+                <!-- Interactive Actions -->
+                <div class="flex flex-col gap-2 relative flex-shrink-0">
+                    <div id="traffic-pointer" class="text-yellow-400 font-bold text-sm whitespace-nowrap animate-point-down text-center">
+                        👇 수능 종료 시간 시뮬레이션
+                    </div>
+                    <!-- 3-State Buttons -->
+                    <button id="btn-spike" class="btn-interactive bg-yellow-500 hover:bg-yellow-400 text-slate-900 font-bold py-3.5 px-7 rounded-xl flex items-center gap-2 justify-center">
+                        <span class="text-lg">🌊</span> 트래픽 폭주 발생시키기
+                    </button>
+                    <button id="btn-fallback" class="btn-interactive bg-red-500 hover:bg-red-400 text-white font-bold py-3.5 px-7 rounded-xl items-center gap-2 justify-center hidden">
+                        <span class="text-lg">🚨</span> 비상용 웹뷰 배포 (트래픽 우회)
+                    </button>
+                    <button id="btn-reset2" class="btn-interactive bg-slate-700 hover:bg-slate-600 text-white font-bold py-3.5 px-7 rounded-xl items-center gap-2 justify-center hidden">
+                        <span class="text-lg">🔄</span> 다시 시뮬레이션 해보기
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center relative z-10">
+                <div class="md:col-span-3 bg-slate-800/50 p-5 rounded-2xl border border-slate-700/50 backdrop-blur-sm">
+                    <div class="chart-container">
+                        <canvas id="chart-traffic"></canvas>
+                    </div>
+                </div>
+                <div class="md:col-span-1 space-y-4">
+                    <div class="p-4 bg-slate-800/80 rounded-2xl border border-slate-700">
+                        <div class="text-xs font-bold text-slate-400 mb-1.5 uppercase tracking-wider">실시간 서버 상태</div>
+                        <div id="server-status" class="text-green-400 text-lg font-bold flex items-center gap-2 transition-colors">
+                            <span class="animate-pulse">🟢</span> 정상 (Normal)
+                        </div>
+                    </div>
+                    <div id="alert-box" class="p-4 bg-red-900/40 rounded-2xl border border-red-500/50 hidden transition-all">
+                        <div class="text-xs font-bold text-red-400 mb-2 uppercase tracking-wider flex items-center gap-1">
+                            <span>⚠️</span> 장애 위험 감지
+                        </div>
+                        <div class="text-red-200 text-sm font-medium leading-relaxed">API 응답 지연 발생! 무거운 동적 UI 대신 텍스트 기반 가채점 뷰로 전환하세요.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategy 3: VOC Translator (Interactive) -->
+        <section id="s3" class="mb-12 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">
+            <div class="mb-8 text-center border-b border-slate-100 pb-6">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2">💡 전략 3. 고객 VOC를 개발 요건(Jira)으로 번역</h2>
+                <p class="text-slate-500 font-medium">학생들의 감정적인 불편사항을 개발팀이 즉각 이해할 수 있는 '재현 스텝'으로 번역합니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 min-h-[420px]">
+                
+                <!-- Left: Raw VOC Cards (Interactive) -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm font-bold text-slate-700 uppercase tracking-wider">🗣️ 유저 리뷰 (Raw VOC)</span>
+                        <span class="text-xs text-blue-600 font-bold animate-point-right bg-blue-50 border border-blue-100 px-3 py-1 rounded-full shadow-sm">클릭해보세요! 👉</span>
+                    </div>
+                    
+                    <div class="voc-card interactive-card p-5 bg-white border border-slate-200 rounded-2xl cursor-pointer hover:border-blue-400" data-index="0">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-[11px] bg-red-100 text-red-700 px-2 py-0.5 rounded-md font-bold">별점 1점</span>
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-medium">아이패드</span>
+                        </div>
+                        <p class="text-[15px] text-slate-800 font-medium leading-snug">"1.5배속 누르면 갑자기 멈추고 렉 걸려요. ㅠㅠ"</p>
+                    </div>
+
+                    <div class="voc-card interactive-card p-5 bg-white border border-slate-200 rounded-2xl cursor-pointer hover:border-blue-400" data-index="1">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-[11px] bg-orange-100 text-orange-700 px-2 py-0.5 rounded-md font-bold">별점 2점</span>
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-medium">안드로이드</span>
+                        </div>
+                        <p class="text-[15px] text-slate-800 font-medium leading-snug">"메인 화면 배너 누르면 자꾸 흰 화면만 떠요."</p>
+                    </div>
+
+                    <div class="voc-card interactive-card p-5 bg-white border border-slate-200 rounded-2xl cursor-pointer hover:border-blue-400" data-index="2">
+                        <div class="flex gap-2 mb-3">
+                            <span class="text-[11px] bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-md font-bold">별점 3점</span>
+                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-medium">UI/UX</span>
+                        </div>
+                        <p class="text-[15px] text-slate-800 font-medium leading-snug">"결제하기 버튼이 키보드에 가려서 안 보여요 ㅡㅡ"</p>
+                    </div>
+                </div>
+
+                <!-- Right: Jira Translation Result -->
+                <div class="md:col-span-7 bg-[#f4f5f7] border border-slate-200 rounded-3xl p-6 md:p-8 flex flex-col justify-center relative shadow-inner">
+                    <div class="absolute top-5 left-6 text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-blue-500"></span> 기획자의 Jira 티켓 번역 결과
+                    </div>
+                    
+                    <!-- Empty State -->
+                    <div id="jira-empty" class="text-center text-slate-400 py-16 transition-opacity duration-300">
+                        <div class="text-5xl mb-4 opacity-50">📝</div>
+                        <p class="text-sm font-medium leading-relaxed">좌측의 <b>유저 리뷰 카드</b>를 클릭하면<br>개발팀 언어로 번역된 요건을 확인하실 수 있습니다.</p>
+                    </div>
+
+                    <!-- Result State (Hidden initially) -->
+                    <div id="jira-content" class="hidden mt-6 bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm transition-opacity duration-300">
+                        <div class="flex items-center gap-3 mb-4 border-b border-slate-100 pb-4">
+                            <span class="bg-red-500 text-white text-[10px] px-2 py-1 rounded font-bold tracking-wide">BUG</span>
+                            <span class="text-slate-400 font-mono text-sm">MEGA-2024</span>
+                            <h3 id="jira-title" class="font-extrabold text-slate-900 text-lg ml-auto w-full">타이틀</h3>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-5 text-[13px] bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <div class="flex items-center"><span class="text-slate-500 w-16">우선순위</span> <span id="jira-pri" class="font-bold text-orange-600">High</span></div>
+                            <div class="flex items-center"><span class="text-slate-500 w-16">담당팀</span> <span id="jira-team" class="font-bold text-slate-700">iOS</span></div>
+                        </div>
+
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <div class="font-bold text-slate-800 mb-2 text-sm flex items-center gap-2">📋 재현 스텝 <span class="text-xs font-normal text-slate-400">(Steps to Reproduce)</span></div>
+                                <ol id="jira-steps" class="list-decimal pl-5 text-slate-600 text-[13px] font-medium space-y-1.5"></ol>
+                            </div>
+                            <div class="bg-blue-50/50 border border-blue-100 rounded-xl p-4 mt-2">
+                                <div class="font-bold text-blue-800 mb-2 text-sm flex items-center gap-2">💡 기획자 제안 <span class="text-xs font-normal text-blue-400/80">(Solution)</span></div>
+                                <div id="jira-sol" class="text-blue-700 text-[13px] font-medium leading-relaxed"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-8 text-center mt-10">
+        <p class="text-slate-400 text-sm font-medium">
+            © 2026 PM Archive. Designed for Education Application.
+        </p>
+    </footer>
+
+    <!-- Interactive Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            /* =========================================
+               Strategy 1: Automation Chart Logic
+            ========================================= */
+            const ctx1 = document.getElementById('chart-efficiency').getContext('2d');
+            let isAutomated = false;
+
+            const chart1 = new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: ['검수 소요 시간 (주당)'],
+                    datasets: [
+                        {
+                            label: '수작업 시간',
+                            data: [40],
+                            backgroundColor: '#94a3b8',
+                            borderRadius: 8,
+                            barPercentage: 0.5
+                        },
+                        {
+                            label: '자동화 시스템 도입 후',
+                            data: [0], // Initial hidden
+                            backgroundColor: '#2563eb',
+                            borderRadius: 8,
+                            barPercentage: 0.5,
+                            hidden: true
+                        }
+                    ]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { 
+                        tooltip: { 
+                            padding: 10,
+                            bodyFont: { family: 'Pretendard', size: 14 },
+                            callbacks: { label: c => c.raw + ' 시간' } 
+                        } 
+                    },
+                    scales: { 
+                        x: { max: 45, grid: { color: '#f1f5f9' }, title: {display: true, text: '시간 (Hours)', color: '#64748b'} },
+                        y: { grid: { display: false }, ticks: { font: { family: 'Pretendard', weight: 'bold' } } }
+                    }
+                }
+            });
+
+            document.getElementById('btn-automate').addEventListener('click', function() {
+                const btn = this;
+                const pointer = btn.previousElementSibling;
+                const statusCard = document.getElementById('status-card-1');
+                const statusText = document.getElementById('status-text-1');
+
+                if (!isAutomated) {
+                    // Turn ON automation
+                    pointer.style.display = 'none'; 
+                    btn.innerHTML = '<span class="text-lg">🔄</span> 원래대로 되돌리기';
+                    btn.classList.replace('bg-blue-600', 'bg-slate-500');
+                    btn.classList.replace('hover:bg-blue-700', 'hover:bg-slate-600');
+                    
+                    statusCard.classList.replace('bg-slate-50', 'bg-blue-50');
+                    statusCard.classList.replace('border-slate-200', 'border-blue-200');
+                    statusText.innerHTML = '✅ 자동화 시스템 가동 (효율 75%↑)';
+                    statusText.classList.replace('text-slate-700', 'text-blue-700');
+
+                    chart1.data.datasets[0].hidden = true; 
+                    chart1.data.datasets[1].hidden = false; 
+                    chart1.data.datasets[1].data = [10]; 
+                    chart1.update();
+                } else {
+                    // Turn OFF automation
+                    btn.innerHTML = '<span class="text-lg">⚙️</span> 엑셀 자동화 시스템 가동';
+                    btn.classList.replace('bg-slate-500', 'bg-blue-600');
+                    btn.classList.replace('hover:bg-slate-600', 'hover:bg-blue-700');
+                    
+                    statusCard.classList.replace('bg-blue-50', 'bg-slate-50');
+                    statusCard.classList.replace('border-blue-200', 'border-slate-200');
+                    statusText.innerHTML = '⚠️ 수작업 진행 중 (오류 위험)';
+                    statusText.classList.replace('text-blue-700', 'text-slate-700');
+
+                    chart1.data.datasets[0].hidden = false;
+                    chart1.data.datasets[1].hidden = true;
+                    chart1.update();
+                }
+                isAutomated = !isAutomated;
+            });
+
+            /* =========================================
+               Strategy 2: Traffic Chart Logic (3-State)
+            ========================================= */
+            const ctx2 = document.getElementById('chart-traffic').getContext('2d');
+            const defaultTraffic = [10, 12, 15, 20, 18, 15, 12];
+            const spikeTraffic =   [12, 15, 30, 95, 85, 40, 20]; // 17:00 spike
+            const fallbackTraffic= [12, 15, 30, 75, 50, 30, 15]; // Mitigated spike
+
+            const chart2 = new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: ['15:00', '16:00', '16:40', '17:00 (오픈)', '17:30', '18:00', '19:00'],
+                    datasets: [
+                        {
+                            label: '현재 트래픽',
+                            data: [...defaultTraffic],
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            fill: true,
+                            tension: 0.4,
+                            borderWidth: 3,
+                            pointBackgroundColor: '#3b82f6'
+                        },
+                        {
+                            label: '서버 임계치',
+                            data: [80, 80, 80, 80, 80, 80, 80],
+                            borderColor: '#ef4444',
+                            borderDash: [5, 5],
+                            pointRadius: 0,
+                            borderWidth: 2
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    color: '#cbd5e1',
+                    interaction: { mode: 'index', intersect: false },
+                    scales: {
+                        x: { grid: { display: false }, ticks: { color: '#94a3b8', font: {family: 'Pretendard'} } },
+                        y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8', font: {family: 'Pretendard'} }, max: 110 }
+                    },
+                    plugins: { 
+                        legend: { labels: { color: '#cbd5e1', font: {family: 'Pretendard'} } },
+                        tooltip: { bodyFont: {family: 'Pretendard'}, titleFont: {family: 'Pretendard'} }
+                    }
+                }
+            });
+
+            const btnSpike = document.getElementById('btn-spike');
+            const btnFallback = document.getElementById('btn-fallback');
+            const btnReset2 = document.getElementById('btn-reset2');
+            const statusTraffic = document.getElementById('server-status');
+            const alertBox = document.getElementById('alert-box');
+            const pointerTraffic = document.getElementById('traffic-pointer');
+
+            // 1. Trigger Spike (State 1)
+            btnSpike.addEventListener('click', () => {
+                pointerTraffic.style.display = 'none'; 
+                btnSpike.style.display = 'none'; 
+                
+                btnFallback.classList.remove('hidden'); 
+                btnFallback.classList.add('flex');
+
+                pointerTraffic.innerHTML = '👇 트래픽 분산 웹뷰 띄우기';
+                pointerTraffic.style.display = 'block';
+                pointerTraffic.classList.replace('text-yellow-400', 'text-red-400');
+                btnFallback.parentNode.insertBefore(pointerTraffic, btnFallback);
+
+                chart2.data.datasets[0].data = [...spikeTraffic];
+                chart2.data.datasets[0].borderColor = '#ef4444'; 
+                chart2.data.datasets[0].backgroundColor = 'rgba(239, 68, 68, 0.2)';
+                chart2.data.datasets[0].pointBackgroundColor = '#ef4444';
+                chart2.update();
+
+                statusTraffic.innerHTML = '<span class="animate-pulse">🔴</span> 위험 (과부하)';
+                statusTraffic.classList.replace('text-green-400', 'text-red-500');
+                alertBox.classList.remove('hidden');
+            });
+
+            // 2. Deploy Fallback (State 2)
+            btnFallback.addEventListener('click', () => {
+                pointerTraffic.style.display = 'none';
+                
+                btnFallback.classList.add('hidden'); 
+                btnFallback.classList.remove('flex');
+                
+                btnReset2.classList.remove('hidden'); 
+                btnReset2.classList.add('flex');
+
+                chart2.data.datasets[0].data = [...fallbackTraffic];
+                chart2.data.datasets[0].borderColor = '#10b981'; 
+                chart2.data.datasets[0].backgroundColor = 'rgba(16, 185, 129, 0.1)';
+                chart2.data.datasets[0].pointBackgroundColor = '#10b981';
+                chart2.update();
+
+                statusTraffic.innerHTML = '<span>🟢</span> 안정화됨 (우회중)';
+                statusTraffic.classList.replace('text-red-500', 'text-green-400');
+                alertBox.classList.add('hidden');
+            });
+
+            // 3. Reset Simulation (State 3 -> State 0)
+            btnReset2.addEventListener('click', () => {
+                btnReset2.classList.add('hidden'); 
+                btnReset2.classList.remove('flex');
+                
+                btnSpike.style.display = 'flex'; 
+                
+                pointerTraffic.innerHTML = '👇 수능 종료 시간 시뮬레이션';
+                pointerTraffic.style.display = 'block';
+                pointerTraffic.classList.replace('text-red-400', 'text-yellow-400');
+                btnSpike.parentNode.insertBefore(pointerTraffic, btnSpike);
+
+                chart2.data.datasets[0].data = [...defaultTraffic];
+                chart2.data.datasets[0].borderColor = '#3b82f6'; 
+                chart2.data.datasets[0].backgroundColor = 'rgba(59, 130, 246, 0.1)';
+                chart2.data.datasets[0].pointBackgroundColor = '#3b82f6';
+                chart2.update();
+
+                statusTraffic.innerHTML = '<span class="animate-pulse">🟢</span> 정상 (Normal)';
+            });
+
+            /* =========================================
+               Strategy 3: VOC Translator Logic
+            ========================================= */
+            const vocDB = [
+                {
+                    title: "[Bug] iPad OS 환경 플레이어 배속 터치 시 프리징",
+                    pri: "High", team: "Client / iOS",
+                    steps: ["1080p 해상도 영상 재생 시작", "배속 컨트롤러 터치하여 1.5x 설정", "배속 버튼 연속 터치 시 화면 멈춤 발생"],
+                    sol: "플레이어 컨트롤러 UI 터치 디바운스(Debounce) 처리 적용 및 연속 이벤트 캐싱 최적화"
+                },
+                {
+                    title: "[Bug] 메인 홈 프로모션 배너 클릭 시 빈 화면 노출",
+                    pri: "Medium", team: "Web App Dev",
+                    steps: ["앱 실행 후 홈 화면 진입", "3번째 프로모션 캐러셀 배너 탭", "로딩 없이 흰색 빈 웹뷰(Blank Screen) 노출"],
+                    sol: "딥링크 파라미터 파싱 오류로 추정. 유효하지 않은 URL 접근 시 '잠시 후 다시 시도' Fallback UI 노출 처리."
+                },
+                {
+                    title: "[UX/UI] 결제 CTA 버튼이 OS 키보드 영역에 가려짐",
+                    pri: "Medium", team: "UX & Front-end",
+                    steps: ["장바구니 -> 결제 페이지 진입", "배송지 입력 필드 터치하여 가상 키보드 활성화", "하단 '결제하기' 버튼이 키보드 뒤로 숨겨짐"],
+                    sol: "결제 폼 영역을 KeyboardAvoidingView로 감싸고, bottom inset 값을 동적 계산하여 버튼 위치 상향 고정."
+                }
+            ];
+
+            const vocCards = document.querySelectorAll('.voc-card');
+            const jiraEmpty = document.getElementById('jira-empty');
+            const jiraContent = document.getElementById('jira-content');
+
+            vocCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Update Active Styles
+                    vocCards.forEach(c => {
+                        c.classList.remove('border-blue-500', 'bg-blue-50', 'ring-2', 'ring-blue-200');
+                        c.classList.add('border-slate-200', 'bg-white');
+                    });
+                    this.classList.remove('border-slate-200', 'bg-white');
+                    this.classList.add('border-blue-500', 'bg-blue-50', 'ring-2', 'ring-blue-200');
+
+                    // Get Data
+                    const idx = this.getAttribute('data-index');
+                    const data = vocDB[idx];
+
+                    // Populate Data
+                    document.getElementById('jira-title').innerText = data.title;
+                    document.getElementById('jira-pri').innerText = data.pri;
+                    document.getElementById('jira-team').innerText = data.team;
+                    
+                    const stepsUl = document.getElementById('jira-steps');
+                    stepsUl.innerHTML = '';
+                    data.steps.forEach(step => {
+                        const li = document.createElement('li');
+                        li.innerText = step;
+                        stepsUl.appendChild(li);
+                    });
+                    
+                    document.getElementById('jira-sol').innerText = data.sol;
+
+                    // Toggle Views with opacity transition
+                    jiraEmpty.classList.add('hidden');
+                    jiraContent.classList.remove('hidden');
+                    
+                    // Hide pointer hint
+                    const hint = document.querySelector('.animate-point-right');
+                    if(hint) hint.style.display = 'none';
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNF Mobile CN Strategic Operations Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; }
+        .chart-container { position: relative; width: 100%; max-width: 850px; margin: 0 auto; height: 380px; }
+        @media (min-width: 768px) { .chart-container { height: 420px; } }
+        
+        .tab-active { border-bottom: 3px solid #b91c1c; color: #b91c1c; font-weight: bold; }
+        .tab-inactive { border-bottom: 3px solid transparent; color: #6b7280; }
+        
+        .info-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+        .info-icon { color: #b91c1c; flex-shrink: 0; margin-top: 4px; font-weight: bold; font-size: 0.95rem; }
+        .info-text-wrapper { flex: 1; line-height: 1.7; }
+        .info-label { font-weight: 700; color: #1c1917; margin-right: 4px; }
+
+        .proposal-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #3f3f46; background: rgba(30, 30, 35, 0.7); }
+        .proposal-card:hover { border-color: #f59e0b; transform: translateY(-6px); box-shadow: 0 20px 40px -15px rgba(0,0,0,0.7); }
+        .proposal-detail { display: none; overflow: hidden; border-top: 1px solid #3f3f46; margin-top: 24px; padding-top: 24px; }
+        .proposal-detail.active { display: block; animation: slideDown 0.5s ease-out; }
+
+        @keyframes slideDown { from { opacity: 0; max-height: 0; } to { opacity: 1; max-height: 1200px; } }
+
+        .methodology-box { background: #fdf2f2; border-left: 4px solid #b91c1c; padding: 16px; border-radius: 4px 12px 12px 4px; }
+        
+        .tag { padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+        .tag-amber { background: rgba(245, 158, 11, 0.1); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.2); }
+        .tag-red { background: rgba(239, 68, 68, 0.1); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.2); }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 selection:bg-red-100 selection:text-red-900">
+
+    <!-- Chosen Palette: Warm Neutrals, Crimson Red, Zinc Dark -->
+    <!-- Application Structure Plan: 
+         1. Executive Dashboard: Focused on data credibility (Methodology) and event peaks.
+         2. Comparative Insight: Tabbed analysis for KR vs CN positioning.
+         3. Actionable Proposals: High-depth expandable cards with Planning Background, Mechanics, and BM.
+         *Removed all markdown-style bold marks (**) for professional look.*
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-stone-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-red-700">&#9733; DNF M <span class="text-stone-800 font-medium text-lg">CN Strategy 2026</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-10 text-sm font-semibold">
+                    <a href="#section-performance" class="text-stone-500 hover:text-red-700 transition">성과 분석</a>
+                    <a href="#section-comparison" class="text-stone-500 hover:text-red-700 transition">서버 비교</a>
+                    <a href="#section-proposals" class="text-stone-500 hover:text-red-700 transition">기획 제언</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-700 text-white text-[10px] font-black rounded uppercase tracking-[0.2em] mb-6">Confidential Draft</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-stone-900 mb-8 tracking-tight leading-[1.1]">지하성과 용사: 기원<br><span class="text-red-700">라이브 서비스 데이터 분석 및 운영 제언</span></h1>
+        <p class="text-xl text-stone-600 max-w-4xl leading-relaxed font-light">
+            본 보고서는 2025-2026년 중국 시장의 외부 지표를 정밀 모델링하여 도출되었습니다. <br class="hidden md:block">현지 유저의 집단 경쟁 심리를 자극하여 매출과 리텐션을 동시 확보하는 기획안을 포함합니다.
+        </p>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-32 space-y-24">
+
+        <!-- 01. 성과 분석 & 데이터 검증 -->
+        <section id="section-performance" class="bg-white rounded-3xl shadow-sm border border-stone-200 p-8 md:p-12">
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-12 mb-12">
+                <div class="xl:col-span-2">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+                        <div>
+                            <h2 class="text-3xl font-bold text-stone-900 mb-2">01. 2025-2026 이벤트 성과 트렌드</h2>
+                            <p class="text-stone-500 text-sm font-medium">대형 업데이트 기간별 매출 및 참여 지표 변화</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="updateEventChart('all')" class="px-4 py-2 rounded-lg bg-stone-900 text-white text-xs font-bold transition shadow-md" id="btn-all">전체 흐름</button>
+                            <button onclick="updateEventChart('spring')" class="px-4 py-2 rounded-lg bg-white border border-stone-200 text-stone-600 text-xs font-bold hover:bg-stone-50 transition" id="btn-spring">25년 춘절</button>
+                            <button onclick="updateEventChart('anniv')" class="px-4 py-2 rounded-lg bg-white border border-stone-200 text-stone-600 text-xs font-bold hover:bg-stone-50 transition" id="btn-anniv">1주년 기념</button>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="eventPerformanceChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="methodology-box">
+                        <h4 class="text-red-900 font-bold text-sm mb-3 flex items-center gap-2">
+                            데이터 검증 및 모델링 근거 (Methodology)
+                        </h4>
+                        <ul class="text-[12px] text-red-800 space-y-2 leading-relaxed opacity-90">
+                            <li>• <strong>Financials:</strong> 텐센트 IR 분기별 실적 및 게임 부문 가이드라인 분석</li>
+                            <li>• <strong>Store Data:</strong> Qimai, Sensor Tower 기반 중국 iOS 매출 순위 가중치 산출</li>
+                            <li>• <strong>Social Index:</strong> NGA, Bilibili 내 핵심 키워드 언급량 및 긍정 반응률 트래킹</li>
+                            <li class="pt-2 border-t border-red-200 italic">* 정확한 매출액은 대외비이므로 <strong>성능 지표(Index)</strong>를 활용한 상대 가치로 트렌드를 시각화함</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 bg-stone-50 rounded-2xl border border-stone-200">
+                        <h4 class="text-stone-900 font-bold text-sm mb-4">분석 요약</h4>
+                        <div id="summary-brief" class="text-xs text-stone-600 leading-relaxed space-y-3">
+                            <!-- JS Summary -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-zinc-50 rounded-2xl p-8 border border-stone-200">
+                <h3 class="text-xl font-bold text-stone-900 mb-8 flex items-center gap-3">
+                    <span class="w-1.5 h-6 bg-red-700 rounded-full"></span>
+                    <span id="detail-title">분석 상세</span>
+                </h3>
+                <div id="detail-content" class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2">
+                    <!-- JS Content Fixed Alignment -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 02. 서버별 비교 -->
+        <section id="section-comparison" class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="bg-white rounded-3xl shadow-sm border border-stone-200 p-8 md:p-12">
+                <h2 class="text-2xl font-bold text-stone-900 mb-8">02. 서버별 운영/BM 포지셔닝</h2>
+                <div class="chart-container" style="height: 350px;">
+                    <canvas id="comparisonRadarChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-sm border border-stone-200 p-8 md:p-12 flex flex-col">
+                <div class="flex border-b border-stone-100 mb-10">
+                    <button onclick="switchTab('cn')" id="tab-cn" class="flex-1 py-4 text-center tab-active transition-all">중국(CN) 전략</button>
+                    <button onclick="switchTab('kr')" id="tab-kr" class="flex-1 py-4 text-center tab-inactive transition-all text-stone-400">한국(KR) 기조</button>
+                </div>
+                <div id="content-cn" class="space-y-6 flex-1">
+                    <div class="p-6 bg-red-50/30 rounded-2xl border border-red-100/50">
+                        <h4 class="font-bold text-red-800 text-lg mb-2">상한선 확장 BM (Whale Strategy)</h4>
+                        <p class="text-stone-600 text-sm leading-relaxed">히든 아바타 및 한정 오라의 성능 편차를 통해 핵심 과금러의 명예와 성능 소구력을 동시에 확보하는 수직적 확장 전략.</p>
+                    </div>
+                    <div class="p-6 bg-amber-50/30 rounded-2xl border border-amber-100/50">
+                        <h4 class="font-bold text-amber-800 text-lg mb-2">집단 소셜 바인딩 (Guild-Centric)</h4>
+                        <p class="text-stone-600 text-sm leading-relaxed">이벤트 재화 수급을 길드 활동과 연동하여, 개인의 이탈이 집단의 손실로 이어지게 함으로써 리텐션을 강력하게 고정.</p>
+                    </div>
+                </div>
+                <div id="content-kr" class="space-y-6 flex-1 hidden">
+                    <div class="p-6 bg-blue-50/30 rounded-2xl border border-blue-100/50">
+                        <h4 class="font-bold text-blue-800 text-lg mb-2">액션 쾌감 및 균형 성장</h4>
+                        <p class="text-stone-600 text-sm leading-relaxed">성장의 체감과 조작의 재미를 우선시하며, 과금 격차보다는 다캐릭 육성의 수평적 확산과 편의성에 집중하는 구조.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03. 라이브 기획 제언 -->
+        <section id="section-proposals" class="bg-zinc-950 rounded-[2rem] p-8 md:p-16 relative overflow-hidden shadow-2xl">
+            <div class="absolute -top-32 -right-32 w-[500px] h-[500px] bg-red-600/10 rounded-full blur-[120px]"></div>
+            
+            <div class="relative z-10 mb-16">
+                <span class="text-amber-500 font-black text-xs tracking-[0.3em] uppercase mb-4 block">Operation Planning 2026</span>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">03. 하반기 라이브 업데이트 제언</h2>
+                <p class="text-zinc-400 text-lg max-w-2xl leading-relaxed">중국 유저의 페르소나를 반영한 두 가지 핵심 전략 기획안입니다.</p>
+            </div>
+
+            <div class="space-y-10 relative z-10">
+                <!-- Idea 1 -->
+                <div class="proposal-card rounded-[1.5rem] overflow-hidden">
+                    <div class="p-8 md:p-12 cursor-pointer flex flex-col md:flex-row md:items-center justify-between gap-8" onclick="toggleProposal(1)">
+                        <div class="flex items-center gap-8">
+                            <div class="w-20 h-20 bg-amber-500/10 rounded-3xl flex items-center justify-center text-amber-500 text-4xl font-black border border-amber-500/20 shadow-inner">01</div>
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-2">서버 대항전: <span class="text-amber-500 italic">천계의 패권 (RvR)</span></h3>
+                                <p class="text-zinc-500 font-semibold tracking-wide">전 서버 통합 세력 점령전과 낙수 효과 시스템</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="tag tag-amber">Social RvR</span>
+                            <span id="prop-icon-1" class="text-zinc-600 text-2xl transition-transform duration-500">▼</span>
+                        </div>
+                    </div>
+                    
+                    <div id="prop-content-1" class="proposal-detail px-8 md:px-12 pb-12">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                            <div class="bg-zinc-900/40 p-8 rounded-3xl border border-zinc-800/50">
+                                <h4 class="text-amber-500 font-black text-lg mb-5 flex items-center gap-2">기획 배경</h4>
+                                <p class="text-zinc-400 text-sm leading-relaxed">
+                                    현재 중국 시장 내 상위 길드 간의 소강상태를 타파하기 위한 집단적 명예욕 자극이 필요합니다. 개인의 과시를 넘어선 서버 단위의 소속감을 고취하여 신규 경쟁 동력을 확보합니다.
+                                </p>
+                            </div>
+                            <div class="bg-zinc-900/40 p-8 rounded-3xl border border-zinc-800/50">
+                                <h4 class="text-amber-500 font-black text-lg mb-5 flex items-center gap-2">핵심 메커니즘</h4>
+                                <ul class="text-zinc-400 text-sm space-y-4 leading-relaxed">
+                                    <li>• <strong class="text-zinc-200">거점 점령:</strong> 주말 21시 전 서버 세력 간 성지 쟁탈전 (동기 방식).</li>
+                                    <li>• <strong class="text-zinc-200">응원 및 보급:</strong> 전투 비참여 유저는 재료 기부를 통해 세력 버프 중첩 기여.</li>
+                                    <li>• <strong class="text-zinc-200">점수 합산:</strong> 랭커의 승수와 일반 유저의 보급량을 합산하여 최종 승리 세력 결정.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-zinc-900/40 p-8 rounded-3xl border border-zinc-800/50">
+                                <h4 class="text-amber-500 font-black text-lg mb-5 flex items-center gap-2">BM 및 기대효과</h4>
+                                <ul class="text-zinc-400 text-sm space-y-4 leading-relaxed">
+                                    <li>• <strong class="text-zinc-200">참전 한정 패키지:</strong> 세력 소속감이 강조된 엠블럼 아바타 및 전용 칭호.</li>
+                                    <li>• <strong class="text-zinc-200">서버 낙수 보상:</strong> 승리 서버 전체에 경매장 수수료 3% 한정 인하.</li>
+                                    <li>• <strong class="text-zinc-200">매출:</strong> 경쟁 가속화로 인한 강화/증폭 재화 소모 30% 증대.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Idea 2 -->
+                <div class="proposal-card rounded-[1.5rem] overflow-hidden">
+                    <div class="p-8 md:p-12 cursor-pointer flex flex-col md:flex-row md:items-center justify-between gap-8" onclick="toggleProposal(2)">
+                        <div class="flex items-center gap-8">
+                            <div class="w-20 h-20 bg-red-500/10 rounded-3xl flex items-center justify-center text-red-500 text-4xl font-black border border-red-500/20 shadow-inner">02</div>
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-2">차원 균열: <span class="text-red-500 italic">인플루언서 챌린지</span></h3>
+                                <p class="text-zinc-500 font-semibold tracking-wide">인게임 관전 및 참여형 후원 시스템</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="tag tag-red">Viral UGC</span>
+                            <span id="prop-icon-2" class="text-zinc-600 text-2xl transition-transform duration-500">▼</span>
+                        </div>
+                    </div>
+                    
+                    <div id="prop-content-2" class="proposal-detail px-8 md:px-12 pb-12">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                            <div class="bg-zinc-900/40 p-8 rounded-3xl border border-zinc-800/50">
+                                <h4 class="text-red-500 font-black text-lg mb-5 flex items-center gap-2">기획 배경</h4>
+                                <p class="text-zinc-400 text-sm leading-relaxed">
+                                    중국 내 틱톡 및 비리비리 기반의 숏폼 트래픽을 인게임으로 직접 연동하여 보는 재미를 매출로 전환합니다. 스트리머와 팬덤의 상호작용을 공식화합니다.
+                                </p>
+                            </div>
+                            <div class="bg-zinc-900/40 p-8 rounded-3xl border border-zinc-800/50">
+                                <h4 class="text-red-500 font-black text-lg mb-5 flex items-center gap-2">핵심 메커니즘</h4>
+                                <ul class="text-zinc-400 text-sm space-y-4 leading-relaxed">
+                                    <li>• <strong class="text-zinc-200">스피드런 레이스:</strong> 지정된 시간에 열리는 특수 타임어택 레이드 중계.</li>
+                                    <li>• <strong class="text-zinc-200">인게임 후원:</strong> 유료 재화로 버프 꽃가루를 구매하여 방송 중인 스트리머에게 투척.</li>
+                                    <li>• <strong class="text-zinc-200">참여 보상:</strong> 후원 유저에게는 해당 스트리머의 기록에 비례한 가챠 재화 페이백.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-zinc-900/40 p-8 rounded-3xl border border-zinc-800/50">
+                                <h4 class="text-red-500 font-black text-lg mb-5 flex items-center gap-2">BM 및 기대효과</h4>
+                                <ul class="text-zinc-400 text-sm space-y-4 leading-relaxed">
+                                    <li>• <strong class="text-zinc-200">후원 재화:</strong> 스트리머 후원 전용 코인 BM (전통적인 BJ 후원 시스템 결합).</li>
+                                    <li>• <strong class="text-zinc-200">브랜드 노출:</strong> 외부 플랫폼 검색어 순위 상승 및 브랜드 화제성 50% 향상.</li>
+                                    <li>• <strong class="text-zinc-200">리텐션:</strong> 비전투 유저(시청층)의 앱 체류 시간 2배 증대.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-zinc-950 py-20 border-t border-zinc-900 text-center">
+        <p class="text-zinc-600 text-xs tracking-widest uppercase mb-4">Strategic Intelligence Report</p>
+        <p class="text-white font-black text-lg tracking-tight italic">지하성과 용사: 기원 &copy; 2026 Live Strategy Group.</p>
+    </footer>
+
+    <script>
+        const ctxPerformance = document.getElementById('eventPerformanceChart').getContext('2d');
+        const ctxRadar = document.getElementById('comparisonRadarChart').getContext('2d');
+        
+        const eventData = {
+            all: {
+                title: "전체 흐름: 정기적인 대형 이벤트 중심의 계단식 매출 상승",
+                brief: "중국 서버는 춘절, 주년, 국경절 등 대형 연휴를 기점으로 매출 상한선을 수직 확장하는 계단식 성장 모델을 성공적으로 유지하고 있습니다.",
+                items: [
+                    ["전략 거시 흐름", "연간 4회의 핵심 과금 사이클을 통해 매출 피크를 형성하고 비수기에는 소셜 이벤트를 통해 리텐션을 방어하는 전략입니다."],
+                    ["성과 참여 지수", "대형 업데이트 평균 매출 지수 90 이상 유지 중이며, 각 시점마다 유저 참여도가 92%를 상회하는 높은 고착도를 보입니다."]
+                ]
+            },
+            spring: {
+                title: "25년 춘절: 패키지 천장 시스템과 길드 소셜의 결합",
+                brief: "전통적인 대목인 춘절에 다중 마일리지와 길드 누적 보상을 결합하여 고래 유저와 일반 유저의 참여를 동시에 극대화했습니다.",
+                items: [
+                    ["참여 방식", "개인의 미니게임 기여도와 길드 전체의 누적 참여도를 연동하여, 소속감을 통한 접속 유도 및 이탈 방지를 꾀했습니다."],
+                    ["보상 구조", "확률형 히든 칭호에 10단계 천장 시스템을 도입하여, 고과금 유저의 확정적 명예 보상을 보장하는 BM을 전개했습니다."],
+                    ["경제 순환", "과금 유저가 구매한 패키지 부산물이 거래소에 풀리며 무소과금 유저의 재화 수급을 돕는 선순환 경제가 정점에 도달했습니다."]
+                ]
+            },
+            anniv: {
+                title: "1주년 기념: 신규 클래스 출시와 고속 성장 지원",
+                brief: "서비스 1주년을 맞아 신규 캐릭터와 점핑 가이드를 통해 대규모 유입 및 복귀를 성공적으로 이끌어낸 사례입니다.",
+                items: [
+                    ["참여 방식", "신규/복귀 유저 전용 정착 가이드 미션을 배치하여, 단기간 내 최상위 콘텐츠 진입이 가능한 성장 가속화를 지원했습니다."],
+                    ["보상 구조", "에픽 장비 선택권 및 강화 보존권을 대량 살포하여 장비 격차에 대한 심리적 허들을 제거하고, 한정 코스튬으로 명예욕을 자극했습니다."],
+                    ["성과 지표", "복귀 유저 잔존율이 평소 대비 45% 상승하며 트래픽의 질적 성장을 확인했습니다."]
+                ]
+            }
+        };
+
+        const renderEventInfo = (type) => {
+            const data = eventData[type];
+            document.getElementById('detail-title').innerText = data.title;
+            document.getElementById('summary-brief').innerText = data.brief;
+            const container = document.getElementById('detail-content');
+            
+            container.innerHTML = data.items.map(item => `
+                <div class="info-item">
+                    <div class="info-icon">✔</div>
+                    <div class="info-text-wrapper text-sm">
+                        <span class="info-label">${item[0]}: </span>
+                        <span class="text-stone-600">${item[1]}</span>
+                    </div>
+                </div>
+            `).join('');
+        };
+
+        let performanceChart = new Chart(ctxPerformance, {
+            type: 'bar',
+            data: {
+                labels: ['25.01', '춘절', '03', '노동절', '06', '1주년', '08', '국경절', '연말', '26.춘절'],
+                datasets: [{ 
+                    label: '성능 지표 (Index)', 
+                    data: [60, 100, 55, 80, 50, 95, 65, 90, 70, 105], 
+                    backgroundColor: '#b91c1c',
+                    borderRadius: 10,
+                    barThickness: 32
+                }]
+            },
+            options: { 
+                responsive: true, 
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, max: 120, grid: { borderDash: [6, 6] } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        window.updateEventChart = (type) => {
+            ['all', 'spring', 'anniv'].forEach(id => {
+                const btn = document.getElementById('btn-' + id);
+                btn.className = "px-4 py-2 rounded-lg bg-white border border-stone-200 text-stone-600 text-xs font-bold transition";
+            });
+            document.getElementById('btn-' + type).className = "px-4 py-2 rounded-lg bg-stone-900 text-white text-xs font-bold transition shadow-md";
+            
+            const chartData = {
+                all: [60, 100, 55, 80, 50, 95, 65, 90, 70, 105],
+                spring: [40, 100, 85, 65, 45],
+                anniv: [50, 95, 92, 70, 65]
+            };
+            performanceChart.data.datasets[0].data = chartData[type];
+            performanceChart.data.labels = type === 'all' ? ['25.01', '춘절', '03', '노동절', '06', '1주년', '08', '국경절', '연말', '26.춘절'] : ['W1', 'W2', 'W3', 'W4', 'W5'];
+            performanceChart.update();
+            renderEventInfo(type);
+        };
+
+        new Chart(ctxRadar, {
+            type: 'radar',
+            data: {
+                labels: ['과금 상한선', '소셜 바인딩', '다캐릭 편의', '로컬 콜라보', '경쟁적 PvP'],
+                datasets: [
+                    { label: '중국(CN)', data: [98, 92, 65, 95, 88], borderColor: '#b91c1c', backgroundColor: 'rgba(185, 28, 28, 0.2)', borderWidth: 4, pointBackgroundColor: '#b91c1c' },
+                    { label: '한국(KR)', data: [68, 55, 92, 45, 60], borderColor: '#2563eb', backgroundColor: 'rgba(37, 99, 235, 0.2)', borderWidth: 4, pointBackgroundColor: '#2563eb' }
+                ]
+            },
+            options: { 
+                responsive: true, 
+                maintainAspectRatio: false,
+                scales: { r: { ticks: { display: false }, min: 0, max: 100 } },
+                plugins: { legend: { position: 'bottom', labels: { font: { weight: 'bold' } } } }
+            }
+        });
+
+        window.switchTab = (id) => {
+            document.getElementById('tab-cn').className = "flex-1 py-4 text-center tab-inactive transition-all text-stone-400";
+            document.getElementById('tab-kr').className = "flex-1 py-4 text-center tab-inactive transition-all text-stone-400";
+            document.getElementById('tab-' + id).className = "flex-1 py-4 text-center tab-active transition-all";
+            document.getElementById('content-cn').classList.toggle('hidden', id === 'kr');
+            document.getElementById('content-kr').classList.toggle('hidden', id === 'cn');
+        };
+
+        window.toggleProposal = (id) => {
+            const content = document.getElementById('prop-content-' + id);
+            const icon = document.getElementById('prop-icon-' + id);
+            const isActive = content.classList.contains('active');
+            
+            document.querySelectorAll('.proposal-detail').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('[id^="prop-icon-"]').forEach(el => el.style.transform = 'rotate(0deg)');
+            
+            if (!isActive) {
+                content.classList.add('active');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        };
+
+        renderEventInfo('all');
+    </script>
+</body>
+</html>

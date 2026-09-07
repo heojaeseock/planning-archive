@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오픈마켓 커머스 캠페인 플래너 기획 리포트</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        
+        :root {
+            --g-blue: #0064FF;
+            --g-yellow: #FFD400;
+            --g-dark: #111111;
+            --g-bg: #F8FAFD;
+        }
+
+        body { 
+            font-family: 'Pretendard', -apple-system, sans-serif; 
+            background-color: var(--g-bg); 
+            color: #2D3748; 
+            line-height: 1.6;
+            word-break: keep-all; 
+            overflow-wrap: break-word;
+        }
+
+        .컨테이너 {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .메인-타이틀 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 900;
+            color: var(--g-dark);
+            letter-spacing: -0.04em;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .카드-레이아웃 {
+            background: #ffffff;
+            border-radius: 40px;
+            padding: 3.5rem 2rem;
+            margin-bottom: 5rem;
+            box-shadow: 0 10px 40px rgba(0, 100, 255, 0.04);
+            border: 1px solid #E9EEF5;
+        }
+
+        /* 클릭을 유도하는 맥동 애니메이션 버튼 */
+        @keyframes pulse-blue {
+            0% { box-shadow: 0 0 0 0 rgba(0, 100, 255, 0.5); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 100, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 100, 255, 0); }
+        }
+
+        .입체-버튼 {
+            background: var(--g-blue);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 100px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 25px rgba(0, 100, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            animation: pulse-blue 2s infinite;
+        }
+        .입체-버튼:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 100, 255, 0.4);
+        }
+
+        .탭-메뉴 {
+            background: #EBF2FF;
+            padding: 6px;
+            border-radius: 20px;
+            display: inline-flex;
+            gap: 4px;
+        }
+        .탭-버튼 {
+            padding: 0.7rem 1.5rem;
+            border-radius: 15px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            color: #64748B;
+        }
+        .탭-버튼.활성 {
+            background: white;
+            color: var(--g-blue);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+        }
+
+        .옐로우-포인트 {
+            background: linear-gradient(to top, var(--g-yellow) 45%, transparent 45%);
+            padding: 0 2px;
+        }
+
+        .알림-레이어 {
+            background: var(--g-dark);
+            color: white;
+            border-radius: 32px;
+            padding: 3rem;
+            margin-top: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .알림-레이어.표시 { opacity: 1; transform: translateY(0); }
+
+        /* 매뉴얼 확인 버튼 */
+        .매뉴얼-버튼 {
+            background: var(--g-yellow);
+            color: var(--g-dark);
+            padding: 0.8rem 2rem;
+            border-radius: 100px;
+            font-weight: 800;
+            margin-top: 2rem;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+        .매뉴얼-버튼:hover { transform: scale(1.05); }
+
+        .매뉴얼-디테일 {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            display: none;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* 성과 요약 보드 개선 */
+        .성과-요약-보드 {
+            background: linear-gradient(135deg, var(--g-blue) 0%, #0046B3 100%);
+            color: white;
+            border-radius: 50px;
+            padding: 5rem 3rem;
+            margin-top: 6rem;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 100, 255, 0.3);
+        }
+        .성과-아이템 {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 3.5rem 1.5rem;
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+        .성과-아이템:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.15); }
+
+        .성과-수치 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: var(--g-yellow);
+            margin-bottom: 1.5rem;
+            line-height: 1;
+        }
+        .성과-라벨 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.5;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="py-24">
+
+    <!-- 히어로 섹션 -->
+    <header class="컨테이너 text-center mb-32">
+        <div class="inline-block bg-[#FFD400] text-black font-black px-5 py-1.5 rounded-full mb-8 text-sm">오픈마켓 커머스 캠페인 기획자 기획안</div>
+        <h1 class="메인-타이틀">
+            라이브 게임 운영의 집요함으로<br>
+            <span class="text-[#0064FF]">오픈마켓 커머스 캠페인 성과 개선안을 정리했습니다</span>
+        </h1>
+    </header>
+
+    <main class="컨테이너">
+
+        <!-- 01. 배경 및 문제정의 -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <span class="font-black text-blue-600 tracking-widest uppercase text-xs">Insight</span>
+                <h2 class="text-3xl font-black mt-3">수작업 검수의 병목과 리스크</h2>
+            </div>
+            
+            <div class="카드-레이아웃">
+                <div class="grid md:grid-cols-2 gap-8 text-left">
+                    <div class="p-10 bg-slate-50 rounded-[40px] border border-slate-100 h-full flex flex-col justify-center">
+                        <span class="text-red-500 font-black text-xs block mb-4 uppercase">📍 운영 효율 저하</span>
+                        <p class="text-slate-800 font-bold text-xl leading-snug">
+                            반복적인 수작업 검수를 자동화하여<br>
+                            기획을 위한 <span class="옐로우-포인트">전략적 시간</span>을 확보합니다.
+                        </p>
+                    </div>
+                    <div class="p-10 bg-slate-50 rounded-[40px] border border-slate-100 h-full flex flex-col justify-center">
+                        <span class="text-red-500 font-black text-xs block mb-4 uppercase">⚠️ 브랜드 신뢰도 하락</span>
+                        <p class="text-slate-800 font-bold text-xl leading-snug">
+                            가격 오류를 사전에 원천 차단하여<br>
+                            구매 <span class="옐로우-포인트">전환율의 하락</span>을 방어하겠습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 02. 전략 1: 자동화 -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <span class="font-black text-blue-600 tracking-widest uppercase text-xs">Efficiency</span>
+                <h2 class="text-3xl font-black mt-3">무결점 상품 검수 시스템 구축</h2>
+            </div>
+            
+            <div class="카드-레이아웃 text-center">
+                <p class="text-sm font-bold text-slate-400 mb-6 italic">👇 아래 탭을 클릭하여 상세 내용을 확인해 보세요</p>
+                <div class="탭-메뉴 mb-12 shadow-sm">
+                    <div onclick="탭변경('게임')" id="탭-게임" class="탭-버튼 활성">🕹️ 게임 운영 경험</div>
+                    <div onclick="탭변경('오픈마켓 커머스')" id="탭-오픈마켓 커머스" class="탭-버튼">🛒 오픈마켓 커머스 적용안</div>
+                </div>
+
+                <div id="내용-게임">
+                    <h3 class="text-2xl font-black text-slate-800 mb-6">데이터 정제 시간 75% 단축</h3>
+                    <div class="relative w-full h-[300px] mb-8">
+                        <canvas id="차트-정제"></canvas>
+                    </div>
+                    <p class="text-slate-600 font-medium max-w-[500px] mx-auto leading-relaxed">
+                        수만 건의 보상 데이터를 자동 검증하여<br>
+                        결측치 0%의 무결점 환경을 구축했습니다.
+                    </p>
+                </div>
+
+                <div id="내용-오픈마켓 커머스" class="hidden text-left space-y-6 max-w-lg mx-auto">
+                    <div class="p-8 bg-blue-50 border border-blue-100 rounded-3xl">
+                        <h4 class="font-bold text-blue-900 mb-3 text-lg">지능형 매핑 로직 도입</h4>
+                        <p class="text-slate-700 leading-relaxed font-medium">
+                            엑셀 복합 함수로 인입 데이터를 실시간 대조하여,<br> 
+                            비정상 데이터를 <span class="text-blue-600 font-extrabold">1초 만에 자동 색출</span>합니다.
+                        </p>
+                    </div>
+                    <div class="p-8 bg-blue-50 border border-blue-100 rounded-3xl">
+                        <h4 class="font-bold text-blue-900 mb-3 text-lg">선제적 대응 체계 구축</h4>
+                        <p class="text-slate-700 leading-relaxed font-medium">
+                            조건부 서식으로 재고 부족 상품을 시각화하여,<br> 
+                            오픈 전 완벽한 조치가 가능한 환경을 조성합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03. 전략 2: 모니터링 -->
+        <section class="mb-24">
+            <div class="text-center mb-10">
+                <span class="font-black text-blue-600 tracking-widest uppercase text-xs">Live Ops</span>
+                <h2 class="text-3xl font-black mt-3">골든타임 대응 플레이북</h2>
+            </div>
+            
+            <div class="카드-레이아웃 bg-[#111111] text-white border-none text-center">
+                <p class="text-slate-400 font-bold mb-8 italic">💡 지표 이상 상황 시뮬레이션을 가동해 보세요</p>
+                <button onclick="시뮬가동()" id="시뮬-버튼" class="입체-버튼 mb-12">
+                    <span>⚡</span> 이상 지표 발생 시뮬레이션 가동
+                </button>
+                
+                <div class="relative w-full h-[320px] mb-12">
+                    <canvas id="차트-실시간"></canvas>
+                </div>
+
+                <div id="알림-레이어" class="알림-레이어 text-left border-white/10 border">
+                    <p class="text-[#FFD400] font-black text-2xl mb-5 tracking-tight flex items-center gap-3">
+                        <span>🚨</span> 전환율 급락 상황 감지
+                    </p>
+                    <p class="text-slate-300 font-medium text-lg leading-relaxed">
+                        클릭은 증가했으나 전환율이 하락한 상황은 가격 경쟁력 상실 또는 기술적 오류를 의미합니다.<br><br>
+                        <strong class="text-white border-b-4 border-red-500">즉시 예비 상품으로 구좌를 교체하여</strong><br> 
+                        오픈마켓 커머스의 핵심 트래픽 누수를 선제적으로 차단하는 방안을 정리했습니다.
+                    </p>
+                    
+                    <button onclick="매뉴얼토글()" class="매뉴얼-버튼">
+                        <span>📋</span> 대응 액션 매뉴얼 확인하기
+                    </button>
+                    
+                    <div id="매뉴얼-디테일" class="매뉴얼-디테일">
+                        <ul class="space-y-4 text-xl font-bold text-slate-100">
+                            <li>1. 주력 상품 재고 및 상세페이지 링크 긴급 점검</li>
+                            <li>2. MD 협의를 통한 가격 경쟁력 재검증 및 조정</li>
+                            <li>3. 예비로 준비된 '서브 딜' 상품으로 즉시 교체 노출</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 최종 성과 요약 보드 -->
+        <section class="성과-요약-보드">
+            <h2 class="text-3xl font-black mb-16 text-white uppercase tracking-widest">Performance Summary</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                
+                <div class="성과-아이템">
+                    <span class="성과-수치">75%</span>
+                    <p class="성과-라벨">
+                        자동화 프로세스로 단축한<br>
+                        데이터 정제 소요 시간
+                    </p>
+                </div>
+
+                <div class="성과-아이템">
+                    <span class="성과-수치">ZERO</span>
+                    <p class="성과-라벨">
+                        사전 검증 시스템 운영으로<br>
+                        방어한 상품 정보 오류
+                    </p>
+                </div>
+
+                <div class="성과-아이템">
+                    <span class="성과-수치">Real</span>
+                    <p class="성과-라벨">
+                        라이브 운영 경험으로 다져진<br>
+                        초단위 지표 대응 감각
+                    </p>
+                </div>
+
+            </div>
+
+            <p class="text-white font-black text-3xl leading-relaxed mt-28">
+                "게임 운영의 <span class="text-[#FFD400] underline underline-offset-[12px] decoration-4">집요함</span>으로<br />
+                오픈마켓 커머스의 캠페인 성과 개선안을 정리했습니다."
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-32 text-slate-400 font-bold text-xs tracking-[0.3em] uppercase border-t border-slate-200 mt-20">
+        Open Market Campaign Planner Strategy Proposal 2026
+    </footer>
+
+    <script>
+        function 탭변경(모드) {
+            const 탭게임 = document.getElementById('탭-게임');
+            const 탭오픈마켓 커머스 = document.getElementById('탭-오픈마켓 커머스');
+            const 내용게임 = document.getElementById('내용-게임');
+            const 내용오픈마켓 커머스 = document.getElementById('내용-오픈마켓 커머스');
+
+            if (모드 === '게임') {
+                탭게임.className = "탭-버튼 활성";
+                탭오픈마켓 커머스.className = "탭-버튼";
+                내용게임.classList.remove('hidden');
+                내용오픈마켓 커머스.classList.add('hidden');
+            } else {
+                탭오픈마켓 커머스.className = "탭-버튼 활성";
+                탭게임.className = "탭-버튼";
+                내용오픈마켓 커머스.classList.remove('hidden');
+                내용게임.classList.add('hidden');
+            }
+        }
+
+        const ctx1 = document.getElementById('차트-정제').getContext('2d');
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['수작업 검수', '자동화 도입'],
+                datasets: [{
+                    data: [100, 25],
+                    backgroundColor: ['#E2E8F0', '#0064FF'],
+                    borderRadius: 16,
+                    barThickness: 80
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { 
+                    y: { display: false }, 
+                    x: { grid: { display: false }, ticks: { font: { weight: 'bold', size: 16 } } } 
+                }
+            }
+        });
+
+        const ctx2 = document.getElementById('차트-실시간').getContext('2d');
+        let 지표차트 = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['10:00', '10:05', '10:10', '10:15', '10:20', '10:25'],
+                datasets: [
+                    { label: '유입 클릭률', data: [4.2, 4.4, 4.6, 4.5, 4.9, 4.8], borderColor: '#60A5FA', tension: 0.4, pointRadius: 5, pointBackgroundColor: '#60A5FA' },
+                    { label: '구매 전환율', data: [2.5, 2.7, 2.6, 2.8, 2.7, 2.9], borderColor: '#10B981', tension: 0.4, pointRadius: 5, borderWidth: 8, pointBackgroundColor: '#10B981' }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { 
+                    legend: { position: 'bottom', labels: { color: '#94A3B8', font: { weight: 'bold', size: 16 }, padding: 40 } } 
+                },
+                scales: { 
+                    y: { grid: { color: '#333' }, ticks: { color: '#64748B' } },
+                    x: { grid: { display: false }, ticks: { color: '#64748B', font: { weight: 'bold' } } }
+                }
+            }
+        });
+
+        function 시뮬가동() {
+            지표차트.data.labels.push('10:30');
+            지표차트.data.datasets[0].data.push(6.8); 
+            지표차트.data.datasets[1].data.push(0.6); 
+            지표차트.data.datasets[1].borderColor = '#FF4D4D';
+            지표차트.data.datasets[1].pointBackgroundColor = '#FF4D4D';
+            지표차트.update();
+
+            document.getElementById('알림-레이어').classList.add('표시');
+            const 버튼 = document.getElementById('시뮬-버튼');
+            버튼.innerText = '지표 이상 분석 및 대응 가동 중';
+            버튼.disabled = true;
+            버튼.style.animation = 'none';
+            버튼.classList.add('opacity-50');
+        }
+
+        function 매뉴얼토글() {
+            const detail = document.getElementById('매뉴얼-디테일');
+            detail.style.display = detail.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

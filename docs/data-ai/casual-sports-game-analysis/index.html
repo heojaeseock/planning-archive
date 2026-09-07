@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캐주얼 물리 기반 스포츠 게임 기획 분석 리포트</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sand: {
+                            50: '#fdfbf7',
+                            100: '#f8f4ec',
+                            200: '#efe6d5',
+                            300: '#e3d0b3',
+                            800: '#644d32',
+                            900: '#53402a',
+                        },
+                        coral: {
+                            500: '#f05a4f',
+                            600: '#dc4034',
+                        },
+                        ocean: {
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #fdfbf7; 
+            color: #333;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 350px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+                max-width: 100%;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8f4ec; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e3d0b3; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4bc96; 
+        }
+
+        .tab-active {
+            border-bottom: 2px solid #f05a4f;
+            color: #f05a4f;
+            font-weight: 700;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bg-pattern {
+            background-image: radial-gradient(#e3d0b3 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body class="antialiased relative">
+
+    <!-- Chosen Palette: Warm Sand & Coral Accent -->
+    <!-- Application Structure Plan: 
+         - 줄바꿈 이슈 해결: 태그 요소에 whitespace-nowrap 적용.
+         - 반응형 최적화: 모바일에서도 텍스트가 잘리지 않도록 flex-wrap 처리.
+         - 컨텐츠 고도화: 헤드 사커 등 실제 사례를 바탕으로 한 물리 엔진 및 시스템 분석. -->
+    <!-- Visualization & Content Choices: 
+         - Radar Chart: 캐주얼 vs 하드코어 물리 특성 비교.
+         - Bar Chart: 게임 플레이 지표 비교.
+         - Interactive Cards: 특수 기믹 상세 기획안. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
+
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm border-b border-sand-200 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 font-bold text-xl text-sand-900 flex items-center gap-2">
+                    <span class="text-2xl">⚽</span> Game UX Insight
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#physics" class="text-sm font-medium text-sand-800 hover:text-coral-500 transition-colors">물리 엔진 변수</a>
+                    <a href="#system" class="text-sm font-medium text-sand-800 hover:text-coral-500 transition-colors">시스템 비교</a>
+                    <a href="#gimmick" class="text-sm font-medium text-sand-800 hover:text-coral-500 transition-colors">기믹 제안</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-24 pb-20">
+        
+        <header class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+            <span class="inline-block py-1 px-3 rounded-full bg-coral-50 text-coral-600 text-xs font-bold tracking-wider mb-4">DESIGN ANALYSIS</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-sand-900 tracking-tight mb-6 leading-tight">
+                캐주얼 물리 기반 스포츠 게임<br class="hidden md:block">핵심 기획 분석
+            </h1>
+            <p class="text-base md:text-lg text-sand-800 leading-relaxed max-w-2xl mx-auto">
+                로켓 리그 사이드스와이프, 헤드 사커, 오메가 스트라이커스 등 성공작들의 물리 엔진 세팅과 차별화되는 시스템 특징을 분석합니다.
+            </p>
+        </header>
+
+        <section id="physics" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 scroll-mt-24">
+            <div class="bg-white rounded-2xl shadow-sm border border-sand-200 p-6 md:p-10">
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-sand-900 flex items-center gap-2 mb-2">
+                        <span class="text-2xl">🕹️</span> 캐주얼한 재미를 만드는 물리 변수 Top 3
+                    </h2>
+                    <p class="text-sand-800">현실성보다는 <strong>'직관적인 피드백'</strong>이 재미의 핵심입니다.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-4">
+                        <div class="p-5 bg-sand-50 rounded-xl border border-sand-100 hover:border-coral-200 transition-colors">
+                            <h3 class="text-lg font-bold text-sand-900 mb-2">1. 과장된 공의 궤적</h3>
+                            <p class="text-sm text-sand-800 leading-relaxed">
+                                실제보다 낮은 중력을 적용하여 공이 공중에 머무는 시간을 늘립니다. 유저가 공의 낙하 지점을 예측하고 대응할 시간적 여유를 확보해줍니다.
+                            </p>
+                        </div>
+                        <div class="p-5 bg-sand-50 rounded-xl border border-sand-100 hover:border-coral-200 transition-colors">
+                            <h3 class="text-lg font-bold text-sand-900 mb-2">2. 관대한 충돌 판정</h3>
+                            <p class="text-sm text-sand-800 leading-relaxed">
+                                캐릭터보다 15~20% 큰 보이지 않는 히트박스를 통해, 세밀하지 않은 조작으로도 타격의 쾌감을 느낄 수 있도록 설계합니다.
+                            </p>
+                        </div>
+                        <div class="p-5 bg-sand-50 rounded-xl border border-sand-100 hover:border-coral-200 transition-colors">
+                            <h3 class="text-lg font-bold text-sand-900 mb-2">3. 즉각적인 속도 제어</h3>
+                            <p class="text-sm text-sand-800 leading-relaxed">
+                                관성을 줄이고 높은 가속도를 설정하여 조작 즉시 반응하게 합니다. 빠른 템포의 공수 전환은 짧은 경기 시간 내의 긴장감을 유지합니다.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-sand-50/50 p-6 rounded-2xl">
+                        <div class="text-center mb-6 text-sm font-semibold text-sand-800 underline decoration-coral-500/30 underline-offset-4">물리 엔진 파라미터 비교 (Casual vs Hardcore)</div>
+                        <div class="chart-container">
+                            <canvas id="physicsRadarChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="system" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 scroll-mt-24">
+            <div class="mb-8 text-center">
+                <h2 class="text-2xl font-bold text-sand-900 mb-2">
+                    <span class="text-2xl">⚖️</span> 득점 룰 및 역전 시스템 비교
+                </h2>
+                <p class="text-sand-800">아케이드적 재미를 위한 시스템 차별화 전략</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-sand-200 overflow-hidden">
+                <div class="flex border-b border-sand-200 bg-sand-50 cursor-pointer">
+                    <div id="tab-casual" class="flex-1 py-4 text-center font-medium tab-active transition-colors" onclick="switchTab('casual')">
+                        캐주얼 스포츠 (아케이드)
+                    </div>
+                    <div id="tab-hardcore" class="flex-1 py-4 text-center font-medium text-sand-500 hover:text-sand-800 transition-colors" onclick="switchTab('hardcore')">
+                        하드코어 스포츠 (시뮬레이션)
+                    </div>
+                </div>
+
+                <div class="p-6 md:p-10 min-h-[400px]">
+                    <div class="grid lg:grid-cols-5 gap-10">
+                        <div class="lg:col-span-3 space-y-8" id="content-container">
+                            <!-- Dynamic Content -->
+                        </div>
+                        <div class="lg:col-span-2 flex flex-col justify-center bg-sand-50/30 p-6 rounded-2xl border border-sand-100">
+                            <div class="chart-container">
+                                <canvas id="systemBarChart"></canvas>
+                            </div>
+                            <p class="text-[10px] text-center text-sand-500 mt-6 leading-relaxed">
+                                *수치는 기획적 의도를 시각화한 지표입니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gimmick" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
+            <div class="mb-10 text-center">
+                <h2 class="text-3xl font-bold text-sand-900 mb-4">
+                    <span class="text-3xl">💡</span> 신규 프로토타입 '특수 기믹' 제안
+                </h2>
+                <p class="text-sand-800 max-w-2xl mx-auto">
+                    단조로운 패턴을 방지하고 유저간의 실력 격차를 완화하는 두 가지 기믹입니다.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Gimmick 1 -->
+                <div class="group bg-white rounded-3xl p-8 border-2 border-transparent hover:border-coral-500 shadow-sm hover:shadow-md transition-all cursor-pointer relative overflow-hidden" onclick="toggleGimmick('gimmick1')">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity text-7xl">💥</div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-3">
+                        <h3 class="text-2xl font-bold text-sand-900">핀볼 범퍼</h3>
+                        <span class="inline-block whitespace-nowrap text-coral-600 text-xs font-bold px-3 py-1 bg-coral-50 rounded-full border border-coral-100">상호작용 기믹</span>
+                    </div>
+                    <p class="text-sand-600 mb-6 font-medium">공의 궤적을 순식간에 비트는 고탄성 범퍼</p>
+                    
+                    <div class="text-sand-800 space-y-4">
+                        <div class="bg-sand-50 p-4 rounded-2xl text-sm border-l-4 border-coral-500">
+                            <strong>작동 방식:</strong> 경기장 특정 구역에 공이 닿으면 예측 불가능한 속도와 각도로 튕겨나가는 범퍼를 배치합니다.
+                        </div>
+                        <div id="gimmick1-details" class="hidden fade-in space-y-3 mt-4 text-sm bg-white p-4 rounded-xl border border-sand-100">
+                            <h4 class="font-bold text-sand-900 border-b border-sand-100 pb-2">기획 의도</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-sand-700">
+                                <li>정형화된 패스 루트를 차단하여 경기마다 새로운 <strong>의외성</strong>을 제공합니다.</li>
+                                <li>초보자에게 '운'을 통한 득점 기회를 제공하여 중도 이탈을 방지합니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-center text-xs text-sand-400 group-hover:text-coral-500 font-bold transition-colors" id="gimmick1-hint">상세 기획 보기 ▼</div>
+                </div>
+
+                <!-- Gimmick 2 -->
+                <div class="group bg-white rounded-3xl p-8 border-2 border-transparent hover:border-ocean-500 shadow-sm hover:shadow-md transition-all cursor-pointer relative overflow-hidden" onclick="toggleGimmick('gimmick2')">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity text-7xl">🌌</div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-3">
+                        <h3 class="text-2xl font-bold text-sand-900">중력 이상 구역</h3>
+                        <span class="inline-block whitespace-nowrap text-ocean-600 text-xs font-bold px-3 py-1 bg-ocean-50 rounded-full border border-ocean-100">환경 변화 기믹</span>
+                    </div>
+                    <p class="text-sand-600 mb-6 font-medium">영역 내 물리 파라미터가 실시간으로 변하는 필드</p>
+                    
+                    <div class="text-sand-800 space-y-4">
+                        <div class="bg-sand-50 p-4 rounded-2xl text-sm border-l-4 border-ocean-500">
+                            <strong>작동 방식:</strong> 특정 시간마다 '저중력' 또는 '고중력' 타일이 활성화되어 낙하 속도와 점프 높이가 달라집니다.
+                        </div>
+                        <div id="gimmick2-details" class="hidden fade-in space-y-3 mt-4 text-sm bg-white p-4 rounded-xl border border-sand-100">
+                            <h4 class="font-bold text-sand-900 border-b border-sand-100 pb-2">기획 의도</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-sand-700">
+                                <li><strong>저중력:</strong> 화려한 공중 콤보 액션(에어리얼 슛)을 유도하여 시각적 만족도를 높입니다.</li>
+                                <li><strong>고중력:</strong> 공중 경합을 차단하고 지상 난전 전술을 강제하여 플레이 양상을 변화시킵니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-center text-xs text-sand-400 group-hover:text-ocean-500 font-bold transition-colors" id="gimmick2-hint">상세 기획 보기 ▼</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-sand-900 text-sand-300 py-10 text-center text-sm">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="mb-2">본 리포트는 캐주얼 스포츠 게임의 핵심 기획 요소를 분석하기 위해 작성되었습니다.</p>
+            <p class="opacity-60">© 2024 Game Design Insight. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const contentData = {
+            casual: {
+                scoring: {
+                    title: "즉각적인 도파민 보상",
+                    desc: "목표 점수제나 3분 내외의 짧은 단판 승부를 선호합니다. 골인 시 화면 진동, 사운드, 파티클 이펙트를 과도할 정도로 화려하게 연출하여 득점의 가치를 감각적으로 전달합니다.",
+                    icon: "🎯"
+                },
+                comeback: {
+                    title: "인위적 역전 찬스 (Momentum)",
+                    desc: "점수 차가 벌어지면 실점한 유저에게 특수 능력을 부여하거나 경기 종료 직전 '골든 골' 찬스를 주어 게임이 끝날 때까지 유저가 긴장의 끈을 놓지 못하게 합니다.",
+                    icon: "🔥"
+                },
+                ux: {
+                    title: "대기 없는 빠른 순환 구조",
+                    desc: "불필요한 리플레이를 스킵하고 즉시 다음 킥오프로 연결합니다. 경기 종료 후에도 '재경기' 버튼을 전면에 배치하여 유저가 고민 없이 다음 판으로 진입하도록 유도합니다.",
+                    icon: "⚡"
+                }
+            },
+            hardcore: {
+                scoring: {
+                    title: "전술적 빌드업의 미학",
+                    desc: "정해진 전/후반 시간을 사용하며, 득점 자체보다는 그 골을 만들기 위한 패스 플레이와 조직적인 움직임의 성취감을 중시합니다. 현실적인 득점 빈도를 지향합니다.",
+                    icon: "⏱️"
+                },
+                comeback: {
+                    title: "전술과 실력 위주의 승부",
+                    desc: "시스템적인 보정보다는 선수 교체, 포메이션 변경 등 매니징 요소와 조작 실력의 숙련도를 통해 유저 스스로가 불리한 상황을 극복하도록 설계합니다.",
+                    icon: "♟️"
+                },
+                ux: {
+                    title: "현실적인 현장감 전달",
+                    desc: "실제 중계 화면과 유사한 연출, 긴 호흡의 리플레이, 선수의 감정 표현 컷신 등을 통해 유저가 실제 프로 선수가 된 듯한 시뮬레이션 경험을 제공합니다.",
+                    icon: "📺"
+                }
+            }
+        };
+
+        const ctxRadar = document.getElementById('physicsRadarChart').getContext('2d');
+        new Chart(ctxRadar, {
+            type: 'radar',
+            data: {
+                labels: ['궤적 과장성', '히트박스 관대함', '순간 가속도', '조작 반응성', '현실 물리 반영'],
+                datasets: [{
+                    label: '캐주얼 (Head Soccer 등)',
+                    data: [95, 85, 90, 95, 25],
+                    backgroundColor: 'rgba(240, 90, 79, 0.2)',
+                    borderColor: 'rgba(240, 90, 79, 1)',
+                    pointBackgroundColor: 'rgba(240, 90, 79, 1)',
+                    borderWidth: 2
+                }, {
+                    label: '하드코어 (FC 온라인 등)',
+                    data: [35, 25, 55, 60, 90],
+                    backgroundColor: 'rgba(100, 77, 50, 0.2)',
+                    borderColor: 'rgba(100, 77, 50, 1)',
+                    pointBackgroundColor: 'rgba(100, 77, 50, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(0,0,0,0.05)' },
+                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        ticks: { display: false, min: 0, max: 100 },
+                        pointLabels: { font: { family: 'Pretendard', size: 11 }, color: '#53402a' }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'bottom', labels: { font: { family: 'Pretendard' } } }
+                }
+            }
+        });
+
+        const ctxBar = document.getElementById('systemBarChart').getContext('2d');
+        const systemChart = new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: ['평균 득점력', '역전 빈도', '플레이 속도'],
+                datasets: [{
+                    label: '수치',
+                    data: [88, 72, 92],
+                    backgroundColor: 'rgba(240, 90, 79, 0.8)',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { beginAtZero: true, max: 100, ticks: { display: false }, grid: { display: false } },
+                    y: { grid: { display: false }, ticks: { font: { family: 'Pretendard', weight: 'bold' }, color: '#53402a' } }
+                },
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        function renderContent(type) {
+            const container = document.getElementById('content-container');
+            const data = contentData[type];
+            container.innerHTML = `
+                <div class="fade-in space-y-2">
+                    <h3 class="text-xl font-bold text-sand-900 flex items-center gap-2"><span>${data.scoring.icon}</span> ${data.scoring.title}</h3>
+                    <p class="text-sand-700 leading-relaxed text-sm bg-sand-50 p-5 rounded-2xl border border-sand-100">${data.scoring.desc}</p>
+                </div>
+                <div class="fade-in space-y-2" style="animation-delay: 0.1s; animation-fill-mode: both;">
+                    <h3 class="text-xl font-bold text-sand-900 flex items-center gap-2"><span>${data.comeback.icon}</span> ${data.comeback.title}</h3>
+                    <p class="text-sand-700 leading-relaxed text-sm bg-sand-50 p-5 rounded-2xl border border-sand-100">${data.comeback.desc}</p>
+                </div>
+                <div class="fade-in space-y-2" style="animation-delay: 0.2s; animation-fill-mode: both;">
+                    <h3 class="text-xl font-bold text-sand-900 flex items-center gap-2"><span>${data.ux.icon}</span> ${data.ux.title}</h3>
+                    <p class="text-sand-700 leading-relaxed text-sm bg-sand-50 p-5 rounded-2xl border border-sand-100">${data.ux.desc}</p>
+                </div>
+            `;
+        }
+
+        function switchTab(type) {
+            document.getElementById('tab-casual').classList.remove('tab-active', 'text-sand-500');
+            document.getElementById('tab-hardcore').classList.remove('tab-active', 'text-sand-500');
+            
+            if(type === 'casual') {
+                document.getElementById('tab-casual').classList.add('tab-active');
+                document.getElementById('tab-hardcore').classList.add('text-sand-500');
+                systemChart.data.datasets[0].data = [88, 72, 92];
+                systemChart.data.datasets[0].backgroundColor = 'rgba(240, 90, 79, 0.8)';
+            } else {
+                document.getElementById('tab-hardcore').classList.add('tab-active');
+                document.getElementById('tab-casual').classList.add('text-sand-500');
+                systemChart.data.datasets[0].data = [35, 22, 48];
+                systemChart.data.datasets[0].backgroundColor = 'rgba(100, 77, 50, 0.8)';
+            }
+            systemChart.update();
+            renderContent(type);
+        }
+
+        function toggleGimmick(id) {
+            const detailEl = document.getElementById(`${id}-details`);
+            const hintEl = document.getElementById(`${id}-hint`);
+            detailEl.classList.toggle('hidden');
+            hintEl.innerText = detailEl.classList.contains('hidden') ? "상세 기획 보기 ▼" : "▲ 기획안 접기";
+            hintEl.classList.toggle('text-sand-400');
+            hintEl.classList.toggle('text-sand-900');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderContent('casual');
+            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

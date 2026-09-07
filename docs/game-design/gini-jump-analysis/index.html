@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>허재석 작업 기록 | Gini Jump 게임 분석</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <style>
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            background-color: #f3f4f6; 
+            color: #1f2937; 
+            margin: 0;
+            padding: 0;
+            word-break: keep-all; 
+        }
+        
+        .card-shadow { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+        
+        .content-panel {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 1.5rem;
+        }
+
+        .animate-pop { animation: pop 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+        @keyframes pop {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .tab-btn {
+            cursor: pointer;
+            transition: all 0.2s;
+            outline: none;
+            border-bottom-width: 2px;
+        }
+        .tab-btn.active {
+            background-color: #2563eb;
+            color: #ffffff;
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+        }
+
+        .tab-content { display: none; opacity: 0; transition: opacity 0.3s ease; }
+        .tab-content.active { display: block; opacity: 1; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* 게임 이미지 공통 스타일 */
+        .game-img {
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            image-rendering: pixelated; 
+            transition: transform 0.2s ease-in-out;
+        }
+        .game-img:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 매트릭스 도넛 차트 스타일 */
+        .donut-chart {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        @media (min-width: 768px) {
+            .donut-chart { width: 48px; height: 48px; }
+        }
+        .donut-inner {
+            width: 30px;
+            height: 30px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 800;
+        }
+        @media (min-width: 768px) {
+            .donut-inner { width: 36px; height: 36px; font-size: 13px; }
+        }
+
+        /* 기믹 시각화 커스텀 스타일 (복구됨!) */
+        .platform-bar {
+            width: 60px;
+            height: 12px;
+            border-radius: 6px;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+        }
+        
+        /* 테마 이미지 프레임 */
+        .theme-preview-box {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            background: #ffffff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="min-h-screen flex flex-col items-center py-10 px-4 md:px-0 bg-gray-50">
+        <div class="max-w-6xl w-full bg-white rounded-[32px] overflow-hidden card-shadow border border-gray-100 animate-pop">
+            
+            <!-- 상단 헤더 -->
+            <div class="relative pt-16 pb-12 px-10 md:px-16 bg-gradient-to-br from-gray-900 via-blue-950 to-gray-900 text-white overflow-hidden border-b-[6px] border-blue-600">
+                <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none" style="background: radial-gradient(circle at top right, #3b82f6, transparent 70%);"></div>
+                <div class="absolute bottom-0 left-0 w-full h-1/2 opacity-5 pointer-events-none" style="background: linear-gradient(to top, #60a5fa, transparent);"></div>
+
+                <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+                    <div class="flex-1">
+                        <p class="text-blue-400 font-bold text-xs mb-3 flex items-center gap-2 uppercase tracking-widest">
+                            <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                            Mobile Game Planning & Production
+                        </p>
+                        <h1 class="text-4xl md:text-5xl font-black leading-tight mb-5 tracking-tight">
+                            Gini Jump
+                        </h1>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed max-w-2xl mb-6 font-medium">
+                            코로나19 팬데믹 시기, 여행에 대한 대리 만족을 주는 '방구석 세계 여행' 콘셉트의 2D 모바일 점프 아케이드 게임입니다. 자이로센서를 활용한 직관적인 조작과 각국의 랜드마크를 담은 픽셀 아트 배경을 구현하여 유니티 엔진 기반으로 실제 앱 출시까지 완수했습니다.
+                        </p>
+                        <div class="flex flex-wrap gap-3 mt-2 text-gray-400 text-xs font-mono">
+                            <span class="bg-gray-800 px-3 py-1.5 rounded-full border border-gray-700 shadow-sm flex items-center gap-1">
+                                <span>📅</span> <span>2021.03 ~ 2021.06</span>
+                            </span>
+                            <span class="bg-gray-800 px-3 py-1.5 rounded-full border border-gray-700 shadow-sm flex items-center gap-1">
+                                <span>👤</span> <span>4인 팀 프로젝트 (노라조)</span>
+                            </span>
+                            <span class="bg-blue-900 text-blue-200 px-3 py-1.5 rounded-full border border-blue-700 shadow-sm flex items-center gap-1">
+                                <span>🛠️</span> <span>Engine: Unity</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w-24 h-24 rounded-3xl bg-blue-600 flex flex-col items-center justify-center shadow-2xl shrink-0 border-4 border-white/20 transform rotate-3">
+                        <span class="text-4xl drop-shadow-md">🦔</span>
+                        <span class="text-[8px] font-black mt-1 opacity-70 uppercase tracking-widest text-blue-100">Gini Jump</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 네비게이션 탭 -->
+            <div class="flex border-b border-gray-200 bg-gray-50 sticky top-0 z-20 backdrop-blur-sm shadow-sm overflow-x-auto">
+                <button data-target="intent" class="tab-btn active flex-1 min-w-[150px] py-5 text-sm font-bold text-gray-600 border-transparent hover:text-blue-600 hover:bg-gray-100" id="defaultOpen">📊 1. 기획 의도 및 배경</button>
+                <button data-target="role" class="tab-btn flex-1 min-w-[150px] py-5 text-sm font-bold text-gray-600 border-transparent hover:text-blue-600 hover:bg-gray-100">🛠️ 2. 담당 업무 상세</button>
+                <button data-target="characters" class="tab-btn flex-1 min-w-[150px] py-5 text-sm font-bold text-gray-600 border-transparent hover:text-blue-600 hover:bg-gray-100">🎨 3. 캐릭터 및 테마 디자인</button>
+                <button data-target="system" class="tab-btn flex-1 min-w-[150px] py-5 text-sm font-bold text-gray-600 border-transparent hover:text-blue-600 hover:bg-gray-100">🎮 4. 핵심 시스템 및 화면</button>
+                <button data-target="effect" class="tab-btn flex-1 min-w-[150px] py-5 text-sm font-bold text-gray-600 border-transparent hover:text-blue-600 hover:bg-gray-100">🚀 5. 기대 효과 및 확장성</button>
+            </div>
+
+            <!-- 탭 1: 기획 의도 및 배경 -->
+            <div id="intent" class="tab-content active p-8 md:p-12 space-y-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-bold text-gray-900 flex items-center gap-2">
+                            <span class="text-blue-600">#</span> 프로젝트 배경 및 기획 의도
+                        </h3>
+                        <ul class="space-y-4 text-sm text-gray-700 leading-relaxed list-none pl-0">
+                            <li class="flex items-start gap-3"><span class="text-blue-500 mt-1">•</span> <span><strong>콘셉트 도출:</strong> 코로나19로 단절된 해외여행에 대한 대리 만족을 주고자 '세계 랜드마크 여행'을 메인 테마로 선정</span></li>
+                            <li class="flex items-start gap-3"><span class="text-blue-500 mt-1">•</span> <span><strong>핵심 기획:</strong> 기기 기울기(자이로센서)를 활용한 직관적인 조작법 채택 및 무작위 발판, 움직이는 장애물 생성 로직 설계</span></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 캐릭터 선정 매트릭스 UI -->
+                    <div class="content-panel p-6 md:p-8 shadow-sm border-gray-100 flex flex-col h-full">
+                        <p class="text-[10px] font-bold text-gray-400 mb-6 uppercase tracking-[0.2em] text-center">Character Selection Matrix</p>
+                        
+                        <div class="w-full mx-auto flex-1 flex flex-col justify-center">
+                            <div class="grid grid-cols-4 gap-2 mb-4 text-center">
+                                <div></div>
+                                <div class="text-[10px] md:text-xs font-bold text-gray-400">창의성</div>
+                                <div class="text-[10px] md:text-xs font-bold text-gray-400">제작용이성</div>
+                                <div class="text-[10px] md:text-xs font-bold text-gray-400">협업가능성</div>
+                            </div>
+
+                            <div class="grid grid-cols-4 gap-2 items-center bg-blue-50 border-2 border-blue-200 rounded-2xl p-3 mb-3 relative shadow-md transform scale-[1.02] z-10">
+                                <div class="absolute -top-3 left-4 bg-blue-600 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-tighter shadow-sm">Selected</div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <span class="text-2xl mb-1 drop-shadow-sm">🐹</span>
+                                    <span class="text-[10px] md:text-xs font-black text-blue-900 leading-tight">기니점프</span>
+                                </div>
+                                <div class="flex justify-center">
+                                    <div class="donut-chart" style="background: conic-gradient(#34d399 50%, #e5e7eb 0);">
+                                        <div class="donut-inner text-emerald-600">2</div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-center">
+                                    <div class="donut-chart" style="background: conic-gradient(#a78bfa 100%, #e5e7eb 0);">
+                                        <div class="donut-inner text-purple-600">4</div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-center">
+                                    <div class="donut-chart" style="background: conic-gradient(#60a5fa 75%, #e5e7eb 0);">
+                                        <div class="donut-inner text-blue-600">3</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-4 gap-2 items-center bg-white border border-gray-100 rounded-2xl p-3 mb-3 opacity-60 hover:opacity-100 transition-opacity">
+                                <div class="flex flex-col items-center justify-center">
+                                    <span class="text-2xl mb-1 grayscale opacity-50">🦥</span>
+                                    <span class="text-[10px] md:text-xs font-bold text-gray-500">늘보런</span>
+                                </div>
+                                <div class="flex justify-center">
+                                    <div class="donut-chart" style="background: conic-gradient(#34d399 50%, #f3f4f6 0);">
+                                        <div class="donut-inner">2</div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-center">
+                                    <div class="donut-chart" style="background: conic-gradient(#a78bfa 75%, #f3f4f6 0);">
+                                        <div class="donut-inner">3</div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-center">
+                                    <div class="donut-chart" style="background: conic-gradient(#60a5fa 75%, #f3f4f6 0);">
+                                        <div class="donut-inner">3</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-4 gap-2 items-center bg-white border border-gray-100 rounded-2xl p-3 opacity-60 hover:opacity-100 transition-opacity">
+                                <div class="flex flex-col items-center justify-center">
+                                    <span class="text-2xl mb-1 grayscale opacity-50">🦡</span>
+                                    <span class="text-[10px] md:text-xs font-bold text-gray-500">개미핥기</span>
+                                </div>
+                                <div class="flex justify-center">
+                                    <div class="donut-chart" style="background: conic-gradient(#34d399 100%, #f3f4f6 0);">
+                                        <div class="donut-inner">4</div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-center">
+                                    <div class="donut-chart" style="background: conic-gradient(#a78bfa 50%, #f3f4f6 0);">
+                                        <div class="donut-inner">2</div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-center">
+                                    <div class="donut-chart" style="background: conic-gradient(#60a5fa 50%, #f3f4f6 0);">
+                                        <div class="donut-inner">2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-[11px] text-gray-500 mt-8 text-center leading-relaxed font-medium">
+                            늘보런, 개미핥기 등 동물을 후보군에 두고 점수화하여<br class="hidden md:block"> 
+                            <strong class="text-blue-600 font-bold">제작 및 협업 지표가 가장 우수한 '기니점프'로 최종 확정</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 탭 2: 담당 업무 상세 -->
+            <div id="role" class="tab-content p-8 md:p-12 space-y-12">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-gray-900 flex items-center gap-2">
+                        <span class="text-blue-600">#</span> 허재석 담당 업무 상세 (기여도: 100%)
+                    </h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="content-panel p-8 space-y-3 shadow-sm border-gray-100 hover:border-blue-200 transition-colors">
+                        <div class="text-3xl">🗓️</div>
+                        <h4 class="font-black text-gray-900 text-sm">기획 및 일정 관리</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">전체적인 게임 기획서 작성 및 15주 차에 걸친 마일스톤(주차별 목표) 수립 및 진척도 관리</p>
+                    </div>
+                    <div class="content-panel p-8 space-y-3 shadow-sm border-gray-100 hover:border-blue-200 transition-colors">
+                        <div class="text-3xl">🎨</div>
+                        <h4 class="font-black text-gray-900 text-sm">UI/UX 및 배경 구현</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">메인 화면, 테마 선택, 랭킹, 옵션, 일시정지, 게임 오버 등 전반적인 UI 에셋 제작 및 인게임 배경 스크롤 로직 구현</p>
+                    </div>
+                    <div class="content-panel p-8 space-y-3 shadow-sm border-gray-100 hover:border-blue-200 transition-colors">
+                        <div class="text-3xl">🩺</div>
+                        <h4 class="font-black text-gray-900 text-sm">사운드 및 QA</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">게임 콘셉트에 맞는 배경음 선정 및 실제 모바일 디바이스 빌드 후 QA 테스트를 총괄하여 버그 수정 및 최적화 진행</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 탭 3: 캐릭터 및 테마 디자인 -->
+            <div id="characters" class="tab-content p-8 md:p-12 space-y-12">
+                <div class="space-y-6 text-center">
+                    <h3 class="text-2xl font-bold text-gray-900 inline-flex items-center gap-2">
+                        <span class="text-blue-600">#</span> 기니점프 랜드마크 베리에이션
+                    </h3>
+                </div>
+                
+                <div class="bg-gray-50 p-6 md:p-10 rounded-[2rem] border border-gray-100 text-center shadow-inner">
+                    <p class="text-[10px] font-bold text-gray-400 mb-8 uppercase tracking-[0.2em]">Gini Jump Character Artworks</p>
+                    <div class="max-w-4xl mx-auto mb-10">
+                        <img src="Guinea Pig Pixel Art Variations.png" alt="기니점프 캐릭터 테마별 디자인" class="w-full h-auto rounded-2xl shadow-md border border-white" onerror="this.src='';">
+                    </div>
+                    
+                    <div class="flex flex-wrap justify-center gap-3 md:gap-4 max-w-4xl mx-auto mb-10">
+                        <div class="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
+                            <span class="text-base">🇰🇷</span><span class="text-[11px] font-black text-slate-700">한국 (Korea)</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
+                            <span class="text-base">🇺🇸</span><span class="text-[11px] font-black text-slate-700">미국 (USA)</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
+                            <span class="text-base">🇫🇷</span><span class="text-[11px] font-black text-slate-700">프랑스 (France)</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
+                            <span class="text-base">🇪🇬</span><span class="text-[11px] font-black text-slate-700">이집트 (Egypt)</span>
+                        </div>
+                    </div>
+
+                    <p class="text-sm text-slate-600 max-w-3xl mx-auto leading-relaxed font-medium">
+                        선택한 국가별 랜드마크 테마에 맞춰 캐릭터 코스튬 및 외형 디자인을 픽셀 아트로 구현했습니다.<br class="hidden md:block"> 
+                        각 국의 문화적 특징을 반영한 귀여운 베리에이션을 통해 게임의 시각적 다양성을 확보했습니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 탭 4: 핵심 게임 시스템 및 화면 (에러 복구 & 텍스트 정렬 완벽 적용) -->
+            <div id="system" class="tab-content p-8 md:p-12 space-y-16">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-bold text-gray-900 flex items-center gap-2">
+                            <span class="text-blue-600">#</span> 메인 화면 및 테마 선택
+                        </h3>
+                        <p class="text-sm text-gray-700 leading-relaxed mb-6 font-medium">
+                            스마트폰 기기를 좌우로 기울여(자이로센서) 점프 궤도를 컨트롤하는 직관적인 아케이드 방식으로 누구나 쉽게 즐길 수 있도록 구현했습니다.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-blue-50 border border-blue-100 rounded-full text-[10px] font-bold text-blue-600">#Unity_Engine</span>
+                            <span class="px-3 py-1 bg-blue-50 border border-blue-100 rounded-full text-[10px] font-bold text-blue-600">#Gyro_Sensor</span>
+                            <span class="px-3 py-1 bg-blue-50 border border-blue-100 rounded-full text-[10px] font-bold text-blue-600">#Mobile_UI</span>
+                        </div>
+                    </div>
+                    
+                    <div class="content-panel p-4 bg-gray-50 border-gray-200">
+                        <div class="theme-preview-box mb-3 border border-slate-200 shadow-sm relative">
+                            <!-- 중앙 검은 여백 가림 트릭 -->
+                            <div class="absolute top-0 bottom-0 left-1/2 w-4 bg-white -translate-x-1/2 z-10"></div>
+                            <img src="Main Screen.jpg.png" alt="시작 화면 및 테마 선택" class="w-full h-auto block relative z-0" onerror="this.src='';">
+                        </div>
+                        <!-- 💡 해결: 50% 분할로 각 폰 화면의 정중앙에 텍스트 배치 -->
+                        <div class="flex w-full text-[11px] font-black text-slate-500 py-1">
+                            <div class="w-1/2 flex justify-center text-center"><span>[ 시작 화면 ]</span></div>
+                            <div class="w-1/2 flex justify-center text-center"><span>[ 테마 선택 화면 ]</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="border-gray-100">
+
+                <div class="space-y-10">
+                    <div class="text-center space-y-4">
+                        <h3 class="text-2xl font-bold text-gray-900 inline-flex items-center gap-2">
+                            <span class="text-blue-600">#</span> 인게임 기믹 및 국가별 실제 플레이 화면
+                        </h3>
+                        <p class="text-sm text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium">
+                            밟으면 더 높이 도약하는 '슈퍼 점프 발판'과 플레이어를 방해하는 '장애물'을 배치했습니다.<br class="hidden md:block">
+                            하단 4개국 테마는 각국의 랜드마크를 픽셀 아트로 정교하게 시각화한 실제 플레이 화면입니다.
+                        </p>
+                    </div>
+                    
+                    <!-- 복구된 기믹 및 테마 이미지 레이아웃 -->
+                    <div class="content-panel p-6 md:p-10 bg-slate-50 border-gray-200 shadow-inner">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                            
+                            <!-- 1. 기믹 컴포넌트 시각화 (CSS 발판, 독수리 그래픽 완전 복구) -->
+                            <div class="lg:col-span-1 bg-white p-6 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center">
+                                <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-8">Component Gimmicks</span>
+                                <div class="space-y-10 w-full flex-1 flex flex-col justify-center px-2">
+                                    <!-- 발판 묘사 -->
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex flex-col gap-2">
+                                            <div class="platform-bar bg-green-500"></div>
+                                            <div class="platform-bar bg-red-500 border-2 border-yellow-300"></div>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="bg-gray-100 text-gray-600 text-[10px] font-bold px-2 py-1 rounded">발판</span>
+                                            <p class="text-[11px] font-black text-gray-800 mt-1">일반 / 슈퍼 점프</p>
+                                        </div>
+                                    </div>
+                                    <!-- 장애물 묘사 -->
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex gap-4">
+                                            <span class="text-3xl grayscale opacity-80">🐈‍⬛</span>
+                                            <span class="text-3xl">🦅</span>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="bg-red-50 text-red-600 text-[10px] font-bold px-2 py-1 rounded">장애물</span>
+                                            <p class="text-[11px] font-black text-gray-800 mt-1">고양이 / 독수리</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 2. 테마 이미지 -->
+                            <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
+                                <div class="theme-preview-box group flex flex-col">
+                                    <div class="flex-1 overflow-hidden bg-white relative">
+                                        <!-- 중앙 검은 여백 가림 트릭 -->
+                                        <div class="absolute top-0 bottom-0 left-1/2 w-4 bg-white -translate-x-1/2 z-10"></div>
+                                        <img src="Landmark Korea USA.jpg.png" alt="한국, 미국 플레이 화면" class="w-full h-auto block transition-transform group-hover:scale-105" onerror="this.src='';">
+                                    </div>
+                                    <!-- 💡 해결: 50% 분할로 각 폰 화면의 정중앙에 텍스트 및 국기 아이콘 배치 -->
+                                    <div class="flex w-full bg-white border-t border-slate-100 py-3 z-10 relative">
+                                        <div class="w-1/2 flex justify-center border-r border-slate-100">
+                                            <div class="flex items-center gap-1.5">
+                                                <span class="text-xs">🇰🇷</span><span class="text-[10px] font-black text-slate-700">한국</span>
+                                            </div>
+                                        </div>
+                                        <div class="w-1/2 flex justify-center">
+                                            <div class="flex items-center gap-1.5">
+                                                <span class="text-xs">🇺🇸</span><span class="text-[10px] font-black text-slate-700">미국</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="theme-preview-box group flex flex-col">
+                                    <div class="flex-1 overflow-hidden bg-white relative">
+                                        <!-- 중앙 검은 여백 가림 트릭 -->
+                                        <div class="absolute top-0 bottom-0 left-1/2 w-4 bg-white -translate-x-1/2 z-10"></div>
+                                        <img src="Landmark France Egypt.jpg.png" alt="프랑스, 이집트 플레이 화면" class="w-full h-auto block transition-transform group-hover:scale-105" onerror="this.src='';">
+                                    </div>
+                                    <!-- 💡 해결: 50% 분할로 각 폰 화면의 정중앙에 텍스트 및 국기 아이콘 배치 -->
+                                    <div class="flex w-full bg-white border-t border-slate-100 py-3 z-10 relative">
+                                        <div class="w-1/2 flex justify-center border-r border-slate-100">
+                                            <div class="flex items-center gap-1.5">
+                                                <span class="text-xs">🇫🇷</span><span class="text-[10px] font-black text-slate-700">프랑스</span>
+                                            </div>
+                                        </div>
+                                        <div class="w-1/2 flex justify-center">
+                                            <div class="flex items-center gap-1.5">
+                                                <span class="text-xs">🇪🇬</span><span class="text-[10px] font-black text-slate-700">이집트</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="border-gray-100">
+
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-gray-900 flex items-center gap-2">
+                        <span class="text-blue-600">#</span> 시스템 제어 및 랭킹 UI
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="content-panel p-5 bg-white shadow-sm border-gray-200 text-center flex flex-col">
+                            <div class="theme-preview-box mb-4 border border-slate-200 shadow-sm relative">
+                                <!-- 중앙 검은 여백 가림 트릭 -->
+                                <div class="absolute top-0 bottom-0 left-1/2 w-4 bg-white -translate-x-1/2 z-10"></div>
+                                <img src="Ranking Option Screen.jpg.png" alt="랭킹 및 옵션" class="w-full h-auto block relative z-0" onerror="this.src='';">
+                            </div>
+                            <p class="text-xs text-gray-400 font-medium text-center mt-2">반복 플레이 동기를 부여하는 최고 점수 기록 시스템</p>
+                        </div>
+                        <div class="content-panel p-5 bg-white shadow-sm border-gray-200 text-center flex flex-col">
+                            <div class="theme-preview-box mb-4 border border-slate-200 shadow-sm relative">
+                                <!-- 중앙 검은 여백 가림 트릭 -->
+                                <div class="absolute top-0 bottom-0 left-1/2 w-4 bg-white -translate-x-1/2 z-10"></div>
+                                <img src="Game Over Pause Screen.jpg.png" alt="종료 및 정지" class="w-full h-auto block relative z-0" onerror="this.src='';">
+                            </div>
+                            <p class="text-xs text-gray-400 font-medium text-center mt-2">직관적인 플로우를 고려한 일시 정지 및 게임 오버 팝업 연출</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 탭 5: 기대 효과 및 확장성 -->
+            <div id="effect" class="tab-content p-8 md:p-12 space-y-12">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-gray-900 flex items-center gap-2">
+                        <span class="text-blue-600">#</span> 프로젝트 기대 효과 및 비전
+                    </h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 space-y-3 shadow-sm transition-transform hover:-translate-y-1">
+                        <div class="text-3xl">🌏</div>
+                        <h4 class="font-bold text-blue-900 text-sm mb-1">글로벌 테마 확장성</h4>
+                        <p class="text-xs text-gray-700 leading-relaxed">현재 4개국 외에도 전 세계 다양한 국가의 랜드마크 에셋만 추가하면 무한하게 테마 확장이 가능한 구조입니다.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 space-y-3 shadow-sm transition-transform hover:-translate-y-1">
+                        <div class="text-3xl">🔄</div>
+                        <h4 class="font-bold text-blue-900 text-sm mb-1">대중성 및 리텐션 확보</h4>
+                        <p class="text-xs text-gray-700 leading-relaxed">유저 간 점수 대결을 지원하는 랭킹 시스템을 통해 경쟁심을 유발하고 지속적인 플레이를 이끌어냅니다.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 space-y-3 shadow-sm transition-transform hover:-translate-y-1">
+                        <div class="text-3xl">🎯</div>
+                        <h4 class="font-bold text-blue-900 text-sm mb-1">장르 틈새시장 공략</h4>
+                        <p class="text-xs text-gray-700 leading-relaxed">독점적인 외산 점프 게임 시장의 틈새을 공략하여, 캐주얼한 국산 IP로서의 흥행 가능성을 확인했습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 푸터 -->
+            <div class="p-10 bg-gray-950 text-white text-center border-t border-gray-800">
+                <p class="text-xs font-medium text-gray-500 mb-2">Gini Jump Mobile Game Planning & Production</p>
+                <p class="text-[10px] uppercase tracking-[0.4em] opacity-40">Game Development Archive &copy; 허재석</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            function activateTab(targetId) {
+                tabContents.forEach(tc => tc.classList.remove('active'));
+                btns.forEach(b => b.classList.remove('active'));
+                
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.classList.add('active');
+                }
+                
+                const activeBtn = Array.from(btns).find(btn => btn.getAttribute('data-target') === targetId);
+                if (activeBtn) {
+                    activeBtn.classList.add('active');
+                }
+            }
+
+            btns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const targetId = e.currentTarget.getAttribute('data-target');
+                    activateTab(targetId);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글로벌 캐주얼 게임 시장 분석 보고서</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            background-color: #fcfcfc; 
+            color: #1e293b; 
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        .btn-active {
+            background-color: #0d9488;
+            color: white;
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.2);
+        }
+
+        .chart-box {
+            position: relative;
+            width: 100%;
+            height: 320px;
+        }
+
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; animation: fadeInUp 0.5s ease; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #proposal-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background-color: rgba(15, 23, 42, 0.85);
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+        }
+        #proposal-modal.show { display: flex; }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .text-balanced {
+            text-wrap: balance;
+        }
+    </style>
+</head>
+<body class="bg-slate-50/50">
+
+<!-- Chosen Palette: Global Casual Studio Teal & Professional Slate -->
+<!-- Application Structure Plan: 
+    1. Hero: Professional title with refined spacing.
+    2. Data Overview: Toggle interaction with hypothesis disclaimer.
+    3. Motivation Analysis: 3-tab interaction for deep-dive psychology.
+    4. Proposal: High-impact dark card with functional modal for business strategy.
+-->
+
+<div class="max-w-5xl mx-auto px-6 py-16">
+    
+    <!-- 헤더 섹션 -->
+    <header class="mb-24 text-center md:text-left">
+        <div class="flex items-center justify-center md:justify-start gap-3 mb-6">
+            <span class="h-px w-8 bg-teal-600"></span>
+            <span class="text-teal-700 font-bold tracking-widest text-xs uppercase">Global Market Intelligence</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-black text-slate-900 leading-[1.2] tracking-tight text-balanced">
+            글로벌 시장 데이터 기반 <br>
+            <span class="text-teal-600">핵심 플레이 동기 및 전략 제안</span>
+        </h1>
+        <p class="text-slate-500 mt-8 text-xl max-w-3xl leading-relaxed text-balanced mx-auto md:mx-0">
+            북미 앱스토어 지표 분석을 통해 도출한 이용자 심리 트리거를 공유합니다.<br>
+            시각적 정렬과 성장의 결합이 시장 안착의 핵심 동력임을 확인했습니다.
+        </p>
+    </header>
+
+    <!-- 섹션 1: 시장 데이터 분석 -->
+    <section class="mb-28">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+            <div>
+                <h2 class="text-2xl font-bold text-slate-800">1. 마켓 트렌드 지표 분석</h2>
+                <p class="text-slate-500 mt-2">장르 점유율 및 유입 효율 데이터 비교</p>
+            </div>
+            <div class="flex bg-slate-200/50 p-1.5 rounded-2xl border border-slate-200">
+                <button onclick="changeView('share')" id="tab-share" class="px-6 py-3 text-sm font-bold rounded-xl btn-active transition-all">장르별 점유율</button>
+                <button onclick="changeView('performance')" id="tab-performance" class="px-6 py-3 text-sm font-bold rounded-xl text-slate-500 hover:text-slate-700 transition-all">유입 비용 효율</button>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-[3rem] p-10 md:p-14 shadow-sm border border-slate-200/60 relative">
+            <!-- 수치 출처 안내문 (가설 기반 추정 명시) -->
+            <div class="absolute top-8 right-10 flex items-center gap-2 bg-slate-50 px-4 py-1.5 rounded-full border border-slate-200 group cursor-help transition-colors hover:bg-slate-100">
+                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Data Source</span>
+                <div class="absolute bottom-full right-0 mb-3 w-72 bg-slate-800 text-white text-[12px] p-4 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none leading-relaxed shadow-2xl z-20">
+                    본 수치는 글로벌 마켓 Top 50 게임들을 직접 플레이하며 분석한 정성적 데이터와 AI 딥리서치를 활용해 도출한 <strong>'가설 기반 추정 지표'</strong>입니다.
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-5 chart-box">
+                    <canvas id="marketChart"></canvas>
+                </div>
+                <div id="info-share" class="lg:col-span-7 space-y-10">
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-5">복합 장르(하이브리드)의 시장 안착</h3>
+                        <p class="text-slate-600 leading-relaxed text-lg">
+                            단순 조작을 넘어, <strong>방치형 성장</strong> 구조와 <strong>장기적 목표</strong> 요소가 결합된 복합 장르 게임이 북미 차트 상위권의 45% 내외를 점유하고 있습니다. 이는 짧은 시간 속에서도 지속적인 보람을 원하는 이용자 니즈가 반영된 결과입니다.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="p-6 bg-teal-50/50 rounded-[2rem] border border-teal-100/50">
+                            <p class="text-xs font-bold text-teal-600 uppercase mb-2 tracking-widest">예상 재방문 지수</p>
+                            <p class="text-3xl font-black text-teal-900">35.4% 상회</p>
+                        </div>
+                        <div class="p-6 bg-slate-50 rounded-[2rem] border border-slate-100">
+                            <p class="text-xs font-bold text-slate-400 uppercase mb-2 tracking-widest">수익 창출 잠재력</p>
+                            <p class="text-3xl font-black text-slate-800">우수(High)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="info-performance" class="lg:col-span-7 space-y-10 hidden">
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-5">정돈의 쾌감을 활용한 유입 전략</h3>
+                        <p class="text-slate-600 leading-relaxed text-lg">
+                            정리 정돈 및 세척과 같이 <strong>시각적 정렬의 재미</strong>를 강조한 소재는 타 장르 대비 이용자 유입 비용이 약 60% 낮게 형성됩니다. 시각적 시원함과 경쾌한 피드백이 영상 매체에서 이용자의 시선을 즉각적으로 사로잡기 때문입니다.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="p-6 bg-indigo-50/50 rounded-[2rem] border border-indigo-100/50">
+                            <p class="text-xs font-bold text-indigo-600 uppercase mb-2 tracking-widest">유입 비용 절감액</p>
+                            <p class="text-3xl font-black text-indigo-900">약 2.4배 효율</p>
+                        </div>
+                        <div class="p-6 bg-slate-50 rounded-[2rem] border border-slate-100">
+                            <p class="text-xs font-bold text-slate-400 uppercase mb-2 tracking-widest">바이럴 잠재력</p>
+                            <p class="text-3xl font-black text-slate-800">최상위(Top)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 섹션 2: 트렌드 분석 -->
+    <section class="mb-28">
+        <div class="mb-14">
+            <h2 class="text-2xl font-bold text-slate-800">2. 핵심 트렌드 및 플레이 동기 분석</h2>
+            <p class="text-slate-500 mt-2">이용자가 게임에 잔류하는 심리적 보상 체계 심층 분석</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+            <button onclick="openPanel(1)" class="keyword-btn py-6 rounded-[1.5rem] border border-teal-500 bg-teal-600 text-white font-bold text-base shadow-xl transition-all" data-id="1">방치형 성장</button>
+            <button onclick="openPanel(2)" class="keyword-btn py-6 rounded-[1.5rem] border border-slate-200 bg-white text-slate-500 font-bold text-base hover:border-teal-300 transition-all" data-id="2">정렬의 즐거움</button>
+            <button onclick="openPanel(3)" class="keyword-btn py-6 rounded-[1.5rem] border border-slate-200 bg-white text-slate-500 font-bold text-base hover:border-teal-300 transition-all" data-id="3">경영 시뮬레이션</button>
+        </div>
+
+        <div id="panel-1" class="tab-panel active bg-white p-12 rounded-[3rem] shadow-sm border border-slate-200/60">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7 space-y-8">
+                    <h3 class="text-3xl font-black text-slate-900 leading-tight">압도적 성장을 통한 <br>통제감 부여</h3>
+                    <div class="space-y-8">
+                        <div class="flex gap-5">
+                            <div class="shrink-0 w-12 h-12 rounded-2xl bg-teal-100 flex items-center justify-center text-teal-600 font-bold text-lg">1</div>
+                            <div>
+                                <p class="font-bold text-slate-900 mb-2">심리적 보상</p>
+                                <p class="text-slate-600 leading-relaxed text-balanced">최소한의 행위로 얻는 막대한 성과물은 이용자에게 일상에서 결핍된 '완벽한 통제감'을 부여하며 도파민을 자극합니다.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="shrink-0 w-12 h-12 rounded-2xl bg-teal-100 flex items-center justify-center text-teal-600 font-bold text-lg">2</div>
+                            <div>
+                                <p class="font-bold text-slate-800 mb-2">시장 분석 사례</p>
+                                <p class="text-slate-600 leading-relaxed text-balanced">캐주얼 게임 개발사의 'Burger Please!'는 조작의 단순함과 공간 확장의 쾌감을 결합하여 글로벌 대흥행을 기록했습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-5 bg-slate-50 rounded-[2rem] p-8 shadow-inner">
+                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] text-center mb-8">Motivation Index</p>
+                    <div class="h-56 w-full"><canvas id="radar1"></canvas></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="panel-2" class="tab-panel bg-white p-12 rounded-[3rem] shadow-sm border border-slate-200/60">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7 space-y-8">
+                    <h3 class="text-3xl font-black text-slate-900 leading-tight text-balanced">정돈과 정렬이 주는 <br>정서적 해소와 안도감</h3>
+                    <div class="space-y-8">
+                        <div class="flex gap-5">
+                            <div class="shrink-0 w-12 h-12 rounded-2xl bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-lg">1</div>
+                            <div>
+                                <p class="font-bold text-slate-900 mb-2">심리적 보상</p>
+                                <p class="text-slate-600 leading-relaxed text-balanced">어지러운 사물이 제자리를 찾아가는 과정은 뇌에 '인지적 완결'을 주어 즉각적인 스트레스 해소와 평온함을 선사합니다.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="shrink-0 w-12 h-12 rounded-2xl bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-lg">2</div>
+                            <div>
+                                <p class="font-bold text-slate-800 mb-2">시장 분석 사례</p>
+                                <p class="text-slate-600 leading-relaxed text-balanced">'Fill The Fridge'와 같이 정돈 테마를 시각적 쾌감으로 풀어낸 사례들이 유입 단계에서 독보적인 성과를 보입니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-5 bg-slate-50 rounded-[2rem] p-8 shadow-inner">
+                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] text-center mb-8">Motivation Index</p>
+                    <div class="h-56 w-full"><canvas id="radar2"></canvas></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="panel-3" class="tab-panel bg-white p-12 rounded-[3rem] shadow-sm border border-slate-200/60">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7 space-y-8">
+                    <h3 class="text-3xl font-black text-slate-900 leading-tight">생산과 관리를 통한 <br>전략적 순환의 재미</h3>
+                    <div class="space-y-8">
+                        <div class="flex gap-5">
+                            <div class="shrink-0 w-12 h-12 rounded-2xl bg-teal-100 flex items-center justify-center text-teal-600 font-bold text-lg">1</div>
+                            <div>
+                                <p class="font-bold text-slate-900 mb-2">심리적 보상</p>
+                                <p class="text-slate-600 leading-relaxed text-balanced">자원을 효율적으로 배분하고 관리하며 더 큰 시스템을 구축하는 과정에서 고차원적인 지적 만족감을 제공합니다.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="shrink-0 w-12 h-12 rounded-2xl bg-teal-100 flex items-center justify-center text-teal-600 font-bold text-lg">2</div>
+                            <div>
+                                <p class="font-bold text-slate-800 mb-2">시장 분석 사례</p>
+                                <p class="text-slate-600 leading-relaxed text-balanced">'Idle Lumber Empire'와 같이 공정을 자동화하고 관리 지점을 넓혀가는 타이쿤 장르가 장기 리텐션을 확보합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-5 bg-slate-50 rounded-[2rem] p-8 shadow-inner">
+                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] text-center mb-8">Motivation Index</p>
+                    <div class="h-56 w-full"><canvas id="radar3"></canvas></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 섹션 3: 전략 제안 -->
+    <section>
+        <div class="bg-slate-900 rounded-[4rem] p-12 md:p-20 text-white relative overflow-hidden shadow-2xl">
+            <div class="absolute top-0 right-0 w-[30rem] h-[30rem] bg-teal-500/10 rounded-full -mr-48 -mt-48 blur-[80px]"></div>
+            
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
+                <div class="lg:col-span-7">
+                    <div class="inline-flex items-center px-5 py-1.5 rounded-full border border-teal-500/30 bg-teal-500/10 text-teal-400 text-xs font-black uppercase mb-8 tracking-widest">Strategy Proposal 2026</div>
+                    <h2 class="text-4xl md:text-5xl font-black mb-10 leading-tight tracking-tight">
+                        패킹 마스터: <br>
+                        <span class="text-teal-500">시각적 정렬과 물류 타이쿤</span>
+                    </h2>
+                    <p class="text-slate-400 text-xl leading-relaxed mb-12 text-balanced">
+                        어질러진 택배 물품을 상자에 완벽히 채우는 <strong class="text-white font-bold">정렬의 재미</strong>와, <br>
+                        물동량을 늘려 창고를 세계적으로 확장하는 <strong class="text-white font-bold">방치형 성장</strong>의 조화.
+                    </p>
+                    <button onclick="toggleModal(true)" class="group w-full md:w-auto px-12 py-6 bg-teal-600 hover:bg-teal-500 text-white font-black rounded-[2rem] shadow-2xl shadow-teal-900/40 transition-all active:scale-95 flex items-center justify-center gap-3">
+                        전략 기획서 상세 분석
+                        <span class="group-hover:translate-x-2 transition-transform text-2xl">→</span>
+                    </button>
+                </div>
+                <div class="lg:col-span-5 hidden lg:block">
+                    <div class="aspect-square bg-white/5 rounded-[3.5rem] border border-white/10 p-14 flex flex-col items-center justify-center text-center backdrop-blur-sm">
+                        <div class="space-y-12">
+                            <div class="flex flex-col items-center group">
+                                <span class="text-5xl mb-4 group-hover:scale-110 transition-transform">📦</span>
+                                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.4em]">Puzzle Phase</span>
+                            </div>
+                            <div class="w-px h-10 bg-gradient-to-b from-slate-700 to-transparent mx-auto"></div>
+                            <div class="flex flex-col items-center group">
+                                <span class="text-5xl mb-4 group-hover:scale-110 transition-transform">🚛</span>
+                                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.4em]">Idle Phase</span>
+                            </div>
+                            <div class="w-px h-10 bg-gradient-to-b from-slate-700 to-transparent mx-auto"></div>
+                            <div class="flex flex-col items-center group">
+                                <span class="text-5xl mb-4 group-hover:scale-110 transition-transform">🏢</span>
+                                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.4em]">Meta Phase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 상세 전략 모달 -->
+    <div id="proposal-modal" class="p-6">
+        <div class="bg-white w-full max-w-2xl rounded-[3.5rem] p-12 md:p-16 relative shadow-2xl">
+            <button onclick="toggleModal(false)" class="absolute top-10 right-10 text-slate-300 hover:text-slate-900 transition-colors">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <div class="mb-12 pb-8 border-b border-slate-100">
+                <h3 class="text-3xl font-black text-slate-900 leading-tight">글로벌 마켓 안착 전략 및 <br>비즈니스 모델 분석</h3>
+                <p class="text-slate-500 mt-4 font-medium tracking-wide text-sm">Strategic Deep Dive & Monetization</p>
+            </div>
+            
+            <div class="space-y-12 overflow-y-auto max-h-[50vh] pr-4 custom-scrollbar">
+                <section>
+                    <h4 class="font-black text-teal-700 flex items-center gap-3 mb-5 uppercase text-xs tracking-[0.2em]">
+                        <span class="w-6 h-px bg-teal-700"></span> 01. 유입 극대화 전략
+                    </h4>
+                    <p class="text-slate-600 leading-relaxed text-base text-balanced">
+                        상자 안에 물건이 '딱' 들어맞는 시각적 쾌감과 정교한 효과음을 강조한 숏폼 영상을 마케팅의 전면에 내세웁니다. 이는 <strong>최저 수준의 유입 비용</strong>을 보장하며, 설치 직후 이용자에게 즉각적인 만족감을 주어 이탈률을 낮춥니다.
+                    </p>
+                </section>
+
+                <section>
+                    <h4 class="font-black text-indigo-700 flex items-center gap-3 mb-5 uppercase text-xs tracking-[0.2em]">
+                        <span class="w-6 h-px bg-indigo-700"></span> 02. 수익 최적화 로드맵
+                    </h4>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="p-7 bg-slate-50 rounded-[2rem] border border-slate-100 transition-colors hover:bg-slate-100">
+                            <p class="font-bold text-slate-900 mb-2">보상형 광고 (Reward Video)</p>
+                            <p class="text-sm text-slate-500 leading-relaxed">광고 시청 시 30초간 작업 속도를 3배 가속화하는 '피버 타임' 또는 희귀 수집품이 담긴 '특별 박스'를 제공하여 성장을 촉진합니다.</p>
+                        </div>
+                        <div class="p-7 bg-slate-50 rounded-[2rem] border border-slate-100 transition-colors hover:bg-slate-100">
+                            <p class="font-bold text-slate-900 mb-2">메타 시스템 (Meta Game)</p>
+                            <p class="text-sm text-slate-500 leading-relaxed">창고 확장을 넘어 전 세계 주요 도시 테마를 순차 해금하고, 자동화 직원을 고용 및 육성하는 시스템으로 장기 잔존율을 확보합니다.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bg-slate-900 p-10 rounded-[2.5rem] text-white">
+                    <p class="text-[10px] font-black text-teal-400 uppercase tracking-[0.4em] mb-4">Core Philosophy</p>
+                    <p class="text-xl font-bold leading-relaxed italic text-teal-50 text-balanced">
+                        "시각적 쾌감으로 유입시키고, <br>숫자의 성장으로 유저를 붙잡습니다."
+                    </p>
+                </section>
+            </div>
+            
+            <button onclick="toggleModal(false)" class="w-full mt-12 py-6 bg-slate-900 hover:bg-black text-white font-black rounded-[2rem] transition-all shadow-2xl active:scale-[0.98]">
+                전략 인사이트 확인 완료
+            </button>
+        </div>
+    </div>
+
+    <footer class="mt-32 text-center border-t border-slate-200 pt-12 pb-16">
+        <p class="text-[11px] font-black text-slate-400 uppercase tracking-[0.4em]">Global Game Market Intelligence Report | Casual Game Market Research 2026</p>
+    </footer>
+
+</div>
+
+<script>
+    // --- 차트 엔진 설정 (Chart.js) ---
+    let marketChart;
+    const marketData = {
+        share: {
+            labels: ['복합 성장형(Hybrid)', '기존 단순 조작형', '머지/타이쿤', '퍼즐 및 기타'],
+            data: [45, 20, 25, 10],
+            colors: ['#0d9488', '#94a3b8', '#6366f1', '#e2e8f0']
+        },
+        performance: {
+            labels: ['시각적 정렬 소재', '성장 지표 소재', '경영 시뮬레이션', '액션 서바이벌'],
+            data: [72, 45, 30, 25],
+            colors: ['#6366f1', '#0d9488', '#475569', '#f1f5f9']
+        }
+    };
+
+    function initCharts() {
+        const ctx = document.getElementById('marketChart').getContext('2d');
+        marketChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: marketData.share.labels,
+                datasets: [{
+                    data: marketData.share.data,
+                    backgroundColor: marketData.share.colors,
+                    borderWidth: 0,
+                    hoverOffset: 20
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '78%',
+                plugins: {
+                    legend: { 
+                        position: 'bottom', 
+                        labels: { boxWidth: 12, padding: 30, font: { family: 'Pretendard', weight: '700', size: 12 } } 
+                    }
+                }
+            }
+        });
+
+        // 레이더 차트 (심리 분석용)
+        createRadar('radar1', [95, 85, 70, 90, 40]);
+        createRadar('radar2', [40, 30, 98, 75, 95]);
+        createRadar('radar3', [75, 95, 60, 55, 45]);
+    }
+
+    function createRadar(id, data) {
+        const ctx = document.getElementById(id).getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['즉각보상', '장기목표', '정서안정', '낮은피로', '시각효과'],
+                datasets: [{
+                    data: data,
+                    backgroundColor: 'rgba(13, 148, 136, 0.15)',
+                    borderColor: '#0d9488',
+                    pointRadius: 0,
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { 
+                    r: { 
+                        beginAtZero: true, 
+                        max: 100, 
+                        ticks: { display: false },
+                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        pointLabels: { font: { size: 10, weight: '700' } }
+                    } 
+                },
+                plugins: { legend: { display: false } }
+            }
+        });
+    }
+
+    // --- 인터랙티브 인터페이스 제어 ---
+
+    function changeView(type) {
+        const btnShare = document.getElementById('tab-share');
+        const btnPerformance = document.getElementById('tab-performance');
+        const infoShare = document.getElementById('info-share');
+        const infoPerformance = document.getElementById('info-performance');
+
+        if (type === 'share') {
+            btnShare.className = "px-6 py-3 text-sm font-bold rounded-xl btn-active";
+            btnPerformance.className = "px-6 py-3 text-sm font-bold rounded-xl text-slate-500 hover:text-slate-700 transition-all";
+            infoShare.classList.remove('hidden');
+            infoPerformance.classList.add('hidden');
+        } else {
+            btnPerformance.className = "px-6 py-3 text-sm font-bold rounded-xl btn-active";
+            btnShare.className = "px-6 py-3 text-sm font-bold rounded-xl text-slate-500 hover:text-slate-700 transition-all";
+            infoPerformance.classList.remove('hidden');
+            infoShare.classList.add('hidden');
+        }
+
+        marketChart.data.labels = marketData[type].labels;
+        marketChart.data.datasets[0].data = marketData[type].data;
+        marketChart.data.datasets[0].backgroundColor = marketData[type].colors;
+        marketChart.update();
+    }
+
+    function openPanel(id) {
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        document.getElementById(`panel-${id}`).classList.add('active');
+
+        document.querySelectorAll('.keyword-btn').forEach(b => {
+            b.className = "keyword-btn py-6 rounded-[1.5rem] border border-slate-200 bg-white text-slate-500 font-bold text-base hover:border-teal-300 transition-all";
+        });
+        const activeBtn = document.querySelector(`.keyword-btn[data-id="${id}"]`);
+        activeBtn.className = "keyword-btn py-6 rounded-[1.5rem] border border-teal-500 bg-teal-600 text-white font-bold text-base shadow-xl transition-all";
+    }
+
+    function toggleModal(show) {
+        const modal = document.getElementById('proposal-modal');
+        if (show) {
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        } else {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    window.onload = initCharts;
+</script>
+
+</body>
+</html>

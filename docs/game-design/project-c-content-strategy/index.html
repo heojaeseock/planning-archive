@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로젝트 C: 타겟 유저 분석 및 콘텐츠 전략 기획안</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap');
+        body { font-family: 'Pretendard', sans-serif; background-color: #f1f5f9; color: #334155; }
+        
+        /* 차트 컨테이너 스타일링 */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            height: 350px;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 1.25rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* 캐릭터 카드 애니메이션 */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: slideUp 0.4s ease-out; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* 비즈니스 포인트 강조 */
+        .point-box { border-left: 4px solid #3b82f6; transition: all 0.3s ease; }
+        .point-box:hover { background-color: #eff6ff; }
+
+        /* 에너미 카드 힌트 애니메이션 */
+        .click-hint {
+            animation: bounceHorizontal 2s infinite;
+        }
+        @keyframes bounceHorizontal {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(5px); }
+        }
+
+        /* 클릭 유도 뱃지 스타일 */
+        .reveal-badge {
+            font-size: 0.65rem;
+            background: #f1f5f9;
+            color: #64748b;
+            padding: 2px 8px;
+            border-radius: 999px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+        .monster-card:hover .reveal-badge {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+    </style>
+
+    <!-- Chosen Palette: 신뢰감을 주는 Deep Blue와 서브컬처의 감성을 담은 Soft Violet의 조화 -->
+    
+    <!-- Application Structure Plan:
+    1. 헤더: 불필요한 정보 삭제 및 깔끔한 로고 배치
+    2. 시장 분석: Radar Chart를 통한 프로젝트 C의 차별점 시각화
+    3. 타겟 니즈 정의: '완벽함 속의 결핍'과 '상호 구원' 전략
+    4. 캐릭터 설계안: 육성 파라미터와 서사가 연동된 신규 캐릭터 2종 (인터랙티브 탭)
+    5. 에너미 설정: 클릭 가이드 문구 + 클릭 시 슬라이드 노출 카드 UI
+    6. 결론: 기획 의도 요약
+    -->
+
+    <!-- Visualization & Content Choices:
+    - 시장 분석: Radar Chart (기존 vs 신규)
+    - 캐릭터 파라미터: Progress Bar 기반 지표 시각화
+    - 몬스터 설정: 클릭 가이드 문구 + 클릭 시 슬라이드 노출 카드 UI (안내 텍스트 보강)
+    -->
+
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl">🔮</span>
+                <span class="font-bold text-xl tracking-tight text-slate-800">Project C <span class="text-blue-600">Strategy Report</span></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-20">
+
+        <!-- 1. Market Trend Analysis -->
+        <section id="market-analysis">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-4">1. 서브컬처 시장 동향 및 유저 페르소나</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">단순한 수집을 넘어 캐릭터와의 정서적 결합이 핵심 비즈니스 모델(BM)로 자리 잡았습니다.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="chart-container">
+                    <canvas id="marketChart"></canvas>
+                </div>
+                <div class="space-y-6">
+                    <div class="point-box bg-white p-5 rounded-r-xl shadow-sm">
+                        <h4 class="font-bold text-slate-800 mb-2">● 완벽함 속의 결핍 (Gap-Moe)</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            최근 유저들은 완벽한 캐릭터보다 보호가 필요한 약점을 가진 캐릭터에게 더 높은 지불 용의(WTP)를 보입니다. 이는 유저의 개입 명분이 되어 리텐션을 높이는 강력한 기제가 됩니다.
+                        </p>
+                    </div>
+                    <div class="point-box bg-white p-5 rounded-r-xl shadow-sm" style="border-left-color: #8b5cf6;">
+                        <h4 class="font-bold text-slate-800 mb-2">● 상호 구원 서사의 비즈니스화</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            유저(선생님)가 캐릭터의 결핍을 채워줄 때 발생하는 정서적 보상은 고가치 가챠(Pick-up)의 당위성을 제공하며 팬덤의 충성도를 공고히 합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Character Proposals -->
+        <section id="character-proposals" class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="p-8 border-b border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900">2. 신규 학생 캐릭터 기획안</h2>
+                    <p class="text-sm text-slate-500">육성 시스템과 서사가 유기적으로 연결된 캐릭터 설계</p>
+                </div>
+                <div class="flex bg-slate-100 p-1 rounded-xl">
+                    <button onclick="switchTab('char1')" id="tab1" class="px-6 py-2 rounded-lg text-sm font-bold transition-all bg-white text-blue-600 shadow-sm">Character 01</button>
+                    <button onclick="switchTab('char2')" id="tab2" class="px-6 py-2 rounded-lg text-sm font-bold transition-all text-slate-500">Character 02</button>
+                </div>
+            </div>
+
+            <div class="p-8">
+                <!-- Character 01 -->
+                <div id="char1" class="tab-content active">
+                    <div class="grid md:grid-cols-5 gap-10">
+                        <div class="md:col-span-2 space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl">❄️</div>
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-slate-900">클로에 (Chloe)</h3>
+                                    <p class="text-blue-600 text-sm font-medium">수석 입학생 / 빙결 마법 전공</p>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <p class="text-sm text-slate-600 leading-relaxed italic border-l-2 border-slate-200 pl-4">
+                                    "모두 저를 완벽하다고 하지만... 사실은 한계에 다다른 상태예요."
+                                </p>
+                                <div class="bg-slate-50 p-4 rounded-xl text-sm text-slate-700">
+                                    <strong>기획 포인트:</strong> 학원 내 최고의 엘리트이나 극심한 번아웃을 겪는 인물. 유저에게만 자신의 소소한 비밀을 공유하며 의존도를 높임.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:col-span-3 bg-blue-50/50 p-6 rounded-2xl border border-blue-100">
+                            <h4 class="font-bold text-slate-800 mb-6 font-semibold">⚙️ 육성 파라미터 및 인게임 로직</h4>
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex justify-between text-xs font-bold mb-2"><span>지력(INT) 훈련 베이스</span> <span>최상 (S)</span></div>
+                                    <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden"><div class="bg-blue-500 h-full" style="width: 90%"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs font-bold mb-2"><span>스트레스(Stress) 저항도</span> <span>최저 (E)</span></div>
+                                    <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden"><div class="bg-red-500 h-full" style="width: 85%"></div></div>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl text-xs text-slate-600 leading-relaxed shadow-sm">
+                                    효율이 좋은 대신 스트레스 임계점이 매우 낮음. 유저는 주기적으로 '특수 대화'나 '전용 아이템'을 사용하여 배드엔딩을 방어해야 함.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Character 02 -->
+                <div id="char2" class="tab-content">
+                    <div class="grid md:grid-cols-5 gap-10">
+                        <div class="md:col-span-2 space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-16 bg-violet-100 rounded-2xl flex items-center justify-center text-3xl">🦇</div>
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-slate-900">루나 (Luna)</h3>
+                                    <p class="text-violet-600 text-sm font-medium">열등생 / 흑마법 전공</p>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <p class="text-sm text-slate-600 leading-relaxed italic border-l-2 border-slate-200 pl-4">
+                                    "어차피 나 같은 건 아무도 기대 안 하잖아."
+                                </p>
+                                <div class="bg-slate-50 p-4 rounded-xl text-sm text-slate-700">
+                                    <strong>기획 포인트:</strong> 거친 언행으로 자신을 방어하지만 인정 욕구가 강한 캐릭터. 유저의 '격려'에 따라 성장이 폭발하는 구조.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:col-span-3 bg-violet-50/50 p-6 rounded-2xl border border-violet-100">
+                            <h4 class="font-bold text-slate-800 mb-6 font-semibold">⚙️ 육성 파라미터 및 인게임 로직</h4>
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex justify-between text-xs font-bold mb-2"><span>초기 훈련 효율</span> <span>최하 (C)</span></div>
+                                    <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden"><div class="bg-slate-400 h-full" style="width: 35%"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs font-bold mb-2"><span>호감도 비례 성장 가속</span> <span>무한 (EX)</span></div>
+                                    <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden"><div class="bg-violet-500 h-full" style="width: 100%"></div></div>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl text-xs text-slate-600 leading-relaxed shadow-sm">
+                                    유저가 칭찬 아이템이나 이벤트를 수행할 때마다 능력치 상한선이 해금됨. '버려진 아이를 최강으로 키워냈다'는 성취감 제공.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Monster Settings with Interaction Guidance -->
+        <section id="monster-settings">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-slate-900 mb-2">3. 에너미(Enemy) 설정: '내면의 그림자'</h2>
+                <div class="inline-flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full border border-blue-100 shadow-sm">
+                    <span class="text-blue-600 text-xs font-bold">💡 Interaction Guide:</span>
+                    <span class="text-slate-600 text-xs font-medium">카드를 클릭하여 학생들의 <span class="text-blue-600 font-bold">내면(진실)</span>을 확인해보세요.</span>
+                    <span class="click-hint text-blue-400">👈</span>
+                </div>
+            </div>
+
+            <div class="grid sm:grid-cols-3 gap-6">
+                <!-- Monster 01 -->
+                <div class="monster-card bg-white p-6 rounded-2xl border border-slate-200 hover:border-blue-400 transition-all cursor-pointer group relative overflow-hidden flex flex-col h-full" onclick="toggleEnemy(1)">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="text-3xl group-hover:scale-110 transition-transform">📚</div>
+                        <span class="reveal-badge">내면 보기</span>
+                    </div>
+                    <h5 class="font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors">망각의 규율자</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4">학업 스트레스가 뭉쳐진 고서 형태의 몬스터</p>
+                    <div id="enemy1" class="hidden mt-auto pt-4 border-t border-slate-100 text-xs text-blue-600 font-medium animate-[fadeIn_0.3s_ease-out]">
+                        <p class="bg-blue-50 p-3 rounded-lg border-l-2 border-blue-400">
+                            <strong>[서사 트리거]:</strong> 전투 승리 시 학생의 학습 강박 수치를 낮추고, 즉시 유저와의 1:1 상담 이벤트로 직행하여 정서적 유대감 형성.
+                        </p>
+                    </div>
+                </div>
+                <!-- Monster 02 -->
+                <div class="monster-card bg-white p-6 rounded-2xl border border-slate-200 hover:border-violet-400 transition-all cursor-pointer group relative overflow-hidden flex flex-col h-full" onclick="toggleEnemy(2)">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="text-3xl group-hover:scale-110 transition-transform">🎭</div>
+                        <span class="reveal-badge">내면 보기</span>
+                    </div>
+                    <h5 class="font-bold text-slate-800 mb-2 group-hover:text-violet-600 transition-colors">가식의 광대</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4">대인 관계의 피로감이 실체화된 그림자</p>
+                    <div id="enemy2" class="hidden mt-auto pt-4 border-t border-slate-100 text-xs text-violet-600 font-medium animate-[fadeIn_0.3s_ease-out]">
+                        <p class="bg-violet-50 p-3 rounded-lg border-l-2 border-violet-400">
+                            <strong>[서사 연출]:</strong> 상태 이상(혼란) 공격을 가하며, 이를 파훼하는 과정에서 학생이 억눌렀던 본심을 고백하는 연출 삽입.
+                        </p>
+                    </div>
+                </div>
+                <!-- Monster 03 -->
+                <div class="monster-card bg-white p-6 rounded-2xl border border-slate-200 hover:border-red-400 transition-all cursor-pointer group relative overflow-hidden flex flex-col h-full" onclick="toggleEnemy(3)">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="text-3xl group-hover:scale-110 transition-transform">⛓️</div>
+                        <span class="reveal-badge">내면 보기</span>
+                    </div>
+                    <h5 class="font-bold text-slate-800 mb-2 group-hover:text-red-600 transition-colors">억압의 구속구</h5>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4">가문의 압박이 사슬로 형상화된 보스급 적</p>
+                    <div id="enemy3" class="hidden mt-auto pt-4 border-t border-slate-100 text-xs text-red-600 font-medium animate-[fadeIn_0.3s_ease-out]">
+                        <p class="bg-red-50 p-3 rounded-lg border-l-2 border-red-400">
+                            <strong>[서사의 정점]:</strong> 물리적 공격보다 유저가 부여하는 '자유' 버프를 통해 공략. 트라우마 극복 서사를 전투 시스템으로 승화.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Summary -->
+        <section class="bg-slate-900 rounded-3xl p-10 text-white text-center">
+            <h3 class="text-xl md:text-2xl font-bold mb-4 italic leading-relaxed">
+                "캐릭터에 대한 '책임감'이 곧 '매출'이 되는 구조를 지향합니다."
+            </h3>
+            <p class="text-slate-400 max-w-2xl mx-auto text-sm leading-relaxed">
+                유저가 왜 내가 이 아이를 도와야 하는가에 대한 서사적 당위성을 제공함으로써 장기적 LTV를 보장하는 프로젝트 C만의 차별화 전략입니다.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="py-12 text-center text-slate-400 text-xs border-t border-slate-200">
+        <p>&copy; Lionheart Studio - Project C Strategic Proposal. Confidential.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 1. 차트 렌더링
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('marketChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['비주얼 퀄리티', '서사적 몰입도', '유저 개입도', '리텐션 잠재력', 'BM 확장성'],
+                    datasets: [
+                        {
+                            label: '기존 서브컬처 게임',
+                            data: [90, 60, 40, 70, 65],
+                            fill: true,
+                            backgroundColor: 'rgba(148, 163, 184, 0.2)',
+                            borderColor: 'rgba(148, 163, 184, 1)',
+                            borderWidth: 2
+                        },
+                        {
+                            label: '프로젝트 C (지향점)',
+                            data: [85, 95, 100, 90, 85],
+                            fill: true,
+                            backgroundColor: 'rgba(59, 130, 246, 0.3)',
+                            borderColor: 'rgba(59, 130, 246, 1)',
+                            borderWidth: 3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
+        });
+
+        // 2. 탭 전환 로직
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            
+            const btn1 = document.getElementById('tab1');
+            const btn2 = document.getElementById('tab2');
+            
+            if(tabId === 'char1') {
+                btn1.className = "px-6 py-2 rounded-lg text-sm font-bold transition-all bg-white text-blue-600 shadow-sm";
+                btn2.className = "px-6 py-2 rounded-lg text-sm font-bold transition-all text-slate-500";
+            } else {
+                btn2.className = "px-6 py-2 rounded-lg text-sm font-bold transition-all bg-white text-violet-600 shadow-sm";
+                btn1.className = "px-6 py-2 rounded-lg text-sm font-bold transition-all text-slate-500";
+            }
+        }
+
+        // 3. 에너미 토글 로직
+        function toggleEnemy(id) {
+            const el = document.getElementById(`enemy${id}`);
+            el.classList.toggle('hidden');
+            
+            // 클릭 시 뱃지 텍스트 변경
+            const badge = el.parentElement.querySelector('.reveal-badge');
+            if(el.classList.contains('hidden')) {
+                badge.innerText = "내면 보기";
+            } else {
+                badge.innerText = "닫기";
+            }
+        }
+    </script>
+</body>
+</html>

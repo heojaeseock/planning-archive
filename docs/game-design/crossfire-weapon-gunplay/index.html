@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CF 무기 기획 작업 기록 | 조작감 분석 & 제안</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Pretendard', 'sans-serif'] },
+                    colors: {
+                        cfred: '#ff4655', 
+                        cfbg: '#f8fafc',
+                        cfcard: '#ffffff',
+                        cftext: '#0f172a',
+                        cfmuted: '#64748b',
+                        cfdark: '#0f172a'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* <!-- Chosen Palette: Pro-Tactical (Slate-50 bg, Deep Slate accents, High-Contrast Red) --> */
+        /* <!-- Application Structure Plan: 
+            1. Hero: 기획자 페르소나 및 핵심 주제.
+            2. Philosophy: 조작감과 리텐션 데이터 (GDC/Newzoo 출처).
+            3. Trinity & Sensory: 수치적 변수 + 시청각 피드백의 중요성.
+            4. Balance Strategy: 숙련도별 리스크/리턴 (레이더 차트).
+            5. Live Simulation: 발사 구간별 탄착군 시뮬레이션.
+            6. Concept Proposal: 신입 기획자의 당찬 신규 무기 아이디어 제안.
+            7. Vision: 정렬 보정된 3줄 포부 클로징.
+        --> */
+        /* <!-- Visualization & Content Choices: 
+            - Retention Bar: 조작감과 유저 유지율 상관관계.
+            - Paradigm Radar: M4 vs AK vs New Concept 비교.
+            - Recoil Scatter: 사격 페이즈별 탄착군 변화.
+        --> */
+        /* <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. --> */
+
+        body { background-color: #f8fafc; color: #0f172a; overflow-x: hidden; }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        .tech-tag-fixed {
+            background-color: #ff4655;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.1em 0.4em;
+            margin: 0 0.1em;
+            font-weight: 900;
+            border-radius: 4px;
+            line-height: 1;
+            vertical-align: middle;
+            box-shadow: 0 4px 12px rgba(255, 70, 85, 0.3);
+        }
+
+        .vision-container {
+            background-color: #0f172a;
+            border-radius: 2.5rem;
+            padding: 6rem 2rem;
+            color: white;
+            position: relative;
+        }
+
+        .source-footer {
+            font-size: 11px;
+            color: #94a3b8;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 10px;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .recoil-btn.active {
+            background-color: #ff4655;
+            color: white;
+            border-color: #ff4655;
+            box-shadow: 0 10px 20px -5px rgba(255, 70, 85, 0.4);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-cfred selection:text-white">
+
+    <!-- Nav -->
+    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-cfred font-black text-white text-xs flex items-center justify-center rounded">CF</div>
+                <div class="text-[11px] font-black tracking-widest text-slate-800 uppercase">Weapon_Planner_Researcher_2024</div>
+            </div>
+            <div class="hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                <a href="#philosophy" class="hover:text-cfred transition-colors">Philosophy</a>
+                <a href="#trinity" class="hover:text-cfred transition-colors">Mechanics</a>
+                <a href="#analysis" class="hover:text-cfred transition-colors">Simulation</a>
+                <a href="#proposal" class="hover:text-cfred transition-colors font-bold text-slate-900 underline underline-offset-4">New_Proposal</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-40 pb-24 px-6 max-w-6xl mx-auto text-center">
+        <div class="mb-6 inline-block px-3 py-1 bg-red-50 text-[10px] font-bold text-cfred tracking-widest uppercase rounded border border-cfred/20">
+            Archive Research Case: Precision_Gunplay_Architecture
+        </div>
+        <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-8 leading-tight tracking-tight">
+            데미지가 전부가 아니다:<br>
+            유저의 실력을 나누는 <span class="text-cfred underline decoration-4 underline-offset-8">조작감(Gunplay)</span> 분석
+        </h1>
+        <p class="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">
+            게임을 수치로 해석하는 <strong>분석력</strong>과 전장의 흐름을 바꾸는 <strong>제안력</strong>.<br>
+            크로스파이어의 전설적인 손맛을 이어갈 신입 기획자입니다.
+        </p>
+    </header>
+
+    <!-- Section 1: Philosophy -->
+    <section id="philosophy" class="py-20 px-6 max-w-6xl mx-auto border-t border-slate-200">
+        <div class="mb-12">
+            <h2 class="text-3xl font-black text-slate-900 mb-4 uppercase tracking-tight italic">01. 손맛이 만드는 유저 리텐션</h2>
+            <p class="text-slate-600">수치는 유저를 끌어오지만, 조작감은 유저를 남게 합니다. 데이터는 정교한 총기 피드백이 장기 리텐션을 결정하는 핵심 지표임을 보여줍니다.</p>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="bg-white p-10 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-cfred relative">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4 tracking-tight">성취감의 근원: 학습 가능한 반동</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        FPS에서 무기는 신체의 연장선입니다. 단순히 데미지가 강력한 무기는 쉽게 질리지만, <strong>반동 패턴(Spray Pattern)</strong>을 학습하고 이를 근육 기억(Muscle Memory)으로 통제하는 과정은 유저에게 끊임없는 도파민을 제공합니다. 이는 게임을 단순한 '슈팅'에서 '숙련의 영역'으로 격상시킵니다.
+                    </p>
+                    <div class="source-footer">
+                        * 출처: GDC 'Building a Better Gun' (2021) 및 Newzoo 'Weapon Systems & Retention' 글로벌 리포트 기반
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-6 text-center italic">Weekly Retention by Gunplay Quality Index</h4>
+                <div class="chart-container">
+                    <canvas id="retentionChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Mechanics & Sensory -->
+    <section id="trinity" class="py-20 px-6 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-16 text-center">
+                <h2 class="text-3xl font-black text-slate-900 mb-4 uppercase tracking-tight italic">02. 쏘는 맛을 구성하는 육각형 변수</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">기획자가 다루는 수치적 변수와 유저가 느끼는 감각적 요소의 결합입니다.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-200 hover:border-cfred transition-all">
+                    <div class="text-4xl mb-6 font-black italic tracking-tighter text-slate-200 group-hover:text-cfred transition-colors">#NUM</div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3 italic">수치적 변수 (Numerical)</h4>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li>• 반동(Recoil) 곡선 설계</li>
+                        <li>• 줌 속도(ADS) 프레임 단위 조정</li>
+                        <li>• 이동 속도(Mobility) 페널티 부여</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-200 hover:border-blue-500 transition-all">
+                    <div class="text-4xl mb-6 font-black italic tracking-tighter text-slate-200 group-hover:text-blue-500 transition-colors">#SEN</div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3 italic">감각적 요소 (Sensory)</h4>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li>• 총기 사운드(SFX)의 타격감</li>
+                        <li>• 총구 화염(VFX)의 가독성</li>
+                        <li>• 카메라 셰이크(Screen Shake)</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-200 hover:border-emerald-500 transition-all">
+                    <div class="text-4xl mb-6 font-black italic tracking-tighter text-slate-200 group-hover:text-emerald-500 transition-colors">#BAL</div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3 italic">밸런스 축 (Logic)</h4>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li>• 로우 리스크 (M4A1)</li>
+                        <li>• 하이 리스크 (AK-47)</li>
+                        <li>• 거리별 데미지 감쇄율</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-xl">
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="md:w-1/2">
+                        <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em] mb-6 text-center italic">Paradigm Comparison Radar</h4>
+                        <div class="chart-container">
+                            <canvas id="radarChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 space-y-6">
+                        <div class="p-6 bg-slate-50 rounded-2xl border-l-4 border-l-blue-500">
+                            <h5 class="font-bold mb-2">M4A1: 안정성 패러다임</h5>
+                            <p class="text-sm text-slate-500 leading-relaxed italic">초보자가 전장에 적응하도록 돕는 낮은 반동. 맞추기 쉽지만 고수용 총기에 비해 결정력(TTK)이 낮게 설계됨.</p>
+                        </div>
+                        <div class="p-6 bg-slate-50 rounded-2xl border-l-4 border-l-cfred">
+                            <h5 class="font-bold mb-2">AK-47: 숙련도 패러다임</h5>
+                            <p class="text-sm text-slate-500 leading-relaxed italic">거친 반동을 제어하는 마우스 피지컬에 대한 확실한 보상. '헤드샷 1탭'의 쾌감을 제공하여 숙련도를 증명하게 함.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Analysis Simulation -->
+    <section id="analysis" class="py-20 px-6 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-16 text-center">
+                <h2 class="text-3xl font-black text-white mb-4 uppercase tracking-tight italic underline decoration-cfred decoration-4 underline-offset-8">03. 발사 구간별 사격 메커니즘 분석</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto mt-6">탄창을 비우는 과정에서 기획자가 의도한 유저 심리의 변화를 시뮬레이션으로 확인합니다.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2 w-full space-y-4">
+                    <button onclick="updateRecoil(0)" id="btn0" class="recoil-btn active w-full p-8 text-left bg-slate-800 text-slate-400 font-bold transition-all rounded-2xl border border-slate-700 flex items-center justify-between group">
+                        <div>
+                            <span class="block text-[10px] font-black text-slate-500 mb-1">STAGE_01</span>
+                            <span class="text-xl italic">초탄/점사 (1~3발)</span>
+                            <span class="block text-sm font-normal mt-2 opacity-80 italic">정확도 100%. 유저의 반응 속도와 초동 에임 실력을 검증합니다.</span>
+                        </div>
+                    </button>
+                    <button onclick="updateRecoil(1)" id="btn1" class="recoil-btn w-full p-8 text-left bg-slate-800 text-slate-400 font-bold transition-all hover:bg-slate-700 rounded-2xl border border-slate-700 flex items-center justify-between group">
+                        <div>
+                            <span class="block text-[10px] font-black text-slate-500 mb-1">STAGE_02</span>
+                            <span class="text-xl italic">반동 제어 (4~10발)</span>
+                            <span class="block text-sm font-normal mt-2 opacity-80 italic">총구가 상승하는 시점. 마우스를 하강시키는 피지컬 컨트롤이 필수적입니다.</span>
+                        </div>
+                    </button>
+                    <button onclick="updateRecoil(2)" id="btn2" class="recoil-btn w-full p-8 text-left bg-slate-800 text-slate-400 font-bold transition-all hover:bg-slate-700 rounded-2xl border border-slate-700 flex items-center justify-between group">
+                        <div>
+                            <span class="block text-[10px] font-black text-slate-500 mb-1">STAGE_03</span>
+                            <span class="text-xl italic">분산/난사 (10발 이상)</span>
+                            <span class="block text-sm font-normal mt-2 opacity-80 italic">무작위 탄퍼짐 심화. 사격을 끊어야 할 타이밍을 인지시키는 페널티 구간입니다.</span>
+                        </div>
+                    </button>
+                </div>
+                <div class="lg:w-1/2 w-full bg-slate-800 rounded-[3rem] p-12 border border-slate-700 shadow-inner flex flex-col items-center justify-center relative min-h-[500px]">
+                    <div class="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(circle_at_center,_#ff4655_0%,_transparent_70%)]"></div>
+                    <h4 class="text-[10px] font-black text-slate-500 uppercase tracking-[0.5em] mb-12 text-center italic">Live Bullet Impact Dashboard</h4>
+                    <div class="chart-container w-full relative z-10">
+                        <canvas id="recoilCanvas"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Proposal (The Hybrid) -->
+    <section id="proposal" class="py-20 px-6 max-w-6xl mx-auto border-t border-slate-200">
+        <div class="mb-12">
+            <h2 class="text-3xl font-black text-slate-900 mb-4 uppercase tracking-tight italic">04. New Concept Proposal: 'Variable Barrel'</h2>
+            <p class="text-slate-600">분석을 바탕으로 제안하는 크로스파이어의 신규 무기 메커니즘입니다.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="space-y-6">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+                    <h4 class="text-xl font-bold text-slate-900 mb-4">컨셉: 모드 전환형 DMR/AR 하이브리드</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        하나의 총기에 두 가지 조작감을 부여합니다. <br><br>
+                        <strong>모드 A (저지지력 연사):</strong> M4의 안정성을 가졌으나 연사력이 낮음. 중거리 적을 압박하기 용이함. <br>
+                        <strong>모드 B (고반동 점사):</strong> AK 이상의 반동을 가졌으나 3점사 정확도가 압도적임. 고수가 정교한 샷으로 변수를 만들기 최적화됨.
+                    </p>
+                </div>
+                <div class="bg-cfred p-8 rounded-3xl text-white shadow-xl shadow-cfred/20">
+                    <h4 class="text-lg font-bold mb-2 uppercase">기획적 기대효과</h4>
+                    <p class="text-sm opacity-90 leading-relaxed italic">
+                        "상황에 따라 조작 리듬을 유저가 직접 선택하게 함으로써, 단순한 에임 싸움을 넘어선 '전술적 조작'의 즐거움을 제공할 수 있습니다."
+                    </p>
+                </div>
+            </div>
+            <div class="flex items-center justify-center bg-slate-100 rounded-[3rem] p-10 relative">
+                <div class="text-center">
+                    <div class="text-6xl mb-6">🛠️</div>
+                    <p class="text-slate-400 font-bold uppercase tracking-widest text-xs">New Mechanism Concept Design</p>
+                    <p class="mt-4 text-slate-500 text-sm">기동성과 데미지의 반비례 관계를 <br>유저의 '조작 숙련도'로 극복하는 설계</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Vision -->
+    <section class="py-32 px-6 max-w-6xl mx-auto">
+        <div class="vision-container shadow-2xl shadow-cfdark/50">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-block px-4 py-1.5 bg-cfred/20 border border-cfred/40 rounded text-[10px] font-black tracking-widest uppercase mb-12 italic">The Conclusion</div>
+                
+                <div class="space-y-12">
+                    <h2 class="text-2xl md:text-4xl font-black italic leading-[1.6] text-white">
+                        "단순히 데미지를 조정하는 <span class="tech-tag-fixed">스펙</span> 싸움을 넘어,"
+                    </h2>
+                    <h2 class="text-2xl md:text-4xl font-black italic leading-[1.6] text-white">
+                        "유저의 전술과 리듬이 총기에 완벽히 <span class="tech-bracket tech-tag-fixed">투영</span> 되는,"
+                    </h2>
+                    <h2 class="text-2xl md:text-4xl font-black italic leading-[1.6] text-white">
+                        "살아 숨 쉬는 <span class="tech-bracket tech-tag-fixed">무기 생태계</span> 를 설계하겠습니다."
+                    </h2>
+                </div>
+
+                <div class="mt-24 pt-16 border-t border-white/10 flex flex-col items-center gap-4">
+                    <div class="flex gap-4">
+                        <div class="w-1.5 h-1.5 bg-cfred"></div>
+                        <div class="w-1.5 h-1.5 bg-white/40"></div>
+                        <div class="w-1.5 h-1.5 bg-white/20"></div>
+                    </div>
+                    <p class="text-white/30 font-bold uppercase text-[10px] tracking-[0.6em]">Future Game Studio Weapon Planner Analyst</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 text-center border-t border-slate-200 bg-white">
+        <p class="text-slate-400 text-[10px] uppercase tracking-widest font-black italic tracking-[0.3em]">Precision Gunplay Archive // Research Note</p>
+    </footer>
+
+    <script>
+        // Global Chart.js Settings
+        Chart.defaults.font.family = 'Pretendard, sans-serif';
+        Chart.defaults.color = '#94a3b8';
+
+        // 1. Retention Bar Chart
+        const retCtx = document.getElementById('retentionChart').getContext('2d');
+        new Chart(retCtx, {
+            type: 'bar',
+            data: {
+                labels: ['스펙(데미지) 위주', '조작감(피드백) 위주'],
+                datasets: [{
+                    label: '주간 평균 잔존 지수',
+                    data: [35, 96],
+                    backgroundColor: ['#e2e8f0', '#ff4655'],
+                    borderRadius: 6,
+                    barThickness: 50
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { 
+                    x: { display: false },
+                    y: { grid: { display: false }, ticks: { color: '#0f172a', font: { weight: 'bold', size: 14 } } }
+                }
+            }
+        });
+
+        // 2. Weapon Radar Chart
+        const radarCtx = document.getElementById('radarChart').getContext('2d');
+        new Chart(radarCtx, {
+            type: 'radar',
+            data: {
+                labels: ['데미지', '반동제어', '기동성', '난이도', '유효사거리'],
+                datasets: [{
+                    label: 'M4A1',
+                    data: [65, 95, 85, 30, 75],
+                    borderColor: '#3b82f6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    borderWidth: 2,
+                    pointRadius: 4
+                }, {
+                    label: 'AK-47',
+                    data: [98, 25, 65, 95, 92],
+                    borderColor: '#ff4655',
+                    backgroundColor: 'rgba(255, 70, 85, 0.1)',
+                    borderWidth: 2,
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(0,0,0,0.05)' },
+                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        pointLabels: { color: '#0f172a', font: { size: 12, weight: 'bold' } },
+                        ticks: { display: false, min: 0, max: 100 }
+                    }
+                },
+                plugins: { 
+                    legend: { 
+                        position: 'bottom', 
+                        labels: { boxWidth: 10, color: '#0f172a', font: { weight: 'bold', size: 12 } } 
+                    } 
+                }
+            }
+        });
+
+        // 3. Recoil Scatter Simulation
+        const recoilCtx = document.getElementById('recoilCanvas').getContext('2d');
+        const phaseData = [
+            [{x: 0, y: 0}, {x: 0.1, y: 0.2}, {x: -0.1, y: 0.35}, {x: 0.05, y: 0.5}, {x: -0.02, y: 0.15}], // Phase 1
+            [{x: 0, y: 0}, {x: 0.6, y: 2.1}, {x: -0.4, y: 3.5}, {x: 1.5, y: 5.2}, {x: -0.8, y: 6.8}, {x: 0.3, y: 2.5}], // Phase 2
+            [{x: 0, y: 0}, {x: 4.5, y: 8.5}, {x: -5.2, y: 9.8}, {x: 7.5, y: 8.2}, {x: -8.5, y: 11.0}, {x: 3.2, y: 13.5}, {x: -2.0, y: 14.2}] // Phase 3
+        ];
+
+        let recoilChart = new Chart(recoilCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    data: phaseData[0],
+                    backgroundColor: '#ff4655',
+                    pointRadius: 10,
+                    showLine: true,
+                    borderColor: 'rgba(255, 70, 85, 0.2)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { min: -12, max: 12, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { display: false } },
+                    y: { min: -2, max: 16, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { display: false } }
+                },
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        function updateRecoil(idx) {
+            document.querySelectorAll('.recoil-btn').forEach((btn, i) => {
+                if(i === idx) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            recoilChart.data.datasets[0].data = phaseData[idx];
+            const colors = ['#ff4655', '#38bdf8', '#f8fafc'];
+            recoilChart.data.datasets[0].backgroundColor = colors[idx];
+            recoilChart.data.datasets[0].borderColor = colors[idx] + '44';
+            recoilChart.update();
+        }
+    </script>
+</body>
+</html>

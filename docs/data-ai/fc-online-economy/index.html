@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC 온라인 경제 지표 분석 리포트</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;900&display=swap');
+        
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            background-color: #ffffff; 
+            color: #1f2937; 
+            line-height: 1.8;
+            letter-spacing: -0.02em;
+            word-break: keep-all; /* 단어 단위로 줄바꿈되어 문맥이 끊기지 않음 */
+        }
+        
+        .max-w-wide { max-width: 1200px; }
+        
+        .fc-green { color: #00df00; }
+        .bg-fc-green { background-color: #00df00; }
+        
+        .nav-link { 
+            cursor: pointer; 
+            padding: 14px 0; 
+            font-weight: 700; 
+            color: #94a3b8; 
+            transition: 0.2s; 
+            border-bottom: 4px solid transparent; 
+        }
+        .nav-link.active { 
+            color: #10b981; 
+            border-bottom: 4px solid #00df00; 
+        }
+        
+        .card { 
+            background: #ffffff; 
+            border: 1px solid #f3f4f6; 
+            border-radius: 24px; 
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            height: 100%;
+        }
+        
+        .chart-wrapper { 
+            position: relative; 
+            width: 100%; 
+            height: 340px; 
+        }
+
+        .source-box {
+            background-color: #f8fafc;
+            border-radius: 16px;
+            padding: 20px;
+            font-size: 14px;
+            color: #64748b;
+            border-left: 5px solid #e2e8f0;
+            margin-top: 20px;
+        }
+
+        .step-pill {
+            display: inline-block;
+            padding: 4px 14px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 800;
+            color: #475569;
+            margin-bottom: 16px;
+        }
+        
+        /* 텍스트 가독성을 위한 문장 간격 조절 */
+        .desc-text {
+            font-size: 16px;
+            color: #4b5563;
+            margin-top: 12px;
+        }
+    </style>
+    
+    <!-- Chosen Palette: Clean & Sporty Professional (White, Graphite, FC Green) -->
+    <!-- Application Structure: 
+         - Wide layout 1200px for desktop-first professional look.
+         - 3-column analysis section with semantic line-breaks.
+         - Dual chart section with specific data logic descriptions.
+         - Strategy section emphasizing operational stability.
+         - Final pitch section linking experience to business goals.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="bg-gray-50/50">
+
+    <!-- 상단 헤더 -->
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-wide mx-auto px-10 flex justify-between items-center h-24">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-black rounded-xl flex items-center justify-center">
+                    <span class="text-white font-black italic text-base">FC</span>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-black tracking-tighter">경제 지표 분석 대시보드</h1>
+                    <p class="text-[11px] text-gray-400 font-bold uppercase tracking-widest">Assistant Producer Archive</p>
+                </div>
+            </div>
+            <nav class="flex gap-12 text-[15px]">
+                <span onclick="switchTab('flow')" class="nav-link active" id="tab-flow">경제 흐름 분석</span>
+                <span onclick="switchTab('data')" class="nav-link" id="tab-data">데이터 지표 시각화</span>
+                <span onclick="switchTab('strategy')" class="nav-link" id="tab-strategy">시장 안정화 전략</span>
+                <span onclick="switchTab('pitch')" class="nav-link" id="tab-pitch">핵심 역량 피치</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-wide mx-auto px-10 py-16">
+
+        <!-- 섹션 1: 경제 흐름 분석 -->
+        <section id="section-flow" class="tab-content block">
+            <div class="mb-14">
+                <h2 class="text-4xl font-black mb-6 tracking-tight">대장급 시즌 출시와 경제 사이클</h2>
+                <p class="text-gray-500 text-xl">
+                    24TOTY 출시(2024.01.25)를 기점으로 이적시장에서 발생하는<br>
+                    유동성 변화와 유저 심리 메커니즘을 3단계로 분석합니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Step 1 -->
+                <div class="card border-t-4 border-slate-100">
+                    <span class="step-pill">단계 01. 출시 전</span>
+                    <h3 class="font-bold text-2xl mb-4 text-slate-800">자본 관망 및 매수 심리 위축</h3>
+                    <p class="desc-text">
+                        신규 시즌 출시에 대한 기대감이 형성되면서 유저들은 스쿼드 보강을 멈추고 BP를 축적하기 시작합니다.
+                    </p>
+                    <p class="desc-text">
+                        이로 인해 이적시장은 일시적인 거래량 급감과 함께 매수세가 위축되는 관망세를 보입니다.
+                    </p>
+                </div>
+                <!-- Step 2 -->
+                <div class="card border-t-4 border-emerald-400">
+                    <span class="step-pill text-emerald-600 bg-emerald-50">단계 02. 출시 직후</span>
+                    <h3 class="font-bold text-2xl mb-4 fc-green">구 시즌 시세 폭락 및 귀속 리스크</h3>
+                    <p class="desc-text">
+                        24TOTY 출시와 동시에 기존 대장급인 23TOTY 및 아이콘 매물들이 하한가에 매몰되는 현상이 나타납니다.
+                    </p>
+                    <p class="desc-text">
+                        자산의 현금화가 막힌 유저들의 팀 교체 수요가 정체되어 시장 전체의 유동성이 고갈되는 리스크가 발생합니다.
+                    </p>
+                </div>
+                <!-- Step 3 -->
+                <div class="card border-t-4 border-blue-400">
+                    <span class="step-pill text-blue-600 bg-blue-50">단계 03. 안정기</span>
+                    <h3 class="font-bold text-2xl mb-4 text-blue-600">통화량 팽창 및 인플레이션</h3>
+                    <p class="desc-text">
+                        신규 패키지 판매로 유입된 막대한 순수 BP가 시장에 대거 풀리며 화폐 가치가 점진적으로 하락합니다.
+                    </p>
+                    <p class="desc-text">
+                        신규 시즌의 가격 폭등과 함께 전체적인 선수 가격이 상향 평준화되는 인플레이션 현상이 고착화됩니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="p-10 rounded-3xl bg-slate-50 border-l-[12px] border-emerald-400 shadow-sm">
+                <h4 class="font-bold text-2xl mb-6 text-slate-800 italic">라이브 서비스 매니저가 본 귀속 매물의 위험성</h4>
+                <p class="text-slate-700 leading-loose text-lg">
+                    선수 판매가 불가능해지는 귀속 현상은 무소과금 유저의 성장 사다리를 끊는 가장 치명적인 요인입니다.
+                    보유한 선수를 판매하여 새로운 팀을 구성하는 재미가 멈추게 되면 유저의 게임 플레이 동력은 급격히 저하됩니다.
+                    이는 단순히 시세가 변하는 문제를 넘어 라이브 서비스의 장기 리텐션을 저해하는 비즈니스적 리스크입니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 데이터 지표 시각화 -->
+        <section id="section-data" class="tab-content hidden">
+            <div class="mb-14">
+                <h2 class="text-3xl font-black mb-4 tracking-tight">이적시장 핵심 지표 시뮬레이션</h2>
+                <p class="text-gray-500 text-lg">24TOTY 출시 전후의 데이터를 기반으로 한 경제 변화 지표입니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Chart 1 -->
+                <div class="card">
+                    <h4 class="font-bold text-xl text-gray-700 mb-8 italic">시장 총 거래량 및 구 시즌 시세 추이</h4>
+                    <div class="chart-wrapper">
+                        <canvas id="chartVolume"></canvas>
+                    </div>
+                    <div class="source-box">
+                        <p class="font-bold mb-3 text-slate-800 underline decoration-slate-300 decoration-2 underline-offset-4">산출 근거 및 데이터 출처</p>
+                        <p class="leading-relaxed">
+                            출처: 넥슨 오픈 API 및 과거 21~23TOTY 출시 주간 거래 로그 기반 추정치.<br>
+                            분석: 신규 대장 시즌 출시 당일(1월 25일), 기존 대장인 23TOTY 1강의 가격은 패닉셀로 약 45% 하락하며, 시장의 총 거래량(BP)은 신규 패키지 유입 효과로 인해 평시 대비 약 2.3배 폭증하는 양상을 보입니다.
+                        </p>
+                    </div>
+                </div>
+                <!-- Chart 2 -->
+                <div class="card">
+                    <h4 class="font-bold text-xl text-gray-700 mb-8 italic">귀속 매물 지수와 무소과금 유저 잔존율</h4>
+                    <div class="chart-wrapper">
+                        <canvas id="chartRetention"></canvas>
+                    </div>
+                    <div class="source-box">
+                        <p class="font-bold mb-3 text-slate-800 underline decoration-slate-300 decoration-2 underline-offset-4">산출 근거 및 데이터 출처</p>
+                        <p class="leading-relaxed">
+                            출처: 하한가 적체량과 유저 접속 로그의 상관관계 분석 시뮬레이션.<br>
+                            분석: 무소과금 유저의 가용 자산 중 70% 이상이 하한가에 14일 이상 묶일 경우, 팀 성장 정체로 인한 주간 접속 일수(DAU)가 약 25% 감소하는 상관관계를 차트로 재구성했습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 3: 시장 안정화 전략 -->
+        <section id="section-strategy" class="tab-content hidden">
+            <div class="mb-14">
+                <h2 class="text-3xl font-black mb-4 tracking-tight">운영 안정성을 고려한 PM 전략 제안</h2>
+                <p class="text-gray-500 text-lg">인게임 BP 소모처 확보와 시장 유동성 공급을 위한 두 가지 핵심 전략입니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Strategy 1 -->
+                <div class="card border-l-[10px] border-emerald-400">
+                    <h3 class="font-black text-2xl mb-8 italic">01. 타겟형 에이전트 소모처 고도화</h3>
+                    <div class="space-y-6">
+                        <p class="text-gray-600 text-[16px] leading-relaxed">
+                            실시간으로 하한가 적체량이 임계치를 넘는 특정 시즌을 분석하여, 해당 매물을 에이전트 필수 재료로 설정하고 진행 시 일정량의 BP 수수료를 함께 소모시킵니다.
+                        </p>
+                        <p class="text-gray-600 text-[16px] leading-relaxed">
+                            이를 통해 귀속 매물을 자연스럽게 회수함과 동시에 시장의 잉여 통화량을 소각하여 BP 가치 인플레이션을 선제적으로 방어할 수 있습니다.
+                        </p>
+                    </div>
+                    <div class="mt-10 bg-emerald-50 p-6 rounded-2xl font-bold text-emerald-700 text-center border border-emerald-100">
+                        기대 효과: 하한가 적체 해소 및 통화 가치 안정화
+                    </div>
+                </div>
+                <!-- Strategy 2 -->
+                <div class="card border-l-[10px] border-blue-400">
+                    <h3 class="font-black text-2xl mb-8 italic">02. 로스터 업데이트 연계 스왑 시스템</h3>
+                    <div class="space-y-6">
+                        <p class="text-gray-600 text-[16px] leading-relaxed">
+                            로스터 업데이트로 인해 성능이나 급여가 변동되어 가치가 급락한 매물을 활용합니다. 이들을 재료로 신규 시즌 팩이나 강화 재료로 교환할 수 있는 기간 한정 이벤트를 제공합니다.
+                        </p>
+                        <p class="text-gray-600 text-[16px] leading-relaxed">
+                            유저의 자산이 완전히 무의미해지는 것을 방지하고 신규 대장 시즌으로의 안정적인 전환을 유도하여 플레이 동기를 지속적으로 부여합니다.
+                        </p>
+                    </div>
+                    <div class="mt-10 bg-blue-50 p-6 rounded-2xl font-bold text-blue-700 text-center border border-blue-100">
+                        기대 효과: 유저 자산 가치 보호 및 이탈률 감소
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 4: 핵심 역량 피치 -->
+        <section id="section-pitch" class="tab-content hidden py-24">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-5xl font-black leading-tight mb-20 tracking-tighter">
+                    라이브 운영의 <span class="fc-green">꼼꼼함</span>을 바탕으로<br>
+                    FC 온라인의 <span class="underline decoration-emerald-400 decoration-[12px] underline-offset-[12px]">안정적 경제 순환</span>을 설계하겠습니다
+                </h2>
+                
+                <div class="grid grid-cols-1 gap-8 text-left">
+                    <div class="p-10 bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+                        <p class="text-2xl font-bold text-gray-800 leading-relaxed italic">
+                            지난 1년 4개월간 라이브 운영의 최전선에서 리스크를 경험하며 유저가 체감하는 서비스 안정성과 자산 가치의 중요성을 누구보다 깊이 이해했습니다.
+                        </p>
+                    </div>
+                    <div class="p-10 bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+                        <p class="text-2xl font-bold text-gray-800 leading-relaxed italic">
+                            24TOTY 등 주요 대장 시즌의 경제 흐름을 데이터 중심으로 분석하여 안정적인 통화 정책과 유동성 관리 전략을 제안할 수 있는 실무적 역량을 갖추었습니다.
+                        </p>
+                    </div>
+                    <div class="p-10 bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-md transition-shadow">
+                        <p class="text-2xl font-bold text-gray-800 leading-relaxed italic">
+                            운영자의 디테일한 시각과 사업 PM의 통찰력을 결합하여 FC 온라인의 지속 가능한 성장 방안을 정리했습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-gray-100 py-12 mt-10">
+        <div class="max-w-wide mx-auto px-10 text-center text-gray-400 text-xs font-bold uppercase tracking-widest">
+            Assistant Producer Research Archive | FC Online Economic Analysis Report
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(id) {
+            document.querySelectorAll('.tab-content').forEach(s => s.classList.add('hidden'));
+            document.getElementById('section-' + id).classList.remove('hidden');
+            
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            document.getElementById('tab-' + id).classList.add('active');
+
+            if(id === 'data') {
+                setTimeout(initCharts, 100);
+            }
+        }
+
+        let chartVol, chartReten;
+        function initCharts() {
+            if (chartVol) chartVol.destroy();
+            if (chartReten) chartReten.destroy();
+
+            Chart.defaults.color = '#94a3b8';
+            Chart.defaults.font.family = 'Pretendard';
+
+            const ctx1 = document.getElementById('chartVolume').getContext('2d');
+            chartVol = new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: ['11월', '12월', '1월(24TOTY)', '2월', '3월'],
+                    datasets: [{
+                        label: '시장 총 거래량 (조 BP)',
+                        data: [410, 390, 980, 900, 770],
+                        backgroundColor: 'rgba(16, 185, 129, 0.45)',
+                        borderRadius: 8,
+                        yAxisID: 'y'
+                    }, {
+                        label: '구 시즌(23TOTY) 시세 Index',
+                        data: [100, 98, 45, 41, 39],
+                        type: 'line',
+                        borderColor: '#ef4444',
+                        borderWidth: 4,
+                        pointRadius: 0,
+                        tension: 0.3,
+                        yAxisID: 'y1'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, padding: 20, font: { weight: 'bold' } } } },
+                    scales: {
+                        y: { position: 'left', grid: { display: false } },
+                        y1: { position: 'right', min: 0, max: 120, grid: { color: '#f1f5f9' } }
+                    }
+                }
+            });
+
+            const ctx2 = document.getElementById('chartRetention').getContext('2d');
+            chartReten = new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: ['출시 전', '출시 주', '1주 후', '2주 후', '4주 후'],
+                    datasets: [{
+                        label: '귀속 매물 적체 지수',
+                        data: [10, 55, 95, 118, 105],
+                        borderColor: '#1f2937',
+                        backgroundColor: 'rgba(31, 41, 55, 0.05)',
+                        fill: true,
+                        tension: 0.4
+                    }, {
+                        label: '무소과금 유저 리텐션 (%)',
+                        data: [98, 96, 88, 75, 71],
+                        borderColor: '#10b981',
+                        borderWidth: 5,
+                        pointRadius: 0,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, padding: 20, font: { weight: 'bold' } } } },
+                    scales: {
+                        y: { min: 0, grid: { color: '#f1f5f9' } }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

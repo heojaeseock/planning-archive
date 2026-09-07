@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>허재석 작업 기록 | 쿠키런: 모험의 탑 이벤트 기획</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <style>
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            background-color: #fffbeb; /* 따뜻한 크림색 배경 */
+            color: #451a03; 
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            word-break: keep-all; 
+        }
+        
+        .cookie-brown { color: #78350f; }
+        .bg-cookie-yellow { background-color: #fbbf24; }
+        .border-cookie-brown { border-color: #78350f; }
+        
+        .card-shadow { box-shadow: 0 10px 25px -5px rgba(120, 53, 15, 0.1); }
+        
+        .content-panel {
+            background: #ffffff;
+            border: 1px solid #fde68a;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .animate-pop { animation: pop 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+        @keyframes pop {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* 탭 버튼 스타일 */
+        .tab-btn {
+            cursor: pointer;
+            transition: all 0.2s;
+            outline: none;
+            border-bottom-width: 3px;
+        }
+        .tab-btn.active {
+            color: #b45309;
+            border-color: #fbbf24;
+            background-color: #ffffff;
+        }
+        .tab-btn:hover:not(.active) {
+            background-color: #fef3c7;
+        }
+
+        .tab-content { display: none; opacity: 0; transition: opacity 0.3s ease; }
+        .tab-content.active { display: block; opacity: 1; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* 가상 모바일 기기 스타일 */
+        .mockup-phone {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 16 / 9;
+            background: #1e293b;
+            border: 8px solid #334155;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 클릭 유도 애니메이션 */
+        @keyframes bounce-subtle {
+            0%, 100% { transform: translateY(-10%) rotate(-5deg); }
+            50% { transform: translateY(10%) rotate(-5deg); }
+        }
+        .animate-bounce-subtle {
+            animation: bounce-subtle 1.5s infinite ease-in-out;
+        }
+
+        /* 도표 불릿 스타일 */
+        .custom-bullet {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="min-h-screen flex flex-col items-center py-8 md:py-12 px-4 md:px-0">
+        <!-- 메인 컨테이너 -->
+        <div class="max-w-5xl w-full bg-white rounded-[40px] overflow-hidden card-shadow border border-amber-100 animate-pop">
+            
+            <!-- 상단 헤더 -->
+            <div class="relative pt-10 pb-8 px-8 md:px-12 bg-gradient-to-br from-amber-50 to-orange-50 overflow-hidden border-b border-amber-100">
+                <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div>
+                        <p class="text-orange-600 font-bold tracking-widest text-xs mb-3 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+                            이벤트 기획 및 수치 설계 리포트
+                        </p>
+                        <h1 class="text-3xl md:text-5xl font-black leading-tight text-amber-900 mb-2">
+                            쿠키런: 모험의 탑<br>
+                            크리스마스 한정 이벤트
+                        </h1>
+                        <div class="flex flex-wrap gap-4 mt-4 text-amber-700/70 text-sm font-bold">
+                            <span class="bg-white px-3 py-1 rounded-full border border-amber-100 shadow-sm">📅 2024.04.08 ~ 04.22</span>
+                            <span class="bg-white px-3 py-1 rounded-full border border-amber-100 shadow-sm">👤 기획: 허재석 (100%)</span>
+                        </div>
+                    </div>
+                    <div class="w-20 h-20 rounded-[28px] bg-white border-2 border-amber-200 flex items-center justify-center text-4xl shadow-md shrink-0">
+                        🍪
+                    </div>
+                </div>
+            </div>
+
+            <!-- 네비게이션 탭 -->
+            <div class="flex border-b border-amber-100 bg-amber-50/30 sticky top-0 z-20 backdrop-blur-md">
+                <button onclick="openTab(event, 'overview')" class="tab-btn active flex-1 py-5 text-sm font-bold text-amber-800/60 border-transparent" id="defaultOpen">📋 1. 개요 및 설정</button>
+                <button onclick="openTab(event, 'assets')" class="tab-btn flex-1 py-5 text-sm font-bold text-amber-800/60 border-transparent">🎁 2. 오브젝트 및 보상</button>
+                <button onclick="openTab(event, 'flow')" class="tab-btn flex-1 py-5 text-sm font-bold text-amber-800/60 border-transparent">🔄 3. 시스템 플로우 & UI</button>
+            </div>
+
+            <!-- 탭 1: 이벤트 개요 -->
+            <div id="overview" class="tab-content active p-6 md:p-10 space-y-10">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 기본 정보 -->
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-bold text-amber-900 flex items-center gap-2">
+                            <span class="text-orange-500">#</span> 루돌프의 당근을 찾아라!
+                        </h3>
+                        <div class="content-panel p-6 space-y-4 border-amber-200">
+                            <div class="flex justify-between items-center border-b border-amber-50 pb-2">
+                                <span class="text-sm font-bold text-amber-800">이벤트 기간</span>
+                                <span class="text-sm text-amber-600">2024.12.20 ~ 12.25</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-amber-50 pb-2">
+                                <span class="text-sm font-bold text-amber-800">참여 조건</span>
+                                <span class="text-sm text-amber-600">튜토리얼 종료 후 (1회 한정)</span>
+                            </div>
+                            <div class="space-y-1">
+                                <p class="text-sm font-bold text-amber-800">시놉시스</p>
+                                <p class="text-xs text-amber-600 leading-relaxed">
+                                    선물을 나눠줘야 할 산타맛 쿠키가 루돌프의 먹이(당근)가 없어 출발하지 못하는 상황입니다. 플레이어가 스토리 모드를 돌며 당근을 모아다 주는 따뜻한 겨울 이야기를 담았습니다.
+                                </p>
+                            </div>
+                            <div class="bg-orange-50 p-3 rounded-lg border border-orange-100">
+                                <p class="text-[11px] font-bold text-orange-700">핵심 규칙</p>
+                                <p class="text-[11px] text-orange-600 mt-1">'산타의 장바구니' 아이템을 보유한 상태로 싱글 스토리 모드를 진행할 때만 당근 획득이 가능하도록 설계했습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 획득 확률 차트 -->
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-bold text-amber-900 flex items-center gap-2">
+                            <span class="text-orange-500">#</span> 당근 획득 밸런스 (확률)
+                        </h3>
+                        <div class="content-panel p-6 border-amber-200 h-full flex flex-col justify-center">
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between text-xs font-bold mb-1">
+                                        <span>크리스마스 토끼 처치</span>
+                                        <span class="text-orange-600">50%</span>
+                                    </div>
+                                    <div class="w-full bg-amber-100 h-3 rounded-full overflow-hidden">
+                                        <div class="bg-orange-500 h-full w-[50%]"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs font-bold mb-1">
+                                        <span>보물상자 오픈</span>
+                                        <span class="text-orange-600">30%</span>
+                                    </div>
+                                    <div class="w-full bg-amber-100 h-3 rounded-full overflow-hidden">
+                                        <div class="bg-orange-400 h-full w-[30%]"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs font-bold mb-1">
+                                        <span>항아리 트랩 제거</span>
+                                        <span class="text-orange-600">20%</span>
+                                    </div>
+                                    <div class="w-full bg-amber-100 h-3 rounded-full overflow-hidden">
+                                        <div class="bg-orange-300 h-full w-[20%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-[10px] text-amber-500 mt-6 text-center italic">* 유저의 플레이 피로도를 고려하여 수집 난이도를 밸런싱했습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 탭 2: 오브젝트 및 보상 -->
+            <div id="assets" class="tab-content p-6 md:p-10 space-y-12">
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-amber-900 flex items-center gap-2">
+                        <span class="text-orange-500">#</span> 신규 오브젝트 및 아이템 리스트
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- 오브젝트 1 -->
+                        <div class="content-panel p-6 border-amber-200 text-center flex flex-col items-center">
+                            <div class="text-5xl mb-4">🐰</div>
+                            <h4 class="font-bold text-amber-900 mb-2">크리스마스 토끼</h4>
+                            <p class="text-xs text-amber-600 leading-relaxed">이벤트 기간 중 스토리 모드에 한정 출현하는 특수 몬스터입니다. 처치 시 당근 드랍 확률이 가장 높습니다.</p>
+                            <span class="mt-4 px-2 py-1 bg-red-50 text-[10px] font-bold text-red-500 rounded border border-red-100">신규 제작 리소스</span>
+                        </div>
+                        <!-- 오브젝트 2 -->
+                        <div class="content-panel p-6 border-amber-200 text-center flex flex-col items-center">
+                            <div class="text-5xl mb-4">🥕</div>
+                            <h4 class="font-bold text-amber-900 mb-2">루돌프의 당근</h4>
+                            <p class="text-xs text-amber-600 leading-relaxed">이벤트 퀘스트 핵심 아이템입니다. 총 10개를 수집하여 산타맛 쿠키에게 전달해야 합니다.</p>
+                            <span class="mt-4 px-2 py-1 bg-amber-50 text-[10px] font-bold text-amber-600 rounded border border-amber-100">기존 리소스 활용</span>
+                        </div>
+                        <!-- 오브젝트 3 -->
+                        <div class="content-panel p-6 border-amber-200 text-center flex flex-col items-center">
+                            <div class="text-5xl mb-4">🎁</div>
+                            <h4 class="font-bold text-amber-900 mb-2">이벤트 선물상자</h4>
+                            <p class="text-xs text-amber-600 leading-relaxed">최종 보상 아이템입니다. 사용 시 무작위로 레어에서 에픽 등급의 장비를 획득할 수 있습니다.</p>
+                            <span class="mt-4 px-2 py-1 bg-green-50 text-[10px] font-bold text-green-600 rounded border border-green-100">기간 한정 소모품</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50 p-6 rounded-2xl border border-amber-100">
+                    <h4 class="font-bold text-amber-900 mb-4 text-sm flex items-center gap-2">
+                        💡 기대 효과
+                    </h4>
+                    <ul class="space-y-3 text-sm text-amber-800">
+                        <li class="custom-bullet"><span class="text-orange-500">●</span> <span>기존 스테이지의 반복 플레이 가치를 부여하여 <strong>유저 잔존율 향상</strong>을 꾀했습니다.</span></li>
+                        <li class="custom-bullet"><span class="text-orange-500">●</span> <span>신규 몬스터와 오브젝트 배치를 통해 시즌 분위기를 조성하고 <strong>복귀 유저 유입</strong>을 유도합니다.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 탭 3: 시스템 플로우 및 UI -->
+            <div id="flow" class="tab-content p-6 md:p-10 space-y-12">
+                
+                <!-- 플로우 차트 -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-amber-900 flex items-center gap-2">
+                        <span class="text-orange-500">#</span> 이벤트 진행 프로세스
+                    </h3>
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-4 py-8">
+                        <div class="w-full md:w-1/4 p-4 bg-white border-2 border-amber-200 rounded-xl text-center text-xs font-bold shadow-sm">
+                            이벤트 대화 시작<br>(장바구니 아이템 지급)
+                        </div>
+                        <div class="hidden md:block text-amber-300">▶</div>
+                        <div class="w-full md:w-1/4 p-4 bg-amber-500 text-white rounded-xl text-center text-xs font-bold shadow-md">
+                            스토리 모드 진행<br>(몬스터 및 오브젝트 파밍)
+                        </div>
+                        <div class="hidden md:block text-amber-300">▶</div>
+                        <div class="w-full md:w-1/4 p-4 bg-white border-2 border-amber-200 rounded-xl text-center text-xs font-bold shadow-sm">
+                            당근 10개 수집 완료<br>(교환 버튼 활성화)
+                        </div>
+                        <div class="hidden md:block text-amber-300">▶</div>
+                        <div class="w-full md:w-1/4 p-4 bg-emerald-500 text-white rounded-xl text-center text-xs font-bold shadow-md">
+                            보상 교환 및 종료<br>(선물상자 지급)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 가상 이벤트 UI 시연 -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-bold text-amber-900 flex items-center gap-2">
+                            <span class="text-orange-500">#</span> 인게임 이벤트 화면 시연
+                        </h3>
+                        <p class="text-sm text-amber-600 mb-6">아래 버튼을 눌러 수집 상태에 따라 실시간으로 변하는 UI와 대사를 확인해 보세요.</p>
+                        
+                        <!-- 조작 버튼 (Click UI 추가) -->
+                        <div class="flex gap-4">
+                            <button onclick="updateUI('progress')" class="relative px-6 py-3 bg-amber-100 hover:bg-amber-200 text-amber-800 rounded-xl text-xs font-bold transition-all shadow-sm border border-amber-200 group">
+                                <span class="absolute -top-3 -right-2 bg-red-500 text-white text-[10px] font-black px-2 py-0.5 rounded-full animate-bounce-subtle shadow-md z-10">Click!</span>
+                                진행 중 상태
+                            </button>
+                            <button onclick="updateUI('complete')" class="relative px-6 py-3 bg-emerald-100 hover:bg-emerald-200 text-emerald-800 rounded-xl text-xs font-bold transition-all shadow-sm border border-emerald-200 group">
+                                <span class="absolute -top-3 -right-2 bg-red-500 text-white text-[10px] font-black px-2 py-0.5 rounded-full animate-bounce-subtle shadow-md z-10">Click!</span>
+                                수집 완료 상태
+                            </button>
+                        </div>
+
+                        <!-- 시나리오 설명 -->
+                        <div class="mt-8">
+                            <p class="text-[10px] font-bold text-amber-500 uppercase tracking-widest mb-2">Dialogue Script</p>
+                            <div id="scriptBox" class="bg-white p-5 rounded-xl border border-amber-100 text-xs leading-relaxed min-h-[100px] shadow-inner">
+                                <strong>[산타맛 쿠키]:</strong> 루돌프가 배고파서 움직이질 않네.. 토끼들이 당근을 다 먹어치우고 있어! 당근 10개만 구해줄 수 있을까?
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 가상 UI 목업 -->
+                    <div class="flex justify-center">
+                        <div class="mockup-phone shadow-2xl border-amber-900/10">
+                            <!-- 헤더 -->
+                            <div class="h-8 bg-black/30 flex items-center px-4 justify-between">
+                                <span class="text-[8px] text-white/50 italic">Cookie Run: Tower of Adventures</span>
+                                <div class="flex gap-1">
+                                    <div class="w-1.5 h-1.5 bg-white/20 rounded-full"></div>
+                                    <div class="w-1.5 h-1.5 bg-white/20 rounded-full"></div>
+                                </div>
+                            </div>
+                            <!-- 본문 -->
+                            <div class="p-4 h-full bg-gradient-to-b from-blue-900 to-indigo-950 flex flex-col relative">
+                                <div class="flex justify-between items-start">
+                                    <button class="text-white text-lg">❮</button>
+                                    <h4 class="text-white font-black text-sm tracking-tighter">이벤트</h4>
+                                    <div class="w-6"></div>
+                                </div>
+
+                                <div class="mt-4 flex flex-col items-center">
+                                    <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/10 w-full">
+                                        <div class="flex gap-3 items-center">
+                                            <div class="w-12 h-12 bg-amber-200 rounded-xl flex items-center justify-center text-2xl shadow-inner">🎅</div>
+                                            <div class="flex-1">
+                                                <p class="text-white font-bold text-[10px]">크리스마스 이벤트!</p>
+                                                <p class="text-white/60 text-[8px]">루돌프를 위해 당근을 모아주세요.</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-5 space-y-2">
+                                            <div class="flex justify-between text-[9px] font-bold">
+                                                <span class="text-white">당근 수집 현황</span>
+                                                <span id="mockupCounter" class="text-red-400">7 / 10</span>
+                                            </div>
+                                            <div class="w-full bg-black/40 h-2.5 rounded-full overflow-hidden">
+                                                <div id="mockupBar" class="bg-orange-500 h-full w-[70%] transition-all duration-500"></div>
+                                            </div>
+                                        </div>
+                                        <button id="mockupBtn" class="mt-5 w-full py-2.5 bg-gray-600 text-white/50 text-[10px] font-bold rounded-lg cursor-not-allowed transition-all">수집 중...</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- 눈 효과 -->
+                                <div class="absolute bottom-12 left-6 text-white/20 text-xs animate-bounce">❄️</div>
+                                <div class="absolute top-24 right-12 text-white/10 text-lg">❄️</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 푸터 -->
+            <div class="p-6 bg-amber-50 border-t border-amber-100 text-center text-amber-800/50 text-xs font-bold">
+                Cookie Run: Tower of Adventures Event Proposal &copy; 허재석
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            evt.preventDefault();
+            var tabcontent = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            var tablinks = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function updateUI(status) {
+            const counter = document.getElementById('mockupCounter');
+            const bar = document.getElementById('mockupBar');
+            const btn = document.getElementById('mockupBtn');
+            const script = document.getElementById('scriptBox');
+
+            if (status === 'progress') {
+                counter.innerText = '7 / 10';
+                counter.className = 'text-red-400';
+                bar.style.width = '70%';
+                btn.innerText = '수집 중...';
+                btn.className = 'mt-5 w-full py-2.5 bg-gray-600 text-white/50 text-[10px] font-bold rounded-lg cursor-not-allowed';
+                script.innerHTML = '<strong>[산타맛 쿠키]:</strong> 루돌프가 배고파서 움직이질 않네.. 토끼들이 당근을 다 먹어치우고 있어! 당근 10개만 구해줄 수 있을까?';
+            } else {
+                counter.innerText = '10 / 10';
+                counter.className = 'text-green-400 font-black';
+                bar.style.width = '100%';
+                btn.innerText = '교환하기';
+                btn.className = 'mt-5 w-full py-2.5 bg-green-500 text-white text-[10px] font-bold rounded-lg shadow-lg shadow-green-900/20 active:scale-95 transition-all';
+                script.innerHTML = '<strong>[산타맛 쿠키]:</strong> 정말 다 구해왔구나! 우리 루돌프가 아주 좋아하겠어! 자, 고마움의 표시로 선물을 줄게!';
+            }
+        }
+    </script>
+</body>
+</html>

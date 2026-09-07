@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[프로젝트 N] 기획 제안서 - 허재석</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff4f2',
+                            100: '#ffe6e1',
+                            200: '#ffc8be',
+                            300: '#ffa191',
+                            400: '#ff6f59',
+                            500: '#FF4F36', 
+                            600: '#ed3419',
+                            700: '#c5240f',
+                            800: '#a42110',
+                            900: '#882215',
+                        },
+                        surface: {
+                            bg: '#F3F5F9', 
+                            card: '#FFFFFF',
+                            dark: '#1E232E', 
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Pretendard"', '"Noto Sans KR"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'game-card': '0 8px 24px -8px rgba(0, 0, 0, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 350px;
+        }
+        @media (max-width: 768px) {
+            .chart-container { height: 250px; }
+        }
+        
+        body { background-color: #F3F5F9; color: #1E232E; }
+        
+        .game-toggle-btn {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .game-toggle-btn.active {
+            background-color: #FFFFFF;
+            color: #FF4F36;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .action-btn {
+            transition: all 0.15s ease;
+            border-bottom-width: 4px;
+        }
+        .action-btn:active {
+            transform: translateY(2px);
+            border-bottom-width: 2px;
+            margin-bottom: 2px;
+        }
+        .action-btn.active {
+            background-color: #FF4F36;
+            color: white;
+            border-color: #ed3419;
+            border-bottom-width: 4px;
+        }
+        .action-btn.inactive {
+            background-color: #FFFFFF;
+            color: #64748b;
+            border-color: #e2e8f0;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.35s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse-soft {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+        .animate-pulse-soft {
+            animation: pulse-soft 2s infinite ease-in-out;
+        }
+        
+        /* 한국어 줄바꿈 최적화 */
+        .keep-all {
+            word-break: keep-all;
+            overflow-wrap: break-word;
+        }
+    </style>
+</head>
+<body class="antialiased scroll-smooth font-sans selection:bg-brand-500 selection:text-white keep-all">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-brand-500 text-white rounded-xl flex items-center justify-center font-black text-xl leading-none">C</div>
+                <span class="text-xl font-extrabold text-surface-dark tracking-tight">&lt;프로젝트 N&gt; <span class="text-brand-500">기획 제안서</span></span>
+            </div>
+            <div class="hidden md:flex space-x-6 text-sm font-bold text-gray-500">
+                <a href="#s1" class="hover:text-brand-500 transition-colors">1. 데이터 분석</a>
+                <a href="#s2" class="hover:text-brand-500 transition-colors">2. 밸런스 검증</a>
+                <a href="#s3" class="hover:text-brand-500 transition-colors">3. 위기 대응</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="py-20 text-center px-4 max-w-4xl mx-auto">
+        <div class="inline-flex items-center gap-2 bg-brand-50 text-brand-600 px-4 py-2 rounded-full text-sm font-bold mb-6 border border-brand-200 animate-pulse-soft">
+            <span>🎮</span> 1년 5개월 차 운영 담당자의 역량 제안
+        </div>
+        <h1 class="text-4xl md:text-5xl font-black text-surface-dark mb-6 leading-tight tracking-tight">
+            운영 담당자의 시야를<br class="hidden md:block">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand-600">성공적인 기획 데이터로.</span>
+        </h1>
+        <p class="text-gray-600 font-medium text-lg leading-relaxed">직관과 감이 아닌, 데이터와 소통으로 증명합니다.<br class="hidden md:block">게임 개발사 &lt;프로젝트 N&gt;을 위한 3가지 라이브 솔루션을 확인해 보세요.</p>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 pb-24 space-y-28">
+
+        <!-- Section 1: VOC & System -->
+        <section id="s1" class="scroll-mt-24">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-10 h-10 rounded-2xl bg-surface-dark text-white flex items-center justify-center font-bold text-xl shadow-lg shadow-gray-300">1</div>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-surface-dark">유저 이탈 방어 시스템</h2>
+            </div>
+            <p class="text-brand-600 text-sm font-bold mb-6 ml-14 animate-pulse-soft">👇 아래 버튼을 클릭하여 유저의 문제점과 해결책을 비교해 보세요.</p>
+            
+            <div class="bg-surface-card rounded-3xl shadow-game-card border-4 border-white p-3 md:p-6">
+                <!-- Mobile-style Pill Toggle -->
+                <div class="flex bg-gray-100 p-1.5 rounded-2xl w-full max-w-md mx-auto mb-8">
+                    <button onclick="toggleS1('voc')" id="btn-voc" class="game-toggle-btn active flex-1 py-3 rounded-xl font-bold text-sm md:text-base text-gray-500">
+                        😡 주요 이탈 원인 보기
+                    </button>
+                    <button onclick="toggleS1('sol')" id="btn-sol" class="game-toggle-btn flex-1 py-3 rounded-xl font-bold text-sm md:text-base text-gray-500">
+                        💡 해결책 확인하기
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-[350px] p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                    <!-- Text Area -->
+                    <div id="text-s1" class="space-y-4 fade-in">
+                        <!-- JS injects content here -->
+                    </div>
+                    <!-- Chart Area -->
+                    <div class="bg-white rounded-2xl p-4 shadow-sm h-full flex flex-col justify-center">
+                        <h4 id="chart-title-1" class="text-center font-bold text-sm text-gray-500 mb-4">웹툰 RPG 이탈 원인</h4>
+                        <div class="chart-container">
+                            <canvas id="chart-s1"></canvas>
+                        </div>
+                        <p id="chart-source-1" class="text-right text-xs text-gray-400 mt-4">* 참고: 라이브 운영 경험을 바탕으로 도출한 예상 지표입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: QA Process -->
+        <section id="s2" class="scroll-mt-24">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-10 h-10 rounded-2xl bg-brand-500 text-white flex items-center justify-center font-bold text-xl shadow-lg shadow-brand-200">2</div>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-surface-dark">인플레이션 차단 검증 프로세스</h2>
+            </div>
+            <p class="text-brand-600 text-sm font-bold mb-6 ml-14 animate-pulse-soft">👇 각 검증 단계를 순서대로 클릭하여 차트의 변화를 확인해 보세요.</p>
+            
+            <div class="bg-surface-card rounded-3xl shadow-game-card border-4 border-white p-6">
+                <!-- Action Flow Buttons -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <button onclick="runQA(0)" id="qa-btn-0" class="action-btn active py-4 px-2 rounded-2xl font-extrabold flex flex-col items-center justify-center text-lg">
+                        <span class="text-2xl mb-1">📊</span> 1. 기존 평균 도출
+                    </button>
+                    <button onclick="runQA(1)" id="qa-btn-1" class="action-btn inactive py-4 px-2 rounded-2xl font-extrabold flex flex-col items-center justify-center text-lg">
+                        <span class="text-2xl mb-1">🚨</span> 2. 신캐 초안 비교
+                    </button>
+                    <button onclick="runQA(2)" id="qa-btn-2" class="action-btn inactive py-4 px-2 rounded-2xl font-extrabold flex flex-col items-center justify-center text-lg">
+                        <span class="text-2xl mb-1">✅</span> 3. 최종 스탯 교정
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-center bg-gray-50 p-6 rounded-3xl border border-gray-100">
+                    <!-- Chart -->
+                    <div class="md:col-span-2 bg-white p-4 rounded-2xl shadow-sm flex flex-col">
+                        <div class="chart-container !h-[300px]">
+                            <canvas id="chart-s2"></canvas>
+                        </div>
+                        <p class="text-right text-xs text-gray-400 mt-4">* 참고: 검증 프로세스 시연을 위한 가상 데이터입니다.</p>
+                    </div>
+                    <!-- Explanation Box -->
+                    <div id="qa-desc" class="md:col-span-3 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 fade-in h-full flex flex-col justify-center">
+                        <!-- JS injects content -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Crisis Manual -->
+        <section id="s3" class="scroll-mt-24">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-10 h-10 rounded-2xl bg-surface-dark text-white flex items-center justify-center font-bold text-xl shadow-lg shadow-gray-300">3</div>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-surface-dark">위기대응 3단계 매뉴얼</h2>
+            </div>
+            <p class="text-brand-600 text-sm font-bold mb-6 ml-14 animate-pulse-soft">👇 발생 시간별 아이콘을 터치하여 기획팀의 대응 지침을 확인해 보세요.</p>
+            
+            <div class="bg-surface-card rounded-3xl shadow-game-card border-4 border-white p-6 md:p-10">
+                <!-- Interactive Timeline Controls -->
+                <div class="flex justify-between relative mb-16 max-w-2xl mx-auto px-4">
+                    <!-- Progress Bar Background -->
+                    <div class="absolute top-1/2 left-0 w-full h-3 bg-gray-100 -z-10 -translate-y-1/2 rounded-full"></div>
+                    <!-- Progress Bar Fill -->
+                    <div id="timeline-progress" class="absolute top-1/2 left-0 w-0 h-3 bg-brand-400 -z-10 -translate-y-1/2 rounded-full transition-all duration-300"></div>
+                    
+                    <button onclick="showCrisis(1)" id="cri-btn-1" class="transition-all duration-200 w-16 h-16 rounded-full font-bold text-white shadow-md border-4 border-white flex items-center justify-center relative bg-brand-500 scale-110">
+                        <span class="absolute -top-8 text-xs text-brand-600 whitespace-nowrap bg-brand-50 px-3 py-1 rounded-full font-bold shadow-sm">발생 +2H</span>
+                        🔥
+                    </button>
+                    <button onclick="showCrisis(2)" id="cri-btn-2" class="transition-all duration-200 w-16 h-16 rounded-full font-bold text-white shadow-md border-4 border-white flex items-center justify-center relative bg-gray-300 hover:bg-orange-400">
+                        <span class="absolute -top-8 text-xs text-gray-500 whitespace-nowrap bg-white px-3 py-1 rounded-full font-bold shadow-sm">발생 +12H</span>
+                        🔍
+                    </button>
+                    <button onclick="showCrisis(3)" id="cri-btn-3" class="transition-all duration-200 w-16 h-16 rounded-full font-bold text-white shadow-md border-4 border-white flex items-center justify-center relative bg-gray-300 hover:bg-green-500">
+                        <span class="absolute -top-8 text-xs text-gray-500 whitespace-nowrap bg-white px-3 py-1 rounded-full font-bold shadow-sm">발생 +24H</span>
+                        📢
+                    </button>
+                </div>
+
+                <!-- Detail Card -->
+                <div id="crisis-desc" class="bg-brand-50 border-2 border-brand-200 rounded-3xl p-6 md:p-8 min-h-[220px] fade-in max-w-3xl mx-auto">
+                    <!-- JS injects content -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center pb-12">
+        <p class="text-gray-400 font-bold">게임 개발사 &lt;프로젝트 N&gt;의 성공적인 라이브 서비스 운영 방안을 정리했습니다.</p>
+    </footer>
+
+    <script>
+        // --- CONTENT DATA ---
+        
+        // Section 1 Data
+        const s1Content = {
+            voc: {
+                title: "🚨 수집형 RPG 주요 이탈 요인",
+                sourceText: "* 참고: 라이브 운영 경험을 바탕으로 도출한 예상 지표입니다.",
+                html: `
+                    <div class="space-y-4">
+                        <div class="p-5 bg-white rounded-2xl border-l-4 border-l-brand-500 shadow-sm">
+                            <div class="font-extrabold text-surface-dark mb-2 text-lg">💥 1. 소환 및 과금 피로도 (45%)</div>
+                            <div class="text-sm font-medium text-gray-600 leading-relaxed">잦은 신규 캐릭터 출시로 인한 과금 스트레스 및 확률형 소환 실패 시 누적되는 유저의 상실감</div>
+                        </div>
+                        <div class="p-5 bg-white rounded-2xl border-l-4 border-l-orange-400 shadow-sm">
+                            <div class="font-extrabold text-surface-dark mb-2 text-lg">📉 2. 파워 인플레이션 (30%)</div>
+                            <div class="text-sm font-medium text-gray-600 leading-relaxed">신규 캐릭터 위주의 밸런스 패치로 인해, 유저가 애정을 가진 기존 선호 캐릭터들의 활용처가 축소되는 현상</div>
+                        </div>
+                        <div class="p-5 bg-white rounded-2xl border-l-4 border-l-yellow-400 shadow-sm">
+                            <div class="font-extrabold text-surface-dark mb-2 text-lg">🥱 3. 반복 콘텐츠의 지루함 (25%)</div>
+                            <div class="text-sm font-medium text-gray-600 leading-relaxed">성장 재화 획득을 위해 매일 강제되는 단순 반복 플레이의 피로도 증가</div>
+                        </div>
+                    </div>
+                `,
+                chartData: {
+                    labels: ['소환 피로도', '파워 인플레', '반복 지루함', '기타'],
+                    datasets: [{ data: [45, 30, 25, 10], backgroundColor: ['#FF4F36', '#FB923C', '#FACC15', '#E2E8F0'], borderWidth:0 }]
+                },
+                type: 'doughnut'
+            },
+            sol: {
+                title: "🎯 처방: 서브 파견 시스템 도입 기대 효과",
+                sourceText: "* 참고: 신규 시스템 도입 시 예상되는 스트레스 감소 추정치입니다.",
+                html: `
+                    <p class="font-black text-brand-600 mb-5 text-xl">방치형 파견 시스템 도입</p>
+                    <div class="space-y-4 font-medium text-surface-dark">
+                        <div class="flex items-start bg-white p-4 rounded-xl shadow-sm">
+                            <span class="text-brand-500 mr-3 text-xl shrink-0 mt-0.5">✔️</span>
+                            <div>
+                                <strong class="block mb-1 text-surface-dark">비주류 캐릭터 가치 보존</strong>
+                                <span class="text-sm text-gray-600 leading-relaxed">사용 빈도가 낮아진 캐릭터를 파견 특화 요원으로 투입하여, 애정 캐릭터에 대한 활용처를 지속 제공합니다.</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-white p-4 rounded-xl shadow-sm">
+                            <span class="text-brand-500 mr-3 text-xl shrink-0 mt-0.5">✔️</span>
+                            <div>
+                                <strong class="block mb-1 text-surface-dark">플레이 피로도 완화</strong>
+                                <span class="text-sm text-gray-600 leading-relaxed">방치형 요소를 결합해 오프라인 상태에서도 필수 성장 재화를 획득할 수 있도록 지원합니다.</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-white p-4 rounded-xl shadow-sm">
+                            <span class="text-brand-500 mr-3 text-xl shrink-0 mt-0.5">✔️</span>
+                            <div>
+                                <strong class="block mb-1 text-surface-dark">소환 스트레스 케어</strong>
+                                <span class="text-sm text-gray-600 leading-relaxed">파견 보상으로 확정 소환 마일리지를 지급하여 무소과금 유저의 이탈을 적극적으로 방어합니다.</span>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                chartData: {
+                    labels: ['기존 시스템', '파견 시스템 도입 후'],
+                    datasets: [{ label: '스트레스 지수', data: [95, 40], backgroundColor: ['#FF4F36', '#4ADE80'], borderRadius: 8 }]
+                },
+                type: 'bar'
+            }
+        };
+
+        // Section 2 Data
+        const qaDesc = [
+            `
+                <div class="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-xs font-black rounded-full mb-4 tracking-wide">STEP 1. 데이터 베이스라인</div>
+                <h3 class="text-2xl font-black text-surface-dark mb-4 leading-tight">라이브 데이터 기반<br>기준점 설정</h3>
+                <p class="text-gray-600 font-medium leading-relaxed">최근 3개월간 픽률 최상위권인 동급 캐릭터들의 <strong>평균 지표를 회색 선으로 도출</strong>합니다.<br><br>기획자의 직관에만 의존하지 않고, 스프레드시트를 활용해 명확한 수치 데이터를 기반으로 밸런스의 기준점을 확립합니다.</p>
+            `,
+            `
+                <div class="inline-block px-3 py-1 bg-red-100 text-red-600 text-xs font-black rounded-full mb-4 tracking-wide">STEP 2. 시뮬레이션</div>
+                <h3 class="text-2xl font-black text-surface-dark mb-4 leading-tight">기획 초안<br>인플레이션 감지</h3>
+                <p class="text-gray-600 font-medium leading-relaxed">초안 스탯을 전투 시뮬레이터에 입력합니다. 차트의 <strong><span class="text-red-500">붉은 선</span></strong>처럼 특정 지표가 평균을 과도하게 이탈하는 경우, 밸런스 붕괴 요소를 출시 전에 사전 검증하고 차단합니다.</p>
+            `,
+            `
+                <div class="inline-block px-3 py-1 bg-brand-100 text-brand-600 text-xs font-black rounded-full mb-4 tracking-wide">STEP 3. 최종 확정</div>
+                <h3 class="text-2xl font-black text-surface-dark mb-4 leading-tight">조건부 서식 검증 및<br>최종 스탯 조정</h3>
+                <p class="text-gray-600 font-medium leading-relaxed">허용 오차 범위 내로 수치를 정밀 교정합니다. <strong><span class="text-brand-500">주황 선</span></strong>처럼 기존 평균을 소폭 상회하여 신규 캐릭터의 매력은 살리되, 전체 게임 생태계를 유지하는 선으로 개발팀에 전달합니다.</p>
+            `
+        ];
+
+        // Matching 게임 개발사 vibrant colors for the radar chart
+        const radarDataSets = [
+            { label: '기존 평균 지표', data: [60,60,60,60,60], backgroundColor: 'rgba(203, 213, 225, 0.4)', borderColor: '#94A3B8', borderWidth: 2, pointBackgroundColor: '#94A3B8' },
+            { label: '기획 초안 (경고)', data: [95,45,90,70,40], backgroundColor: 'rgba(239, 68, 68, 0.2)', borderColor: '#EF4444', borderWidth: 2, pointBackgroundColor: '#EF4444' },
+            { label: '최종 조정안', data: [75,55,70,60,55], backgroundColor: 'rgba(255, 79, 54, 0.4)', borderColor: '#FF4F36', borderWidth: 3, pointBackgroundColor: '#FF4F36' }
+        ];
+
+        // Section 3 Data
+        const crisisDesc = [
+            `
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-gray-200">
+                    <div class="text-4xl">🔥</div>
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-black text-surface-dark mb-1">상황 발생 : 여론 악화 및 비즈니스 타격 평가</h3>
+                        <p class="text-sm font-bold text-brand-500">불만 동향 파악 및 매출 방어 최우선 대응</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 gap-4 font-medium text-surface-dark">
+                    <div class="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-4">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm font-black shrink-0">행동</span>
+                        <p class="text-gray-600 leading-relaxed text-sm">운영팀과 협력하여 커뮤니티 동향을 모니터링하고, 해당 불만이 결제 유저의 이탈 및 대량 환불 사태로 이어질 수 있는 징후인지 최우선으로 평가합니다.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-4">
+                        <span class="bg-brand-50 text-brand-600 px-3 py-1.5 rounded-lg text-sm font-black shrink-0">소통</span>
+                        <p class="text-gray-600 leading-relaxed text-sm">형식적인 사과문보다는 <strong class="text-brand-600">"현재 실제 전투 로그 데이터를 면밀히 분석 중입니다"</strong>라는 안내로 유저 이탈을 1차 방어하고 대처 과정의 신뢰를 확보합니다.</p>
+                    </div>
+                </div>
+            `,
+            `
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-gray-200">
+                    <div class="text-4xl">🔍</div>
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-black text-surface-dark mb-1">원인 분석 : 매출 타격 기반 개발팀 설득</h3>
+                        <p class="text-sm font-bold text-orange-500">"단순 누락인가, 매출에 직결되는 치명적 리스크인가?"</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 gap-4 font-medium text-surface-dark">
+                    <div class="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-4">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm font-black shrink-0">검증</span>
+                        <p class="text-gray-600 leading-relaxed text-sm">라이브 서버 로그를 교차 검증해 결함을 특정하는 동시에, 해당 오류가 <strong class="text-orange-600">핵심 주력 상품의 환불 요청 및 결제 유저 이탈에 미치는 영향</strong>을 즉각 산출합니다.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-4">
+                        <span class="bg-orange-50 text-orange-600 px-3 py-1.5 rounded-lg text-sm font-black shrink-0">소통</span>
+                        <p class="text-gray-600 leading-relaxed text-sm">"DPS가 15% 누락되었습니다" (단순 결함 보고, 설득력 부족) <br>→ <strong class="text-orange-600">"스킬 누락 오류로 인해 핵심 과금 유저층의 환불 요구가 폭증하고 있습니다. 당장의 일매출 타격 방어를 위해 최고 긴급도로 수정이 필요합니다."</strong> (매출 기반 설득)</p>
+                    </div>
+                </div>
+            `,
+            `
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-gray-200">
+                    <div class="text-4xl">📢</div>
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-black text-surface-dark mb-1">투명한 진화 및 매출 지표 방어</h3>
+                        <p class="text-sm font-bold text-green-500">경제 밸런스를 해치지 않는 전략적 보상과 잔존율 추적</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 gap-4 font-medium text-surface-dark">
+                    <div class="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-4">
+                        <span class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm font-black shrink-0">행동</span>
+                        <p class="text-gray-600 leading-relaxed text-sm">개발자 노트를 통해 이슈 발생 원인을 투명하게 공개하여 유저를 납득시키고, 핵심 결제 유저의 추가 이탈을 선제적으로 방어합니다.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-4">
+                        <span class="bg-green-50 text-green-600 px-3 py-1.5 rounded-lg text-sm font-black shrink-0">보상</span>
+                        <p class="text-gray-600 leading-relaxed text-sm">게임 내 경제 인플레이션을 유발하지 않는 선에서 보상안을 상신하며, <strong class="text-green-600">패치 후 환불 취소율 및 결제 잔존율 지표를 끝까지 추적</strong>하여 안정화를 확인합니다.</p>
+                    </div>
+                </div>
+            `
+        ];
+
+        // --- LOGIC & CHART RENDER ---
+        let chart1, chart2;
+        Chart.defaults.font.family = "'Pretendard', 'Noto Sans KR', sans-serif";
+        Chart.defaults.color = '#64748B';
+
+        function renderChart1(type, data) {
+            if(chart1) chart1.destroy();
+            const ctx = document.getElementById('chart-s1').getContext('2d');
+            let options = { responsive: true, maintainAspectRatio: false };
+            if(type === 'bar') {
+                options.scales = { y: { beginAtZero: true, max: 100, grid: { borderDash: [4, 4] } }};
+                options.plugins = { legend: { display: false } };
+            } else {
+                options.plugins = { legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20 } } };
+            }
+            chart1 = new Chart(ctx, { type: type, data: data, options: options });
+        }
+
+        function toggleS1(tab) {
+            // UI Toggle
+            const btnVoc = document.getElementById('btn-voc');
+            const btnSol = document.getElementById('btn-sol');
+            
+            if(tab === 'voc') {
+                btnVoc.classList.add('active', 'text-brand-500');
+                btnVoc.classList.remove('text-gray-500');
+                btnSol.classList.remove('active', 'text-brand-500');
+                btnSol.classList.add('text-gray-500');
+            } else {
+                btnSol.classList.add('active', 'text-brand-500');
+                btnSol.classList.remove('text-gray-500');
+                btnVoc.classList.remove('active', 'text-brand-500');
+                btnVoc.classList.add('text-gray-500');
+            }
+            
+            // Content Toggle
+            const textEl = document.getElementById('text-s1');
+            textEl.classList.remove('fade-in');
+            void textEl.offsetWidth; 
+            textEl.classList.add('fade-in');
+            textEl.innerHTML = s1Content[tab].html;
+            
+            document.getElementById('chart-title-1').innerText = s1Content[tab].title;
+            document.getElementById('chart-source-1').innerText = s1Content[tab].sourceText;
+
+            // Chart Update
+            renderChart1(s1Content[tab].type, s1Content[tab].chartData);
+        }
+
+        function initChart2() {
+            const ctx = document.getElementById('chart-s2').getContext('2d');
+            chart2 = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['단일 DPS', '생존력', '유틸리티', '시너지', '코스트(역방향)'],
+                    datasets: [radarDataSets[0]]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    scales: { 
+                        r: { 
+                            min: 0, max: 100, 
+                            ticks: {display: false},
+                            grid: { color: 'rgba(0,0,0,0.05)' },
+                            angleLines: { color: 'rgba(0,0,0,0.05)' },
+                            pointLabels: { font: { weight: 'bold' }, color: '#1E232E' }
+                        } 
+                    },
+                    plugins: { legend: { position: 'bottom', labels: { usePointStyle: true } } }
+                }
+            });
+        }
+
+        function runQA(step) {
+            // UI Toggle
+            for(let i=0; i<3; i++) {
+                const btn = document.getElementById(`qa-btn-${i}`);
+                if(i === step) {
+                    btn.classList.add('active');
+                    btn.classList.remove('inactive');
+                } else {
+                    btn.classList.remove('active');
+                    btn.classList.add('inactive');
+                }
+            }
+
+            // Text Update
+            const descEl = document.getElementById('qa-desc');
+            descEl.classList.remove('fade-in');
+            void descEl.offsetWidth;
+            descEl.classList.add('fade-in');
+            descEl.innerHTML = qaDesc[step];
+
+            // Chart Update
+            let activeSets = [radarDataSets[0]];
+            if(step === 1) activeSets.push(radarDataSets[1]);
+            if(step === 2) activeSets.push(radarDataSets[2]);
+            chart2.data.datasets = activeSets;
+            chart2.update();
+        }
+
+        function showCrisis(step) {
+            const activeColors = ['bg-brand-500', 'bg-orange-500', 'bg-green-500'];
+            const badgeTexts = ['+2H', '+12H', '+24H'];
+            
+            // Progress bar
+            const progress = document.getElementById('timeline-progress');
+            if(step === 1) progress.style.width = '0%';
+            if(step === 2) progress.style.width = '50%';
+            if(step === 3) progress.style.width = '100%';
+
+            for(let i=1; i<=3; i++) {
+                const btn = document.getElementById(`cri-btn-${i}`);
+                const emoji = i === 1 ? '🔥' : i === 2 ? '🔍' : '📢';
+                
+                if(i === step) {
+                    btn.className = `transition-all duration-200 w-16 h-16 rounded-full font-bold text-white shadow-lg border-4 border-white flex items-center justify-center relative ${activeColors[i-1]} scale-110 z-10`;
+                    btn.innerHTML = `<span class="absolute -top-8 text-xs text-${i===1?'brand-600':i===2?'orange-600':'green-600'} whitespace-nowrap bg-white px-3 py-1 rounded-full font-bold shadow-sm">발생 ${badgeTexts[i-1]}</span>${emoji}`;
+                } else {
+                    btn.className = `transition-all duration-200 w-16 h-16 rounded-full font-bold text-white shadow-md border-4 border-white flex items-center justify-center relative bg-gray-300 hover:bg-gray-400 z-0`;
+                    btn.innerHTML = `<span class="absolute -top-8 text-xs text-gray-500 whitespace-nowrap bg-white px-3 py-1 rounded-full font-bold shadow-sm">발생 ${badgeTexts[i-1]}</span>${emoji}`;
+                }
+            }
+
+            // Text Update
+            const descEl = document.getElementById('crisis-desc');
+            descEl.classList.remove('fade-in');
+            void descEl.offsetWidth;
+            descEl.classList.add('fade-in');
+            descEl.innerHTML = crisisDesc[step-1];
+            
+            const borderColors = ['border-brand-200', 'border-orange-200', 'border-green-200'];
+            const bgColors = ['bg-brand-50', 'bg-orange-50', 'bg-green-50'];
+            descEl.className = `${bgColors[step-1]} border-2 ${borderColors[step-1]} rounded-3xl p-6 md:p-8 min-h-[220px] fade-in max-w-3xl mx-auto shadow-sm`;
+        }
+
+        // INIT
+        window.onload = () => {
+            toggleS1('voc');
+            initChart2();
+            runQA(0);
+            showCrisis(1);
+        };
+    </script>
+</body>
+</html>

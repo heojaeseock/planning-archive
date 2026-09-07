@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>허재석 작업 기록 | 서든어택 랭크전 시스템 기획</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <style>
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            background-color: #f8fafc; /* 밝은 배경 */
+            color: #334155; 
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            word-break: keep-all; 
+        }
+        
+        .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); }
+        
+        .content-panel {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+        }
+
+        .animate-pop { animation: pop 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+        @keyframes pop {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .tab-btn {
+            cursor: pointer;
+            transition: all 0.2s;
+            outline: none;
+            border-bottom-width: 3px;
+        }
+        .tab-btn.active {
+            color: #0284c7;
+            border-color: #0ea5e9;
+            background-color: #ffffff;
+        }
+        .tab-btn:hover:not(.active) {
+            background-color: #f1f5f9;
+        }
+
+        .tab-content { display: none; opacity: 0; transition: opacity 0.3s ease; }
+        .tab-content.active { display: block; opacity: 1; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* 가상 UI 전용 스타일 */
+        .mockup-ui {
+            background: #0f172a; /* UI 내부는 어두운 테마 유지 (게임 감성) */
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #1e293b;
+            color: white;
+            font-size: 11px;
+        }
+
+        .status-bar {
+            height: 6px;
+            background: #334155;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .status-fill {
+            height: 100%;
+            background: #0ea5e9;
+            box-shadow: 0 0 8px #0ea5e9;
+        }
+
+        @keyframes pulse-soft {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .animate-pulse-soft { animation: pulse-soft 2s infinite; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="min-h-screen flex flex-col items-center py-8 md:py-12 px-4 md:px-0">
+        <!-- 메인 컨테이너 -->
+        <div class="max-w-5xl w-full bg-white rounded-[40px] overflow-hidden card-shadow border border-slate-200 animate-pop">
+            
+            <!-- 상단 헤더 -->
+            <div class="relative pt-12 pb-10 px-8 md:px-12 bg-gradient-to-br from-blue-50 to-sky-50 overflow-hidden border-b border-slate-100">
+                <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div>
+                        <p class="text-sky-600 font-black tracking-widest text-xs mb-3 flex items-center gap-2 uppercase">
+                            <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
+                            RANKED MATCH SYSTEM ANALYSIS
+                        </p>
+                        <h1 class="text-3xl md:text-5xl font-black leading-tight text-slate-900 mb-2">
+                            서든어택 랭크전<br>
+                            시스템 분석 및 개선안
+                        </h1>
+                        <div class="flex flex-wrap gap-4 mt-6 text-slate-500 text-sm font-bold">
+                            <span class="bg-white/80 px-3 py-1 rounded-full border border-slate-200 shadow-sm">📅 2024.01.12 ~ 02.25</span>
+                            <span class="bg-white/80 px-3 py-1 rounded-full border border-slate-200 shadow-sm">👤 기획: 허재석 (100%)</span>
+                        </div>
+                    </div>
+                    <!-- 택티컬한 라이플 아이콘으로 정교하게 교체 -->
+                    <div class="w-24 h-24 rounded-3xl bg-slate-900 border-b-4 border-sky-500 flex items-center justify-center shadow-xl shrink-0">
+                        <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <!-- Sniper/Assault Rifle Silhouette -->
+                            <path d="M2 13h16l1-1h1.5l0.5 0.5v1l-0.5 0.5h-1.5l-1-1h-15" fill="rgba(56, 189, 248, 0.1)"/>
+                            <!-- Barrel Detail -->
+                            <path d="M18 12.5h4" />
+                            <!-- Scope -->
+                            <path d="M8 12l0.5-2h5l0.5 2" />
+                            <path d="M10 10V9h2v1" />
+                            <!-- Stock -->
+                            <path d="M4 13l-2 3h3.5l0.5-3" />
+                            <!-- Magazine -->
+                            <path d="M11 13l0.5 3h1.5l-0.5-3" />
+                            <!-- Grip -->
+                            <path d="M8 13l-0.8 3h1.5" />
+                            <!-- Trigger Guard -->
+                            <circle cx="9.5" cy="13.5" r="0.8" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 네비게이션 탭 -->
+            <div class="flex border-b border-slate-200 bg-slate-50/50 sticky top-0 z-20 backdrop-blur-md">
+                <button onclick="openTab(event, 'analysis')" class="tab-btn active flex-1 py-5 text-sm font-bold text-slate-500 border-transparent" id="defaultOpen">📊 1. 랭크전 현황 분석</button>
+                <button onclick="openTab(event, 'proposal')" class="tab-btn flex-1 py-5 text-sm font-bold text-slate-500 border-transparent">💡 2. 신규 시스템 기획</button>
+            </div>
+
+            <!-- 탭 1: 현황 및 문제점 -->
+            <div id="analysis" class="tab-content active p-6 md:p-10 space-y-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <!-- 문제점 리스트 -->
+                    <div class="space-y-8">
+                        <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                            <span class="text-sky-500">#</span> 현황 및 주요 페인포인트
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                                <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">🚨 기술적 결함으로 인한 이탈</h4>
+                                <p class="text-sm text-slate-500 leading-relaxed">
+                                    데이터 분석 결과, <strong>서버 튕김 및 입장 렉(41%)</strong>이 가장 심각한 문제로 나타났습니다. 이는 유저의 의도와 상관없는 탈주 처리를 유발해 강한 부정적 경험을 줍니다.
+                                </p>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                                <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">⚔️ 빠른 템포의 경쟁력 활용</h4>
+                                <p class="text-sm text-slate-500 leading-relaxed">
+                                    서든어택의 강점인 <strong>짧은 플레이 타임과 직관성</strong>을 보조할 수 있는 시스템이 필요합니다. 불필요한 마찰을 줄이고 게임 몰입도를 높이는 방향이 핵심입니다.
+                                </p>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                                <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">🎁 지속적 동기 부여 장치 부재</h4>
+                                <p class="text-sm text-slate-500 leading-relaxed">
+                                    랭크전 전용 <strong>희소성 있는 보상 체계</strong>가 부족하여, 상위 티어 달성 후 유저들이 플레이를 지속해야 할 명분이 부족한 상태입니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 수치 시각화 -->
+                    <div class="space-y-8">
+                        <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                            <span class="text-sky-500">#</span> 데이터 분석 대시보드
+                        </h3>
+                        <div class="content-panel p-8 space-y-8 shadow-sm">
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">랭크전 주요 버그 발생 현황 (Total 100%)</p>
+                                <div class="space-y-5">
+                                    <div>
+                                        <div class="flex justify-between text-xs font-bold mb-2"><span>서버/입장 렉 (탈주)</span><span class="text-sky-600">41%</span></div>
+                                        <div class="status-bar"><div class="status-fill w-[41%]"></div></div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between text-xs font-bold mb-2"><span>보이스톡 시스템 오류</span><span class="text-sky-600">15%</span></div>
+                                        <div class="status-bar"><div class="status-fill w-[15%]"></div></div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between text-xs font-bold mb-2"><span>불법 프로그램 의심</span><span class="text-red-500">13%</span></div>
+                                        <div class="status-bar"><div class="status-fill w-[13%] bg-red-400 shadow-none"></div></div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between text-xs font-bold mb-2"><span>기타 (UX 불편 및 기타 오류)</span><span class="text-slate-400">31%</span></div>
+                                        <div class="status-bar"><div class="status-fill w-[31%] bg-slate-200 shadow-none"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 text-[11px] text-slate-500 leading-relaxed text-center font-medium">
+                                "기술적 결함 방어와 유저 명예욕 자극을 위한<br>시스템적 보완이 최우선 과제입니다."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 탭 2: 신규 시스템 제안 -->
+            <div id="proposal" class="tab-content p-6 md:p-10 space-y-20">
+                
+                <!-- 제안 1: 리플레이 -->
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="flex-1 space-y-5">
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 text-[10px] font-black rounded-full uppercase">Proposal 01</span>
+                        <h4 class="text-2xl font-bold text-slate-900 leading-tight">리플레이 시스템 도입</h4>
+                        <div class="space-y-4">
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                <strong>[기획 사유]</strong> 핵 사용자에 대한 증거 수집이 어렵고, 본인의 플레이를 복기하여 실력을 향상시킬 수 있는 내재된 도구가 부재합니다.
+                            </p>
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                <strong>[세부 내용]</strong> 최근 5경기의 데이터를 자동 저장하며, 의심 유저의 시점으로 즉시 전환하여 클립을 추출하고 신고할 수 있는 기능을 제공합니다.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 가상 리플레이 UI -->
+                    <div class="w-full lg:w-1/2 mockup-ui p-6 h-[260px] flex flex-col">
+                        <div class="flex justify-between items-center mb-4 border-b border-slate-800 pb-2">
+                            <span class="font-bold">최근 경기 리플레이</span>
+                            <span class="text-[10px] text-slate-500 italic">Recent 5 Matches</span>
+                        </div>
+                        <div class="space-y-2 flex-1">
+                            <div class="bg-slate-800/50 p-2 rounded flex justify-between items-center border border-slate-700">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-2 h-2 bg-blue-400 rounded-full"></span>
+                                    <span>제3보급창고 | 승리</span>
+                                </div>
+                                <div class="flex gap-1">
+                                    <button class="bg-sky-600 px-2 py-1 rounded text-[9px] font-bold">다시보기</button>
+                                    <button class="bg-slate-600 px-2 py-1 rounded text-[9px] font-bold">추출</button>
+                                </div>
+                            </div>
+                            <div class="bg-slate-800/50 p-2 rounded flex justify-between items-center border border-slate-700 opacity-60">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-2 h-2 bg-red-400 rounded-full"></span>
+                                    <span>드래곤로드 | 패배</span>
+                                </div>
+                                <button class="bg-slate-600 px-2 py-1 rounded text-[9px] font-bold">다시보기</button>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-[9px] text-slate-500 text-center uppercase tracking-widest">Replay Data Storage: 4/5 Used</div>
+                    </div>
+                </div>
+
+                <!-- 제안 2: POTG -->
+                <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
+                    <div class="flex-1 space-y-5">
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 text-[10px] font-black rounded-full uppercase">Proposal 02</span>
+                        <h4 class="text-2xl font-bold text-slate-900 leading-tight">랭크전 POTG 시스템</h4>
+                        <div class="space-y-4">
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                <strong>[기획 사유]</strong> 유저들의 명장면(슈퍼 플레이)이 휘발되는 것을 방지하고, 게임 종료 후 유저들의 성취감을 극대화할 장치가 필요합니다.
+                            </p>
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                <strong>[세부 내용]</strong> 멀티 킬 및 클러치 상황을 자동 감지하여 하이라이트를 생성합니다. 경기 종료 시 모든 참가자에게 해당 영상을 노출해 명예욕을 자극합니다.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 가상 POTG 연출 UI -->
+                    <div class="w-full lg:w-1/2 mockup-ui h-[260px] relative flex flex-col items-center justify-center bg-gradient-to-tr from-slate-900 to-indigo-950">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(14,165,233,0.15)_0%,transparent_70%)]"></div>
+                        <h5 class="text-2xl font-black italic tracking-tighter text-white z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">PLAY OF THE GAME</h5>
+                        <div class="mt-4 flex flex-col items-center z-10">
+                            <span class="text-sky-400 font-bold text-xs uppercase tracking-widest">Heo_Jae_Seok</span>
+                            <span class="text-white text-[10px] mt-1 opacity-80">3K & C4 Defuse</span>
+                        </div>
+                        <div class="absolute bottom-4 right-4 flex gap-2">
+                            <div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-[10px]">💾</div>
+                            <div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-[10px]">🔗</div>
+                        </div>
+                        <div class="absolute top-4 left-4 text-[8px] font-bold text-white/30 uppercase">SUDDEN ATTACK RANK MATCH</div>
+                    </div>
+                </div>
+
+                <!-- 제안 3: 사후 채팅 -->
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="flex-1 space-y-5">
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 text-[10px] font-black rounded-full uppercase">Proposal 03</span>
+                        <h4 class="text-2xl font-bold text-slate-900 leading-tight">사후 채팅 활성화 시스템</h4>
+                        <div class="space-y-4">
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                <strong>[기획 사유]</strong> 보이스톡의 기술적 오류가 발생할 경우 팀원 간 브리핑이 완전히 단절되는 문제를 보완해야 합니다.
+                            </p>
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                <strong>[세부 내용]</strong> 사망한 유저가 아군에게만 텍스트 브리핑을 전달할 수 있는 전용 채널을 신설합니다. 악용 방지를 위해 생존자는 팀원의 사후 채팅만 수신하도록 제한합니다.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 가상 채팅 UI -->
+                    <div class="w-full lg:w-1/2 mockup-ui p-6 h-[260px] flex flex-col bg-slate-900">
+                        <div class="flex-1 overflow-y-auto space-y-3 font-medium">
+                            <div class="flex gap-2">
+                                <span class="text-blue-400 font-bold">[생존] 유저A :</span>
+                                <span class="text-white opacity-90">B구역 진입함</span>
+                            </div>
+                            <div class="flex gap-2 bg-slate-800/30 p-2 rounded-lg border-l-2 border-red-500">
+                                <span class="text-red-400 font-black uppercase text-[9px]">[DEAD]</span>
+                                <span class="text-white font-bold">Heo_JS :</span>
+                                <span class="text-sky-300 italic">"컨테이너 뒤에 한 명 숨어있어요!"</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="text-blue-400 font-bold">[생존] 유저C :</span>
+                                <span class="text-white opacity-90">확인, 수류탄 던짐</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-800 flex items-center gap-2">
+                            <span class="text-[9px] bg-red-600 px-1.5 py-0.5 rounded font-bold">사후 채널</span>
+                            <div class="flex-1 h-6 bg-slate-800 rounded border border-slate-700 px-2 flex items-center text-[10px] text-slate-500">브리핑을 입력하세요...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 제안 4: 맵 밴 -->
+                <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
+                    <div class="flex-1 space-y-5">
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 text-[10px] font-black rounded-full uppercase">Proposal 04</span>
+                        <h4 class="text-2xl font-bold text-slate-900 leading-tight">랭크전 맵 밴(Map Ban) 기능</h4>
+                        <div class="space-y-4">
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                <strong>[기획 사유]</strong> 특정 맵 편중이나 비선호 맵 매칭 시 발생하는 매칭 이탈(닷지) 및 유저 불만을 최소화해야 합니다.
+                            </p>
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                <strong>[세부 내용]</strong> 매칭 성공 시 무작위 3개 맵 중 각 팀 투표를 통해 1개를 밴 처리합니다. 전략적 선택의 재미를 사전 단계부터 제공합니다.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 가상 맵 밴 UI -->
+                    <div class="w-full lg:w-1/2 mockup-ui p-6 h-[260px] flex flex-col">
+                        <p class="text-center font-bold mb-4">제외할 맵을 선택하세요 (0:08)</p>
+                        <div class="flex-1 grid grid-cols-3 gap-3">
+                            <div class="bg-slate-800 rounded-xl border border-slate-700 flex flex-col items-center justify-center p-2 cursor-pointer hover:border-sky-500 transition-all">
+                                <span class="text-2xl mb-2">🏢</span>
+                                <span class="text-[9px] font-bold">제3보급창고</span>
+                                <span class="text-[8px] text-slate-500 mt-1">21%</span>
+                            </div>
+                            <div class="bg-red-900/20 rounded-xl border-2 border-red-600 flex flex-col items-center justify-center p-2 relative overflow-hidden shadow-lg">
+                                <div class="absolute inset-0 bg-red-600/10 flex items-center justify-center z-10">
+                                    <span class="text-red-600 font-black text-2xl rotate-12 opacity-80 uppercase tracking-tighter">Banned</span>
+                                </div>
+                                <span class="text-2xl mb-2 grayscale opacity-40">🚂</span>
+                                <span class="text-[9px] font-bold text-slate-500">화이트스콜</span>
+                                <span class="text-[8px] text-red-500 mt-1 font-black">64%</span>
+                            </div>
+                            <div class="bg-slate-800 rounded-xl border border-slate-700 flex flex-col items-center justify-center p-2 opacity-60">
+                                <span class="text-2xl mb-2">🏔️</span>
+                                <span class="text-[9px] font-bold">프로방스</span>
+                                <span class="text-[8px] text-slate-500 mt-1">15%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 제안 5: 보상 시스템 -->
+                <div class="space-y-10">
+                    <div class="max-w-2xl mx-auto text-center space-y-4">
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 text-[10px] font-black rounded-full uppercase">Proposal 05</span>
+                        <h4 class="text-2xl font-bold text-slate-900 leading-tight">티어별 전용 보상 체계 수립</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed">
+                            시즌 최종 달성 티어에 따라 경험치, 포인트 외에도 <strong>넥슨캐시 및 SP</strong>를 차등 지급하여<br class="hidden md:block"> 최상위 티어 유지에 대한 강력한 메리트를 제공합니다.
+                        </p>
+                    </div>
+                    <!-- 가상 보상 리스트 UI (티어 순서 변경) -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-white p-5 rounded-3xl border-2 border-sky-400 shadow-md flex flex-col items-center text-center">
+                            <span class="text-3xl mb-3">💎</span>
+                            <h5 class="text-xs font-black text-slate-900 mb-2 uppercase tracking-tighter">High Ranker</h5>
+                            <p class="text-[10px] text-sky-600 font-bold leading-tight">100,000 SP<br>30,000 Cash</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex flex-col items-center text-center">
+                            <span class="text-3xl mb-3">🏅</span>
+                            <h5 class="text-xs font-black text-slate-900 mb-2 uppercase tracking-tighter">Ranker</h5>
+                            <p class="text-[10px] text-slate-600 font-bold leading-tight">50,000 SP<br>10,000 Cash</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex flex-col items-center text-center">
+                            <span class="text-3xl mb-3">🥈</span>
+                            <h5 class="text-xs font-black text-slate-900 mb-2 uppercase tracking-tighter">Legend</h5>
+                            <p class="text-[10px] text-slate-500 font-bold leading-tight">30,000 SP<br>5,000 Cash</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex flex-col items-center text-center">
+                            <span class="text-3xl mb-3">🥉</span>
+                            <h5 class="text-xs font-black text-slate-900 mb-2 uppercase tracking-tighter">Grand Master</h5>
+                            <p class="text-[10px] text-slate-500 font-bold leading-tight">15,000 SP<br>3,000 Cash</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 푸터 -->
+            <div class="p-10 bg-slate-950 border-t border-slate-900 text-center">
+                <p class="text-[10px] font-bold text-slate-600 uppercase tracking-[0.4em] mb-3">Sudden Attack Rank Match Redesign Project</p>
+                <p class="text-xs text-slate-500 font-medium">서든어택 시스템 분석 및 기획 작업 기록 &copy; 허재석</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            evt.preventDefault();
+            var tabcontent = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabcontent.length; i++) { tabcontent[i].classList.remove("active"); }
+            var tablinks = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

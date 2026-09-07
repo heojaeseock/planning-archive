@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰티 브랜드 총무·경영지원 업무 기획 리포트</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        
+        /* 기본 설정 및 스크롤 여백 */
+        html { 
+            scroll-behavior: smooth; 
+            scroll-padding-top: 80px; 
+        }
+        
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #ffffff;
+            color: #37352f;
+            line-height: 1.75;
+            /* 한국어 줄바꿈 최적화 */
+            word-break: keep-all; 
+            overflow-wrap: break-word;
+        }
+        
+        /* 노션 스타일 유틸리티 */
+        .max-w-notion { max-width: 900px; }
+        .bg-notion-hover:hover { background-color: #efefec; }
+        .bg-notion-gray { background-color: #f1f1ef; }
+        .text-notion-gray { color: #787774; }
+        .border-notion { border-color: #e9e9e7; }
+        
+        /* 차트 컨테이너 */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            height: 300px;
+            max-height: 400px;
+            margin: 0 auto;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 350px; }
+        }
+
+        /* 커스텀 스크롤바 */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #d3d1cb; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #aeaca6; }
+
+        /* 버튼 직관성 강화 스타일 */
+        .btn-primary {
+            background-color: #2563eb;
+            color: white;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+        }
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+            transform: translateY(-1px);
+        }
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .accordion-btn {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            transition: all 0.2s;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        .accordion-btn:hover {
+            background-color: #f8fafc;
+            border-color: #cbd5e1;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-[#cce2ff]">
+
+    <!-- 상단 네비게이션 바 -->
+    <nav class="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md border-b border-notion px-6 py-3 flex justify-between items-center h-[70px]">
+        <div class="flex items-center gap-2">
+            <span class="text-xl">📄</span>
+            <span class="font-bold text-sm truncate md:text-base text-gray-800">기획 리포트: 게임 운영 역량을 총무 직무로 치환하다</span>
+        </div>
+    </nav>
+
+    <div class="flex flex-col md:flex-row max-w-7xl mx-auto min-h-screen">
+        
+        <!-- 왼쪽 목차 사이드바 -->
+        <aside class="hidden md:block w-64 shrink-0 p-6 sticky top-[70px] h-[calc(100vh-70px)] overflow-y-auto border-r border-notion">
+            <div class="text-xs font-bold text-notion-gray mb-5 tracking-wider">목차</div>
+            <ul class="space-y-2 text-sm">
+                <li><a href="#intro" class="toc-link block px-3 py-2.5 rounded bg-notion-hover text-black font-bold transition-colors">기획 리포트 개요</a></li>
+                <li><a href="#section1" class="toc-link block px-3 py-2.5 rounded hover:bg-notion-hover text-notion-gray transition-colors">1. 배경 및 문제 정의</a></li>
+                <li><a href="#section2" class="toc-link block px-3 py-2.5 rounded hover:bg-notion-hover text-notion-gray transition-colors">2. 자산 데이터 자동화</a></li>
+                <li><a href="#section3" class="toc-link block px-3 py-2.5 rounded hover:bg-notion-hover text-notion-gray transition-colors">3. 사내 헬프데스크 도입</a></li>
+                <li><a href="#section4" class="toc-link block px-3 py-2.5 rounded hover:bg-notion-hover text-notion-gray transition-colors">4. 위기 대응 체계 구축</a></li>
+            </ul>
+        </aside>
+
+        <!-- 메인 콘텐츠 영역 -->
+        <main class="flex-1 p-6 md:p-12 lg:p-16 max-w-notion w-full">
+            
+            <!-- 개요 -->
+            <section id="intro" class="mb-20">
+                <div class="text-6xl mb-6">💡</div>
+                <h1 class="text-4xl font-extrabold mb-5 tracking-tight text-gray-900">뷰티 브랜드 기업 총무 관리 체계 고도화 제안서</h1>
+                <p class="text-xl text-gray-500 mb-8 font-medium">대규모 게임 라이브 운영 프로세스의 경영분석 직무 적용 방안</p>
+                <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-gray-600 shadow-sm">
+                    <p class="text-base text-gray-800 leading-relaxed">
+                        <strong>제안 목적:</strong><br>
+                        1년 5개월간 대형 게임 서비스를 운영하며 체득한 <strong>'데이터 자동화'</strong>와 <strong>'위기 대응 시스템화'</strong> 역량을 뷰티 브랜드 기업의 사내 자산 및 인프라 관리에 적용하고자 합니다. 
+                        <br><br>
+                        하드웨어 중심의 전통적인 총무 업무를 넘어, <strong>자동화된 데이터 관리와 AI 기반의 1차 대응 시스템</strong>을 구축하겠습니다. 이를 통해 단순 반복 업무의 병목을 해결하고, 자산 운용 효율화 및 비용 최적화라는 '고부가가치 업무'에 집중할 수 있는 환경을 제안합니다.
+                    </p>
+                </div>
+            </section>
+
+            <hr class="border-notion my-12">
+
+            <!-- 섹션 1 -->
+            <section id="section1" class="mb-20 scroll-mt-24">
+                <h2 class="text-2xl font-extrabold mb-8 flex items-center gap-3 text-gray-900">
+                    <span class="text-gray-400 font-normal">1.</span> 리서치 배경 및 문제 정의
+                </h2>
+                
+                <h3 class="text-lg font-bold mb-4 text-gray-800">조직 규모 확장에 따른 관리의 복잡도 증가</h3>
+                <p class="mb-8 text-gray-700">
+                    뷰티 브랜드 기업은 연 매출 1조 원 돌파를 목표로 초고속 성장을 이룩하며 임직원 수가 가파르게 증가하고 있습니다. 
+                    조직이 스케일업(Scale-up)하는 단계에서는 기존의 수작업 방식이 한계에 부딪히며, 경영지원 파트에 다음과 같은 <strong>두 가지 주요 병목 현상</strong>이 발생합니다.
+                </p>
+
+                <!-- 인터랙티브 차트 -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-7 mb-8 shadow-sm">
+                    <h4 class="text-sm font-bold text-gray-500 mb-6 text-center">📈 인원 증가와 단순 문의 부하량의 상관관계</h4>
+                    <div class="chart-container">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div class="bg-gray-50 border border-gray-100 p-7 rounded-2xl">
+                        <div class="text-3xl mb-4">💻</div>
+                        <h4 class="font-bold mb-3 text-lg text-gray-900">사내 자산 추적의 어려움</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">수많은 임직원의 입/퇴사 및 부서 이동에 따른 PC, 고가 소프트웨어의 지급 현황을 수작업으로 관리할 경우, 휴먼 에러로 인한 기록 누락과 불필요한 라이선스 유지 비용 등 직접적인 손실이 발생합니다.</p>
+                    </div>
+                    <div class="bg-gray-50 border border-gray-100 p-7 rounded-2xl">
+                        <div class="text-3xl mb-4">🗣️</div>
+                        <h4 class="font-bold mb-3 text-lg text-gray-900">IT 문의 대응의 비효율성</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed">"프로그램 권한이 없다고 뜹니다", "복지 신청은 어디서 하나요?"와 같은 단순 반복 문의가 쏟아집니다. 담당자가 일일이 응대하는 것은 핵심 기획 업무의 몰입을 방해하는 가장 큰 요인입니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 섹션 2 -->
+            <section id="section2" class="mb-20 scroll-mt-24">
+                <h2 class="text-2xl font-extrabold mb-8 flex items-center gap-3 text-gray-900">
+                    <span class="text-gray-400 font-normal">2.</span> [전략 1] 자산 및 보안 데이터 자동화
+                </h2>
+                
+                <div class="bg-blue-50/50 border border-blue-200 rounded-2xl p-7 mb-8">
+                    <h3 class="text-lg font-bold text-blue-900 mb-3">📊 강점 적용: 대규모 데이터 정제 및 엑셀 자동화</h3>
+                    <p class="text-sm text-blue-800 leading-relaxed">
+                        수만 건의 유저 결제 정보 및 로그 데이터를 다루던 게임 운영 경험은, 사내 임직원의 <strong>'보안 서약서 및 자산 데이터'를 다루는 꼼꼼함</strong>과 본질적으로 같습니다. 수작업에 의존하던 자산 대장을 엑셀 복합 함수 기반의 자동 매핑 시스템으로 탈바꿈시킵니다.
+                    </p>
+                </div>
+
+                <ul class="list-disc pl-6 mb-10 space-y-4 text-gray-700">
+                    <li>
+                        <strong class="text-gray-900">데이터 통합 자동화:</strong> 
+                        인사팀의 입퇴사자 명단과 총무팀의 자산 대장을 브이룩업(VLOOKUP)과 인덱스 매치(INDEX/MATCH) 함수로 연동하여 하나의 마스터 문서로 구축합니다.
+                    </li>
+                    <li>
+                        <strong class="text-gray-900">시각적 알림 및 비용 방어:</strong> 
+                        조건부 서식을 적용하여 고가의 라이선스 만료 7일 전, 미반납 자산 등을 붉은색으로 자동 강조하여 불필요한 결제를 사전 차단합니다.
+                    </li>
+                    <li>
+                        <strong class="text-gray-900">오류 원천 차단:</strong> 
+                        데이터 유효성 검사를 통해 자산 일련번호의 중복 입력이나 오타를 시스템적으로 방지하여 데이터 신뢰도를 100%로 유지합니다.
+                    </li>
+                </ul>
+
+                <!-- 데이터 시각화 (버튼) -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                    <div class="bg-gray-50 px-6 py-4 border-b border-gray-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <span class="font-bold text-gray-800">기대 효과: 업무 시간 절감 시뮬레이션</span>
+                        <button id="toggleStatsBtn" class="btn-primary px-5 py-2.5 rounded-lg text-sm font-bold flex items-center gap-2 w-full sm:w-auto justify-center">
+                            <span>🔄</span> 개선 후 데이터 보기
+                        </button>
+                    </div>
+                    <div class="p-8 flex flex-col md:flex-row justify-around items-center gap-8 text-center bg-white" id="statsContainer">
+                        <div class="transition-all duration-500 flex-1 w-full">
+                            <div class="text-sm font-bold text-gray-400 mb-3">데이터 취합 소요 시간</div>
+                            <div class="text-4xl font-black text-gray-800" id="statTime">4시간 / 일</div>
+                            <div class="text-sm mt-4 text-red-500 font-bold bg-red-50 py-1.5 px-3 rounded-full inline-block" id="statTimeDesc">수기 대조 및 타이핑 진행</div>
+                        </div>
+                        <div class="text-4xl text-gray-200 hidden md:block">➔</div>
+                        <div class="transition-all duration-500 flex-1 w-full border-t border-gray-100 pt-8 md:border-t-0 md:pt-0">
+                            <div class="text-sm font-bold text-gray-400 mb-3">데이터 오류 발생률</div>
+                            <div class="text-4xl font-black text-gray-800" id="statError">5% 내외</div>
+                            <div class="text-sm mt-4 text-red-500 font-bold bg-red-50 py-1.5 px-3 rounded-full inline-block" id="statErrorDesc">오기재 및 누락 상시 발생</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 섹션 3 -->
+            <section id="section3" class="mb-20 scroll-mt-24">
+                <h2 class="text-2xl font-extrabold mb-8 flex items-center gap-3 text-gray-900">
+                    <span class="text-gray-400 font-normal">3.</span> [전략 2] 업무 분리를 위한 사내 헬프데스크 도입
+                </h2>
+
+                <div class="bg-purple-50/50 border border-purple-200 rounded-2xl p-7 mb-8">
+                    <h3 class="text-lg font-bold text-purple-900 mb-3">🤖 약점 극복: 시스템을 통한 효율적인 1차 대응</h3>
+                    <p class="text-sm text-purple-800 leading-relaxed">
+                        모든 PC 하드웨어 장애를 내부에서 직접 고치는 것은 효율적이지 않습니다. 총 문의의 80%를 차지하는 <strong>단순 설정 및 권한 문의는 AI 챗봇이 즉각 해결</strong>하고, 20%의 물리적 고장은 전담 파트너사로 자동 연결되도록 <strong>대응 단계를 분리(Tiering)</strong>합니다.
+                    </p>
+                </div>
+
+                <p class="mb-8 text-gray-700">
+                    복잡한 신규 게임 시스템과 콘텐츠를 유저(Player)가 직관적으로 이해할 수 있도록 <strong>'사용자 맞춤형 콘텐츠 가이드'를 기획했던 노하우</strong>를 사내로 가져옵니다. 사내망 설정법과 복잡한 복지 신청 절차를 임직원 누구나 따라 하기 쉽게 규격화하고, 이를 사내 메신저 연동 AI에 학습시켜 총무팀의 단순 응대 리소스를 획기적으로 감축합니다.
+                </p>
+
+                <!-- 아코디언 버튼 -->
+                <div class="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm">
+                    <div class="bg-gray-50 px-6 py-5 border-b border-gray-200 font-bold text-gray-800 flex items-center gap-2">
+                        <span>📱</span> 사내 AI 챗봇 자동 응대 시나리오 (예시)
+                    </div>
+                    <div class="p-5 space-y-4">
+                        
+                        <!-- 아코디언 항목 1 -->
+                        <div class="border border-gray-200 rounded-xl overflow-hidden">
+                            <button class="accordion-btn w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none" onclick="toggleAccordion('acc1')">
+                                <div class="flex items-center gap-4">
+                                    <span class="bg-gray-100 text-gray-600 px-3 py-1.5 rounded-md text-xs font-bold shrink-0">권한 문의</span>
+                                    <span class="font-bold text-gray-800">어플리케이션 설치 시 '관리자 권한'이 필요하다고 뜹니다.</span>
+                                </div>
+                                <span id="icon-acc1" class="text-blue-600 text-2xl font-light transition-transform duration-300">＋</span>
+                            </button>
+                            <div id="content-acc1" class="hidden px-6 py-5 text-sm bg-blue-50/30 border-t border-gray-100">
+                                <div class="flex gap-4">
+                                    <span class="text-3xl">🤖</span>
+                                    <div class="space-y-3 text-gray-700 mt-1">
+                                        <p class="font-bold text-blue-800">1차 해결책을 안내해 드립니다.</p>
+                                        <p>1. 사내 포털 접속 후 우측 상단의 <strong>[임시 권한 부여]</strong> 버튼을 클릭하세요.</p>
+                                        <p>2. 사유 입력 후 10분간 관리자 권한이 자동 부여됩니다.</p>
+                                        <div class="bg-white border border-gray-200 p-4 rounded-lg mt-3 flex items-start gap-3">
+                                            <span class="text-red-500 font-bold mt-0.5">※</span>
+                                            <p class="text-gray-600">위 방법으로 해결되지 않거나 기기 고장인 경우, 아래 버튼을 눌러 <strong>[IT 유지보수 파트너사]</strong>에 방문 수리를 접수해 주세요.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 아코디언 항목 2 -->
+                        <div class="border border-gray-200 rounded-xl overflow-hidden mt-4">
+                            <button class="accordion-btn w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none" onclick="toggleAccordion('acc2')">
+                                <div class="flex items-center gap-4">
+                                    <span class="bg-gray-100 text-gray-600 px-3 py-1.5 rounded-md text-xs font-bold shrink-0">소프트웨어</span>
+                                    <span class="font-bold text-gray-800">유료 디자인 프로그램 신청 프로세스를 알려주세요.</span>
+                                </div>
+                                <span id="icon-acc2" class="text-blue-600 text-2xl font-light transition-transform duration-300">＋</span>
+                            </button>
+                            <div id="content-acc2" class="hidden px-6 py-5 text-sm bg-blue-50/30 border-t border-gray-100">
+                                <div class="flex gap-4">
+                                    <span class="text-3xl">🤖</span>
+                                    <div class="space-y-3 text-gray-700 mt-1">
+                                        <p class="font-bold text-blue-800">AI 헬프데스크 안내입니다.</p>
+                                        <p>1. 전자결재 시스템에서 [소프트웨어 신청서]를 작성하여 부서장 승인을 받아주세요.</p>
+                                        <p>2. 결재 완료 시, 총무팀 자동화 시스템에 의해 매일 오후 4시에 라이선스가 일괄 할당되며 사내 메신저로 알림이 발송됩니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- 섹션 4 -->
+            <section id="section4" class="mb-20 scroll-mt-24">
+                <h2 class="text-2xl font-extrabold mb-8 flex items-center gap-3 text-gray-900">
+                    <span class="text-gray-400 font-normal">4.</span> [전략 3] 사내 인프라 위기 대응 체계 구축
+                </h2>
+
+                <div class="bg-green-50/50 border border-green-200 rounded-2xl p-7 mb-8">
+                    <h3 class="text-lg font-bold text-green-900 mb-3">🛡️ 관리자적 시각: 빠른 원인 파악과 정확한 전파</h3>
+                    <p class="text-sm text-green-800 leading-relaxed">
+                        전사 네트워크 마비나 랜섬웨어 감염 시, 실무자가 인터넷 선을 만지며 시간을 허비해서는 안 됩니다. <strong>가장 빠르게 상황을 전파하고, 전문 인력을 즉각 투입하여 피해 확산을 막는 비상 룰셋(Rule-set)</strong>을 확립하는 것이 핵심 역량입니다.
+                    </p>
+                </div>
+
+                <p class="mb-8 text-gray-700">
+                    게임 서버 장애 발생 시 유저 공지와 개발팀 핫라인을 가동하던 위기 대응 경험을 적용합니다. 증상별로 장애 등급을 분류하고, 외부 IT 유지보수 업체와의 협약(SLA)에 기반한 확고한 대응 프로세스를 구축합니다.
+                </p>
+
+                <!-- 반응형 흐름도 -->
+                <div class="bg-white border border-gray-200 p-6 md:p-8 rounded-2xl shadow-sm">
+                    <div class="flex flex-col space-y-6 md:space-y-8 text-sm">
+                        <!-- 단계 1 -->
+                        <div class="flex flex-col md:flex-row md:items-start">
+                            <div class="w-full md:w-36 py-3 text-center font-bold bg-red-500 text-white rounded-xl shadow-md z-10 relative mb-3 md:mb-0">1. 장애 감지</div>
+                            <div class="flex-1 md:ml-6 md:border-l-4 md:border-gray-200 md:pl-8 pb-2 md:pb-4 relative md:-mt-3 md:pt-6">
+                                <span class="hidden md:block absolute -left-[14px] top-8 w-6 h-6 bg-white border-4 border-red-500 rounded-full shadow"></span>
+                                <p class="font-extrabold text-gray-900 text-base mb-1">사내 네트워크 단절 및 악성코드 의심 접수</p>
+                                <p class="text-gray-500 font-medium">AI 헬프데스크에 특정 층의 접속 불량 문의가 연속 3건 이상 발생 시 관리자 자동 알림</p>
+                            </div>
+                        </div>
+                        <!-- 단계 2 -->
+                        <div class="flex flex-col md:flex-row md:items-start">
+                            <div class="w-full md:w-36 py-3 text-center font-bold bg-orange-400 text-white rounded-xl shadow-md z-10 relative mb-3 md:mb-0">2. 1차 대응 (공지)</div>
+                            <div class="flex-1 md:ml-6 md:border-l-4 md:border-gray-200 md:pl-8 pb-2 md:pb-4 relative md:-mt-3 md:pt-6">
+                                <span class="hidden md:block absolute -left-[14px] top-8 w-6 h-6 bg-white border-4 border-orange-400 rounded-full shadow"></span>
+                                <p class="font-extrabold text-gray-900 text-base mb-1">사전 설정된 행동 지침 전사 발송</p>
+                                <p class="text-gray-500 font-medium">"해당 층 임직원 전원 의심 PC 랜선 즉시 분리 후 대기" - 골든타임 내 피해 확산 방지</p>
+                            </div>
+                        </div>
+                        <!-- 단계 3 -->
+                        <div class="flex flex-col md:flex-row md:items-start">
+                            <div class="w-full md:w-36 py-3 text-center font-bold bg-green-600 text-white rounded-xl shadow-md z-10 relative mb-3 md:mb-0">3. 파트너사 투입</div>
+                            <div class="flex-1 md:ml-6 md:border-l-4 border-transparent md:pl-8 relative md:-mt-3 md:pt-6">
+                                <span class="hidden md:block absolute -left-[14px] top-8 w-6 h-6 bg-white border-4 border-green-600 rounded-full shadow"></span>
+                                <p class="font-extrabold text-gray-900 text-base mb-1">핫라인 가동 및 경영진 상황 보고</p>
+                                <p class="text-gray-500 font-medium">외부 IT 전문 인력 긴급 호출 및 예상 복구 시간(ETA) 경영진 실시간 보고 체계 가동</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 차트 초기화
+            const ctx = document.getElementById('growthChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['2021', '2022', '2023', '2024(예상)', '2025(목표)'],
+                    datasets: [
+                        {
+                            type: 'line',
+                            label: '단순 IT 문의 및 관리 부하량',
+                            data: [20, 35, 60, 85, 100],
+                            borderColor: '#ef4444', 
+                            backgroundColor: '#ef4444',
+                            borderWidth: 3,
+                            borderDash: [5, 5],
+                            tension: 0.4,
+                            yAxisID: 'y1'
+                        },
+                        {
+                            type: 'bar',
+                            label: '임직원 수',
+                            data: [150, 220, 380, 500, 650],
+                            backgroundColor: '#e2e8f0',
+                            borderRadius: 6,
+                            yAxisID: 'y'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: { position: 'top', labels: { font: { family: 'Pretendard', weight: 'bold' } } }
+                    },
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: { display: true, text: '임직원 수 (명)', font: {weight: 'bold'} }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: { display: true, text: '업무 부하 지수', font: {weight: 'bold'} },
+                            grid: { drawOnChartArea: false }
+                        }
+                    }
+                }
+            });
+
+            // 스크롤 스파이 (네비게이션 위치 표시)
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.toc-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= (sectionTop - 120)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('bg-notion-hover', 'text-black');
+                    link.classList.add('text-notion-gray');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.remove('text-notion-gray');
+                        link.classList.add('bg-notion-hover', 'text-black');
+                    }
+                });
+            });
+        });
+
+        // 자동화 전후 데이터 토글 로직
+        let isAfter = false;
+        document.getElementById('toggleStatsBtn').addEventListener('click', function() {
+            const timeEl = document.getElementById('statTime');
+            const timeDesc = document.getElementById('statTimeDesc');
+            const errorEl = document.getElementById('statError');
+            const errorDesc = document.getElementById('statErrorDesc');
+            
+            if(!isAfter) {
+                // 개선 후 데이터
+                timeEl.textContent = '1시간 / 일';
+                timeEl.classList.replace('text-gray-800', 'text-blue-600');
+                timeDesc.textContent = '자동화 시스템 매핑 (75% 단축)';
+                timeDesc.classList.replace('text-red-500', 'text-blue-600');
+                timeDesc.classList.replace('bg-red-50', 'bg-blue-50');
+                
+                errorEl.textContent = '0%';
+                errorEl.classList.replace('text-gray-800', 'text-blue-600');
+                errorDesc.textContent = '오류 원천 차단 완료';
+                errorDesc.classList.replace('text-red-500', 'text-blue-600');
+                errorDesc.classList.replace('bg-red-50', 'bg-blue-50');
+                
+                this.innerHTML = '<span>⏪</span> 이전 데이터 보기';
+                this.classList.replace('btn-primary', 'bg-gray-800');
+                this.classList.add('text-white', 'hover:bg-gray-900');
+            } else {
+                // 개선 전 데이터
+                timeEl.textContent = '4시간 / 일';
+                timeEl.classList.replace('text-blue-600', 'text-gray-800');
+                timeDesc.textContent = '수기 대조 및 타이핑 진행';
+                timeDesc.classList.replace('text-blue-600', 'text-red-500');
+                timeDesc.classList.replace('bg-blue-50', 'bg-red-50');
+                
+                errorEl.textContent = '5% 내외';
+                errorEl.classList.replace('text-blue-600', 'text-gray-800');
+                errorDesc.textContent = '오기재 및 누락 상시 발생';
+                errorDesc.classList.replace('text-blue-600', 'text-red-500');
+                errorDesc.classList.replace('bg-blue-50', 'bg-red-50');
+                
+                this.innerHTML = '<span>🔄</span> 개선 후 데이터 보기';
+                this.classList.replace('bg-gray-800', 'btn-primary');
+                this.classList.remove('text-white', 'hover:bg-gray-900');
+            }
+            isAfter = !isAfter;
+        });
+
+        // 아코디언 메뉴 로직
+        function toggleAccordion(id) {
+            const content = document.getElementById('content-' + id);
+            const icon = document.getElementById('icon-' + id);
+            const btn = icon.closest('button');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.textContent = '－';
+                btn.classList.add('bg-blue-50/20');
+            } else {
+                content.classList.add('hidden');
+                icon.textContent = '＋';
+                btn.classList.remove('bg-blue-50/20');
+            }
+        }
+    </script>
+</body>
+</html>

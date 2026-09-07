@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>허재석 작업 기록 | 브롤스타즈 시스템 분석</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <style>
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            background-color: #f0f4f8; 
+            color: #334155; 
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            word-break: keep-all; 
+        }
+        
+        .card-shadow { box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.1); }
+        
+        .content-panel {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 24px;
+        }
+
+        .animate-pop { animation: pop 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+        @keyframes pop {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .tab-btn {
+            cursor: pointer;
+            transition: all 0.2s;
+            outline: none;
+            border-bottom-width: 4px;
+        }
+        .tab-btn.active {
+            color: #2563eb; /* Blue 600 */
+            border-color: #eab308; /* Amber 500 (Yellow accent) */
+            background-color: #ffffff;
+        }
+        .tab-btn:hover:not(.active) {
+            background-color: #f8fafc;
+        }
+
+        .tab-content { display: none; opacity: 0; transition: opacity 0.3s ease; }
+        .tab-content.active { display: block; opacity: 1; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* 가상 UI 전용 스타일 */
+        .mockup-ui {
+            background: #ffffff; 
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.08);
+        }
+
+        /* 브롤스타즈풍 테이블 커스텀 */
+        .bs-table th { color: #ffffff; font-size: 13px; font-weight: 800; padding: 12px; text-align: center; border: 1px solid #cbd5e1; }
+        .bs-table td { padding: 10px 12px; font-size: 13px; font-weight: 600; text-align: center; border: 1px solid #e2e8f0; color: #475569; }
+        .bs-table tr:nth-child(even) { background-color: #f8fafc; }
+        .bs-table tr:hover { background-color: #f1f5f9; }
+        
+        .row-gadget { background-color: #16a34a !important; color: white !important; font-weight: 900 !important; }
+        .row-gear { background-color: #0ea5e9 !important; color: white !important; font-weight: 900 !important; }
+        .row-starpower { background-color: #eab308 !important; color: white !important; font-weight: 900 !important; }
+        .row-hypercharge { background-color: #a855f7 !important; color: white !important; font-weight: 900 !important; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="min-h-screen flex flex-col items-center py-8 md:py-12 px-4 md:px-0">
+        <!-- 메인 컨테이너 -->
+        <div class="max-w-6xl w-full bg-white rounded-[40px] overflow-hidden card-shadow border border-slate-200 animate-pop">
+            
+            <!-- 상단 헤더 (브롤스타즈 테마: 블루 & 옐로우) -->
+            <div class="relative pt-12 pb-10 px-8 md:px-12 bg-blue-600 text-white overflow-hidden border-b-[8px] border-yellow-400">
+                <!-- 배경 장식 -->
+                <div class="absolute top-0 right-0 w-full h-full opacity-20 pointer-events-none" style="background: radial-gradient(circle at 80% 20%, #60a5fa, transparent 60%);"></div>
+                <div class="absolute -bottom-10 -right-5 text-9xl opacity-20 transform rotate-12">⭐️</div>
+                <div class="absolute top-5 right-40 text-6xl opacity-10 transform -rotate-12">💀</div>
+
+                <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+                    <div class="flex-1">
+                        <p class="text-yellow-300 font-black tracking-[0.2em] text-[10px] mb-3 flex items-center gap-2 uppercase">
+                            <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 animate-pulse"></span>
+                            Game System Analysis Report
+                        </p>
+                        <h1 class="text-3xl md:text-5xl font-black leading-tight mb-4 tracking-tight drop-shadow-md">
+                            브롤스타즈<br>
+                            시스템 구조 및 모델 분석
+                        </h1>
+                        <!-- 요약문 -->
+                        <p class="text-blue-100 text-sm md:text-base leading-relaxed max-w-2xl mb-6 font-medium">
+                            글로벌 모바일 슈팅 게임 '브롤스타즈'의 장기 흥행 요인을 분석했습니다. 핵심 재화 순환부터 브롤 패스 기반의 과금 모델, <strong class="text-yellow-300">브롤러의 점진적 성장 체계와 요구 재화</strong>, 그리고 다채로운 플레이 모드까지 게임을 구성하는 뼈대를 세밀하게 도식화하고 최종 인사이트를 도출했습니다.
+                        </p>
+                        <div class="flex flex-wrap gap-3 mt-2 text-blue-900 text-sm font-bold">
+                            <span class="bg-yellow-400 px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">
+                                <span>📅</span> <span>진행: 2023.09.20 ~ 10.25</span>
+                            </span>
+                            <span class="bg-white/20 text-white backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">
+                                <span>👤</span> <span>Analyst: 허재석</span>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- 게임 테마 뱃지 -->
+                    <div class="w-24 h-24 rounded-3xl bg-yellow-400 border-4 border-white flex flex-col items-center justify-center shadow-xl shrink-0 transform rotate-3">
+                        <span class="text-4xl drop-shadow-md">🏆</span>
+                        <span class="text-[9px] font-black mt-1 uppercase tracking-widest text-blue-800">Supercell</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 네비게이션 탭 -->
+            <div class="flex border-b border-slate-200 bg-slate-50/80 sticky top-0 z-20 backdrop-blur-md shadow-sm">
+                <button onclick="openTab(event, 'bm')" class="tab-btn active flex-1 py-4 text-sm font-black text-slate-500" id="defaultOpen">💰 1. 재화 및 과금 분석</button>
+                <button onclick="openTab(event, 'growth')" class="tab-btn flex-1 py-4 text-sm font-black text-slate-500">📈 2. 육성 및 밸런스 체계</button>
+                <button onclick="openTab(event, 'mode')" class="tab-btn flex-1 py-4 text-sm font-black text-slate-500">🎮 3. 모드 및 커뮤니티</button>
+            </div>
+
+            <!-- 탭 1: 핵심 재화 및 과금 모델 -->
+            <div id="bm" class="tab-content active p-6 md:p-10 space-y-12">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-3 tracking-tight">핵심 재화 및 과금 모델 분석</h2>
+                    <p class="text-slate-500 text-sm font-medium">단순 뽑기를 벗어나 플레이어의 확정적 보상과 치장품 중심의 경제를 구축한 수익화 구조입니다.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- 재화 시스템 -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-black text-blue-600 flex items-center gap-2 mb-4">
+                            <span class="text-xl">💎</span> 4대 핵심 재화 시스템
+                        </h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-rose-50 p-4 rounded-2xl border border-rose-200 shadow-sm">
+                                <div class="text-2xl mb-1">⚡</div>
+                                <h4 class="font-black text-rose-700 text-sm mb-1">파워 포인트</h4>
+                                <p class="text-[11px] text-slate-600 font-medium">브롤러 레벨업을 위한 필수 재화. 브롤 패스, 클럽 리그 등 다양한 게임 플레이를 통해 획득</p>
+                            </div>
+                            <div class="bg-yellow-50 p-4 rounded-2xl border border-yellow-200 shadow-sm">
+                                <div class="text-2xl mb-1">🪙</div>
+                                <h4 class="font-black text-yellow-700 text-sm mb-1">코인</h4>
+                                <p class="text-[11px] text-slate-600 font-medium">레벨업 승급 비용 및 가젯, 기어, 스타파워, 하이퍼차지를 직접 구매하는 범용 화폐</p>
+                            </div>
+                            <div class="bg-fuchsia-50 p-4 rounded-2xl border border-fuchsia-200 shadow-sm">
+                                <div class="text-2xl mb-1">✨</div>
+                                <h4 class="font-black text-fuchsia-700 text-sm mb-1">블링</h4>
+                                <p class="text-[11px] text-slate-600 font-medium">무소과금도 스킨, 핀 등 치장용 아이템을 구매할 수 있도록 도입된 랭크 보상 재화</p>
+                            </div>
+                            <div class="bg-emerald-50 p-4 rounded-2xl border border-emerald-200 shadow-sm">
+                                <div class="text-2xl mb-1">🟩</div>
+                                <h4 class="font-black text-emerald-700 text-sm mb-1">보석</h4>
+                                <p class="text-[11px] text-slate-600 font-medium">브롤 패스 플러스 구매, 특별 스킨, 패키지 구매 등 핵심 과금 프리미엄 재화</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BM 구조 가상 UI -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-black text-blue-600 flex items-center gap-2 mb-4">
+                            <span class="text-xl">🎫</span> 브롤 패스 및 상점 과금 구조
+                        </h3>
+                        <div class="mockup-ui bg-slate-50 flex flex-col h-full">
+                            <!-- 브롤 패스 UI -->
+                            <div class="p-4 border-b border-slate-200">
+                                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Brawl Pass System</p>
+                                <div class="flex gap-2">
+                                    <div class="flex-1 bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center justify-center">
+                                        <span class="text-xs font-bold text-slate-500 mb-1">무료 패스</span>
+                                        <span class="text-[10px] text-center text-slate-400">토큰 수집 시<br>기본 재화 제공</span>
+                                    </div>
+                                    <div class="flex-1 bg-gradient-to-br from-yellow-300 to-amber-500 p-3 rounded-xl shadow-md flex flex-col items-center justify-center border border-yellow-400 transform scale-105 z-10">
+                                        <span class="text-xs font-black text-white mb-1 drop-shadow-sm">브롤 패스 PLUS</span>
+                                        <span class="text-[10px] text-center text-yellow-50 font-bold drop-shadow-sm">전용 스킨 및 핀<br>재화 2배 획득</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 상점 UI -->
+                            <div class="p-4 flex-1">
+                                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Shop UI Structure</p>
+                                <div class="space-y-2">
+                                    <div class="bg-white p-2 rounded border border-slate-200 flex items-center justify-between shadow-sm">
+                                        <span class="text-xs font-bold text-slate-700">🎁 특별 상품</span>
+                                        <span class="text-[10px] text-slate-400">현금 결제 전용 패키지</span>
+                                    </div>
+                                    <div class="bg-white p-2 rounded border border-slate-200 flex items-center justify-between shadow-sm">
+                                        <span class="text-xs font-bold text-slate-700">👕 스킨 및 꾸미기</span>
+                                        <span class="text-[10px] text-slate-400">보석 및 블링 소모처</span>
+                                    </div>
+                                    <div class="bg-white p-2 rounded border border-slate-200 flex items-center justify-between shadow-sm">
+                                        <span class="text-xs font-bold text-slate-700">💎 자원 충전</span>
+                                        <span class="text-[10px] text-slate-400">프리미엄 재화 획득</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 탭 2: 육성 및 밸런스 체계 -->
+            <div id="growth" class="tab-content p-6 md:p-10 space-y-16">
+                
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-3 tracking-tight">브롤러 육성 및 밸런스 체계 구조화</h2>
+                    <p class="text-slate-500 text-sm font-medium leading-relaxed">총 71종 브롤러의 클래스 체계와 점진적 스펙업 로직, 그리고 이를 달성하기 위한 누적 요구 재화 데이터를 수치화했습니다.</p>
+                </div>
+
+                <!-- 1. 브롤러 분류 -->
+                <div class="content-panel p-6 md:p-8 bg-blue-50/30">
+                    <h3 class="text-lg font-black text-slate-800 mb-6">🎯 브롤러 분류 체계 (총 71종)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-blue-600 text-sm mb-3 border-b border-slate-100 pb-2">7단계 희귀도 시스템</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                                기본 ➔ <span class="text-green-500 font-bold">희귀</span> ➔ <span class="text-blue-500 font-bold">초희귀</span> ➔ <span class="text-purple-500 font-bold">영웅</span> ➔ <span class="text-red-500 font-bold">신화</span> ➔ <span class="text-yellow-500 font-bold">전설</span> ➔ 크로마틱<br>
+                                <span class="text-[10px] text-slate-400 mt-1 block">* 등급이 오를수록 획득 난이도와 스킬 메커니즘의 복잡도가 증가함.</span>
+                            </p>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="font-bold text-blue-600 text-sm mb-3 border-b border-slate-100 pb-2">7가지 역할군</h4>
+                            <div class="flex flex-wrap gap-2 text-[11px] font-bold text-slate-600">
+                                <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">🛡️ 탱커</span>
+                                <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">⚔️ 어쌔신</span>
+                                <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">💥 대미지 딜러</span>
+                                <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">🎯 저격수</span>
+                                <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">💣 투척수</span>
+                                <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">💖 서포터</span>
+                                <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">🎛️ 컨트롤러</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 점진적 스펙업 로직 -->
+                <div>
+                    <h3 class="text-lg font-black text-slate-800 mb-6">🚀 레벨업에 따른 점진적 스킬 해금 구조</h3>
+                    
+                    <div class="flex flex-col md:flex-row justify-between gap-4 relative">
+                        <!-- 화살표 (데스크탑) -->
+                        <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-slate-200 -z-10 -translate-y-1/2"></div>
+                        
+                        <!-- Lv 7: 가젯 -->
+                        <div class="bg-white rounded-2xl border-t-[8px] border-green-500 shadow-lg p-5 flex-1 relative z-10 flex flex-col">
+                            <div class="text-center mb-3">
+                                <span class="bg-slate-100 text-slate-500 text-[10px] font-black px-3 py-1 rounded-full uppercase">Level 7</span>
+                            </div>
+                            <h4 class="font-black text-green-600 text-center text-base mb-3">가젯</h4>
+                            <p class="text-[11px] text-slate-600 font-medium text-center leading-relaxed mb-auto">
+                                브롤러 고유의 <strong class="text-slate-800">액티브 특수 스킬</strong>로 게임당 사용 횟수가 한정되어 있음. 하단의 초록색 버튼을 눌러 사용함.
+                            </p>
+                        </div>
+                        
+                        <!-- Lv 8, 10: 기어 -->
+                        <div class="bg-white rounded-2xl border-t-[8px] border-blue-500 shadow-lg p-5 flex-1 relative z-10 flex flex-col">
+                            <div class="text-center mb-3">
+                                <span class="bg-slate-100 text-slate-500 text-[10px] font-black px-3 py-1 rounded-full uppercase">Level 8 & 10</span>
+                            </div>
+                            <h4 class="font-black text-blue-600 text-center text-base mb-3">기어</h4>
+                            <p class="text-[11px] text-slate-600 font-medium text-center leading-relaxed mb-auto">
+                                공통/영웅/신화로 나뉘는 <strong class="text-slate-800">패시브 능력</strong>으로 8레벨과 10레벨에 슬롯이 하나씩 잠금 해제됨.
+                            </p>
+                        </div>
+
+                        <!-- Lv 9: 스타파워 -->
+                        <div class="bg-white rounded-2xl border-t-[8px] border-yellow-400 shadow-lg p-5 flex-1 relative z-10 flex flex-col">
+                            <div class="text-center mb-3">
+                                <span class="bg-slate-100 text-slate-500 text-[10px] font-black px-3 py-1 rounded-full uppercase">Level 9</span>
+                            </div>
+                            <h4 class="font-black text-yellow-500 text-center text-base mb-3">스타 파워</h4>
+                            <p class="text-[11px] text-slate-600 font-medium text-center leading-relaxed mb-auto">
+                                브롤러에게 강력한 <strong class="text-slate-800">핵심 패시브 능력</strong>을 부여하거나 기존 능력을 진화시키는 시스템.
+                            </p>
+                        </div>
+
+                        <!-- Lv 11: 하이퍼차지 -->
+                        <div class="bg-white rounded-2xl border-t-[8px] border-purple-500 shadow-lg p-5 flex-1 relative z-10 flex flex-col">
+                            <div class="text-center mb-3">
+                                <span class="bg-slate-100 text-slate-500 text-[10px] font-black px-3 py-1 rounded-full uppercase">Level 11</span>
+                            </div>
+                            <h4 class="font-black text-purple-600 text-center text-base mb-3">하이퍼차지</h4>
+                            <p class="text-[11px] text-slate-600 font-medium text-center leading-relaxed mb-auto">
+                                버프형 궁극 <strong class="text-slate-800">액티브 스킬</strong>. 특수 공격과 같이 충전식이며, 일시적 스탯 상승 및 특수 공격을 대폭 강화함.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 요구 재화 상세 테이블 -->
+                <div>
+                    <h3 class="text-lg font-black text-slate-800 mb-4 flex items-center gap-2">
+                        <span class="text-2xl">📊</span> 1~11레벨 구간별 요구 재화 (정량화)
+                    </h3>
+                    <div class="content-panel overflow-hidden shadow-md">
+                        <div class="overflow-x-auto">
+                            <table class="w-full bs-table min-w-[600px] border-collapse">
+                                <thead>
+                                    <tr>
+                                        <th class="bg-blue-600 w-1/5">레벨</th>
+                                        <th class="bg-blue-500 w-1/5">파워 포인트</th>
+                                        <th class="bg-blue-600 w-1/5">누적 파워 포인트</th>
+                                        <th class="bg-blue-500 w-1/5">코인</th>
+                                        <th class="bg-blue-600 w-1/5">누적 코인</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1 → 2</td><td>20</td><td>20</td><td>20</td><td>20</td></tr>
+                                    <tr><td>2 → 3</td><td>30</td><td>50</td><td>35</td><td>55</td></tr>
+                                    <tr><td>3 → 4</td><td>50</td><td>100</td><td>75</td><td>130</td></tr>
+                                    <tr><td>4 → 5</td><td>80</td><td>180</td><td>140</td><td>270</td></tr>
+                                    <tr><td>5 → 6</td><td>130</td><td>310</td><td>290</td><td>560</td></tr>
+                                    <tr><td>6 → 7</td><td>210</td><td>520</td><td>480</td><td>1,040</td></tr>
+                                    <tr class="row-gadget">
+                                        <td>가젯</td><td colspan="2" class="bg-green-100 text-green-700 font-medium">-</td><td colspan="2">1,000 (구매 시)</td>
+                                    </tr>
+                                    <tr><td>7 → 8</td><td>340</td><td>860</td><td>800</td><td>1,840</td></tr>
+                                    <tr class="row-gear">
+                                        <td>기어 1</td><td colspan="2" class="bg-sky-100 text-sky-700 font-medium">-</td><td colspan="2">1,000 / 1,500 / 2,000 (구매 시)</td>
+                                    </tr>
+                                    <tr><td>8 → 9</td><td>550</td><td>1,410</td><td>1,250</td><td>3,090</td></tr>
+                                    <tr class="row-starpower">
+                                        <td>스타 파워</td><td colspan="2" class="bg-yellow-50 text-yellow-700 font-medium">-</td><td colspan="2">2,000 (구매 시)</td>
+                                    </tr>
+                                    <tr><td>9 → 10</td><td>890</td><td>2,300</td><td>1,875</td><td>4,965</td></tr>
+                                    <tr class="row-gear">
+                                        <td>기어 2</td><td colspan="2" class="bg-sky-100 text-sky-700 font-medium">-</td><td colspan="2">1,000 / 1,500 / 2,000 (구매 시)</td>
+                                    </tr>
+                                    <tr><td>10 → 11</td><td>1,440</td><td>3,740</td><td>2,800</td><td>7,765</td></tr>
+                                    <tr class="row-hypercharge">
+                                        <td>하이퍼차지</td><td colspan="2" class="bg-purple-100 text-purple-700 font-medium">-</td><td colspan="2">5,000 (구매 시)</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="bg-slate-100 border-t-2 border-slate-300">
+                                        <td class="font-black text-slate-800">최종 누적치</td>
+                                        <td colspan="2" class="text-rose-600 font-black text-base">3,740 파워 포인트</td>
+                                        <td colspan="2" class="text-yellow-600 font-black text-base">7,765 ~ 22,765 코인</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <p class="text-[10px] font-bold text-slate-400 mt-2 text-right">* 풀업(11레벨+모든 장비 장착) 달성 시 코인 소모량이 급격히 증가하여 전략적 과금을 유도하는 구조</p>
+                </div>
+            </div>
+
+            <!-- 탭 3: 모드 및 커뮤니티 -->
+            <div id="mode" class="tab-content p-6 md:p-10 space-y-12">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-3 tracking-tight">플레이 모드 및 커뮤니티 구조</h2>
+                    <p class="text-slate-500 text-sm font-medium">모바일 환경에 최적화된 조작과 지속적인 목표 의식을 제공하는 소셜 시스템입니다.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <!-- 플레이 모드 -->
+                    <div class="space-y-6">
+                        <h3 class="text-lg font-black text-blue-600 flex items-center gap-2">
+                            <span class="text-xl">🎮</span> 다채로운 플레이 모드
+                        </h3>
+                        <div class="content-panel p-6 space-y-4 shadow-sm">
+                            <div class="flex items-center gap-4 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center text-white text-xl shadow-inner shrink-0">☠️</div>
+                                <div>
+                                    <h4 class="font-black text-slate-800 text-sm mb-1">쇼다운</h4>
+                                    <p class="text-[11px] text-slate-500 font-medium">독구름이 좁혀오는 맵에서 파워 큐브를 모으며 최후의 1인(혹은 1팀)이 되는 10인 배틀로얄</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center text-white text-xl shadow-inner shrink-0">⚽️</div>
+                                <div>
+                                    <h4 class="font-black text-slate-800 text-sm mb-1">브롤 볼</h4>
+                                    <p class="text-[11px] text-slate-500 font-medium">상대 팀 골대에 먼저 공을 2번 넣으면 승리하는 3vs3 템포가 빠른 축구 모드</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center text-white text-xl shadow-inner shrink-0">💎</div>
+                                <div>
+                                    <h4 class="font-black text-slate-800 text-sm mb-1">젬 그랩 및 맵 메이커</h4>
+                                    <p class="text-[11px] text-slate-500 font-medium">보석 10개를 먼저 모으는 모드 및 유저가 직접 맵을 만들어 공유하는 자생적 생태계 구축</p>
+                                </div>
+                            </div>
+                            <!-- 조작법 팁 -->
+                            <div class="bg-blue-50/50 p-3 rounded-lg border border-blue-100 text-center">
+                                <p class="text-xs text-blue-800 font-bold">🕹️ 듀얼 스틱 조작법</p>
+                                <p class="text-[10px] text-blue-600 mt-1">좌측 스틱(이동)과 우측 스틱(에임 및 공격)으로 모바일 한계 극복</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 소셜 및 랭킹 시스템 -->
+                    <div class="space-y-6">
+                        <h3 class="text-lg font-black text-blue-600 flex items-center gap-2">
+                            <span class="text-xl">🤝</span> 소셜 연동 및 리더보드 구조
+                        </h3>
+                        <div class="mockup-ui h-full bg-slate-900 text-white flex flex-col relative overflow-hidden shadow-xl border-slate-800">
+                            <div class="absolute inset-0 opacity-10 bg-[url('https://placehold.co/400x400/000000/ffffff?text=Social+Pattern')] bg-cover"></div>
+                            
+                            <div class="p-4 border-b border-slate-700 bg-slate-800/80 z-10 flex justify-between items-center">
+                                <span class="font-black text-yellow-400">🏆 글로벌 리더보드</span>
+                                <span class="text-[10px] bg-slate-700 px-2 py-1 rounded font-bold">지역: KR</span>
+                            </div>
+                            
+                            <div class="flex-1 p-4 space-y-3 z-10 font-mono">
+                                <div class="bg-blue-900/50 border border-blue-500/30 p-3 rounded-lg flex justify-between items-center shadow-md">
+                                    <div class="flex gap-3 items-center">
+                                        <span class="text-lg">🥇</span>
+                                        <span class="font-bold text-sm">Brawl_Master</span>
+                                    </div>
+                                    <span class="text-yellow-400 font-bold">65,420 🏆</span>
+                                </div>
+                                <div class="bg-slate-800 border border-slate-600 p-3 rounded-lg flex justify-between items-center">
+                                    <div class="flex gap-3 items-center">
+                                        <span class="text-lg">🥈</span>
+                                        <span class="font-bold text-sm">Sniper_Pro</span>
+                                    </div>
+                                    <span class="text-yellow-400 font-bold">62,100 🏆</span>
+                                </div>
+                                <div class="bg-slate-800/80 border border-slate-700 p-3 rounded-lg flex justify-between items-center">
+                                    <div class="flex gap-3 items-center">
+                                        <span class="text-lg">🥉</span>
+                                        <span class="font-bold text-sm text-slate-300">Heo_Jae_Seok</span>
+                                    </div>
+                                    <span class="text-yellow-500 font-bold">58,950 🏆</span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 bg-slate-800 z-10">
+                                <div class="bg-slate-700 p-3 rounded-xl border border-slate-600 flex justify-between items-center cursor-pointer hover:bg-slate-600 transition-colors">
+                                    <div>
+                                        <h5 class="font-bold text-xs mb-1 text-blue-300">🛡️ 클럽 시스템</h5>
+                                        <p class="text-[10px] text-slate-400">소셜 연동 파티 및 클럽 리그 참여</p>
+                                    </div>
+                                    <span class="text-xl">➔</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 핵심 인사이트 요약 (결론) -->
+                <div class="mt-12 bg-slate-900 rounded-[32px] p-8 md:p-10 text-white relative overflow-hidden shadow-2xl border-2 border-yellow-400/20">
+                    <div class="absolute right-0 bottom-0 opacity-10 text-9xl -mb-8 -mr-8 transform rotate-12">💡</div>
+                    <div class="relative z-10 max-w-4xl mx-auto text-center">
+                        <h4 class="text-yellow-400 font-black text-xs uppercase tracking-widest mb-4">Core Insight & Conclusion</h4>
+                        <p class="text-lg md:text-xl font-bold leading-relaxed">
+                            "직관적인 전투와 합리적인 패스제 BM으로 유저 진입 장벽은 낮추고,<br class="hidden md:block">
+                            치밀한 육성 체계와 자생적 생태계로 플레이 동기는 극대화했습니다.<br class="hidden md:block">
+                            <span class="text-blue-400 border-b-2 border-yellow-400 pb-1">글로벌 장기 흥행을 이끌어내는 탄탄한 시스템 구조</span>를 증명합니다."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 푸터 -->
+            <div class="p-8 bg-slate-900 text-white text-center border-t-[8px] border-blue-600 relative overflow-hidden">
+                <div class="relative z-10">
+                    <p class="text-[10px] font-bold uppercase tracking-[0.4em] opacity-50 mb-2 text-yellow-400">Supercell Game Analysis</p>
+                    <p class="text-xs font-medium text-slate-400">브롤스타즈 시스템 및 비즈니스 모델 분석 &copy; 허재석</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            evt.preventDefault();
+            var tabcontent = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabcontent.length; i++) { tabcontent[i].classList.remove("active"); }
+            var tablinks = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+            // 탭 클릭 시 자연스러운 스크롤 상단 이동
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
