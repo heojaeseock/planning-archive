@@ -137,7 +137,7 @@
                 <span class="text-brand-600">데이터 기반 시스템</span>을 설계합니다.
             </h1>
             <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                이전 라이브 서비스에서 <mark class="point">수작업을 75% 단축한 경험</mark>을 바탕으로,<br class="hidden md:block">
+                이전 라이브 서비스에서 <mark class="point">수작업을 대폭 단축한 경험</mark>을 바탕으로,<br class="hidden md:block">
                 의료 정보 플랫폼 확장에 필요한 <strong>외주사(BPO) 관리 자동화 파이프라인</strong>을 제안합니다.
             </p>
         </div>
@@ -249,7 +249,7 @@
                     <div class="chart-container">
                         <canvas id="efficiencyChart"></canvas>
                     </div>
-                    <p class="data-source">※ 출처: 작성자 허재석의 이전 라이브 서비스 운영 효율화 성과(75% 단축) 대입</p>
+                    <p class="data-source">※ 출처: 작성자 허재석의 이전 라이브 서비스 운영 효율화 경험을 대입한 추정치</p>
                 </div>
             </div>
         </div>
@@ -403,7 +403,7 @@
             data: {
                 labels: ['기존 수작업', '제안 (자동화 도입)'],
                 datasets: [{
-                    data: [120, 30], // 75% reduction
+                    data: [120, 30], // 효율 개선 추정치
                     backgroundColor: ['#cbd5e1', '#ea580c'],
                     borderRadius: 6,
                     barThickness: 40
@@ -417,7 +417,7 @@
                     tooltip: {
                         callbacks: {
                             label: function(context) { return context.parsed.x + ' 시간'; },
-                            afterLabel: function(context) { return context.dataIndex === 1 ? ' (효율 75% 증가)' : ''; }
+                            afterLabel: function(context) { return context.dataIndex === 1 ? ' (효율 개선)' : ''; }
                         }
                     }
                 },

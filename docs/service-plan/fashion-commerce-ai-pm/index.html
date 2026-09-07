@@ -180,7 +180,7 @@
                             <span class="text-xs font-bold text-rose-500 bg-rose-50 px-2 py-1 rounded-full border border-rose-100 animate-pulse block group-hover:hidden" id="click-badge-1">👆 Click</span>
                         </div>
                         <div class="text-lg font-bold text-slate-800">함수를 활용한 정제 파이프라인 구축</div>
-                        <p class="mt-2 text-slate-600 text-sm hidden lg:block">엑셀 복합 함수를 엮어 자동화 구조를 만들어 검수 시간을 75% 단축했습니다.</p>
+                        <p class="mt-2 text-slate-600 text-sm hidden lg:block">엑셀 복합 함수를 엮어 자동화 구조를 만들어 검수 시간을 대폭 단축했습니다.</p>
                     </button>
 
                     <button onclick="updateQA(2)" id="btn-step2" class="step-btn clickable-card text-left p-5 rounded-xl border-2 border-slate-200 bg-white relative group">
@@ -362,7 +362,7 @@
                 badge.textContent = "수작업 단계 (40시간)"; badge.className = "px-2 py-1 bg-slate-100 text-slate-500 text-xs font-bold rounded-md transition-colors duration-300";
             } else if (step === 1) {
                 qaChart.data.datasets[0].data = [40]; qaChart.data.datasets[1].data = [10];
-                badge.textContent = "자동화 적용 후 (-75%)"; badge.className = "px-2 py-1 bg-rose-100 text-rose-600 text-xs font-bold rounded-md transition-colors duration-300";
+                badge.textContent = "자동화 적용 후"; badge.className = "px-2 py-1 bg-rose-100 text-rose-600 text-xs font-bold rounded-md transition-colors duration-300";
             } else if (step === 2) {
                 qaChart.data.datasets[0].data = [0]; qaChart.data.datasets[1].data = [10];
                 badge.textContent = "엔지니어 리소스 세이브"; badge.className = "px-2 py-1 bg-emerald-100 text-emerald-600 text-xs font-bold rounded-md transition-colors duration-300";
