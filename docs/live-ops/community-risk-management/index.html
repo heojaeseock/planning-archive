@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>지역 커뮤니티 플랫폼 리스크 매니저 분석 기획안 | 데이터 기반 신뢰 보호</title>
+    <title>중고거래 플랫폼 리스크 관리 기획 | 데이터 기반 신뢰 보호</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -91,7 +91,7 @@
     <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-2">
-                <div class="w-8 h-8 flex items-center justify-center bg-brand rounded-lg text-white font-bold text-lg">🥕</div>
+                <div class="w-8 h-8 flex items-center justify-center bg-brand rounded-lg text-white font-bold text-lg">🛡️</div>
                 <h1 class="font-bold text-lg tracking-tight">리스크 운영 매니저 작업 기록</h1>
             </div>
             <div class="text-xs font-bold text-gray-400 bg-gray-50 px-3 py-1 rounded-full">
@@ -102,6 +102,24 @@
 
     <main class="max-w-5xl mx-auto px-6 py-12 space-y-16">
         
+        <!-- 0. 문서 개요 -->
+        <section id="overview">
+            <div class="bg-white p-8 md:p-10 card border border-gray-100">
+                <p class="text-xs font-black text-[#FF7E36] tracking-[0.2em] mb-4">문서 개요</p>
+                <p class="text-base leading-relaxed text-gray-700 mb-4">
+                    <strong>지역 기반 중고거래 플랫폼</strong>은 이웃 간 직거래를 중개하는 서비스입니다.
+                    거래 대금이 플랫폼을 거치지 않고 <strong>메신저와 계좌 송금으로 앱 밖에서 오가는 비중이 크기 때문에</strong>,
+                    계정 탈취, 판매 사기, 이미지 도용 같은 사고가 곧바로 서비스 신뢰도를 흔듭니다.
+                    사고가 터진 뒤 환불로 수습하는 구조로는 한계가 있습니다.
+                </p>
+                <p class="text-base leading-relaxed text-gray-700">
+                    이 문서는 게임 라이브 서비스에서 어뷰징을 탐지·차단해 온 방식을 중고거래 환경으로 옮겨,
+                    <strong>사고가 일어나기 전에 걸러내는 리스크 운영 체계</strong>를 설계한 기록입니다.
+                    <span class="text-gray-500">이상 징후 정의 → 데이터 교차 검증 → 단계별 조치</span> 순서로 정리했습니다.
+                </p>
+            </div>
+        </section>
+
         <!-- 1. 운영 성과 요약 -->
         <section id="summary">
             <div class="bg-white p-10 card border-t-[10px] border-[#FF7E36] mb-8">
@@ -149,8 +167,8 @@
         <!-- 2. 리스크 관리 제안 -->
         <section id="proposal" class="space-y-8">
             <div class="px-2">
-                <h3 class="text-2xl font-bold mb-2 italic">지역 커뮤니티 플랫폼 맞춤형 리스크 관리 정책 제안</h3>
-                <p class="text-gray-500 text-sm">운영 경험을 바탕으로 지역 커뮤니티 플랫폼의 '안전한 연결'을 위해 제안하는 핵심 전략입니다.</p>
+                <h3 class="text-2xl font-bold mb-2 italic">지역 기반 중고거래 플랫폼 맞춤형 리스크 관리 정책 제안</h3>
+                <p class="text-gray-500 text-sm">운영 경험을 바탕으로 지역 기반 중고거래 플랫폼의 '안전한 연결'을 위해 제안하는 핵심 전략입니다.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -265,7 +283,7 @@
                 </div>
                 <div class="flex gap-4 items-start border-t border-gray-800 pt-8">
                     <span class="text-[#FF7E36] font-black italic text-xl">03</span>
-                    <p class="text-sm md:text-base leading-relaxed">지역 커뮤니티 플랫폼의 가치에 맞는 <strong>혁신적인 리스크 차단 정책</strong>으로 유저 경험을 보호하며, 따뜻하고 안전한 동네 마켓을 위한 방안을 정리했습니다.</p>
+                    <p class="text-sm md:text-base leading-relaxed">지역 기반 중고거래 플랫폼의 가치에 맞는 <strong>혁신적인 리스크 차단 정책</strong>으로 유저 경험을 보호하며, 따뜻하고 안전한 동네 마켓을 위한 방안을 정리했습니다.</p>
                 </div>
             </div>
         </footer>
@@ -362,7 +380,7 @@
                     </div>
                     <div class="nudge-anim bg-red-50 border border-red-300 text-red-800 p-4 rounded-2xl text-xs text-center shadow-sm mx-1 my-2 leading-relaxed">
                         👁️‍🗨️ <strong>우회 연락처 탐지 (OCR)</strong><br>
-                        이미지 내에서 <strong>외부 메신저(카카오톡) 유도 문구</strong>가 식별되어 이미지가 블라인드 처리되었습니다. 지역 커뮤니티 플랫폼 앱 내에서 거래해주세요.
+                        이미지 내에서 <strong>외부 메신저(카카오톡) 유도 문구</strong>가 식별되어 이미지가 블라인드 처리되었습니다. 지역 기반 중고거래 플랫폼 앱 내에서 거래해주세요.
                     </div>
                 `;
             }

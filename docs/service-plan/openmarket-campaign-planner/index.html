@@ -186,7 +186,7 @@
 
     <!-- 히어로 섹션 -->
     <header class="컨테이너 text-center mb-32">
-        <div class="inline-block bg-[#FFD400] text-black font-black px-5 py-1.5 rounded-full mb-8 text-sm">오픈마켓 커머스 캠페인 기획자 기획안</div>
+        <div class="inline-block bg-[#FFD400] text-black font-black px-5 py-1.5 rounded-full mb-8 text-sm">오픈마켓 커머스 캠페인 기획안</div>
         <h1 class="메인-타이틀">
             라이브 게임 운영의 집요함으로<br>
             <span class="text-[#0064FF]">오픈마켓 커머스 캠페인 성과 개선안을 정리했습니다</span>
@@ -233,7 +233,7 @@
                 <p class="text-sm font-bold text-slate-400 mb-6 italic">👇 아래 탭을 클릭하여 상세 내용을 확인해 보세요</p>
                 <div class="탭-메뉴 mb-12 shadow-sm">
                     <div onclick="탭변경('게임')" id="탭-게임" class="탭-버튼 활성">🕹️ 게임 운영 경험</div>
-                    <div onclick="탭변경('오픈마켓 커머스')" id="탭-오픈마켓 커머스" class="탭-버튼">🛒 오픈마켓 커머스 적용안</div>
+                    <div onclick="탭변경('오픈마켓')" id="탭-오픈마켓" class="탭-버튼">🛒 오픈마켓 커머스 적용안</div>
                 </div>
 
                 <div id="내용-게임">
@@ -247,7 +247,7 @@
                     </p>
                 </div>
 
-                <div id="내용-오픈마켓 커머스" class="hidden text-left space-y-6 max-w-lg mx-auto">
+                <div id="내용-오픈마켓" class="hidden text-left space-y-6 max-w-lg mx-auto">
                     <div class="p-8 bg-blue-50 border border-blue-100 rounded-3xl">
                         <h4 class="font-bold text-blue-900 mb-3 text-lg">지능형 매핑 로직 도입</h4>
                         <p class="text-slate-700 leading-relaxed font-medium">
@@ -354,19 +354,19 @@
     <script>
         function 탭변경(모드) {
             const 탭게임 = document.getElementById('탭-게임');
-            const 탭오픈마켓 커머스 = document.getElementById('탭-오픈마켓 커머스');
+            const 탭오픈마켓 = document.getElementById('탭-오픈마켓');
             const 내용게임 = document.getElementById('내용-게임');
-            const 내용오픈마켓 커머스 = document.getElementById('내용-오픈마켓 커머스');
+            const 내용오픈마켓 = document.getElementById('내용-오픈마켓');
 
             if (모드 === '게임') {
                 탭게임.className = "탭-버튼 활성";
-                탭오픈마켓 커머스.className = "탭-버튼";
+                탭오픈마켓.className = "탭-버튼";
                 내용게임.classList.remove('hidden');
-                내용오픈마켓 커머스.classList.add('hidden');
+                내용오픈마켓.classList.add('hidden');
             } else {
-                탭오픈마켓 커머스.className = "탭-버튼 활성";
+                탭오픈마켓.className = "탭-버튼 활성";
                 탭게임.className = "탭-버튼";
-                내용오픈마켓 커머스.classList.remove('hidden');
+                내용오픈마켓.classList.remove('hidden');
                 내용게임.classList.add('hidden');
             }
         }
