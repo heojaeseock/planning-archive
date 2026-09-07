@@ -64,14 +64,41 @@ NO SVG/Mermaid used. -->
     <header class="mb-12 border-b border-slate-200 pb-8 text-center md:text-left">
         <div class="inline-block px-3 py-1 bg-slate-900 text-white text-xs font-bold rounded mb-4">MARKET ANALYSIS 2026</div>
         <h1 class="text-4xl font-black tracking-tight text-slate-900">2026 스트리밍 플랫폼 생태계 분석 리포트</h1>
-        <p class="text-lg text-slate-500 mt-2">SOOP 및 치지직 플랫폼 전략 비교 및 넥슨 4대 IP 크리에이터 동향</p>
+        <p class="text-lg text-slate-500 mt-2">SOOP·치지직 플랫폼 전략 비교와 국내 대형 게임 IP 4종의 크리에이터 동향</p>
     </header>
+
+    <!-- 0. 문서 개요 -->
+    <section class="mb-10">
+        <div class="bg-slate-50 rounded-2xl border border-slate-200 p-8">
+            <p class="text-xs font-black text-indigo-600 tracking-widest mb-4">OVERVIEW</p>
+            <h2 class="text-2xl font-bold text-slate-900 mb-5">이 리포트가 보는 것</h2>
+            <p class="text-slate-600 leading-relaxed mb-4">
+                게임 회사가 스트리밍 플랫폼을 신경 쓰는 이유는 단순합니다.
+                <strong class="text-slate-900">사람들이 게임을 사기 전에 방송으로 먼저 본다</strong>는 것입니다.
+                어떤 게임이 어느 플랫폼에서 얼마나 방송되는지가 그 게임의 신규 유입에 직접 영향을 줍니다.
+            </p>
+            <p class="text-slate-600 leading-relaxed mb-4">
+                국내 시장은 글로벌 서비스였던 트위치가 철수한 뒤
+                <strong class="text-slate-900">SOOP</strong>(옛 아프리카TV)과
+                <strong class="text-slate-900">치지직</strong>으로 재편됐습니다.
+                두 플랫폼은 성격이 다릅니다. 한쪽은 오래된 팬덤과 후원 문화가 강하고,
+                다른 쪽은 포털 검색·연동을 통한 유입이 강합니다.
+                따라서 <strong class="text-slate-900">같은 게임이라도 어느 플랫폼에 걸리는지에 따라 도달하는 사람이 달라집니다</strong>.
+            </p>
+            <p class="text-slate-600 leading-relaxed">
+                이 리포트는 카테고리별 시청자 분포 → 크리에이터 수익 구조 → 대형 게임 IP별 방송 분포 →
+                종합 시사점 순서로 구성했습니다. 아래 탭을 눌러 이동할 수 있습니다.
+                수치는 공개된 시청자 통계와 플랫폼 공지를 바탕으로 정리한 것으로, 내부 지표가 아닙니다.
+            </p>
+        </div>
+    </section>
+
 
     <!-- Main Navigation Tabs -->
     <nav class="flex space-x-2 md:space-x-8 border-b border-slate-200 mb-10 overflow-x-auto no-scrollbar">
         <button onclick="switchTab('viewers')" id="tab-btn-viewers" class="tab-active whitespace-nowrap py-4 px-2 text-sm md:text-base focus:outline-none transition-all">카테고리 및 시청 패턴</button>
         <button onclick="switchTab('revenue')" id="tab-btn-revenue" class="tab-inactive whitespace-nowrap py-4 px-2 text-sm md:text-base focus:outline-none transition-all">수익 모델 분석</button>
-        <button onclick="switchTab('nexon')" id="tab-btn-nexon" class="tab-inactive whitespace-nowrap py-4 px-2 text-sm md:text-base focus:outline-none transition-all">넥슨 타이틀 크리에이터 동향</button>
+        <button onclick="switchTab('nexon')" id="tab-btn-nexon" class="tab-inactive whitespace-nowrap py-4 px-2 text-sm md:text-base focus:outline-none transition-all">대형 IP 크리에이터 동향</button>
         <button onclick="switchTab('summary')" id="tab-btn-summary" class="tab-inactive whitespace-nowrap py-4 px-2 text-sm md:text-base focus:outline-none transition-all">종합 요약 및 예측</button>
     </nav>
 
@@ -124,7 +151,7 @@ NO SVG/Mermaid used. -->
     <!-- Tab 3: Nexon Titles -->
     <div id="section-nexon" class="fade-in hidden">
         <div class="mb-8">
-            <h2 class="text-2xl font-bold mb-2 text-slate-900">넥슨 주요 IP 크리에이터 분포</h2>
+            <h2 class="text-2xl font-bold mb-2 text-slate-900">대형 게임 IP별 크리에이터 분포</h2>
             <p class="text-slate-500">각 게임 타이틀의 특성에 따라 크리에이터들이 선호하는 플랫폼이 다르게 나타납니다.</p>
         </div>
 
@@ -215,7 +242,7 @@ NO SVG/Mermaid used. -->
     </div>
 
     <footer class="mt-20 text-center text-slate-400 text-xs">
-        <p>© 2026 Streaming Ecosystem Analysis Report (Nexon Edition). All rights reserved.</p>
+        <p>© 허재석 · 스트리밍 플랫폼 생태계 분석 기록 (공개 자료 기반)</p>
     </footer>
 </div>
 
