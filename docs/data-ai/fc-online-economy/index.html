@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FC 온라인 경제 지표 분석 리포트</title>
+    <title>FC 온라인 경제 지표 분석</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -78,7 +78,8 @@
             color: #4b5563;
             margin-top: 12px;
         }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
     
     <!-- Chosen Palette: Clean & Sporty Professional (White, Graphite, FC Green) -->
@@ -119,8 +120,8 @@
         <!-- 0. 문서 개요 (탭과 무관하게 항상 노출) -->
         <div id="overview" class="mb-16">
             <div class="bg-white rounded-2xl border border-slate-200 p-8 md:p-10">
-                <h2 class="text-2xl font-bold text-slate-900 mb-6">먼저 알아 둘 것</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">이 게임에는 선수를 유저끼리 사고파는 이적시장이 있고, 거래 화폐가 BP입니다. 새 최상위 시즌(TOTY)이 나오면 기존 선수 값이 폭락해, 들고 있던 유저는 팔지도 못하고 팀을 바꿀 수 없게 됩니다. 이 상태를 귀속이라고 부릅니다.</p>
+                <h2 class="text-2xl font-bold text-slate-900 mb-6">이적시장 구조</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">FC 온라인은 선수 카드를 유저 간 거래하는 이적시장을 게임 안에 두고 있으며, 거래 화폐는 BP입니다.<br>최상위 시즌(TOTY)이 출시되면 기존 대장급 선수의 시세가 하한가까지 내려가고, 보유 유저는 매도가 막혀 스쿼드 교체가 불가능해집니다.<br>이 상태를 귀속이라 부르며, 무소과금 유저의 성장 경로가 끊기는 지점입니다.</p>
             </div>
         </div>
 
@@ -174,7 +175,7 @@
             <div class="p-10 rounded-3xl bg-slate-50 border-l-[12px] border-emerald-400 shadow-sm">
                 <h4 class="font-bold text-2xl mb-6 text-slate-800 italic">라이브 서비스 매니저가 본 귀속 매물의 위험성</h4>
                 <p class="text-slate-700 leading-loose text-lg">
-                    선수 판매가 불가능해지는 귀속 현상은 무소과금 유저의 성장 사다리를 끊는 가장 치명적인 요인입니다.
+                    선수 판매가 불가능해지는 귀속 현상은 무소과금 유저의 성장 사다리를 끊는 가장 큰 요인입니다.
                     보유한 선수를 판매하여 새로운 팀을 구성하는 재미가 멈추게 되면 유저의 게임 플레이 동력은 급격히 저하됩니다.
                     이는 단순히 시세가 변하는 문제를 넘어 라이브 서비스의 장기 리텐션을 저해하는 비즈니스적 리스크입니다.
                 </p>
@@ -236,7 +237,7 @@
                             실시간으로 하한가 적체량이 임계치를 넘는 특정 시즌을 분석하여, 해당 매물을 에이전트 필수 재료로 설정하고 진행 시 일정량의 BP 수수료를 함께 소모시킵니다.
                         </p>
                         <p class="text-gray-600 text-[16px] leading-relaxed">
-                            이를 통해 귀속 매물을 자연스럽게 회수함과 동시에 시장의 잉여 통화량을 소각하여 BP 가치 인플레이션을 선제적으로 방어할 수 있습니다.
+                            이를 통해 귀속 매물을 자연스럽게 회수함과 동시에 시장의 잉여 통화량을 소각하여 BP 가치 인플레이션을 사전에 방어할 수 있습니다.
                         </p>
                     </div>
                     <div class="mt-10 bg-emerald-50 p-6 rounded-2xl font-bold text-emerald-700 text-center border border-emerald-100">

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게임 개발사 - 민감 정보 유출 없는 AI 기반 HR 통합 어시스턴트 기획서</title>
+    <title>AI 기반 HR 어시스턴트 기획</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -25,7 +25,8 @@
         }
         .notion-table th, .notion-table td { border: 1px solid #e2e8f0; padding: 0.75rem; }
         .notion-table th { background-color: #f8fafc; font-weight: 600; text-align: left; }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-teal-200 selection:text-teal-900 leading-relaxed">
@@ -33,7 +34,6 @@
     <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="font-bold text-xl text-teal-700 tracking-tight">게임 개발사 인사 조직 제안서</div>
-            <div class="text-sm font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full hidden sm:block">작성자: 허재석</div>
         </div>
     </nav>
 
@@ -46,14 +46,14 @@
             </h1>
             <p class="text-lg text-slate-600 leading-relaxed px-4">
                 노션을 활용한 체계적인 정보 구조화 역량과, 실무에 직접 적용하여 검증된 AI 기획 경험을 바탕으로 
-                게임 개발사 인사 조직의 업무 효율과 데이터 보안을 동시에 극대화하는 솔루션을 제안합니다.
+                게임 개발사 인사 조직의 업무 효율과 데이터 보안을 동시에 높이는 솔루션을 제안합니다.
             </p>
         </header>
 
         <!-- 0. 문서 개요 -->
         <section id="overview" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
-            <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-5">풀려는 문제</h2>
-            <p class="text-slate-600 leading-relaxed mb-4">HR 담당자의 시간은 반복 문의 응대와 양식 문서 작성에 들어갑니다. AI가 잘하는 일이지만 이름과 연봉이 밖으로 나갈 수 없어 쓰지 못합니다. AI에게는 빈칸 양식만 만들게 하고 개인정보는 담당자 컴퓨터에서 채우는 구조를 제안합니다.</p>
+            <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-5">문제 정의</h2>
+            <p class="text-slate-600 leading-relaxed mb-4">인사 담당자의 업무 시간은 반복 문의 응대와 양식 문서 작성에 집중됩니다.<br>두 업무 모두 AI로 대체할 수 있지만, 이름·연봉 등 인사 데이터를 외부 서비스에 입력할 수 없어 도입이 막힙니다.<br>AI에는 빈칸 양식만 생성하게 하고 민감 정보는 담당자 단말에서 결합하는 구조를 제안했습니다.</p>
         </section>
 
         <section id="problem-statement" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
@@ -73,7 +73,7 @@
                         </li>
                         <li class="flex items-start">
                             <span class="mr-2 mt-1 text-slate-500">▪️</span> 
-                            <div><strong>사내 보안 가이드를 준수하는 안전한 AI 활용:</strong><br>민감한 인사 데이터(이름, 연봉 등)를 다룰 때, 기업의 엄격한 보안 지침을 준수하면서도 최신 AI의 작업 속도와 편의성을 온전히 활용할 수 있는 환경 구축이 필요합니다.</div>
+                            <div><strong>사내 보안 가이드를 준수하는 안전한 AI 활용:</strong><br>민감한 인사 데이터(이름, 연봉 등)를 다룰 때, 기업의 엄격한 보안 지침을 준수하면서도 최신 AI의 작업 속도와 편의성을 그대로 활용할 수 있는 환경 구축이 필요합니다.</div>
                         </li>
                     </ul>
                 </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>캐주얼 물리 기반 스포츠 게임 기획 분석 리포트</title>
+    <title>캐주얼 스포츠 게임 기획 분석</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -96,7 +96,8 @@
             opacity: 0.3;
         }
         body { word-break: keep-all; overflow-wrap: break-word; }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
 </head>
 <body class="antialiased relative">
@@ -144,8 +145,8 @@
         <!-- 0. 문서 개요 -->
         <section id="overview" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 scroll-mt-24">
             <div class="bg-white/90 rounded-2xl border border-slate-200 p-8 md:p-10">
-                <h2 class="text-2xl font-bold text-slate-900 mb-6">어떤 장르인가</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">실제 축구가 아니라 과장된 물리로 공을 차는 아케이드 게임입니다. 로켓 리그 사이드스와이프, 헤드 사커 같은 게임이 여기 속합니다. 재미가 어느 수치에서 나오는지 분해했고, 비교 지표는 기획 의도를 눈에 보이게 만들려고 구성한 값입니다.</p>
+                <h2 class="text-2xl font-bold text-slate-900 mb-6">분석 대상</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">물리 연산을 과장해 조작의 재미를 만드는 캐주얼 스포츠 장르를 다룹니다.<br>로켓 리그 사이드스와이프, 헤드 사커, 오메가 스트라이커스를 대상으로 중력·히트박스·가속도 설정을 비교했습니다.<br>비교 수치는 기획 의도를 시각화하기 위한 값이며 실제 추출값은 아닙니다.</p>
             </div>
         </section>
 
@@ -173,7 +174,7 @@
                             </p>
                         </div>
                         <div class="p-5 bg-sand-50 rounded-xl border border-sand-100 hover:border-coral-200 transition-colors">
-                            <h3 class="text-lg font-bold text-sand-900 mb-2">3. 즉각적인 속도 제어</h3>
+                            <h3 class="text-lg font-bold text-sand-900 mb-2">3. 즉시인 속도 제어</h3>
                             <p class="text-sm text-sand-800 leading-relaxed">
                                 관성을 줄이고 높은 가속도를 설정하여 조작 즉시 반응하게 합니다. 빠른 템포의 공수 전환은 짧은 경기 시간 내의 긴장감을 유지합니다.
                             </p>
@@ -300,7 +301,7 @@
         const contentData = {
             casual: {
                 scoring: {
-                    title: "즉각적인 도파민 보상",
+                    title: "즉시인 도파민 보상",
                     desc: "목표 점수제나 3분 내외의 짧은 단판 승부를 선호합니다. 골인 시 화면 진동, 사운드, 파티클 이펙트를 과도할 정도로 화려하게 연출하여 득점의 가치를 감각적으로 전달합니다.",
                     icon: "🎯"
                 },

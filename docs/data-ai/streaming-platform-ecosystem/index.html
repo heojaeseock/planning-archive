@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026 스트리밍 플랫폼 생태계 분석: SOOP vs 치지직</title>
+<title>스트리밍 플랫폼 생태계 분석</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
@@ -41,7 +41,8 @@ body { font-family: 'Pretendard', sans-serif; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         body { word-break: keep-all; overflow-wrap: break-word; }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
 </style>
 </head>
 <body class="bg-[#F8F9FA] text-slate-900 selection:bg-slate-200">
@@ -72,8 +73,8 @@ NO SVG/Mermaid used. -->
     <!-- 0. 문서 개요 -->
     <section class="mb-10">
         <div class="bg-slate-50 rounded-2xl border border-slate-200 p-8">
-            <h2 class="text-2xl font-bold text-slate-900 mb-5">왜 보는가</h2>
-            <p class="text-slate-600 leading-relaxed mb-4">게임은 사기 전에 방송으로 먼저 보게 됩니다. 어느 플랫폼에서 얼마나 방송되는지가 신규 유입에 직접 영향을 줍니다. 트위치 철수 뒤 재편된 SOOP과 치지직의 성격 차이를 공개 통계로 정리했습니다.</p>
+            <h2 class="text-2xl font-bold text-slate-900 mb-5">분석 배경</h2>
+            <p class="text-slate-600 leading-relaxed mb-4">게임 구매 결정은 방송 시청을 거치는 경우가 많아, 플랫폼별 방송 규모가 신규 유입에 직접 영향을 줍니다.<br>트위치 철수 이후 재편된 SOOP과 치지직의 카테고리 구성, 수익 구조, 대형 IP 방송 분포를 공개 통계로 비교했습니다.</p>
         </div>
     </section>
 
@@ -188,7 +189,7 @@ NO SVG/Mermaid used. -->
                 <tbody class="divide-y divide-slate-100 text-sm md:text-base">
                     <tr>
                         <td class="p-6 font-semibold bg-slate-50/50">FPS 지배력</td>
-                        <td class="p-6">클랜전, 랭크전 등 경쟁 콘텐츠 압도적 (서든어택 최적화)</td>
+                        <td class="p-6">클랜전, 랭크전 등 경쟁 콘텐츠 비중이 높음 (서든어택 최적화)</td>
                         <td class="p-6">스트리머 대회, 내기 빵 등 이벤트성 유입 위주</td>
                     </tr>
                     <tr>
@@ -216,7 +217,7 @@ NO SVG/Mermaid used. -->
             <div class="bg-slate-900 text-white p-8 rounded-2xl shadow-sm">
                 <h3 class="text-xl font-bold mb-4 flex items-center"><span class="mr-2">💡</span> 전략적 제안</h3>
                 <ul class="space-y-3 text-slate-400 text-sm">
-                    <li>1. <strong>서든어택/FC Online:</strong> BJ 기반 클랜전 및 대규모 카드깡 등 시청 경험 극대화를 위해 SOOP 플랫폼 우선 집중.</li>
+                    <li>1. <strong>서든어택/FC Online:</strong> BJ 기반 클랜전 및 대규모 카드깡 등 시청 경험 향상을 위해 SOOP 플랫폼 우선 집중.</li>
                     <li>2. <strong>메이플/던파:</strong> 코어 업데이트는 SOOP, 라이트 유입 및 감성 마케팅은 치지직 스트리머와 협업.</li>
                     <li>3. <strong>데이터 통합:</strong> 플랫폼별 시청 점유율 데이터를 실시간 게임 접속 데이터와 동기화하여 마케팅 효율 정밀 측정.</li>
                 </ul>
@@ -313,7 +314,7 @@ const nexonData = {
     maple: {
         title: "메이플스토리 크리에이터 현황",
         data: [72, 28],
-        desc: `<p><strong>SOOP (72%):</strong> 고스펙 유저들의 보스 트라이 및 대규모 강화 방송이 주류를 이룹니다. 크루 시스템을 통한 대규모 레이드 파티 형성이 활발합니다.</p><p><strong>치지직 (28%):</strong> 무자본 성장기, 코디 및 감성 중심의 소규모 소통 방송이 점유율을 넓히고 있습니다.</p><div class="pt-4 border-t border-slate-700"><span class="text-indigo-400 font-bold">핵심 전략:</span> '스펙업 레이스' 등 경쟁적 이벤트는 SOOP에 집중하여 매출 극대화 도모.</div>`
+        desc: `<p><strong>SOOP (72%):</strong> 고스펙 유저들의 보스 트라이 및 대규모 강화 방송이 주류를 이룹니다. 크루 시스템을 통한 대규모 레이드 파티 형성이 활발합니다.</p><p><strong>치지직 (28%):</strong> 무자본 성장기, 코디 및 감성 중심의 소규모 소통 방송이 점유율을 넓히고 있습니다.</p><div class="pt-4 border-t border-slate-700"><span class="text-indigo-400 font-bold">핵심 전략:</span> '스펙업 레이스' 등 경쟁적 이벤트는 SOOP에 집중하여 매출 향상 도모.</div>`
     },
     dnf: {
         title: "던전앤파이터 크리에이터 현황",
@@ -323,7 +324,7 @@ const nexonData = {
     fc: {
         title: "FC Online 크리에이터 현황",
         data: [88, 12],
-        desc: `<p><strong>SOOP (88%):</strong> 전현직 프로게이머와 대형 크루들이 시장을 사실상 독점하고 있습니다. 카드 개봉 및 시청자 팀평가 콘텐츠의 화력이 압도적입니다.</p><p><strong>치지직 (12%):</strong> 스포츠 장르에 대한 시청자 기반이 약해 대중적인 이벤트 시에만 일시적인 유입이 발생합니다.</p><div class="pt-4 border-t border-slate-700"><span class="text-indigo-400 font-bold">핵심 전략:</span> 대형 e스포츠 대회 중계 인프라를 SOOP 플랫폼과 연동하여 고정 시청자층 유지.</div>`
+        desc: `<p><strong>SOOP (88%):</strong> 전현직 프로게이머와 대형 크루들이 시장을 사실상 독점하고 있습니다. 카드 개봉 및 시청자 팀평가 콘텐츠의 화력이 강합니다.</p><p><strong>치지직 (12%):</strong> 스포츠 장르에 대한 시청자 기반이 약해 대중적인 이벤트 시에만 일시적인 유입이 발생합니다.</p><div class="pt-4 border-t border-slate-700"><span class="text-indigo-400 font-bold">핵심 전략:</span> 대형 e스포츠 대회 중계 인프라를 SOOP 플랫폼과 연동하여 고정 시청자층 유지.</div>`
     },
     sudden: {
         title: "서든어택 크리에이터 현황",

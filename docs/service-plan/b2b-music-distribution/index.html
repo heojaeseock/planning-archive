@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>음악 플랫폼 기업 제안서 - B2B 음악 유통 (허재석)</title>
+    <title>B2B 음악 유통 구조 제안</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
@@ -84,7 +84,8 @@
         .click-indicator {
             animation: float 2s infinite ease-in-out;
         }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col relative break-keep">
@@ -107,7 +108,7 @@
             </div>
             <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight mb-6">
                 게임 라이브 관제 노하우를 <br>
-                <span class="gradient-text">B2B 음악 유통에 이식하다</span>
+                <span class="gradient-text">B2B 음악 유통에 적용하다</span>
             </h1>
             <p class="text-lg md:text-xl text-slate-500 font-medium max-w-2xl mx-auto">
                 데이터 표준화, 실시간 관제, 구조화된 협업 역량으로<br class="hidden md:block">
@@ -119,8 +120,8 @@
         <!-- 0. 문서 개요 -->
         <section id="overview">
             <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">어떤 사업인가</h2>
-                <p class="text-gray-600 leading-relaxed mb-4">아티스트의 음원을 받아 국내외 스트리밍 플랫폼 수십 곳에 대신 등록하고, 재생 수만큼 들어온 돈을 나눠 정산하는 중간 유통업입니다. 플랫폼마다 양식과 요율이 달라 정산이 새고, 신곡은 발매 직후 48시간에 승부가 납니다.</p>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">사업 구조</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">B2B 음악 유통은 아티스트와 레이블의 음원을 받아 국내외 스트리밍 플랫폼에 등록하고, 재생 수익을 정산하는 중간 유통 사업입니다.<br>플랫폼별 제출 양식과 정산 요율이 달라 정산 누락이 발생하고, 신곡은 발매 후 48시간에 노출 성과가 결정됩니다.</p>
             </div>
         </section>
 
@@ -136,7 +137,7 @@
                     <ul class="text-slate-600 space-y-2 font-medium mt-4">
                         <li class="flex gap-2">▪️ <span>하루 <b>10만 곡</b> 쏟아지는 음원 시장</span></li>
                         <li class="flex gap-2">▪️ <span>국내외 <b>20+개</b> 플랫폼 동시 유통</span></li>
-                        <li class="flex gap-2">▪️ <span class="text-rose-600">수작업 시 정산 누락 및 오류 리스크 극대화</span></li>
+                        <li class="flex gap-2">▪️ <span class="text-rose-600">수작업 시 정산 누락 및 오류 리스크 향상</span></li>
                     </ul>
                 </div>
                 <div class="bento-card p-8 bg-gradient-to-br from-white to-slate-50">
@@ -302,7 +303,7 @@
     </main>
 
     <footer class="text-center py-10 text-slate-400 text-sm font-medium border-t border-slate-200 mt-10">
-        B2B Music Distribution &amp; Platform Partnership Proposal - Prepared by 허재석
+        B2B Music Distribution &amp; Platform Partnership Proposal - &copy; 허재석
     </footer>
 
     <script>
@@ -410,7 +411,7 @@
                 title: "🚨 1. 유출 및 침해 탐지 (Detection)",
                 items: [
                     { label: "🎮 게임 경험", text: "어뷰저의 비정상 로그 패턴을 실시간 감지하여 증거 수집" },
-                    { label: "🎵 음악 적용", text: "커뮤니티 및 플랫폼 내 불법 복제 콘텐츠의 선제적 발굴" }
+                    { label: "🎵 음악 적용", text: "커뮤니티 및 플랫폼 내 불법 복제 콘텐츠의 사전 발굴" }
                 ]
             },
             2: {

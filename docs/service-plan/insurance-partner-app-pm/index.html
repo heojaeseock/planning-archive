@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>보험 중개 서비스 PM 작업 기록 | 보험 파트너 앱 고도화 제안</title>
+    <title>보험 파트너 앱 고도화 기획</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -89,7 +89,8 @@
             to { transform: scale(1); opacity: 1; }
         }
         body { word-break: keep-all; overflow-wrap: break-word; }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -114,8 +115,8 @@
         <!-- 0. 문서 개요 (탭과 무관하게 항상 노출) -->
         <section id="overview" class="mb-12">
             <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
-                <h2 class="text-xl md:text-2xl font-bold text-[#191F28] mb-6 leading-snug">누가 쓰는 앱인가</h2>
-                <p class="text-[#4E5968] leading-relaxed mb-4">여러 보험사 상품을 함께 취급하는 설계사들이 쓰는 업무용 앱입니다. 고객이 가입한 보험을 조회하고 부족한 보장을 짚어 주는 것까지는 됩니다. 그런데 매달 얼마인지 계산하려면 앱을 닫고 보험사 전산에 따로 접속해야 해서, 고객 앞에서 상담이 끊깁니다.</p>
+                <h2 class="text-xl md:text-2xl font-bold text-[#191F28] mb-6 leading-snug">대상 사용자와 문제</h2>
+                <p class="text-[#4E5968] leading-relaxed mb-4">보험 파트너 앱은 여러 보험사 상품을 함께 취급하는 설계사용 업무 앱입니다.<br>고객의 기존 가입 내역 조회와 보장 분석까지는 앱에서 처리됩니다.<br>다만 최종 보험료 산출은 보험사 전산에 개별 접속해야 해서, 고객 응대 중 상담 흐름이 끊깁니다.</p>
             </div>
         </section>
 

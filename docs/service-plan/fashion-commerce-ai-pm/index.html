@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>패션 커머스 플랫폼 AI PM 기획 리포트 - AI 프로덕트 팀</title>
+    <title>커머스 AI PM 업무 설계</title>
     <!-- Tailwind CSS 로드 최적화: production 에서는 빌드된 css를 쓰는 것이 좋으나 여기선 CDN 유지 -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -73,7 +73,6 @@
             transform: translateY(0); 
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
-        @media (max-width: 640px) { p br { display: none } }
     </style>
 </head>
 <body class="antialiased scroll-smooth">
@@ -106,8 +105,8 @@
         </h1>
         
         <p class="text-lg md:text-xl text-slate-600 max-w-3xl leading-relaxed font-medium mb-12 mx-auto text-center">
-            단 한 번의 장애가 치명적인 게임 운영 최전선에서 수만 건의 데이터를 다뤄온 집요함으로,<br class="hidden md:block">
-            AI 학습 데이터를 완벽히 검수하고 배포 후의 문제를 빈틈없이 추적해 비즈니스 가치로 번역합니다.
+            한 번의 장애가 바로 지표로 드러나는 게임 운영 현장에서 수만 건의 데이터를 다뤄온 집요함으로,<br class="hidden md:block">
+            AI 학습 데이터를 검수하고 배포 후의 문제를 빈틈없이 추적해 비즈니스 가치로 번역합니다.
         </p>
         
         <a href="#intro" class="flex items-center justify-center w-12 h-12 animate-bounce bg-white rounded-full shadow-md text-rose-500 hover:bg-rose-50 transition-colors duration-300 border border-rose-100 text-2xl font-bold">
@@ -120,8 +119,8 @@
         <!-- 0. 문서 개요 -->
         <section id="overview" class="scroll-mt-24">
             <div class="bg-white rounded-2xl border border-slate-200 p-8 md:p-10">
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">AI PM은 무슨 일인가</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">모델을 직접 학습시키는 엔지니어가 아니라, 무엇을 만들지 정하고 나온 결과가 쓸 만한지 책임지는 역할입니다. 학습 데이터가 깨끗한지 확인하고, 배포한 기능이 엉뚱한 답을 내놓지 않는지 지켜봅니다. 배포한 뒤가 시작이라는 점이 게임 운영과 같습니다.</p>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">직무 정의</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">AI PM은 모델을 학습시키는 역할이 아니라, 무엇을 만들지 정의하고 산출물의 품질을 책임지는 역할입니다.<br>학습 데이터의 정합성을 검수하고, 배포 후 예외 케이스를 추적해 개발 요건으로 환원합니다.<br>배포 이후가 본격적인 관리 구간이라는 점에서 라이브 운영과 성격이 같습니다.</p>
             </div>
         </section>
 
@@ -159,7 +158,7 @@
                         </div>
                     </div>
                     <p class="text-slate-600 leading-relaxed font-medium">
-                        존재하지 않는 상품의 특성을 지어내거나 완전히 다른 맥락으로 리뷰 요약을 제공하여, 커머스 플랫폼의 가장 중요한 자산인 유저의 '신뢰도'를 즉각적으로 훼손할 수 있습니다.
+                        존재하지 않는 상품의 특성을 지어내거나 완전히 다른 맥락으로 리뷰 요약을 제공하여, 커머스 플랫폼의 가장 중요한 자산인 유저의 '신뢰도'를 즉시 훼손할 수 있습니다.
                     </p>
                 </div>
             </div>
@@ -197,7 +196,7 @@
                             <div class="text-sm font-bold text-emerald-500">AI PM으로서의 적용 방안</div>
                             <span class="text-xs font-bold text-emerald-500 bg-emerald-50 px-2 py-1 rounded-full border border-emerald-100 animate-pulse block group-hover:hidden" id="click-badge-2">👆 Click</span>
                         </div>
-                        <div class="text-lg font-bold text-slate-800">엔지니어를 위한 완벽한 데이터 제공</div>
+                        <div class="text-lg font-bold text-slate-800">엔지니어를 위한 정제된 데이터 제공</div>
                         <p class="mt-2 text-slate-600 text-sm hidden lg:block">이 경험을 살려, AI 엔지니어가 모델링에만 집중할 수 있도록 사전에 노이즈를 필터링합니다.</p>
                     </button>
                 </div>
@@ -226,7 +225,7 @@
             <div class="bg-slate-900 rounded-3xl p-6 md:p-10 shadow-xl text-white transform-gpu">
                 <div class="mb-8 max-w-3xl">
                     <h3 class="text-xl font-bold text-rose-400 mb-4">기능 배포는 끝이 아닌, 모니터링의 시작입니다.</h3>
-                    <p class="text-slate-300 leading-relaxed">신규 AI 기능이 상용화되었을 때 예측 불가능한 예외 케이스를 실시간으로 추적합니다. 대규모 게임 패치 모니터링 경험을 살려, 이상 징후 발생 시 개발팀에 즉각적인 피드백을 전달합니다.</p>
+                    <p class="text-slate-300 leading-relaxed">신규 AI 기능이 상용화되었을 때 예측 불가능한 예외 케이스를 실시간으로 추적합니다. 대규모 게임 패치 모니터링 경험을 살려, 이상 징후 발생 시 개발팀에 빠른 피드백을 전달합니다.</p>
                 </div>
 
                 <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 relative">

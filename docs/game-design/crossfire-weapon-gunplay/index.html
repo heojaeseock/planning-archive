@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CF 무기 기획 작업 기록 | 조작감 분석 & 제안</title>
+    <title>크로스파이어 무기 조작감 분석</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;900&display=swap" rel="stylesheet">
@@ -93,7 +93,8 @@
             box-shadow: 0 10px 20px -5px rgba(255, 70, 85, 0.4);
         }
         body { word-break: keep-all; overflow-wrap: break-word; }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
 </head>
 <body class="antialiased selection:bg-cfred selection:text-white">
@@ -132,8 +133,8 @@
     <!-- Section 1: Philosophy -->
     <!-- 0. 문서 개요 -->
     <section id="overview" class="py-20 px-6 max-w-6xl mx-auto border-t border-slate-200">
-        <h2 class="text-3xl font-black text-slate-900 mb-6 tracking-tight">손맛이란</h2>
-        <p class="text-slate-600 leading-relaxed mb-4 max-w-4xl">총구가 튀는 정도, 즉 반동을 얼마나 잡아 누를 수 있는지가 FPS의 실력 차를 만듭니다. 반동을 불편함이 아니라 설계된 진입 장벽으로 보고, 안정적인 M4A1과 다루기 어려운 AK-47이 함께 있는 이유를 분해했습니다.</p>
+        <h2 class="text-3xl font-black text-slate-900 mb-6 tracking-tight">조작감의 정의</h2>
+        <p class="text-slate-600 leading-relaxed mb-4 max-w-4xl">FPS의 실력 차는 데미지 수치보다, 총구가 상승하는 반동을 제어하는 숙련도에서 발생합니다.<br>반동을 결함이 아니라 의도된 숙련 장벽으로 보고, 저반동 M4A1과 고반동 AK-47이 공존하는 밸런스 축을 분해했습니다.<br>본문 지표는 직접 플레이를 근거로 구성한 가설 모델입니다.</p>
     </section>
 
     <section id="philosophy" class="py-20 px-6 max-w-6xl mx-auto border-t border-slate-200">
@@ -281,7 +282,7 @@
                     <p class="text-sm text-slate-600 leading-relaxed">
                         하나의 총기에 두 가지 조작감을 부여합니다. <br><br>
                         <strong>모드 A (저지지력 연사):</strong> M4의 안정성을 가졌으나 연사력이 낮음. 중거리 적을 압박하기 용이함. <br>
-                        <strong>모드 B (고반동 점사):</strong> AK 이상의 반동을 가졌으나 3점사 정확도가 압도적임. 고수가 정교한 샷으로 변수를 만들기 최적화됨.
+                        <strong>모드 B (고반동 점사):</strong> AK 이상의 반동을 가졌으나 3점사 정확도가 높음. 고수가 정교한 샷으로 변수를 만들기 최적화됨.
                     </p>
                 </div>
                 <div class="bg-cfred p-8 rounded-3xl text-white shadow-xl shadow-cfred/20">
@@ -312,7 +313,7 @@
                         "단순히 데미지를 조정하는 <span class="tech-tag-fixed">스펙</span> 싸움을 넘어,"
                     </h2>
                     <h2 class="text-2xl md:text-4xl font-black italic leading-[1.6] text-white">
-                        "유저의 전술과 리듬이 총기에 완벽히 <span class="tech-bracket tech-tag-fixed">투영</span> 되는,"
+                        "유저의 전술과 리듬이 총기에 그대로 <span class="tech-bracket tech-tag-fixed">투영</span> 되는,"
                     </h2>
                     <h2 class="text-2xl md:text-4xl font-black italic leading-[1.6] text-white">
                         "살아 숨 쉬는 <span class="tech-bracket tech-tag-fixed">무기 생태계</span> 를 설계해 보았습니다."

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[프로젝트 N] 기획 제안서 - 허재석</title>
+    <title>라이브 운영 3대 솔루션 제안</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -107,7 +107,8 @@
             word-break: keep-all;
             overflow-wrap: break-word;
         }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
 </head>
 <body class="antialiased scroll-smooth font-sans selection:bg-brand-500 selection:text-white keep-all">
@@ -144,8 +145,8 @@
         <!-- 0. 문서 개요 -->
         <section id="overview" class="scroll-mt-24">
             <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
-                <h2 class="text-2xl font-bold text-gray-900 mb-5">전제</h2>
-                <p class="text-gray-600 leading-relaxed mb-4">프로젝트 N은 실제 프로젝트가 아니라 웹툰 IP 기반 수집형 RPG를 가정한 가칭입니다. 이탈 방어, 신규 캐릭터 인플레이션 검증, 사고 대응 세 가지를 다뤘습니다. 본문 차트는 프로세스를 보여주기 위한 시연용 값입니다.</p>
+                <h2 class="text-2xl font-bold text-gray-900 mb-5">기획 전제</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">프로젝트 N은 웹툰 IP 기반 수집형 RPG를 전제한 가칭입니다.<br>이탈 방어, 신규 캐릭터 인플레이션 검증, 사고 대응 세 가지를 운영자 관점에서 정리했습니다.<br>본문 차트는 프로세스 시연을 위한 가상 데이터입니다.</p>
             </div>
         </section>
 
@@ -385,7 +386,7 @@
                     <div class="text-4xl">🔍</div>
                     <div>
                         <h3 class="text-xl md:text-2xl font-black text-surface-dark mb-1">원인 분석 : 매출 타격 기반 개발팀 설득</h3>
-                        <p class="text-sm font-bold text-orange-500">"단순 누락인가, 매출에 직결되는 치명적 리스크인가?"</p>
+                        <p class="text-sm font-bold text-orange-500">"단순 누락인가, 매출에 직결되는 중대 리스크인가?"</p>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 gap-4 font-medium text-surface-dark">
@@ -410,7 +411,7 @@
                 <div class="grid grid-cols-1 gap-4 font-medium text-surface-dark">
                     <div class="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-4">
                         <span class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm font-black shrink-0">행동</span>
-                        <p class="text-gray-600 leading-relaxed text-sm">개발자 노트를 통해 이슈 발생 원인을 투명하게 공개하여 유저를 납득시키고, 핵심 결제 유저의 추가 이탈을 선제적으로 방어합니다.</p>
+                        <p class="text-gray-600 leading-relaxed text-sm">개발자 노트를 통해 이슈 발생 원인을 투명하게 공개하여 유저를 납득시키고, 핵심 결제 유저의 추가 이탈을 사전에 방어합니다.</p>
                     </div>
                     <div class="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-4">
                         <span class="bg-green-50 text-green-600 px-3 py-1.5 rounded-lg text-sm font-black shrink-0">보상</span>

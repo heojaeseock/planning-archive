@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOOP vs 치지직 신입 지원 정책 분석 및 락인 전략</title>
+    <title>크리에이터 지원 정책 비교 분석</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -17,7 +17,8 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
         .tab-btn.active { border-bottom: 3px solid #4f46e5; color: #4f46e5; font-weight: 800; }
         body { word-break: keep-all; overflow-wrap: break-word; }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
 </head>
 <body class="antialiased bg-slate-50">
@@ -37,8 +38,8 @@
     <!-- 0. 문서 개요 -->
     <section class="mb-20">
         <div class="bg-white rounded-2xl border border-slate-200 p-8">
-            <h2 class="text-2xl font-black text-slate-900 mb-5">용어부터</h2>
-            <p class="text-slate-600 leading-relaxed mb-4">별풍선은 시청자가 주는 후원, 신입 버프는 방송 초반에 목록 상단으로 올려 주는 혜택입니다. 문제는 그 혜택이 끝나는 시점입니다. 대부분이 시청자 0명 구간을 넘기지 못하고 방송을 접습니다.</p>
+            <h2 class="text-2xl font-black text-slate-900 mb-5">용어와 문제 구간</h2>
+            <p class="text-slate-600 leading-relaxed mb-4">별풍선은 시청자 후원 아이템, 신입 버프는 방송 초기에 목록 상단으로 노출해 주는 혜택입니다.<br>이탈이 집중되는 구간은 신입 버프가 종료되는 시점으로, 시청자 0명 상태가 이어지며 대부분이 방송을 중단합니다.<br>SOOP과 치지직의 신입 지원 정책을 비교하고 잔존 방안을 제안했습니다.</p>
         </div>
     </section>
 
@@ -57,7 +58,7 @@
             <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
                 <h3 class="font-bold text-lg mb-4 text-indigo-600">기획자 관점의 시사점</h3>
                 <p class="text-sm text-slate-600 leading-relaxed">
-                    잠재력 있는 신입 스트리머의 확보는 단순히 채널 수를 늘리는 것이 아니라, 특정 대형 크리에이터에 대한 플랫폼 의존도를 낮추고 광고 및 후원 모델의 저변을 넓히는 <strong>'플랫폼 리스크 분산'</strong>과 <strong>'LTV(고객 생애 가치) 극대화'</strong>의 핵심 전략임.
+                    잠재력 있는 신입 스트리머의 확보는 단순히 채널 수를 늘리는 것이 아니라, 특정 대형 크리에이터에 대한 플랫폼 의존도를 낮추고 광고 및 후원 모델의 저변을 넓히는 <strong>'플랫폼 리스크 분산'</strong>과 <strong>'LTV(고객 생애 가치) 향상'</strong>의 핵심 전략임.
                 </p>
             </div>
         </div>
@@ -98,13 +99,13 @@
                         <span class="text-[10px] font-bold text-indigo-500 uppercase">Analysis</span>
                     </div>
                     <div class="grid grid-cols-2 gap-4 text-xs text-slate-500">
-                        <p><strong class="text-indigo-600">SOOP:</strong> 즉각적인 별풍선 수령 가능</p>
+                        <p><strong class="text-indigo-600">SOOP:</strong> 즉시인 별풍선 수령 가능</p>
                         <p><strong class="text-cyan-600">치지직:</strong> 등급별 허들(팔로워/시간) 존재</p>
                     </div>
                 </div>
             </div>
             <div id="detail2" class="hidden px-8 py-6 bg-indigo-50/30 rounded-2xl border border-indigo-100 -mt-2 text-xs leading-relaxed text-slate-600">
-                <strong>[시사점]</strong> SOOP은 소액이라도 즉각적인 보상이 이루어져 스트리머의 '생존 가능성'을 높여줌. 치지직은 자격 요건 충족 과정에서 신입의 인내심을 테스트하는 구조로, 이 과정에서의 이탈 방어 기제 부재가 약점임.
+                <strong>[시사점]</strong> SOOP은 소액이라도 즉시 지급되는 보상이 이루어져 스트리머의 '생존 가능성'을 높여줌. 치지직은 자격 요건 충족 과정에서 신입의 인내심을 테스트하는 구조로, 이 과정에서의 이탈 방어 기제 부재가 약점임.
             </div>
 
             <!-- Row 3 -->
@@ -146,7 +147,7 @@
                     <canvas id="competencyChart"></canvas>
                 </div>
                 <div class="mt-4 p-4 bg-slate-50 rounded-2xl text-[11px] text-slate-500 leading-relaxed">
-                    <span class="font-bold text-slate-800">생태계적 강점:</span> SOOP은 수익성과 커뮤니티 결속력에서 치지직 대비 압도적 우위. 신입을 기성 대형 크루에 물리적으로 연결하여 <strong>'관계 기반의 락인'</strong>을 유도하는 것이 승부처임.
+                    <span class="font-bold text-slate-800">생태계적 강점:</span> SOOP은 수익성과 커뮤니티 결속력에서 치지직 대비 우위. 신입을 기성 대형 크루에 물리적으로 연결하여 <strong>'관계 기반의 락인'</strong>을 유도하는 것이 승부처임.
                 </div>
             </div>
         </div>

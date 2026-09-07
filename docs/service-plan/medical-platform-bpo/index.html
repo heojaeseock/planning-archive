@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>의료 정보 플랫폼 BPO 최적화 시스템 제안 | 작성자 허재석</title>
+    <title>외주 상담(BPO) 운영 최적화</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -110,7 +110,8 @@
             text-align: right;
             margin-top: 0.5rem;
         }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
 </head>
 <body class="antialiased font-sans scroll-smooth">
@@ -152,7 +153,7 @@
             </div>
             <div class="card p-6 text-center md:text-left hover:-translate-y-1 transition-transform">
                 <div class="icon-box mb-4 mx-auto md:mx-0">📡</div>
-                <h3 class="text-lg font-bold text-gray-900 mb-2">선제적 리포팅</h3>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">사전 리포팅</h3>
                 <p class="text-sm text-gray-600">이슈 발생 전 커뮤니티 동향을 파악하여 리스크를 유관 부서에 미리 알립니다.</p>
             </div>
             <div class="card p-6 text-center md:text-left hover:-translate-y-1 transition-transform">
@@ -167,8 +168,8 @@
     <!-- 0. 문서 개요 -->
     <section id="overview" class="py-20 bg-gray-50 border-t border-gray-100 fade-in-section">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl sm:text-3xl font-black text-gray-900 mb-6 leading-snug">어떤 서비스인가</h2>
-            <p class="text-gray-600 leading-relaxed mb-4">병원과 시술 정보를 모아 두고, 실제로 진료받은 사람의 후기로 병원을 고르게 돕는 서비스입니다. 그래서 가장 큰 리스크는 돈을 받고 쓴 가짜 후기입니다. 지금은 외주사 인력이 후기를 하나씩 눈으로 확인하고 있습니다.</p>
+            <h2 class="text-2xl sm:text-3xl font-black text-gray-900 mb-6 leading-snug">서비스 구조와 리스크</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">병원·시술 정보와 실제 진료 후기를 근거로 병원을 선택하게 돕는 서비스를 다룹니다.<br>후기가 선택의 기준이므로 대가성 허위 후기가 가장 큰 리스크입니다.<br>현재 검수는 외주사(BPO) 인력이 후기를 개별 확인하는 수작업으로 처리되고 있습니다.</p>
         </div>
     </section>
 
@@ -258,7 +259,7 @@
                     <div class="chart-container">
                         <canvas id="efficiencyChart"></canvas>
                     </div>
-                    <p class="data-source">※ 출처: 작성자 허재석의 이전 라이브 서비스 운영 효율화 경험을 대입한 추정치</p>
+                    <p class="data-source">※ 출처: 본인의 이전 라이브 서비스 운영 효율화 경험을 대입한 추정치</p>
                 </div>
             </div>
         </div>

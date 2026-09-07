@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>방치형 RPG 기획·운영 작업 기록</title>
+    <title>방치형 RPG 라이브 운영 기록</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chart.js -->
@@ -109,7 +109,8 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             border: 1px solid #e2e8f0;
         }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
 
     <!-- Application Structure Plan: Vertical single-page scroller with refined Korean typography.
@@ -138,7 +139,7 @@
         <div class="max-w-5xl mx-auto text-center">
             <h2 class="text-brand-600 font-bold tracking-widest text-sm mb-4 uppercase">팀 어시스턴트(기획) 직무 분석</h2>
             <h1 class="text-3xl md:text-5xl font-black text-slate-900 mb-8 leading-tight">
-                방치형 RPG 무결점 업데이트 <br class="hidden md:block"/> 
+                방치형 RPG 무오류 업데이트 <br class="hidden md:block"/> 
                 파이프라인 및 개선 기획서
             </h1>
             <p class="text-slate-600 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -158,7 +159,7 @@
         <!-- 0. 문서 개요 -->
         <section id="overview" class="py-24 border-b border-slate-200">
             <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-6">장르 특성</h2>
-            <p class="text-slate-600 leading-relaxed mb-4">방치형 RPG는 손을 놓아도 캐릭터가 자동으로 성장하는 대신, 매일 해야 하는 일과가 생깁니다. 유저들은 이걸 숙제라고 부르고, 숙제가 늘어나면 게임이 의무가 됩니다. 편의 기능 기획, 업데이트 검증, 사고 대응 순서로 다뤘습니다.</p>
+            <p class="text-slate-600 leading-relaxed mb-4">방치형 RPG는 자동 성장을 전제하는 대신 일일 반복 콘텐츠가 누적됩니다.<br>유저는 이를 숙제라 부르며, 항목이 늘어나면 접속 동기가 의무로 바뀝니다.<br>편의성 기획, 업데이트 검증 프로세스, 사고 대응 순서로 정리했습니다.</p>
         </section>
 
         <section id="qol" class="py-24 border-b border-slate-200">
@@ -220,7 +221,7 @@
                         <ul class="space-y-5 text-slate-600 text-sm">
                             <li><strong class="text-slate-800 block mb-1">문제 인식:</strong> 보스전, 방치 파밍, 골드 던전 등 상황별로 장비나 스킬을 매번 교체해야 하는 조작의 번거로움이 큽니다.</li>
                             <li><strong class="text-slate-800 block mb-1">작동 방식:</strong> 장비, 스킬, 동료 세팅을 미리 저장해 두고, 전투 진입 전 팝업의 메뉴를 통해 상황에 맞는 세팅으로 즉시 교체합니다.</li>
-                            <li><strong class="text-slate-800 block mb-1">기대 효과:</strong> UI 조작 단계를 크게 줄이고, 세팅 변경으로 인한 스트레스를 완화하여 전투 몰입도를 극대화합니다.</li>
+                            <li><strong class="text-slate-800 block mb-1">기대 효과:</strong> UI 조작 단계를 크게 줄이고, 세팅 변경으로 인한 스트레스를 완화하여 전투 몰입도를 높입니다.</li>
                         </ul>
                     </div>
 
@@ -238,10 +239,10 @@
         <section id="qa" class="py-24 border-b border-slate-200">
             <div class="mb-12 text-center">
                 <span class="text-brand-500 font-black text-4xl mb-3 block">&#128269;</span>
-                <h2 class="text-3xl font-bold text-slate-900 mb-4">무결점 QA 체크리스트 시뮬레이터</h2>
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">QA 교차 검증 체크리스트</h2>
                 <p class="text-slate-600 max-w-3xl mx-auto leading-relaxed">
                     기획된 내용이 라이브 서버에 적용되기 전,<br class="hidden md:block"/> 
-                    치명적인 휴먼 에러를 차단하기 위한 5단계 교차 검증 프로세스입니다.<br>
+                    중대한 휴먼 에러를 차단하기 위한 5단계 교차 검증 프로세스입니다.<br>
                     <strong class="text-brand-600 mt-2 block">우측의 '검증' 버튼을 차례대로 클릭하여 검증 파이프라인을 직접 체험해 보세요.</strong>
                 </p>
             </div>
@@ -346,7 +347,7 @@
                     <div class="relative z-10 mb-8 content-card p-5">
                         <div class="absolute -left-[41px] bg-slate-100 border-4 border-slate-300 w-6 h-6 rounded-full mt-1"></div>
                         <h4 class="font-bold text-slate-800 text-lg mb-1">2단계: 긴급 점검</h4>
-                        <p class="text-sm text-slate-500 mb-4">유관 부서와 협력하여 원인을 규명합니다. 재화 관련 치명적 버그 확인 시 즉각적으로 서버 긴급 점검에 돌입합니다.</p>
+                        <p class="text-sm text-slate-500 mb-4">유관 부서와 협력하여 원인을 규명합니다. 재화 관련 중대 버그 확인 시 즉시 서버 긴급 점검에 돌입합니다.</p>
                         <span class="inline-block bg-red-50 text-red-600 px-3 py-1 rounded-md text-xs border border-red-200 font-bold">실행: 긴급 점검 진행 및 예상 시간 공유</span>
                     </div>
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>카발 RED 기획 작업 기록 - 작성자 허재석</title>
+    <title>카발 RED 보상 콘텐츠 기획</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;700;800&display=swap" rel="stylesheet">
@@ -60,7 +60,8 @@
             background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
             margin: 4rem 0;
         }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col">
@@ -77,7 +78,6 @@
                     카발 RED: 파밍 구조 및 가치 방어 기획안
                 </h1>
                 <p class="text-slate-500 text-sm font-medium mt-1">
-                    작성자: 허재석
                 </p>
             </div>
         </div>
@@ -90,8 +90,8 @@
         <!-- 0. 문서 개요 -->
         <section id="section-overview">
             <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
-                <h2 class="text-2xl font-bold text-gray-900 mb-5">문제 상황</h2>
-                <p class="text-gray-600 leading-relaxed mb-4">모두 같은 사냥터를 돌면 장비가 넘쳐 값이 바닥까지 떨어집니다. 이때 유저가 느끼는 건 확률이 나쁘다는 불만이 아니라, 쓴 시간이 값어치를 잃었다는 박탈감입니다. 넘치는 하위 장비에 쓸 곳을 만들어 주는 기획안입니다.</p>
+                <h2 class="text-2xl font-bold text-gray-900 mb-5">문제 정의</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">동일 사냥터에 파밍이 집중되면 하위 장비 공급이 과잉되어 시세가 하한가로 수렴합니다.<br>이때 발생하는 이탈 요인은 확률에 대한 불만보다, 투입한 시간의 가치가 하락했다는 인식입니다.<br>잉여 장비에 시스템적 소모처를 부여해 가치를 방어하는 기획안입니다.</p>
             </div>
         </section>
 
@@ -269,7 +269,7 @@
                             <span id="m-icon1" class="text-slate-400 transition-transform duration-300 flex-shrink-0 ml-2 rotate-180">▲</span>
                         </button>
                         <div id="manual1" class="p-4 bg-slate-50 text-sm text-slate-600 border-t border-slate-200 leading-relaxed">
-                            오지급 및 버그 의심 알람 확인 즉시 운영팀과 공조합니다. 문제 파악 전까지 <strong>해당 사냥터의 임시 접근 제한 또는 획득률 조정 핫픽스(Kill-Switch)</strong>를 검토하여 시장 교란 확산을 선제적으로 차단합니다.
+                            오지급 및 버그 의심 알람 확인 즉시 운영팀과 공조합니다. 문제 파악 전까지 <strong>해당 사냥터의 임시 접근 제한 또는 획득률 조정 핫픽스(Kill-Switch)</strong>를 검토하여 시장 교란 확산을 사전에 차단합니다.
                         </div>
                     </div>
 
@@ -302,7 +302,7 @@
 
     <footer class="bg-slate-900 py-8 text-center px-4">
         <p class="text-slate-400 text-sm font-medium">카발 RED 보상 콘텐츠 기획 리포트</p>
-        <p class="text-slate-600 text-xs mt-2">작성자: 허재석 | 데이터 기반의 안정적인 게임 시스템 설계 기록.</p>
+        <p class="text-slate-600 text-xs mt-2">&copy; 허재석</p>
     </footer>
 
     <script>

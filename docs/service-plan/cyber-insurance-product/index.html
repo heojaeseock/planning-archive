@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>손해보험 사이버보험 상품 기획 분석</title>
+    <title>사이버보험 상품 기획 분석</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -59,7 +59,8 @@
         .fade-transition { transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; }
         .fade-out { opacity: 0; transform: translateY(10px); pointer-events: none; position: absolute; visibility: hidden; }
         .fade-in { opacity: 1; transform: translateY(0); position: relative; visibility: visible; }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
 </head>
 <body class="text-gray-800 font-sans break-keep">
@@ -103,8 +104,8 @@
         <!-- 0. 문서 개요 -->
         <section id="overview" class="scroll-mt-24">
             <div class="bg-white rounded-2xl border border-slate-200 p-8 md:p-10">
-                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-6">두 가지 용어</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">사이버보험은 기업이 해킹이나 개인정보 유출 사고를 당했을 때 복구비와 배상금을 메워 주는 상품입니다. 언더라이팅은 그 보험을 팔기 전에 가입 기업의 보안 상태를 보고 받아도 되는 위험인지 판단하는 일입니다.</p>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-6">상품과 직무 정의</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">사이버보험은 기업의 해킹·랜섬웨어·개인정보 유출 사고에 따른 복구 비용과 배상 책임을 담보하는 기업성 상품입니다.<br>언더라이팅은 인수 전 가입 기업의 보안 수준을 평가해, 인수 여부와 보험료를 결정하는 심사 업무입니다.</p>
             </div>
         </section>
 
@@ -145,7 +146,7 @@
                         보험 가입과 동시에 <strong>'사고 발생 시 3단계 행동 지침'</strong>을 사전 부가 서비스로 제공합니다.
                     </p>
                     <ul class="text-sm space-y-3 text-gray-800 font-bold bg-white p-5 rounded-xl border border-orange-100">
-                        <li class="flex items-center gap-3"><span class="text-brand-orange text-lg">✔️</span> 즉각적 망 분리 (격리)</li>
+                        <li class="flex items-center gap-3"><span class="text-brand-orange text-lg">✔️</span> 즉시 망 분리 (격리)</li>
                         <li class="flex items-center gap-3"><span class="text-brand-orange text-lg">✔️</span> 1시간 내 핫라인 신고</li>
                         <li class="flex items-center gap-3"><span class="text-brand-orange text-lg">✔️</span> 신속한 원인 분석 협조</li>
                     </ul>
@@ -326,7 +327,7 @@
         const playbookData = {
             1: {
                 title: "1단계: 인지 및 초기 격리",
-                game: "트래픽 이상 탐지 즉시 해당 서버 외부 접근을 차단하여 어뷰저의 추가 진입을 원천 방지합니다.",
+                game: "트래픽 이상 탐지 즉시 해당 서버 외부 접근을 차단하여 어뷰저의 추가 진입을 차단합니다.",
                 cyber: "랜섬웨어 감염 징후 확인 즉시 PC 랜선을 제거하고 사내 네트워크에서 물리적으로 분리하는 지침을 안내합니다."
             },
             2: {

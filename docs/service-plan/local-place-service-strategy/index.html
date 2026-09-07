@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>지역 정보 서비스 전략 리포트 - 허재석</title>
+    <title>지역 정보 서비스 데이터 품질 전략</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -102,7 +102,8 @@
 
         .custom-scroll::-webkit-scrollbar { width: 4px; }
         .custom-scroll::-webkit-scrollbar-thumb { background: #03C75A; border-radius: 10px; }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
 </head>
 <body class="selection:bg-brand/30">
@@ -158,8 +159,8 @@
 
         <!-- 0. 문서 개요 -->
         <section id="overview" class="strategy-card p-8 md:p-14">
-            <h2 class="text-2xl md:text-3xl font-black mt-3 mb-6 leading-snug">어떤 서비스인가</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">지도와 검색에서 동네 가게 정보와 방문자 리뷰를 보여주는 서비스입니다. 리뷰 신뢰도가 곧 서비스 신뢰도인데, 리뷰 수를 늘리려는 이벤트가 보상만 노린 글과 사진 도용까지 함께 끌어옵니다. 그걸 걸러내는 일은 마케터의 수작업으로 남습니다.</p>
+            <h2 class="text-2xl md:text-3xl font-black mt-3 mb-6 leading-snug">서비스 구조와 문제</h2>
+            <p class="text-slate-400 leading-relaxed mb-4">지도·검색에서 지역 상점 정보와 방문자 리뷰를 제공하는 서비스를 다룹니다.<br>리뷰 신뢰도가 서비스 신뢰도와 직결되지만, 리뷰 수 확보를 위한 이벤트가 보상 목적의 단문 리뷰와 사진 도용을 함께 유입시킵니다.<br>선별 작업이 마케터의 수작업으로 남아, 이벤트 규모에 비례해 검수 부담이 늘어납니다.</p>
         </section>
 
         
@@ -351,7 +352,7 @@
                 <div class="text-brand font-black text-[10px] mb-5 uppercase tracking-[0.2em]">Deep Research Analysis 03</div>
                 <h3 class="text-xl font-black text-slate-900 mb-6">유저 몰입을 위한 경험 설계</h3>
                 <div class="space-y-5 text-slate-600 text-sm md:text-[15px] leading-relaxed">
-                    <p>대형 게임 업데이트 시 활용했던 <span class="font-bold text-slate-900">GM 가이드 기획 역량</span>을 지역 정보 서비스에 이식합니다.</p>
+                    <p>대형 게임 업데이트 시 활용했던 <span class="font-bold text-slate-900">GM 가이드 기획 역량</span>을 지역 정보 서비스에 적용합니다.</p>
                     <p>단순 정보 전달이 아닌 성수동 탐험이라는 세계관을 입히고, 정교한 스토리보드 설계를 통해 디자인 협업 효율을 높이는 동시에 유저에게 <span class="font-bold text-brand">시각적 성취감</span>을 제공하는 방안을 정리했습니다.</p>
                 </div>
             `,
@@ -360,7 +361,7 @@
                 <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 font-bold text-slate-800 leading-relaxed mb-6 italic text-[15px]">
                     "성수동 핫플 다녀오셨나요? 지금 사진 인증하면 대형 포털 포인트 500원이 즉시 지급됩니다! 💸"
                 </div>
-                <p class="text-[11px] text-slate-400">데이터 기반 분석: 결제 및 방문 패턴 분석 기반 실시간 발송으로 전환율 극대화.</p>
+                <p class="text-[11px] text-slate-400">데이터 기반 분석: 결제 및 방문 패턴 분석 기반 실시간 발송으로 전환율 향상.</p>
             `,
             push2: `
                 <h4 class="text-[10px] font-black text-brand mb-6 uppercase">Type B. 가치자극</h4>

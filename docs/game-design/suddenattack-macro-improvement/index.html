@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>허재석 작업 기록 | 서든어택 매크로 시스템 개선</title>
+    <title>서든어택 매크로 시스템 개선</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
@@ -71,7 +71,8 @@
             animation: scanline 3s linear infinite;
             pointer-events: none;
         }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
 </head>
 <body class="antialiased">
@@ -94,7 +95,6 @@
                             분석 및 UI/UX 고도화
                         </h1>
                         <div class="flex flex-wrap gap-4 mt-6 text-slate-300 text-sm font-bold">
-                            <span class="bg-slate-800/80 px-3 py-1 rounded-full border border-slate-600 shadow-sm">👤 기획: 허재석 (100%)</span>
                         </div>
                     </div>
                     <!-- 전술 통신/채팅 아이콘 -->
@@ -112,8 +112,8 @@
 
             <!-- 문서 개요 (탭과 무관하게 항상 노출) -->
             <div class="px-6 md:px-10 py-10 border-b border-slate-200 bg-white">
-                <h2 class="text-2xl font-bold text-slate-900 mb-5">어떤 기능인가</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">죽은 유저가 단축키로 미리 정해진 문장을 살아 있는 팀원에게 보내는 고스트 채팅입니다. 실제로는 거짓 정보를 흘리거나 같은 문장을 도배해 화면을 가리는 데 쓰입니다. 본문의 개피는 체력이 거의 없다, 컨뒤는 컨테이너 뒤에 적이 있다는 뜻입니다.</p>
+                <h2 class="text-2xl font-bold text-slate-900 mb-5">기능 정의와 문제</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">고스트 채팅 매크로는 사망한 유저가 단축키로 사전 등록 문구를 생존 팀원에게 전달하는 기능입니다.<br>실사용에서는 허위 정보 전달과 동일 문구 도배로 화면 가림이 발생합니다.<br>본문의 개피는 체력 잔량이 적다는 뜻, 컨뒤는 컨테이너 뒤에 적이 있다는 뜻의 유저 표현입니다.</p>
             </div>
 
             <!-- 네비게이션 탭 -->
@@ -218,7 +218,7 @@
                 <div class="text-center max-w-2xl mx-auto mb-10">
                     <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">고스트 매크로 편의성 향상 3대 기획안</h2>
                     <p class="text-slate-500 text-sm leading-relaxed">
-                        정보의 신뢰성을 지키고 조작 편의성을 극대화하기 위해 기획한 구체적인 시스템 개선 로직입니다.
+                        정보의 신뢰성을 지키고 조작 편의성을 향상하기 위해 기획한 구체적인 시스템 개선 로직입니다.
                     </p>
                 </div>
 

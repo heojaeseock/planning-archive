@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>오픈마켓 커머스 캠페인 플래너 기획 리포트</title>
+    <title>오픈마켓 캠페인 기획</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -180,7 +180,8 @@
             line-height: 1.5;
             text-align: center;
         }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
 </head>
 <body class="py-24">
@@ -199,8 +200,8 @@
         <!-- 0. 문서 개요 -->
         <section class="mb-24">
             <div class="bg-white rounded-3xl border border-slate-200 p-8 md:p-12">
-                <h2 class="text-2xl md:text-3xl font-black mt-3 mb-6 leading-snug">먼저 알아 둘 것</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">오픈마켓은 여러 판매자가 각자 입점해 파는 온라인 장터라, 가격과 노출 위치가 곧 매출입니다. 캠페인 하나에 상품이 수백에서 수천 건 올라가는데 가격과 재고 확인은 사람이 엑셀로 합니다. 잘못 걸면 그대로 팔려 손실과 항의가 동시에 생깁니다.</p>
+                <h2 class="text-2xl md:text-3xl font-black mt-3 mb-6 leading-snug">시장 구조와 문제</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">오픈마켓은 다수 판매자가 입점해 동일 상품을 경쟁 판매하는 구조로, 가격과 노출 위치가 매출을 결정합니다.<br>캠페인 한 건에 수백에서 수천 개 상품이 등록되지만, 가격·재고 검수는 수작업 엑셀로 진행됩니다.<br>가격 오기입은 그대로 판매로 이어져 손실과 클레임이 동시에 발생합니다.</p>
             </div>
         </section>
 
@@ -224,7 +225,7 @@
                     <div class="p-10 bg-slate-50 rounded-[40px] border border-slate-100 h-full flex flex-col justify-center">
                         <span class="text-red-500 font-black text-xs block mb-4 uppercase">⚠️ 브랜드 신뢰도 하락</span>
                         <p class="text-slate-800 font-bold text-xl leading-snug">
-                            가격 오류를 사전에 원천 차단하여<br>
+                            가격 오류를 사전에 차단해<br>
                             구매 <span class="옐로우-포인트">전환율의 하락</span>을 방어하는 방안을 정리했습니다.
                         </p>
                     </div>
@@ -236,7 +237,7 @@
         <section class="mb-24">
             <div class="text-center mb-10">
                 <span class="font-black text-blue-600 tracking-widest uppercase text-xs">Efficiency</span>
-                <h2 class="text-3xl font-black mt-3">무결점 상품 검수 시스템 구축</h2>
+                <h2 class="text-3xl font-black mt-3">오류 없는 상품 검수 시스템 구축</h2>
             </div>
             
             <div class="카드-레이아웃 text-center">
@@ -253,7 +254,7 @@
                     </div>
                     <p class="text-slate-600 font-medium max-w-[500px] mx-auto leading-relaxed">
                         수만 건의 보상 데이터를 자동 검증하여<br>
-                        결측치 0%의 무결점 환경을 구축했습니다.
+                        결측치 0%의 오류 없는 환경을 구축했습니다.
                     </p>
                 </div>
 
@@ -266,7 +267,7 @@
                         </p>
                     </div>
                     <div class="p-8 bg-blue-50 border border-blue-100 rounded-3xl">
-                        <h4 class="font-bold text-blue-900 mb-3 text-lg">선제적 대응 체계 구축</h4>
+                        <h4 class="font-bold text-blue-900 mb-3 text-lg">사전 대응 체계 구축</h4>
                         <p class="text-slate-700 leading-relaxed font-medium">
                             조건부 서식으로 재고 부족 상품을 시각화하여,<br> 
                             오픈 전 완벽한 조치가 가능한 환경을 조성합니다.
@@ -300,7 +301,7 @@
                     <p class="text-slate-300 font-medium text-lg leading-relaxed">
                         클릭은 증가했으나 전환율이 하락한 상황은 가격 경쟁력 상실 또는 기술적 오류를 의미합니다.<br><br>
                         <strong class="text-white border-b-4 border-red-500">즉시 예비 상품으로 구좌를 교체하여</strong><br> 
-                        오픈마켓 커머스의 핵심 트래픽 누수를 선제적으로 차단하는 방안을 정리했습니다.
+                        오픈마켓 커머스의 핵심 트래픽 누수를 사전에 차단하는 방안을 정리했습니다.
                     </p>
                     
                     <button onclick="매뉴얼토글()" class="매뉴얼-버튼">

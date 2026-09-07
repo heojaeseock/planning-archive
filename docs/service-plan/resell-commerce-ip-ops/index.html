@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>리셀 커머스 플랫폼 IP & Entertainment Operations - Archive</title>
+    <title>한정판 드랍 이벤트 운영 기획</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chart.js & DataLabels Plugin -->
@@ -50,7 +50,8 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
 </head>
 <body class="flex flex-col md:flex-row h-screen overflow-hidden selection:bg-black selection:text-white">
@@ -100,8 +101,8 @@
         <!-- 0. 문서 개요 (탭과 무관하게 항상 노출) -->
         <div id="overview" class="max-w-5xl mx-auto mb-14">
             <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
-                <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 leading-snug">어떤 비즈니스인가</h2>
-                <p class="text-gray-600 leading-relaxed mb-4">한정판 스니커즈처럼 정가로는 살 수 없는 물건을 거래하는 플랫폼입니다. 브랜드가 물량을 풀 때는 특정 시각에 판매를 여는데, 이를 드랍이라고 부르고 그 1분에 트래픽이 몰립니다. 결제가 한 번 밀리면 곧바로 커뮤니티로 확산됩니다.</p>
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 leading-snug">플랫폼 구조</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">리셀 커머스는 한정판 상품을 정가 추첨 판매와 이용자 간 재판매로 유통하는 플랫폼입니다.<br>정가 판매를 여는 시점을 드랍이라 하며, 해당 1분에 트래픽이 집중됩니다.<br>결제 지연 한 건이 커뮤니티 확산으로 이어지는 구조입니다.</p>
             </div>
         </div>
 
@@ -116,7 +117,7 @@
                 </h2>
                 <p class="text-gray-600 text-lg md:text-xl text-body font-medium">
                     리셀 커머스 플랫폼의 IP 및 엔터테인먼트 비즈니스는 상시 커머스와 근본적으로 다릅니다.<br>
-                    특정 시간에 쏠리는 기형적 트래픽 양상은 <b>MMORPG의 대규모 서버 패치</b>와 완벽히 맞닿아 있습니다.
+                    특정 시간에 쏠리는 기형적 트래픽 양상은 <b>MMORPG의 대규모 서버 패치</b>와 맞닿아 있습니다.
                 </p>
             </div>
             
@@ -132,7 +133,7 @@
                             <li>특정 시간대 대규모 서버 패치 및 접속 폭주</li>
                             <li>퍼블리셔와 개발사 간의 복잡한 데이터 동기화</li>
                             <li>e스포츠 오프라인 대회 시 예측 불허의 현장 변수</li>
-                            <li>단 1분의 서버 다운도 치명적인 고객 불만으로 직결</li>
+                            <li>1분의 서버 다운도 곧바로 고객 불만으로 직결</li>
                         </ul>
                     </div>
                     <div class="p-8 md:p-10 bg-white relative">
@@ -143,7 +144,7 @@
                             <li>드랍 및 티켓팅 시점의 기형적 트래픽 집중 현상</li>
                             <li>다양한 IP 파트너사의 비표준화된 상품 데이터 온보딩</li>
                             <li>팝업 대기열 지연 및 QR 인증 서버 오류 등 현장 변수</li>
-                            <li>결제 오류나 품절 이슈가 즉각적인 바이럴 리스크로 확산</li>
+                            <li>결제 오류나 품절 이슈가 즉시인 바이럴 리스크로 확산</li>
                         </ul>
                     </div>
                 </div>
@@ -154,7 +155,7 @@
                     </h4>
                     <p class="text-base text-gray-700 text-body">
                         물류 및 배송 등 커머스 특화 인프라 지식은 추가 학습이 필요한 영역으로 정리했습니다.<br><br>
-                        대신, 리셀 커머스 플랫폼 IP 비즈니스에서 가장 치명적인 리스크인 <b>'트래픽 병목 통제'</b>, <b>'방대한 데이터 정합성 유지'</b>, <b>'돌발 상황에서의 오프라인 관제력'</b>은 제가 가장 치열하게 다루어 온 영역이라, 이 문서에서 해결 방안을 정리했습니다.
+                        대신, 리셀 커머스 플랫폼 IP 비즈니스에서 가장 중대한 리스크인 <b>'트래픽 병목 통제'</b>, <b>'방대한 데이터 정합성 유지'</b>, <b>'돌발 상황에서의 오프라인 관제력'</b>은 제가 가장 치열하게 다루어 온 영역이라, 이 문서에서 해결 방안을 정리했습니다.
                     </p>
                 </div>
             </div>
@@ -165,18 +166,18 @@
             <div class="mb-12">
                 <span class="inline-block px-3 py-1 bg-black text-white text-xs font-bold rounded-full mb-5 shadow-sm">2. 데이터 온보딩 자동화</span>
                 <h2 class="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight leading-[1.3] text-gray-900">
-                    파트너사 데이터 무결점 온보딩 시스템
+                    파트너사 데이터 오류 없는 온보딩 시스템
                 </h2>
                 <p class="text-gray-600 text-lg md:text-xl text-body font-medium">
                     단순히 엑셀을 빠르게 다루는 것이 아닙니다.<br>
-                    시스템 업로드 이전에 <b>휴먼 에러를 원천 차단</b>하는 데이터 파이프라인을 구축합니다.
+                    시스템 업로드 이전에 <b>휴먼 에러를 차단</b>하는 데이터 파이프라인을 구축합니다.
                 </p>
             </div>
 
             <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-200 mb-8">
                 <h3 class="text-2xl font-bold mb-5 text-gray-900">어떻게 '오류율 0%'를 보장하는가?</h3>
                 <p class="text-lg text-gray-600 mb-10 text-body">
-                    다양한 파트너사가 전달하는 비표준 데이터, 예를 들어 상품 코드나 가격 등을 수기로 취합하는 것은 필연적인 사고를 낳습니다. <b>3단계 엑셀 데이터 엔지니어링</b>을 통해 리스크를 완벽히 통제합니다.
+                    다양한 파트너사가 전달하는 비표준 데이터, 예를 들어 상품 코드나 가격 등을 수기로 취합하는 것은 필연적인 사고를 낳습니다. <b>3단계 엑셀 데이터 엔지니어링</b>을 통해 리스크를 통제합니다.
                 </p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
@@ -230,7 +231,7 @@
                 </h2>
                 <p class="text-gray-600 text-lg md:text-xl text-body font-medium">
                     현장의 단기 스태프들이 중앙 지휘부의 지시를 기다리느라 발생하는<br>
-                    <b>초동 대응의 골든타임 누수</b>를 선제적으로 방어합니다.
+                    <b>초동 대응의 골든타임 누수</b>를 사전에 방어합니다.
                 </p>
             </div>
 
@@ -271,7 +272,7 @@
                 </h2>
                 <p class="text-gray-600 text-lg md:text-xl text-body font-medium">
                     트래픽이 폭증하는 한정판 드랍 시기,<br>
-                    기업의 <b>데이터 보안 규정을 완벽히 준수</b>하며 AI로 위기 대응 속도를 극대화합니다.
+                    기업의 <b>데이터 보안 규정을 준수</b>하며 AI로 위기 대응 속도를 높입니다.
                 </p>
             </div>
 

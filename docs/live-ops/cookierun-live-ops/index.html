@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>쿠키런 스타일 라이브 운영 전략 - 가독성 강화 버전</title>
+    <title>라이브 운영 전략 (쿠키런 스타일)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -90,7 +90,8 @@
             font-weight: 900;
         }
         body { word-break: keep-all; overflow-wrap: break-word; }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
 </head>
 <body class="p-4 md:p-10">
@@ -131,8 +132,8 @@
 
     <!-- Section 0: 문서 개요 -->
     <section class="cookie-card p-10 md:p-14 mb-16">
-        <h2 class="text-2xl md:text-3xl font-black text-[#8B4513] mb-6 flex items-center gap-3">투트랙이란</h2>
-        <p class="text-[#6B4423] leading-relaxed mb-4">같은 게임을 여러 지역에 서비스하면 유저가 원하는 것이 지역마다 다릅니다. 하나의 방침으로 밀면 한쪽은 반드시 불만을 갖습니다. 권역별로 운영 메시지를 나누고, 사고가 났을 때 번역을 기다리지 않도록 다국어 공지를 미리 만들어 두는 방식입니다.</p>
+        <h2 class="text-2xl md:text-3xl font-black text-[#8B4513] mb-6 flex items-center gap-3">전략 배경</h2>
+        <p class="text-[#6B4423] leading-relaxed mb-4">동일 게임을 여러 권역에 서비스할 때 유저가 기대하는 지점이 권역별로 다릅니다.<br>단일 운영 방침으로 대응하면 한쪽 권역의 불만이 누적됩니다.<br>권역별 운영 메시지를 분리하고, 사고 시 번역 대기 없이 송출할 수 있도록 다국어 공지 템플릿을 사전 확보하는 방식입니다.</p>
     </section>
 
     <!-- Section 1: User Flavor Analysis -->

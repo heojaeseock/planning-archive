@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>교육 콘텐츠 기업 모바일 앱 라이브 운영 작업 기록</title>
+    <title>교육 앱 라이브 운영 설계</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -50,7 +50,8 @@
         }
         .btn-interactive:active { transform: scale(0.97); }
         body { word-break: keep-all; overflow-wrap: break-word; }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
 </head>
 <body class="text-slate-800 antialiased selection:bg-blue-200">
@@ -76,7 +77,7 @@
         <section class="pt-20 pb-16 text-center">
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 leading-[1.15] mb-6 tracking-tight">
                 에듀테크의 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">시즌성 트래픽</span>과 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">무결성</span>,<br>
-                게임 운영의 노하우로 완벽히 제어합니다.
+                게임 운영 노하우로 제어합니다.
             </h1>
             <!-- 개선된 메인 카피: 명령조 제거 및 부드러운 안내 -->
             <p class="text-slate-500 max-w-2xl mx-auto text-base sm:text-lg font-medium leading-relaxed">
@@ -88,8 +89,8 @@
         <!-- Strategy 1: Data Integrity (Interactive) -->
         <!-- 0. 문서 개요 -->
     <section id="overview" class="mb-20 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">
-        <h2 class="text-2xl font-black text-slate-900 mb-6">이 서비스의 특징</h2>
-        <p class="text-slate-600 leading-relaxed mb-4">인터넷 강의와 교재를 파는 앱은 트래픽이 1년 중 특정 날짜에 몰립니다. 수능 시험이 끝나는 17시에는 수십만 명이 가채점 기능에 동시에 들어옵니다. 이때 서버가 버티지 못하면 1년 마케팅이 하루로 무너집니다.</p>
+        <h2 class="text-2xl font-black text-slate-900 mb-6">서비스 특성</h2>
+        <p class="text-slate-600 leading-relaxed mb-4">인터넷 강의와 교재를 판매하는 앱은 트래픽이 연중 특정 일자에 집중됩니다.<br>대표적으로 수능 종료 직후인 17시에 가채점 기능으로 동시 접속이 몰립니다.<br>이 시각의 장애는 연간 마케팅 성과를 하루에 상쇄합니다.</p>
     </section>
 
     <section id="s1" class="mb-20 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">

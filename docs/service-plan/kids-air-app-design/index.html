@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>허재석 작업 기록 | Kids Air 앱 기획</title>
+    <title>Kids Air 앱 기획</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
@@ -169,7 +169,8 @@
             line-height: 1.2;
             padding: 12px 0;
         }
-        @media (max-width: 640px) { p br { display: none } }
+        h1,h2,h3,h4 { text-wrap: balance; }
+        p, li, td { text-wrap: pretty; }
     </style>
 </head>
 <body class="antialiased">
@@ -210,8 +211,8 @@
         <!-- 문서 개요 -->
         <section class="max-w-5xl w-full mb-14">
             <div class="content-card p-10 space-y-5">
-                <h2 class="text-2xl font-black text-slate-900">어떤 앱인가</h2>
-                <p class="text-slate-500 leading-relaxed font-medium">부모가 자녀가 다니는 어린이집의 공기 상태를 확인하는 앱입니다. 미세먼지 앱은 많지만 대부분 야외 수치를 보여줍니다. 정부가 개방한 실내 공기질 데이터를 받아 색과 이모지로 바꿔 보여주는 역할을 합니다.</p>
+                <h2 class="text-2xl font-black text-slate-900">프로젝트 개요</h2>
+                <p class="text-slate-500 leading-relaxed font-medium">어린이집 실내 공기질을 보호자가 확인할 수 있게 만든 앱으로, 대학 재학 중 기획·디자인해 안드로이드로 출시했습니다.<br>기존 미세먼지 앱이 실외 수치를 다루는 것과 달리 실내 측정값을 대상으로 했습니다.<br>정부 공공데이터를 받아 색상과 이모지로 상태를 표시하는 구조입니다.</p>
             </div>
         </section>
 
@@ -248,7 +249,7 @@
                         <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
                             <p class="text-sm text-slate-700 leading-relaxed font-bold mb-2 italic">환경 리스크</p>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                실외보다 실내 공기 오염이 영유아 건강에 더 치명적임에도 불구하고, 어린이집의 실시간 데이터를 통합해서 보여주는 전문 서비스는 없었습니다.
+                                실외보다 실내 공기 오염이 영유아 건강에 더 큰 영향을 주는데도 불구하고, 어린이집의 실시간 데이터를 통합해서 보여주는 전문 서비스는 없었습니다.
                             </p>
                         </div>
                         <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
@@ -482,7 +483,7 @@
 
         <footer class="mt-24 py-16 border-t border-slate-200 text-center w-full max-w-5xl">
             <p class="text-slate-400 text-xs font-black tracking-[0.6em] uppercase mb-4 text-center">키즈에어 기획 및 디자인 작업 기록</p>
-            <p class="text-slate-300 text-[11px] font-bold tracking-tight text-center">허재석 | 모든 권리 보유</p>
+            <p class="text-slate-300 text-[11px] font-bold tracking-tight text-center">&copy; 허재석</p>
         </footer>
 
     </div>
