@@ -98,6 +98,8 @@
             <div class="text-xs font-bold text-notion-gray mb-5 tracking-wider">목차</div>
             <ul class="space-y-2 text-sm">
                 <li><a href="#intro" class="toc-link block px-3 py-2.5 rounded bg-notion-hover text-black font-bold transition-colors">기획 리포트 개요</a></li>
+                <li><a href="#job-context" class="toc-link block px-3 py-2.5 rounded hover:bg-notion-hover text-notion-gray transition-colors">총무 직무 이해</a></li>
+
                 <li><a href="#section1" class="toc-link block px-3 py-2.5 rounded hover:bg-notion-hover text-notion-gray transition-colors">1. 배경 및 문제 정의</a></li>
                 <li><a href="#section2" class="toc-link block px-3 py-2.5 rounded hover:bg-notion-hover text-notion-gray transition-colors">2. 자산 데이터 자동화</a></li>
                 <li><a href="#section3" class="toc-link block px-3 py-2.5 rounded hover:bg-notion-hover text-notion-gray transition-colors">3. 사내 헬프데스크 도입</a></li>
@@ -126,6 +128,34 @@
             <hr class="border-notion my-12">
 
             <!-- 섹션 1 -->
+            <!-- 0. 문서 개요 -->
+            <section id="job-context" class="mb-20 scroll-mt-24">
+                <div class="border border-slate-200 rounded-2xl p-8">
+                    <p class="text-xs font-black text-amber-600 tracking-widest mb-4">OVERVIEW</p>
+                    <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-5">총무·경영지원은 어떤 일인가</h2>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        <strong class="text-slate-900">총무·경영지원</strong>은 회사 사람들이 일할 수 있는 상태를 유지하는 부서입니다.
+                        구체적으로는 <strong class="text-slate-900">임직원에게 지급한 노트북과 유료 소프트웨어를 누가 쓰고 있는지 관리하고</strong>,
+                        사무실 네트워크와 시설을 챙기고, "권한이 없다고 뜨는데요" 같은 사내 문의를 받아 처리합니다.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        회사가 작을 때는 엑셀 한 장으로 됩니다. 문제는 인원이 빠르게 늘 때입니다.
+                        입사·퇴사·부서 이동이 매주 생기는데 자산 대장을 손으로 고치다 보면
+                        <strong class="text-slate-900">퇴사자가 반납하지 않은 장비가 기록에서 사라지고,
+                        아무도 쓰지 않는 소프트웨어 요금이 계속 빠져나갑니다</strong>.
+                        동시에 단순 문의가 쏟아져 담당자가 정작 관리 업무를 볼 시간이 없어집니다.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        이 구조는 게임 라이브 운영과 닮아 있습니다. 대량의 데이터를 정확히 맞춰야 하고,
+                        같은 문의가 반복되고, 장애가 나면 빠른 전파가 전부입니다.
+                        이 문서는 그 경험을 옮겨 <strong class="text-slate-900">자산 대장 자동화(전략 1)</strong>,
+                        <strong class="text-slate-900">사내 문의 1차 자동 응대(전략 2)</strong>,
+                        <strong class="text-slate-900">네트워크 장애 대응 체계(전략 3)</strong>를 정리한 기록입니다.
+                    </p>
+                </div>
+            </section>
+
+
             <section id="section1" class="mb-20 scroll-mt-24">
                 <h2 class="text-2xl font-extrabold mb-8 flex items-center gap-3 text-gray-900">
                     <span class="text-gray-400 font-normal">1.</span> 리서치 배경 및 문제 정의
@@ -133,7 +163,7 @@
                 
                 <h3 class="text-lg font-bold mb-4 text-gray-800">조직 규모 확장에 따른 관리의 복잡도 증가</h3>
                 <p class="mb-8 text-gray-700">
-                    뷰티 브랜드 기업은 연 매출 1조 원 돌파를 목표로 초고속 성장을 이룩하며 임직원 수가 가파르게 증가하고 있습니다. 
+                    성장기에 들어선 뷰티 브랜드 기업은 매출이 빠르게 늘면서 임직원 수도 함께 가파르게 증가합니다. 
                     조직이 스케일업(Scale-up)하는 단계에서는 기존의 수작업 방식이 한계에 부딪히며, 경영지원 파트에 다음과 같은 <strong>두 가지 주요 병목 현상</strong>이 발생합니다.
                 </p>
 
@@ -183,7 +213,7 @@
                     </li>
                     <li>
                         <strong class="text-gray-900">오류 원천 차단:</strong> 
-                        데이터 유효성 검사를 통해 자산 일련번호의 중복 입력이나 오타를 시스템적으로 방지하여 데이터 신뢰도를 100%로 유지합니다.
+                        데이터 유효성 검사를 통해 자산 일련번호의 중복 입력이나 오타를 입력 단계에서 막아, 대장을 신뢰할 수 있는 상태로 유지합니다.
                     </li>
                 </ul>
 
@@ -220,7 +250,7 @@
                 <div class="bg-purple-50/50 border border-purple-200 rounded-2xl p-7 mb-8">
                     <h3 class="text-lg font-bold text-purple-900 mb-3">🤖 약점 극복: 시스템을 통한 효율적인 1차 대응</h3>
                     <p class="text-sm text-purple-800 leading-relaxed">
-                        모든 PC 하드웨어 장애를 내부에서 직접 고치는 것은 효율적이지 않습니다. 총 문의의 80%를 차지하는 <strong>단순 설정 및 권한 문의는 AI 챗봇이 즉각 해결</strong>하고, 20%의 물리적 고장은 전담 파트너사로 자동 연결되도록 <strong>대응 단계를 분리(Tiering)</strong>합니다.
+                        모든 PC 하드웨어 장애를 내부에서 직접 고치는 것은 효율적이지 않습니다. 문의의 대부분을 차지하는 <strong>단순 설정 및 권한 문의는 AI 챗봇이 즉각 해결</strong>하고, 실제 기기 고장처럼 사람이 가야 하는 건은 전담 파트너사로 자동 연결되도록 <strong>대응 단계를 분리(Tiering)</strong>합니다.
                     </p>
                 </div>
 
