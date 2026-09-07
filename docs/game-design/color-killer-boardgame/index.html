@@ -188,6 +188,35 @@
         </header>
 
         <!-- 내비게이션 버튼 바 -->
+        <!-- 문서 개요 (탭과 무관하게 항상 노출) -->
+        <section class="max-w-5xl w-full mb-14">
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 md:p-10">
+                <p class="text-xs font-black text-rose-600 tracking-widest uppercase mb-4">Overview</p>
+                <h2 class="text-2xl font-black text-slate-900 mb-5">먼저 알아 둘 원작 규칙</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                    이 게임은 <strong class="text-slate-900">할리갈리</strong>라는 보드게임의 규칙을 바탕으로 만들었습니다.
+                    할리갈리를 모르면 뒤 내용이 이해되지 않으니 먼저 정리합니다.
+                    각자 카드 더미를 들고 순서대로 한 장씩 뒤집는데, 카드에는 과일 그림이 몇 개씩 그려져 있습니다.
+                    <strong class="text-slate-900">바닥에 보이는 같은 과일의 총합이 정확히 5개가 되는 순간,
+                    가운데 놓인 종을 가장 먼저 치는 사람이 그 카드를 모두 가져갑니다.</strong>
+                    잘못 치면 벌칙으로 자기 카드를 내줍니다. 즉 계산과 순발력만으로 승부가 나는 게임입니다.
+                </p>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                    이 프로젝트가 바꾼 지점은 여기입니다. 원작은 빠른 사람이 계속 이기기 때문에
+                    <strong class="text-slate-900">한번 밀리면 따라잡을 방법이 없습니다.</strong>
+                    그래서 <strong class="text-slate-900">특수 카드 4종</strong>을 새로 만들어,
+                    순발력이 떨어져도 판을 뒤집을 수단을 넣었습니다.
+                </p>
+                <p class="text-slate-600 leading-relaxed">
+                    아래 탭은 규칙과 구성물 → 특수 카드 설계 → 실제로 사람들과 해 보고 고친 내용 → 플레이 영상 순서입니다.
+                    본문의 <strong class="text-slate-900">컴포넌트</strong>는 카드·종처럼 게임에 들어가는 물리적 구성물,
+                    <strong class="text-slate-900">프로토타입</strong>은 정식 제작 전에 종이로 급히 만들어 시험하는 초기 버전을 뜻합니다.
+                    세 번째 탭에 그 시험에서 실제로 드러난 문제와 수정 내역을 적었습니다.
+                </p>
+            </div>
+        </section>
+
+
         <nav class="max-w-5xl w-full mb-14">
             <div class="nav-button-container">
                 <button onclick="showProjectTab(event, 'overview')" class="modern-nav-btn active" id="initTab">
