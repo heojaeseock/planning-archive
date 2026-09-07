@@ -154,6 +154,31 @@
 
     <!-- Main Content -->
     <main class="max-w-5xl mx-auto px-6 space-y-12 pb-32">
+
+        <!-- 0. 문서 개요 -->
+        <section id="overview" class="strategy-card p-8 md:p-14">
+            <span class="text-brand font-bold text-[10px] uppercase tracking-widest">Overview</span>
+            <h2 class="text-2xl md:text-3xl font-black mt-3 mb-6 leading-snug">문서 개요</h2>
+            <p class="text-slate-400 leading-relaxed mb-4">
+                여기서 말하는 <strong class="text-slate-100">지역 정보 서비스</strong>는 지도와 검색에서
+                동네 가게의 위치·영업시간·메뉴를 보여주고, 실제 방문자가 남긴 <strong class="text-slate-100">리뷰</strong>를 함께
+                제공하는 서비스입니다. 이용자는 리뷰를 보고 갈 곳을 정하고, 마음에 든 가게는 저장해 둡니다.
+                즉 <strong class="text-slate-100">리뷰의 신뢰도가 곧 서비스의 신뢰도</strong>입니다.
+            </p>
+            <p class="text-slate-400 leading-relaxed mb-4">
+                문제는 리뷰 수를 늘리기 위해 진행하는 <strong class="text-slate-100">리뷰 작성 이벤트</strong>가
+                저품질 리뷰까지 함께 끌어온다는 점입니다. 보상만 노린 한 줄 리뷰, 사진 도용, 같은 사람이 계정을 바꿔 쓰는
+                어뷰징이 섞여 들어오고, 이를 걸러내는 일은 마케터가 눈으로 하나씩 확인하는 수작업으로 남습니다.
+                이벤트가 커질수록 검수 부담도 같이 커지는 구조입니다.
+            </p>
+            <p class="text-slate-400 leading-relaxed">
+                이 문서는 게임 라이브 서비스에서 이벤트 참여 데이터를 한곳에 모아 어뷰징을 자동으로 걸러내던 방식을
+                이 환경에 옮겨, <strong class="text-slate-100">검수를 시스템에 맡기고 사람은 기획에 집중하는 구조</strong>를
+                설계한 기록입니다. 문제 정의(Part 1) → 검수 자동화(Part 2) → 참여 경험 설계(Part 3) → 푸시 카피(Part 4)
+                순서로 이어집니다.
+            </p>
+        </section>
+
         
         <!-- Section 1: Analysis -->
         <section id="analysis" class="strategy-card p-8 md:p-14">
@@ -204,7 +229,7 @@
                         운영 효율 최적화를 위한 <br> 시스템 마케팅 자동화
                     </h2>
                     <p class="text-xs md:text-[15px] text-slate-600 mb-8 keep-all leading-relaxed font-medium">
-                        대규모 참여 데이터를 통합 관리하여 리소스를 98% 절감한 운영 노하우를 접목합니다. 고품질 리뷰어 자동 선별 시스템을 구축하여 마케팅 ROI를 높입니다.
+                        대규모 참여 데이터를 한곳으로 모아 검수 리소스를 크게 줄인 운영 노하우를 접목합니다. 고품질 리뷰어 자동 선별 시스템을 구축하여 마케팅 ROI를 높입니다.
                     </p>
                     <button onclick="openModal('automation')" class="btn-action px-7 py-3.5 bg-brand text-white rounded-full text-xs font-bold shadow-lg shadow-brand/20">
                         자동화 가이드 실행하기 →
@@ -213,8 +238,8 @@
                 <div class="md:w-1/2 w-full grid grid-cols-2 gap-4">
                     <div class="p-8 bg-white rounded-3xl shadow-sm text-center">
                         <p class="text-[9px] font-black text-slate-300 uppercase mb-2">Centralization</p>
-                        <p class="text-2xl font-black text-brand leading-none">98%</p>
-                        <p class="text-[10px] text-slate-400 mt-2 font-bold">시간 절감</p>
+                        <p class="text-2xl font-black text-brand leading-none">통합</p>
+                        <p class="text-[10px] text-slate-400 mt-2 font-bold">참여 데이터 일원화</p>
                     </div>
                     <div class="p-8 bg-white rounded-3xl shadow-sm text-center">
                         <p class="text-[9px] font-black text-slate-300 uppercase mb-2">Automation</p>
@@ -311,10 +336,6 @@
                         <span class="text-brand font-black text-[11px] w-12 uppercase tracking-tighter">Email</span>
                         <span class="text-[15px] font-bold text-slate-300">wotjr423@naver.com</span>
                     </div>
-                    <div class="flex items-center gap-8">
-                        <span class="text-brand font-black text-[11px] w-12 uppercase tracking-tighter">Phone</span>
-                        <span class="text-[15px] font-bold text-slate-300">010-7913-4992</span>
-                    </div>
                 </div>
                 <button onclick="openModal('contact')" class="mt-12 w-full py-4 bg-brand text-white font-black rounded-2xl btn-action shadow-lg text-[13px] uppercase tracking-widest">허재석 상세 메시지 확인</button>
             </div>
@@ -335,7 +356,7 @@
                 <div class="text-brand font-black text-[10px] mb-5 uppercase tracking-[0.2em]">Deep Research Analysis 02</div>
                 <h3 class="text-xl font-black text-slate-900 mb-6">백오피스 운영 자동화 가이드라인</h3>
                 <div class="space-y-5 text-slate-600 text-sm md:text-[15px] leading-relaxed">
-                    <p>게임 라이브 운영 중 데이터를 중앙화하여 관리 시간을 <span class="font-bold text-brand">98% 절감</span>했던 역량을 활용합니다.</p>
+                    <p>게임 라이브 운영 중 데이터를 중앙화하여 관리 시간을 <span class="font-bold text-brand">대폭 절감</span>했던 역량을 활용합니다.</p>
                     <ul class="space-y-4 font-bold text-slate-800 pt-3">
                         <li class="flex gap-4 items-start"><span class="text-brand">1.</span> 실시간 데이터 수집 및 자동 스크리닝 파이프라인 구축</li>
                         <li class="flex gap-4 items-start"><span class="text-brand">2.</span> 이미지 인식 및 키워드 기반 리뷰 품질 지수화</li>
