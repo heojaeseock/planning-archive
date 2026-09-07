@@ -40,6 +40,8 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        body { word-break: keep-all; overflow-wrap: break-word; }
+        @media (max-width: 640px) { p br { display: none } }
     </style>
 
     <!-- Chosen Palette: 채용 플랫폼 블루(#2B5DFF)와 슬레이트 그레이를 조합한 전문적이고 깔끔한 테마 -->
@@ -94,30 +96,10 @@
         <!-- 0. 문서 개요 -->
         <section id="overview" class="scroll-mt-24">
             <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
-                <p class="text-xs font-black text-brand-blue tracking-widest mb-4">OVERVIEW</p>
-                <h2 class="text-2xl font-bold italic text-gray-800 mb-6">이 운영안이 왜 필요한가</h2>
-                <p class="text-gray-600 leading-relaxed mb-4">
-                    이 문서에서 말하는 <strong class="text-gray-900">채용 플랫폼</strong>은 기업이 사람을 뽑을 때 쓰는
-                    경력직 채용 서비스입니다. 돈을 버는 방식이 중요합니다.
-                    플랫폼은 <strong class="text-gray-900">소개한 사람이 실제로 입사하면 기업에서 채용 수수료를 받습니다</strong>.
-                    그런데 그 사람이 <strong class="text-gray-900">몇 달 안에 그만두면 수수료를 상당 부분 돌려줘야 합니다</strong>.
-                </p>
-                <p class="text-gray-600 leading-relaxed mb-4">
-                    그래서 <strong class="text-gray-900">합격자가 입사 후 3개월을 버티는지</strong>가
-                    단순한 고객 만족 문제가 아니라 매출이 확정되는지 여부의 문제가 됩니다.
-                    문제는 이 구간에 플랫폼이 할 수 있는 일이 거의 없다는 점입니다.
-                    합격자는 이미 입사했고, 회사 안에서 겪는 일에 플랫폼은 개입할 수 없습니다.
-                </p>
-                <p class="text-gray-600 leading-relaxed">
-                    이 문서는 그 3개월을 게임의 <strong class="text-gray-900">신규 유저 이탈 방어 구간</strong>과 같은 문제로 보고,
-                    게임에서 쓰는 방식(시기별 안내, 성취 뱃지, 자동 발송 시나리오)을
-                    플랫폼이 이미 가진 자산만으로 옮겨 온 운영안입니다.
-                    아래 <strong class="text-gray-900">Business Impact</strong>에 적힌 효과는 실측치가 아니라
-                    이 운영안을 도입했을 때 기대하는 방향입니다.
-                </p>
+                <h2 class="text-2xl font-bold italic text-gray-800 mb-6">왜 3개월인가</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">채용 플랫폼은 소개한 사람이 입사하면 수수료를 받고, 그 사람이 몇 달 안에 그만두면 상당 부분을 돌려줘야 합니다. 합격자가 3개월을 버티는지가 매출 확정 여부인 셈입니다. 게임의 신규 유저 이탈 방어 방식을 그 구간에 옮겼습니다.</p>
             </div>
         </section>
-
 
         <!-- 1. 초기 퇴사 원인 분석 -->
         <section id="analysis" class="scroll-mt-24">

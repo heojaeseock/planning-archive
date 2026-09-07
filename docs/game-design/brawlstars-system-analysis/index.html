@@ -69,6 +69,7 @@
         .row-gear { background-color: #0ea5e9 !important; color: white !important; font-weight: 900 !important; }
         .row-starpower { background-color: #eab308 !important; color: white !important; font-weight: 900 !important; }
         .row-hypercharge { background-color: #a855f7 !important; color: white !important; font-weight: 900 !important; }
+        @media (max-width: 640px) { p br { display: none } }
     </style>
 </head>
 <body class="antialiased">
@@ -116,31 +117,9 @@
 
             <!-- 문서 개요 (탭과 무관하게 항상 노출) -->
             <div class="px-6 md:px-10 py-10 border-b border-slate-200 bg-white">
-                <p class="text-xs font-black text-amber-600 tracking-widest mb-4">OVERVIEW</p>
-                <h2 class="text-2xl font-bold text-slate-900 mb-5">무엇을 왜 분해했는가</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">
-                    <strong class="text-slate-900">브롤스타즈</strong>는 3대3으로 짧게 붙는 모바일 슈팅 게임인데,
-                    출시 후 몇 년이 지나도 상위 매출을 유지하고 있습니다.
-                    이 문서는 그 이유를 감이 아니라 구조로 확인하려고
-                    <strong class="text-slate-900">게임 안의 재화·성장·모드를 하나씩 표로 옮긴 기록</strong>입니다.
-                </p>
-                <p class="text-slate-600 leading-relaxed mb-4">
-                    핵심은 <strong class="text-slate-900">돈을 어떻게 버는가(BM)</strong>입니다.
-                    이 게임은 캐릭터를 확률로 뽑게 만드는 방식에서 벗어나,
-                    <strong class="text-slate-900">패스제</strong>(한 시즌 동안 플레이하면 보상을 받는 유료 구독권)와
-                    <strong class="text-slate-900">외형 상품</strong> 중심으로 옮겼습니다.
-                    성능은 플레이로 얻고, 돈은 꾸미는 데 쓰게 하는 구조입니다.
-                </p>
-                <p class="text-slate-600 leading-relaxed">
-                    본문 용어는 이렇습니다.
-                    <strong class="text-slate-900">액티브</strong>는 유저가 직접 눌러 쓰는 기술,
-                    <strong class="text-slate-900">패시브</strong>는 항상 자동으로 적용되는 능력,
-                    <strong class="text-slate-900">풀업</strong>은 캐릭터를 최대 레벨과 모든 장비까지 완성한 상태를 뜻합니다.
-                    두 번째 탭의 표는 캐릭터 한 명을 풀업까지 키우는 데 필요한 재화를 레벨 구간별로 누적 계산한 것으로,
-                    <strong class="text-slate-900">어느 지점에서 유저가 결제를 고민하게 되는지</strong>를 보기 위한 자료입니다.
-                </p>
+                <h2 class="text-2xl font-bold text-slate-900 mb-5">무엇을 봤는가</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">출시 몇 년이 지나도 상위 매출을 유지하는 이유를 구조로 확인하려고 재화·성장·모드를 표로 옮겼습니다. 캐릭터를 확률로 뽑게 하는 대신, 패스제와 외형 상품으로 매출을 옮긴 설계가 핵심입니다.</p>
             </div>
-
 
             <!-- 네비게이션 탭 -->
             <div class="flex border-b border-slate-200 bg-slate-50/80 sticky top-0 z-20 backdrop-blur-md shadow-sm">

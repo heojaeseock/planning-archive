@@ -78,6 +78,7 @@
             color: #4b5563;
             margin-top: 12px;
         }
+        @media (max-width: 640px) { p br { display: none } }
     </style>
     
     <!-- Chosen Palette: Clean & Sporty Professional (White, Graphite, FC Green) -->
@@ -118,30 +119,8 @@
         <!-- 0. 문서 개요 (탭과 무관하게 항상 노출) -->
         <div id="overview" class="mb-16">
             <div class="bg-white rounded-2xl border border-slate-200 p-8 md:p-10">
-                <p class="text-xs font-black text-blue-600 tracking-widest mb-4">OVERVIEW</p>
-                <h2 class="text-2xl font-bold text-slate-900 mb-6">먼저 알아 둘 구조와 용어</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">
-                    FC 온라인은 축구 선수를 모아 팀을 만드는 게임인데,
-                    <strong class="text-slate-900">그 선수를 유저끼리 자유롭게 사고파는 '이적시장'이 게임 안에 있습니다</strong>.
-                    거래에 쓰는 화폐가 <strong class="text-slate-900">BP</strong>이고, 선수 가격은 수요에 따라 실시간으로 움직입니다.
-                    사실상 게임 안에 주식시장이 하나 들어 있는 구조라, 운영이 잘못되면 게임성이 아니라 경제가 먼저 무너집니다.
-                </p>
-                <p class="text-slate-600 leading-relaxed mb-4">
-                    이 문서를 읽는 데 필요한 말은 다음과 같습니다.
-                    <strong class="text-slate-900">시즌</strong>은 선수 카드의 등급 묶음이고,
-                    그중 성능이 가장 높은 최상위 묶음을 유저들이 <strong class="text-slate-900">대장급 시즌</strong>이라 부릅니다.
-                    <strong class="text-slate-900">TOTY</strong>는 한 해를 대표하는 선수들로 구성된 대장급 시즌으로, 매년 초 출시됩니다.
-                    <strong class="text-slate-900">하한가</strong>는 가격이 더 내려갈 수 없는 최저선이고,
-                    거기서도 안 팔려 아예 처분이 막힌 상태를 <strong class="text-slate-900">귀속</strong>이라고 표현합니다.
-                    <strong class="text-slate-900">무소과금</strong>은 돈을 거의 쓰지 않는 유저를 뜻하는 커뮤니티 용어입니다.
-                </p>
-                <p class="text-slate-600 leading-relaxed">
-                    문제의 핵심은 이렇습니다. 새 대장급 시즌이 나오면 기존 대장급 선수 가격이 폭락하고,
-                    그 선수를 들고 있던 유저는 <strong class="text-slate-900">자산이 하한가에 묶여 팀을 바꿀 수 없게 됩니다</strong>.
-                    돈을 안 쓰는 유저에게는 선수를 팔아 다음 팀을 사는 것이 유일한 성장 경로인데, 그 경로가 끊기는 것입니다.
-                    이 문서는 그 흐름을 3단계로 분석하고, 묶인 매물을 회수하면서 시장에 풀린 BP를 함께 소각하는
-                    운영 방안을 제안한 기록입니다.
-                </p>
+                <h2 class="text-2xl font-bold text-slate-900 mb-6">먼저 알아 둘 것</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">이 게임에는 선수를 유저끼리 사고파는 이적시장이 있고, 거래 화폐가 BP입니다. 새 최상위 시즌(TOTY)이 나오면 기존 선수 값이 폭락해, 들고 있던 유저는 팔지도 못하고 팀을 바꿀 수 없게 됩니다. 이 상태를 귀속이라고 부릅니다.</p>
             </div>
         </div>
 

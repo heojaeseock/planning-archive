@@ -23,6 +23,7 @@
         .strategy-text { line-height: 1.6; }
         /* 차트 폰트 설정 */
         canvas { font-family: 'Pretendard', sans-serif !important; }
+        @media (max-width: 640px) { p br { display: none } }
     </style>
 </head>
 <body class="bg-[#F8FAFC] text-[#1F2937] antialiased">
@@ -54,26 +55,8 @@
         <!-- 0. 문서 개요 -->
         <section id="overview" class="mb-10">
             <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 md:p-10">
-                <p class="text-xs font-black text-emerald-600 tracking-widest mb-4">OVERVIEW</p>
-                <h2 class="text-2xl font-black text-slate-900 mb-6">문서 개요</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">
-                    여기서 말하는 <strong class="text-slate-900">신선식품 커머스</strong>는 채소·고기·우유처럼
-                    상하기 쉬운 식품을 밤에 주문받아 <strong class="text-slate-900">다음 날 아침 문 앞까지 배송</strong>하는 서비스입니다.
-                    이 모델은 배송이 하루만 늦어도 상품을 그대로 버려야 하기 때문에, 일반 쇼핑몰과 달리
-                    <strong class="text-slate-900">지연이 곧 손실이자 클레임</strong>이 됩니다.
-                </p>
-                <p class="text-slate-600 leading-relaxed mb-4">
-                    <strong class="text-slate-900">CX(고객경험)</strong> 조직은 그 지연을 고객이 체감하는 순간을 다룹니다.
-                    폭설이나 물류센터 사고 한 건이 터지면 같은 내용의 문의가 짧은 시간에 몰려들고, 상담 인력은 정해져 있으니
-                    대기 시간이 길어지면서 이탈로 이어집니다. 문의를 사람이 읽고 하나씩 분류하는 방식으로는
-                    가장 급한 골든 타임을 놓치게 됩니다.
-                </p>
-                <p class="text-slate-600 leading-relaxed">
-                    이 문서는 게임 라이브 서비스에서 서버 장애가 났을 때 문의 폭주를 자동으로 분류하고 보상 기준을 미리 정해
-                    대응했던 방식을 신선식품 배송 환경에 옮겨,
-                    <strong class="text-slate-900">문의 자동 분류 → 사전 승인된 보상 플레이북 → 물류팀 직결 핫라인</strong>
-                    세 단계로 정리한 기록입니다.
-                </p>
+                <h2 class="text-2xl font-black text-slate-900 mb-6">왜 지연이 치명적인가</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">밤에 주문받아 아침에 배송하는 신선식품은 하루만 늦어도 상품을 버려야 합니다. 폭설이나 물류센터 사고 한 건이 터지면 같은 문의가 짧은 시간에 몰려 대기가 길어집니다. 사람이 하나씩 읽어 분류하는 방식으로는 가장 급한 시간을 놓칩니다.</p>
             </div>
         </section>
 

@@ -110,6 +110,7 @@
             text-align: right;
             margin-top: 0.5rem;
         }
+        @media (max-width: 640px) { p br { display: none } }
     </style>
 </head>
 <body class="antialiased font-sans scroll-smooth">
@@ -166,27 +167,10 @@
     <!-- 0. 문서 개요 -->
     <section id="overview" class="py-20 bg-gray-50 border-t border-gray-100 fade-in-section">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <span class="text-brand-600 font-bold tracking-wider text-sm mb-2 block">00. 문서 개요</span>
-            <h2 class="text-2xl sm:text-3xl font-black text-gray-900 mb-6 leading-snug">어떤 서비스에 대한 제안인가</h2>
-            <p class="text-gray-600 leading-relaxed mb-4">
-                여기서 말하는 <strong class="text-gray-900">의료 정보 플랫폼</strong>은 병원과 시술 정보를 모아 보여주고,
-                실제로 진료를 받은 이용자의 <strong class="text-gray-900">후기</strong>를 근거로 병원을 고를 수 있게 돕는 서비스입니다.
-                이용자는 가격표보다 후기를 먼저 읽고 예약을 결정하기 때문에, 후기가 정확한지 여부가 서비스의 존재 이유와 직결됩니다.
-            </p>
-            <p class="text-gray-600 leading-relaxed mb-4">
-                그래서 이 서비스에서 가장 큰 리스크는 <strong class="text-gray-900">돈을 받고 쓴 가짜 후기</strong>입니다.
-                병원을 대신 홍보하는 브로커가 계정을 여러 개 만들어 칭찬 후기를 몰아 올리거나, 다른 사람의 시술 사진을
-                잘라서 올리는 방식이 대표적입니다. 이런 후기를 걸러내는 일은 현재
-                <strong class="text-gray-900">외주사(BPO) 인력이 후기를 하나씩 눈으로 확인</strong>하는 수작업으로 처리되고 있습니다.
-            </p>
-            <p class="text-gray-600 leading-relaxed">
-                후기 수는 서비스가 성장할수록 늘어나지만 검수 인력은 그만큼 늘릴 수 없습니다.
-                이 문서는 게임 라이브 서비스에서 어뷰징을 자동 탐지하고 운영 요구사항을 개발 스펙으로 옮기던 방식을 가져와,
-                <strong class="text-gray-900">기계가 1차로 걸러내고 사람은 판단이 필요한 건만 보는 검수 구조</strong>를 설계한 기록입니다.
-            </p>
+            <h2 class="text-2xl sm:text-3xl font-black text-gray-900 mb-6 leading-snug">어떤 서비스인가</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">병원과 시술 정보를 모아 두고, 실제로 진료받은 사람의 후기로 병원을 고르게 돕는 서비스입니다. 그래서 가장 큰 리스크는 돈을 받고 쓴 가짜 후기입니다. 지금은 외주사 인력이 후기를 하나씩 눈으로 확인하고 있습니다.</p>
         </div>
     </section>
-
 
     <section class="py-24 bg-white border-t border-gray-100 fade-in-section">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

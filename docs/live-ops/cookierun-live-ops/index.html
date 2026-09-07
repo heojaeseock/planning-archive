@@ -89,6 +89,8 @@
             color: var(--dark-choco);
             font-weight: 900;
         }
+        body { word-break: keep-all; overflow-wrap: break-word; }
+        @media (max-width: 640px) { p br { display: none } }
     </style>
 </head>
 <body class="p-4 md:p-10">
@@ -129,29 +131,9 @@
 
     <!-- Section 0: 문서 개요 -->
     <section class="cookie-card p-10 md:p-14 mb-16">
-        <h2 class="text-2xl md:text-3xl font-black text-[#8B4513] mb-6 flex items-center gap-3">
-            <span class="bg-[#FFD700] p-2 rounded-lg border-2 border-[#8B4513]">📖</span> 문서 개요
-        </h2>
-        <p class="text-[#6B4423] leading-relaxed mb-4">
-            이 문서는 <strong>같은 게임을 한국과 해외에서 동시에 서비스할 때 생기는 문제</strong>를 다룹니다.
-            글로벌 서비스는 서버가 하나여도 유저가 원하는 것이 지역마다 다릅니다.
-            그래서 하나의 운영 방침으로 밀면 한쪽은 반드시 불만을 갖게 됩니다.
-        </p>
-        <p class="text-[#6B4423] leading-relaxed mb-4">
-            이 문서가 제안하는 <strong>투트랙</strong>은 그 차이를 인정하고
-            <strong>권역별로 운영 메시지와 이벤트 성격을 나눠 가는 방식</strong>입니다.
-            본문의 <strong>'고인물'</strong>은 오래 플레이해 게임을 깊이 아는 유저를 가리키는 커뮤니티 표현으로,
-            이들은 새 콘텐츠보다 <strong>효율(같은 시간에 얼마나 더 얻는지)</strong>에 민감합니다.
-            반대로 신규 유입이 많은 권역은 효율보다 캐릭터 외형과 게임 본연의 재미에 반응합니다.
-        </p>
-        <p class="text-[#6B4423] leading-relaxed">
-            뒤에 나오는 <strong>위기 대응 경로</strong>는 사고가 났을 때 감으로 대응하지 않기 위한 순서입니다.
-            이슈를 미리 감지하고 → 담당 부서에 자동으로 배정하고(Jira) →
-            미리 만들어 둔 다국어 공지·보상 문구를 꺼내 쓰는(Notion) 흐름이며,
-            <strong>번역을 기다리는 시간 자체를 없애는 것</strong>이 핵심입니다.
-        </p>
+        <h2 class="text-2xl md:text-3xl font-black text-[#8B4513] mb-6 flex items-center gap-3">투트랙이란</h2>
+        <p class="text-[#6B4423] leading-relaxed mb-4">같은 게임을 여러 지역에 서비스하면 유저가 원하는 것이 지역마다 다릅니다. 하나의 방침으로 밀면 한쪽은 반드시 불만을 갖습니다. 권역별로 운영 메시지를 나누고, 사고가 났을 때 번역을 기다리지 않도록 다국어 공지를 미리 만들어 두는 방식입니다.</p>
     </section>
-
 
     <!-- Section 1: User Flavor Analysis -->
     <section class="cookie-card p-10 md:p-14 mb-16 bg-[#FFFBEB]">

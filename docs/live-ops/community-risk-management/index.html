@@ -83,6 +83,7 @@
             border-color: #FF7E36 !important;
             background-color: #FFF2EB !important;
         }
+        @media (max-width: 640px) { p br { display: none } }
     </style>
 </head>
 <body class="bg-[#F9FAFB]">
@@ -105,18 +106,8 @@
         <!-- 0. 문서 개요 -->
         <section id="overview">
             <div class="bg-white p-8 md:p-10 card border border-gray-100">
-                <p class="text-xs font-black text-[#FF7E36] tracking-[0.2em] mb-4">문서 개요</p>
-                <p class="text-base leading-relaxed text-gray-700 mb-4">
-                    <strong>지역 기반 중고거래 플랫폼</strong>은 이웃 간 직거래를 중개하는 서비스입니다.
-                    거래 대금이 플랫폼을 거치지 않고 <strong>메신저와 계좌 송금으로 앱 밖에서 오가는 비중이 크기 때문에</strong>,
-                    계정 탈취, 판매 사기, 이미지 도용 같은 사고가 곧바로 서비스 신뢰도를 흔듭니다.
-                    사고가 터진 뒤 환불로 수습하는 구조로는 한계가 있습니다.
-                </p>
-                <p class="text-base leading-relaxed text-gray-700">
-                    이 문서는 게임 라이브 서비스에서 어뷰징을 탐지·차단해 온 방식을 중고거래 환경으로 옮겨,
-                    <strong>사고가 일어나기 전에 걸러내는 리스크 운영 체계</strong>를 설계한 기록입니다.
-                    <span class="text-gray-500">이상 징후 정의 → 데이터 교차 검증 → 단계별 조치</span> 순서로 정리했습니다.
-                </p>
+                <h2 class="text-xl font-black text-gray-900 mb-5">왜 리스크 관리인가</h2>
+                <p class="text-base leading-relaxed text-gray-700 mb-4">지역 기반 중고거래 플랫폼은 이웃 간 직거래를 중개합니다. 거래 대금이 플랫폼을 거치지 않고 메신저와 계좌 송금으로 앱 밖에서 오가기 때문에, 계정 탈취나 판매 사기가 곧 서비스 신뢰도를 흔듭니다. 사고 뒤 환불로 수습하는 대신 미리 걸러내는 체계를 설계했습니다.</p>
             </div>
         </section>
 

@@ -40,6 +40,8 @@ body { font-family: 'Pretendard', sans-serif; }
 }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        body { word-break: keep-all; overflow-wrap: break-word; }
+        @media (max-width: 640px) { p br { display: none } }
 </style>
 </head>
 <body class="bg-[#F8F9FA] text-slate-900 selection:bg-slate-200">
@@ -70,29 +72,10 @@ NO SVG/Mermaid used. -->
     <!-- 0. 문서 개요 -->
     <section class="mb-10">
         <div class="bg-slate-50 rounded-2xl border border-slate-200 p-8">
-            <p class="text-xs font-black text-indigo-600 tracking-widest mb-4">OVERVIEW</p>
-            <h2 class="text-2xl font-bold text-slate-900 mb-5">이 리포트가 보는 것</h2>
-            <p class="text-slate-600 leading-relaxed mb-4">
-                게임 회사가 스트리밍 플랫폼을 신경 쓰는 이유는 단순합니다.
-                <strong class="text-slate-900">사람들이 게임을 사기 전에 방송으로 먼저 본다</strong>는 것입니다.
-                어떤 게임이 어느 플랫폼에서 얼마나 방송되는지가 그 게임의 신규 유입에 직접 영향을 줍니다.
-            </p>
-            <p class="text-slate-600 leading-relaxed mb-4">
-                국내 시장은 글로벌 서비스였던 트위치가 철수한 뒤
-                <strong class="text-slate-900">SOOP</strong>(옛 아프리카TV)과
-                <strong class="text-slate-900">치지직</strong>으로 재편됐습니다.
-                두 플랫폼은 성격이 다릅니다. 한쪽은 오래된 팬덤과 후원 문화가 강하고,
-                다른 쪽은 포털 검색·연동을 통한 유입이 강합니다.
-                따라서 <strong class="text-slate-900">같은 게임이라도 어느 플랫폼에 걸리는지에 따라 도달하는 사람이 달라집니다</strong>.
-            </p>
-            <p class="text-slate-600 leading-relaxed">
-                이 리포트는 카테고리별 시청자 분포 → 크리에이터 수익 구조 → 대형 게임 IP별 방송 분포 →
-                종합 시사점 순서로 구성했습니다. 아래 탭을 눌러 이동할 수 있습니다.
-                수치는 공개된 시청자 통계와 플랫폼 공지를 바탕으로 정리한 것으로, 내부 지표가 아닙니다.
-            </p>
+            <h2 class="text-2xl font-bold text-slate-900 mb-5">왜 보는가</h2>
+            <p class="text-slate-600 leading-relaxed mb-4">게임은 사기 전에 방송으로 먼저 보게 됩니다. 어느 플랫폼에서 얼마나 방송되는지가 신규 유입에 직접 영향을 줍니다. 트위치 철수 뒤 재편된 SOOP과 치지직의 성격 차이를 공개 통계로 정리했습니다.</p>
         </div>
     </section>
-
 
     <!-- Main Navigation Tabs -->
     <nav class="flex space-x-2 md:space-x-8 border-b border-slate-200 mb-10 overflow-x-auto no-scrollbar">

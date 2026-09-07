@@ -63,6 +63,8 @@
         .text-balanced {
             text-wrap: balance;
         }
+        body { word-break: keep-all; overflow-wrap: break-word; }
+        @media (max-width: 640px) { p br { display: none } }
     </style>
 </head>
 <body class="bg-slate-50/50">
@@ -96,32 +98,10 @@
     <!-- 0. 문서 개요 -->
     <section class="mb-28">
         <div class="bg-white rounded-2xl border border-slate-200 p-8 md:p-10">
-            <p class="text-xs font-bold text-blue-600 tracking-widest mb-4">OVERVIEW</p>
-            <h2 class="text-2xl font-bold text-slate-800 mb-5">이 보고서를 읽는 방법</h2>
-            <p class="text-slate-600 leading-relaxed mb-4">
-                <strong class="text-slate-800">캐주얼 게임</strong>은 조작이 단순하고 한 판이 짧아
-                게임을 잘 모르는 사람도 바로 할 수 있는 모바일 게임을 말합니다.
-                수익 구조가 다른 장르와 다릅니다. 게임 안에서 아이템을 팔기보다
-                <strong class="text-slate-800">광고를 보여 주고 돈을 받는 비중이 크기 때문에,
-                많은 사람이 설치하게 만드는 것 자체가 사업의 핵심</strong>입니다.
-            </p>
-            <p class="text-slate-600 leading-relaxed mb-4">
-                그래서 이 보고서에는 <strong class="text-slate-800">유입 비용</strong>이라는 말이 계속 나옵니다.
-                광고를 돌려 이용자 한 명을 설치까지 데려오는 데 드는 돈이고, 업계에서는 CPI라고 부릅니다.
-                이 값이 낮은 소재를 찾는 것이 곧 마케팅 성과입니다.
-                <strong class="text-slate-800">방치형</strong>은 손을 놓아도 자원이 쌓이는 구조,
-                <strong class="text-slate-800">메타 시스템</strong>은 한 판이 끝난 뒤에도 계속 키워 나가는
-                상위 목표(창고 확장, 도시 해금 등)를 뜻합니다.
-            </p>
-            <p class="text-slate-600 leading-relaxed">
-                구성은 시장 지표 분석 → 이용자가 왜 계속하는지에 대한 동기 분석 → 그 둘을 근거로 만든
-                신작 기획안(패킹 마스터) 순서입니다.
-                <strong class="text-slate-800">본문의 수치는 공개된 마켓 순위와 직접 플레이한 결과를 바탕으로
-                추정한 값이며, 특정 회사의 실제 실적이 아닙니다.</strong>
-            </p>
+            <h2 class="text-2xl font-bold text-slate-800 mb-5">읽는 방법</h2>
+            <p class="text-slate-600 leading-relaxed mb-4">캐주얼 게임은 광고 수익 비중이 커서 많이 설치되게 만드는 것이 사업의 핵심입니다. 그래서 본문에는 이용자 한 명을 데려오는 비용, 즉 유입 비용이 계속 나옵니다. 수치는 공개된 마켓 순위와 직접 플레이를 바탕으로 추정한 값입니다.</p>
         </div>
     </section>
-
 
     <!-- 섹션 1: 시장 데이터 분석 -->
     <section class="mb-28">

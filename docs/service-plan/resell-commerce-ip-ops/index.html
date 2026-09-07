@@ -50,6 +50,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
+        @media (max-width: 640px) { p br { display: none } }
     </style>
 </head>
 <body class="flex flex-col md:flex-row h-screen overflow-hidden selection:bg-black selection:text-white">
@@ -99,27 +100,8 @@
         <!-- 0. 문서 개요 (탭과 무관하게 항상 노출) -->
         <div id="overview" class="max-w-5xl mx-auto mb-14">
             <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
-                <span class="inline-block px-3 py-1 bg-black text-white text-xs font-bold rounded-full mb-5 shadow-sm">문서 개요</span>
-                <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 leading-snug">어떤 비즈니스에 대한 제안인가</h2>
-                <p class="text-gray-600 leading-relaxed mb-4">
-                    <strong class="text-gray-900">리셀 커머스 플랫폼</strong>은 한정판 스니커즈나 굿즈처럼
-                    <strong class="text-gray-900">수량이 정해져 있어 정가로는 살 수 없는 물건</strong>을 거래하는 곳입니다.
-                    브랜드가 물량을 풀 때는 <strong class="text-gray-900">드랍(drop)</strong>이라는 방식으로 특정 시각에 판매를 열고,
-                    수요가 물량을 넘으면 추첨이나 선착순으로 넘깁니다. 여기서 못 산 사람들은 이후 이용자끼리 재판매하는 시장에서 사게 됩니다.
-                </p>
-                <p class="text-gray-600 leading-relaxed mb-4">
-                    이 문서가 다루는 <strong class="text-gray-900">IP·엔터테인먼트 운영</strong>은 그중에서도
-                    브랜드·아티스트와 협업한 한정판 발매와 오프라인 팝업 스토어를 굴리는 일입니다.
-                    상시 판매와 결정적으로 다른 점은 <strong class="text-gray-900">트래픽이 특정 1분에 몰린다</strong>는 것입니다.
-                    드랍이 열리는 순간 접속이 폭주하고, 그때 결제가 한 번 밀리면 곧바로 커뮤니티에 확산됩니다.
-                </p>
-                <p class="text-gray-600 leading-relaxed">
-                    이 구조는 게임의 대규모 패치 오픈이나 e스포츠 현장 운영과 성질이 같습니다.
-                    이 문서는 그 공통점을 근거로 <strong class="text-gray-900">파트너사 상품 데이터 검수 자동화</strong>,
-                    <strong class="text-gray-900">현장 스태프 권한 위임 매뉴얼</strong>,
-                    <strong class="text-gray-900">개인정보를 배제한 AI 장애 대응</strong> 세 가지를 설계한 기록입니다.
-                    왼쪽 목차에서 항목을 골라 볼 수 있습니다.
-                </p>
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 leading-snug">어떤 비즈니스인가</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">한정판 스니커즈처럼 정가로는 살 수 없는 물건을 거래하는 플랫폼입니다. 브랜드가 물량을 풀 때는 특정 시각에 판매를 여는데, 이를 드랍이라고 부르고 그 1분에 트래픽이 몰립니다. 결제가 한 번 밀리면 곧바로 커뮤니티로 확산됩니다.</p>
             </div>
         </div>
 

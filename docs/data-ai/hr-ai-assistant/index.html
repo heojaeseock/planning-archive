@@ -25,6 +25,7 @@
         }
         .notion-table th, .notion-table td { border: 1px solid #e2e8f0; padding: 0.75rem; }
         .notion-table th { background-color: #f8fafc; font-weight: 600; text-align: left; }
+        @media (max-width: 640px) { p br { display: none } }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-teal-200 selection:text-teal-900 leading-relaxed">
@@ -51,30 +52,9 @@
 
         <!-- 0. 문서 개요 -->
         <section id="overview" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
-            <p class="text-xs font-black text-indigo-600 tracking-widest mb-4">OVERVIEW</p>
-            <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-5">문서 개요</h2>
-            <p class="text-slate-600 leading-relaxed mb-4">
-                이 기획서가 다루는 대상은 <strong class="text-slate-900">게임 개발사의 인사(HR) 담당자</strong>입니다.
-                이들이 하루에 가장 많이 쓰는 시간은 채용이나 평가 설계가 아니라,
-                "반차 쓰면 몇 시간 근무예요?", "재직증명서 영문으로 되나요?" 같은
-                <strong class="text-slate-900">같은 질문에 반복해서 답하는 일</strong>과
-                계약서·증명서 같은 <strong class="text-slate-900">양식 문서를 사람 이름만 바꿔 다시 만드는 일</strong>입니다.
-            </p>
-            <p class="text-slate-600 leading-relaxed mb-4">
-                이 두 가지는 AI가 잘하는 일입니다. 그런데 HR 데이터는
-                <strong class="text-slate-900">이름·연봉·평가처럼 회사 밖으로 나가면 안 되는 정보</strong>라서,
-                일반적인 AI 서비스에 그대로 입력할 수 없습니다. 보안 때문에 AI를 못 쓰는 상황이 되는 것입니다.
-            </p>
-            <p class="text-slate-600 leading-relaxed">
-                이 문서의 핵심은 그 딜레마를 푸는 방식입니다.
-                <strong class="text-slate-900">AI에게는 이름과 금액이 빈칸으로 남은 양식만 만들게 하고,
-                실제 개인정보는 담당자 컴퓨터 안에서만 그 빈칸에 채워 넣습니다</strong>.
-                민감 정보가 외부로 나가는 구간 자체를 없애는 구조이고,
-                본문의 <strong class="text-slate-900">'로컬'</strong>이라는 말은 이 "담당자 컴퓨터 안에서만"을 뜻합니다.
-                아래에서 사내 문의 자동 응답(기능 1)과 계약서 자동 생성(기능 2)을 직접 눌러 볼 수 있습니다.
-            </p>
+            <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-5">풀려는 문제</h2>
+            <p class="text-slate-600 leading-relaxed mb-4">HR 담당자의 시간은 반복 문의 응대와 양식 문서 작성에 들어갑니다. AI가 잘하는 일이지만 이름과 연봉이 밖으로 나갈 수 없어 쓰지 못합니다. AI에게는 빈칸 양식만 만들게 하고 개인정보는 담당자 컴퓨터에서 채우는 구조를 제안합니다.</p>
         </section>
-
 
         <section id="problem-statement" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
             <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center">

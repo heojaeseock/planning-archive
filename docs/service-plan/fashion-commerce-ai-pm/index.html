@@ -73,6 +73,7 @@
             transform: translateY(0); 
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
+        @media (max-width: 640px) { p br { display: none } }
     </style>
 </head>
 <body class="antialiased scroll-smooth">
@@ -119,28 +120,10 @@
         <!-- 0. 문서 개요 -->
         <section id="overview" class="scroll-mt-24">
             <div class="bg-white rounded-2xl border border-slate-200 p-8 md:p-10">
-                <p class="text-xs font-bold text-blue-600 tracking-widest mb-4">OVERVIEW</p>
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">문서 개요</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">
-                    <strong class="text-slate-900">패션 커머스 플랫폼</strong>은 수많은 브랜드의 옷을 한곳에 모아 파는
-                    온라인 쇼핑 앱입니다. 취급 상품이 수백만 건이라 사람이 일일이 정리할 수 없기 때문에,
-                    <strong class="text-slate-900">상품을 자동으로 분류하고 리뷰를 요약해 주는 AI 기능</strong>이 서비스의 핵심 기능으로 들어갑니다.
-                    "이 옷 후기 한 줄 요약", "같은 상품 묶어 보기" 같은 것들입니다.
-                </p>
-                <p class="text-slate-600 leading-relaxed mb-4">
-                    <strong class="text-slate-900">AI PM(AI 프로덕트 매니저)</strong>은 그 기능을 만드는 사람 중
-                    모델을 직접 학습시키는 엔지니어가 아니라, <strong class="text-slate-900">무엇을 만들지 정하고
-                    나온 결과가 쓸 만한지 책임지는 역할</strong>입니다. 학습에 쓸 데이터가 깨끗한지 확인하고,
-                    배포한 기능이 엉뚱한 답을 내놓지 않는지 지켜보고, 사업팀의 막연한 불만을 개발팀이 손댈 수 있는 요건으로 바꿉니다.
-                </p>
-                <p class="text-slate-600 leading-relaxed">
-                    이 일이 게임 라이브 운영과 닮은 지점은 <strong class="text-slate-900">배포한 뒤가 진짜 시작</strong>이라는 점입니다.
-                    이 문서는 데이터 검수 자동화(전략 1), 배포 후 예외 케이스 모니터링(전략 2),
-                    현장 요구사항을 개발 언어로 번역하기(전략 3) 순서로 정리한 기록입니다.
-                </p>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">AI PM은 무슨 일인가</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">모델을 직접 학습시키는 엔지니어가 아니라, 무엇을 만들지 정하고 나온 결과가 쓸 만한지 책임지는 역할입니다. 학습 데이터가 깨끗한지 확인하고, 배포한 기능이 엉뚱한 답을 내놓지 않는지 지켜봅니다. 배포한 뒤가 시작이라는 점이 게임 운영과 같습니다.</p>
             </div>
         </section>
-
 
         <!-- 섹션 1: 리서치 배경 -->
         <section id="intro" class="scroll-mt-24">

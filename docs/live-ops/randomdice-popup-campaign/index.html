@@ -35,6 +35,7 @@
         /* 데이터 근거 토글 애니메이션 */
         .data-rationale { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out, opacity 0.5s ease; opacity: 0; }
         .data-rationale.open { max-height: 500px; opacity: 1; }
+        @media (max-width: 640px) { p br { display: none } }
     </style>
 </head>
 <body class="text-slate-800 antialiased keep-all">
@@ -71,29 +72,10 @@
         <!-- 0. 문서 개요 -->
         <section id="overview" class="space-y-6">
             <div class="bg-white rounded-3xl border border-slate-200 p-8 md:p-10 text-left">
-                <p class="text-xs font-black text-blue-600 tracking-widest mb-4">OVERVIEW</p>
-                <h2 class="text-2xl font-black text-slate-900 mb-5">이 제안이 무엇인가</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">
-                    <strong class="text-slate-900">랜덤다이스</strong>는 주사위를 굴려 나온 결과로 방어 타워를 만들어
-                    적을 막는 모바일 게임입니다. 실력만으로도, 운만으로도 이길 수 없고
-                    <strong class="text-slate-900">그날의 주사위 운을 어떻게 쓸지 판단하는 것</strong>이 핵심인 게임입니다.
-                </p>
-                <p class="text-slate-600 leading-relaxed mb-4">
-                    <strong class="text-slate-900">팝업(팝업 스토어)</strong>은 며칠에서 몇 주만 문을 여는 임시 매장입니다.
-                    게임사가 팝업을 여는 목적은 굿즈 판매가 아니라,
-                    <strong class="text-slate-900">떠난 유저를 다시 게임으로 데려오고 남아 있는 팬을 더 단단히 묶는 것</strong>입니다.
-                    그래서 성공 여부는 방문자 수가 아니라 <strong class="text-slate-900">방문 후 게임에 다시 접속한 사람 수</strong>로 판단해야 합니다.
-                </p>
-                <p class="text-slate-600 leading-relaxed">
-                    이 제안의 발상은 게임의 정체성인 '주사위 운'을 오프라인에 그대로 옮기는 것입니다.
-                    줄을 서서 굿즈를 받아 가는 방식이 아니라, 현장에서 실제로 주사위를 굴려
-                    받는 것이 달라지게 만듭니다. 이어지는 내용은 캠페인 컨셉 → 게임 복귀까지의 유저 동선과 예상 전환율 →
-                    현장 돌발 상황 대처법 → 외부 브랜드 협업 순서이며,
-                    <strong class="text-slate-900">전환율 수치는 실측치가 아니라 산출 근거를 밝힌 가설</strong>입니다.
-                </p>
+                <h2 class="text-2xl font-black text-slate-900 mb-5">팝업의 목적</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">게임사가 팝업 스토어를 여는 이유는 굿즈 판매가 아니라 떠난 유저를 다시 데려오는 것입니다. 그래서 성과는 방문자 수가 아니라 방문 뒤 게임에 재접속한 사람 수로 봐야 합니다. 랜덤다이스의 주사위 운을 현장에 그대로 옮긴 기획입니다.</p>
             </div>
         </section>
-
 
         <section id="concept" class="space-y-10 scroll-mt-10">
             <div class="text-center space-y-4">

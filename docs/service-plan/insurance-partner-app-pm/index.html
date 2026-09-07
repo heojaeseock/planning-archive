@@ -88,6 +88,8 @@
             from { transform: scale(0.95); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
+        body { word-break: keep-all; overflow-wrap: break-word; }
+        @media (max-width: 640px) { p br { display: none } }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -112,27 +114,8 @@
         <!-- 0. 문서 개요 (탭과 무관하게 항상 노출) -->
         <section id="overview" class="mb-12">
             <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
-                <span class="inline-block bg-blue-50 text-[#3182F6] text-xs font-bold px-4 py-1.5 rounded-full mb-6">문서 개요</span>
-                <h2 class="text-xl md:text-2xl font-bold text-[#191F28] mb-6 leading-snug">누가 쓰는 앱에 대한 제안인가</h2>
-                <p class="text-[#4E5968] leading-relaxed mb-4">
-                    보험을 파는 사람은 보험사 직원이 아니라 여러 보험사 상품을 함께 취급하는
-                    <strong class="text-[#191F28]">보험 설계사</strong>인 경우가 많습니다. 이 문서에서 다루는
-                    <strong class="text-[#191F28]">보험 파트너 앱</strong>은 그 설계사들이 쓰는 업무용 앱입니다.
-                    일반 고객이 쓰는 보험 비교 앱과 짝을 이루는 <strong class="text-[#191F28]">설계사용 버전</strong>이라고 보면 됩니다.
-                </p>
-                <p class="text-[#4E5968] leading-relaxed mb-4">
-                    이 앱으로 지금 할 수 있는 일은 <strong class="text-[#191F28]">고객이 이미 가입한 보험을 조회하고
-                    부족한 보장을 짚어 주는 것</strong>까지입니다. 그런데 상담의 마지막 단계인
-                    <strong class="text-[#191F28]">"그래서 이 조건이면 매달 얼마인가"</strong>를 계산하려면
-                    앱을 닫고 컴퓨터를 켜서 보험사별 전산 시스템에 따로 접속해야 합니다.
-                    고객 앞에서 상담이 끊기는 지점이 여기입니다.
-                </p>
-                <p class="text-[#4E5968] leading-relaxed">
-                    이 문서는 그 끊긴 구간을 앱 안에서 잇는 <strong class="text-[#191F28]">실시간 보험료 시뮬레이터</strong>를
-                    제안한 기록입니다. 아래 탭은 문제 정의 → 시뮬레이터 설계 → 예상 성과 순서로 이어지며,
-                    두 번째 탭에서는 보장 금액을 직접 움직여 보험료가 어떻게 바뀌는지 시연해 볼 수 있습니다.
-                    등장하는 고객 이름과 보험료는 모두 설명을 위해 만든 가상의 예시입니다.
-                </p>
+                <h2 class="text-xl md:text-2xl font-bold text-[#191F28] mb-6 leading-snug">누가 쓰는 앱인가</h2>
+                <p class="text-[#4E5968] leading-relaxed mb-4">여러 보험사 상품을 함께 취급하는 설계사들이 쓰는 업무용 앱입니다. 고객이 가입한 보험을 조회하고 부족한 보장을 짚어 주는 것까지는 됩니다. 그런데 매달 얼마인지 계산하려면 앱을 닫고 보험사 전산에 따로 접속해야 해서, 고객 앞에서 상담이 끊깁니다.</p>
             </div>
         </section>
 

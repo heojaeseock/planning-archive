@@ -102,6 +102,7 @@
 
         .custom-scroll::-webkit-scrollbar { width: 4px; }
         .custom-scroll::-webkit-scrollbar-thumb { background: #03C75A; border-radius: 10px; }
+        @media (max-width: 640px) { p br { display: none } }
     </style>
 </head>
 <body class="selection:bg-brand/30">
@@ -157,26 +158,8 @@
 
         <!-- 0. 문서 개요 -->
         <section id="overview" class="strategy-card p-8 md:p-14">
-            <span class="text-brand font-bold text-[10px] uppercase tracking-widest">Overview</span>
-            <h2 class="text-2xl md:text-3xl font-black mt-3 mb-6 leading-snug">문서 개요</h2>
-            <p class="text-slate-400 leading-relaxed mb-4">
-                여기서 말하는 <strong class="text-slate-100">지역 정보 서비스</strong>는 지도와 검색에서
-                동네 가게의 위치·영업시간·메뉴를 보여주고, 실제 방문자가 남긴 <strong class="text-slate-100">리뷰</strong>를 함께
-                제공하는 서비스입니다. 이용자는 리뷰를 보고 갈 곳을 정하고, 마음에 든 가게는 저장해 둡니다.
-                즉 <strong class="text-slate-100">리뷰의 신뢰도가 곧 서비스의 신뢰도</strong>입니다.
-            </p>
-            <p class="text-slate-400 leading-relaxed mb-4">
-                문제는 리뷰 수를 늘리기 위해 진행하는 <strong class="text-slate-100">리뷰 작성 이벤트</strong>가
-                저품질 리뷰까지 함께 끌어온다는 점입니다. 보상만 노린 한 줄 리뷰, 사진 도용, 같은 사람이 계정을 바꿔 쓰는
-                어뷰징이 섞여 들어오고, 이를 걸러내는 일은 마케터가 눈으로 하나씩 확인하는 수작업으로 남습니다.
-                이벤트가 커질수록 검수 부담도 같이 커지는 구조입니다.
-            </p>
-            <p class="text-slate-400 leading-relaxed">
-                이 문서는 게임 라이브 서비스에서 이벤트 참여 데이터를 한곳에 모아 어뷰징을 자동으로 걸러내던 방식을
-                이 환경에 옮겨, <strong class="text-slate-100">검수를 시스템에 맡기고 사람은 기획에 집중하는 구조</strong>를
-                설계한 기록입니다. 문제 정의(Part 1) → 검수 자동화(Part 2) → 참여 경험 설계(Part 3) → 푸시 카피(Part 4)
-                순서로 이어집니다.
-            </p>
+            <h2 class="text-2xl md:text-3xl font-black mt-3 mb-6 leading-snug">어떤 서비스인가</h2>
+            <p class="text-slate-400 leading-relaxed mb-4">지도와 검색에서 동네 가게 정보와 방문자 리뷰를 보여주는 서비스입니다. 리뷰 신뢰도가 곧 서비스 신뢰도인데, 리뷰 수를 늘리려는 이벤트가 보상만 노린 글과 사진 도용까지 함께 끌어옵니다. 그걸 걸러내는 일은 마케터의 수작업으로 남습니다.</p>
         </section>
 
         

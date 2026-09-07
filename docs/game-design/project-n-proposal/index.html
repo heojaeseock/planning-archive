@@ -107,6 +107,7 @@
             word-break: keep-all;
             overflow-wrap: break-word;
         }
+        @media (max-width: 640px) { p br { display: none } }
     </style>
 </head>
 <body class="antialiased scroll-smooth font-sans selection:bg-brand-500 selection:text-white keep-all">
@@ -143,29 +144,10 @@
         <!-- 0. 문서 개요 -->
         <section id="overview" class="scroll-mt-24">
             <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
-                <p class="text-xs font-black text-brand-500 tracking-widest mb-4">OVERVIEW</p>
-                <h2 class="text-2xl font-bold text-gray-900 mb-5">문서 개요</h2>
-                <p class="text-gray-600 leading-relaxed mb-4">
-                    <strong class="text-gray-900">'프로젝트 N'</strong>은 특정 회사의 실제 프로젝트가 아니라,
-                    이 문서에서 가정한 <strong class="text-gray-900">웹툰 IP 기반 수집형 RPG</strong>의 가칭입니다.
-                    인기 웹툰의 캐릭터를 뽑아 팀을 만들고 키우는 형태의 게임을 전제로 했습니다.
-                </p>
-                <p class="text-gray-600 leading-relaxed mb-4">
-                    이런 게임에서 라이브 서비스가 다뤄야 하는 문제는 대체로 세 가지로 좁혀집니다.
-                    <strong class="text-gray-900">① 유저가 왜 떠나는지</strong>,
-                    <strong class="text-gray-900">② 새 캐릭터를 낼 때마다 강해지는 인플레이션을 어떻게 막을지</strong>,
-                    <strong class="text-gray-900">③ 사고가 났을 때 몇 시간 안에 무엇을 할지</strong>입니다.
-                    원작 팬이 많은 IP 게임은 특히 캐릭터 성능 문제에 여론이 빠르게 반응합니다.
-                </p>
-                <p class="text-gray-600 leading-relaxed">
-                    이 문서는 그 세 가지에 대한 해법을 운영자 관점에서 정리한 제안입니다.
-                    <strong class="text-gray-900">본문의 차트와 수치는 실제 서비스 데이터가 아니라,
-                    프로세스가 어떻게 작동하는지 보여 주기 위해 구성한 시연용 값</strong>이며 각 항목에도 표시해 두었습니다.
-                    아래 세 개 섹션을 순서대로 눌러 보면 검증 과정이 단계별로 진행됩니다.
-                </p>
+                <h2 class="text-2xl font-bold text-gray-900 mb-5">전제</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">프로젝트 N은 실제 프로젝트가 아니라 웹툰 IP 기반 수집형 RPG를 가정한 가칭입니다. 이탈 방어, 신규 캐릭터 인플레이션 검증, 사고 대응 세 가지를 다뤘습니다. 본문 차트는 프로세스를 보여주기 위한 시연용 값입니다.</p>
             </div>
         </section>
-
 
         <!-- Section 1: VOC & System -->
         <section id="s1" class="scroll-mt-24">
