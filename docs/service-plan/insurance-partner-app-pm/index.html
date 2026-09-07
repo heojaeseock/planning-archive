@@ -95,7 +95,7 @@
     <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-6 flex justify-between items-center h-16">
             <div class="flex items-center gap-2">
-                <span class="text-2xl font-black text-[#3182F6]">brand</span>
+                <span class="text-2xl font-black text-[#3182F6]">보험 비교 앱</span>
                 <span class="text-lg font-bold text-[#333D4B]">보험 파트너</span>
                 <span class="ml-2 bg-blue-100 text-blue-600 text-[10px] font-bold px-2 py-0.5 rounded">기능 개선 제안</span>
             </div>
@@ -109,6 +109,34 @@
 
     <main class="flex-grow max-w-5xl mx-auto px-6 py-12 w-full">
 
+        <!-- 0. 문서 개요 (탭과 무관하게 항상 노출) -->
+        <section id="overview" class="mb-12">
+            <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
+                <span class="inline-block bg-blue-50 text-[#3182F6] text-xs font-bold px-4 py-1.5 rounded-full mb-6">문서 개요</span>
+                <h2 class="text-xl md:text-2xl font-bold text-[#191F28] mb-6 leading-snug">누가 쓰는 앱에 대한 제안인가</h2>
+                <p class="text-[#4E5968] leading-relaxed mb-4">
+                    보험을 파는 사람은 보험사 직원이 아니라 여러 보험사 상품을 함께 취급하는
+                    <strong class="text-[#191F28]">보험 설계사</strong>인 경우가 많습니다. 이 문서에서 다루는
+                    <strong class="text-[#191F28]">보험 파트너 앱</strong>은 그 설계사들이 쓰는 업무용 앱입니다.
+                    일반 고객이 쓰는 보험 비교 앱과 짝을 이루는 <strong class="text-[#191F28]">설계사용 버전</strong>이라고 보면 됩니다.
+                </p>
+                <p class="text-[#4E5968] leading-relaxed mb-4">
+                    이 앱으로 지금 할 수 있는 일은 <strong class="text-[#191F28]">고객이 이미 가입한 보험을 조회하고
+                    부족한 보장을 짚어 주는 것</strong>까지입니다. 그런데 상담의 마지막 단계인
+                    <strong class="text-[#191F28]">"그래서 이 조건이면 매달 얼마인가"</strong>를 계산하려면
+                    앱을 닫고 컴퓨터를 켜서 보험사별 전산 시스템에 따로 접속해야 합니다.
+                    고객 앞에서 상담이 끊기는 지점이 여기입니다.
+                </p>
+                <p class="text-[#4E5968] leading-relaxed">
+                    이 문서는 그 끊긴 구간을 앱 안에서 잇는 <strong class="text-[#191F28]">실시간 보험료 시뮬레이터</strong>를
+                    제안한 기록입니다. 아래 탭은 문제 정의 → 시뮬레이터 설계 → 예상 성과 순서로 이어지며,
+                    두 번째 탭에서는 보장 금액을 직접 움직여 보험료가 어떻게 바뀌는지 시연해 볼 수 있습니다.
+                    등장하는 고객 이름과 보험료는 모두 설명을 위해 만든 가상의 예시입니다.
+                </p>
+            </div>
+        </section>
+
+
         <!-- 1. 문제 정의 (기존 앱의 한계점) -->
         <section id="page1" class="content-section active space-y-10">
             <div class="bg-white p-12 rounded-[32px] shadow-sm border border-gray-100">
@@ -118,7 +146,7 @@
                     <span class="text-[#3182F6]">그러나 여전히 남은 '최종 설계 단계'의 비효율</span>
                 </h1>
                 <p class="text-lg text-gray-500 leading-relaxed font-medium">
-                    핀테크 플랫폼 앱을 통해 고객의 가입 내역을 조회하는 것은 매우 편해졌습니다. 하지만 <span class="font-bold text-gray-700">최종 가입 설계와 정확한 보험료 계산</span>을 위해서는 여전히 각 보험사의 전산망에 개별 접속해야 하는 불편함이 존재합니다.
+                    보험 파트너 앱을 통해 고객의 가입 내역을 조회하는 것은 매우 편해졌습니다. 하지만 <span class="font-bold text-gray-700">최종 가입 설계와 정확한 보험료 계산</span>을 위해서는 여전히 각 보험사의 전산망에 개별 접속해야 하는 불편함이 존재합니다.
                 </p>
             </div>
 
@@ -126,7 +154,7 @@
                 <div class="bg-white p-8 rounded-[28px] border border-gray-100 shadow-sm">
                     <div class="text-4xl mb-4">&#128680;</div>
                     <h3 class="text-lg font-bold mb-2">설계 과정의 단절</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">핀테크 플랫폼 앱에서 보장 분석을 마친 후, 견적을 내기 위해 앱을 종료하고 컴퓨터로 보험사 전산에 접속해야 합니다.</p>
+                    <p class="text-sm text-gray-500 leading-relaxed">보험 파트너 앱에서 보장 분석을 마친 후, 견적을 내기 위해 앱을 종료하고 컴퓨터로 보험사 전산에 접속해야 합니다.</p>
                 </div>
                 <div class="bg-white p-8 rounded-[28px] border border-gray-100 shadow-sm">
                     <div class="text-4xl mb-4">&#9201;</div>
@@ -146,7 +174,7 @@
                     <canvas id="timeChart"></canvas>
                 </div>
                 <p class="mt-6 text-xs text-gray-400">
-                    분석 내용: 정보 조회 단계는 핀테크 플랫폼 앱으로 크게 단축되었으나, 최종 가입 설계 및 비교표 제작 단계에서의 시간이 여전히 과다함.
+                    분석 내용: 정보 조회 단계는 보험 파트너 앱으로 크게 단축되었으나, 최종 가입 설계 및 비교표 제작 단계에서의 시간이 여전히 과다함.
                 </p>
             </div>
         </section>
@@ -156,7 +184,7 @@
             <div class="bg-[#3182F6] p-10 rounded-[32px] text-white shadow-xl shadow-blue-100/50">
                 <h3 class="text-sm font-bold opacity-80 mb-3 uppercase tracking-wider">해결 가설</h3>
                 <h2 class="text-2xl md:text-3xl font-bold leading-tight">
-                    보험사 전산 접속 없이, 핀테크 플랫폼 파트너 앱 내에서 완결되는<br>
+                    보험사 전산 접속 없이, 보험 파트너 앱 내에서 완결되는<br>
                     <span class="text-blue-200">고객 참여형 '실시간 시뮬레이터'</span> 도입
                 </h2>
             </div>
@@ -249,7 +277,7 @@
                 <div class="bg-white p-8 rounded-[28px] border border-gray-100 text-center shadow-sm">
                     <p class="text-xs font-bold text-[#8B95A1] mb-3">설계사 앱 이용 시간 증대</p>
                     <p class="text-3xl font-black text-[#3182F6]">+ 150%</p>
-                    <p class="text-xs text-[#8B95A1] mt-3">다른 전산망 이탈 없이 핀테크 플랫폼 앱 내에서 완결</p>
+                    <p class="text-xs text-[#8B95A1] mt-3">다른 전산망 이탈 없이 보험 파트너 앱 내에서 완결</p>
                 </div>
                 <div class="bg-white p-8 rounded-[28px] border border-gray-100 text-center shadow-sm">
                     <p class="text-xs font-bold text-[#8B95A1] mb-3">최종 청약 전환율</p>
@@ -298,7 +326,7 @@
                 <div>
                     <h4 class="text-[#3182F6] font-bold text-sm mb-3">1. 기술적 해결 과제</h4>
                     <p class="text-sm text-[#4E5968] leading-relaxed">
-                        기존 보험 파트너 앱의 보장 분석 데이터에 <span class="font-bold text-[#333D4B]">각 보험사의 가입 설계망</span>을 실시간으로 직접 연결하는 것이 핵심입니다. 이를 통해 설계사가 다른 컴퓨터나 프로그램으로 빠져나가지 않고 핀테크 플랫폼 앱 안에서 모든 업무를 마칠 수 있도록 만드는 앱 이탈 방지 효과를 기대할 수 있습니다.
+                        기존 보험 파트너 앱의 보장 분석 데이터에 <span class="font-bold text-[#333D4B]">각 보험사의 가입 설계망</span>을 실시간으로 직접 연결하는 것이 핵심입니다. 이를 통해 설계사가 다른 컴퓨터나 프로그램으로 빠져나가지 않고 보험 파트너 앱 안에서 모든 업무를 마칠 수 있도록 만드는 앱 이탈 방지 효과를 기대할 수 있습니다.
                     </p>
                 </div>
                 <div class="bg-gray-100 h-px w-full"></div>
@@ -307,7 +335,7 @@
                     <ul class="text-sm text-[#4E5968] space-y-3">
                         <li class="flex items-start gap-2">
                             <span class="text-[#3182F6] mt-0.5 font-bold">1.</span>
-                            <span>설계사가 핀테크 플랫폼 앱에서 고객 데이터 조회 후 <span class="font-bold text-[#333D4B]">맞춤형 시뮬레이터</span> 화면 진입</span>
+                            <span>설계사가 보험 파트너 앱에서 고객 데이터 조회 후 <span class="font-bold text-[#333D4B]">맞춤형 시뮬레이터</span> 화면 진입</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="text-[#3182F6] mt-0.5 font-bold">2.</span>
@@ -433,7 +461,7 @@
             new Chart(document.getElementById('timeChart'), {
                 type: 'bar',
                 data: {
-                    labels: ['보장 내용 파악 (핀테크 플랫폼)', '가입 설계 (보험사)', '비교표 정리', '고객 안내'],
+                    labels: ['보장 내용 파악 (파트너 앱)', '가입 설계 (보험사)', '비교표 정리', '고객 안내'],
                     datasets: [{
                         label: '소요 시간(분)',
                         data: [5, 25, 20, 10], 
