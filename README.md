@@ -6,7 +6,7 @@
 **첫 화면(전체 목록):** [index.html](./index.html)
 
 - 문서 45건 / 4개 분야
-- 문서마다 가장 잘 맞는 직무를 하나씩 부여했습니다 (사업·서비스 기획 19 · 게임 운영·GM 9 · 데이터 분석 9 · 마케팅 5 · 커뮤니티·CS 3)
+- 문서마다 가장 잘 맞는 직무를 하나씩 부여했습니다 (사업·서비스 기획 19 · 게임 운영·GM 8 · 데이터 분석 10 · 마케팅 5 · 커뮤니티·CS 3)
 - 각 문서는 별도 설치 없이 브라우저에서 바로 열리는 단일 HTML입니다.
 
 ---
@@ -52,7 +52,7 @@
 | [액션 장르 매출 TOP 10 분석](docs/data-ai/action-genre-top10-revenue/index.html) ⭐ | 데이터 분석 | 10종을 직접 플레이해 개발 국가·타겟 연령·BM을 비교 |
 | [AI 학습 데이터 품질 평가 효율화](docs/data-ai/ai-data-evaluation-efficiency/index.html) | 데이터 분석 | 평가 흐름 전체를 뜯어 병목을 자동화로 대체하는 제안 |
 | [캐주얼 스포츠 게임 기획 분석](docs/data-ai/casual-sports-game-analysis/index.html) | 데이터 분석 | 물리 기반 조작의 재미를 구성 요소로 분해 |
-| [e스포츠 대회 운영 데이터 대시보드](docs/data-ai/cfs-data-assistant/index.html) | 게임 운영·GM | 현장 운영 데이터를 실시간으로 정리하는 어시스턴트 설계 |
+| [AI로 푸는 물류 데이터 실무 3종](docs/data-ai/cfs-data-assistant/index.html) | 데이터 분석 | 엑셀 조건 집계·SQL 추출·영문 긴급 보고를 AI로 처리한 기록 |
 | [FC 온라인 경제 지표 분석](docs/data-ai/fc-online-economy/index.html) | 데이터 분석 | 이적시장 거래량·가격 변동으로 게임 경제 건강도 진단 |
 | [총무·경영지원 업무 자동화 기획](docs/data-ai/general-affairs-ops/index.html) | 사업·서비스 기획 | 수작업 병목을 함수·템플릿 기반 파이프라인으로 전환 |
 | [글로벌 캐주얼 게임 시장 분석](docs/data-ai/global-casual-game-market/index.html) | 데이터 분석 | 지역별 시장 규모와 성장 동력을 지표로 정리 |

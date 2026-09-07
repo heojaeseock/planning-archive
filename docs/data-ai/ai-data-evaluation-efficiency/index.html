@@ -94,6 +94,35 @@
     <main class="max-w-5xl mx-auto px-4 py-16 space-y-24 md:space-y-32">
 
         <!-- Section 1: Problem -->
+        <!-- 0. 문서 개요 -->
+        <section id="overview">
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 md:p-12">
+                <p class="text-xs font-black text-blue-600 tracking-widest mb-4">OVERVIEW</p>
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-6">이 문서가 다루는 일</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                    AI는 저절로 똑똑해지지 않습니다. 사람이
+                    <strong class="text-slate-900">"이 질문에 이렇게 답하는 게 맞다 / 틀리다"를 하나하나 판정해 준 데이터</strong>를 먹고 배웁니다.
+                    이 판정 작업을 <strong class="text-slate-900">AI 학습 데이터 평가</strong>라고 부르고,
+                    검색 포털처럼 이용자 질문을 많이 받는 회사에서는 이 일을 전담하는 조직을 둡니다.
+                </p>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                    문제는 <strong class="text-slate-900">이 일이 전부 사람 손을 거친다</strong>는 점입니다.
+                    평가자는 하루에 수천 건의 질문과 답변을 읽으며 판정을 내리는데, 그중 상당수는
+                    오타나 자음만 반복된 글처럼 <strong class="text-slate-900">굳이 사람이 읽지 않아도 되는 데이터</strong>입니다.
+                    정작 사람의 판단이 필요한 애매한 사례는 집중력이 떨어진 오후에 몰려옵니다.
+                    같은 사례를 두 사람이 다르게 판정하면 AI가 배우는 기준 자체가 흔들립니다.
+                </p>
+                <p class="text-slate-600 leading-relaxed">
+                    이 문서는 그 두 가지를 나눠서 풉니다.
+                    <strong class="text-slate-900">전략 1</strong>은 기계가 걸러도 되는 데이터를 사람이 보기 전에 미리 빼내는 사전 필터링,
+                    <strong class="text-slate-900">전략 2</strong>는 판단이 갈리는 애매한 사례에서 누가 봐도 같은 결론이 나오게 만드는
+                    3단계 판정 지침입니다. 게임 라이브 운영에서 수만 건의 보상 데이터를 검증하고
+                    유저 문의의 애매한 사례를 기준으로 정리했던 방식을 옮겨 왔습니다.
+                </p>
+            </div>
+        </section>
+
+
         <section id="problem">
             <div class="text-center mb-12">
                 <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-4 text-balance">

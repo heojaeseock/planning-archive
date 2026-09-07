@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CFS Data Assistant - Interactive Archive</title>
+    <title>물류 데이터 AI 활용 기록 - Interactive Archive</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -130,9 +130,39 @@
             <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed mt-4">
                 방대한 물류 데이터 정제, 복잡한 DB 쿼리 추출, 긴급 글로벌 커뮤니케이션까지.<br>
                 생성형 AI를 실무 도구로 완벽히 통제하는 압도적인 효율성으로<br>
-                CFS의 업무 프로세스 최적화 방안을 정리했습니다.
+                물류 센터 운영에서 실제로 마주쳤던 업무 세 가지를 AI로 처리한 과정을 정리했습니다.
             </p>
         </section>
+
+        <!-- 0. 문서 개요 -->
+        <section class="reveal">
+            <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-slate-200">
+                <p class="text-xs font-black text-blue-600 tracking-widest mb-4">OVERVIEW</p>
+                <h2 class="text-2xl font-black text-slate-900 mb-6">문서 개요</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                    이 기록의 배경은 <strong class="text-slate-900">물류 센터</strong>입니다.
+                    상품을 받아 보관하고, 주문이 들어오면 창고에서 물건을 집어(<strong class="text-slate-900">피킹</strong>)
+                    포장해 내보내는 곳입니다. 이 과정이 모두 데이터로 남기 때문에,
+                    운영 담당자의 일은 물건을 옮기는 것보다 <strong class="text-slate-900">그 데이터를 읽고 이상을 찾아내는 쪽</strong>에 가깝습니다.
+                </p>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                    그런데 실제로 요청이 들어오는 형태는 늘 애매합니다.
+                    "에러 났고 유통기한도 빈 건만 골라서 불량률 뽑아 주세요"처럼 조건이 여러 개 겹치거나,
+                    데이터베이스에 직접 물어봐야 하는데 개발자를 기다릴 수 없거나,
+                    새벽에 사고가 났는데 보고 받을 사람이 외국인 임원인 경우입니다.
+                </p>
+                <p class="text-slate-600 leading-relaxed">
+                    이 문서는 그 세 가지를 <strong class="text-slate-900">AI를 도구로 써서 직접 해결한 과정</strong>을
+                    그대로 재현해 둔 기록입니다. 순서대로
+                    <strong class="text-slate-900">① 조건이 겹친 엑셀 집계</strong>,
+                    <strong class="text-slate-900">② 개발자 없이 DB에서 데이터 뽑기(SQL)</strong>,
+                    <strong class="text-slate-900">③ 한국어 현장 보고를 영문 임원 보고로 변환</strong>이며,
+                    각 단계의 버튼을 누르면 실제로 어떤 수식·쿼리·문장이 나왔는지 볼 수 있습니다.
+                    등장하는 수치와 이름은 설명을 위해 재구성한 예시입니다.
+                </p>
+            </div>
+        </section>
+
 
         <!-- Interactive Section: Scenario 1 (Excel Data) -->
         <section class="reveal">
@@ -369,7 +399,7 @@
                         </div>
 
                         <div class="p-4 border-b border-slate-100 space-y-2 text-sm bg-white">
-                            <div class="flex gap-2"><span class="text-slate-400 w-12">To:</span> <span class="font-bold">John.Director@cfs.com</span></div>
+                            <div class="flex gap-2"><span class="text-slate-400 w-12">To:</span> <span class="font-bold">director@logistics-hq.example.com</span></div>
                             <div class="flex gap-2"><span class="text-slate-400 w-12">Subject:</span> <span class="font-bold text-brand-accent">[Urgent] Night Shift Delay Resolved - Network Issue</span></div>
                         </div>
                         
@@ -412,7 +442,7 @@
                     기술이나 코딩 지식 자체보다 더 중요한 것은<br class="hidden sm:block">
                     <strong>'문제를 끝까지 파고들어 해답을 찾아내는 집요함'</strong>이라고 생각합니다.<br><br>
                     AI라는 강력한 도구를 무기로 삼아 복잡한 데이터를 단순화하고,<br class="hidden sm:block">
-                    CFS 물류 현장에 필요한 오퍼레이션 개선안을 정리했습니다.
+                    물류 현장에 필요한 오퍼레이션 개선안을 정리했습니다.
                 </p>
                 
                 <!-- Contact Action Area -->
