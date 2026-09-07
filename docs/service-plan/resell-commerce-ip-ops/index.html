@@ -175,7 +175,7 @@
             </div>
 
             <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-200 mb-8">
-                <h3 class="text-2xl font-bold mb-5 text-gray-900">어떻게 '오류율 0%'를 보장하는가?</h3>
+                <h3 class="text-2xl font-bold mb-5 text-gray-900">온보딩 오류를 어디서 걸러내는가?</h3>
                 <p class="text-lg text-gray-600 mb-10 text-body">
                     다양한 파트너사가 전달하는 비표준 데이터, 예를 들어 상품 코드나 가격 등을 수기로 취합하는 것은 필연적인 사고를 낳습니다. <b>3단계 엑셀 데이터 엔지니어링</b>을 통해 리스크를 통제합니다.
                 </p>
@@ -467,7 +467,7 @@
                         }
                     },
                     {
-                        label: '템플릿 도입 후 (완벽 통제)',
+                        label: '템플릿 도입 후',
                         data: [0.5, 0.5, 0.5, 0.5], // Anchor for label
                         backgroundColor: '#111827', // black
                         borderRadius: 4,
@@ -516,7 +516,7 @@
                         bodyFont: { size: 13 },
                         callbacks: {
                             label: function(context) {
-                                if(context.datasetIndex === 1) return '도입 후: 0건 달성 (100% 감소)';
+                                if(context.datasetIndex === 1) return '도입 후: 오기입 대부분 사전 차단';
                                 return context.dataset.label + ': ' + context.raw + '건';
                             },
                             afterBody: function(context) {
