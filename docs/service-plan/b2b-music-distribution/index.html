@@ -115,6 +115,37 @@
         </header>
 
         <!-- 1. Problem Definition -->
+        <!-- 0. 문서 개요 -->
+        <section id="overview">
+            <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
+                <p class="text-xs font-bold text-indigo-600 tracking-widest mb-4">OVERVIEW</p>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">문서 개요</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    <strong class="text-gray-900">B2B 음악 유통</strong>은 음악을 직접 듣는 이용자를 상대하는 사업이 아닙니다.
+                    아티스트와 소속 레이블이 만든 음원을 받아 <strong class="text-gray-900">Spotify, YouTube, 멜론 같은
+                    국내외 스트리밍 플랫폼 수십 곳에 대신 등록하고, 재생 횟수만큼 들어온 돈을 나눠 정산해 주는
+                    중간 유통 사업</strong>입니다.
+                </p>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    일이 어려워지는 이유는 두 가지입니다. 첫째, 플랫폼마다 요구하는 파일 양식과 정산 요율이 달라
+                    <strong class="text-gray-900">한 곡의 수익을 맞추는 계산이 20곳으로 쪼개집니다</strong>.
+                    이때 곡을 식별하는 번호가 <strong class="text-gray-900">ISRC</strong>(곡 단위 고유번호),
+                    앨범을 식별하는 번호가 <strong class="text-gray-900">UPC</strong>인데, 이 코드가 어긋나면 정산이 새어 나갑니다.
+                    둘째, 신곡은 <strong class="text-gray-900">발매 직후 48시간</strong>에 승부가 납니다.
+                    이 기간에 플랫폼 추천 플레이리스트(현장에서는 '플리')와 배너에 걸려야 트래픽이 붙는데,
+                    가사나 크레딧 누락 하나로 노출이 빠져도 아무도 즉시 알려주지 않습니다.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    이 문서는 게임 라이브 서비스에서 결제 로그를 표준화하고 패치 직후를 관제하던 방식을 이 환경에 옮겨,
+                    <strong class="text-gray-900">정산 데이터 교차 검증</strong>,
+                    <strong class="text-gray-900">발매 후 48시간 관제</strong>,
+                    <strong class="text-gray-900">음원 유출 대응 워크플로우</strong>를 설계한 기록입니다.
+                    참고로 <strong class="text-gray-900">테이크다운(takedown)</strong>은 불법 업로드된 음원을 플랫폼에서 내리는 조치를 말합니다.
+                </p>
+            </div>
+        </section>
+
+
         <section id="sec-intro">
             <h2 class="text-2xl font-black text-slate-800 mb-6 flex items-center gap-2">
                 <span class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center text-sm shadow-sm">1</span> 
@@ -293,7 +324,7 @@
     </main>
 
     <footer class="text-center py-10 text-slate-400 text-sm font-medium border-t border-slate-200 mt-10">
-        Music Platform Company Platform Partnership Proposal - Prepared by 허재석
+        B2B Music Distribution &amp; Platform Partnership Proposal - Prepared by 허재석
     </footer>
 
     <script>
