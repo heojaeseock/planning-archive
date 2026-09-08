@@ -104,6 +104,9 @@
   .banner{border:1px solid var(--border);border-radius:14px;overflow:hidden;margin:0 0 22px}
   a.banner{display:block;transition:border-color .15s ease,box-shadow .15s ease}
   a.banner:hover{border-color:var(--accent);box-shadow:0 6px 20px rgba(31,79,216,.14)}
+  .shots2{display:grid;gap:14px;grid-template-columns:1fr 1fr;align-items:start;margin:0 0 10px}
+  .shots2 .banner{margin:0}
+  @media (max-width:700px){.shots2{grid-template-columns:1fr}}
   .shotcap{margin:-10px 0 18px;font-size:12.5px;color:var(--faint)}
   .cta{display:flex;align-items:center;gap:16px;padding:20px 24px;text-decoration:none;
     border:1px solid var(--border-2);border-radius:14px;background:var(--surface);transition:.16s}
@@ -367,9 +370,14 @@
           <span class="d">전 임직원이 업무 개선·자동화 사례를 발표하는 사내 컨퍼런스에서 최우수작으로 선정되었습니다.</span>
         </div>
       </div>
-      <a class="banner" href="img/notice-tool.png" target="_blank" rel="noopener" style="margin-bottom:10px" title="새 탭에서 원본 크기로 보기">
-        <img src="img/notice-tool.png" alt="상품 공지 자동 생성기 화면" loading="lazy" decoding="async">
-      </a>
+      <div class="shots2">
+        <a class="banner" href="img/notice-tool-1.png" target="_blank" rel="noopener" title="새 탭에서 원본 크기로 보기">
+          <img src="img/notice-tool-1.png" alt="상품 공지 자동 생성기 — 기획서 CSV 업로드와 상점·판매 기간·서버 설정" loading="lazy" decoding="async">
+        </a>
+        <a class="banner" href="img/notice-tool-2.png" target="_blank" rel="noopener" title="새 탭에서 원본 크기로 보기">
+          <img src="img/notice-tool-2.png" alt="상품 공지 자동 생성기 — 상품 선택, 회수 아이템 설정, 공지 소스 생성" loading="lazy" decoding="async">
+        </a>
+      </div>
       <p class="shotcap">이미지를 누르면 원본 크기로 열립니다.</p>
       <div class="blk">
         <h4>프로젝트 요약</h4>
