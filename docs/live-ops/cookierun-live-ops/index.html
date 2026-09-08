@@ -156,6 +156,7 @@
             </div>
             <div class="chart-container">
                 <canvas id="userRadarChart"></canvas>
+            <p class="text-sm text-gray-500 mt-4 text-center font-bold">* 커뮤니티 반응과 운영 이력을 바탕으로 성향 차이를 상대적으로 표시한 값입니다. 측정 지표가 아닙니다.</p>
             </div>
         </div>
     </section>
@@ -178,6 +179,61 @@
     </section>
 
     <!-- Section 3: Risk Management Jelly Path -->
+    <!-- Section 2-b: 공지 템플릿 뱅크 구성안 -->
+    <section class="cookie-card p-10 md:p-14 mb-16">
+        <h2 class="text-4xl text-[#8B4513] mb-4 flex items-center gap-3">
+            <span class="bg-[#FFD700] p-2 rounded-lg border-2 border-[#8B4513]">📝</span> 공지 템플릿 뱅크 구성안
+        </h2>
+        <p class="text-[#6B4423] leading-relaxed mb-10">사고가 난 뒤에 문안을 새로 쓰면 권역별 송출 시점이 벌어집니다.<br>항목을 고정한 템플릿을 미리 만들어 두고, 상황에 맞는 값만 채워 넣는 방식으로 정리했습니다.</p>
+
+        <div class="bg-[#FFF9E6] p-8 rounded-3xl border-4 border-dashed border-[#8B4513] mb-10">
+            <h3 class="text-2xl font-bold text-[#8B4513] mb-4">공통 필수 항목</h3>
+            <p class="text-lg text-gray-700 font-bold leading-relaxed">일시 · 대상 · 내용 · 보상 · 유의사항 다섯 항목을 고정합니다.<br>항목을 고정해 두면 번역 과정에서 한 줄이 빠지는 사고를 막을 수 있습니다.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-3xl border-4 border-[#8B4513] shadow-[6px_6px_0_#8B4513]">
+                <h3 class="text-2xl font-bold text-[#8B4513] mb-3">🇰🇷 국내 문안 기준</h3>
+                <p class="text-lg text-gray-700 font-bold leading-relaxed">원인과 재발 방지 조치를 함께 적습니다.<br>커뮤니티 후속 답변도 같은 문안을 사용해 설명이 어긋나지 않게 합니다.</p>
+            </div>
+            <div class="bg-white p-6 rounded-3xl border-4 border-[#FF4D6D] shadow-[6px_6px_0_#FF4D6D]">
+                <h3 class="text-2xl font-bold text-[#FF4D6D] mb-3">🌍 글로벌 문안 기준</h3>
+                <p class="text-lg text-gray-700 font-bold leading-relaxed">문장을 짧게 끊고 보상 내역을 이미지로 함께 보여 줍니다.<br>수령 기한은 시차 혼선을 피하기 위해 UTC로 표기합니다.</p>
+            </div>
+        </div>
+
+        <h3 class="text-2xl font-bold text-[#8B4513] mb-5">장애 등급별 대응 기준</h3>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-[#8B4513] text-white">
+                        <th class="p-4 rounded-tl-2xl text-lg">등급</th>
+                        <th class="p-4 text-lg">판단 기준</th>
+                        <th class="p-4 rounded-tr-2xl text-lg">공지·보상 처리</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-700 font-bold">
+                    <tr class="border-b-2 border-[#EED9C4]">
+                        <td class="p-4 text-[#FF4D6D] text-lg">1단계</td>
+                        <td class="p-4">접속 불가, 결제 오류 등 플레이 자체가 막히는 상황</td>
+                        <td class="p-4">감지 즉시 1차 공지, 복구 후 상세 공지. 전체 대상 보상</td>
+                    </tr>
+                    <tr class="border-b-2 border-[#EED9C4]">
+                        <td class="p-4 text-[#B8860B] text-lg">2단계</td>
+                        <td class="p-4">일부 콘텐츠·기능만 정상 동작하지 않는 상황</td>
+                        <td class="p-4">상황 공지 후 원인 파악. 영향 받은 유저 한정 보상</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4 text-[#2E7D32] text-lg">3단계</td>
+                        <td class="p-4">표기 오류, 오탈자 등 플레이에 영향이 없는 사항</td>
+                        <td class="p-4">개별 공지 없이 다음 패치 노트에 수정 내역 기재</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="text-sm text-gray-500 mt-5 font-bold">* 등급 기준은 유저 영향 범위를 기준으로 직접 정리한 운영 기준안입니다.</p>
+    </section>
+
     <section class="cookie-card p-10 md:p-14 bg-[#E8F5E9] border-[#2E7D32] shadow-[#C8E6C9]">
         <h2 class="text-4xl text-[#1B5E20] mb-12 text-center">🛡️ 위기 대응 시스템 경로 (Notion/Jira)</h2>
         
@@ -341,5 +397,6 @@
         });
     });
 </script>
+<p style="margin:0;padding:26px 16px 40px;text-align:center;font-size:12.5px;line-height:1.6;color:#94a3b8">© 허재석</p>
 </body>
 </html>
