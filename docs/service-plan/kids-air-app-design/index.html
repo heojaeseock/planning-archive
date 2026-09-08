@@ -353,7 +353,7 @@
                         </div>
                     </div>
 
-                    <!-- 가상 UI 체험 위젯 (정렬 완벽 최적화됨) -->
+                    <!-- 가상 UI 체험 위젯 -->
                     <div class="w-80 h-[540px] bg-white p-8 flex flex-col relative overflow-hidden rounded-[32px] border-4 border-slate-200 shadow-2xl">
                         <p class="text-[10px] font-black text-slate-400 mb-8 text-center uppercase tracking-[0.4em]">가상 UI 체험</p>
                         
@@ -366,7 +366,8 @@
                             <div class="px-1 border-b border-slate-100 pb-2">
                                 <p class="text-[10px] font-black text-slate-400 uppercase">Hourly Reports</p>
                             </div>
-                            <table class="mock-table">
+                            <div style="overflow-x:auto">
+                              <table class="mock-table">
                                 <colgroup>
                                     <col style="width: 25%;">
                                     <col style="width: 25%;">
@@ -387,6 +388,7 @@
                                     <tr><td>11:00</td><td>21</td><td class="text-sky-500">14</td><td class="text-sky-500">9</td></tr>
                                 </tbody>
                             </table>
+                            </div>
                         </div>
 
                         <div class="flex gap-3 mt-auto h-14">
