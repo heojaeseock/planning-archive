@@ -102,6 +102,9 @@
   .shot figcaption{padding:9px 12px;font-size:12.5px;font-weight:700;color:var(--muted);text-align:center}
   figure{margin:0}
   .banner{border:1px solid var(--border);border-radius:14px;overflow:hidden;margin:0 0 22px}
+  a.banner{display:block;transition:border-color .15s ease,box-shadow .15s ease}
+  a.banner:hover{border-color:var(--accent);box-shadow:0 6px 20px rgba(31,79,216,.14)}
+  .shotcap{margin:-10px 0 18px;font-size:12.5px;color:var(--faint)}
 
   .skillcol h3{margin:0 0 14px;font-size:12px;font-weight:800;letter-spacing:.12em;
     text-transform:uppercase;color:var(--faint)}
@@ -377,9 +380,10 @@
           <span class="d">전 임직원이 업무 개선·자동화 사례를 발표하는 사내 컨퍼런스에서 최우수작으로 선정되었습니다.</span>
         </div>
       </div>
-      <div class="banner" style="margin-bottom:18px">
+      <a class="banner" href="img/notice-tool.png" target="_blank" rel="noopener" style="margin-bottom:10px" title="새 탭에서 원본 크기로 보기">
         <img src="img/notice-tool.png" alt="상품 공지 자동 생성기 화면" loading="lazy" decoding="async">
-      </div>
+      </a>
+      <p class="shotcap">이미지를 누르면 원본 크기로 열립니다.</p>
       <div class="blk">
         <h4>프로젝트 요약</h4>
         <ul>
