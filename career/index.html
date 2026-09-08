@@ -36,10 +36,6 @@
   .back:hover{color:var(--accent);border-color:var(--accent)}
 
   header{padding:34px 0 40px;border-bottom:1px solid var(--border)}
-  .hero{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
-  .photo{width:150px;aspect-ratio:314/404;height:auto;border-radius:14px;object-fit:cover;object-position:center top;flex-shrink:0;
-    border:1px solid var(--border);background:var(--surface-2)}
-  .hero-txt{flex:1 1 320px;min-width:0}
   .eyebrow{margin:0 0 10px;font-size:12px;font-weight:800;letter-spacing:.16em;
     text-transform:uppercase;color:var(--accent)}
   h1{margin:0 0 6px;font-size:clamp(28px,5vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.2}
@@ -92,7 +88,8 @@
   .blk.win li{color:var(--text)}
   .blk.win h4{color:var(--accent)}
 
-  .shots{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:20px}
+  .shots{display:grid;gap:14px;grid-template-columns:repeat(3,1fr);margin-top:20px}
+  @media (max-width:700px){.shots{grid-template-columns:1fr}}
   .shot{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface-2)}
   .shot figcaption{padding:9px 12px;font-size:12.5px;font-weight:700;color:var(--muted);text-align:center}
   figure{margin:0}
@@ -128,7 +125,6 @@
   footer{padding:26px 0 130px;font-size:13px;color:var(--faint)}
   @media (max-width:620px){
     header{padding:26px 0 32px} section{padding:34px 0}
-    .photo{width:116px}
     .job{padding:20px 18px}
   }
 </style>
@@ -142,9 +138,6 @@
   </div>
 
   <header>
-    <div class="hero">
-      <img class="photo" src="img/profile.jpg" alt="허재석 프로필 사진" width="314" height="404">
-      <div class="hero-txt">
         <p class="eyebrow">Career Summary</p>
         <h1>허재석</h1>
         <p class="tagline">기획과 운영을 아우르는 올라운더</p>
@@ -155,8 +148,6 @@
           <li>#데이터 및 VOC 분석</li>
           <li>#생성형 AI 활용</li>
         </ul>
-      </div>
-    </div>
     <p class="intro">유니티 게임을 기획해 출시해 본 경험부터 MMORPG 라이브 운영까지 맡아 왔습니다.<br>기획과 운영, 데이터와 콘텐츠를 함께 다루며 실무 범위를 넓혀 가고 있습니다.</p>
   </header>
 
@@ -309,10 +300,6 @@
           <img src="img/gm-collab.png" alt="화산귀환 IP 콜라보" loading="lazy" decoding="async">
           <figcaption>화산귀환 IP 콜라보</figcaption>
         </figure>
-        <figure class="shot">
-          <img src="img/gm-newclass.png" alt="신규 직업 비도술사 소개" loading="lazy" decoding="async">
-          <figcaption>신규 직업 비도술사 소개</figcaption>
-        </figure>
       </div>
     </div>
 
@@ -402,26 +389,27 @@
   <section>
     <h2>Skills</h2>
     <p class="sub">실무에서 실제로 사용한 역량과 도구입니다.</p>
-    <div class="cols">
+      <div class="cols">
       <div class="box skillcol">
         <h3>Hard Skills</h3>
-        <div class="skill"><b>프로젝트 및 운영 관리</b><span>업데이트 일정 관리</span></div>
-        <div class="skill"><b>데이터 분석</b><span>지표 분석 및 운영 판단에 활용</span></div>
-        <div class="skill"><b>디자인 기획</b><span>신규 업데이트(던전·직업 등) 가이드 이미지 제작<br>콜라보 프로모션 이미지 기획 및 협업</span></div>
+        <div class="skill"><b>프로젝트 및 운영 관리</b><span>업데이트 일정 관리<br>다국어 공지·푸시 번역 파이프라인 관리</span></div>
+        <div class="skill"><b>라이브 서비스 운영·QA</b><span>운영툴 세팅 (상점·핫타임·접속 보상)<br>TC 검증 및 팀 내 크로스체크</span></div>
+        <div class="skill"><b>데이터 분석</b><span>지표 분석 및 운영 판단에 활용<br>이벤트 참여 데이터 취합·검증</span></div>
+        <div class="skill"><b>디자인 기획</b><span>신규 업데이트(던전·직업) 가이드 이미지 제작<br>콜라보 프로모션 이미지 기획 및 협업</span></div>
       </div>
       <div class="box skillcol">
         <h3>Soft Skills</h3>
-        <div class="skill"><b>커뮤니케이션</b><span>개발사·퍼블리셔 유관 부서 소통 창구 역할</span></div>
-        <div class="skill"><b>꼼꼼함</b><span>일정 관리<br>기획서 및 문서 오류 검토</span></div>
+        <div class="skill"><b>커뮤니케이션</b><span>개발사·퍼블리셔 유관 부서 소통 창구<br>이슈 대응 방향 협의 및 가이드라인 수립</span></div>
         <div class="skill"><b>이슈 해결</b><span>라이브 이슈 신속 대응 및 판단<br>상황에 따른 유연한 대처</span></div>
-        <div class="skill"><b>리더십</b><span>책임감<br>원만한 대인 관계<br>업무 교육</span></div>
+        <div class="skill"><b>꼼꼼함</b><span>일정 관리<br>기획서 및 문서 오류 검토</span></div>
+        <div class="skill"><b>리더십</b><span>책임감 있는 업무 수행<br>신규 인원 업무 교육</span></div>
       </div>
       <div class="box skillcol">
         <h3>Tools</h3>
         <div class="skill"><b>Jira</b><span>라이브 이슈 관리<br>정책 개정 관리</span></div>
-        <div class="skill"><b>생성형 AI</b><span>운영 실무 활용<br>생성형 AI 세미나 참여</span></div>
-        <div class="skill"><b>Photoshop</b><span>포럼 업로드용 이미지 보정 및 리사이징</span></div>
-        <div class="skill"><b>CapCut</b><span>롱폼·숏폼 영상 제작</span></div>
+        <div class="skill"><b>Excel</b><span>함수 기반 데이터 대조·검증 자동화<br>당첨자 취합 및 보상 지급 관리</span></div>
+        <div class="skill"><b>생성형 AI</b><span>운영 실무 적용<br>사내 생성형 AI 세미나 참여</span></div>
+        <div class="skill"><b>Photoshop · CapCut</b><span>포럼 업로드용 이미지 보정 및 리사이징<br>롱폼·숏폼 영상 제작</span></div>
       </div>
     </div>
   </section>

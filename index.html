@@ -52,6 +52,11 @@
     background:var(--surface);font-size:13.5px;color:var(--muted);line-height:1.55}
   .caps b{display:block;margin-bottom:3px;font-size:14px;font-weight:800;color:var(--text);letter-spacing:-.015em}
 
+  .hero{display:flex;gap:26px;align-items:center;flex-wrap:wrap;margin:0 0 22px}
+  .photo{width:132px;aspect-ratio:314/404;height:auto;border-radius:14px;object-fit:cover;
+    flex-shrink:0;border:1px solid var(--border);background:var(--surface-2)}
+  .hero-txt{flex:1 1 340px;min-width:0}
+  .hero-txt .lede{margin-top:14px}
   .cta{display:flex;align-items:center;gap:16px;margin:26px 0 0;padding:18px 22px;
     border:1px solid var(--border-2);border-radius:14px;background:var(--surface);
     text-decoration:none;transition:.16s;max-width:560px;
@@ -150,10 +155,17 @@
 <div class="wrap">
 
   <header>
-    <p class="eyebrow">Planning &amp; Operations Archive</p>
+    <div class="hero">
+      <img class="photo" src="img/profile.jpg" alt="허재석 프로필 사진" width="314" height="404">
+      <div class="hero-txt">
+        <p class="eyebrow">Planning &amp; Operations Archive</p>
     <h1 class="name">허재석</h1>
     <p class="role">게임 라이브 운영 · 서비스 기획</p>
     <p class="lede">게임 라이브 운영을 하면서 마주친 문제를 기획서와 지표로 정리해 왔습니다.<br>게임 시스템을 역기획하고, 같은 방식을 다른 산업에 적용해 본 기록 46건입니다.<br>자료 조사와 시각화에는 AI를 썼고, 해석과 결론은 직접 정리했습니다.</p>
+
+      </div>
+
+    </div>
 
     <ul class="caps">
       <li><b>라이브 운영</b>이벤트 설계, 장애·이슈 대응, 공지 작성</li>
