@@ -105,20 +105,6 @@
   a.banner{display:block;transition:border-color .15s ease,box-shadow .15s ease}
   a.banner:hover{border-color:var(--accent);box-shadow:0 6px 20px rgba(31,79,216,.14)}
   .shotcap{margin:-10px 0 18px;font-size:12.5px;color:var(--faint)}
-
-  .skillcol h3{margin:0 0 14px;font-size:12px;font-weight:800;letter-spacing:.12em;
-    text-transform:uppercase;color:var(--faint)}
-  .skill{margin:0 0 14px;padding:0 0 14px;border-bottom:1px dashed var(--border)}
-  .skill:last-child{margin-bottom:0;padding-bottom:0;border-bottom:0}
-  .skill b{display:block;font-size:14.5px;font-weight:800;letter-spacing:-.015em;margin-bottom:5px}
-  .skill span{display:block;font-size:13.5px;color:var(--muted);line-height:1.55}
-
-  ul.work{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0;padding:0}
-  .work li{list-style:none;padding:18px 20px;border:1px solid var(--border);
-    border-radius:13px;background:var(--surface)}
-  .work b{display:block;font-size:15px;font-weight:800;letter-spacing:-.02em;margin-bottom:5px}
-  .work span{font-size:13.5px;color:var(--muted);line-height:1.6}
-
   .cta{display:flex;align-items:center;gap:16px;padding:20px 24px;text-decoration:none;
     border:1px solid var(--border-2);border-radius:14px;background:var(--surface);transition:.16s}
   .cta:hover{border-color:var(--accent);background:var(--accent-weak);transform:translateY(-2px);
@@ -388,68 +374,21 @@
       <div class="blk">
         <h4>프로젝트 요약</h4>
         <ul>
-          <li>반복적인 기획서(CSV) 데이터를 포럼 공지사항용 HTML 소스로 자동 변환하는 사내망 웹 도구를 단독 기획·제작</li>
-          <li>미공개 업데이트 데이터가 외부로 나가지 않도록, 기획서 파일은 서버에 올리지 않고 브라우저 안에서만 읽는 구조로 설계</li>
-          <li>도구 자체는 외부망과 분리된 사내망에 배포하고, 밖으로 나가는 통신은 사내 AI 호출 하나로 제한</li>
-          <li>해외 공지는 내장 용어 사전으로 번역하고 사전에 없는 단어만 사내 AI로 채우게 해, 번역 편차와 외부 전송을 함께 축소</li>
-          <li>AI를 부를 때는 상품명·가격·날짜를 지어낸 값으로 바꿔서만 내보내고, 전송 전 확인 창과 값이 남지 않는 호출 기록을 함께 설계</li>
-          <li>상점 이름, 판매 기간, 대상 서버를 UI에서 설정하면 원클릭으로 소스가 나오고, 게시 전 점검과 회수 아이템 자동 감지까지 한 화면에서 처리</li>
-          <li>Gemini로 초안을 생성한 뒤 Claude Code로 코드 구조와 예외 처리를 다시 잡는 방식으로 고도화</li>
+          <li>기획서(CSV)를 포럼 공지사항용 HTML 소스로 자동 변환하는 사내망 웹 도구를 단독 기획·제작</li>
+          <li>상점 이름, 판매 기간, 대상 서버를 설정하면 원클릭으로 소스가 나오고, 게시 전 점검과 회수 아이템 자동 감지까지 한 화면에서 처리</li>
+          <li>미공개 데이터가 새지 않도록 기획서 파일은 브라우저 안에서만 읽고, AI 호출은 상품명·가격·날짜를 가린 값으로만 사내 AI에 전송</li>
+          <li>Gemini로 초안을 만든 뒤 Claude Code로 구조와 예외 처리를 다시 잡아 고도화</li>
         </ul>
       </div>
       <div class="blk win">
         <h4>🏆 핵심 성과</h4>
         <ul>
-          <li>기획서 데이터를 하나씩 표로 옮기던 수동 작업을 원클릭 HTML 생성으로 대체해 공지 작성 시간을 크게 줄이고 오타·데이터 누락을 차단</li>
-          <li>기획서 파일을 서버에 올리지 않고 처리하는 방식으로 사내 정보보호정책팀·AI지원팀 보안 검토를 통과하고 실제 운영 툴로 승인받아 도입</li>
-          <li>국내 공지 전용이던 도구를 영어·중국어 번체·태국어·일본어 4개 권역 공지까지 처리하도록 확장</li>
-          <li>담당 서비스에 맞춰 두었던 변환 규칙을 게임 선택 방식으로 분리해 전사로 확산하고, 현재 다른 프로젝트에서도 실제 운영에 사용 중</li>
-          <li>무료·1원 상품과 판매 중지 항목은 자동으로 빼고 게임 재화 상품은 남기는 등, 실무에서 매번 걸리던 예외를 규칙으로 정리</li>
+          <li>표로 하나씩 옮기던 수동 작업을 원클릭 생성으로 대체하고, 무료·1원·판매 중지 항목은 자동으로 걸러 오타와 누락을 차단</li>
+          <li>사내 정보보호정책팀·AI지원팀 보안 검토를 통과하고 실제 운영 툴로 승인받아 도입</li>
+          <li>영어·중국어 번체·태국어·일본어 4개 권역까지 확장하고 게임 선택 방식으로 분리해 전사로 확산, 현재 다른 프로젝트에서도 실제 운영에 사용 중</li>
         </ul>
       </div>
     </div>
-  </section>
-
-  <!-- Skills -->
-  <section>
-    <h2>Skills</h2>
-    <p class="sub">실무에서 실제로 사용한 역량과 도구입니다.</p>
-      <div class="cols">
-      <div class="box skillcol">
-        <h3>Hard Skills</h3>
-        <div class="skill"><b>프로젝트 및 운영 관리</b><span>업데이트 일정 관리<br>다국어 공지·푸시 번역 파이프라인 관리</span></div>
-        <div class="skill"><b>라이브 서비스 운영·QA</b><span>운영툴 세팅 (상점·핫타임·접속 보상)<br>TC 검증 및 팀 내 크로스체크</span></div>
-        <div class="skill"><b>데이터 분석</b><span>지표 분석 및 운영 판단에 활용<br>이벤트 참여 데이터 취합·검증</span></div>
-        <div class="skill"><b>디자인 기획</b><span>신규 업데이트(던전·직업) 가이드 이미지 제작<br>콜라보 프로모션 이미지 기획 및 협업</span></div>
-      </div>
-      <div class="box skillcol">
-        <h3>Soft Skills</h3>
-        <div class="skill"><b>커뮤니케이션</b><span>개발사·퍼블리셔 유관 부서 소통 창구<br>이슈 대응 방향 협의 및 가이드라인 수립</span></div>
-        <div class="skill"><b>이슈 해결</b><span>라이브 이슈 신속 대응 및 판단<br>상황에 따른 유연한 대처</span></div>
-        <div class="skill"><b>꼼꼼함</b><span>일정 관리<br>기획서 및 문서 오류 검토</span></div>
-        <div class="skill"><b>리더십</b><span>책임감 있는 업무 수행<br>신규 인원 업무 교육</span></div>
-      </div>
-      <div class="box skillcol">
-        <h3>Tools</h3>
-        <div class="skill"><b>Jira</b><span>라이브 이슈 관리<br>정책 개정 관리</span></div>
-        <div class="skill"><b>Excel</b><span>함수 기반 데이터 대조·검증 자동화<br>당첨자 취합 및 보상 지급 관리</span></div>
-        <div class="skill"><b>생성형 AI</b><span>운영 실무 적용<br>사내 생성형 AI 세미나 참여</span></div>
-        <div class="skill"><b>Photoshop · CapCut</b><span>포럼 업로드용 이미지 보정 및 리사이징<br>롱폼·숏폼 영상 제작</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How I Work -->
-  <section>
-    <h2>How I Work</h2>
-    <p class="sub">일할 때 기준으로 삼는 다섯 가지입니다.</p>
-    <ul class="work">
-      <li><b>💬 유저 중심 소통</b><span>지표 너머의 목소리(VOC)에서 진짜 문제를 찾아 서비스에 반영합니다.</span></li>
-      <li><b>🔎 딥다이브 분석</b><span>감에 의존하지 않고 게임 구조를 뜯어보며 실현 가능한 대안을 기획합니다.</span></li>
-      <li><b>🚀 빠른 실행과 개선</b><span>아이디어에 머물지 않고 제작과 출시까지 부딪히며 피드백을 바로 반영합니다.</span></li>
-      <li><b>🤝 유연한 징검다리</b><span>개발사·퍼블리셔·유저 사이의 소통 오류를 줄이고 일정을 맞춥니다.</span></li>
-      <li><b>🔥 확실한 오너십</b><span>기획부터 콘텐츠 제작, 돌발 이슈 대응까지 경계 없이 빈틈을 채웁니다.</span></li>
-    </ul>
   </section>
 
   <!-- Projects -->
