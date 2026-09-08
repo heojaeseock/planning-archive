@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>하이브리드 캐주얼 장르 분석 및 운영 제언</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+         background-color: #f8fafc; color: #0f172a;
+         word-break: keep-all; overflow-wrap: break-word; }
+  h1,h2,h3,h4 { text-wrap: balance; }
+  p, li, td, th { text-wrap: pretty; }
+  .card { background:#fff; border:1px solid #e2e8f0; border-radius:20px; }
+  .chip { display:inline-block; padding:5px 12px; border-radius:999px;
+          font-size:12px; font-weight:700; letter-spacing:-.01em; }
+  .chart-box { position:relative; width:100%; max-width:760px; height:320px; margin:0 auto; }
+  table.cmp { width:100%; border-collapse:collapse; font-size:14px; }
+  table.cmp th, table.cmp td { border:1px solid #e2e8f0; padding:14px 16px; vertical-align:top; }
+  table.cmp thead th { background:#0f172a; color:#fff; font-weight:700; white-space:nowrap; }
+  table.cmp tbody th { background:#f1f5f9; font-weight:700; white-space:nowrap; text-align:left; }
+</style>
+</head>
+<body class="antialiased">
+
+<div class="max-w-5xl mx-auto px-5 md:px-8 py-14 md:py-20">
+
+  <!-- Hero -->
+  <header class="mb-14">
+    <p class="text-xs font-black tracking-[.18em] text-indigo-600 uppercase mb-4">Genre &amp; Monetization Analysis</p>
+    <h1 class="text-3xl md:text-[42px] font-black leading-[1.25] tracking-tight mb-5">
+      하이퍼캐주얼에서 하이브리드 캐주얼로<br class="hidden md:block">
+      장르 전환 분석과 운영 제언
+    </h1>
+    <div class="flex flex-wrap gap-2">
+      <span class="chip bg-indigo-50 text-indigo-700">장르 구조 분석</span>
+      <span class="chip bg-emerald-50 text-emerald-700">수익 모델 비교</span>
+      <span class="chip bg-amber-50 text-amber-700">벤치마킹</span>
+      <span class="chip bg-sky-50 text-sky-700">소프트런칭 KPI</span>
+    </div>
+  </header>
+
+  <!-- 문서 개요 -->
+  <section class="card p-8 md:p-12 mb-14">
+    <h2 class="text-2xl font-black mb-5">분석 배경</h2>
+    <p class="text-slate-600 leading-relaxed">하이퍼캐주얼은 단순한 조작으로 대중을 모아 광고로 수익을 내는 구조입니다.<br>모바일 광고 단가가 오르면서 며칠 만에 이탈하는 이 모델로는 유저 1인당 기대 수익을 맞추기 어려워졌습니다.<br>세 장르의 성장 구조와 수익 모델을 비교하고, 하이브리드 캐주얼 상위작 한 종을 분해했습니다.<br>여기서 얻은 기준으로 소프트런칭 평가 지표와 라이브 운영안을 정리했습니다.</p>
+  </section>
+
+  <!-- 1. 하이퍼캐주얼의 본질 -->
+  <section class="mb-14">
+    <h2 class="text-2xl md:text-3xl font-black mb-3">1. 하이퍼캐주얼을 규정하는 세 가지 특징</h2>
+    <p class="text-slate-500 mb-8">Tall Man Run, Bridge Race, Pull the Pin 등을 직접 플레이하며 공통 구조를 확인했습니다.</p>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="card p-7">
+        <p class="text-4xl mb-4">👆</p>
+        <h3 class="text-lg font-black mb-3">튜토리얼이 필요 없는 조작</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">3초 안에 목표를 이해할 수 있습니다.<br>Tall Man Run은 좌우로 미는 원터치 조작만 요구하며, 첫 레벨과 100번째 레벨의 플레이 방식이 같습니다.</p>
+      </div>
+      <div class="card p-7">
+        <p class="text-4xl mb-4">📉</p>
+        <h3 class="text-lg font-black mb-3">빠르게 소모되는 성장 구조</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">며칠만 플레이해도 콘텐츠가 고갈됩니다.<br>획득한 재화가 캐릭터 크기 증가 같은 단일 축 성장에만 쓰여 금방 한계에 부딪힙니다.</p>
+      </div>
+      <div class="card p-7">
+        <p class="text-4xl mb-4">✨</p>
+        <h3 class="text-lg font-black mb-3">즉각적인 시청각 피드백</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">장기 목표 대신 화려한 효과와 사운드로 만족감을 만듭니다.<br>초기 잔존율(D1, D3)을 지키는 데 역량이 집중됩니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 인사이트: 깔때기에서 순환으로 -->
+  <section class="card p-8 md:p-12 mb-14 bg-slate-900 text-white border-none">
+    <p class="text-xs font-black tracking-[.16em] text-indigo-300 uppercase mb-4">Insight</p>
+    <h2 class="text-2xl md:text-3xl font-black mb-6 leading-snug">비즈니스 모델의 이동 — 깔때기에서 순환 구조로</h2>
+
+    <div class="grid md:grid-cols-[1fr_auto_1fr] gap-6 items-center mb-8">
+      <div class="rounded-2xl border border-white/15 bg-white/5 p-6">
+        <p class="text-xs font-bold text-slate-400 mb-2">기존 (깔때기)</p>
+        <p class="text-lg font-black mb-2">대량 유입 → 단기 광고 소진</p>
+        <p class="text-sm text-slate-300 leading-relaxed">저렴하게 대중을 데려와<br>단기간에 전면 광고로 회수합니다.</p>
+      </div>
+      <p class="text-3xl text-center text-indigo-300 font-black">→</p>
+      <div class="rounded-2xl border border-indigo-400/40 bg-indigo-500/15 p-6">
+        <p class="text-xs font-bold text-indigo-200 mb-2">전환 (순환)</p>
+        <p class="text-lg font-black mb-2">유입 → 성장 → 결제 → 재접속</p>
+        <p class="text-sm text-slate-200 leading-relaxed">접근성은 유지하되 성장의 깊이를 더해<br>체류 기간을 늘립니다.</p>
+      </div>
+    </div>
+
+    <p class="text-slate-300 leading-relaxed">하이퍼캐주얼은 게임을 즐기지 않던 대중까지 모바일 생태계로 끌어오는 마케팅 통로에 가깝습니다.<br>광고 단가가 오르면서 이 통로만으로는 수지가 맞지 않게 되었습니다.<br>대중성을 유지한 채 성장 요소를 더하는 하이브리드 캐주얼로의 이동은 선택이 아니라 생존 전략입니다.</p>
+  </section>
+
+  <!-- 2. 장르 비교 -->
+  <section class="mb-14">
+    <h2 class="text-2xl md:text-3xl font-black mb-3">2. 장르별 핵심 비교</h2>
+    <p class="text-slate-500 mb-8">직접 플레이한 타이틀을 기준으로 세 장르의 구조를 같은 항목으로 비교했습니다.</p>
+
+    <div class="overflow-x-auto card p-2 mb-10">
+      <table class="cmp">
+        <thead>
+          <tr>
+            <th>비교 항목</th>
+            <th>하이퍼캐주얼</th>
+            <th>딥 하이퍼캐주얼</th>
+            <th>하이브리드 캐주얼</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>대표 게임</th>
+            <td>Tall Man Run</td>
+            <td>Mob Control</td>
+            <td>Alien Invasion, Legend of Slime</td>
+          </tr>
+          <tr>
+            <th>플레이 흐름</th>
+            <td>단순 원터치 조작으로<br>즉각적인 만족감 제공</td>
+            <td>기본 조작에 기지 건설 등<br>가벼운 부가 콘텐츠 결합</td>
+            <td>RPG 수준 경제 시스템,<br>성장과 자원 관리에 집중</td>
+          </tr>
+          <tr>
+            <th>성장의 깊이</th>
+            <td>단일 축의 단순한 성장</td>
+            <td>카드 수집, 기지 확장 등<br>수평적 성장</td>
+            <td>6~7개 이상의<br>다차원적·수직적 성장</td>
+          </tr>
+          <tr>
+            <th>수익 모델</th>
+            <td>인앱 광고 95% 이상 의존</td>
+            <td>광고 70%,<br>인앱 결제 30%</td>
+            <td>인앱 결제 중심으로<br>50~60% 이상 이동</td>
+          </tr>
+          <tr>
+            <th>핵심 지표</th>
+            <td>초기 잔존율 집중<br>(D1, D3)</td>
+            <td>중기 잔존율<br>(D7 10~15%)</td>
+            <td>중장기 잔존율<br>(D7 15~20% 이상, D30)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card p-8">
+      <h3 class="text-lg font-black mb-1 text-center">장르별 수익 구성 비교</h3>
+      <p class="text-xs text-slate-400 mb-6 text-center">* 비교 항목의 서술을 도식화한 값이며, 실제 정산 데이터가 아닙니다.</p>
+      <div class="chart-box"><canvas id="revChart"></canvas></div>
+    </div>
+  </section>
+
+  <!-- 요약 -->
+  <section class="card p-8 md:p-10 mb-14 border-l-4 border-l-indigo-600">
+    <h3 class="text-lg font-black mb-4">요약 — 같은 대중성, 다른 회수 방식</h3>
+    <p class="text-slate-600 leading-relaxed">세 장르 모두 진입 장벽을 낮춰 넓은 대중을 노린다는 점은 같습니다.<br>다만 장르가 깊어질수록 수익의 중심이 인앱 광고에서 인앱 결제로 옮겨 갑니다.<br>광고 단가 상승으로 단기 회수 모델의 여력이 줄어든 결과입니다.<br>대중성은 유지하면서 D7·D30을 노리는 하이브리드 전환이 이어지는 이유입니다.</p>
+  </section>
+
+  <!-- 3. 벤치마킹 -->
+  <section class="mb-14">
+    <h2 class="text-2xl md:text-3xl font-black mb-3">3. 벤치마킹 — Alien Invasion: RPG Idle</h2>
+    <p class="text-slate-500 mb-8">하이브리드 캐주얼 상위작 한 종을 골라 유저 경험과 수익화 구조를 분해했습니다.</p>
+
+    <div class="card p-8 mb-6">
+      <h3 class="text-lg font-black mb-3">선정 사유</h3>
+      <p class="text-slate-600 leading-relaxed">퍼블리셔 CrazyLabs는 하이퍼캐주얼 단가 상승의 한계를 겪은 뒤 체질을 바꿨습니다.<br>대중적인 아케이드 원형에 방치형 성장 시스템과 결제 설계를 결합한 사례입니다.<br>단순한 조작으로 모객 비용을 낮추고, 결제 구간으로 기대 수익을 끌어올린 구조를 확인하기 위해 선정했습니다.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-6">
+      <div class="card p-8">
+        <p class="chip bg-sky-50 text-sky-700 mb-4">유저 경험 설계</p>
+        <ul class="space-y-4 text-sm text-slate-600 leading-relaxed">
+          <li><b class="block text-slate-900 mb-1">조작의 직관성</b>조이스틱 이동만으로 적을 사냥합니다.<br>반복 플레이의 피로도를 낮춘 설계입니다.</li>
+          <li><b class="block text-slate-900 mb-1">단계적 학습 유도</b>초반 10분은 가방 용량을 제한해 사냥·반납·업그레이드 루프를 익히게 합니다.<br>1일 차 이후에는 혹한기 페널티와 높은 업그레이드 비용으로 자동화의 필요를 만듭니다.</li>
+        </ul>
+      </div>
+      <div class="card p-8">
+        <p class="chip bg-emerald-50 text-emerald-700 mb-4">수익화 구조</p>
+        <ul class="space-y-4 text-sm text-slate-600 leading-relaxed">
+          <li><b class="block text-slate-900 mb-1">보상형 광고의 배치</b>반복 사냥이 지루해질 시점에 용량 즉시 비우기를 제공합니다.<br>광고 시청이 강제가 아니라 혜택으로 읽히게 만드는 배치입니다.</li>
+          <li><b class="block text-slate-900 mb-1">결제 유도 구간</b>잦은 전면 광고로 광고 제거 상품 구매를 유도합니다.<br>상위 지역의 난이도 상승이 핵심 재화 결제로 이어집니다.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card p-8 mb-6">
+      <h3 class="text-lg font-black mb-3">경쟁작 대비 차별점 — Legend of Slime과 비교</h3>
+      <p class="text-slate-600 leading-relaxed">Legend of Slime은 자동 전투와 확률형 뽑기에 기대는 구조입니다.<br>Alien Invasion은 직접 조종해 맵을 개척하는 능동적 재미를 줍니다.<br>확률 스트레스 없이 투입한 만큼 성장하고, 탐험이 체류 시간을 늘려 광고 노출 기회까지 넓힙니다.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="card p-6 border-l-4 border-l-emerald-500">
+        <p class="text-xs font-black text-emerald-700 mb-2">강점 (S)</p>
+        <p class="text-sm text-slate-600 leading-relaxed">대중적인 조작감<br>확률 스트레스 없는 성장 시스템</p>
+      </div>
+      <div class="card p-6 border-l-4 border-l-rose-500">
+        <p class="text-xs font-black text-rose-700 mb-2">약점 (W)</p>
+        <p class="text-sm text-slate-600 leading-relaxed">상위 지역의 반복 사냥 피로도<br>잦은 전면 광고에 따른 초기 이탈</p>
+      </div>
+      <div class="card p-6 border-l-4 border-l-sky-500">
+        <p class="text-xs font-black text-sky-700 mb-2">기회 (O)</p>
+        <p class="text-sm text-slate-600 leading-relaxed">글로벌 방치형 장르 선호 증가<br>시즌 패스·라이브 이벤트 여력</p>
+      </div>
+      <div class="card p-6 border-l-4 border-l-amber-500">
+        <p class="text-xs font-black text-amber-700 mb-2">위협 (T)</p>
+        <p class="text-sm text-slate-600 leading-relaxed">유사 시스템 모방작 등장<br>글로벌 광고 단가 상승</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 소프트런칭 KPI -->
+  <section class="mb-14">
+    <h2 class="text-2xl md:text-3xl font-black mb-3">4. 소프트런칭 단계에서 볼 지표 세 가지</h2>
+    <p class="text-slate-500 mb-8">출시 여부를 판단할 때 우선순위를 둘 지표를 정리했습니다.</p>
+
+    <div class="grid md:grid-cols-3 gap-5 mb-6">
+      <div class="card p-7">
+        <p class="text-[11px] font-black tracking-widest text-slate-400 uppercase mb-3">01 · 유입 단가</p>
+        <p class="text-3xl font-black text-indigo-600 mb-3">$0.3~$0.5</p>
+        <h3 class="text-base font-black mb-2">CPI가 손익선 안에 들어오는가</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">기대 수익이 높아도 모객 비용이 비싸면 모델이 성립하지 않습니다.<br>숏폼 플랫폼 테스트로 유입 단가가 기준선 안인지 먼저 봅니다.</p>
+      </div>
+      <div class="card p-7">
+        <p class="text-[11px] font-black tracking-widest text-slate-400 uppercase mb-3">02 · 잔존율</p>
+        <p class="text-3xl font-black text-emerald-600 mb-3">D7 15~20%</p>
+        <h3 class="text-base font-black mb-2">성장 시스템이 작동하는가</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">일주일 뒤 재접속률이 성장 설계의 성적표입니다.<br>같은 장르 상위작 Pizza Ready!가 기록한 D7 23.7%를 목표선으로 잡았습니다.</p>
+      </div>
+      <div class="card p-7">
+        <p class="text-[11px] font-black tracking-widest text-slate-400 uppercase mb-3">03 · 체류 시간</p>
+        <p class="text-3xl font-black text-amber-600 mb-3">15~30분</p>
+        <h3 class="text-base font-black mb-2">광고 재고가 확보되는가</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">1인당 하루 누적 플레이타임이 광고 노출량과 결제 유도의 바탕입니다.<br>경제 밸런스가 맞는지 판단하는 척도로 봅니다.</p>
+      </div>
+    </div>
+    <p class="text-xs text-slate-400">* 인용 수치는 과제 작성 시점의 공개 자료와 직접 플레이를 근거로 정리한 값입니다.</p>
+  </section>
+
+  <!-- 5. 운영 제안 -->
+  <section class="mb-14">
+    <h2 class="text-2xl md:text-3xl font-black mb-3">5. 라이브 운영 및 A/B 테스트 제안</h2>
+    <p class="text-slate-500 mb-8">같은 유형의 게임을 직접 운영한다면 실행할 세 가지입니다.</p>
+
+    <div class="space-y-5">
+      <div class="card p-8 flex gap-6 items-start">
+        <span class="text-3xl shrink-0">🔥</span>
+        <div>
+          <h3 class="text-lg font-black mb-2">주말 한정 피버 타임</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">하이브리드 캐주얼은 성장이 막히는 순간 이탈이 몰립니다.<br>접속이 많은 주말에 재화 획득 1.5배 또는 배달 로봇 속도 2배를 한시 적용합니다.<br>일일 접속자 수와 주말 누적 플레이 시간을 함께 끌어올리는 것이 목적입니다.</p>
+        </div>
+      </div>
+      <div class="card p-8 flex gap-6 items-start">
+        <span class="text-3xl shrink-0">📩</span>
+        <div>
+          <h3 class="text-lg font-black mb-2">이탈 위험군 맞춤 푸시</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">난이도가 오르는 특정 구간, 예를 들어 얼음 지대 진입 직후를 이탈 지점으로 잡습니다.<br>그 구간에서 48시간 이상 미접속한 유저를 추출합니다.<br>"위기에 빠진 기지에 지원 물품이 도착했습니다"라는 문구와 소량의 크리스탈로 복귀를 유도합니다.</p>
+        </div>
+      </div>
+      <div class="card p-8 flex gap-6 items-start">
+        <span class="text-3xl shrink-0">🧪</span>
+        <div>
+          <h3 class="text-lg font-black mb-2">광고 제거 상품 가격 A/B 테스트</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">이 장르에서 첫 결제로 이어지는 상품은 광고 제거 패키지입니다.<br>A그룹에는 광고 제거만, B그룹에는 보석을 더한 결합 상품을 노출합니다.<br>결제 비율과 총수익을 비교해 가격 구성을 정합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 결론 -->
+  <section class="card p-8 md:p-12 bg-slate-900 text-white border-none">
+    <p class="text-xs font-black tracking-[.16em] text-indigo-300 uppercase mb-4">Conclusion</p>
+    <h2 class="text-2xl md:text-3xl font-black mb-6 leading-snug">지표를 보고 가설을 고쳐 나가는 과정이 남습니다</h2>
+    <p class="text-slate-300 leading-relaxed">하이브리드 캐주얼에서 처음부터 밸런스가 맞는 게임을 내놓기는 어렵습니다.<br>소프트런칭 지표를 냉정하게 읽고, 이탈 지점을 찾아 A/B 테스트로 고쳐 나가는 쪽이 현실적입니다.<br>이 문서는 그 과정을 장르 분석에서 운영안까지 한 흐름으로 정리한 기록입니다.</p>
+  </section>
+
+</div>
+
+<script>
+  new Chart(document.getElementById('revChart'), {
+    type: 'bar',
+    data: {
+      labels: ['하이퍼캐주얼', '딥 하이퍼캐주얼', '하이브리드 캐주얼'],
+      datasets: [
+        { label: '인앱 광고', data: [95, 70, 45], backgroundColor: '#94a3b8', borderRadius: 6 },
+        { label: '인앱 결제', data: [5, 30, 55], backgroundColor: '#4f46e5', borderRadius: 6 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        x: { stacked: true, grid: { display: false },
+             ticks: { font: { size: 13, weight: '700' }, color: '#334155' } },
+        y: { stacked: true, max: 100, grid: { color: '#f1f5f9' },
+             ticks: { callback: function(v){ return v + '%'; }, color: '#94a3b8' } }
+      },
+      plugins: {
+        legend: { position: 'bottom', labels: { boxWidth: 12, padding: 18, font: { size: 13, weight: '700' } } },
+        tooltip: { callbacks: { label: function(c){ return c.dataset.label + ' ' + c.parsed.y + '%'; } } }
+      }
+    }
+  });
+</script>
+
+<p style="margin:0;padding:26px 16px 40px;text-align:center;font-size:12.5px;line-height:1.6;color:#94a3b8">© 허재석</p>
+<div aria-hidden="true" style="height:104px"></div>
+<a href="../../../index.html" aria-label="문서 목록으로 돌아가기" style="position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:60;display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:999px;background:#1f4fd8;color:#fff;font-size:16.5px;font-weight:800;letter-spacing:-.01em;text-decoration:none;font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;box-shadow:0 10px 30px rgba(31,79,216,.5),0 0 0 4px rgba(255,255,255,.95);white-space:nowrap"><span style="font-size:17px;line-height:1">←</span>문서 목록</a>
+</body>
+</html>
