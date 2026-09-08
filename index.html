@@ -51,18 +51,29 @@
   .caps li{padding:13px 15px;border:1px solid var(--border);border-radius:10px;
     background:var(--surface);font-size:13.5px;color:var(--muted);line-height:1.55}
   .caps b{display:block;margin-bottom:3px;font-size:14px;font-weight:800;color:var(--text);letter-spacing:-.015em}
-  .guide{margin:22px 0 0;font-size:14px;color:var(--muted)}
-  .guide b{color:var(--text)}
 
-  .doclink{display:inline-flex;align-items:center;gap:9px;margin:22px 0 0;
-    padding:13px 22px;border-radius:11px;border:1px solid var(--accent);
-    background:var(--accent);color:#fff;font-size:14.5px;font-weight:800;
-    letter-spacing:-.015em;text-decoration:none;transition:.15s}
-  .doclink:hover{filter:brightness(1.08);transform:translateY(-1px)}
-  .doclink .ico{font-size:16px;line-height:1}
-  .doclink .ext{font-size:12px;font-weight:700;opacity:.8}
+  .cta{display:flex;align-items:center;gap:16px;margin:26px 0 0;padding:18px 22px;
+    border:1px solid var(--border-2);border-radius:14px;background:var(--surface);
+    text-decoration:none;transition:.16s;max-width:560px;
+    box-shadow:0 1px 2px rgba(16,24,40,.04)}
+  .cta:hover{border-color:var(--accent);background:var(--accent-weak);
+    transform:translateY(-2px);box-shadow:0 8px 22px rgba(31,79,216,.13)}
+  .cta-ico{font-size:26px;line-height:1;flex-shrink:0}
+  .cta-body{display:flex;flex-direction:column;gap:3px;min-width:0}
+  .cta-kicker{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+  .cta-title{font-size:16.5px;font-weight:800;letter-spacing:-.02em;color:var(--text)}
+  .cta-desc{font-size:13px;color:var(--muted);line-height:1.5}
+  .cta-go{margin-left:auto;flex-shrink:0;font-size:19px;font-weight:800;color:var(--accent);transition:transform .16s}
+  .cta:hover .cta-go{transform:translateX(4px)}
+  .guide{margin:34px 0 0;font-size:14px;color:var(--muted)}
+  .guide b{color:var(--text)}
+  .guide-line{display:block;width:34px;height:2px;border-radius:2px;background:var(--border-2);margin:0 0 14px}
   footer a{color:var(--accent);font-weight:700;text-decoration:none}
   footer a:hover{text-decoration:underline}
+  @media (max-width:520px){
+    .cta{align-items:flex-start;padding:16px 18px}
+    .cta-go{align-self:center}
+  }
 
   .bar{position:sticky;top:0;z-index:20;background:var(--bg);
     padding:14px 0 13px;border-bottom:1px solid var(--border)}
@@ -149,11 +160,20 @@
       <li><b>시스템 역기획</b>상용 게임 시스템 분해와 개선안 설계</li>
       <li><b>데이터 검수·자동화</b>대량 데이터 대조로 오지급·오기입 사전 차단</li>
       <li><b>리스크 대응</b>커뮤니티 이슈 감지와 대응 절차 수립</li>
+      <li><b>AI 활용</b>프롬프트를 설계해 데이터 정제와 문서 작성을 자동화</li>
     </ul>
 
-    <a class="doclink" href="https://innovative-minute-38d.notion.site/2-d5fd66f3f45b82fe8b6e012237b2c9e1" target="_blank" rel="noopener noreferrer"><span class="ico">📄</span>경력기술서 보기 <span class="ext">↗</span></a>
+    <a class="cta" href="https://innovative-minute-38d.notion.site/2-d5fd66f3f45b82fe8b6e012237b2c9e1" target="_blank" rel="noopener noreferrer">
+      <span class="cta-ico">📄</span>
+      <span class="cta-body">
+        <span class="cta-kicker">Notion · 별도 문서</span>
+        <span class="cta-title">경력기술서 보기</span>
+        <span class="cta-desc">담당했던 서비스와 실제 수행 업무, 프로젝트 이력을 정리했습니다.</span>
+      </span>
+      <span class="cta-go" aria-hidden="true">→</span>
+    </a>
 
-    <p class="guide">아래 <b>직무 버튼</b>을 누르면 그 직무에 해당하는 문서만 모아 볼 수 있습니다.</p>
+    <p class="guide"><span class="guide-line"></span>아래는 작업 기록 46건입니다. <b>직무 버튼</b>으로 원하는 직무 문서만 골라 보실 수 있습니다.</p>
   </header>
 
   <div class="bar">
