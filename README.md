@@ -5,6 +5,8 @@
 
 **웹으로 보기 → https://heojaeseock.github.io/planning-archive/**
 
+**경력기술서 → https://heojaeseock.github.io/planning-archive/career/**
+
 문서마다 가장 잘 맞는 직무를 하나씩 붙였습니다.
 (사업·서비스 기획 19 · 데이터 분석 11 · 게임 운영·GM 8 · 마케팅 5 · 커뮤니티·CS 3)
 

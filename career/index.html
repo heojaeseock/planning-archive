@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>허재석 | 경력기술서</title>
+<meta name="description" content="게임 라이브 운영·프로젝트 관리 담당. 경력, 보유 역량, 일하는 방식을 정리한 경력기술서">
+<style>
+  :root{
+    --bg:#fbfbfc; --surface:#fff; --surface-2:#f4f5f7; --border:#e2e5ea; --border-2:#d3d8e0;
+    --text:#111621; --muted:#535c6b; --faint:#8b93a1;
+    --accent:#1f4fd8; --accent-weak:#eef2ff;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#0d1016; --surface:#151a22; --surface-2:#1b2230; --border:#252d3a; --border-2:#333c4c;
+      --text:#e9edf3; --muted:#9ba4b2; --faint:#6a7381;
+      --accent:#7ea3ff; --accent-weak:#18233d;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
+  h1,h2,h3{text-wrap:balance}
+  p,li{text-wrap:pretty}
+  a{color:inherit}
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px}
+
+  .top{padding:26px 0 0}
+  .back{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;
+    color:var(--muted);text-decoration:none;padding:8px 14px;border-radius:9px;
+    border:1px solid var(--border);background:var(--surface);transition:.15s}
+  .back:hover{color:var(--accent);border-color:var(--accent)}
+
+  header{padding:34px 0 40px;border-bottom:1px solid var(--border)}
+  .eyebrow{margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--accent)}
+  h1{margin:0 0 8px;font-size:clamp(28px,5vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1.2}
+  .tagline{margin:0 0 18px;font-size:16px;font-weight:700;color:var(--muted);letter-spacing:-.015em}
+  .hashes{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px;padding:0;list-style:none}
+  .hashes li{font-size:12.5px;font-weight:700;padding:5px 11px;border-radius:999px;
+    background:var(--accent-weak);color:var(--accent)}
+  .intro{margin:0;max-width:62ch;font-size:15.5px;color:var(--muted)}
+
+  section{padding:44px 0;border-bottom:1px solid var(--border)}
+  section:last-of-type{border-bottom:0}
+  h2{margin:0 0 6px;font-size:21px;font-weight:800;letter-spacing:-.025em}
+  .sub{margin:0 0 24px;font-size:13.5px;color:var(--faint)}
+
+  .cols{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .box{padding:22px;border:1px solid var(--border);border-radius:14px;background:var(--surface)}
+  .box h3{margin:0 0 4px;font-size:15px;font-weight:800;letter-spacing:-.02em}
+  .box .period{margin:0 0 14px;font-size:12.5px;font-weight:700;color:var(--accent)}
+  .box ul{margin:0;padding:0 0 0 2px;list-style:none}
+  .box ul li{position:relative;padding-left:13px;font-size:14px;color:var(--muted);margin-bottom:6px}
+  .box ul li::before{content:"";position:absolute;left:0;top:10px;width:4px;height:4px;
+    border-radius:50%;background:var(--border-2)}
+  .box ul li:last-child{margin-bottom:0}
+  .org{margin:0 0 2px;font-size:15px;font-weight:800}
+  .orgsub{margin:0 0 12px;font-size:13px;color:var(--faint)}
+
+  .skillcol h3{margin:0 0 14px;font-size:12px;font-weight:800;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--faint)}
+  .skill{margin:0 0 14px;padding:0 0 14px;border-bottom:1px dashed var(--border)}
+  .skill:last-child{margin-bottom:0;padding-bottom:0;border-bottom:0}
+  .skill b{display:block;font-size:14.5px;font-weight:800;letter-spacing:-.015em;margin-bottom:5px}
+  .skill span{display:block;font-size:13.5px;color:var(--muted);line-height:1.55}
+
+  .work{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .work li{list-style:none;padding:18px 20px;border:1px solid var(--border);
+    border-radius:13px;background:var(--surface)}
+  .work b{display:block;font-size:15px;font-weight:800;letter-spacing:-.02em;margin-bottom:5px}
+  .work span{font-size:13.5px;color:var(--muted);line-height:1.6}
+  ul.work{margin:0;padding:0}
+
+  .cta{display:flex;align-items:center;gap:16px;padding:20px 24px;text-decoration:none;
+    border:1px solid var(--border-2);border-radius:14px;background:var(--surface);transition:.16s}
+  .cta:hover{border-color:var(--accent);background:var(--accent-weak);transform:translateY(-2px);
+    box-shadow:0 8px 22px rgba(31,79,216,.13)}
+  .cta-ico{font-size:26px;line-height:1;flex-shrink:0}
+  .cta-t{display:block;font-size:16.5px;font-weight:800;letter-spacing:-.02em}
+  .cta-d{display:block;font-size:13px;color:var(--muted);margin-top:3px}
+  .cta-go{margin-left:auto;font-size:19px;font-weight:800;color:var(--accent);transition:transform .16s}
+  .cta:hover .cta-go{transform:translateX(4px)}
+
+  .contact{font-size:15px}
+  .contact a{color:var(--accent);font-weight:700;text-decoration:none}
+  .contact a:hover{text-decoration:underline}
+
+  footer{padding:26px 0 130px;font-size:13px;color:var(--faint)}
+  @media (max-width:620px){ header{padding:26px 0 32px} section{padding:34px 0} }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="top">
+    <a class="back" href="../index.html"><span>←</span>작업 기록 46건 보기</a>
+  </div>
+
+  <header>
+    <p class="eyebrow">Career Summary</p>
+    <h1>허재석</h1>
+    <p class="tagline">기획과 운영을 아우르는 올라운더</p>
+    <ul class="hashes">
+      <li>#라이브 서비스</li>
+      <li>#프로젝트 관리</li>
+      <li>#콘텐츠 기획 및 제작</li>
+      <li>#데이터 및 VOC 분석</li>
+      <li>#생성형 AI 활용</li>
+    </ul>
+    <p class="intro">유니티 게임을 기획해 출시해 본 경험부터 MMORPG 라이브 운영까지 맡아 왔습니다.<br>기획과 운영, 데이터와 콘텐츠를 함께 다루며 실무 범위를 넓혀 가고 있습니다.</p>
+  </header>
+
+  <!-- Profile -->
+  <section>
+    <h2>Profile</h2>
+    <p class="sub">경력과 학력</p>
+    <div class="cols">
+      <div class="box">
+        <h3>경력</h3>
+        <p class="period">총 1년 10개월</p>
+        <p class="org">아이지에스 (IGS)</p>
+        <p class="orgsub">2024.12 ~ 현재 · 넷마블 계열사</p>
+        <ul>
+          <li>블레이드&amp;소울 레볼루션 국내·글로벌 서비스</li>
+          <li>라이브 서비스 운영</li>
+          <li>프로젝트 관리</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>학력</h3>
+        <p class="period">2020.03 ~ 2024.02</p>
+        <p class="org">유한대학교</p>
+        <p class="orgsub">스마트콘텐츠학과 모바일앱전공</p>
+        <ul>
+          <li>재학 중 모바일 게임·앱 3종을 기획해 실제 출시</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <h2>Skills</h2>
+    <p class="sub">실무에서 실제로 사용한 역량과 도구입니다.</p>
+    <div class="cols">
+      <div class="box skillcol">
+        <h3>Hard Skills</h3>
+        <div class="skill"><b>프로젝트 및 운영 관리</b><span>업데이트 일정 관리</span></div>
+        <div class="skill"><b>데이터 분석</b><span>지표 분석 및 운영 판단에 활용</span></div>
+        <div class="skill"><b>디자인 기획</b><span>신규 업데이트(던전·직업 등) 가이드 이미지 제작<br>콜라보 프로모션 이미지 기획 및 협업</span></div>
+      </div>
+      <div class="box skillcol">
+        <h3>Soft Skills</h3>
+        <div class="skill"><b>커뮤니케이션</b><span>개발사·퍼블리셔 유관 부서 소통 창구 역할</span></div>
+        <div class="skill"><b>꼼꼼함</b><span>일정 관리<br>기획서 및 문서 오류 검토</span></div>
+        <div class="skill"><b>이슈 해결</b><span>라이브 이슈 신속 대응 및 판단<br>상황에 따른 유연한 대처</span></div>
+        <div class="skill"><b>리더십</b><span>책임감<br>원만한 대인 관계<br>업무 교육</span></div>
+      </div>
+      <div class="box skillcol">
+        <h3>Tools</h3>
+        <div class="skill"><b>Jira</b><span>라이브 이슈 관리<br>정책 개정 관리</span></div>
+        <div class="skill"><b>생성형 AI</b><span>운영 실무 활용<br>생성형 AI 세미나 참여</span></div>
+        <div class="skill"><b>Photoshop</b><span>포럼 업로드용 이미지 보정 및 리사이징</span></div>
+        <div class="skill"><b>CapCut</b><span>롱폼·숏폼 영상 제작</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How I Work -->
+  <section>
+    <h2>How I Work</h2>
+    <p class="sub">일할 때 기준으로 삼는 다섯 가지입니다.</p>
+    <ul class="work">
+      <li><b>💬 유저 중심 소통</b><span>지표 너머의 목소리(VOC)에서 진짜 문제를 찾아 서비스에 반영합니다.</span></li>
+      <li><b>🔎 딥다이브 분석</b><span>감에 의존하지 않고 게임 구조를 뜯어보며 실현 가능한 대안을 기획합니다.</span></li>
+      <li><b>🚀 빠른 실행과 개선</b><span>아이디어에 머물지 않고 제작과 출시까지 부딪히며 피드백을 바로 반영합니다.</span></li>
+      <li><b>🤝 유연한 징검다리</b><span>개발사·퍼블리셔·유저 사이의 소통 오류를 줄이고 일정을 맞춥니다.</span></li>
+      <li><b>🔥 확실한 오너십</b><span>기획부터 콘텐츠 제작, 돌발 이슈 대응까지 경계 없이 빈틈을 채웁니다.</span></li>
+    </ul>
+  </section>
+
+  <!-- Projects -->
+  <section>
+    <h2>Projects</h2>
+    <p class="sub">게임 시스템 역기획부터 타 산업 적용 기획까지 46건을 정리했습니다.</p>
+    <a class="cta" href="../index.html">
+      <span class="cta-ico">🗂️</span>
+      <span>
+        <span class="cta-t">기획·운영 아카이브 46건</span>
+        <span class="cta-d">게임 시스템 기획, 라이브 운영, 데이터·시장 분석, 마케팅, 타 산업 적용, 대학 창작 프로젝트</span>
+      </span>
+      <span class="cta-go" aria-hidden="true">→</span>
+    </a>
+  </section>
+
+  <!-- Contact -->
+  <section>
+    <h2>Contact</h2>
+    <p class="sub">연락은 이메일로 부탁드립니다.</p>
+    <p class="contact">✉️ <a href="mailto:wotjr423@naver.com">wotjr423@naver.com</a></p>
+  </section>
+
+  <footer>© 허재석</footer>
+
+</div>
+
+<a href="../index.html" aria-label="문서 목록으로 돌아가기" style="position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:60;display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:999px;background:#1f4fd8;color:#fff;font-size:16.5px;font-weight:800;letter-spacing:-.01em;text-decoration:none;font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;box-shadow:0 10px 30px rgba(31,79,216,.5),0 0 0 4px rgba(255,255,255,.95);white-space:nowrap"><span style="font-size:17px;line-height:1">←</span>문서 목록</a>
+</body>
+</html>
