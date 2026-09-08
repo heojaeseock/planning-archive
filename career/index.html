@@ -104,8 +104,8 @@
   .banner{border:1px solid var(--border);border-radius:14px;overflow:hidden;margin:0 0 22px}
   a.banner{display:block;transition:border-color .15s ease,box-shadow .15s ease}
   a.banner:hover{border-color:var(--accent);box-shadow:0 6px 20px rgba(31,79,216,.14)}
-  /* 두 캡처의 가로:세로 비가 달라(1.739 / 1.575), 열 폭을 1.1045:1 로 주면 두 이미지 높이가 같아집니다 */
-  .shots2{display:grid;gap:14px;grid-template-columns:1.1045fr 1fr;align-items:start;margin:0 0 10px}
+  /* 두 캡처를 같은 비율(1160x667 / 1162x668)로 맞춰 두어 폭·높이가 모두 같습니다 */
+  .shots2{display:grid;gap:14px;grid-template-columns:1fr 1fr;align-items:start;margin:0 0 10px}
   .shots2 .banner{margin:0}
   @media (max-width:700px){.shots2{grid-template-columns:1fr}}
   .shotcap{margin:-10px 0 18px;font-size:12.5px;color:var(--faint)}
