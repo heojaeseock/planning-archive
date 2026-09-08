@@ -10,12 +10,14 @@
     --bg:#fbfbfc; --surface:#fff; --surface-2:#f4f5f7; --border:#e2e5ea; --border-2:#d3d8e0;
     --text:#111621; --muted:#535c6b; --faint:#8b93a1;
     --accent:#1f4fd8; --accent-weak:#eef2ff;
+    --gold:#8a6410; --gold-2:#a37f2e; --gold-bg:#fffaed; --gold-br:#eddcae;
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
       --bg:#0d1016; --surface:#151a22; --surface-2:#1b2230; --border:#252d3a; --border-2:#333c4c;
       --text:#e9edf3; --muted:#9ba4b2; --faint:#6a7381;
       --accent:#7ea3ff; --accent-weak:#18233d;
+      --gold:#f2d183; --gold-2:#c9a75f; --gold-bg:#241d0d; --gold-br:#4a3a18;
     }
   }
   *{box-sizing:border-box}
@@ -74,6 +76,12 @@
   .job h3{margin:0;font-size:17px;font-weight:800;letter-spacing:-.025em;flex:1 1 240px}
   .role{flex-shrink:0;font-size:12px;font-weight:800;padding:5px 11px;border-radius:999px;
     background:var(--accent-weak);color:var(--accent);white-space:nowrap}
+  .award{display:flex;align-items:flex-start;gap:11px;padding:13px 16px;border-radius:11px;
+    background:var(--gold-bg);border:1px solid var(--gold-br);margin-bottom:18px}
+  .award .medal{font-size:20px;line-height:1.15;flex-shrink:0}
+  .award b{display:block;font-size:14.5px;font-weight:800;letter-spacing:-.02em;color:var(--gold)}
+  .award span.d{display:block;margin-top:3px;font-size:13.5px;font-weight:600;
+    color:var(--gold-2);line-height:1.55}
   .blk{margin:0 0 16px}
   .blk:last-child{margin-bottom:0}
   .blk h4{margin:0 0 8px;font-size:12px;font-weight:800;letter-spacing:.1em;
@@ -355,12 +363,19 @@
   <!-- 개인 프로젝트 -->
   <section>
     <h2>개인 프로젝트</h2>
-    <p class="sub">업무 중 불편을 직접 도구로 만들어 해결한 사례입니다.</p>
+    <p class="sub">업무 중 불편을 직접 도구로 만들어 해결하고, 사내에서 성과를 인정받은 사례입니다.</p>
 
     <div class="job">
       <div class="job-head">
         <h3>✨ AI 업무 효율화 툴 — 상품 공지 자동 생성기</h3>
         <span class="role">개인 프로젝트 · 단독 제작</span>
+      </div>
+      <div class="award">
+        <span class="medal">🥇</span>
+        <div>
+          <b>사내 업무 효율화 컨퍼런스 — 전사 최우수작</b>
+          <span class="d">전 임직원이 업무 개선·자동화 사례를 발표하는 사내 컨퍼런스에서 최우수작으로 선정되었습니다.</span>
+        </div>
       </div>
       <div class="banner" style="margin-bottom:18px">
         <img src="img/ai-tool.png" alt="상품 공지 자동 생성기 화면" loading="lazy" decoding="async">
