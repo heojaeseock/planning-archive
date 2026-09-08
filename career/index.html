@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>허재석 | 경력기술서</title>
-<meta name="description" content="게임 라이브 운영·프로젝트 관리 담당. 경력, 보유 역량, 일하는 방식을 정리한 경력기술서">
+<meta name="description" content="게임 라이브 운영·프로젝트 관리 담당. 경력, 실무 경험, 보유 역량을 정리한 경력기술서">
 <style>
   :root{
     --bg:#fbfbfc; --surface:#fff; --surface-2:#f4f5f7; --border:#e2e5ea; --border-2:#d3d8e0;
@@ -23,10 +23,11 @@
   body{margin:0;background:var(--bg);color:var(--text);
     font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
     line-height:1.65;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
-  h1,h2,h3{text-wrap:balance}
+  h1,h2,h3,h4{text-wrap:balance}
   p,li{text-wrap:pretty}
   a{color:inherit}
-  .wrap{max-width:900px;margin:0 auto;padding:0 22px}
+  img{max-width:100%;height:auto;display:block}
+  .wrap{max-width:940px;margin:0 auto;padding:0 22px}
 
   .top{padding:26px 0 0}
   .back{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;
@@ -35,31 +36,67 @@
   .back:hover{color:var(--accent);border-color:var(--accent)}
 
   header{padding:34px 0 40px;border-bottom:1px solid var(--border)}
-  .eyebrow{margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:.16em;
+  .hero{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+  .photo{width:132px;height:132px;border-radius:16px;object-fit:cover;flex-shrink:0;
+    border:1px solid var(--border);background:var(--surface-2)}
+  .hero-txt{flex:1 1 320px;min-width:0}
+  .eyebrow{margin:0 0 10px;font-size:12px;font-weight:800;letter-spacing:.16em;
     text-transform:uppercase;color:var(--accent)}
-  h1{margin:0 0 8px;font-size:clamp(28px,5vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1.2}
-  .tagline{margin:0 0 18px;font-size:16px;font-weight:700;color:var(--muted);letter-spacing:-.015em}
-  .hashes{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 20px;padding:0;list-style:none}
+  h1{margin:0 0 6px;font-size:clamp(28px,5vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.2}
+  .tagline{margin:0 0 16px;font-size:16px;font-weight:700;color:var(--muted);letter-spacing:-.015em}
+  .hashes{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
   .hashes li{font-size:12.5px;font-weight:700;padding:5px 11px;border-radius:999px;
     background:var(--accent-weak);color:var(--accent)}
-  .intro{margin:0;max-width:62ch;font-size:15.5px;color:var(--muted)}
+  .intro{margin:22px 0 0;max-width:64ch;font-size:15.5px;color:var(--muted)}
 
-  section{padding:44px 0;border-bottom:1px solid var(--border)}
+  section{padding:46px 0;border-bottom:1px solid var(--border)}
   section:last-of-type{border-bottom:0}
-  h2{margin:0 0 6px;font-size:21px;font-weight:800;letter-spacing:-.025em}
-  .sub{margin:0 0 24px;font-size:13.5px;color:var(--faint)}
+  h2{margin:0 0 6px;font-size:22px;font-weight:800;letter-spacing:-.025em}
+  .sub{margin:0 0 26px;font-size:13.5px;color:var(--faint)}
 
   .cols{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
   .box{padding:22px;border:1px solid var(--border);border-radius:14px;background:var(--surface)}
   .box h3{margin:0 0 4px;font-size:15px;font-weight:800;letter-spacing:-.02em}
   .box .period{margin:0 0 14px;font-size:12.5px;font-weight:700;color:var(--accent)}
-  .box ul{margin:0;padding:0 0 0 2px;list-style:none}
+  .box ul{margin:0;padding:0;list-style:none}
   .box ul li{position:relative;padding-left:13px;font-size:14px;color:var(--muted);margin-bottom:6px}
   .box ul li::before{content:"";position:absolute;left:0;top:10px;width:4px;height:4px;
     border-radius:50%;background:var(--border-2)}
   .box ul li:last-child{margin-bottom:0}
   .org{margin:0 0 2px;font-size:15px;font-weight:800}
   .orgsub{margin:0 0 12px;font-size:13px;color:var(--faint)}
+
+  /* 실무 경험 */
+  .svc{margin:0 0 26px;padding:16px 20px;border-radius:12px;background:var(--surface-2);
+    border:1px solid var(--border)}
+  .svc b{font-size:15px;font-weight:800;letter-spacing:-.02em}
+  .svc span{display:block;margin-top:3px;font-size:13.5px;color:var(--muted)}
+  .job{padding:24px;border:1px solid var(--border);border-radius:14px;
+    background:var(--surface);margin-bottom:16px}
+  .job:last-of-type{margin-bottom:0}
+  .job-head{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap;margin-bottom:18px}
+  .job h3{margin:0;font-size:17px;font-weight:800;letter-spacing:-.025em;flex:1 1 240px}
+  .role{flex-shrink:0;font-size:12px;font-weight:800;padding:5px 11px;border-radius:999px;
+    background:var(--accent-weak);color:var(--accent);white-space:nowrap}
+  .blk{margin:0 0 16px}
+  .blk:last-child{margin-bottom:0}
+  .blk h4{margin:0 0 8px;font-size:12px;font-weight:800;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--faint)}
+  .blk ul{margin:0;padding:0;list-style:none}
+  .blk li{position:relative;padding-left:15px;font-size:14.5px;color:var(--muted);
+    margin-bottom:7px;line-height:1.62}
+  .blk li::before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;
+    border-radius:50%;background:var(--border-2)}
+  .blk li:last-child{margin-bottom:0}
+  .blk.win li::before{background:var(--accent)}
+  .blk.win li{color:var(--text)}
+  .blk.win h4{color:var(--accent)}
+
+  .shots{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:20px}
+  .shot{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface-2)}
+  .shot figcaption{padding:9px 12px;font-size:12.5px;font-weight:700;color:var(--muted);text-align:center}
+  figure{margin:0}
+  .banner{border:1px solid var(--border);border-radius:14px;overflow:hidden;margin:0 0 22px}
 
   .skillcol h3{margin:0 0 14px;font-size:12px;font-weight:800;letter-spacing:.12em;
     text-transform:uppercase;color:var(--faint)}
@@ -68,12 +105,11 @@
   .skill b{display:block;font-size:14.5px;font-weight:800;letter-spacing:-.015em;margin-bottom:5px}
   .skill span{display:block;font-size:13.5px;color:var(--muted);line-height:1.55}
 
-  .work{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  ul.work{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:0;padding:0}
   .work li{list-style:none;padding:18px 20px;border:1px solid var(--border);
     border-radius:13px;background:var(--surface)}
   .work b{display:block;font-size:15px;font-weight:800;letter-spacing:-.02em;margin-bottom:5px}
   .work span{font-size:13.5px;color:var(--muted);line-height:1.6}
-  ul.work{margin:0;padding:0}
 
   .cta{display:flex;align-items:center;gap:16px;padding:20px 24px;text-decoration:none;
     border:1px solid var(--border-2);border-radius:14px;background:var(--surface);transition:.16s}
@@ -90,7 +126,11 @@
   .contact a:hover{text-decoration:underline}
 
   footer{padding:26px 0 130px;font-size:13px;color:var(--faint)}
-  @media (max-width:620px){ header{padding:26px 0 32px} section{padding:34px 0} }
+  @media (max-width:620px){
+    header{padding:26px 0 32px} section{padding:34px 0}
+    .photo{width:104px;height:104px}
+    .job{padding:20px 18px}
+  }
 </style>
 </head>
 <body>
@@ -102,16 +142,21 @@
   </div>
 
   <header>
-    <p class="eyebrow">Career Summary</p>
-    <h1>허재석</h1>
-    <p class="tagline">기획과 운영을 아우르는 올라운더</p>
-    <ul class="hashes">
-      <li>#라이브 서비스</li>
-      <li>#프로젝트 관리</li>
-      <li>#콘텐츠 기획 및 제작</li>
-      <li>#데이터 및 VOC 분석</li>
-      <li>#생성형 AI 활용</li>
-    </ul>
+    <div class="hero">
+      <img class="photo" src="img/profile.jpg" alt="허재석 프로필 사진" width="132" height="132">
+      <div class="hero-txt">
+        <p class="eyebrow">Career Summary</p>
+        <h1>허재석</h1>
+        <p class="tagline">기획과 운영을 아우르는 올라운더</p>
+        <ul class="hashes">
+          <li>#라이브 서비스</li>
+          <li>#프로젝트 관리</li>
+          <li>#콘텐츠 기획 및 제작</li>
+          <li>#데이터 및 VOC 분석</li>
+          <li>#생성형 AI 활용</li>
+        </ul>
+      </div>
+    </div>
     <p class="intro">유니티 게임을 기획해 출시해 본 경험부터 MMORPG 라이브 운영까지 맡아 왔습니다.<br>기획과 운영, 데이터와 콘텐츠를 함께 다루며 실무 범위를 넓혀 가고 있습니다.</p>
   </header>
 
@@ -138,6 +183,216 @@
         <p class="orgsub">스마트콘텐츠학과 모바일앱전공</p>
         <ul>
           <li>재학 중 모바일 게임·앱 3종을 기획해 실제 출시</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 실무 경험 -->
+  <section>
+    <h2>실무 경험</h2>
+    <p class="sub">현업에서 라이브 서비스를 운영하며 담당한 업무입니다.</p>
+
+    <div class="banner">
+      <img src="img/bns-live.png" alt="블레이드&amp;소울 레볼루션 라이브 서비스 운영" loading="lazy" decoding="async">
+    </div>
+
+    <div class="svc">
+      <b>[라이브 서비스 운영] 블레이드&amp;소울 레볼루션</b>
+      <span>아이지에스 · 2024.12 ~ 현재 · 국내 및 글로벌 4개 권역</span>
+    </div>
+
+    <!-- 1 -->
+    <div class="job">
+      <div class="job-head">
+        <h3>📝 프로젝트 관리</h3>
+        <span class="role">3명 중 기여도 30%</span>
+      </div>
+      <div class="blk">
+        <h4>담당 업무</h4>
+        <ul>
+          <li>블레이드&amp;소울 레볼루션 국내·글로벌 업무 관리</li>
+          <li>업데이트 일정 관리 및 패치노트, 이벤트, 상품 안내 등록·관리</li>
+          <li>글로벌 4개 권역(영어·일본어·대만어·태국어) 푸시 및 공지 번역 관리</li>
+        </ul>
+      </div>
+      <div class="blk win">
+        <h4>🏆 핵심 성과</h4>
+        <ul>
+          <li>흩어져 있던 업데이트 일정과 가이드를 단일 통합 캘린더로 데이터베이스화해, 부서 간 업무 예측 가능성을 높이고 일정 누락을 사전에 차단</li>
+          <li>분산되던 유저 동향 취합 리포트를 연간 통합 시트로 중앙화해 파일 관리 시간 98% 이상 절감</li>
+          <li>다국어 번역 파이프라인의 마일스톤을 관리해 글로벌 공지·푸시 일정 지연 없이 운영</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="job">
+      <div class="job-head">
+        <h3>📝 라이브 서비스 이슈 대응</h3>
+        <span class="role">3명 중 기여도 40%</span>
+      </div>
+      <div class="blk">
+        <h4>담당 업무</h4>
+        <ul>
+          <li>업데이트 예상 이슈 관리 및 이슈 대응 공지, 임시 점검 진행</li>
+          <li>유관 부서와 이슈 대응 방향 협의 및 가이드라인 수립</li>
+          <li>글로벌 긴급 이슈 대응 템플릿 제작 및 활용</li>
+        </ul>
+      </div>
+      <div class="blk win">
+        <h4>🏆 핵심 성과</h4>
+        <ul>
+          <li>2025년 하반기 사업부 만족도 평가에서 상반기 대비 운영 핵심 지표(업무 신속성, 일정 준수 등) 전 항목 상승</li>
+          <li>이슈 발생 시 신속한 방향성 협의와 가이드 제공으로 CS 부서의 FCR(첫 문의 해결률) 개선에 기여</li>
+          <li>자체 제작한 글로벌 긴급 이슈 대응 템플릿을 도입해 크리티컬 이슈 발생 시 초기 대응 속도 단축</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="job">
+      <div class="job-head">
+        <h3>📝 인게임·커뮤니티 이벤트 기획 및 풀 사이클 운영</h3>
+        <span class="role">2명 중 기여도 70% · 메인 담당</span>
+      </div>
+      <div class="blk">
+        <h4>담당 업무</h4>
+        <ul>
+          <li>인게임 및 공식 포럼 커뮤니티 이벤트 기획안 작성과 운영</li>
+          <li>이벤트 참여자 데이터 취합·검증 및 당첨자 선정 프로세스 리드</li>
+          <li>인게임 재화(정기·비정기) 및 이벤트 최종 보상 지급 관리</li>
+        </ul>
+      </div>
+      <div class="blk win">
+        <h4>🏆 핵심 성과</h4>
+        <ul>
+          <li>엑셀 함수로 당첨자 취합·검증 전 과정을 자동화해 1회 작업 소요 시간을 75% 줄이고 입력 오류를 차단</li>
+          <li>기획 → 진행 → 데이터 취합 → 보상 지급으로 이어지는 전 주기를 오너십을 갖고 완수해 오지급 없는 보상 지급 프로세스 확립</li>
+          <li>타겟 유저 니즈를 분석한 맞춤형 이벤트 기획으로 공식 포럼 방문 유도 및 커뮤니티 활성화에 기여</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="job">
+      <div class="job-head">
+        <h3>📝 주요 업데이트 GM 콘텐츠 기획 및 대형 프로모션 시각화</h3>
+        <span class="role">단독 담당 · 기여도 100%</span>
+      </div>
+      <div class="blk">
+        <h4>담당 업무</h4>
+        <ul>
+          <li>신규 직업·던전·서버 업데이트 시 유저 이해도를 높이는 GM 콘텐츠 기획 및 시각화</li>
+          <li>디자인 부서 협업을 위한 시각 이미지 스토리보드 제작 및 커뮤니케이션 리드</li>
+          <li>웹툰 IP(화산귀환) 콜라보레이션, 7주년 기념 이벤트, 대규모 유저 참여 대회 레볼루션 챌린지</li>
+        </ul>
+      </div>
+      <div class="blk win">
+        <h4>🏆 핵심 성과</h4>
+        <ul>
+          <li>복잡한 신규 시스템과 업데이트 내역을 직관적인 이미지로 옮겨 유저의 정보 접근성과 가독성을 높임</li>
+          <li>외부 대형 IP 콜라보레이션, 주년 행사 등 메가 캠페인의 시각 콘텐츠를 전담</li>
+          <li>명확한 스토리보드 제작으로 기획과 디자인 사이의 협업 리소스와 커뮤니케이션 비용을 줄임</li>
+        </ul>
+      </div>
+      <div class="shots">
+        <figure class="shot">
+          <img src="img/gm-anniversary.png" alt="7주년 GM 축전" loading="lazy" decoding="async">
+          <figcaption>7주년 GM 축전</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/gm-challenge.png" alt="레볼루션 챌린지 시즌7 프리뷰" loading="lazy" decoding="async">
+          <figcaption>레볼루션 챌린지 시즌7 프리뷰</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/gm-collab.png" alt="화산귀환 IP 콜라보" loading="lazy" decoding="async">
+          <figcaption>화산귀환 IP 콜라보</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/gm-newclass.png" alt="신규 직업 비도술사 소개" loading="lazy" decoding="async">
+          <figcaption>신규 직업 비도술사 소개</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="job">
+      <div class="job-head">
+        <h3>📝 e스포츠 대회 방송 스튜디오 운영 지원 및 인게임 관제</h3>
+        <span class="role">3명 중 기여도 30%</span>
+      </div>
+      <div class="blk">
+        <h4>담당 업무</h4>
+        <ul>
+          <li>대규모 유저 대회 레볼루션 챌린지의 오프라인 방송 스튜디오 현장 운영 지원</li>
+          <li>대회 전용 서버 내 매치 환경 설정 및 인게임 운영툴 세팅</li>
+          <li>중계진 및 출연 유튜버 대상 실시간 인게임 상황 브리핑과 유저 가이드</li>
+        </ul>
+      </div>
+      <div class="blk win">
+        <h4>🏆 핵심 성과</h4>
+        <ul>
+          <li>경기 중 돌발 상황과 승부의 분수령이 되는 지표를 해설진·크리에이터에게 실시간 전달해 방송 흐름에 맞는 해설을 지원</li>
+          <li>대회용 운영툴로 경기 시작 전 매치 설정을 정확히 세팅하고 참가 유저를 인게임에서 직접 안내해 방송 지연 없이 대회 진행</li>
+          <li>스튜디오 현장에서 PM·옵저버·출연진이 인게임 상황을 화면으로 구성하고 송출하는 과정을 밀착 경험하며 방송 제작 프로세스를 익힘</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="job">
+      <div class="job-head">
+        <h3>📝 라이브 서비스 세팅 및 QA 검수</h3>
+        <span class="role">3명 중 기여도 30%</span>
+      </div>
+      <div class="blk">
+        <h4>담당 업무</h4>
+        <ul>
+          <li>운영툴 직접 세팅 (신규 상점, 핫타임, 접속 보상 등 인게임 데이터 반영)</li>
+          <li>유관 부서 세팅 내역 최종 검수 및 상품 공지 작성</li>
+          <li>신규 이벤트 및 패키지 상품 TC 검증과 빌드 관리</li>
+        </ul>
+      </div>
+      <div class="blk win">
+        <h4>🏆 핵심 성과</h4>
+        <ul>
+          <li>조건이 복잡한 인게임 운영툴(상점, 핫타임 등)을 오차 없이 직접 세팅하며 라이브 데이터 반영을 주도</li>
+          <li>팀 내 세팅 내용 크로스체크 프로세스를 정립해 라이브 환경 적용 전 발생할 수 있는 입력 오류를 사전 차단</li>
+          <li>사전 TC를 통해 신규 BM 패키지 및 보상 지급 관련 크리티컬 이슈 없이 운영</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 개인 프로젝트 -->
+  <section>
+    <h2>개인 프로젝트</h2>
+    <p class="sub">업무 중 불편을 직접 도구로 만들어 해결한 사례입니다.</p>
+
+    <div class="job">
+      <div class="job-head">
+        <h3>✨ AI 업무 효율화 툴 — 상품 공지 자동 생성기</h3>
+        <span class="role">개인 프로젝트 · 단독 제작</span>
+      </div>
+      <div class="banner" style="margin-bottom:18px">
+        <img src="img/ai-tool.png" alt="상품 공지 자동 생성기 화면" loading="lazy" decoding="async">
+      </div>
+      <div class="blk">
+        <h4>프로젝트 요약</h4>
+        <ul>
+          <li>반복적인 기획서(CSV) 데이터를 포럼 공지사항용 HTML 소스로 자동 변환하는 오프라인 웹 도구를 단독 기획·제작</li>
+          <li>미공개 업데이트 데이터 유출을 막기 위해 외부 서버 통신 없이 로컬에서만 구동(FileReader)되도록 설계</li>
+          <li>생성형 AI 프롬프트 엔지니어링(Before/After 데이터 대조, 단계별 예외 처리 지시)으로 사내 맞춤 변환 로직 구현</li>
+          <li>상점 이름, 판매 기간, 대상 서버 등 필수 조건을 UI에서 설정하고 원클릭으로 소스를 출력</li>
+        </ul>
+      </div>
+      <div class="blk win">
+        <h4>🏆 핵심 성과</h4>
+        <ul>
+          <li>기획서 데이터를 하나씩 표로 옮기던 수동 작업을 원클릭 HTML 생성으로 대체해 공지 작성 시간을 크게 줄이고 오타·데이터 누락을 차단</li>
+          <li>데이터가 외부로 전송되지 않는 브라우저 내장 처리 방식으로 사내 정보보호정책팀·AI지원팀 보안 검토를 통과하고 실제 운영 툴로 승인받아 도입</li>
+          <li>엑셀 원본과 결과물 예시를 대조하는 프롬프트를 작성해, 무료 상품이 섞인 경우 등 실무 예외 케이스까지 처리하는 로직 구축</li>
         </ul>
       </div>
     </div>
@@ -186,7 +441,7 @@
 
   <!-- Projects -->
   <section>
-    <h2>Projects</h2>
+    <h2>기획·분석 작업 기록</h2>
     <p class="sub">게임 시스템 역기획부터 타 산업 적용 기획까지 46건을 정리했습니다.</p>
     <a class="cta" href="../index.html">
       <span class="cta-ico">🗂️</span>
