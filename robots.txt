@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://heojaeseock.github.io/planning-archive/sitemap.xml

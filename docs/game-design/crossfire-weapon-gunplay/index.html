@@ -4,7 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>크로스파이어 무기 조작감 분석</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="크로스파이어 무기 조작감 분석. 반동·명중률을 수치로 분해하고 모드 전환형 신규 무기 제안.">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="허재석 기획·운영 아카이브">
+<meta property="og:title" content="크로스파이어 무기 조작감 분석">
+<meta property="og:description" content="크로스파이어 무기 조작감 분석. 반동·명중률을 수치로 분해하고 모드 전환형 신규 무기 제안.">
+<link rel="canonical" href="https://heojaeseock.github.io/planning-archive/docs/game-design/crossfire-weapon-gunplay/">
+<meta property="og:url" content="https://heojaeseock.github.io/planning-archive/docs/game-design/crossfire-weapon-gunplay/">
+<meta property="og:image" content="https://heojaeseock.github.io/planning-archive/img/profile.jpg">
+<meta property="og:image:width" content="314">
+<meta property="og:image:height" content="404">
+<meta property="og:image:alt" content="허재석 프로필 사진">
+<meta name="twitter:card" content="summary">
+<script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <script>
@@ -165,7 +178,7 @@
             <div class="grid md:grid-cols-3 gap-8 mb-12">
                 <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-200 hover:border-cfred transition-all">
                     <div class="text-4xl mb-6 font-black italic tracking-tighter text-slate-200 group-hover:text-cfred transition-colors">#NUM</div>
-                    <h4 class="text-xl font-bold text-slate-900 mb-3 italic">수치적 변수</h4>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3 italic">수치적 변수</h3>
                     <ul class="text-sm text-slate-600 space-y-2">
                         <li>• 반동 곡선 설계</li>
                         <li>• 줌 속도(ADS) 프레임 단위 조정</li>
@@ -249,7 +262,7 @@
                 </div>
                 <div class="lg:w-1/2 w-full bg-slate-800 rounded-[3rem] p-12 border border-slate-700 shadow-inner flex flex-col items-center justify-center relative min-h-[500px]">
                     <div class="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(circle_at_center,_#ff4655_0%,_transparent_70%)]"></div>
-                    <h4 class="text-[10px] font-black text-slate-500 tracking-wide mb-12 text-center italic">탄착 반응 비교</h4>
+                    <h3 class="text-[10px] font-black text-slate-500 tracking-wide mb-12 text-center italic">탄착 반응 비교</h3>
                     <div class="chart-container w-full relative z-10">
                         <canvas id="recoilCanvas"></canvas>
                     </div>
@@ -268,7 +281,7 @@
         <div class="grid md:grid-cols-2 gap-12">
             <div class="space-y-6">
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-                    <h4 class="text-xl font-bold text-slate-900 mb-4">컨셉: 모드 전환형 DMR/AR 하이브리드</h4>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">컨셉: 모드 전환형 DMR/AR 하이브리드</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
                         하나의 총기에 두 가지 조작감을 부여합니다. <br><br>
                         <strong>모드 A (저지지력 연사):</strong> M4의 안정성을 가졌지만 연사력이 낮아, 중거리 적을 압박하는 데 적합합니다. <br>
