@@ -217,7 +217,7 @@
             <div class="bg-white rounded-3xl border border-slate-200 p-8 md:p-12">
                 <h2 class="text-2xl md:text-3xl font-black mt-3 mb-6 leading-snug">시장 구조와 문제</h2>
                 <p class="text-slate-600 leading-relaxed mb-4">
-                    오픈마켓은 다수 판매자가 입점해 동일 상품을 경쟁 판매하는 구조로, 가격과 노출 위치가 매출을 결정합니다. <br class="hidden md:block">
+                     오픈마켓은 다수 판매자가 입점해 동일 상품을 경쟁 판매하는 구조로, 가격과 노출 위치가 매출을 결정합니다. <br class="hidden md:block">
                     캠페인 한 건에 수백에서 수천 개 상품이 등록되지만, 가격·재고 검수는 수작업 엑셀로 진행됩니다. <br class="hidden md:block">
                     가격 오기입은 그대로 판매로 이어져 손실과 클레임이 동시에 발생합니다.
                 </p>
@@ -318,10 +318,9 @@
                         <span>🚨</span> 전환율 급락 상황 감지
                     </p>
                     <p class="text-slate-300 font-medium text-lg leading-relaxed">
-                        클릭은 증가했으나 전환율이 하락한 상황은 가격 경쟁력 상실 또는 기술적 오류를 의미합니다.<br><br>
-                        <strong class="text-white border-b-4 border-red-500">즉시 예비 상품으로 구좌를 교체하여</strong><br> 
-                        오픈마켓 커머스의 핵심 트래픽 누수를 사전에 차단하는 방안을 정리했습니다.
-                    </p>
+                     클릭은 증가했으나 전환율이 하락한 상황은 가격 경쟁력 상실 또는 기술적 오류를 의미합니다. <br class="hidden md:block">
+                    <strong class="text-white border-b-4 border-red-500">즉시 예비 상품으로 구좌를 교체하여</strong> 오픈마켓 커머스의 핵심 트래픽 누수를 사전에 차단하는 방안을 정리했습니다.
+                </p>
                     
                     <button onclick="매뉴얼토글()" class="매뉴얼-버튼">
                         <span>📋</span> 대응 액션 매뉴얼 확인하기
@@ -439,8 +438,8 @@
                 </p>
                 <p class="text-slate-700 leading-relaxed">
                      대응 매뉴얼의 순서도 이 하락 폭에 맞습니다. <br class="hidden md:block">
-                    <strong class="text-slate-900">1번이 재고와 상세페이지 링크 점검</strong>인데, <br class="hidden md:block">
-                    79% 급락은 가격 경쟁력 문제로는 설명되지 않는 크기이므로 <strong class="text-emerald-700">기술적 원인을 먼저 보는 것이 맞습니다.</strong> 가격 문제라면 점진적으로 빠지고, 링크나 결제가 막히면 이렇게 급락합니다.
+                    <strong class="text-slate-900">1번이 재고와 상세페이지 링크 점검</strong>인데, 79% 급락은 가격 경쟁력 문제로는 설명되지 않는 크기이므로 <strong class="text-emerald-700">기술적 원인을 먼저 보는 것이 맞습니다.</strong> <br class="hidden md:block">
+                    가격 문제라면 점진적으로 빠지고, 링크나 결제가 막히면 이렇게 급락합니다.
                 </p>
             </div>
 
@@ -480,11 +479,11 @@
             <div class="bg-white border-2 border-slate-200 rounded-2xl p-8 mb-10">
                 <p class="text-sm font-black text-slate-800 mb-5">클릭이 계속 오르는 것이 손실을 키웁니다</p>
                 <p class="text-slate-600 leading-relaxed mb-5">
-                    이상 시점에 클릭률은 오히려 <strong class="text-slate-900">4.8에서 6.8로 올랐습니다.</strong>
+                     이상 시점에 클릭률은 오히려 <strong class="text-slate-900">4.8에서 6.8로 올랐습니다.</strong> <br class="hidden md:block">
                     노출과 유입은 정상인데 구매만 막힌 상태이므로, 문제는 마케팅이 아니라 <strong class="text-slate-900">퍼널 뒷단</strong>에 있습니다.
                 </p>
                 <p class="text-slate-600 leading-relaxed mb-5">
-                    이 상태가 유지되면 <strong class="text-slate-900">유입에 쓰는 비용은 그대로 나가고 매출만 없습니다.</strong>
+                     이 상태가 유지되면 <strong class="text-slate-900">유입에 쓰는 비용은 그대로 나가고 매출만 없습니다.</strong> <br class="hidden md:block">
                     클릭이 오를수록 손실이 커지는 구조라, 시간이 지나면 피해가 선형으로 누적됩니다.
                 </p>
                 <div class="bg-emerald-50 rounded-2xl p-6 border border-emerald-200">
@@ -618,12 +617,13 @@
                 <p class="text-slate-700 leading-relaxed mb-5">
                      문서는 이상 상황을 <strong class="text-slate-900">클릭은 늘고 전환은 줄어든 상태</strong>로 정의했습니다. <br class="hidden md:block">
                     상황 설명으로는 정확합니다. <br class="hidden md:block">
-                    그런데 이 정의를 그대로 경보 규칙으로 쓰면, <br class="hidden md:block">
-                    정상 구간 다섯 번 중 <strong class="text-rose-700">네 번이 이상으로 잡힙니다.</strong> 두 지표가 반대로 움직이는 일이 평소에도 계속 일어나기 때문입니다.
+                    그런데 이 정의를 그대로 경보 규칙으로 쓰면, 정상 구간 다섯 번 중 <strong class="text-rose-700">네 번이 이상으로 잡힙니다.</strong> <br class="hidden md:block">
+                    두 지표가 반대로 움직이는 일이 평소에도 계속 일어나기 때문입니다.
                 </p>
                 <p class="text-slate-700 leading-relaxed">
                      10시 15분에서 20분 구간을 보면 클릭이 0.4 오르고 전환이 0.1 내렸습니다. <br class="hidden md:block">
-                    방향은 이상 시점과 같습니다. 다른 것은 <strong class="text-slate-900">크기</strong>뿐입니다. <br class="hidden md:block">
+                    방향은 이상 시점과 같습니다. <br class="hidden md:block">
+                    다른 것은 <strong class="text-slate-900">크기</strong>뿐입니다. <br class="hidden md:block">
                     따라서 경보 조건은 &lsquo;클릭 상승과 전환 하락&rsquo;이 아니라 <strong class="text-rose-700">하락 폭이 평소 범위를 얼마나 벗어났는지</strong>로 적어야 합니다.
                 </p>
             </div>
@@ -673,23 +673,23 @@
                 <p class="text-sm font-black text-amber-700 mb-5">가격 경보의 20% 기준은 여유가 좁습니다</p>
                 <p class="text-slate-600 leading-relaxed mb-6">
                      같은 절에서 가격 검증 경보를 <strong class="text-slate-900">20% 내외 하락이 두 구간 이상 이어질 때</strong>로 제안했습니다. <br class="hidden md:block">
-                    그런데 정상 구간에서도 비율이 한 번에 <strong class="text-slate-900">11.4%</strong>까지 움직입니다. 20%는 그 <strong class="text-amber-700">1.75배</strong>에 불과합니다.
+                    그런데 정상 구간에서도 비율이 한 번에 <strong class="text-slate-900">11.4%</strong>까지 움직입니다. <br class="hidden md:block">
+                    20%는 그 <strong class="text-amber-700">1.75배</strong>에 불과합니다.
                 </p>
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div class="bg-rose-50 rounded-2xl p-6 border border-rose-200">
                         <p class="text-xs font-black text-rose-700 mb-2">한 구간만 보면 위험합니다</p>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                            정상 변동과 경보선이 가까워서 <strong class="text-slate-800">평범한 흔들림이 경보로 올라올 수 있습니다.</strong>
-                            잘못된 경보가 반복되면 담당자가 경보를 무시하게 되고, 그때부터는 경보가 없는 것과 같습니다.
-                        </p>
+                     정상 변동과 경보선이 가까워서 <strong class="text-slate-800">평범한 흔들림이 경보로 올라올 수 있습니다.</strong> <br class="hidden md:block">
+                    잘못된 경보가 반복되면 담당자가 경보를 무시하게 되고, 그때부터는 경보가 없는 것과 같습니다.
+                </p>
                     </div>
                     <div class="bg-emerald-50 rounded-2xl p-6 border border-emerald-200">
                         <p class="text-xs font-black text-emerald-700 mb-2">두 구간 연속 조건이 이것을 막습니다</p>
                         <p class="text-xs text-slate-600 leading-relaxed">
                      정상 구간의 변동은 올랐다 내렸다를 <strong class="text-slate-800">번갈아 반복</strong>합니다. <br class="hidden md:block">
                     표에서 부호가 계속 바뀌는 것이 그 증거입니다. <br class="hidden md:block">
-                    같은 방향 하락이 두 구간 이어지는 일은 평상시에 나타나지 않으므로, <br class="hidden md:block">
-                    <strong class="text-slate-800">연속 조건이 오탐을 막는 핵심 장치</strong>입니다.
+                    같은 방향 하락이 두 구간 이어지는 일은 평상시에 나타나지 않으므로, <strong class="text-slate-800">연속 조건이 오탐을 막는 핵심 장치</strong>입니다.
                 </p>
                     </div>
                 </div>

@@ -145,10 +145,8 @@
                 AI로 <span class="text-brand-blue">처리 방법을 설계</span>합니다.
             </h1>
             <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed mt-4">
-                방대한 물류 데이터 정제, 복잡한 DB 쿼리 추출, 긴급 글로벌 커뮤니케이션까지. 
-                생성형 AI를 실무 도구로 활용해 
-                물류 센터 운영에서 실제로 마주쳤던 업무 세 가지를 AI로 처리한 과정을 정리했습니다.
-            </p>
+                    방대한 물류 데이터 정제, 복잡한 DB 쿼리 추출, 긴급 글로벌 커뮤니케이션까지. 생성형 AI를 실무 도구로 활용해 물류 센터 운영에서 실제로 마주쳤던 업무 세 가지를 AI로 처리한 과정을 정리했습니다.
+                </p>
         </section>
 
         <!-- 0. 문서 개요 -->
@@ -156,7 +154,7 @@
             <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-slate-200">
                 <h2 class="text-2xl font-black text-slate-900 mb-6">작업 배경</h2>
                 <p class="text-slate-600 leading-relaxed mb-4">
-                    물류 센터 운영에서 반복적으로 발생하던 데이터 요청 세 건을 생성형 AI로 처리한 기록입니다. <br class="hidden md:block">
+                     물류 센터 운영에서 반복적으로 발생하던 데이터 요청 세 건을 생성형 AI로 처리한 기록입니다. <br class="hidden md:block">
                     다중 조건 집계, SQL 추출, 야간 장애의 영문 보고 순서로 구성했습니다. <br class="hidden md:block">
                     본문의 수치와 이름은 예시로 재구성했습니다.
                 </p>
@@ -493,9 +491,9 @@
                 <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
                     <p class="text-sm font-bold text-slate-800 mb-4">SQL 추출 &mdash; 틀려도 결과가 나옵니다</p>
                     <p class="text-slate-600 leading-relaxed mb-5">
-                        쿼리가 잘못돼도 오류 없이 실행되어 <strong class="text-slate-900">그럴듯한 리스트가 나옵니다.</strong>
-                        그대로 보고하면 잘못된 데이터가 의사결정에 들어갑니다.
-                    </p>
+                     쿼리가 잘못돼도 오류 없이 실행되어 <strong class="text-slate-900">그럴듯한 리스트가 나옵니다.</strong> <br class="hidden md:block">
+                    그대로 보고하면 잘못된 데이터가 의사결정에 들어갑니다.
+                </p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                         <li>&bull; <strong class="text-slate-800">건수 대조</strong> &mdash; 이미 아는 값과 맞춰봅니다. 서울 센터 전체 출고 건수를 알고 있다면, 지연 건이 그보다 클 수 없습니다. JOIN 조건이 잘못되면 행이 중복되어 건수가 부풀어 오르므로 여기서 잡힙니다.</li>
                         <li>&bull; <strong class="text-slate-800">이번 주의 기준</strong> &mdash; 월요일 시작인지 최근 7일인지에 따라 결과가 달라집니다. 요청자가 말한 기간을 날짜로 되물어 확정합니다.</li>
@@ -534,7 +532,7 @@
                         <div class="bg-white/10 rounded-xl p-5">
                             <p class="text-xs font-bold text-blue-300 mb-2">보고 대상을 지정했습니다</p>
                             <p class="text-xs text-slate-300 leading-relaxed">
-                    외국인 임원 대상이라는 조건을 주어 문체와 구조가 정해졌습니다. <br class="hidden md:block">
+                     외국인 임원 대상이라는 조건을 주어 문체와 구조가 정해졌습니다. <br class="hidden md:block">
                     대상 없이 번역만 요청하면 형식이 맞지 않습니다.
                 </p>
                         </div>
@@ -577,10 +575,12 @@
                     <p class="text-xs font-bold text-amber-300 mb-3">그런데 이번에는 원인이 다릅니다</p>
                     <p class="text-sm text-slate-300 leading-relaxed mb-4">
                      제공한 스키마를 보면 주문 테이블의 열이 <strong class="text-white">아이디, 상품 아이디, 센터 코드, 상태</strong> 넷뿐입니다. <br class="hidden md:block">
-                    <strong class="text-amber-300">날짜 열이 아예 없습니다.</strong> 기간으로 거르고 싶어도 걸 수 있는 열이 없습니다.
+                    <strong class="text-amber-300">날짜 열이 아예 없습니다.</strong> <br class="hidden md:block">
+                    기간으로 거르고 싶어도 걸 수 있는 열이 없습니다.
                 </p>
                     <p class="text-sm text-slate-300 leading-relaxed">
-                     도전 1은 AI가 조건 하나를 놓친 경우였고, 도전 2는 <strong class="text-white">요청자가 필요한 정보를 주지 않은 경우</strong>입니다. 그런데 결과는 같습니다. <br class="hidden md:block">
+                     도전 1은 AI가 조건 하나를 놓친 경우였고, 도전 2는 <strong class="text-white">요청자가 필요한 정보를 주지 않은 경우</strong>입니다. <br class="hidden md:block">
+                    그런데 결과는 같습니다. <br class="hidden md:block">
                     조건이 빠진 쿼리가 아무 경고 없이 돌아옵니다. <br class="hidden md:block">
                     <strong class="text-amber-300">필요한 열이 스키마에 있는지 먼저 확인하는 것</strong>이 요청을 잘 쓰는 것만큼 중요합니다.
                 </p>
@@ -600,7 +600,8 @@
             <div class="bg-slate-900 rounded-2xl p-8 md:p-10 text-white mb-10">
                 <p class="text-amber-300 font-black text-[10px] tracking-wide mb-5">검증하려면 그 일을 할 줄 알아야 합니다</p>
                 <p class="text-sm md:text-base text-slate-300 leading-relaxed mb-5">
-                     두 사례 모두 <strong class="text-white">결과만 보면 정상으로 보입니다.</strong> 수식은 숫자를 내놓고 쿼리는 행을 반환합니다. <br class="hidden md:block">
+                     두 사례 모두 <strong class="text-white">결과만 보면 정상으로 보입니다.</strong> <br class="hidden md:block">
+                    수식은 숫자를 내놓고 쿼리는 행을 반환합니다. <br class="hidden md:block">
                     빠진 조건은 <strong class="text-amber-300">요구사항과 결과를 한 줄씩 맞춰볼 때만</strong> 드러납니다. <br class="hidden md:block">
                     그리고 그 대조를 하려면 수식과 쿼리를 읽을 줄 알아야 합니다.
                 </p>
@@ -608,7 +609,8 @@
                      도전 2의 제목은 <strong class="text-white">개발자 없이 데이터 추출</strong>입니다. <br class="hidden md:block">
                     쿼리를 받는 것은 개발자 없이 가능합니다. <br class="hidden md:block">
                     다만 받은 쿼리가 요청과 맞는지 판단하는 데는 <strong class="text-amber-300">읽을 수 있는 만큼의 지식</strong>이 필요합니다. <br class="hidden md:block">
-                    제목을 <strong class="text-white">개발자를 기다리지 않고</strong> 정도로 적으면 실제로 한 일에 더 가깝고, 검증 단계를 생략했다는 인상도 주지 않습니다. <br class="hidden md:block">
+                    제목을 <strong class="text-white">개발자를 기다리지 않고</strong> 정도로 적으면 실제로 한 일에 더 가깝고, <br class="hidden md:block">
+                    검증 단계를 생략했다는 인상도 주지 않습니다. <br class="hidden md:block">
                     이 문서가 스스로 검증 과정을 적어둔 것이 그 지식을 갖췄다는 증거이기도 합니다.
                 </p>
             </div>
@@ -655,13 +657,15 @@
                 <div class="bg-white rounded-2xl border-2 border-amber-300 p-8 shadow-sm mb-6">
                     <p class="text-sm font-bold text-amber-700 mb-5">성격이 다른 세 작업이 똑같이 15배입니다</p>
                     <p class="text-slate-600 leading-relaxed mb-5">
-                     엑셀 수식 작성, 쿼리 작성, 외국어 보고서 작성은 <strong class="text-slate-900">필요한 기술도 걸리는 이유도 다릅니다.</strong> 그런데 세 작업의 절감 배수가 모두 정확히 15배로 같습니다. <br class="hidden md:block">
+                     엑셀 수식 작성, 쿼리 작성, 외국어 보고서 작성은 <strong class="text-slate-900">필요한 기술도 걸리는 이유도 다릅니다.</strong> <br class="hidden md:block">
+                    그런데 세 작업의 절감 배수가 모두 정확히 15배로 같습니다. <br class="hidden md:block">
                     45와 3, 60과 4, 30과 2로 나누어떨어지는 정수이기도 합니다. <br class="hidden md:block">
                     측정한 값이 이렇게 맞아떨어지기는 어렵습니다.
                 </p>
                     <p class="text-slate-600 leading-relaxed">
                      한계 항목에 <strong class="text-slate-900">수동 작업 시간은 추정</strong>이라고 이미 밝혀두었으므로 표기 자체는 정직합니다. <br class="hidden md:block">
-                    다만 차트는 막대 길이로 보여주기 때문에 <strong class="text-amber-800">측정값처럼 읽힙니다.</strong> 발표에서는 <strong class="text-slate-900">같은 배수를 일괄 적용한 값</strong>이라고 먼저 말하고, <br class="hidden md:block">
+                    다만 차트는 막대 길이로 보여주기 때문에 <strong class="text-amber-800">측정값처럼 읽힙니다.</strong> <br class="hidden md:block">
+                    발표에서는 <strong class="text-slate-900">같은 배수를 일괄 적용한 값</strong>이라고 먼저 말하고, <br class="hidden md:block">
                     총 절감 시간 대신 <strong class="text-slate-900">작업 하나를 실제로 재본 기록</strong>을 하나만 제시하는 편이 설득력이 큽니다. <br class="hidden md:block">
                     하나라도 실측이면 나머지 추정의 근거가 생깁니다.
                 </p>
@@ -678,7 +682,8 @@
                         <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
                             <p class="text-xs font-black text-slate-700 mb-3">엑셀 수식 열 번</p>
                             <p class="text-xs text-slate-600 leading-relaxed">
-                     매번 새로 만들면 450분, 저장해 두고 조건만 바꾸면 90분입니다. 도구를 쓰면 30분입니다. <br class="hidden md:block">
+                     매번 새로 만들면 450분, 저장해 두고 조건만 바꾸면 90분입니다. <br class="hidden md:block">
+                    도구를 쓰면 30분입니다. <br class="hidden md:block">
                     <strong class="text-slate-800">저장 습관이 있는 사람에게는 15배가 아니라 3배</strong>입니다.
                 </p>
                         </div>
@@ -783,9 +788,8 @@
             <div class="relative z-10 flex flex-col items-center">
                 <h3 class="text-3xl font-extrabold mb-4 tracking-tight">업무 효율 개선 효과를 정리했습니다</h3>
                 <p class="text-slate-300 text-sm md:text-base max-w-2xl mx-auto mb-10 leading-relaxed word-break-keep">
-                    기술이나 코딩 지식 자체보다 더 중요한 것은<br class="hidden sm:block">
-                    <strong>'문제를 끝까지 파고들어 해답을 찾아내는 집요함'</strong>이라고 생각합니다.<br><br>
-                    AI라는 강력한 도구를 무기로 삼아 복잡한 데이터를 단순화하고,<br class="hidden sm:block">
+                     기술이나 코딩 지식 자체보다 더 중요한 것은 <strong>'문제를 끝까지 파고들어 해답을 찾아내는 집요함'</strong>이라고 생각합니다. <br class="hidden md:block">
+                    AI라는 강력한 도구를 무기로 삼아 복잡한 데이터를 단순화하고, <br class="hidden md:block">
                     물류 현장에 필요한 오퍼레이션 개선안을 정리했습니다.
                 </p>
             </div>
