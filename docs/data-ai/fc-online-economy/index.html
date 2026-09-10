@@ -186,7 +186,7 @@
                 <p class="text-slate-700 leading-loose text-lg">
                     선수 판매가 불가능해지는 귀속 현상은 무소과금 유저의 성장 사다리를 끊는 가장 큰 요인입니다. 
                     보유한 선수를 판매하여 새로운 팀을 구성하는 재미가 멈추게 되면 유저의 게임 플레이 동력은 급격히 저하됩니다. 
-                    이는 단순히 시세가 변하는 문제를 넘어 라이브 서비스의 장기 리텐션을 저해하는 비즈니스적 리스크입니다. 
+                    이는 단순히 시세가 변하는 문제를 넘어 라이브 서비스의 장기 잔존율을 저해하는 비즈니스적 리스크입니다. 
                 </p>
             </div>
         </section>
@@ -217,7 +217,7 @@
                 <div class="card">
                     <h3 class="font-bold text-xl text-gray-700 mb-8 italic">귀속 매물 지수와 무소과금 유저 잔존율</h3>
                     <div class="chart-wrapper">
-                        <canvas id="chartRetention" role="img" aria-label="꺾은선 차트. 항목 출시 전, 출시 주, 1주 후, 2주 후, 4주 후. 계열 귀속 매물 적체 지수, 무소과금 유저 리텐션 (%)"></canvas>
+                        <canvas id="chartRetention" role="img" aria-label="꺾은선 차트. 항목 출시 전, 출시 주, 1주 후, 2주 후, 4주 후. 계열 귀속 매물 적체 지수, 무소과금 유저 잔존율 (%)"></canvas>
                     </div>
                     <div class="source-box">
                         <p class="font-bold mb-3 text-slate-800 underline decoration-slate-300 decoration-2 underline-offset-4">산출 근거 및 데이터 출처</p>
@@ -322,7 +322,7 @@
                             신규 대장 시즌의 가치를 만들려면 구 시즌이 내려와야 하고, 그것이 이 게임의 판매 구조입니다.
                         </p>
                         <p class="text-base leading-relaxed">
-                            리텐션을 실제로 깎는 것은 하락 자체가 아니라
+                            잔존율을 실제로 깎는 것은 하락 자체가 아니라
                             <strong class="text-emerald-300">&ldquo;팔 수 없는 상태가 얼마나 오래 지속되는가&rdquo;</strong>입니다.
                             데이터가 <strong class="text-white">14일</strong>이라는 기준을 제시하고 있으므로,
                             정책의 목표는 시세 방어가 아니라 <strong class="text-emerald-300">매몰 기간을 그 기준 안으로 끌어내리는 것</strong>이 됩니다.
@@ -557,7 +557,7 @@
                         fill: true,
                         tension: 0.4
                     }, {
-                        label: '무소과금 유저 리텐션 (%)',
+                        label: '무소과금 유저 잔존율 (%)',
                         data: [98, 96, 88, 75, 71],
                         borderColor: '#10b981',
                         borderWidth: 5,
