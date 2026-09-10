@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
-        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
         body { font-family: 'Pretendard', sans-serif; background-color: #ffffff; color: #1e293b; }
         .chart-container { position: relative; width: 100%; height: 280px; }
         .interactive-card { transition: all 0.2s ease; border: 1px solid #e2e8f0; cursor: pointer; }
@@ -27,12 +27,13 @@
     <!-- Header Section -->
     <header class="mb-16 text-center md:text-left">
         <div class="inline-block bg-indigo-50 text-indigo-700 text-[10px] font-bold px-3 py-1 rounded-full mb-4">
-            SERVICE PLANNING REPORT
+            서비스 기획 분석
         </div>
-        <h1 class="text-4xl font-black text-slate-900 tracking-tight mb-4">SOOP 신입 스트리머 락인(Lock-in) 전략 분석</h1>
+        <h1 class="text-4xl font-black text-slate-900 tracking-tight mb-4">SOOP·치지직 신입 스트리머 락인 전략 비교</h1>
         <p class="text-slate-500 text-lg max-w-2xl leading-relaxed">
             국내 스트리밍 시장 재편에 따른 플랫폼 지속 성장 동력 확보 및 신규 크리에이터 정착 지원 정책 제언
         </p>
+                <p class="mt-6 inline-flex items-center gap-1.5 text-[11px] font-bold bg-slate-100 text-slate-500 px-3 py-1.5 rounded-full border border-slate-200"><span>📌</span><span>데이터 기준: 2024년 2분기까지 공개된 자료 · 이후 정책 변경은 반영돼 있지 않습니다</span></p>
     </header>
 
     <!-- 0. 문서 개요 -->
@@ -78,7 +79,7 @@
                 <div class="flex-1">
                     <div class="flex justify-between items-center mb-1">
                         <h4 class="font-bold text-slate-800">초기 진입 및 노출 방식</h4>
-                        <span class="text-[10px] font-bold text-indigo-500 uppercase">Analysis</span>
+                        <span class="text-[10px] font-bold text-indigo-500">분석</span>
                     </div>
                     <div class="grid grid-cols-2 gap-4 text-xs text-slate-500">
                         <p><strong class="text-indigo-600">SOOP:</strong> 신입 전용 카테고리 강제 상단 노출</p>
@@ -96,7 +97,7 @@
                 <div class="flex-1">
                     <div class="flex justify-between items-center mb-1">
                         <h4 class="font-bold text-slate-800">수익 창출 조건 및 체계</h4>
-                        <span class="text-[10px] font-bold text-indigo-500 uppercase">Analysis</span>
+                        <span class="text-[10px] font-bold text-indigo-500">분석</span>
                     </div>
                     <div class="grid grid-cols-2 gap-4 text-xs text-slate-500">
                         <p><strong class="text-indigo-600">SOOP:</strong> 별풍선 즉시 수령 가능</p>
@@ -114,7 +115,7 @@
                 <div class="flex-1">
                     <div class="flex justify-between items-center mb-1">
                         <h4 class="font-bold text-slate-800">성장 지원 인프라</h4>
-                        <span class="text-[10px] font-bold text-indigo-500 uppercase">Analysis</span>
+                        <span class="text-[10px] font-bold text-indigo-500">분석</span>
                     </div>
                     <div class="grid grid-cols-2 gap-4 text-xs text-slate-500">
                         <p><strong class="text-indigo-600">SOOP:</strong> 스튜디오 대관 및 기술 1:1 지원</p>
@@ -133,7 +134,7 @@
         <h2 class="text-2xl font-black text-slate-900 mb-8">3. 데이터 기반 핵심 인사이트</h2>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
-                <h4 class="text-sm font-bold text-slate-400 mb-6 uppercase tracking-widest">신입 스트리머 생존 곡선 (Survival Analysis)</h4>
+                <h4 class="text-sm font-bold text-slate-400 mb-6 tracking-wide">신입 스트리머 생존 곡선</h4>
                 <div class="chart-container">
                     <canvas id="survivalChart"></canvas>
                 </div>
@@ -142,7 +143,7 @@
                 </div>
             </div>
             <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
-                <h4 class="text-sm font-bold text-slate-400 mb-6 uppercase tracking-widest">플랫폼 생태계 경쟁력 레이더</h4>
+                <h4 class="text-sm font-bold text-slate-400 mb-6 tracking-wide">플랫폼 생태계 경쟁력 레이더</h4>
                 <div class="chart-container">
                     <canvas id="competencyChart"></canvas>
                 </div>
@@ -156,7 +157,7 @@
     <!-- Section 4: Lock-in Strategy -->
     <section class="mb-20">
         <div class="mb-8">
-            <h2 class="text-2xl font-black text-slate-900 mb-2">4. SOOP 신입 스트리머 락인(Lock-in) 전략</h2>
+            <h2 class="text-2xl font-black text-slate-900 mb-2">4. SOOP 신입 스트리머 락인 전략</h2>
             <p class="text-slate-500 text-sm">실행 가능성을 고려한 기획자 제언 단계별 상세 운영안</p>
         </div>
 
@@ -198,7 +199,7 @@
                         </div>
                         <div class="md:w-2/5">
                             <div class="bg-indigo-50/50 p-6 rounded-3xl border border-indigo-100">
-                                <h5 class="font-bold text-indigo-900 mb-4 text-sm uppercase">기대 효과 지표 <span class="normal-case font-medium text-[10px] text-indigo-500">(실측치 아님 · 도입 시 목표 수준)</span></h5>
+                                <h5 class="font-bold text-indigo-900 mb-4 text-sm">기대 효과 지표 <span class="normal-case font-medium text-[10px] text-indigo-500">(실측치 아님 · 도입 시 목표 수준)</span></h5>
                                 <div class="space-y-6">
                                     <div class="flex justify-between items-end">
                                         <span class="text-[11px] text-indigo-700">신입 초기 유입 증가</span>
@@ -259,7 +260,7 @@
                         </div>
                         <div class="md:w-2/5">
                             <div class="bg-amber-50/50 p-8 rounded-3xl border border-amber-100 text-center space-y-6">
-                                <h5 class="font-bold text-amber-900 text-sm uppercase">신입 성장 패스 UI 예시</h5>
+                                <h5 class="font-bold text-amber-900 text-sm">신입 성장 패스 UI 예시</h5>
                                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-amber-200">
                                     <p class="text-[10px] text-slate-400 font-bold mb-2">현재 퀘스트 달성률</p>
                                     <p class="text-3xl font-black text-amber-600">65%</p>
@@ -273,6 +274,286 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- [보강] 5. 생존 곡선 재해석 -->
+    <section class="mb-20">
+        <p class="text-xs font-black tracking-[.2em] text-indigo-600 mb-3">다시 계산하기</p>
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-5">5. 곡선을 구간별로 나누면 자원을 어디 쓸지 정해집니다</h2>
+        <p class="text-slate-600 leading-relaxed mb-8">
+            3번에서 <strong class="text-slate-900">&ldquo;1~3개월 차에 80% 이상 이탈&rdquo;</strong>이라고 정리했습니다.
+            누적으로 보면 맞지만, <strong class="text-slate-900">구간별 상대 이탈률</strong>로 환산하면 어느 시점이 진짜 고비인지가 드러납니다.
+        </p>
+
+        <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-8">
+            <table class="w-full min-w-[560px] border-collapse text-sm">
+                <thead>
+                    <tr class="bg-slate-700 text-white">
+                        <th class="p-3 text-left text-xs font-black">구간</th>
+                        <th class="p-3 text-center text-xs font-black">잔존율</th>
+                        <th class="p-3 text-center text-xs font-black">구간 감소</th>
+                        <th class="p-3 text-center text-xs font-black">상대 이탈률</th>
+                    </tr>
+                </thead>
+                <tbody>
+                            <tr class="bg-amber-50 border-b border-slate-200">
+                                <td class="p-3 font-black text-slate-800">시작 &rarr; 1개월</td>
+                                <td class="p-3 text-center font-bold text-slate-600">68.0%</td>
+                                <td class="p-3 text-center font-bold text-slate-500">32.0%p</td>
+                                <td class="p-3 text-center font-black text-amber-700">32.0%</td>
+                            </tr>
+                            <tr class="bg-red-50 border-b border-slate-200">
+                                <td class="p-3 font-black text-slate-800">1개월 &rarr; 2개월 <span class="text-[10px] font-black text-red-600">최대</span></td>
+                                <td class="p-3 text-center font-bold text-slate-600">32.0%</td>
+                                <td class="p-3 text-center font-bold text-slate-500">36.0%p</td>
+                                <td class="p-3 text-center font-black text-red-700">52.9%</td>
+                            </tr>
+                            <tr class="bg-orange-50 border-b border-slate-200">
+                                <td class="p-3 font-black text-slate-800">2개월 &rarr; 3개월</td>
+                                <td class="p-3 text-center font-bold text-slate-600">18.5%</td>
+                                <td class="p-3 text-center font-bold text-slate-500">13.5%p</td>
+                                <td class="p-3 text-center font-black text-orange-700">42.2%</td>
+                            </tr>
+                            <tr class="bg-emerald-50 border-b border-slate-200">
+                                <td class="p-3 font-black text-slate-800">3개월 &rarr; 4개월</td>
+                                <td class="p-3 text-center font-bold text-slate-600">14.0%</td>
+                                <td class="p-3 text-center font-bold text-slate-500">4.5%p</td>
+                                <td class="p-3 text-center font-black text-emerald-700">24.3%</td>
+                            </tr>
+                            <tr class="bg-emerald-50 border-b border-slate-200">
+                                <td class="p-3 font-black text-slate-800">4개월 &rarr; 6개월</td>
+                                <td class="p-3 text-center font-bold text-slate-600">12.0%</td>
+                                <td class="p-3 text-center font-bold text-slate-500">2.0%p</td>
+                                <td class="p-3 text-center font-black text-emerald-700">14.3%</td>
+                            </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-red-50 border-2 border-red-300 rounded-2xl p-7">
+                <p class="text-[11px] font-black tracking-wide text-red-600 mb-3">발견 1</p>
+                <p class="font-black text-slate-900 mb-3">고비는 2개월 차입니다</p>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    남아 있던 사람 중 <strong class="text-red-700">52.9%가 1&rarr;2개월 구간에서 빠집니다.</strong>
+                    첫 달 이탈률(32.0%)보다 훨씬 높습니다.
+                    &lsquo;1~3개월&rsquo;로 묶으면 이 봉우리가 평탄해져 보이지만, 실제로는 한 구간에 몰려 있습니다.
+                </p>
+            </div>
+            <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-7">
+                <p class="text-[11px] font-black tracking-wide text-emerald-700 mb-3">발견 2</p>
+                <p class="font-black text-slate-900 mb-3">3개월을 넘기면 안정권입니다</p>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    상대 이탈률이 <strong class="text-emerald-700">42.2% &rarr; 24.3% &rarr; 14.3%</strong>로 급격히 낮아집니다.
+                    3개월 생존자는 이미 자기 시청자를 확보한 상태로 볼 수 있습니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-slate-900 rounded-3xl p-8 md:p-10 text-white">
+            <p class="text-indigo-300 font-black text-[11px] tracking-wide mb-5">정책 설계에 주는 함의</p>
+            <p class="text-base leading-relaxed mb-5">
+                전략 02의 성장 패스는 <strong class="text-white">90일에 걸친 균등한 퀘스트 구조</strong>입니다.
+                그런데 이탈은 균등하지 않습니다. <strong class="text-indigo-300">1~2개월 구간에 집중</strong>되어 있으므로
+                보상 밀도도 그 구간에 몰아야 효과가 큽니다.
+            </p>
+            <div class="grid md:grid-cols-2 gap-5">
+                <div class="bg-white/10 rounded-2xl p-5">
+                    <p class="text-sm font-black text-indigo-300 mb-2">앞으로 당길 것</p>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        &lsquo;즐겨찾기 300명&rsquo;처럼 도달이 늦은 목표는 <strong class="text-white">2개월 차 이전에 닿을 수 있는 중간 단계</strong>로 쪼갭니다.
+                        고비를 넘기기 전에 성취가 한 번은 발생해야 합니다.
+                    </p>
+                </div>
+                <div class="bg-white/10 rounded-2xl p-5">
+                    <p class="text-sm font-black text-indigo-300 mb-2">줄여도 되는 것</p>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        3개월 이후 지원은 <strong class="text-white">비용 대비 효과가 낮습니다.</strong>
+                        이미 안정권에 든 대상이므로, 그 예산을 앞 구간으로 옮기는 것이 합리적입니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [보강] 6. 진단과 처방의 정합성 -->
+    <section class="mb-20">
+        <p class="text-xs font-black tracking-[.2em] text-amber-600 mb-3">정합성 점검</p>
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-5">6. 처방이 진단을 겨냥하고 있는지 확인합니다</h2>
+        <p class="text-slate-600 leading-relaxed mb-8">
+            문서가 지목한 이탈 원인은 <strong class="text-slate-900">&ldquo;신입 버프 종료 시점의 낙폭&rdquo;</strong>입니다.
+            즉 문제는 트래픽의 절대량이 아니라 <strong class="text-slate-900">주어졌다가 사라지는 구조</strong>에 있습니다.
+            이 기준으로 전략 01을 보면 짚어야 할 지점이 있습니다.
+        </p>
+
+        <div class="bg-amber-50 border-2 border-amber-300 rounded-3xl p-8 mb-6">
+            <p class="text-[11px] font-black tracking-wide text-amber-700 mb-4">멘토링 합방도 &lsquo;주어졌다가 사라지는&rsquo; 트래픽입니다</p>
+            <p class="text-slate-700 leading-relaxed mb-5">
+                기성 BJ의 트래픽 낙수와 메인 최상단 노출은 합방이 진행되는 동안만 유효합니다.
+                합방이 끝나면 <strong class="text-amber-800">신입 버프 종료와 똑같은 낙폭</strong>이 다시 발생합니다.
+                이 경우 정책의 실제 효과는 이탈 방지가 아니라 <strong class="text-slate-900">이탈 시점을 뒤로 미루는 것</strong>에 그칩니다.
+            </p>
+            <div class="bg-white rounded-2xl p-6 border-2 border-amber-400">
+                <p class="text-sm font-black text-slate-900 mb-3">그래서 목표 지표를 바꿔야 합니다</p>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    합방의 성과를 <strong class="text-slate-900">동시 시청자 수</strong>로 측정하면 합방 당일만 좋아 보입니다.
+                    측정해야 할 것은 <strong class="text-amber-800">합방을 통해 유입된 시청자 중 신입 채널을 팔로우하고 다음 방송에 다시 온 비율</strong>입니다.
+                    이 수치가 낮으면 트래픽이 지나갔을 뿐이고, 높으면 자체 시청자로 전환된 것입니다.
+                    <strong class="text-slate-900">고정 시청자 확보가 실제 목표</strong>이며, 노출은 수단입니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-3xl p-8 mb-6">
+            <p class="text-[11px] font-black tracking-wide text-slate-400 mb-4">멘토가 참여할 이유가 약합니다</p>
+            <p class="text-slate-700 leading-relaxed mb-5">
+                멘토 보상은 <strong class="text-slate-900">멘티가 베스트 BJ로 승급할 때</strong> 지급됩니다.
+                멘토 입장에서 비용과 보상의 시점이 어긋납니다.
+            </p>
+            <div class="grid md:grid-cols-2 gap-5 mb-5">
+                <div class="bg-red-50 rounded-2xl p-5 border border-red-200">
+                    <p class="text-xs font-black text-red-700 mb-2">비용은 즉시, 확정적</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">합방에 쓰는 방송 시간은 <strong class="text-slate-800">자기 콘텐츠를 대체</strong>합니다. 고정 시청자가 원하지 않는 구성일 수도 있습니다.</p>
+                </div>
+                <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                    <p class="text-xs font-black text-slate-700 mb-2">보상은 나중, 불확실</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">멘티의 승급은 <strong class="text-slate-800">멘토가 통제할 수 없는 결과</strong>입니다. 위 곡선대로면 대부분은 승급에 이르지 못합니다.</p>
+                </div>
+            </div>
+            <div class="bg-slate-900 rounded-2xl p-6 text-white">
+                <p class="text-xs font-black text-indigo-300 mb-2">추가로, 매칭 기준이 경쟁을 만듭니다</p>
+                <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                    AI 매칭이 <strong class="text-white">같은 카테고리 &middot; 같은 활동 시간대</strong>를 기준으로 삼으면,
+                    멘티는 멘토와 <strong class="text-indigo-300">같은 시청자를 두고 경쟁하는 관계</strong>가 됩니다.
+                    적합도가 높은 매칭일수록 멘토의 참여 동기는 낮아집니다.
+                </p>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                    <strong class="text-white">보완:</strong> 보상을 <strong class="text-indigo-300">합방 회당 즉시 정산</strong>으로 바꾸고,
+                    승급 리워드는 추가 보너스로 둡니다.
+                    매칭은 카테고리는 인접하되 <strong class="text-indigo-300">활동 시간대는 겹치지 않게</strong> 설계해 직접 경쟁을 피합니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-3xl p-8">
+            <p class="text-[11px] font-black tracking-wide text-slate-400 mb-4">노출은 예산이 아니라 재고입니다</p>
+            <p class="text-slate-700 leading-relaxed">
+                &lsquo;메인 최상단 노출&rsquo;은 별풍선 지원과 성격이 다릅니다.
+                예산은 늘릴 수 있지만 <strong class="text-slate-900">메인 상단 슬롯은 총량이 정해져 있습니다.</strong>
+                신입 합방에 슬롯을 배정하면 그만큼 <strong class="text-slate-900">기성 BJ의 노출이 줄어듭니다.</strong>
+                2번에서 SOOP의 강점으로 꼽은 것이 기성 팬덤이므로, 이 정책은
+                <strong class="text-amber-700">플랫폼의 핵심 자산과 자원을 다투는 구조</strong>입니다.
+                노출 지원은 상시 배정보다 <strong>시간대 한정 &middot; 슬롯 상한</strong>으로 설계하고, 기성 BJ의 노출 지표 변화를 함께 감시해야 합니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- [보강] 7. 전략 방향 검토 -->
+    <section class="mb-20">
+        <p class="text-xs font-black tracking-[.2em] text-indigo-600 mb-3">전략 방향</p>
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-5">7. 레이더의 약점이 전략에서 빠져 있습니다</h2>
+        <p class="text-slate-600 leading-relaxed mb-8">
+            3번의 경쟁력 레이더를 항목별 격차로 환산하면, SOOP은 <strong class="text-slate-900">다섯 항목 중 넷에서 우위</strong>입니다.
+            열위인 항목은 하나뿐인데 격차가 가장 큽니다.
+        </p>
+
+        <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-8">
+            <table class="w-full min-w-[520px] border-collapse text-sm">
+                <thead>
+                    <tr class="bg-slate-700 text-white">
+                        <th class="p-3 text-left text-xs font-black">항목</th>
+                        <th class="p-3 text-center text-xs font-black">SOOP</th>
+                        <th class="p-3 text-center text-xs font-black">치지직</th>
+                        <th class="p-3 text-center text-xs font-black">격차</th>
+                        <th class="p-3 text-center text-xs font-black">전략 대응</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-slate-200 bg-emerald-50">
+                        <td class="p-3 font-black text-slate-800">수익성</td>
+                        <td class="p-3 text-center font-bold text-slate-600">9.5</td>
+                        <td class="p-3 text-center font-bold text-slate-500">6.5</td>
+                        <td class="p-3 text-center font-black text-emerald-700">+3.0</td>
+                        <td class="p-3 text-center text-xs font-bold text-slate-500">별풍선 지원 &middot; 수수료 우대</td>
+                    </tr>
+                    <tr class="border-b border-slate-200 bg-emerald-50">
+                        <td class="p-3 font-black text-slate-800">팬덤소통</td>
+                        <td class="p-3 text-center font-bold text-slate-600">9.0</td>
+                        <td class="p-3 text-center font-bold text-slate-500">6.0</td>
+                        <td class="p-3 text-center font-black text-emerald-700">+3.0</td>
+                        <td class="p-3 text-center text-xs font-bold text-slate-500">멘토링 합방</td>
+                    </tr>
+                    <tr class="border-b border-slate-200 bg-emerald-50">
+                        <td class="p-3 font-black text-slate-800">노출지원</td>
+                        <td class="p-3 text-center font-bold text-slate-600">8.5</td>
+                        <td class="p-3 text-center font-bold text-slate-500">6.5</td>
+                        <td class="p-3 text-center font-black text-emerald-700">+2.0</td>
+                        <td class="p-3 text-center text-xs font-bold text-slate-500">최상단 노출권</td>
+                    </tr>
+                    <tr class="border-b border-slate-200 bg-red-50">
+                        <td class="p-3 font-black text-red-800">대중성</td>
+                        <td class="p-3 text-center font-bold text-slate-600">5.0</td>
+                        <td class="p-3 text-center font-black text-slate-800">9.5</td>
+                        <td class="p-3 text-center font-black text-red-700">-4.5</td>
+                        <td class="p-3 text-center text-xs font-black text-red-700">대응 없음</td>
+                    </tr>
+                    <tr>
+                        <td class="p-3 font-black text-slate-800">인프라/기술</td>
+                        <td class="p-3 text-center font-bold text-slate-600">8.5</td>
+                        <td class="p-3 text-center font-bold text-slate-500">8.0</td>
+                        <td class="p-3 text-center font-black text-slate-500">+0.5</td>
+                        <td class="p-3 text-center text-xs font-bold text-slate-500">장비 우선 지원</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="bg-indigo-50 border-2 border-indigo-200 rounded-3xl p-8">
+            <p class="text-[11px] font-black tracking-wide text-indigo-600 mb-4">해석</p>
+            <p class="text-slate-700 leading-relaxed mb-5">
+                두 전략은 모두 <strong class="text-slate-900">이미 우위인 항목(수익성 &middot; 팬덤소통 &middot; 노출)</strong>을 더 강화합니다.
+                강점을 굳히는 것은 유효한 전략이고, 신입의 &lsquo;생존 가능성&rsquo;을 높이는 데 직접 작용합니다.
+                다만 유일한 열위인 <strong class="text-red-700">대중성(격차 -4.5)</strong>에는 대응이 없습니다.
+            </p>
+            <p class="text-slate-700 leading-relaxed">
+                신입 입장에서 대중성은 <strong class="text-slate-900">성장의 상한</strong>을 결정합니다.
+                수익화가 빨라도 도달 가능한 시청자 풀이 좁으면 일정 규모에서 정체됩니다.
+                <strong class="text-indigo-700">3개월을 넘긴 생존자가 그 다음에 부딪히는 벽</strong>이 여기이므로,
+                이 문서의 범위(초기 90일 정착)에서는 대응하지 않는 것이 맞되,
+                <strong class="text-slate-900">후속 과제로 명시</strong>해 두는 편이 정확합니다.
+                정책이 다루는 구간과 다루지 않는 구간을 구분해 적는 것이 제안의 신뢰도를 높입니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- [보강] 8. 검증 지표와 한계 -->
+    <section class="mb-20">
+        <p class="text-xs font-black tracking-[.2em] text-slate-400 mb-3">검증 지표와 한계</p>
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-5">8. 측정할 지표와 이 리포트의 한계</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white border-2 border-emerald-200 rounded-3xl p-7">
+                <p class="text-[11px] font-black tracking-wide text-emerald-700 mb-4">측정할 지표</p>
+                <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                    <li>&bull; <strong class="text-slate-800">합방 후 팔로우 전환율:</strong> 합방 유입 시청자 중 신입 채널을 팔로우하고 <strong>다음 방송에 재방문</strong>한 비율 &mdash; 6번의 핵심 판정</li>
+                    <li>&bull; <strong class="text-slate-800">구간별 잔존율:</strong> 특히 <strong>1&rarr;2개월 상대 이탈률 52.9%</strong>가 내려가는지</li>
+                    <li>&bull; <strong class="text-slate-800">고정 시청자 수:</strong> 합방 없는 일반 방송의 평균 동시 시청자 추이</li>
+                    <li>&bull; <strong class="text-slate-800">멘토 참여율과 재참여율:</strong> 낮으면 인센티브 설계 문제</li>
+                    <li>&bull; <strong class="text-slate-800">기성 BJ 노출 지표:</strong> 슬롯 배정으로 인한 잠식 여부</li>
+                    <li>&bull; <strong class="text-slate-800">패스 단계별 도달률:</strong> 특정 퀘스트에서 급락하면 그 목표가 과도한 것</li>
+                </ul>
+            </div>
+            <div class="bg-white border-2 border-slate-200 rounded-3xl p-7">
+                <p class="text-[11px] font-black tracking-wide text-slate-400 mb-4">이 리포트의 한계</p>
+                <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                    <li>&bull; 하단 출처에 명시된 대로 <strong class="text-slate-800">공개 데이터와 시장 추정치를 재가공</strong>한 것이며 플랫폼 내부 지표가 아닙니다.</li>
+                    <li>&bull; 생존 곡선의 값은 <strong class="text-slate-800">공개 리텐션 통계 기반 추정</strong>입니다. 구간별 이탈률은 그 값에서 산출한 것이므로 원본 추정의 오차를 함께 물려받습니다.</li>
+                    <li>&bull; 경쟁력 레이더의 점수는 <strong class="text-slate-800">정성 평가를 수치화한 것</strong>이며 측정 단위가 정의된 지표가 아닙니다. 항목 간 격차의 크기는 비교 참고용입니다.</li>
+                    <li>&bull; 기대 효과는 문서에 표기된 대로 <strong class="text-slate-800">실측치가 아닌 목표 수준</strong>입니다.</li>
+                    <li>&bull; 노출 슬롯의 총량과 배정 규칙은 <strong class="text-slate-800">플랫폼 내부 정책</strong>이라 잠식 규모는 추정하지 않았습니다.</li>
+                </ul>
             </div>
         </div>
     </section>

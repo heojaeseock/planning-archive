@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap');
         
         /* 줄바꿈 전문가의 핵심 설정 */
         body { 
@@ -62,6 +61,7 @@
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td { text-wrap: pretty; }
     </style>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 </head>
 <body class="antialiased selection:bg-emerald-200 selection:text-emerald-900">
 
@@ -259,7 +259,7 @@
             <div class="text-center mb-12 relative z-10">
                 <span class="inline-block px-4 py-1.5 mb-4 text-xs font-bold text-emerald-200 bg-emerald-800 rounded-full border border-emerald-700">전략 2. 일관성 유지 체계</span>
                 <h2 class="text-2xl md:text-3xl font-bold text-white mb-4 text-balance">
-                    애매한 예외 상황(Edge Case) 대응 매뉴얼
+                    애매한 예외 상황 대응 매뉴얼
                 </h2>
                 <p class="text-slate-300 max-w-2xl mx-auto text-lg text-balance">
                     <span class="phrase">서버 장애 등 위기 상황을 통제했던 경험으로,</span> <span class="phrase">AI가 판단하기 까다로운 주관적 질문에도</span> <span class="phrase">흔들리지 않는 3단계 지침을 제시합니다.</span>
@@ -375,6 +375,245 @@
         </section>
 
         <!-- Conclusion -->
+
+        <!-- [보강] 전략의 효과를 숫자로 -->
+        <section id="quantify">
+            <div class="mb-10">
+                <p class="text-xs font-black tracking-[.2em] text-indigo-600 mb-3">수치로 보기</p>
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4 leading-snug">3. 효과를 숫자로 정리하면</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    전략 1의 파이프라인은 <strong class="text-slate-900">10,000건에서 3,500건을 걸러냅니다.</strong>
+                    이 수치가 무엇을 의미하는지, 그리고 문서에 함께 제시된 시간 절감 수치와 어떤 관계인지 정리했습니다.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-5 mb-8">
+                <div class="bg-white border-2 border-slate-200 rounded-2xl p-6 text-center">
+                    <p class="text-[11px] font-black tracking-wide text-slate-400 mb-2">사전 제거</p>
+                    <p class="text-4xl font-black text-slate-900">35<span class="text-lg">%</span></p>
+                    <p class="text-[11px] text-slate-500 mt-2">3,500건 (형식 2,000 + 금칙어 1,500)</p>
+                </div>
+                <div class="bg-white border-2 border-indigo-300 rounded-2xl p-6 text-center">
+                    <p class="text-[11px] font-black tracking-wide text-indigo-500 mb-2">사람이 볼 물량</p>
+                    <p class="text-4xl font-black text-indigo-600">65<span class="text-lg">%</span></p>
+                    <p class="text-[11px] text-slate-500 mt-2">6,500건 &mdash; 문맥·윤리 판단 대상</p>
+                </div>
+                <div class="bg-slate-900 rounded-2xl p-6 text-center text-white">
+                    <p class="text-[11px] font-black tracking-wide text-emerald-400 mb-2">정확도 곡선 회피</p>
+                    <p class="text-4xl font-black text-emerald-400">39<span class="text-lg">%p</span></p>
+                    <p class="text-[11px] text-slate-400 mt-2">99% &rarr; 60% 하락 구간을 덜 밟음</p>
+                </div>
+            </div>
+
+            <div class="bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-8 mb-8">
+                <p class="text-[11px] font-black tracking-wide text-indigo-600 mb-4">효과는 물량 감소만이 아닙니다</p>
+                <p class="text-slate-700 leading-relaxed mb-4">
+                    2번에서 확인한 정확도 곡선은 <strong class="text-slate-900">시간이 흐를수록 판정 품질이 떨어진다</strong>는 것을 보여줍니다.
+                    여기에 물량 35% 감소를 겹치면 효과가 두 겹으로 작동합니다.
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-white rounded-xl p-5 border border-indigo-200">
+                        <p class="text-sm font-black text-slate-900 mb-2">1차 효과 &middot; 볼 것이 줄어듭니다</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">기계가 걸러낸 3,500건만큼 평가 대상이 감소합니다. 직접적이고 계산이 쉬운 효과입니다.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-5 border-2 border-indigo-400">
+                        <p class="text-sm font-black text-slate-900 mb-2">2차 효과 &middot; 남은 판정의 품질이 올라갑니다</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">작업 시간이 짧아져 <strong class="text-indigo-700">정확도가 급락하는 후반 구간에 도달하기 전에 끝납니다.</strong> 같은 사람이 같은 데이터를 봐도 판정 품질이 달라집니다.</p>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-700 leading-relaxed mt-5 pt-5 border-t border-indigo-200">
+                    이 2차 효과가 이 제안의 핵심입니다. 단순 반복을 걷어내는 것은 <strong class="text-slate-900">시간을 아끼는 일이면서 동시에 품질을 올리는 일</strong>입니다.
+                    평가자가 오직 문맥과 윤리 판단에만 집중한다는 전략 1의 서술이 여기서 근거를 갖습니다.
+                </p>
+            </div>
+
+            <div class="bg-white border-2 border-amber-300 rounded-2xl p-8">
+                <p class="text-[11px] font-black tracking-wide text-amber-600 mb-4">두 수치를 함께 볼 때의 주의</p>
+                <p class="text-slate-700 leading-relaxed mb-5">
+                    문서에는 <strong class="text-slate-900">제거율 35%</strong>와 <strong class="text-slate-900">소요 시간 40시간 &rarr; 10시간(75% 절감)</strong>이 함께 제시됩니다.
+                    이 두 숫자는 <strong class="text-amber-700">같은 대상을 측정한 값이 아닙니다.</strong>
+                </p>
+                <div class="overflow-x-auto rounded-xl border-2 border-slate-200 mb-5">
+                    <table class="w-full min-w-[560px] border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-slate-700 text-white">
+                                <th class="p-3 text-left text-xs font-black">수치</th>
+                                <th class="p-3 text-left text-xs font-black">측정 대상</th>
+                                <th class="p-3 text-left text-xs font-black">해석</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-slate-200">
+                                <td class="p-3 font-black text-slate-800 align-top">35% 제거</td>
+                                <td class="p-3 text-slate-600 align-top text-xs leading-relaxed">전체 데이터 물량</td>
+                                <td class="p-3 text-slate-600 align-top text-xs leading-relaxed">평가 대상 건수가 줄어드는 비율</td>
+                            </tr>
+                            <tr class="bg-slate-50">
+                                <td class="p-3 font-black text-slate-800 align-top">75% 시간 절감</td>
+                                <td class="p-3 text-slate-600 align-top text-xs leading-relaxed"><strong class="text-slate-800">단순 반복 작업</strong>에 쓰던 시간</td>
+                                <td class="p-3 text-slate-600 align-top text-xs leading-relaxed">전체 평가 시간이 아니라, 기계적으로 걸러낼 항목을 사람이 확인하던 시간</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    전체 평가 시간을 물량에 단순 비례한다고 보면 <strong class="text-slate-900">40시간 &times; 0.65 = 26시간</strong>이 됩니다.
+                    75% 절감은 단순 반복 구간에 한정된 값이므로,
+                    <strong class="text-amber-700">보고할 때는 두 수치의 대상을 명시</strong>해야 합니다.
+                    구분 없이 제시하면 &ldquo;35% 걸러서 75% 줄었다&rdquo;는 설명이 되어 근거를 되묻게 됩니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- [보강] 사전 필터링의 위험 -->
+        <section id="filter-risk">
+            <div class="mb-10">
+                <p class="text-xs font-black tracking-[.2em] text-rose-600 mb-3">리스크</p>
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4 leading-snug">4. 규칙 기반 필터가 지워버릴 수 있는 것</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    사전 필터링의 전제는 <strong class="text-slate-900">&ldquo;기계적으로 걸러낼 수 있는 불량 데이터&rdquo;</strong>가 명확히 구분된다는 것입니다.
+                    실제로는 <strong class="text-rose-600">정상 데이터가 규칙에 걸리는 경우</strong>가 있고, 그 손실은 눈에 보이지 않습니다.
+                </p>
+            </div>
+
+            <div class="bg-rose-50 border-2 border-rose-300 rounded-2xl p-8 mb-6">
+                <p class="text-[11px] font-black tracking-wide text-rose-600 mb-5">가장 위험한 경우</p>
+                <div class="bg-white rounded-xl p-6 border-2 border-rose-400 mb-5">
+                    <p class="font-black text-slate-900 mb-3">금칙어 필터가 안전성 학습 데이터를 지웁니다</p>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                        &ldquo;이 표현이 왜 문제가 되나요?&rdquo;, &ldquo;이런 요청은 거절해야 하나요?&rdquo; 같은 질문에는
+                        <strong class="text-slate-900">금칙어가 포함될 수밖에 없습니다.</strong>
+                        그런데 이런 데이터가 바로 AI에게 <strong class="text-rose-700">무엇을 거절해야 하는지 가르치는 자료</strong>입니다.
+                    </p>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        금칙어 리스트와 자동 대조해 반려하면, 모델이 가장 학습해야 할 영역의 데이터가
+                        <strong class="text-rose-700">평가자 눈에 닿기도 전에 사라집니다.</strong>
+                        더 나쁜 것은 제거된 사실이 로그에만 남아 아무도 문제를 인지하지 못한다는 점입니다.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-white rounded-xl p-5 border border-rose-200">
+                        <p class="text-xs font-black text-rose-700 mb-2">글자 수 초과 규칙</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">상세한 설명을 요구하는 질문에는 <strong class="text-slate-800">긴 답변이 정답</strong>입니다. 길이만으로 자르면 고품질 장문 데이터가 함께 빠집니다.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-5 border border-rose-200">
+                        <p class="text-xs font-black text-rose-700 mb-2">자음 반복 규칙</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">감정 표현이나 구어체를 다루는 데이터에서는 <strong class="text-slate-800">&lsquo;ㅋㅋㅋ&rsquo;가 유효한 입력</strong>입니다. 대화형 모델 학습에서는 오히려 필요한 표본입니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 rounded-2xl p-8 text-white">
+                <p class="text-[11px] font-black tracking-wide text-emerald-400 mb-5">보완 설계 &mdash; 제거에서 분류로</p>
+                <div class="space-y-4">
+                    <div class="bg-white/10 rounded-xl p-5">
+                        <p class="text-sm font-black text-emerald-300 mb-2">1. 삭제하지 않고 별도 큐로 보냅니다</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            규칙에 걸린 데이터를 반려 처리하는 대신 <strong class="text-white">&lsquo;규칙 위반 후보&rsquo; 큐</strong>로 분리합니다.
+                            평가자의 주 작업 흐름에서는 빠지므로 효율은 그대로 얻고, 데이터는 보존됩니다.
+                        </p>
+                    </div>
+                    <div class="bg-white/10 rounded-xl p-5">
+                        <p class="text-sm font-black text-emerald-300 mb-2">2. 오제거율을 측정합니다</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            분리된 큐에서 <strong class="text-white">주기적으로 표본을 뽑아 사람이 확인</strong>합니다.
+                            정상 데이터가 섞인 비율이 곧 오제거율이고, 이 값이 필터 규칙을 조정하는 근거가 됩니다.
+                            측정하지 않으면 필터가 얼마나 손해를 내고 있는지 알 수 없습니다.
+                        </p>
+                    </div>
+                    <div class="bg-white/10 rounded-xl p-5">
+                        <p class="text-sm font-black text-emerald-300 mb-2">3. 안전 관련 데이터는 규칙에서 제외합니다</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            금칙어가 <strong class="text-white">질문의 소재인 경우와 공격인 경우</strong>를 규칙만으로 가르기는 어렵습니다.
+                            금칙어 규칙은 자동 반려가 아니라 <strong class="text-white">우선 검토 표시</strong>로만 쓰고, 판정은 사람이 하도록 남깁니다.
+                        </p>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-300 leading-relaxed mt-6 pt-6 border-t border-white/20">
+                    이렇게 바꾸면 전략 1의 효과는 조금 줄어듭니다. 금칙어 1,500건이 자동 반려에서 &lsquo;우선 검토&rsquo;로 옮겨지므로
+                    <strong class="text-emerald-300">확실한 제거는 형식 검증 2,000건(20%)</strong>이 됩니다.
+                    <strong class="text-white">35%를 20%로 낮춰 보고하는 것이 오히려 안전합니다</strong> &mdash;
+                    나중에 오제거 문제가 드러나면 효율 수치 전체가 신뢰를 잃기 때문입니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- [보강] 전략 2 검토 -->
+        <section id="strategy2-review">
+            <div class="mb-10">
+                <p class="text-xs font-black tracking-[.2em] text-amber-600 mb-3">검토</p>
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4 leading-snug">5. 3단계 지침의 순서를 다시 봅니다</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    전략 2의 1단계는 <strong class="text-slate-900">&ldquo;문제가 보이면 추가적인 고민 없이 즉시 반려&rdquo;</strong>입니다.
+                    판정 속도를 높이는 데는 효과적이지만, 4번에서 본 문제와 같은 구조를 만듭니다.
+                </p>
+            </div>
+
+            <div class="bg-white border-2 border-amber-300 rounded-2xl p-8 mb-6">
+                <p class="text-[11px] font-black tracking-wide text-amber-600 mb-4">1단계가 2단계를 막습니다</p>
+                <p class="text-slate-700 leading-relaxed mb-5">
+                    2단계 &lsquo;질문 의도 파악&rsquo;은 <strong class="text-slate-900">표현이 아니라 목적을 보라</strong>는 지침입니다.
+                    그런데 1단계에서 키워드만 보고 즉시 반려하면, 의도를 볼 기회 자체가 사라집니다.
+                    문서가 든 예시 &ldquo;강남역 대박 맛집&rdquo;처럼 <strong class="text-slate-900">표현은 거칠지만 의도는 정상</strong>인 경우가 실제로는 훨씬 넓습니다.
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-amber-50 rounded-xl p-5 border border-amber-200">
+                        <p class="text-xs font-black text-amber-700 mb-2">현재 순서</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">키워드 확인 &rarr; <strong class="text-slate-800">즉시 반려</strong> &rarr; (의도 파악 기회 없음)</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-xl p-5 border-2 border-emerald-300">
+                        <p class="text-xs font-black text-emerald-700 mb-2">보완 순서</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">키워드 확인 &rarr; <strong class="text-slate-800">위반 후보로 분류</strong> &rarr; 의도 파악 &rarr; 판정</p>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed mt-5">
+                    <strong class="text-slate-800">즉시 반려를 유지할 영역:</strong> 의도와 무관하게 금지되는 항목
+                    (아동 관련 불법 소재 등)은 1단계에서 끝내는 것이 맞습니다.
+                    <strong class="text-slate-800">단계 구분의 기준은 &lsquo;명백함&rsquo;이 아니라 &lsquo;의도가 판정을 바꿀 수 있는지&rsquo;</strong>여야 합니다.
+                    의도에 따라 결론이 달라질 수 있는 항목을 1단계에 두면 오반려가 발생합니다.
+                </p>
+            </div>
+
+            <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-8">
+                <p class="text-[11px] font-black tracking-wide text-emerald-700 mb-4">3단계는 그대로 두는 것이 맞습니다</p>
+                <p class="text-slate-700 leading-relaxed">
+                    판단이 서지 않는 사례를 <strong class="text-slate-900">개인의 감으로 넘기지 않고 기록으로 축적</strong>하는 설계는 이 제안의 가장 강한 부분입니다.
+                    평가 기준의 일관성은 지침 문서의 완성도가 아니라 <strong class="text-emerald-700">예외 사례가 쌓이는 속도</strong>로 결정됩니다.
+                    여기에 <strong class="text-slate-900">평가자 간 일치도 측정</strong>을 붙이면, 기록이 실제로 일관성을 높이고 있는지 확인할 수 있습니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- [보강] 검증 지표와 한계 -->
+        <section id="metrics">
+            <div class="mb-10">
+                <p class="text-xs font-black tracking-[.2em] text-slate-400 mb-3">검증 지표와 한계</p>
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4 leading-snug">6. 측정할 지표와 이 제안의 한계</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white border-2 border-emerald-200 rounded-2xl p-7">
+                    <p class="text-[11px] font-black tracking-wide text-emerald-700 mb-4">측정할 지표</p>
+                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                        <li>&bull; <strong class="text-slate-800">오제거율:</strong> 필터에 걸린 데이터 표본 중 실제 정상 데이터의 비율 &mdash; 4번 보완의 핵심 지표</li>
+                        <li>&bull; <strong class="text-slate-800">평가자 간 일치도:</strong> 같은 데이터를 두 명 이상이 평가했을 때 판정이 같은 비율 &mdash; 전략 2의 실효를 보는 유일한 방법</li>
+                        <li>&bull; <strong class="text-slate-800">시간대별 정확도 실측:</strong> 2번의 곡선은 예상 추이이므로, 정답이 확인된 표본을 시간대별로 배치해 실제 하락 여부를 측정합니다</li>
+                        <li>&bull; <strong class="text-slate-800">건당 처리 시간:</strong> 필터 도입 전후, 그리고 시간대별 변화</li>
+                        <li>&bull; <strong class="text-slate-800">예외 사례 축적 속도:</strong> 가이드라인에 새로 등재된 사례 수와, 등재 이후 같은 유형의 재문의 감소</li>
+                    </ul>
+                </div>
+                <div class="bg-white border-2 border-slate-200 rounded-2xl p-7">
+                    <p class="text-[11px] font-black tracking-wide text-slate-400 mb-4">이 제안의 한계</p>
+                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                        <li>&bull; 시간대별 정확도 곡선은 <strong class="text-slate-800">예상 추이</strong>로 명시된 값이며 실측이 아닙니다. 하락의 방향은 일반적으로 관찰되지만 기울기는 업무 구성과 개인차에 좌우됩니다.</li>
+                        <li>&bull; 10,000건과 제거 건수는 <strong class="text-slate-800">파이프라인 구조를 보여주기 위한 예시값</strong>입니다. 실제 비율은 원본 데이터의 상태에 따라 크게 달라집니다.</li>
+                        <li>&bull; 40시간 &rarr; 10시간은 <strong class="text-slate-800">단순 반복 작업 구간의 추정값</strong>이며 전체 평가 시간이 아닙니다.</li>
+                        <li>&bull; 필터 규칙의 실제 정확도는 <strong class="text-slate-800">해당 도메인의 데이터로 검증해야</strong> 알 수 있습니다. 이 문서는 검증 방법까지만 제시했습니다.</li>
+                        <li>&bull; 평가 도구와 데이터 접근 권한은 조직마다 달라, <strong class="text-slate-800">오피스 툴 기반 필터링이 가능한 환경인지</strong>가 선행 조건입니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <section id="conclusion" class="text-center pb-12">
             <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-10 text-balance">
                 데이터의 품질이 곧 대형 포털 AI의 경쟁력입니다

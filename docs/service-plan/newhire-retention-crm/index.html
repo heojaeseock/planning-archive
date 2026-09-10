@@ -60,6 +60,7 @@
                 <a href="#gaming" class="hover:text-brand-blue transition-colors">게임 기법</a>
                 <a href="#roadmap" class="hover:text-brand-blue transition-colors">운영안</a>
                 <a href="#action" class="hover:text-brand-blue transition-colors">실행 과제</a>
+                <a href="#recalc" class="hover:text-brand-blue transition-colors">재계산</a>
             </div>
         </div>
     </nav>
@@ -121,7 +122,7 @@
                         <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-red-400"></span> 이탈 위험도</div>
                     </div>
                 </div>
-                <h4 class="font-bold text-gray-700 mb-8 text-sm uppercase tracking-widest">입사 후 90일간의 리텐션 위기 구간 분석</h4>
+                <h4 class="font-bold text-gray-700 mb-8 text-sm tracking-wide">입사 후 90일간의 리텐션 위기 구간 분석</h4>
                 <div class="chart-container">
                     <canvas id="emotionChart"></canvas>
                 </div>
@@ -222,7 +223,7 @@
         <section id="action" class="grid grid-cols-1 lg:grid-cols-2 gap-10 scroll-mt-24">
             <!-- 기대 효과 -->
             <div class="bg-brand-blue text-white p-12 rounded-3xl shadow-xl space-y-10">
-                <h2 class="text-2xl font-bold border-b border-white/20 pb-4 italic">Business Impact</h2>
+                <h2 class="text-2xl font-bold border-b border-white/20 pb-4">기대 효과</h2>
                 <div class="space-y-8">
                     <div class="flex items-start gap-5">
                         <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center text-2xl">📈</div>
@@ -248,9 +249,9 @@
                 </div>
             </div>
 
-            <!-- 실행 과제 (Action Items) -->
+            <!-- 실행 과제 -->
             <div class="bg-white p-12 rounded-3xl border border-gray-100 shadow-sm space-y-8">
-                <h2 class="text-2xl font-bold text-gray-800 border-b border-gray-100 pb-4 italic">Action Items</h2>
+                <h2 class="text-2xl font-bold text-gray-800 border-b border-gray-100 pb-4">실행 과제</h2>
                 <div class="space-y-3">
                     <div class="action-item-card p-5 bg-gray-50 rounded-2xl border border-transparent">
                         <div class="flex items-center gap-4">
@@ -280,10 +281,424 @@
             </div>
         </section>
 
+
+        <section id="recalc" class="scroll-mt-24 space-y-10">
+            <div class="flex items-center gap-3">
+                <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
+                <h2 class="text-2xl font-bold text-gray-800">5. 위기 구간과 개입 시점의 어긋남</h2>
+            </div>
+
+            <p class="text-gray-600 leading-relaxed">
+                위기 구간 차트의 두 곡선을 구간별 변화량으로 바꾸고, 운영안의 개입 시점을 같은 줄에 놓았습니다.
+                개입이 필요한 구간과 개입이 배치된 구간이 어긋나 있습니다.
+            </p>
+
+            <div class="overflow-x-auto rounded-3xl border border-gray-200 bg-white">
+                <table class="w-full min-w-[620px] border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-gray-800 text-white">
+                            <th class="p-3 text-left text-xs font-bold">시점</th>
+                            <th class="p-3 text-center text-xs font-bold">심리적 안정감</th>
+                            <th class="p-3 text-center text-xs font-bold">이탈 위험도</th>
+                            <th class="p-3 text-center text-xs font-bold">안정감 변화</th>
+                            <th class="p-3 text-center text-xs font-bold">위험도 변화</th>
+                            <th class="p-3 text-center text-xs font-bold">운영안 개입</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr class=" border-b border-gray-100">
+                                <td class="p-3 font-bold text-gray-800">입사일</td>
+                                <td class="p-3 text-center text-gray-600">100</td>
+                                <td class="p-3 text-center text-gray-600">0</td>
+                                <td class="p-3 text-center font-bold text-gray-700">—</td>
+                                <td class="p-3 text-center font-bold text-gray-700">—</td>
+                                <td class="p-3 text-center text-xs font-bold text-gray-400">없음</td>
+                            </tr>
+                            <tr class="bg-blue-50/60 border-b border-gray-100">
+                                <td class="p-3 font-bold text-gray-800">D+7</td>
+                                <td class="p-3 text-center text-gray-600">55</td>
+                                <td class="p-3 text-center text-gray-600">30</td>
+                                <td class="p-3 text-center font-bold text-gray-700">-45</td>
+                                <td class="p-3 text-center font-bold text-gray-700">+30</td>
+                                <td class="p-3 text-center text-xs font-bold text-brand-blue">D+5 아티클 발송</td>
+                            </tr>
+                            <tr class=" border-b border-gray-100">
+                                <td class="p-3 font-bold text-gray-800">D+14</td>
+                                <td class="p-3 text-center text-gray-600">75</td>
+                                <td class="p-3 text-center text-gray-600">20</td>
+                                <td class="p-3 text-center font-bold text-gray-700">+20</td>
+                                <td class="p-3 text-center font-bold text-gray-700">-10</td>
+                                <td class="p-3 text-center text-xs font-bold text-gray-400">없음</td>
+                            </tr>
+                            <tr class="bg-blue-50/60 border-b border-gray-100">
+                                <td class="p-3 font-bold text-gray-800">D+30</td>
+                                <td class="p-3 text-center text-gray-600">45</td>
+                                <td class="p-3 text-center text-gray-600">65</td>
+                                <td class="p-3 text-center font-bold text-gray-700">-30</td>
+                                <td class="p-3 text-center font-bold text-gray-700">+45</td>
+                                <td class="p-3 text-center text-xs font-bold text-brand-blue">D+30 패스권 지급</td>
+                            </tr>
+                            <tr class=" border-b border-gray-100">
+                                <td class="p-3 font-bold text-gray-800">D+60</td>
+                                <td class="p-3 text-center text-gray-600">60</td>
+                                <td class="p-3 text-center text-gray-600">40</td>
+                                <td class="p-3 text-center font-bold text-gray-700">+15</td>
+                                <td class="p-3 text-center font-bold text-gray-700">-25</td>
+                                <td class="p-3 text-center text-xs font-bold text-gray-400">없음</td>
+                            </tr>
+                            <tr class="bg-red-50 border-b border-gray-100">
+                                <td class="p-3 font-bold text-gray-800">D+90</td>
+                                <td class="p-3 text-center text-gray-600">30</td>
+                                <td class="p-3 text-center text-gray-600">90</td>
+                                <td class="p-3 text-center font-bold text-gray-700">-30</td>
+                                <td class="p-3 text-center font-bold text-gray-700">+50</td>
+                                <td class="p-3 text-center text-xs font-bold text-red-600">없음</td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm text-center">
+                    <p class="text-xs font-bold text-gray-400 mb-2">위험도가 가장 크게 오르는 구간</p>
+                    <p class="text-3xl font-black text-red-500 mb-1">D+60에서 D+90</p>
+                    <p class="text-xs text-gray-500">40에서 90으로 50 상승</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm text-center">
+                    <p class="text-xs font-bold text-gray-400 mb-2">안정감이 가장 낮은 시점</p>
+                    <p class="text-3xl font-black text-red-500 mb-1">D+90</p>
+                    <p class="text-xs text-gray-500">입사일 100의 30% 수준</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm text-center">
+                    <p class="text-xs font-bold text-gray-400 mb-2">그 구간의 개입</p>
+                    <p class="text-3xl font-black text-gray-800 mb-1">없음</p>
+                    <p class="text-xs text-gray-500">운영안은 D+5와 D+30 두 번</p>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 text-white p-10 rounded-3xl space-y-6">
+                <p class="text-sm font-bold text-brand-blue">매출이 확정되는 시점에 개입이 없습니다</p>
+                <p class="text-gray-300 leading-relaxed">
+                    문서는 차트 아래에 <strong class="text-white">3개월 차를 결단기</strong>로 적었고,
+                    도입부에서는 <strong class="text-white">3개월 근속 여부가 매출 확정과 직결된다</strong>고 했습니다.
+                    두 진술을 합치면 D+90이 이 기획에서 가장 중요한 시점입니다.
+                    그런데 곡선상 D+60에서 D+90 사이는 <strong class="text-red-400">위험도가 50 오르고 안정감이 30 내려가는</strong>
+                    유일한 구간인데도 운영안의 개입은 D+30에서 멈춥니다.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    나머지 구간에는 회복이 뒤따릅니다.
+                    D+7의 55는 D+14에 <strong class="text-white">75로 스스로 올라오고</strong>,
+                    D+30의 45도 D+60에 <strong class="text-white">60으로 올라옵니다.</strong>
+                    반면 D+90 다음 지점은 차트에 없습니다.
+                    <strong class="text-brand-blue">회복 구간에는 개입이 두 번 들어가고, 회복이 없는 구간에는 들어가지 않습니다.</strong>
+                    D+75 전후에 한 번을 더 넣는 것이 이 곡선이 요구하는 배치입니다.
+                </p>
+                <div class="bg-white/10 p-6 rounded-2xl border border-white/20">
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        같은 이유로 <strong class="text-white">지금 배치로는 효과를 증명하기도 어렵습니다.</strong>
+                        D+5와 D+30 개입은 모두 곡선이 자연히 올라오는 구간 앞에 놓여 있어서,
+                        근속률이 올라가도 개입의 결과인지 원래의 적응 흐름인지 구분되지 않습니다.
+                        효과를 주장하려면 개입을 받지 않는 집단을 함께 두고 비교해야 합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="scroll-mt-24 space-y-10">
+            <div class="flex items-center gap-3">
+                <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
+                <h2 class="text-2xl font-bold text-gray-800">6. 세 가지 원인과 두 가지 개입의 대응 관계</h2>
+            </div>
+
+            <p class="text-gray-600 leading-relaxed">
+                1장이 초기 퇴사 원인을 세 가지로 정리했습니다. 3장의 운영안이 각 원인에 어떻게 닿는지 짚어봤습니다.
+            </p>
+
+            <div class="space-y-4">
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">📋</span>
+                        <div>
+                            <p class="font-bold text-gray-900 mb-2">직무 기대치 불일치 — 대응이 없지만 플랫폼이 유일하게 다룰 수 있는 원인입니다</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                면접에서 들은 업무와 실제 업무가 다르다는 문제입니다.
+                                D+5 아티클도 D+30 패스권도 이 원인에는 닿지 않습니다.
+                                그런데 채용 플랫폼은 <strong class="text-gray-900">공고를 올린 고객사와 입사한 합격자 양쪽을 모두 아는</strong>
+                                거의 유일한 위치에 있습니다.
+                                입사 후 실제 업무가 공고와 얼마나 달랐는지를 합격자에게 물어 고객사 공고 품질에 반영하면,
+                                <strong class="text-brand-blue">다음 채용의 미스매치를 줄이는 자산</strong>이 됩니다.
+                                도입부가 말한 이미 가진 자산 활용에 가장 잘 맞는 것이 이 데이터입니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">🧊</span>
+                        <div>
+                            <p class="font-bold text-gray-900 mb-2">온보딩 방치와 소외감 — D+5 아티클이 부분적으로 대응합니다</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                질문하는 법을 다룬 아티클은 소외감의 원인 중 합격자 본인이 바꿀 수 있는 부분을 겨냥합니다.
+                                다만 온보딩 체계 자체는 고객사가 운영하는 것이므로,
+                                <strong class="text-gray-900">플랫폼이 할 수 있는 일은 개인의 대처를 돕는 데까지</strong>입니다.
+                                이 한계를 제안서에 적어두면 기대치를 과하게 잡지 않습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">📉</span>
+                        <div>
+                            <p class="font-bold text-gray-900 mb-2">불확실한 피드백 — 대응이 없는 것이 맞습니다</p>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                업무 성과에 대한 피드백은 고객사 조직 안에서 이루어집니다.
+                                외부 플랫폼이 개입할 권한이 없는 영역이므로,
+                                <strong class="text-gray-900">대응하지 않은 것이 판단 착오가 아니라 범위 설정</strong>입니다.
+                                다만 제안서에 그렇게 적혀 있지 않으면 빠뜨린 것으로 읽힐 수 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 p-10 rounded-3xl border border-blue-100">
+                <p class="text-sm font-bold text-brand-blue mb-4">자동 일괄 발송이라는 선택은 적절합니다</p>
+                <p class="text-gray-700 leading-relaxed">
+                    차트의 심리적 안정감은 <strong class="text-gray-900">플랫폼이 관측할 수 없는 값</strong>입니다.
+                    합격자가 지금 흔들리는지를 알 방법이 없으므로 개인별로 시점을 조절할 수 없습니다.
+                    문서가 개인화 대신 <strong class="text-brand-blue">시점 기준 일괄 자동 발송</strong>을 택한 것은
+                    가진 데이터로 가능한 유일한 방식이고, 운영 공수도 최소가 됩니다.
+                    게임의 단계별 튜토리얼을 가져온 이유가 여기서 설명됩니다.
+                    다만 같은 이유로 <strong class="text-gray-900">개입이 필요한 사람에게만 갈 수는 없어서</strong>,
+                    잘 적응한 합격자에게도 같은 메시지가 갑니다. 다음 장의 부작용이 여기서 나옵니다.
+                </p>
+            </div>
+        </section>
+
+        <section class="scroll-mt-24 space-y-10">
+            <div class="flex items-center gap-3">
+                <div class="w-2 h-8 bg-red-400 rounded-full"></div>
+                <h2 class="text-2xl font-bold text-gray-800">7. 이 제안이 치르는 대가</h2>
+            </div>
+
+            <p class="text-gray-600 leading-relaxed">
+                개입 수단이 세 가지입니다. 알림 메시지, 유료 패스권, 프로필 뱃지.
+                세 가지 모두 <strong class="text-gray-900">발신자가 채용 플랫폼이라는 사실</strong> 때문에 의도와 반대로 읽힐 수 있습니다.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                    <p class="text-xs font-bold text-red-500 mb-3">알림 메시지</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        입사한 사람은 구직 앱의 알림을 끄려는 시점입니다.
+                        이 구간에 플랫폼이 계속 말을 걸면 <strong class="text-gray-900">응원으로 읽힐 수도, 이직 권유로 읽힐 수도</strong> 있습니다.
+                        메시지 안에 이직 관련 문구가 하나도 없어야 의도가 유지됩니다.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                    <p class="text-xs font-bold text-red-500 mb-3">유료 패스권</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        패스권이 제공하는 기능이 <strong class="text-gray-900">직무 학습 쪽인지 구직 활동 쪽인지에 따라 메시지의 의미가 정반대</strong>가 됩니다.
+                        구직 기능이 포함되어 있으면, 근속을 돕겠다며 이직 도구를 주는 모양이 됩니다.
+                        지급 범위를 학습 콘텐츠로 한정해야 합니다.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                    <p class="text-xs font-bold text-red-500 mb-3">프로필 뱃지</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        뱃지가 붙는 곳은 <strong class="text-gray-900">구직 프로필</strong>입니다.
+                        1개월 안착 뱃지가 공개되면 재직 사실과 근속 기간이 함께 노출되어,
+                        오히려 외부 제안을 받기 쉬운 상태가 됩니다.
+                        기본값을 본인 열람으로 두고 공개 여부를 선택하게 해야 합니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 text-white p-10 rounded-3xl space-y-6">
+                <p class="text-sm font-bold text-yellow-400">추가 예산이 없다는 말은 현금 지출이 없다는 뜻입니다</p>
+                <p class="text-gray-300 leading-relaxed">
+                    도입부는 <strong class="text-white">추가 예산 없이</strong>를 강조합니다.
+                    새 시스템을 사지 않는다는 점에서 맞습니다.
+                    다만 패스권을 무료로 주면 <strong class="text-yellow-400">유료 전환 가능성이 있던 사용자를 미리 소진</strong>하는 것이고,
+                    알림 발송에는 건당 비용이 붙습니다.
+                    실행 과제는 개발팀, 마케팅팀, 운영팀 <strong class="text-white">세 조직의 공수</strong>를 요구합니다.
+                    비용이 없는 것이 아니라 예산 항목으로 잡히지 않는 형태의 비용입니다.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    제안서에서는 이 점을 감추기보다
+                    <strong class="text-yellow-400">환불되는 수수료 규모와 비교하면 작다</strong>는 방식으로 적는 편이 설득력이 있습니다.
+                    조기 퇴사 한 건의 환불액과 합격자 한 명에게 드는 알림 비용을 나란히 놓으면
+                    이 운영안이 왜 예산 심의 대상이 아닌지가 수치로 설명됩니다.
+                </p>
+            </div>
+
+            <div class="bg-white p-10 rounded-3xl border-2 border-orange-200">
+                <p class="text-sm font-bold text-orange-600 mb-4">고객사에게는 자기 직원에게 온 외부 연락입니다</p>
+                <p class="text-gray-600 leading-relaxed">
+                    기대 효과는 <strong class="text-gray-900">고객사 락인</strong>을 노립니다.
+                    그런데 이 운영안의 접촉 대상은 고객사의 재직 직원입니다.
+                    고객사가 모르는 상태에서 진행되면 락인이 아니라 반대 방향의 반응이 나올 수 있습니다.
+                    <strong class="text-orange-600">고객사에 사전 안내하고 발송 내용을 공유하는 절차</strong>를 실행 과제에 넣으면,
+                    같은 활동이 고객사가 함께 하는 온보딩 지원으로 바뀝니다.
+                    이 절차는 비용이 들지 않는데 제안의 성격을 바꿉니다.
+                </p>
+            </div>
+        </section>
+
+        <section class="scroll-mt-24 space-y-10">
+            <div class="flex items-center gap-3">
+                <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
+                <h2 class="text-2xl font-bold text-gray-800">8. 성과 지표가 누구의 이익을 재는가</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                    <p class="text-xs font-bold text-gray-400 mb-3">플랫폼이 원하는 것</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        <strong class="text-gray-900">3개월 근속</strong>입니다. 이 선을 넘기면 수수료가 확정됩니다.
+                    </p>
+                </div>
+                <div class="bg-blue-50 p-8 rounded-3xl border border-blue-100">
+                    <p class="text-xs font-bold text-brand-blue mb-3">고객사가 원하는 것</p>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        <strong class="text-gray-900">장기 근속</strong>입니다. 3개월은 채용 비용을 회수하기에 짧은 기간입니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 text-white p-10 rounded-3xl space-y-6">
+                <p class="text-sm font-bold text-brand-blue">3개월 근속률만 재면 평판 효과를 주장할 수 없습니다</p>
+                <p class="text-gray-300 leading-relaxed">
+                    기대 효과에 <strong class="text-white">이 플랫폼에서 뽑은 인재는 적응력이 좋다는 평판</strong>이 적혀 있습니다.
+                    이 평판은 고객사가 만드는 것이고, 고객사가 보는 기준은 3개월이 아닙니다.
+                    실행 과제 4번의 지표가 <strong class="text-brand-blue">3개월 근속 코호트 분석</strong>에서 멈추면
+                    측정하는 값과 주장하는 효과가 서로 다른 것을 가리킵니다.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    6개월과 12개월 근속률을 같은 코호트로 이어서 보면 평판 주장의 근거가 생깁니다.
+                    한 가지 더 짚어둘 것은, 플랫폼 수익 구조에서
+                    <strong class="text-white">3개월을 넘긴 뒤의 이직은 손실이 아니라 다음 거래</strong>라는 점입니다.
+                    그래서 지표를 3개월에서 끊으면 이 운영안이 진짜로 근속을 목표로 하는지 의심받을 여지가 남습니다.
+                    <strong class="text-brand-blue">장기 근속률을 스스로 지표에 넣는 것</strong>이
+                    그 의심을 먼저 차단하는 방법입니다.
+                </p>
+            </div>
+        </section>
+
+        <section class="scroll-mt-24 space-y-10">
+            <div class="flex items-center gap-3">
+                <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
+                <h2 class="text-2xl font-bold text-gray-800">9. 실행 순서와 검증</h2>
+            </div>
+
+            <div class="space-y-3">
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
+                    <span class="w-8 h-8 bg-brand-blue text-white text-xs font-black rounded-full flex items-center justify-center shrink-0">1</span>
+                    <div>
+                        <p class="font-bold text-gray-800 mb-1">실제 출근일을 확보할 수 있는지 먼저 확인합니다</p>
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            실행 과제 1번은 출근일 기준 트리거입니다. 그런데 합격 이후의 입사일 확정과 연기, 입사 포기는
+                            고객사와 합격자 사이에서 정해지는 일입니다.
+                            플랫폼이 그 날짜를 언제 어떤 경로로 받는지가 정해지지 않으면 D+5 발송 자체가 시작되지 않습니다.
+                            이 확인이 되기 전에는 나머지 과제의 일정을 잡을 수 없습니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
+                    <span class="w-8 h-8 bg-brand-blue text-white text-xs font-black rounded-full flex items-center justify-center shrink-0">2</span>
+                    <div>
+                        <p class="font-bold text-gray-800 mb-1">D+75 전후 개입을 하나 더 넣습니다</p>
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            위험도 상승 폭이 가장 큰 구간이고 수수료가 확정되는 직전입니다.
+                            앞의 두 개입과 달리 자연 회복이 없는 구간이므로 효과를 확인하기도 가장 쉽습니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
+                    <span class="w-8 h-8 bg-gray-300 text-gray-700 text-xs font-black rounded-full flex items-center justify-center shrink-0">3</span>
+                    <div>
+                        <p class="font-bold text-gray-800 mb-1">패스권 지급 범위와 뱃지 공개 범위를 정합니다</p>
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            패스권은 학습 콘텐츠로 한정하고, 뱃지는 본인 열람을 기본값으로 둡니다.
+                            둘 다 개발 없이 정책으로 정할 수 있는 항목입니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
+                    <span class="w-8 h-8 bg-gray-300 text-gray-700 text-xs font-black rounded-full flex items-center justify-center shrink-0">4</span>
+                    <div>
+                        <p class="font-bold text-gray-800 mb-1">개입군과 비개입군을 나눠 시작합니다</p>
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            전체에 한꺼번에 적용하면 근속률 변화가 개입 때문인지 알 수 없습니다.
+                            직군이나 입사 시기로 구간을 나눠 일부에만 먼저 적용하면 비교 대상이 생깁니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
+                    <span class="w-8 h-8 bg-gray-300 text-gray-700 text-xs font-black rounded-full flex items-center justify-center shrink-0">5</span>
+                    <div>
+                        <p class="font-bold text-gray-800 mb-1">공고와 실제 업무의 차이를 수집하는 문항을 넣습니다</p>
+                        <p class="text-xs text-gray-500 leading-relaxed">
+                            직무 기대치 불일치는 세 원인 중 플랫폼이 자산으로 다룰 수 있는 유일한 항목입니다.
+                            D+30 메시지에 짧은 문항 하나를 붙이는 것으로 시작할 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto rounded-3xl border border-gray-200 bg-white">
+                <table class="w-full min-w-[560px] border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-gray-800 text-white">
+                            <th class="p-3 text-left text-xs font-bold">확인할 지표</th>
+                            <th class="p-3 text-left text-xs font-bold">보는 이유</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-100">
+                            <td class="p-3 font-bold text-gray-800">개입군과 비개입군의 3개월 근속률 차이</td>
+                            <td class="p-3 text-gray-600">자연 회복 구간과 개입이 겹치므로, 비교군 없이는 효과를 분리할 수 없습니다.</td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <td class="p-3 font-bold text-gray-800">같은 코호트의 6개월과 12개월 근속률</td>
+                            <td class="p-3 text-gray-600">고객사 평판 효과를 주장하려면 3개월 이후가 필요합니다.</td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <td class="p-3 font-bold text-gray-800">D+60에서 D+90 구간의 퇴사 발생 비중</td>
+                            <td class="p-3 text-gray-600">개입 공백 구간이 실제로 얼마나 큰 손실인지 확인합니다.</td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <td class="p-3 font-bold text-gray-800">메시지 수신 거부율과 앱 알림 해제율</td>
+                            <td class="p-3 text-gray-600">응원이 아니라 방해로 읽히고 있다는 신호를 잡는 지표입니다.</td>
+                        </tr>
+                        <tr class="border-b border-gray-100">
+                            <td class="p-3 font-bold text-gray-800">패스권 사용 내역의 기능별 분포</td>
+                            <td class="p-3 text-gray-600">학습 기능보다 구직 기능이 많이 쓰이면 지급이 역효과를 내고 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-gray-800">공고와 실제 업무의 불일치 응답률</td>
+                            <td class="p-3 text-gray-600">고객사 공고 품질 개선의 근거이자 다음 채용의 미스매치를 줄이는 자료입니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-gray-50 p-10 rounded-3xl border border-gray-200">
+                <p class="text-sm font-bold text-gray-700 mb-4">분석의 한계</p>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li class="flex gap-2"><span class="text-gray-400">·</span><span>심리적 안정감과 이탈 위험도의 수치는 이 문서가 <strong class="text-gray-800">위기 구간을 설명하기 위해 제시한 곡선</strong>입니다. 위의 구간별 변화량은 그 곡선을 그대로 계산한 값이며, 실제 관측 데이터가 아닙니다.</span></li>
+                    <li class="flex gap-2"><span class="text-gray-400">·</span><span>조기 퇴사의 세 가지 원인은 문서가 정리한 항목입니다. 각 원인이 실제로 차지하는 비중은 제시되어 있지 않으므로, <strong class="text-gray-800">어느 원인에 먼저 대응해야 효과가 큰지는 이 자료로 판단할 수 없습니다.</strong></span></li>
+                    <li class="flex gap-2"><span class="text-gray-400">·</span><span>수수료 환불 비율과 알림 발송 단가는 문서에 없는 값입니다. 비용 비교를 제안했지만 <strong class="text-gray-800">실제 금액은 확인되지 않았습니다.</strong></span></li>
+                    <li class="flex gap-2"><span class="text-gray-400">·</span><span>패스권의 기능 구성과 뱃지의 노출 방식은 서비스 정책에 따라 달라집니다. 여기서는 <strong class="text-gray-800">두 경우 모두를 가정해 확인할 항목으로 남겼습니다.</strong></span></li>
+                </ul>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="bg-gray-100 py-16 text-center text-gray-400 text-xs font-bold tracking-widest uppercase">
-        PLATFORM Recruitment Business Strategy 2026 | Game-Inspired Retention
+    <footer class="bg-gray-100 py-16 text-center text-gray-400 text-xs font-bold tracking-wide">
+        게임 리텐션 설계를 적용한 채용 플랫폼 근속 전략 제안
     </footer>
 
     <script>

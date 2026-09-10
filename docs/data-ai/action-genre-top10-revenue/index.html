@@ -85,7 +85,7 @@
                     <div>
                         <p class="text-indigo-400 font-black tracking-[0.2em] text-[10px] mb-3 flex items-center gap-2 uppercase">
                             <span class="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse"></span>
-                            Action Genre Market Analysis & Strategy
+                            액션 장르 시장 분석과 전략
                         </p>
                         <h1 class="text-3xl md:text-5xl font-black leading-tight mb-4 tracking-tight">
                             구글 플레이스토어 액션 게임<br>
@@ -104,7 +104,7 @@
                     </div>
                     <div class="w-24 h-24 rounded-[32px] bg-indigo-600/20 border-2 border-indigo-400/30 flex flex-col items-center justify-center shadow-2xl shrink-0">
                         <span class="text-4xl">📉</span>
-                        <span class="text-[8px] font-black mt-1 opacity-60 uppercase">Report</span>
+                        <span class="text-[8px] font-black mt-1 opacity-60">분석</span>
                     </div>
                 </div>
             </div>
@@ -119,6 +119,7 @@
             <div class="flex border-b border-slate-200 bg-slate-50/50 sticky top-0 z-20 backdrop-blur-md">
                 <button onclick="openTab(event, 'market')" class="tab-btn active flex-1 py-5 text-sm font-bold text-slate-500 border-transparent" id="defaultOpen">📊 1. 시장 동향 및 BM 분석</button>
                 <button onclick="openTab(event, 'review')" class="tab-btn flex-1 py-5 text-sm font-bold text-slate-500 border-transparent">🎮 2. 핵심 타이틀 상세 리뷰</button>
+                <button onclick="openTab(event, 'pattern')" class="tab-btn flex-1 py-5 text-sm font-bold text-slate-500 border-transparent">🔍 3. 패턴 정리와 한계</button>
             </div>
 
             <!-- 탭 1: 시장 동향 분석 -->
@@ -131,7 +132,7 @@
                             <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
                                 <span class="text-indigo-600">#</span> 개발 국가별 시장 점유율 <span class="text-[11px] font-medium text-slate-400">(TOP 10 중 종수 비중)</span>
                             </h3>
-                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Total 100%</span>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">합계 100%</span>
                         </div>
                         
                         <div class="content-panel p-8 space-y-6 shadow-sm border-slate-100">
@@ -178,13 +179,13 @@
                                 <span class="text-indigo-600">#</span> 타겟 연령 및 핵심 과금 모델 <span class="text-[11px] font-medium text-slate-400">(TOP 10 중 종수 비중)</span>
                             </h3>
                             <!-- 연령대 역시 100% 정합성을 맞춤 -->
-                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Total 100%</span>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">합계 100%</span>
                         </div>
 
                         <div class="grid grid-cols-1 gap-4">
                             <!-- 연령 분포 데이터 차트화 (누락되었던 7세, 전체 이용가 추가) -->
                             <div class="content-panel p-8 shadow-sm border-slate-100">
-                                <p class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">이용 연령 타겟팅 (TOP 10)</p>
+                                <p class="text-xs font-bold text-slate-400 mb-4 tracking-wide">이용 연령 타겟팅</p>
                                 <div class="space-y-5">
                                     <div>
                                         <div class="flex justify-between text-xs font-bold mb-2">
@@ -235,7 +236,7 @@
                 <div class="bg-slate-900 rounded-[32px] p-8 text-white relative overflow-hidden">
                     <div class="absolute left-0 bottom-0 opacity-10 text-9xl -mb-12 -ml-8">💡</div>
                     <div class="relative z-10 max-w-3xl">
-                        <h4 class="text-indigo-400 font-black text-xs uppercase tracking-widest mb-4">Core Insight</h4>
+                        <h4 class="text-indigo-400 font-black text-xs tracking-wide mb-4">핵심 판단</h4>
                         <p class="text-lg md:text-xl font-bold leading-relaxed mb-6">
                             "액션 장르 시장은 <span class="text-indigo-400 underline underline-offset-4">중국 개발사의 높은 점유율</span> 하에 있으며, 12~15세 이상의 코어층을 타겟으로 <span class="text-sky-400">지속적인 유저 접속을 유도하는 구독 모델(패스제)</span>이 결합된 고도화된 BM이 승률을 결정합니다."
                         </p>
@@ -255,7 +256,7 @@
                     <!-- 1. 붕괴 3rd -->
                     <div class="data-card content-panel p-6 border-l-4 border-l-indigo-600 flex flex-col">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-[10px] font-black bg-indigo-600 text-white px-2 py-0.5 rounded uppercase">Rank 01</span>
+                            <span class="text-[10px] font-black bg-indigo-600 text-white px-2 py-0.5 rounded">1위</span>
                             <span class="text-[10px] font-bold text-slate-400">중국 / 액션 RPG</span>
                         </div>
                         <h4 class="font-black text-slate-800 text-lg mb-3">붕괴 3rd</h4>
@@ -269,7 +270,7 @@
                     <!-- 2. 배틀그라운드 -->
                     <div class="data-card content-panel p-6 border-l-4 border-l-sky-500 flex flex-col">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-[10px] font-black bg-sky-500 text-white px-2 py-0.5 rounded uppercase">Rank 02</span>
+                            <span class="text-[10px] font-black bg-sky-500 text-white px-2 py-0.5 rounded">2위</span>
                             <span class="text-[10px] font-bold text-slate-400">한·중 / 배틀로얄</span>
                         </div>
                         <h4 class="font-black text-slate-800 text-lg mb-3">배틀그라운드 모바일</h4>
@@ -283,7 +284,7 @@
                     <!-- 3. 드래곤볼 Z -->
                     <div class="data-card content-panel p-6 border-l-4 border-l-orange-500 flex flex-col">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-[10px] font-black bg-orange-500 text-white px-2 py-0.5 rounded uppercase">Rank 03</span>
+                            <span class="text-[10px] font-black bg-orange-500 text-white px-2 py-0.5 rounded">3위</span>
                             <span class="text-[10px] font-bold text-slate-400">일본 / 수집형 액션</span>
                         </div>
                         <h4 class="font-black text-slate-800 text-lg mb-3">드래곤볼 Z: 폭렬격전</h4>
@@ -297,7 +298,7 @@
                     <!-- 4. 브롤스타즈 -->
                     <div class="data-card content-panel p-6 border-l-4 border-l-emerald-500 flex flex-col">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-[10px] font-black bg-emerald-500 text-white px-2 py-0.5 rounded uppercase">Rank 04</span>
+                            <span class="text-[10px] font-black bg-emerald-500 text-white px-2 py-0.5 rounded">4위</span>
                             <span class="text-[10px] font-bold text-slate-400">핀란드 / 난투 액션</span>
                         </div>
                         <h4 class="font-black text-slate-800 text-lg mb-3">브롤스타즈</h4>
@@ -311,7 +312,7 @@
                     <!-- 5. 모바일 레전드 -->
                     <div class="data-card content-panel p-6 border-l-4 border-l-blue-800 flex flex-col">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-[10px] font-black bg-blue-800 text-white px-2 py-0.5 rounded uppercase">Rank 05</span>
+                            <span class="text-[10px] font-black bg-blue-800 text-white px-2 py-0.5 rounded">5위</span>
                             <span class="text-[10px] font-bold text-slate-400">중국 / AOS</span>
                         </div>
                         <h4 class="font-black text-slate-800 text-lg mb-3">모바일 레전드</h4>
@@ -325,7 +326,7 @@
                     <!-- 6. 닌자 머스트 다이 -->
                     <div class="data-card content-panel p-6 border-l-4 border-l-slate-800 flex flex-col">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-[10px] font-black bg-slate-800 text-white px-2 py-0.5 rounded uppercase">Rank 06</span>
+                            <span class="text-[10px] font-black bg-slate-800 text-white px-2 py-0.5 rounded">6위</span>
                             <span class="text-[10px] font-bold text-slate-400">중국 / 러닝 액션</span>
                         </div>
                         <h4 class="font-black text-slate-800 text-lg mb-3">닌자 머스트 다이</h4>
@@ -339,7 +340,7 @@
                     <!-- 7. 모던 워쉽 -->
                     <div class="data-card content-panel p-6 border-l-4 border-l-slate-400 flex flex-col">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-[10px] font-black bg-slate-400 text-white px-2 py-0.5 rounded uppercase">Rank 07</span>
+                            <span class="text-[10px] font-black bg-slate-400 text-white px-2 py-0.5 rounded">7위</span>
                             <span class="text-[10px] font-bold text-slate-400">러시아 / 해상 액션</span>
                         </div>
                         <h4 class="font-black text-slate-800 text-lg mb-3">모던 워쉽</h4>
@@ -353,7 +354,7 @@
                     <!-- 8. 킹오파 올스타 -->
                     <div class="data-card content-panel p-6 border-l-4 border-l-purple-500 flex flex-col">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-[10px] font-black bg-purple-500 text-white px-2 py-0.5 rounded uppercase">Rank 08</span>
+                            <span class="text-[10px] font-black bg-purple-500 text-white px-2 py-0.5 rounded">8위</span>
                             <span class="text-[10px] font-bold text-slate-400">한·일 / 수집형 RPG</span>
                         </div>
                         <h4 class="font-black text-slate-800 text-lg mb-3">KOF 올스타</h4>
@@ -367,7 +368,7 @@
                     <!-- 9. 콜 오브 듀티 모바일 -->
                     <div class="data-card content-panel p-6 border-l-4 border-l-stone-600 flex flex-col">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-[10px] font-black bg-stone-600 text-white px-2 py-0.5 rounded uppercase">Rank 09</span>
+                            <span class="text-[10px] font-black bg-stone-600 text-white px-2 py-0.5 rounded">9위</span>
                             <span class="text-[10px] font-bold text-slate-400">중국 / FPS</span>
                         </div>
                         <h4 class="font-black text-slate-800 text-lg mb-3">콜 오브 듀티 모바일</h4>
@@ -381,7 +382,7 @@
                     <!-- 10. 궁수의 전설 -->
                     <div class="data-card content-panel p-6 border-l-4 border-l-amber-600 flex flex-col">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="text-[10px] font-black bg-amber-600 text-white px-2 py-0.5 rounded uppercase">Rank 10</span>
+                            <span class="text-[10px] font-black bg-amber-600 text-white px-2 py-0.5 rounded">10위</span>
                             <span class="text-[10px] font-bold text-slate-400">싱가포르 / 로그라이크</span>
                         </div>
                         <h4 class="font-black text-slate-800 text-lg mb-3">궁수의 전설</h4>
@@ -497,15 +498,406 @@
                             </table>
                         </div>
                         <div class="bg-slate-50 p-4 border-t border-slate-200 text-center">
-                            <p class="text-[11px] font-bold text-slate-500 uppercase tracking-widest italic">※ 본 데이터는 2024년 1월 기준 구글 플레이스토어 최고 매출(액션 장르) 순위입니다.</p>
+                            <p class="text-[11px] font-bold text-slate-500 tracking-wide italic">※ 본 데이터는 2024년 1월 기준 구글 플레이스토어 최고 매출(액션 장르) 순위입니다.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
+
+            <!-- 보강: 패턴 정리와 한계 -->
+            <div id="pattern" class="tab-content p-6 md:p-10 space-y-12">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-3 tracking-tight">열 종을 모아 보면 나오는 것</h2>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        2번 탭은 타이틀을 하나씩 봅니다.
+                        열 종의 <strong class="text-slate-700">강점과 약점을 유형별로 묶으면</strong> 개별 게임이 아니라 장르의 과제가 드러납니다.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-black text-slate-800 mb-4">약점이 여러 종에 걸쳐 반복되는 네 가지 유형</h3>
+                    <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-6">
+                        <table class="w-full min-w-[680px] border-collapse text-sm">
+                            <thead>
+                                <tr class="bg-slate-700 text-white">
+                                    <th class="p-3 text-left text-xs font-black">유형</th>
+                                    <th class="p-3 text-center text-xs font-black">건수</th>
+                                    <th class="p-3 text-left text-xs font-black">해당 타이틀</th>
+                                    <th class="p-3 text-left text-xs font-black">지적된 내용</th>
+                                    <th class="p-3 text-center text-xs font-black">담당 영역</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-amber-50 border-b border-slate-200">
+                                    <td class="p-3 font-black text-slate-800">기술과 성능</td>
+                                    <td class="p-3 text-center font-black text-slate-700">2종</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">붕괴 3rd · 배틀그라운드 모바일</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">디바이스 사양, 다운로드 용량, 최적화와 렉</td>
+                                    <td class="p-3 text-center text-xs font-bold text-indigo-700">개발·인프라</td>
+                                </tr>
+                                <tr class="bg-amber-50 border-b border-slate-200">
+                                    <td class="p-3 font-black text-slate-800">밸런스</td>
+                                    <td class="p-3 text-center font-black text-slate-700">2종</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">드래곤볼 Z · 브롤스타즈</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">특정 캐릭터 오버스펙, 유닛 간 능력치 격차</td>
+                                    <td class="p-3 text-center text-xs font-bold text-indigo-700">기획·운영</td>
+                                </tr>
+                                <tr class="bg-amber-50 border-b border-slate-200">
+                                    <td class="p-3 font-black text-slate-800">이용자 행동</td>
+                                    <td class="p-3 text-center font-black text-slate-700">2종</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">배틀그라운드 모바일 · 모바일 레전드</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">불법 프로그램, 악성 채팅 차단 부재</td>
+                                    <td class="p-3 text-center text-xs font-bold text-indigo-700">운영·정책</td>
+                                </tr>
+                                <tr class=" border-b border-slate-200">
+                                    <td class="p-3 font-black text-slate-800">진입 난이도</td>
+                                    <td class="p-3 text-center font-black text-slate-700">1종</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">닌자 머스트 다이</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">초반 스테이지가 신규 유저에게 가혹함</td>
+                                    <td class="p-3 text-center text-xs font-bold text-indigo-700">기획</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-2xl p-6 md:p-8 text-white">
+                        <p class="text-sm font-black text-indigo-300 mb-4">강점과 약점이 다른 층에 있습니다</p>
+                        <div class="grid md:grid-cols-2 gap-5 mb-5">
+                            <div class="bg-white/10 rounded-xl p-5">
+                                <p class="text-xs font-black text-emerald-300 mb-2">강점으로 꼽힌 것</p>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    그래픽 품질, 원작 IP의 향수, 조작의 직관성, 정통 감성.
+                                    모두 <strong class="text-white">유저를 데려오는 요소</strong>입니다.
+                                </p>
+                            </div>
+                            <div class="bg-white/10 rounded-xl p-5">
+                                <p class="text-xs font-black text-amber-300 mb-2">약점으로 꼽힌 것</p>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    밸런스 붕괴, 불법 프로그램, 악성 채팅, 가혹한 난이도.
+                                    모두 <strong class="text-white">유저를 남게 하는 요소</strong>입니다.
+                                </p>
+                            </div>
+                        </div>
+                        <p class="text-sm md:text-base leading-relaxed">
+                            즉 이 장르의 상위작들은 <strong class="text-indigo-300">진입은 잘 만들었고 유지에서 새고 있습니다.</strong>
+                            그리고 열 종에서 지적된 약점을 유형별로 모두 세면 <strong class="text-white">열다섯 건 중 열한 건이 기획과 운영 영역</strong>입니다.
+                            그래픽이나 IP는 이미 확보된 조건이므로,
+                            매출 상위권에서 순위를 가르는 것은 <strong class="text-indigo-300">밸런스 관리와 이용자 행동 통제</strong>라는 뜻이 됩니다.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div>
+                    <h3 class="text-lg font-black text-slate-800 mb-4">열 종을 빠짐없이 세면 아홉 유형이 나옵니다</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-5">
+                        위 표는 여러 타이틀에 반복되는 유형만 골랐습니다.
+                        열 종의 지적을 하나도 빼지 않고 유형으로 나누면 <strong class="text-slate-700">아홉 유형 열다섯 건</strong>이 됩니다.
+                        한 타이틀이 두 가지를 함께 지적받은 경우가 다섯 종이라 건수가 종수보다 많습니다.
+                    </p>
+
+                    <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-6">
+                        <table class="w-full min-w-[760px] border-collapse text-sm">
+                            <thead>
+                                <tr class="bg-slate-700 text-white">
+                                    <th class="p-3 text-left text-xs font-black">유형</th>
+                                    <th class="p-3 text-center text-xs font-black">건수</th>
+                                    <th class="p-3 text-left text-xs font-black">해당 타이틀</th>
+                                    <th class="p-3 text-left text-xs font-black">지적된 내용</th>
+                                    <th class="p-3 text-center text-xs font-black">담당 영역</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-rose-50 border-b border-slate-200">
+                                    <td class="p-3 font-black text-slate-800">이용자 행동</td>
+                                    <td class="p-3 text-center font-black text-slate-700">3건</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">배틀그라운드 · 모바일 레전드 · 콜 오브 듀티</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">불법 프로그램 두 건, 악성 채팅 차단 부재</td>
+                                    <td class="p-3 text-center text-xs font-bold text-rose-700">운영·정책</td>
+                                </tr>
+                                <tr class=" border-b border-slate-200">
+                                    <td class="p-3 font-black text-slate-800">기술과 성능</td>
+                                    <td class="p-3 text-center font-black text-slate-700">2건</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">붕괴 3rd · 배틀그라운드</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">디바이스 사양과 다운로드 용량, 최적화와 렉</td>
+                                    <td class="p-3 text-center text-xs font-bold text-slate-500">개발·인프라</td>
+                                </tr>
+                                <tr class="bg-amber-50 border-b border-slate-200">
+                                    <td class="p-3 font-black text-slate-800">밸런스</td>
+                                    <td class="p-3 text-center font-black text-slate-700">2건</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">드래곤볼 Z · 브롤스타즈</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">특정 캐릭터 오버스펙, 유닛 간 능력치 격차</td>
+                                    <td class="p-3 text-center text-xs font-bold text-amber-700">기획</td>
+                                </tr>
+                                <tr class="bg-amber-50 border-b border-slate-200">
+                                    <td class="p-3 font-black text-slate-800">진입 난이도</td>
+                                    <td class="p-3 text-center font-black text-slate-700">2건</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">닌자 머스트 다이 · 궁수의 전설</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">초반 스테이지 가혹함, 급격한 난이도 상승</td>
+                                    <td class="p-3 text-center text-xs font-bold text-amber-700">기획</td>
+                                </tr>
+                                <tr class="bg-amber-50 border-b border-slate-200">
+                                    <td class="p-3 font-black text-slate-800">콘텐츠 물량과 반복</td>
+                                    <td class="p-3 text-center font-black text-slate-700">2건</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">모던 워쉽 · KOF 올스타</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">한정적 콘텐츠, 과도한 반복 파밍 피로도</td>
+                                    <td class="p-3 text-center text-xs font-bold text-amber-700">기획</td>
+                                </tr>
+                                <tr class=" border-b border-slate-200">
+                                    <td class="p-3 font-black text-slate-800">현지화</td>
+                                    <td class="p-3 text-center font-black text-slate-700">1건</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">모던 워쉽</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">한국어 음성 미지원</td>
+                                    <td class="p-3 text-center text-xs font-bold text-slate-500">현지화</td>
+                                </tr>
+                                <tr class=" border-b border-slate-200">
+                                    <td class="p-3 font-black text-slate-800">품질과 버그</td>
+                                    <td class="p-3 text-center font-black text-slate-700">1건</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">KOF 올스타</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">조작 버그</td>
+                                    <td class="p-3 text-center text-xs font-bold text-slate-500">개발·인프라</td>
+                                </tr>
+                                <tr class="bg-amber-50 border-b border-slate-200">
+                                    <td class="p-3 font-black text-slate-800">사용성</td>
+                                    <td class="p-3 text-center font-black text-slate-700">1건</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">궁수의 전설</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">투사체 시인성</td>
+                                    <td class="p-3 text-center text-xs font-bold text-amber-700">기획</td>
+                                </tr>
+                                <tr class="bg-rose-50 border-b border-slate-200">
+                                    <td class="p-3 font-black text-slate-800">매칭</td>
+                                    <td class="p-3 text-center font-black text-slate-700">1건</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">콜 오브 듀티</td>
+                                    <td class="p-3 text-slate-600 text-xs leading-relaxed">랭크 매치 대기 지연</td>
+                                    <td class="p-3 text-center text-xs font-bold text-rose-700">운영·정책</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="grid md:grid-cols-4 gap-4 mb-6">
+                        <div class="bg-amber-50 border-2 border-amber-300 rounded-xl p-5 text-center">
+                            <p class="text-[11px] font-bold text-amber-700 mb-1">기획</p>
+                            <p class="text-2xl font-black text-amber-700">7건</p>
+                            <p class="text-[10px] text-slate-600">46.7%</p>
+                        </div>
+                        <div class="bg-rose-50 border-2 border-rose-300 rounded-xl p-5 text-center">
+                            <p class="text-[11px] font-bold text-rose-700 mb-1">운영과 정책</p>
+                            <p class="text-2xl font-black text-rose-700">4건</p>
+                            <p class="text-[10px] text-slate-600">26.7%</p>
+                        </div>
+                        <div class="bg-slate-50 border-2 border-slate-300 rounded-xl p-5 text-center">
+                            <p class="text-[11px] font-bold text-slate-600 mb-1">개발과 인프라</p>
+                            <p class="text-2xl font-black text-slate-700">3건</p>
+                            <p class="text-[10px] text-slate-600">20.0%</p>
+                        </div>
+                        <div class="bg-slate-50 border-2 border-slate-300 rounded-xl p-5 text-center">
+                            <p class="text-[11px] font-bold text-slate-600 mb-1">현지화</p>
+                            <p class="text-2xl font-black text-slate-700">1건</p>
+                            <p class="text-[10px] text-slate-600">6.7%</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-6 md:p-8">
+                        <p class="text-sm font-black text-indigo-700 mb-4">전수로 세도 결론은 같고 근거는 더 두꺼워집니다</p>
+                        <p class="text-slate-700 leading-relaxed">
+                            기획과 운영을 합치면 <strong class="text-slate-900">열다섯 건 중 열한 건, 73.3%</strong>입니다.
+                            개발과 인프라는 세 건뿐입니다.
+                            매출 상위 열 종이 공통으로 겪는 문제가
+                            <strong class="text-indigo-700">돈과 기술로 해결되는 쪽이 아니라 설계와 운영 판단으로 해결되는 쪽</strong>에 몰려 있다는 뜻입니다.
+                            상위권에 이미 올라간 게임들이라 그래픽과 서버는 갖췄고, 남은 것이 이쪽이라는 해석과도 맞습니다.
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-black text-slate-800 mb-4">같은 항목이 강점에도 약점에도 나옵니다</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-5">
+                        강점 열 건과 약점 열다섯 건을 항목 이름으로 맞춰보면
+                        <strong class="text-slate-700">어떤 게임의 강점이 다른 게임의 약점</strong>인 경우가 여럿 나옵니다.
+                    </p>
+
+                    <div class="space-y-4 mb-6">
+                        <div class="bg-white rounded-2xl border-2 border-slate-200 p-6">
+                            <div class="grid md:grid-cols-2 gap-5">
+                                <div class="bg-emerald-50 rounded-xl p-5 border border-emerald-200">
+                                    <p class="text-xs font-black text-emerald-700 mb-2">최적화가 강점인 게임</p>
+                                    <p class="text-xs text-slate-600 leading-relaxed"><strong class="text-slate-800">모던 워쉽</strong> — 훌륭한 최적화</p>
+                                </div>
+                                <div class="bg-rose-50 rounded-xl p-5 border border-rose-200">
+                                    <p class="text-xs font-black text-rose-700 mb-2">최적화가 약점인 게임</p>
+                                    <p class="text-xs text-slate-600 leading-relaxed"><strong class="text-slate-800">붕괴 3rd</strong> 사양과 용량, <strong class="text-slate-800">배틀그라운드</strong> 렉</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-2xl border-2 border-slate-200 p-6">
+                            <div class="grid md:grid-cols-2 gap-5">
+                                <div class="bg-emerald-50 rounded-xl p-5 border border-emerald-200">
+                                    <p class="text-xs font-black text-emerald-700 mb-2">밸런스가 강점인 게임</p>
+                                    <p class="text-xs text-slate-600 leading-relaxed"><strong class="text-slate-800">모바일 레전드</strong> — 훌륭한 캐릭터 밸런스</p>
+                                </div>
+                                <div class="bg-rose-50 rounded-xl p-5 border border-rose-200">
+                                    <p class="text-xs font-black text-rose-700 mb-2">밸런스가 약점인 게임</p>
+                                    <p class="text-xs text-slate-600 leading-relaxed"><strong class="text-slate-800">드래곤볼 Z</strong> 오버스펙, <strong class="text-slate-800">브롤스타즈</strong> 능력치 격차</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-2xl border-2 border-slate-200 p-6">
+                            <div class="grid md:grid-cols-2 gap-5">
+                                <div class="bg-emerald-50 rounded-xl p-5 border border-emerald-200">
+                                    <p class="text-xs font-black text-emerald-700 mb-2">콘텐츠 물량이 강점인 게임</p>
+                                    <p class="text-xs text-slate-600 leading-relaxed"><strong class="text-slate-800">콜 오브 듀티</strong> — 풍부한 콘텐츠</p>
+                                </div>
+                                <div class="bg-rose-50 rounded-xl p-5 border border-rose-200">
+                                    <p class="text-xs font-black text-rose-700 mb-2">콘텐츠 물량이 약점인 게임</p>
+                                    <p class="text-xs text-slate-600 leading-relaxed"><strong class="text-slate-800">모던 워쉽</strong> 한정적 콘텐츠, <strong class="text-slate-800">KOF 올스타</strong> 반복 파밍</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-2xl p-6 md:p-8 text-white">
+                        <p class="text-sm font-black text-indigo-300 mb-4">그래서 벤치마킹 대상이 항목별로 특정됩니다</p>
+                        <p class="text-sm md:text-base text-slate-300 leading-relaxed mb-5">
+                            최적화, 밸런스, 콘텐츠 물량 세 항목이 <strong class="text-white">양쪽에 모두 등장</strong>합니다.
+                            같은 장르의 같은 규모 게임인데 한쪽은 해냈고 한쪽은 못 했다는 뜻이므로,
+                            이 항목들은 <strong class="text-indigo-300">장르의 구조적 한계가 아니라 실행의 차이</strong>입니다.
+                            앞에서 정리한 &lsquo;진입은 잘 만들고 유지에서 새고 있다&rsquo;는 진단이
+                            장르 전체의 숙명이 아니라 개별 선택의 결과라는 것이 여기서 확인됩니다.
+                        </p>
+                        <div class="bg-white/10 rounded-xl p-5">
+                            <p class="text-xs font-black text-emerald-300 mb-3">참고 대상을 항목별로 나눠 잡을 수 있습니다</p>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                최적화는 <strong class="text-white">모던 워쉽</strong>, 밸런스 운영은 <strong class="text-white">모바일 레전드</strong>,
+                                콘텐츠 물량 관리는 <strong class="text-white">콜 오브 듀티</strong>가 이 표본에서 잘한 쪽입니다.
+                                한 게임을 통째로 참고하는 것보다 <strong class="text-emerald-300">항목별로 잘한 곳을 따로 보는 편</strong>이
+                                열 종을 본 이 분석의 활용 방법에 맞습니다.
+                                다만 이 판단은 <strong class="text-white">직접 플레이로 매긴 정성 평가</strong>에 근거하므로,
+                                실제로 참고하기 전에 해당 항목의 지표를 따로 확인해야 합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-black text-slate-800 mb-4">플레이 구조에 따라 막아야 할 것이 다릅니다</h3>
+                    <div class="grid md:grid-cols-2 gap-5 mb-6">
+                        <div class="bg-white rounded-2xl border-2 border-rose-300 p-6">
+                            <p class="text-xs font-black text-rose-700 mb-3">다른 유저와 겨루는 네 종</p>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                배틀그라운드, 콜 오브 듀티, 브롤스타즈, 모바일 레전드입니다.
+                                이 네 종에서 나온 <strong class="text-slate-800">이용자 행동과 공정성 지적이 네 건</strong>입니다.
+                                불법 프로그램 두 건, 악성 채팅 한 건, 랭크 대기 지연 한 건.
+                            </p>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                이탈 원인이 <strong class="text-rose-700">게임 자체가 아니라 같이 하는 사람</strong>에 있습니다.
+                                운영이 막아야 하는 것은 콘텐츠가 아니라 사람의 행동입니다.
+                            </p>
+                        </div>
+                        <div class="bg-white rounded-2xl border-2 border-amber-300 p-6">
+                            <p class="text-xs font-black text-amber-700 mb-3">혼자 하는 두 종</p>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                닌자 머스트 다이와 궁수의 전설입니다.
+                                <strong class="text-slate-800">두 종 모두 난이도가 약점으로 꼽혔습니다.</strong>
+                                초반 가혹함과 급격한 난이도 상승입니다.
+                            </p>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                이탈 원인이 <strong class="text-amber-700">벽에 막히는 경험</strong>에 있습니다.
+                                여기서 필요한 것은 제재가 아니라 난이도 곡선 조정입니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-6 md:p-8">
+                        <p class="text-sm font-black text-amber-800 mb-4">벤치마킹할 때 같이 봐야 하는 조건</p>
+                        <p class="text-slate-700 leading-relaxed mb-4">
+                            상위권 게임의 운영 방식을 참고할 때, 그 게임이
+                            <strong class="text-slate-900">경쟁형인지 단독 플레이형인지</strong>를 함께 봐야 합니다.
+                            경쟁형에서 효과가 컸던 제재 강화나 신고 체계는 단독 플레이형에 적용할 대상이 없고,
+                            단독형에서 유효했던 난이도 완화는 경쟁형에서는 밸런스 논란으로 번집니다.
+                        </p>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            다만 단독 플레이형은 이 표본에 두 종뿐입니다.
+                            <strong class="text-slate-800">두 종이 모두 난이도를 지적받았다는 것은 표본이 작아 우연일 수 있으므로</strong>,
+                            같은 구조의 게임을 더 모아 확인해야 패턴이라고 말할 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div>
+                    <h3 class="text-lg font-black text-slate-800 mb-4">연령 타겟과 과금 모델이 맞물리는 지점</h3>
+                    <div class="bg-white rounded-2xl border-2 border-amber-300 p-6 md:p-8">
+                        <div class="grid md:grid-cols-3 gap-4 mb-6 text-center">
+                            <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                                <p class="text-[11px] font-bold text-slate-500 mb-1">12세 이용가</p>
+                                <p class="text-2xl font-black text-slate-800">5종</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                                <p class="text-[11px] font-bold text-slate-500 mb-1">15세 이용가</p>
+                                <p class="text-2xl font-black text-slate-800">3종</p>
+                            </div>
+                            <div class="bg-amber-50 rounded-xl p-5 border-2 border-amber-300">
+                                <p class="text-[11px] font-bold text-amber-700 mb-1">가챠 또는 패스 포함</p>
+                                <p class="text-2xl font-black text-amber-700">전 종</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-700 leading-relaxed mb-5">
+                            1번 탭은 이 조합을 <strong class="text-slate-900">고도화된 과금 모델</strong>로 평가했습니다. 매출 관점에서는 맞습니다.
+                            다만 <strong class="text-amber-800">주 이용층이 12~15세인 상태에서 확률형 상품과 정기 결제를 결합</strong>한다는 뜻이기도 합니다.
+                        </p>
+                        <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                            <p class="text-xs font-black text-slate-800 mb-3">이 조합에서 따라오는 과제</p>
+                            <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
+                                <li>&bull; <strong class="text-slate-800">미성년 결제 관리:</strong> 법정대리인 동의와 결제 한도, 환불 처리 절차가 운영 부담으로 들어옵니다. 국내 서비스라면 확률 정보 표시도 함께 적용됩니다.</li>
+                                <li>&bull; <strong class="text-slate-800">정기 결제의 해지 동선:</strong> 구독형은 해지가 어렵다는 인식이 생기면 브랜드 신뢰를 깎습니다. 연령이 낮을수록 민원이 보호자를 통해 들어옵니다.</li>
+                                <li>&bull; <strong class="text-slate-800">벤치마킹 시 확인할 것:</strong> 상위작의 과금 구조를 참고할 때 <strong>그 게임의 서비스 국가와 연령 등급</strong>을 함께 봐야 합니다. 등급이 다르면 같은 구조를 쓸 수 없습니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-black text-slate-800 mb-4">이 분석의 한계</h3>
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <div class="bg-white rounded-2xl border-2 border-slate-200 p-6">
+                            <p class="text-sm font-black text-slate-700 mb-4">숫자를 읽을 때 주의할 점</p>
+                            <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                                <li>&bull; <strong class="text-slate-800">종수 비중이지 매출 비중이 아닙니다.</strong> 중국 50%는 10종 중 5종이라는 뜻이며, 매출액의 절반을 뜻하지 않습니다. 본문 괄호에 밝혀져 있지만 혼동되기 쉬운 지점입니다.</li>
+                                <li>&bull; <strong class="text-slate-800">표본이 10종이라 해상도가 낮습니다.</strong> 한 종이 10%p이므로 순위가 하나 바뀌면 비중이 크게 흔들립니다. 추세를 보려면 여러 시점을 누적해야 합니다.</li>
+                                <li>&bull; <strong class="text-slate-800">기준일이 하루입니다.</strong> 2024년 1월 특정 시점 순위이므로, 대형 업데이트나 신작 출시 직후라면 평시와 다를 수 있습니다.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white rounded-2xl border-2 border-slate-200 p-6">
+                            <p class="text-sm font-black text-slate-700 mb-4">다루지 못한 범위</p>
+                            <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                                <li>&bull; 강점과 약점은 <strong class="text-slate-800">직접 플레이로 도출한 정성 평가</strong>입니다. 리뷰 데이터나 이탈 지표로 검증한 것이 아닙니다.</li>
+                                <li>&bull; <strong class="text-slate-800">iOS와 원스토어는 제외</strong>했습니다. 플랫폼별 순위 구성은 다를 수 있습니다.</li>
+                                <li>&bull; 개발 국가는 <strong class="text-slate-800">개발사 소재 기준</strong>이며 자본 구조나 퍼블리셔 국적과는 다릅니다.</li>
+                                <li>&bull; 과금 모델은 <strong class="text-slate-800">상품 구성만</strong> 확인했고, 실제 매출 기여 비율은 알 수 없습니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-6 md:p-8">
+                    <p class="text-sm font-black text-indigo-700 mb-4">정리</p>
+                    <p class="text-slate-700 leading-relaxed mb-4">
+                        상위 10종의 강점은 <strong class="text-slate-900">그래픽과 IP처럼 개발 단계에서 결정되는 것</strong>이고,
+                        약점은 <strong class="text-slate-900">밸런스와 이용자 행동처럼 운영 단계에서 다루는 것</strong>입니다.
+                    </p>
+                    <p class="text-slate-700 leading-relaxed">
+                        신규 진입을 준비하는 입장에서 이 분포가 뜻하는 것은,
+                        <strong class="text-indigo-700">상위권에 오르는 조건과 상위권에 머무는 조건이 다르다</strong>는 점입니다.
+                        진입 시점에는 시각 품질과 조작감이 필요하고, 그 이후에는 밸런스 조정 주기와 제재 정책이 순위를 지킵니다.
+                        벤치마킹 대상을 고를 때 <strong class="text-slate-900">어느 단계를 배우려는 것인지</strong> 먼저 정해야 합니다.
+                    </p>
+                </div>
+            </div>
+
             <!-- 푸터 -->
             <div class="p-10 bg-slate-950 text-white text-center border-t border-indigo-500/20">
-                <p class="text-[10px] font-bold uppercase tracking-[0.4em] opacity-40 mb-3 italic">Action Market Research Archive</p>
+                <p class="text-[10px] font-bold tracking-wide opacity-40 mb-3 italic">액션 장르 시장 조사</p>
                 <p class="text-xs font-medium text-slate-500">글로벌 액션 장르 시장 분석 및 게임 리뷰 &copy; 허재석</p>
             </div>
         </div>

@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
-        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
         body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; background-color: #f8fafc; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
@@ -113,7 +113,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                 <div class="md:col-span-1 space-y-5">
                     <div id="status-card-1" class="p-5 rounded-2xl border border-slate-200 bg-slate-50 transition-all duration-300">
-                        <div class="text-xs font-bold text-slate-400 mb-1.5 uppercase tracking-wider">현재 검수 상태</div>
+                        <div class="text-xs font-bold text-slate-400 mb-1.5 tracking-wider">현재 검수 상태</div>
                         <!-- 텍스트 -->
                         <div id="status-text-1" class="text-[17px] font-bold text-slate-700 break-keep">⚠️ 수작업 진행 중 (오류 위험)</div>
                     </div>
@@ -170,9 +170,9 @@
                 </div>
                 <div class="md:col-span-1 space-y-4">
                     <div class="p-4 bg-slate-800/80 rounded-2xl border border-slate-700">
-                        <div class="text-xs font-bold text-slate-400 mb-1.5 uppercase tracking-wider">실시간 서버 상태</div>
+                        <div class="text-xs font-bold text-slate-400 mb-1.5 tracking-wider">실시간 서버 상태</div>
                         <div id="server-status" class="text-green-400 text-lg font-bold flex items-center gap-2 transition-colors">
-                            <span class="animate-pulse">🟢</span> 정상 (Normal)
+                            <span class="animate-pulse">🟢</span> 정상
                         </div>
                     </div>
                     <div id="alert-box" class="p-4 bg-red-900/40 rounded-2xl border border-red-500/50 hidden transition-all">
@@ -197,7 +197,7 @@
                 <!-- Left: Raw VOC Cards (Interactive) -->
                 <div class="md:col-span-5 space-y-4">
                     <div class="flex items-center justify-between mb-2">
-                        <span class="text-sm font-bold text-slate-700 uppercase tracking-wider">🗣️ 유저 리뷰 (Raw VOC)</span>
+                        <span class="text-sm font-bold text-slate-700 tracking-wider">🗣️ 유저 리뷰 (Raw VOC)</span>
                         <span class="text-xs text-blue-600 font-bold animate-point-right bg-blue-50 border border-blue-100 px-3 py-1 rounded-full shadow-sm">클릭해보세요! 👉</span>
                     </div>
                     
@@ -241,13 +241,13 @@
                     <!-- Result State (Hidden initially) -->
                     <div id="jira-content" class="hidden mt-6 bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm transition-opacity duration-300">
                         <div class="flex items-center gap-3 mb-4 border-b border-slate-100 pb-4">
-                            <span class="bg-red-500 text-white text-[10px] px-2 py-1 rounded font-bold tracking-wide">BUG</span>
+                            <span class="bg-red-500 text-white text-[10px] px-2 py-1 rounded font-bold tracking-wide">버그</span>
                             <span class="text-slate-400 font-mono text-sm">EDU-2024</span>
                             <h3 id="jira-title" class="font-extrabold text-slate-900 text-lg ml-auto w-full">타이틀</h3>
                         </div>
                         
                         <div class="grid grid-cols-2 gap-4 mb-5 text-[13px] bg-slate-50 p-3 rounded-xl border border-slate-100">
-                            <div class="flex items-center"><span class="text-slate-500 w-16">우선순위</span> <span id="jira-pri" class="font-bold text-orange-600">High</span></div>
+                            <div class="flex items-center"><span class="text-slate-500 w-16">우선순위</span> <span id="jira-pri" class="font-bold text-orange-600">높음</span></div>
                             <div class="flex items-center"><span class="text-slate-500 w-16">담당팀</span> <span id="jira-team" class="font-bold text-slate-700">iOS</span></div>
                         </div>
 
@@ -266,12 +266,496 @@
             </div>
         </section>
 
+
+    <!-- 보강: 트래픽 수치 검토 -->
+    <section id="s4" class="mb-20 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-4">시나리오를 용량 기준으로 다시 보면</h2>
+        <p class="text-slate-600 leading-relaxed mb-8">
+            전략 2의 시뮬레이션에는 서버 용량선이 함께 그려져 있습니다.
+            시간대별 값을 <strong class="text-slate-900">용량 초과분</strong>으로 환산하면 완화안이 무엇을 해결하고 무엇을 남기는지 보입니다.
+        </p>
+
+        <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-8">
+            <table class="w-full min-w-[560px] border-collapse text-sm">
+                <thead>
+                    <tr class="bg-slate-800 text-white">
+                        <th class="p-3 text-left text-xs font-black">시각</th>
+                        <th class="p-3 text-center text-xs font-black">평시</th>
+                        <th class="p-3 text-center text-xs font-black">폭주</th>
+                        <th class="p-3 text-center text-xs font-black">완화 후</th>
+                        <th class="p-3 text-center text-xs font-black">용량 80 대비</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr class=" border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">15:00</td>
+                            <td class="p-3 text-center font-bold text-slate-500">10</td>
+                            <td class="p-3 text-center font-black text-slate-500">12</td>
+                            <td class="p-3 text-center font-bold text-blue-700">12</td>
+                            <td class="p-3 text-center text-xs font-bold text-slate-500">&mdash;</td>
+                        </tr>
+                        <tr class=" border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">16:00</td>
+                            <td class="p-3 text-center font-bold text-slate-500">12</td>
+                            <td class="p-3 text-center font-black text-slate-500">15</td>
+                            <td class="p-3 text-center font-bold text-blue-700">15</td>
+                            <td class="p-3 text-center text-xs font-bold text-slate-500">&mdash;</td>
+                        </tr>
+                        <tr class=" border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">16:40</td>
+                            <td class="p-3 text-center font-bold text-slate-500">15</td>
+                            <td class="p-3 text-center font-black text-slate-500">30</td>
+                            <td class="p-3 text-center font-bold text-blue-700">30</td>
+                            <td class="p-3 text-center text-xs font-bold text-slate-500">&mdash;</td>
+                        </tr>
+                        <tr class="bg-rose-50 border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">17:00</td>
+                            <td class="p-3 text-center font-bold text-slate-500">20</td>
+                            <td class="p-3 text-center font-black text-rose-700">95</td>
+                            <td class="p-3 text-center font-bold text-blue-700">75</td>
+                            <td class="p-3 text-center text-xs font-bold text-rose-700">초과 +15</td>
+                        </tr>
+                        <tr class="bg-rose-50 border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">17:30</td>
+                            <td class="p-3 text-center font-bold text-slate-500">18</td>
+                            <td class="p-3 text-center font-black text-rose-700">85</td>
+                            <td class="p-3 text-center font-bold text-blue-700">50</td>
+                            <td class="p-3 text-center text-xs font-bold text-rose-700">초과 +5</td>
+                        </tr>
+                        <tr class=" border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">18:00</td>
+                            <td class="p-3 text-center font-bold text-slate-500">15</td>
+                            <td class="p-3 text-center font-black text-slate-500">40</td>
+                            <td class="p-3 text-center font-bold text-blue-700">30</td>
+                            <td class="p-3 text-center text-xs font-bold text-slate-500">&mdash;</td>
+                        </tr>
+                        <tr class=" border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">19:00</td>
+                            <td class="p-3 text-center font-bold text-slate-500">12</td>
+                            <td class="p-3 text-center font-black text-slate-500">20</td>
+                            <td class="p-3 text-center font-bold text-blue-700">15</td>
+                            <td class="p-3 text-center text-xs font-bold text-slate-500">&mdash;</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5 mb-8">
+            <div class="bg-rose-50 border-2 border-rose-300 rounded-2xl p-6 text-center">
+                <p class="text-xs font-bold text-rose-700 mb-2">피크 배수</p>
+                <p class="text-4xl font-black text-rose-700 mb-1">4.75배</p>
+                <p class="text-xs text-slate-600">평시 20 → 폭주 95</p>
+            </div>
+            <div class="bg-amber-50 border-2 border-amber-300 rounded-2xl p-6 text-center">
+                <p class="text-xs font-bold text-amber-700 mb-2">완화 후 남은 여유</p>
+                <p class="text-4xl font-black text-amber-700 mb-1">6.2%</p>
+                <p class="text-xs text-slate-600">75 대 용량 80</p>
+            </div>
+            <div class="bg-slate-900 rounded-2xl p-6 text-center text-white">
+                <p class="text-xs font-bold text-blue-300 mb-2">상시 증설 시 이용률</p>
+                <p class="text-4xl font-black text-blue-300 mb-1">21.1%</p>
+                <p class="text-xs text-slate-400">평시 20 / 용량 95</p>
+            </div>
+        </div>
+
+        <div class="bg-slate-900 rounded-2xl p-8 text-white mb-8">
+            <p class="text-sm font-black text-blue-300 mb-5">증설이 아니라 우회를 택한 것이 맞는 판단입니다</p>
+            <p class="leading-relaxed mb-5">
+                폭주 피크를 감당하려면 상시 용량을 95 이상으로 두어야 합니다.
+                그런데 평시 사용량은 20이므로 <strong class="text-blue-300">이용률이 21%</strong>에 그칩니다.
+                1년 중 하루를 위해 <strong class="text-white">평상시 8할을 비워두는 인프라</strong>를 유지하는 셈입니다.
+            </p>
+            <p class="leading-relaxed">
+                그래서 <strong class="text-blue-300">가벼운 텍스트 뷰로 트래픽을 우회</strong>하는 접근이 합리적입니다.
+                용량을 늘리는 대신 <strong class="text-white">한 요청의 무게를 줄이는</strong> 방향이고,
+                시즌성 스파이크가 뚜렷한 서비스에서 비용 효율이 훨씬 높습니다.
+            </p>
+        </div>
+
+        <div class="bg-amber-50 border-2 border-amber-300 rounded-2xl p-8">
+            <p class="text-sm font-black text-amber-700 mb-5">다만 완화안에 두 가지가 남습니다</p>
+            <div class="space-y-4">
+                <div class="bg-white rounded-xl p-6 border border-amber-200">
+                    <p class="text-xs font-black text-slate-800 mb-2">여유가 6.2%뿐입니다</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        완화 후 피크 75는 용량 80에 대해 <strong class="text-slate-800">여유가 5</strong>입니다.
+                        트래픽 예측이 조금만 틀리거나 응시 인원이 예년보다 많으면 다시 초과합니다.
+                        <strong class="text-amber-800">전환 시점을 피크 도달 후가 아니라 사전으로</strong> 옮기는 편이 안전합니다.
+                        16:40의 30 시점에서 이미 평시의 2배이므로, 이때 전환을 시작하면 피크를 더 낮출 수 있습니다.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-amber-200">
+                    <p class="text-xs font-black text-slate-800 mb-2">17시 30분도 초과 구간입니다</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        폭주 시나리오에서 17:30의 값은 <strong class="text-slate-800">85로 용량을 초과</strong>합니다.
+                        17시 피크만 보면 놓치기 쉬운 지점입니다.
+                        완화안은 이 시점을 50까지 낮추므로 실제로 두 구간을 함께 처리하는데,
+                        <strong class="text-amber-800">전환 유지 시간</strong>을 명시하지 않으면 17시만 넘기고 되돌릴 위험이 있습니다.
+                        정상 UI 복귀는 값이 용량의 절반 아래로 내려온 뒤로 정해두는 편이 안전합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 보강: 자동화와 VOC 검토 -->
+    <section id="s5" class="mb-20 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-4">자동화와 VOC 번역에서 남는 부분</h2>
+
+        <div class="bg-slate-50 border-2 border-slate-200 rounded-2xl p-8 mb-8">
+            <p class="text-sm font-black text-slate-800 mb-5">검수 자동화는 규칙으로 잡히는 것만 걸러냅니다</p>
+            <div class="grid md:grid-cols-3 gap-5 mb-6 text-center">
+                <div class="bg-white rounded-xl p-5 border border-slate-200">
+                    <p class="text-xs font-bold text-slate-500 mb-1">주당 소요</p>
+                    <p class="text-2xl font-black text-slate-800">40 → 10시간</p>
+                    <p class="text-[11px] text-slate-400 mt-1">75% 절감</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 border border-slate-200">
+                    <p class="text-xs font-bold text-slate-500 mb-1">연 환산</p>
+                    <p class="text-2xl font-black text-slate-800">약 1,560시간</p>
+                    <p class="text-[11px] text-slate-400 mt-1">52주 기준 산술값</p>
+                </div>
+                <div class="bg-blue-50 rounded-xl p-5 border-2 border-blue-300">
+                    <p class="text-xs font-bold text-blue-700 mb-1">남는 10시간</p>
+                    <p class="text-2xl font-black text-blue-700">사람의 판단</p>
+                    <p class="text-[11px] text-slate-400 mt-1">규칙 밖의 오류</p>
+                </div>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                체크리스트의 세 항목은 자동화에 적합한 형태입니다.
+                <strong class="text-slate-900">코드 일치 여부, 음수 값, 결측치</strong>는 모두 참과 거짓이 명확해
+                규칙으로 판정할 수 있고 오탐 위험이 낮습니다.
+                이런 항목을 고른 것이 이 자동화가 실제로 작동하는 이유입니다.
+            </p>
+            <div class="bg-white rounded-xl p-6 border border-slate-200">
+                <p class="text-xs font-black text-slate-800 mb-3">규칙으로 잡히지 않는 오류</p>
+                <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
+                    <li>&bull; <strong class="text-slate-800">내용이 맞지 않는 연결</strong> &mdash; 코드는 일치하지만 강의와 교재의 단원이 다른 경우. 형식 검증을 통과합니다</li>
+                    <li>&bull; <strong class="text-slate-800">값은 유효하지만 틀린 값</strong> &mdash; 수강기간이 음수는 아니지만 상품 정책과 다른 경우</li>
+                    <li>&bull; <strong class="text-slate-800">누락되지 않은 오기재</strong> &mdash; 칸이 채워져 있으나 내용이 잘못된 경우. 결측치 탐지로는 잡히지 않습니다</li>
+                </ul>
+                <p class="text-xs text-slate-600 leading-relaxed mt-4 pt-4 border-t border-slate-200">
+                    남는 10시간은 <strong class="text-slate-800">이 영역을 보는 시간</strong>으로 정의해두면 좋습니다.
+                    자동화의 목표를 0시간으로 잡으면 규칙 밖 오류가 무검수로 남습니다.
+                    <strong class="text-slate-800">절감의 상한을 명시하는 것</strong>이 자동화 제안의 신뢰도를 높입니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-slate-50 border-2 border-slate-200 rounded-2xl p-8">
+            <p class="text-sm font-black text-slate-800 mb-5">VOC 번역이 규모에서 작동하려면</p>
+            <p class="text-slate-600 leading-relaxed mb-5">
+                감정적 표현을 재현 스텝으로 옮기는 접근은 개발팀 소통에서 효과가 분명합니다.
+                다만 데모의 세 건과 달리 <strong class="text-slate-900">실제 리뷰는 대량으로 들어옵니다.</strong>
+                규모에서 작동하려면 두 가지가 필요합니다.
+            </p>
+            <div class="grid md:grid-cols-2 gap-5 mb-5">
+                <div class="bg-white rounded-xl p-6 border border-slate-200">
+                    <p class="text-xs font-black text-slate-800 mb-2">번역 전에 분류가 필요합니다</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        모든 리뷰를 재현 스텝으로 옮길 수는 없습니다.
+                        <strong class="text-slate-800">같은 증상의 반복 건수</strong>를 먼저 세어 다수 건부터 처리하면
+                        한 건을 번역하는 노력이 여러 유저의 문제를 해결합니다.
+                        단건 리뷰는 재현 가능성도 낮습니다.
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-slate-200">
+                    <p class="text-xs font-black text-slate-800 mb-2">재현에 필요한 정보가 리뷰에 없습니다</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        데모의 리뷰에는 기기 정보가 있지만, 실제로는 <strong class="text-slate-800">앱 버전과 발생 시점, 네트워크 환경</strong>이 빠져 있는 경우가 대부분입니다.
+                        재현 스텝을 쓰려면 이 정보가 있어야 하므로,
+                        <strong class="text-slate-800">앱 내 문의 경로에서 환경 정보를 자동 첨부</strong>하는 설계가 함께 가야 합니다.
+                    </p>
+                </div>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">
+                <strong class="text-slate-800">스토어 리뷰의 제약:</strong> 스토어 리뷰는 되묻기가 어렵습니다.
+                추가 정보가 필요하면 답글로 앱 내 문의를 안내하는 동선이 필요하고,
+                이 과정에서 상당수가 이탈합니다.
+                따라서 스토어 리뷰는 <strong class="text-slate-900">증상 빈도를 파악하는 용도</strong>로,
+                재현 스텝 작성은 <strong class="text-slate-900">앱 내 문의 건</strong>을 기반으로 하는 편이 현실적입니다.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- 보강: 완화 곡선과 티켓 분류 -->
+    <section id="s5b" class="mb-20 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-4">완화 곡선에서 70이 어디로 갔는지</h2>
+        <p class="text-slate-600 leading-relaxed mb-8">
+            앞에서 용량 초과분을 봤습니다. 이번에는 <strong class="text-slate-900">곡선 아래 총량</strong>과
+            시간대별 감소율을 보면 완화안이 무엇을 한 것인지가 더 분명해집니다.
+        </p>
+
+        <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-8">
+            <table class="w-full min-w-[600px] border-collapse text-sm">
+                <thead>
+                    <tr class="bg-slate-800 text-white">
+                        <th class="p-3 text-left text-xs font-black">시각</th>
+                        <th class="p-3 text-center text-xs font-black">폭주</th>
+                        <th class="p-3 text-center text-xs font-black">완화 후</th>
+                        <th class="p-3 text-center text-xs font-black">감소율</th>
+                        <th class="p-3 text-center text-xs font-black">구간</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr class=" border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">15:00</td>
+                            <td class="p-3 text-center font-bold text-slate-600">12</td>
+                            <td class="p-3 text-center font-bold text-slate-700">12</td>
+                            <td class="p-3 text-center font-black text-slate-500">0%</td>
+                            <td class="p-3 text-center text-xs font-bold text-slate-500">배포 전</td>
+                        </tr>
+                        <tr class=" border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">16:00</td>
+                            <td class="p-3 text-center font-bold text-slate-600">15</td>
+                            <td class="p-3 text-center font-bold text-slate-700">15</td>
+                            <td class="p-3 text-center font-black text-slate-500">0%</td>
+                            <td class="p-3 text-center text-xs font-bold text-slate-500">배포 전</td>
+                        </tr>
+                        <tr class=" border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">16:40</td>
+                            <td class="p-3 text-center font-bold text-slate-600">30</td>
+                            <td class="p-3 text-center font-bold text-slate-700">30</td>
+                            <td class="p-3 text-center font-black text-slate-500">0%</td>
+                            <td class="p-3 text-center text-xs font-bold text-slate-500">배포 전</td>
+                        </tr>
+                        <tr class="bg-amber-50 border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">17:00</td>
+                            <td class="p-3 text-center font-bold text-slate-600">95</td>
+                            <td class="p-3 text-center font-bold text-slate-700">75</td>
+                            <td class="p-3 text-center font-black text-amber-700">21.1%</td>
+                            <td class="p-3 text-center text-xs font-bold text-amber-700">시험 종료</td>
+                        </tr>
+                        <tr class="bg-emerald-50 border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">17:30</td>
+                            <td class="p-3 text-center font-bold text-slate-600">85</td>
+                            <td class="p-3 text-center font-bold text-slate-700">50</td>
+                            <td class="p-3 text-center font-black text-emerald-700">41.2%</td>
+                            <td class="p-3 text-center text-xs font-bold text-emerald-700">감소폭 최대</td>
+                        </tr>
+                        <tr class=" border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">18:00</td>
+                            <td class="p-3 text-center font-bold text-slate-600">40</td>
+                            <td class="p-3 text-center font-bold text-slate-700">30</td>
+                            <td class="p-3 text-center font-black text-slate-500">25.0%</td>
+                            <td class="p-3 text-center text-xs font-bold text-slate-500">25%로 수렴</td>
+                        </tr>
+                        <tr class=" border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">19:00</td>
+                            <td class="p-3 text-center font-bold text-slate-600">20</td>
+                            <td class="p-3 text-center font-bold text-slate-700">15</td>
+                            <td class="p-3 text-center font-black text-slate-500">25.0%</td>
+                            <td class="p-3 text-center text-xs font-bold text-slate-500">25%로 수렴</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5 mb-8">
+            <div class="bg-white border-2 border-slate-300 rounded-2xl p-6 text-center">
+                <p class="text-xs font-bold text-slate-500 mb-2">폭주 총량</p>
+                <p class="text-3xl font-black text-slate-800 mb-1">297</p>
+                <p class="text-xs text-slate-500">평시 102의 2.91배</p>
+            </div>
+            <div class="bg-blue-50 border-2 border-blue-300 rounded-2xl p-6 text-center">
+                <p class="text-xs font-bold text-blue-700 mb-2">완화 후 총량</p>
+                <p class="text-3xl font-black text-blue-700 mb-1">227</p>
+                <p class="text-xs text-slate-500">평시의 2.23배</p>
+            </div>
+            <div class="bg-slate-900 rounded-2xl p-6 text-center text-white">
+                <p class="text-xs font-bold text-amber-400 mb-2">사라진 양</p>
+                <p class="text-3xl font-black text-amber-400 mb-1">70</p>
+                <p class="text-xs text-slate-400">전체의 23.6%</p>
+            </div>
+        </div>
+
+        <div class="bg-amber-50 border-2 border-amber-300 rounded-2xl p-8 mb-8">
+            <p class="text-sm font-black text-amber-800 mb-5">세로축이 사람 수인지 서버 부하인지에 따라 뜻이 갈립니다</p>
+            <p class="text-slate-700 leading-relaxed mb-5">
+                완화 수단은 <strong class="text-slate-900">무거운 동적 화면 대신 텍스트 기반 가채점 페이지로 우회</strong>하는 것입니다.
+                경량 페이지로 바꿔도 <strong class="text-slate-900">서비스에 들어오는 사람 수는 줄지 않습니다.</strong>
+                줄어드는 것은 요청당 서버가 하는 일입니다.
+                그런데 전략 설명은 이 값을 <strong class="text-amber-800">동시접속 트래픽</strong>이라고 부릅니다.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6 mb-5">
+                <div class="bg-white rounded-2xl p-6 border border-slate-200">
+                    <p class="text-xs font-black text-slate-700 mb-2">사람 수라면</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        70만큼이 <strong class="text-slate-800">서비스를 쓰지 못한 것</strong>이 됩니다.
+                        수능 당일 가채점은 대체재가 있으므로, 못 들어온 유저는 다른 서비스로 갑니다.
+                        장애는 막았지만 이용자는 잃은 결과입니다.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border-2 border-emerald-300">
+                    <p class="text-xs font-black text-emerald-700 mb-2">서버 부하라면</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        같은 사람이 <strong class="text-slate-800">가벼운 화면으로 서비스를 받은 것</strong>입니다.
+                        아무도 잃지 않고 부하만 23.6% 줄였다는 뜻이므로 제안이 훨씬 강해집니다.
+                    </p>
+                </div>
+            </div>
+            <p class="text-slate-700 leading-relaxed">
+                제안의 성격상 <strong class="text-slate-900">후자가 의도일 것</strong>입니다.
+                축 이름을 <strong class="text-emerald-700">서버 부하</strong>로 적고
+                동시접속자 수는 폭주와 완화에서 같다는 점을 한 줄 덧붙이면,
+                같은 그래프가 <strong class="text-slate-900">이용자를 지키면서 장애를 막았다</strong>는 뜻이 됩니다.
+                지금 표기로는 읽는 사람이 반대로 해석할 여지가 남습니다.
+            </p>
+        </div>
+
+        <div class="bg-white border-2 border-emerald-300 rounded-2xl p-8 mb-8">
+            <p class="text-sm font-black text-emerald-700 mb-5">감소율이 25%로 수렴하는 것이 경량 페이지의 실력입니다</p>
+            <p class="text-slate-600 leading-relaxed mb-5">
+                시간대별 감소율이 0, 21.1, 41.2, 25.0, 25.0%입니다.
+                후반 두 구간이 <strong class="text-slate-900">정확히 25%로 같습니다.</strong>
+                상황이 안정된 뒤의 값이므로 이것이 경량 페이지가 실제로 줄이는 부하 비율로 읽힙니다.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                    <p class="text-xs font-black text-slate-700 mb-2">17시의 21.1%는 왜 낮은가</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        전환이 <strong class="text-slate-800">막 시작된 시점</strong>이라 일부 이용자만 경량 화면을 받은 것으로 볼 수 있습니다.
+                        가장 위험한 순간에 효과가 가장 약한 셈입니다.
+                    </p>
+                </div>
+                <div class="bg-emerald-50 rounded-2xl p-6 border border-emerald-200">
+                    <p class="text-xs font-black text-emerald-700 mb-2">17시 30분의 41.2%는 왜 높은가</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        전환이 완료된 데다 <strong class="text-slate-800">밀려 있던 요청이 함께 빠지는 구간</strong>이 겹친 것으로 보입니다.
+                        일시적인 값이므로 성과로 제시할 때는 25%를 쓰는 편이 안전합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-slate-900 rounded-2xl p-8 md:p-10 text-white mb-8">
+            <p class="text-emerald-400 font-black text-[10px] tracking-wide mb-5">이 이벤트는 사후 대응이 아니라 사전 배포가 가능합니다</p>
+            <p class="text-sm md:text-base text-slate-300 leading-relaxed mb-5">
+                시뮬레이션은 <strong class="text-white">장애 위험을 감지한 뒤 비상용 웹뷰를 배포</strong>하는 순서로 그려져 있습니다.
+                그런데 수능 종료 시각은 <strong class="text-emerald-400">몇 달 전에 공지되는 확정 일정</strong>입니다.
+                폭주 시점을 정확히 아는데 감지를 기다릴 이유가 없습니다.
+            </p>
+            <p class="text-sm md:text-base text-slate-300 leading-relaxed mb-5">
+                17시 구간의 감소율이 21.1%에 그친 것도 전환이 그때 시작되기 때문입니다.
+                <strong class="text-white">종료 30분 전에 경량 모드로 미리 전환</strong>해 두면
+                가장 위험한 17시 구간부터 25%가 적용됩니다.
+                95가 아니라 처음부터 71 수준으로 들어가므로 용량선에 훨씬 여유가 생깁니다.
+            </p>
+            <div class="bg-white/10 rounded-xl p-6 border border-white/20">
+                <p class="text-xs font-black text-emerald-400 mb-3">사후 대응으로 그린 것이 제안을 낮춰 보이게 합니다</p>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                    감지 후 대응은 <strong class="text-white">언제 일어날지 모르는 장애</strong>에 쓰는 방식입니다.
+                    시각이 정해진 이벤트에는 사전 전환이 맞고, 실행 난이도도 더 낮습니다.
+                    버튼 순서를 <strong class="text-emerald-400">사전 전환과 비상 대응 두 가지</strong>로 나눠 보여주면
+                    운영 계획을 세울 줄 안다는 점이 함께 전달됩니다.
+                    감지 대응은 <strong class="text-white">예측하지 못한 다른 폭주</strong>를 위한 두 번째 장치로 남겨둡니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-white border-2 border-slate-300 rounded-2xl p-8 mb-8">
+            <p class="text-sm font-black text-slate-800 mb-5">티켓 세 건이 서로 다른 세 조직으로 갑니다</p>
+            <p class="text-slate-600 leading-relaxed mb-6">
+                전략 3의 예시 티켓은 세 건입니다. 담당 영역이 <strong class="text-slate-900">모두 다릅니다.</strong>
+            </p>
+            <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-6">
+                <table class="w-full min-w-[560px] border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-slate-800 text-white">
+                            <th class="p-3 text-left text-xs font-black">유형</th>
+                            <th class="p-3 text-left text-xs font-black">내용</th>
+                            <th class="p-3 text-center text-xs font-black">우선순위</th>
+                            <th class="p-3 text-center text-xs font-black">담당</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">버그</td>
+                            <td class="p-3 text-xs text-slate-600">배속 터치 시 프리징</td>
+                            <td class="p-3 text-center font-black text-rose-600">높음</td>
+                            <td class="p-3 text-center text-xs text-slate-600">클라이언트</td>
+                        </tr>
+                        <tr class="border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">버그</td>
+                            <td class="p-3 text-xs text-slate-600">배너 클릭 시 빈 화면</td>
+                            <td class="p-3 text-center font-bold text-slate-600">보통</td>
+                            <td class="p-3 text-center text-xs text-slate-600">웹 앱 개발</td>
+                        </tr>
+                        <tr class="bg-amber-50">
+                            <td class="p-3 font-black text-slate-800">사용성</td>
+                            <td class="p-3 text-xs text-slate-600">결제 버튼이 키보드에 가려짐</td>
+                            <td class="p-3 text-center font-bold text-amber-700">보통</td>
+                            <td class="p-3 text-center text-xs text-slate-600">사용성 · 프론트엔드</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="bg-amber-50 rounded-2xl p-6 border border-amber-200 mb-5">
+                <p class="text-xs font-black text-amber-800 mb-3">결제가 막히는 건이 보통으로 잡혀 있습니다</p>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    배속 터치 프리징은 <strong class="text-slate-800">높음</strong>, 결제 버튼이 가려지는 건은 <strong class="text-slate-800">보통</strong>입니다.
+                    프리징은 사용 불편이고 결제 차단은 <strong class="text-amber-800">매출이 발생하지 않는 상태</strong>입니다.
+                    어느 쪽이 급한지는 기준에 따라 갈리는데, 그 기준이 문서에 없습니다.
+                    영향 범위로 볼지 매출 영향으로 볼지 복구 난이도로 볼지를 정해두지 않으면
+                    <strong class="text-slate-800">번역은 되지만 순서는 담당자마다 달라집니다.</strong>
+                </p>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">
+                <strong class="text-slate-800">번역 다음에 필요한 것은 분류 규칙입니다.</strong>
+                세 건이 세 조직으로 흩어지므로, 어느 조직으로 보낼지와 어느 순서로 처리할지를
+                <strong class="text-slate-900">티켓 양식에 미리 넣어두어야</strong> 실제 운영에서 작동합니다.
+                전략 3이 만든 재현 스텝은 개발팀이 바로 착수할 수 있게 해주지만,
+                <strong class="text-slate-900">어느 개발팀인지</strong>는 아직 사람이 판단하고 있습니다.
+                유형과 화면 위치로 담당을 자동 배정하는 규칙을 붙이면 전략 1의 자동화와 같은 성격의 개선이 됩니다.
+            </p>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-7">
+            <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">이 절의 한계</p>
+            <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                <li>&bull; 트래픽 수치는 <strong class="text-slate-800">대응 흐름을 보여주기 위한 시뮬레이션 값</strong>입니다. 총량과 감소율은 그 값을 그대로 계산한 것이며 실제 접속 데이터가 아닙니다.</li>
+                <li>&bull; 25%를 경량 페이지의 절감률로 읽은 것은 <strong class="text-slate-800">후반 두 구간이 같은 값이라는 관찰</strong>에 근거합니다. 문서가 그렇게 설계했다고 밝힌 것은 아닙니다.</li>
+                <li>&bull; 17시 30분의 41.2%를 대기 요청 해소로 본 것은 <strong class="text-slate-800">가능한 해석 중 하나</strong>이며 확인된 원인이 아닙니다.</li>
+                <li>&bull; 예시 티켓은 <strong class="text-slate-800">세 건뿐</strong>입니다. 우선순위 기준의 문제를 지적했지만, 실제 티켓 분포에서 같은 문제가 얼마나 자주 생기는지는 이 자료로 알 수 없습니다.</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- 보강: 검증 지표와 한계 -->
+    <section id="s6" class="mb-12 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-8">측정할 지표와 이 기록의 한계</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-7">
+                <p class="text-sm font-black text-emerald-700 mb-4">측정할 지표</p>
+                <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                    <li>&bull; <strong class="text-slate-800">피크 시점 최대 동시접속과 응답 시간</strong> &mdash; 완화 전환 후에도 용량 대비 여유가 유지되는지</li>
+                    <li>&bull; <strong class="text-slate-800">전환 시점과 복귀 시점</strong> &mdash; 사전 전환이 실제로 피크를 낮추는지 확인합니다</li>
+                    <li>&bull; <strong class="text-slate-800">검수 오류 유출 건수</strong> &mdash; 자동화 통과 후 운영 중 발견된 데이터 오류. 절감 시간과 함께 봅니다</li>
+                    <li>&bull; <strong class="text-slate-800">증상별 리뷰 건수</strong> &mdash; 같은 문제의 반복 규모. VOC 처리 우선순위의 근거입니다</li>
+                    <li>&bull; <strong class="text-slate-800">재현 성공률</strong> &mdash; 작성한 재현 스텝으로 개발팀이 실제 재현한 비율</li>
+                </ul>
+            </div>
+            <div class="bg-white border-2 border-slate-200 rounded-2xl p-7">
+                <p class="text-sm font-black text-slate-500 mb-4">이 기록의 한계</p>
+                <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                    <li>&bull; 트래픽 수치는 <strong class="text-slate-800">시뮬레이션 값</strong>이며 실제 서버 지표가 아닙니다. 용량 80이라는 기준선도 상대값입니다.</li>
+                    <li>&bull; 주당 40시간에서 10시간은 <strong class="text-slate-800">자동화 전후 비교 추정값</strong>입니다. 데이터 규모와 상태에 따라 달라집니다.</li>
+                    <li>&bull; 연 1,560시간은 <strong class="text-slate-800">52주를 곱한 산술 결과</strong>이며 검수 물량이 연중 균등하다는 가정입니다. 시즌성이 있다면 실제 절감은 다릅니다.</li>
+                    <li>&bull; 웹뷰 전환의 <strong class="text-slate-800">개발 공수와 사전 배포 준비</strong>는 다루지 않았습니다. 비상용 뷰는 미리 만들어 두어야 당일에 쓸 수 있습니다.</li>
+                    <li>&bull; 리뷰 예시는 <strong class="text-slate-800">구조를 보여주기 위한 재구성</strong>이며 실제 접수 문안이 아닙니다.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     </main>
 
     <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 py-8 text-center mt-10">
         <p class="text-slate-400 text-sm font-medium">
-            © 2026 PM Archive. Designed for Education Application.
+            © 2026 허재석 · 교육 앱 라이브 운영 설계
         </p>
     </footer>
 
@@ -319,7 +803,7 @@
                         } 
                     },
                     scales: { 
-                        x: { max: 45, grid: { color: '#f1f5f9' }, title: {display: true, text: '시간 (Hours)', color: '#64748b'} },
+                        x: { max: 45, grid: { color: '#f1f5f9' }, title: {display: true, text: '시간', color: '#64748b'} },
                         y: { grid: { display: false }, ticks: { font: { family: 'Pretendard', weight: 'bold' } } }
                     }
                 }
@@ -484,7 +968,7 @@
                 chart2.data.datasets[0].pointBackgroundColor = '#3b82f6';
                 chart2.update();
 
-                statusTraffic.innerHTML = '<span class="animate-pulse">🟢</span> 정상 (Normal)';
+                statusTraffic.innerHTML = '<span class="animate-pulse">🟢</span> 정상';
             });
 
             /* =========================================
@@ -493,19 +977,19 @@
             const vocDB = [
                 {
                     title: "[Bug] iPad OS 환경 플레이어 배속 터치 시 프리징",
-                    pri: "High", team: "Client / iOS",
+                    pri: "높음", team: "클라이언트 / iOS",
                     steps: ["1080p 해상도 영상 재생 시작", "배속 컨트롤러 터치하여 1.5x 설정", "배속 버튼 연속 터치 시 화면 멈춤 발생"],
-                    sol: "플레이어 컨트롤러 UI 터치 디바운스(Debounce) 처리 적용 및 연속 이벤트 캐싱 최적화"
+                    sol: "플레이어 컨트롤러 UI 터치 디바운스 처리 적용 및 연속 이벤트 캐싱 최적화"
                 },
                 {
                     title: "[Bug] 메인 홈 프로모션 배너 클릭 시 빈 화면 노출",
-                    pri: "Medium", team: "Web App Dev",
-                    steps: ["앱 실행 후 홈 화면 진입", "3번째 프로모션 캐러셀 배너 탭", "로딩 없이 흰색 빈 웹뷰(Blank Screen) 노출"],
+                    pri: "보통", team: "웹 앱 개발",
+                    steps: ["앱 실행 후 홈 화면 진입", "3번째 프로모션 캐러셀 배너 탭", "로딩 없이 흰색 빈 웹뷰 노출"],
                     sol: "딥링크 파라미터 파싱 오류로 추정. 유효하지 않은 URL 접근 시 '잠시 후 다시 시도' Fallback UI 노출 처리."
                 },
                 {
                     title: "[UX/UI] 결제 CTA 버튼이 OS 키보드 영역에 가려짐",
-                    pri: "Medium", team: "UX & Front-end",
+                    pri: "보통", team: "사용성 · 프론트엔드",
                     steps: ["장바구니 -> 결제 페이지 진입", "배송지 입력 필드 터치하여 가상 키보드 활성화", "하단 '결제하기' 버튼이 키보드 뒤로 숨겨짐"],
                     sol: "결제 폼 영역을 KeyboardAvoidingView로 감싸고, bottom inset 값을 동적 계산하여 버튼 위치 상향 고정."
                 }

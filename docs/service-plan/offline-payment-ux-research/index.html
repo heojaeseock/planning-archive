@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
-        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
         
         :root {
             --brand-blue: #3182f6;
@@ -90,10 +90,10 @@
     <nav class="sticky top-0 z-50 w-full backdrop-blur-md bg-white/85 border-b border-gray-200">
         <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="font-bold text-xl tracking-tight text-[#191f28]">
-                <span class="text-brand-blue">오프라인 결제</span> 서비스 <span class="font-normal text-gray-400 text-base ml-2">| Research Ops Proposal</span>
+                <span class="text-brand-blue">오프라인 결제</span> 서비스 <span class="font-normal text-gray-400 text-base ml-2">| 리서치 운영 설계</span>
             </div>
             <div class="text-xs font-bold text-brand-blue bg-blue-50 px-3 py-1.5 rounded-full border border-blue-100 hidden sm:block">
-                Interactive Report
+                상호작용 보고서
             </div>
         </div>
     </nav>
@@ -247,7 +247,7 @@
                                 </div>
                                 <div class="bg-[#f9fafb] p-5 rounded-xl border border-gray-100">
                                     <h4 class="font-bold text-[#191f28] mb-2 text-[15px]">2. 커뮤니케이션 자동화</h4>
-                                    <p class="text-sm text-[#4e5968] leading-relaxed">슬랙(Slack) 웹훅과 캘린더를 연동하여 인터뷰 일정 조율 및 알림을 시스템화합니다.</p>
+                                    <p class="text-sm text-[#4e5968] leading-relaxed">슬랙 웹훅과 캘린더를 연동하여 인터뷰 일정 조율 및 알림을 시스템화합니다.</p>
                                 </div>
                                 <div class="bg-[#f9fafb] p-5 rounded-xl border border-gray-100">
                                     <h4 class="font-bold text-[#191f28] mb-2 text-[15px]">3. 오지급 방지 정산</h4>
@@ -326,6 +326,182 @@
                     </div>
                 </div>
 
+            </div>
+        </section>
+
+
+        <section id="review" class="mb-20">
+            <div class="mb-10">
+                <h2 class="text-3xl font-black text-slate-900 mb-3">리소스 재배분을 숫자로 보면</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    도입 전후 시뮬레이션의 세 항목을 변화량으로 환산하면
+                    <strong class="text-slate-900">무엇이 줄고 무엇이 새로 생기는지</strong>가 분명해집니다.
+                </p>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-10">
+                <table class="w-full min-w-[560px] border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-slate-800 text-white">
+                            <th class="p-3 text-left text-xs font-black">항목</th>
+                            <th class="p-3 text-center text-xs font-black">도입 전</th>
+                            <th class="p-3 text-center text-xs font-black">도입 후</th>
+                            <th class="p-3 text-center text-xs font-black">변화</th>
+                            <th class="p-3 text-center text-xs font-black">증감률</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr class="bg-rose-50 border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">Admin 운영 반복 업무</td>
+                                <td class="p-3 text-center font-bold text-slate-500">75</td>
+                                <td class="p-3 text-center font-bold text-slate-800">10</td>
+                                <td class="p-3 text-center font-black text-rose-700">-65p</td>
+                                <td class="p-3 text-center text-xs font-bold text-rose-700">-86.7%</td>
+                            </tr>
+                            <tr class="bg-emerald-50 border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">인사이트 발굴 및 전략</td>
+                                <td class="p-3 text-center font-bold text-slate-500">25</td>
+                                <td class="p-3 text-center font-bold text-slate-800">60</td>
+                                <td class="p-3 text-center font-black text-emerald-700">+35p</td>
+                                <td class="p-3 text-center text-xs font-bold text-emerald-700">+140.0%</td>
+                            </tr>
+                            <tr class="bg-blue-50 border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">DIY 리서치 지원</td>
+                                <td class="p-3 text-center font-bold text-slate-500">0</td>
+                                <td class="p-3 text-center font-bold text-slate-800">30</td>
+                                <td class="p-3 text-center font-black text-blue-700">+30p</td>
+                                <td class="p-3 text-center text-xs font-bold text-blue-700">신규</td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-slate-900 rounded-3xl p-8 md:p-10 text-white mb-10">
+                <p class="text-sm font-bold text-emerald-400 mb-5">Admin에서 확보한 65p가 두 곳으로 나뉩니다</p>
+                <p class="leading-relaxed mb-5">
+                    Admin이 75에서 10으로 줄어 <strong class="text-emerald-400">65p</strong>가 확보되고,
+                    그중 <strong class="text-white">35p는 인사이트 발굴로, 30p는 새로 만드는 DIY 지원으로</strong> 갑니다.
+                    합계가 100으로 맞아 배분 구조가 명확합니다.
+                </p>
+                <p class="leading-relaxed">
+                    다만 이 그림에서 <strong class="text-emerald-400">DIY 30p는 절감이 아니라 신규 업무</strong>입니다.
+                    가이드를 만드는 일회성 작업이 아니라 메이커들의 리서치를 <strong class="text-white">지속적으로 지원하고 결과를 검수하는 상시 부담</strong>입니다.
+                    즉 Admin을 줄여 얻은 시간의 절반 가까이가 새 업무로 채워지므로,
+                    <strong class="text-white">순수한 인사이트 시간 증가는 35p</strong>로 읽는 것이 정확합니다.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-3xl border-2 border-amber-300 p-8 mb-10">
+                <h3 class="text-xl font-bold text-slate-900 mb-5">Admin을 10까지 줄일 수 있는가</h3>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    86.7% 감소는 큰 폭입니다. 자동화 대상 세 가지가 실제로 이 폭을 만드는지 확인하려면
+                    <strong class="text-slate-900">Admin 업무를 성격별로 나눠야</strong> 합니다.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-emerald-50 rounded-2xl p-6 border-2 border-emerald-200">
+                        <p class="text-xs font-bold text-emerald-700 mb-3">자동화가 실제로 걷어내는 부분</p>
+                        <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
+                            <li>&bull; <strong class="text-slate-800">패널 추출</strong> &mdash; 결제액과 업종 조건은 기준이 명확해 필터링으로 처리됩니다</li>
+                            <li>&bull; <strong class="text-slate-800">일정 알림 발송</strong> &mdash; 확정된 일정을 통보하는 것은 완전히 자동화됩니다</li>
+                            <li>&bull; <strong class="text-slate-800">보상 정산 검증</strong> &mdash; 지급 대상과 금액 대조는 규칙으로 판정됩니다</li>
+                        </ul>
+                    </div>
+                    <div class="bg-amber-50 rounded-2xl p-6 border-2 border-amber-300">
+                        <p class="text-xs font-bold text-amber-800 mb-3">자동화로 줄지 않는 부분</p>
+                        <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
+                            <li>&bull; <strong class="text-slate-800">일정 재조정</strong> &mdash; 가맹점주는 영업 중이라 당일 변경이 잦습니다. 알림은 자동이지만 <strong>재협의는 사람이 합니다</strong></li>
+                            <li>&bull; <strong class="text-slate-800">섭외 승낙 확보</strong> &mdash; 자동화가 다루는 것은 누구에게 연락할지이고, 병목은 <strong>연락해서 승낙받는 단계</strong>입니다</li>
+                            <li>&bull; <strong class="text-slate-800">사례비 예외 처리</strong> &mdash; 계좌 오류나 중도 이탈 건은 개별 판단이 필요합니다</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                    <p class="text-xs font-bold text-slate-800 mb-2">그래서 목표치를 나눠 잡는 편이 낫습니다</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        오프라인 결제 서비스의 리서치는 <strong class="text-slate-800">현장 변수가 큰 것이 특성</strong>입니다.
+                        문서가 서두에서 이 점을 정확히 지적했으므로, 그 특성이 Admin 절감의 상한도 함께 정합니다.
+                        <strong class="text-slate-800">정형 Admin은 대폭 줄이고 비정형 조율은 남는다</strong>고 쓰면
+                        10이라는 목표가 낙관으로 읽히지 않고, 도입 후 실제 값이 15~20이 나와도 실패가 아니게 됩니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl border-2 border-slate-200 p-8 mb-10">
+                <h3 class="text-xl font-bold text-slate-900 mb-5">DIY 리서치에 필요한 안전장치</h3>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    메이커가 직접 리서치를 수행하면 속도가 올라가지만,
+                    <strong class="text-slate-900">비전문가가 설계한 조사는 잘못된 결론으로 이어질 수 있습니다.</strong>
+                    문서가 <strong class="text-slate-900">중립적 질문 작성 템플릿</strong>을 첫 항목으로 둔 것은 이 위험을 정확히 겨냥한 대응입니다.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                        <p class="text-xs font-bold text-slate-800 mb-2">템플릿이 막는 것</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            유도 질문과 이중 질문 같은 <strong class="text-slate-800">문항 수준의 편향</strong>입니다.
+                            표준 문안을 쓰면 대부분 방지됩니다.
+                        </p>
+                    </div>
+                    <div class="bg-amber-50 rounded-2xl p-6 border border-amber-200">
+                        <p class="text-xs font-bold text-amber-800 mb-2">템플릿으로 막히지 않는 것</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            <strong class="text-slate-800">대상자 선정 편향</strong>과 <strong class="text-slate-800">결과 해석 편향</strong>입니다.
+                            자기 가설에 맞는 사장님만 만나거나, 소수 의견을 전체로 일반화하는 문제는 질문지와 무관하게 발생합니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-slate-900 rounded-2xl p-6 text-white">
+                    <p class="text-xs font-bold text-blue-300 mb-2">보완 방향</p>
+                    <p class="text-sm leading-relaxed">
+                        DIY 리서치의 <strong class="text-blue-300">대상자 선정과 결론 도출 두 지점에만 검수를 붙입니다.</strong>
+                        수행 전에 누구를 만날지 확인하고, 수행 후에 결론이 표본 크기에 비해 과한지 확인하는 방식입니다.
+                        전 과정을 검수하면 DIY의 목적인 속도가 사라지므로,
+                        <strong class="text-white">앞과 뒤만 잡고 가운데는 맡기는 것</strong>이 30p 안에서 감당 가능한 형태입니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl border-2 border-slate-200 p-8 mb-10">
+                <h3 class="text-xl font-bold text-slate-900 mb-5">인사이트 허브는 만드는 것보다 유지가 어렵습니다</h3>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    문서가 문제로 지목한 것은 <strong class="text-slate-900">정성적 목소리가 일회성으로 휘발되는 현상</strong>입니다.
+                    태깅과 아카이빙은 정확한 처방이지만, 저장소는 <strong class="text-slate-900">검색되지 않으면 자산이 아니라 창고</strong>가 됩니다.
+                </p>
+                <ul class="space-y-3 text-sm text-slate-600 leading-relaxed mb-6">
+                    <li>&bull; <strong class="text-slate-800">태그 체계의 주인</strong> &mdash; 누가 태그를 정하고 승인하는지 정해두지 않으면 같은 개념에 여러 태그가 생겨 검색이 깨집니다. 태그 목록을 고정하고 신규 추가는 승인제로 두는 편이 안전합니다</li>
+                    <li>&bull; <strong class="text-slate-800">검색 진입 경로</strong> &mdash; 조직원이 저장소가 있다는 사실을 알아도 찾아가지 않습니다. 기획 문서 템플릿에 <strong>관련 인사이트 링크 항목</strong>을 넣어 참조를 절차로 만드는 방법이 있습니다</li>
+                    <li>&bull; <strong class="text-slate-800">백로그 연결 경로</strong> &mdash; 인사이트가 백로그로 직결된다는 주장이 성립하려면, 인사이트 하나가 티켓으로 전환되는 <strong>구체적 동선</strong>이 있어야 합니다. 태그만으로는 이어지지 않습니다</li>
+                </ul>
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        <strong class="text-slate-800">가장 단순한 판정 기준:</strong> 저장소가 작동하는지는
+                        <strong class="text-slate-800">기획 문서에 인사이트가 인용된 횟수</strong>로 알 수 있습니다.
+                        아카이빙 건수가 늘어도 인용이 0이면 휘발 문제는 그대로입니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-3xl border-2 border-emerald-200 p-7">
+                    <p class="text-sm font-bold text-emerald-700 mb-4">측정할 지표</p>
+                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                        <li>&bull; <strong class="text-slate-800">Admin 시간 비중</strong> &mdash; 정형과 비정형을 나눠 기록합니다. 목표 10은 정형 기준입니다</li>
+                        <li>&bull; <strong class="text-slate-800">섭외 승낙률</strong> &mdash; 연락 대비 인터뷰 성사 비율. 자동화가 다루지 못하는 병목의 크기입니다</li>
+                        <li>&bull; <strong class="text-slate-800">일정 변경 발생률</strong> &mdash; 확정 후 재조정된 비율. 비정형 Admin의 실제 부담입니다</li>
+                        <li>&bull; <strong class="text-slate-800">보상 오지급 건수</strong> &mdash; 파이프라인 도입 전후 비교</li>
+                        <li>&bull; <strong class="text-slate-800">인사이트 인용 횟수</strong> &mdash; 기획 문서와 백로그 티켓에서 저장소를 참조한 건수</li>
+                        <li>&bull; <strong class="text-slate-800">DIY 리서치 건수와 검수 반송률</strong> &mdash; 반송이 많으면 템플릿이 부족한 것입니다</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-3xl border-2 border-slate-200 p-7">
+                    <p class="text-sm font-bold text-slate-500 mb-4">이 기획안의 한계</p>
+                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                        <li>&bull; 도입 전후 비중은 <strong class="text-slate-800">현행 추정과 도입 후 목표</strong>로 표기된 값이며 실측치가 아닙니다. 본문에도 그렇게 명시되어 있습니다.</li>
+                        <li>&bull; 세 항목의 합이 100이 되도록 구성한 <strong class="text-slate-800">상대 비중</strong>이므로 절대 시간으로 환산할 수 없습니다. 총 업무량이 늘면 비중이 같아도 실제 시간은 다릅니다.</li>
+                        <li>&bull; 자동화 도구는 <strong class="text-slate-800">엑셀과 슬랙, Jira를 전제</strong>합니다. 사용 도구와 연동 권한에 따라 구현 범위가 달라집니다.</li>
+                        <li>&bull; 패널 데이터 활용은 <strong class="text-slate-800">가맹점 정보의 이용 동의 범위</strong>에 종속됩니다. 결제액 조건으로 필터링하려면 그 데이터를 리서치 목적으로 쓸 수 있어야 합니다.</li>
+                        <li>&bull; 현장 관찰 시 <strong class="text-slate-800">고객 촬영에 대한 동의 절차</strong>는 다루지 않았습니다. 매장에는 가맹점주 외에 소비자가 있습니다.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 

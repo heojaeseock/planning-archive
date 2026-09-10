@@ -7,7 +7,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
 <style>
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
 body { font-family: 'Pretendard', sans-serif; }
 .chart-container {
     position: relative;
@@ -52,7 +52,7 @@ body { font-family: 'Pretendard', sans-serif; }
     
     <!-- Title Section -->
     <header class="mb-12 border-b border-slate-200 pb-8 text-center md:text-left">
-        <div class="inline-block px-3 py-1 bg-slate-900 text-white text-xs font-bold rounded mb-4">MARKET ANALYSIS 2026</div>
+        <div class="inline-block px-3 py-1 bg-slate-900 text-white text-xs font-bold rounded mb-4">시장 분석</div>
         <h1 class="text-4xl font-black tracking-tight text-slate-900">2026 스트리밍 플랫폼 생태계 분석 리포트</h1>
         <p class="text-lg text-slate-500 mt-2">SOOP·치지직 플랫폼 전략 비교와 국내 대형 게임 IP 4종의 크리에이터 동향</p>
     </header>
@@ -171,7 +171,7 @@ body { font-family: 'Pretendard', sans-serif; }
                     <tr>
                         <th class="p-6 font-bold text-slate-800">핵심 분석 지표</th>
                         <th class="p-6 font-bold text-indigo-700">SOOP</th>
-                        <th class="p-6 font-bold text-emerald-700">치지직 (Chzzk)</th>
+                        <th class="p-6 font-bold text-emerald-700">치지직</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-100 text-sm md:text-base">
@@ -213,6 +213,236 @@ body { font-family: 'Pretendard', sans-serif; }
             </div>
         </div>
     </div>
+
+
+    <!-- 보강: 수익 구조 해석 -->
+    <section class="mb-10">
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">수익 구조를 크리에이터 입장에서 보면</h2>
+        <p class="text-slate-600 leading-relaxed mb-8">
+            두 플랫폼의 수익 배분 차트는 항목 구성이 다릅니다.
+            항목별 비중을 <strong class="text-slate-900">한 항목에 얼마나 몰려 있는지</strong>로 환산하면 크리에이터가 감당하는 위험이 달라집니다.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-5 mb-8">
+            <div class="bg-white border-2 border-slate-200 rounded-2xl p-6 text-center">
+                <p class="text-[11px] font-black text-slate-400 mb-2">SOOP 최대 항목</p>
+                <p class="text-3xl font-black text-slate-900">후원 68%</p>
+                <p class="text-[11px] text-slate-500 mt-2">나머지 셋을 합쳐도 32%</p>
+            </div>
+            <div class="bg-white border-2 border-slate-200 rounded-2xl p-6 text-center">
+                <p class="text-[11px] font-black text-slate-400 mb-2">치지직 최대 항목</p>
+                <p class="text-3xl font-black text-slate-900">구독 40%</p>
+                <p class="text-[11px] text-slate-500 mt-2">40 / 25 / 25 / 10 으로 분산</p>
+            </div>
+            <div class="bg-slate-900 rounded-2xl p-6 text-center text-white">
+                <p class="text-[11px] font-black text-indigo-300 mb-2">쏠림 정도</p>
+                <p class="text-3xl font-black text-indigo-300">1.71배</p>
+                <p class="text-[11px] text-slate-400 mt-2">SOOP이 한 항목에 더 몰림</p>
+            </div>
+        </div>
+
+        <div class="bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-8 mb-6">
+            <p class="text-sm font-black text-indigo-700 mb-4">쏠림이 뜻하는 것</p>
+            <p class="text-slate-700 leading-relaxed mb-5">
+                후원은 <strong class="text-slate-900">소수의 고액 후원자</strong>에게서 나옵니다.
+                구독은 다수의 소액 결제가 매달 반복됩니다.
+                금액의 크기가 아니라 <strong class="text-indigo-700">들어오는 방식</strong>이 다릅니다.
+            </p>
+            <div class="grid md:grid-cols-2 gap-5">
+                <div class="bg-white rounded-xl p-5 border border-indigo-200">
+                    <p class="text-xs font-black text-slate-800 mb-2">SOOP · 상한이 없고 변동이 큽니다</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">고액 후원자가 붙으면 수익이 크게 뛰지만, 그 사람이 떠나면 <strong class="text-slate-800">수익의 68%가 흔들립니다.</strong> 다음 달 수입을 예측하기 어렵습니다.</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 border border-indigo-200">
+                    <p class="text-xs font-black text-slate-800 mb-2">치지직 · 상한이 낮고 안정적입니다</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">구독자 수만큼 매달 반복되므로 <strong class="text-slate-800">수입 예측이 됩니다.</strong> 대신 폭발적인 수익은 나오지 않습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white border-2 border-amber-300 rounded-2xl p-8">
+            <p class="text-sm font-black text-amber-700 mb-4">신입 크리에이터에게는 이 차이가 반대로 작동합니다</p>
+            <p class="text-slate-700 leading-relaxed">
+                SOOP의 수익성 우위는 <strong class="text-slate-900">고액 후원자를 이미 확보한 크리에이터</strong>에게 해당합니다.
+                시청자가 없는 신입은 후원 68% 구조의 혜택을 받을 수 없습니다.
+                반대로 구독은 소액이라도 <strong class="text-amber-800">시청자 수에 비례해 쌓입니다.</strong>
+                따라서 &ldquo;SOOP이 수익성에서 우위&rdquo;라는 결론은 <strong class="text-slate-900">이미 자리 잡은 크리에이터 기준</strong>이고,
+                신입 유입 관점에서는 같은 순서로 읽히지 않습니다.
+                플랫폼 전략을 세울 때 <strong class="text-slate-900">기성과 신입을 나눠 봐야</strong> 하는 이유입니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- 보강: 카테고리 성격 -->
+    <section class="mb-10">
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">두 플랫폼은 다른 시청 행동을 담고 있습니다</h2>
+        <p class="text-slate-600 leading-relaxed mb-8">
+            카테고리 점유율을 격차로 환산하면 우열이 아니라 <strong class="text-slate-900">성격 차이</strong>가 보입니다.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white border-2 border-slate-300 rounded-2xl p-7">
+                <p class="text-sm font-black text-slate-800 mb-4">SOOP이 앞서는 곳</p>
+                <ul class="space-y-2 text-sm text-slate-600 leading-relaxed">
+                    <li>&bull; RPG·육성 <strong class="text-slate-800">+25</strong></li>
+                    <li>&bull; e스포츠 <strong class="text-slate-800">+15</strong></li>
+                    <li>&bull; FPS·슈팅 <strong class="text-slate-800">+15</strong></li>
+                </ul>
+                <p class="text-xs text-slate-500 leading-relaxed mt-4 pt-4 border-t border-slate-200">
+                    셋 다 <strong class="text-slate-700">승패와 순위가 있는 콘텐츠</strong>입니다. 시청자가 결과를 지켜보러 옵니다.
+                </p>
+            </div>
+            <div class="bg-white border-2 border-slate-300 rounded-2xl p-7">
+                <p class="text-sm font-black text-slate-800 mb-4">치지직이 앞서는 곳</p>
+                <ul class="space-y-2 text-sm text-slate-600 leading-relaxed">
+                    <li>&bull; 종합게임 <strong class="text-slate-800">+37</strong></li>
+                    <li>&bull; 소통·예능 <strong class="text-slate-800">+13</strong></li>
+                </ul>
+                <p class="text-xs text-slate-500 leading-relaxed mt-4 pt-4 border-t border-slate-200">
+                    둘 다 <strong class="text-slate-700">승패가 없는 콘텐츠</strong>입니다. 시청자가 사람을 보러 옵니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-slate-900 rounded-2xl p-8 text-white">
+            <p class="text-sm font-black text-indigo-300 mb-4">그래서 크로스 플랫폼은 중복이 아닙니다</p>
+            <p class="leading-relaxed">
+                같은 게임을 두 플랫폼에 뿌리는 것이 <strong class="text-white">같은 사람에게 두 번 노출하는 일이 아닙니다.</strong>
+                한쪽은 경쟁 결과를 보러 온 시청자, 한쪽은 스트리머를 보러 온 시청자입니다.
+                도달하는 층이 다르므로 <strong class="text-indigo-300">전달할 메시지도 달라야</strong> 합니다.
+                경쟁형에는 랭킹과 대회를, 관람형에는 스토리와 신규 콘텐츠 체험을 붙이는 편이 각 플랫폼의 시청 동기에 맞습니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- 보강: IP별 편차 -->
+    <section class="mb-10">
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">IP 네 종 중 하나가 패턴에서 벗어납니다</h2>
+        <p class="text-slate-600 leading-relaxed mb-8">
+            네 타이틀의 SOOP 점유율 평균은 <strong class="text-slate-900">74.25%</strong>입니다.
+            개별 값을 평균과 비교하면 한 타이틀만 크게 벗어나 있습니다.
+        </p>
+
+        <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-8">
+            <table class="w-full min-w-[520px] border-collapse text-sm">
+                <thead>
+                    <tr class="bg-slate-700 text-white">
+                        <th class="p-3 text-left text-xs font-black">타이틀</th>
+                        <th class="p-3 text-center text-xs font-black">SOOP</th>
+                        <th class="p-3 text-center text-xs font-black">치지직</th>
+                        <th class="p-3 text-center text-xs font-black">평균 대비</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr class=" border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">메이플스토리</td>
+                            <td class="p-3 text-center font-bold text-slate-700">72%</td>
+                            <td class="p-3 text-center font-bold text-slate-500">28%</td>
+                            <td class="p-3 text-center font-black text-slate-500">-2.25%p</td>
+                        </tr>
+                        <tr class="bg-amber-50 border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">던전앤파이터 <span class="text-[10px] font-black text-amber-700">예외</span></td>
+                            <td class="p-3 text-center font-bold text-slate-700">55%</td>
+                            <td class="p-3 text-center font-bold text-slate-500">45%</td>
+                            <td class="p-3 text-center font-black text-amber-700">-19.25%p</td>
+                        </tr>
+                        <tr class="bg-slate-50 border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">FC 온라인</td>
+                            <td class="p-3 text-center font-bold text-slate-700">88%</td>
+                            <td class="p-3 text-center font-bold text-slate-500">12%</td>
+                            <td class="p-3 text-center font-black text-slate-600">+13.75%p</td>
+                        </tr>
+                        <tr class=" border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800">서든어택</td>
+                            <td class="p-3 text-center font-bold text-slate-700">82%</td>
+                            <td class="p-3 text-center font-bold text-slate-500">18%</td>
+                            <td class="p-3 text-center font-black text-slate-500">+7.75%p</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="bg-amber-50 border-2 border-amber-300 rounded-2xl p-8 mb-6">
+            <p class="text-sm font-black text-amber-700 mb-4">던전앤파이터가 유일하게 접근을 허용했습니다</p>
+            <p class="text-slate-700 leading-relaxed mb-5">
+                던파는 RPG인데 치지직 점유가 45%입니다.
+                같은 RPG인 메이플이 28%인 것과 비교하면 <strong class="text-slate-900">17%p 차이</strong>가 납니다.
+                카테고리만으로는 설명되지 않는 편차이므로, 이 문서의 다음 과제는
+                <strong class="text-amber-800">&ldquo;던파에서 무엇이 달랐는가&rdquo;</strong>를 찾는 일입니다.
+            </p>
+            <p class="text-slate-700 leading-relaxed">
+                편차의 원인이 <strong class="text-slate-900">특정 대형 스트리머의 이적</strong>이라면 재현할 수 없는 우연이고,
+                <strong class="text-slate-900">콘텐츠 구조나 플랫폼 협업 방식</strong>이라면 다른 타이틀에도 적용할 수 있는 방법이 됩니다.
+                전자와 후자를 가르는 것이 실무에서 가장 중요한 확인 사항입니다.
+                평균에서 벗어난 값은 오류가 아니라 <strong class="text-amber-800">가장 정보가 많은 지점</strong>입니다.
+            </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-2xl p-7">
+            <p class="text-sm font-black text-slate-800 mb-3">한 가지 더 · 서든어택과 FC 온라인의 쏠림</p>
+            <p class="text-sm text-slate-600 leading-relaxed">
+                두 타이틀은 SOOP 점유가 82%와 88%로 매우 높습니다.
+                마케팅 효율만 보면 SOOP 집중이 맞지만, 그만큼 <strong class="text-slate-900">한 플랫폼에 의존한다는 뜻</strong>입니다.
+                플랫폼 정책이 바뀌거나 주요 스트리머가 이적하면 노출 경로가 함께 끊깁니다.
+                효율을 택하되 <strong class="text-slate-900">최소한의 대체 경로</strong>는 유지해 두는 편이 안전합니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- 보강: 제안 순서와 한계 -->
+    <section class="mb-10">
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">제안의 순서를 바꿔야 합니다</h2>
+        <p class="text-slate-600 leading-relaxed mb-8">
+            전략적 제안 세 건 중 3번 데이터 통합은 <strong class="text-slate-900">나머지 둘의 성과를 측정하는 수단</strong>입니다.
+            측정 체계 없이 1번과 2번을 실행하면 효과를 확인할 방법이 없습니다.
+        </p>
+
+        <div class="space-y-3 mb-8">
+            <div class="bg-white border-2 border-emerald-400 rounded-2xl p-6 flex flex-wrap items-center gap-4">
+                <span class="bg-emerald-600 text-white text-xs font-black px-3 py-1.5 rounded-lg shrink-0">1순위</span>
+                <div class="flex-1 min-w-[240px]">
+                    <p class="font-black text-slate-900 mb-1">데이터 통합 · 원안 3번</p>
+                    <p class="text-sm text-slate-500">시청 점유율과 게임 접속 데이터를 연결해 측정 기준을 먼저 만듭니다</p>
+                </div>
+            </div>
+            <div class="bg-white border-2 border-slate-200 rounded-2xl p-6 flex flex-wrap items-center gap-4">
+                <span class="bg-slate-700 text-white text-xs font-black px-3 py-1.5 rounded-lg shrink-0">2순위</span>
+                <div class="flex-1 min-w-[240px]">
+                    <p class="font-black text-slate-900 mb-1">쏠림이 뚜렷한 타이틀 · 원안 1번</p>
+                    <p class="text-sm text-slate-500">서든어택과 FC 온라인은 근거가 명확해 판단이 쉽습니다</p>
+                </div>
+            </div>
+            <div class="bg-white border-2 border-slate-200 rounded-2xl p-6 flex flex-wrap items-center gap-4">
+                <span class="bg-slate-700 text-white text-xs font-black px-3 py-1.5 rounded-lg shrink-0">3순위</span>
+                <div class="flex-1 min-w-[240px]">
+                    <p class="font-black text-slate-900 mb-1">양쪽 병행 타이틀 · 원안 2번</p>
+                    <p class="text-sm text-slate-500">배분 비율을 정할 근거가 필요하므로 측정 이후에 결정합니다</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white border-2 border-emerald-200 rounded-2xl p-7">
+                <p class="text-sm font-black text-emerald-700 mb-4">측정할 지표</p>
+                <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                    <li>&bull; <strong class="text-slate-800">방송 시청에서 게임 접속으로 이어진 비율</strong> &mdash; 플랫폼별로 나눠 봅니다. 점유율이 높은 쪽이 전환율도 높은지는 별개 문제입니다</li>
+                    <li>&bull; <strong class="text-slate-800">신규 계정 유입 경로</strong> &mdash; 어느 플랫폼 시청 뒤에 가입했는지</li>
+                    <li>&bull; <strong class="text-slate-800">협업 스트리머별 전환 효율</strong> &mdash; 시청자 수가 아니라 유입 수로 평가합니다</li>
+                    <li>&bull; <strong class="text-slate-800">플랫폼 의존도</strong> &mdash; 상위 한 곳이 차지하는 유입 비중. 지나치게 높으면 위험 신호입니다</li>
+                </ul>
+            </div>
+            <div class="bg-white border-2 border-slate-200 rounded-2xl p-7">
+                <p class="text-sm font-black text-slate-500 mb-4">이 리포트의 한계</p>
+                <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                    <li>&bull; 점유율은 본문에 밝힌 대로 <strong class="text-slate-800">특정 시점의 동시 시청자를 직접 집계한 추정치</strong>입니다. 시간대와 요일에 따라 크게 달라집니다.</li>
+                    <li>&bull; 수익 배분 비중은 <strong class="text-slate-800">공개 자료 기반</strong>이며 플랫폼 정산 데이터가 아닙니다. 쏠림 계산은 그 값에서 산출한 것이므로 원본의 오차를 함께 물려받습니다.</li>
+                    <li>&bull; 시청 점유율과 게임 접속의 관계는 <strong class="text-slate-800">측정하지 않았습니다.</strong> 이 문서는 노출 규모까지만 다룹니다.</li>
+                    <li>&bull; 클립 유통 속도가 빨라진다는 전망은 <strong class="text-slate-800">방향에 대한 예측</strong>이며 배수는 근거가 확인된 값이 아닙니다.</li>
+                    <li>&bull; 던파의 편차 원인은 <strong class="text-slate-800">확인하지 못했습니다.</strong> 스트리머 개인 요인과 구조적 요인을 가르지 못한 상태입니다.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
     <footer class="mt-20 text-center text-slate-400 text-xs">
         <p>© 허재석 · 스트리밍 플랫폼 생태계 분석 기록 (공개 자료 기반)</p>

@@ -53,7 +53,7 @@
     </script>
     
     <style>
-        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
         
         body { 
             font-family: 'Pretendard', sans-serif; 
@@ -158,7 +158,7 @@
                 <div class="flex flex-col md:flex-row gap-4 items-stretch">
                     <!-- Left: Problem -->
                     <div class="flex-1 bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex flex-col">
-                        <div class="text-xs font-bold text-slate-400 mb-2 uppercase tracking-wider">Situation: 로우 데이터(Raw Data) 입수</div>
+                        <div class="text-xs font-bold text-slate-400 mb-2 tracking-wider">Situation: 로우 데이터 입수</div>
                         <div class="flex-1 bg-slate-50 rounded p-4 border border-slate-100 font-mono text-xs overflow-hidden relative">
                             <div class="text-slate-700 font-bold mb-2 text-sm">📝 일일 재고 현황.xlsx (총 52,140건)</div>
                             <div class="text-slate-600 leading-relaxed mb-4">
@@ -193,7 +193,7 @@
                             <span class="text-white text-sm font-bold text-center px-4">버튼을 눌러<br>데이터를 추출하세요</span>
                         </div>
                         <div class="flex justify-between items-center mb-2">
-                            <div class="text-xs font-bold text-green-400 uppercase tracking-wider">After: 처리 결과</div>
+                            <div class="text-xs font-bold text-green-400 tracking-wider">After: 처리 결과</div>
                         </div>
                         <div class="flex-1 bg-black rounded p-3 font-mono text-xs overflow-y-auto flex flex-col">
                             <div id="terminal-1" class="text-slate-300 leading-relaxed mb-2"></div>
@@ -240,7 +240,7 @@
                 <div class="flex flex-col md:flex-row gap-4 items-stretch">
                     <!-- Left: Problem -->
                     <div class="flex-1 bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex flex-col">
-                        <div class="text-xs font-bold text-slate-400 mb-2 uppercase tracking-wider">Situation: 매니저의 긴급 데이터 추출 요청</div>
+                        <div class="text-xs font-bold text-slate-400 mb-2 tracking-wider">Situation: 매니저의 긴급 데이터 추출 요청</div>
                         <div class="flex-1 bg-slate-50 rounded p-3 border border-slate-100 font-mono text-xs overflow-hidden relative space-y-3">
                             <div class="p-3 bg-blue-50 border border-blue-100 rounded text-slate-800 shadow-sm leading-relaxed font-sans text-sm">
                                 "재석님, 이번 주 <strong>출고 지연된 건 중에서 서울 센터 물량만</strong> 센터명과 상품아이디 포함해서 리스트 뽑아주세요!"
@@ -272,7 +272,7 @@
                             <span class="text-white text-sm font-bold text-center px-4">AI를 통해<br>DB를 조회하세요</span>
                         </div>
                         <div class="flex justify-between items-center mb-2">
-                            <div class="text-xs font-bold text-indigo-400 uppercase tracking-wider">After: 쿼리 생성 결과</div>
+                            <div class="text-xs font-bold text-indigo-400 tracking-wider">After: 쿼리 생성 결과</div>
                         </div>
                         <div class="flex-1 bg-[#151515] rounded p-2 font-mono text-xs overflow-y-auto text-slate-300 flex flex-col border border-[#333]">
                             <div id="terminal-2" class="leading-relaxed px-1 mb-1"></div>
@@ -291,8 +291,8 @@
                             <!-- Simulated Data Table Result -->
                             <div id="data-result-2" class="hidden mt-2 bg-white rounded overflow-hidden text-slate-800 font-sans flex-1 flex-col shadow-inner border border-slate-300">
                                 <div class="text-[11px] font-bold text-slate-700 bg-slate-100 px-3 py-2 border-b border-slate-300 flex justify-between items-center shadow-sm">
-                                    <span class="flex items-center gap-1"><span class="text-sm">🗃️</span> Result Grid</span>
-                                    <span class="text-green-700 font-mono text-[10px] bg-green-100 px-2 py-0.5 rounded border border-green-200">Success: 3 rows fetched</span>
+                                    <span class="flex items-center gap-1"><span class="text-sm">🗃️</span> 실행 결과</span>
+                                    <span class="text-green-700 font-mono text-[10px] bg-green-100 px-2 py-0.5 rounded border border-green-200">성공: 3행 조회</span>
                                 </div>
                                 <div class="overflow-x-auto bg-slate-50 p-1">
                                     <table class="w-full text-[13px] text-left border-collapse bg-white border border-slate-200 shadow-sm">
@@ -375,12 +375,12 @@
                                 <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
                                 <div class="w-3 h-3 rounded-full bg-green-400"></div>
                             </div>
-                            <span class="text-xs text-slate-400 font-mono">New Message</span>
+                            <span class="text-xs text-slate-400 font-mono">새 메일</span>
                         </div>
 
                         <div class="p-4 border-b border-slate-100 space-y-2 text-sm bg-white">
-                            <div class="flex gap-2"><span class="text-slate-400 w-12">To:</span> <span class="font-bold">director@logistics-hq.example.com</span></div>
-                            <div class="flex gap-2"><span class="text-slate-400 w-12">Subject:</span> <span class="font-bold text-brand-accent">[Urgent] Night Shift Delay Resolved - Network Issue</span></div>
+                            <div class="flex gap-2"><span class="text-slate-400 w-12">받는 사람:</span> <span class="font-bold">director@logistics-hq.example.com</span></div>
+                            <div class="flex gap-2"><span class="text-slate-400 w-12">제목:</span> <span class="font-bold text-brand-accent">[Urgent] Night Shift Delay Resolved - Network Issue</span></div>
                         </div>
                         
                         <div class="p-4 flex-1 text-sm text-slate-700 space-y-3 overflow-y-auto bg-white" id="email-body">
@@ -390,10 +390,364 @@
                         <div class="p-3 bg-slate-50 rounded-b-xl border-t border-slate-100 flex justify-end gap-2 opacity-0 transition-opacity duration-500" id="email-actions">
                             <button onclick="toggleLang()" class="px-4 py-1.5 text-xs font-bold text-slate-600 bg-white border border-slate-200 rounded hover:bg-slate-100 transition-colors shadow-sm">🇰🇷 한국어 번역 보기</button>
                             <button onclick="copyTextDirect('email-body-text', '보고서가 복사되었습니다!')" class="px-5 py-1.5 text-xs font-bold text-white bg-brand-blue rounded hover:bg-blue-700 shadow flex items-center gap-1 transition-colors">
-                                <span>Copy</span> 📝
+                                <span>복사</span> 📝
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 보강: AI 결과 검증 -->
+        <section class="reveal">
+            <div class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold mb-3">받은 답을 검증하는 단계</h2>
+                <p class="text-slate-500 text-base leading-relaxed">
+                    앞의 세 사례는 AI가 결과를 만들어내는 과정입니다.
+                    실무에서 이 흐름이 완성되려면 <strong class="text-slate-800">받은 답이 요구사항과 맞는지 확인하는 단계</strong>가 붙어야 합니다.
+                    실제로 첫 번째 사례에서 확인이 필요한 지점이 있습니다.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl border-2 border-amber-300 p-8 shadow-sm mb-6">
+                <p class="text-sm font-bold text-amber-700 mb-5">도전 1의 수식은 요구사항의 일부만 충족합니다</p>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                        <p class="text-xs font-bold text-slate-500 mb-3">요구사항</p>
+                        <p class="text-sm text-slate-700 leading-relaxed">
+                            검수상태가 에러이고 유통기한이 빈칸인 항목을 필터링해
+                            <strong class="text-slate-900">일별 불량률 추이</strong>를 보고할 것
+                        </p>
+                    </div>
+                    <div class="bg-amber-50 rounded-xl p-6 border border-amber-300">
+                        <p class="text-xs font-bold text-amber-800 mb-3">도출된 수식</p>
+                        <p class="text-sm font-mono text-slate-800 mb-3">=COUNTIFS(D:D, "에러", C:C, "")</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            두 조건을 만족하는 <strong class="text-amber-800">전체 기간 총 건수</strong>를 셉니다.
+                            날짜별로 나누는 부분이 없습니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-white mb-6">
+                    <p class="text-xs font-bold text-amber-300 mb-3">추이를 얻으려면 날짜 조건이 필요합니다</p>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                        입고일이 있는 A열을 조건에 넣어 날짜별로 계산해야 합니다.
+                    </p>
+                    <p class="text-sm font-mono text-slate-100 bg-white/10 rounded-lg p-4 mb-4">=COUNTIFS($D:$D,"에러",$C:$C,"",$A:$A,기준일)</p>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        날짜 목록을 한 열에 두고 이 수식을 아래로 채우면 추이가 나옵니다.
+                        건수가 많다면 <strong class="text-white">피벗 테이블</strong>로 입고일을 행에 두고 조건을 필터로 걸는 편이 빠릅니다.
+                    </p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                    <p class="text-xs font-bold text-slate-700 mb-3">함께 확인할 두 가지</p>
+                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                        <li>&bull; <strong class="text-slate-800">빈칸의 정의</strong> &mdash; 조건에 쓴 빈 문자열은 아무것도 입력되지 않은 셀과, 수식 결과가 빈 문자열인 셀을 함께 셉니다. 원본이 시스템에서 내려온 파일이라면 후자가 섞여 있을 수 있어 실제 결측과 다르게 집계됩니다.</li>
+                        <li>&bull; <strong class="text-slate-800">불량률의 분모</strong> &mdash; 일별 추이를 보려면 분모도 일별 입고 건수여야 합니다. 전체 52,140건을 분모로 쓰면 날짜별 값이 모두 작게 나와 추이가 눌립니다.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border-2 border-slate-200 p-8 shadow-sm">
+                <p class="text-sm font-bold text-slate-700 mb-4">이 지점이 문서의 강점을 오히려 분명하게 합니다</p>
+                <p class="text-slate-600 leading-relaxed">
+                    AI는 요청받은 조건을 수식으로 옮기는 일은 정확히 했습니다.
+                    빠진 것은 <strong class="text-slate-900">요구사항에 있던 &lsquo;일별 추이&rsquo;라는 단어</strong>입니다.
+                    이런 누락은 결과만 보면 드러나지 않고, <strong class="text-slate-900">요구사항과 결과를 하나씩 대조할 때만</strong> 잡힙니다.
+                    도구를 쓰는 능력과 도구의 답을 검수하는 능력은 별개이고, 실무에서 신뢰를 만드는 것은 후자입니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- 보강: 사례별 확인 항목 -->
+        <section class="reveal">
+            <div class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold mb-3">사례별로 확인해야 할 것</h2>
+                <p class="text-slate-500 text-base leading-relaxed">
+                    세 사례는 각각 다른 종류의 위험을 가집니다.
+                    실행 전에 무엇을 보는지 정해두면 같은 방식을 반복해서 쓸 수 있습니다.
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
+                    <p class="text-sm font-bold text-slate-800 mb-4">SQL 추출 &mdash; 틀려도 결과가 나옵니다</p>
+                    <p class="text-slate-600 leading-relaxed mb-5">
+                        쿼리가 잘못돼도 오류 없이 실행되어 <strong class="text-slate-900">그럴듯한 리스트가 나옵니다.</strong>
+                        그대로 보고하면 잘못된 데이터가 의사결정에 들어갑니다.
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                        <li>&bull; <strong class="text-slate-800">건수 대조</strong> &mdash; 이미 아는 값과 맞춰봅니다. 서울 센터 전체 출고 건수를 알고 있다면, 지연 건이 그보다 클 수 없습니다. JOIN 조건이 잘못되면 행이 중복되어 건수가 부풀어 오르므로 여기서 잡힙니다.</li>
+                        <li>&bull; <strong class="text-slate-800">이번 주의 기준</strong> &mdash; 월요일 시작인지 최근 7일인지에 따라 결과가 달라집니다. 요청자가 말한 기간을 날짜로 되물어 확정합니다.</li>
+                        <li>&bull; <strong class="text-slate-800">조회 부하와 권한</strong> &mdash; 운영 DB에 직접 조회하면 대량 스캔이 서비스에 영향을 줄 수 있습니다. 조회 전용 환경과 허용된 범위를 사전에 확인해 둡니다.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
+                    <p class="text-sm font-bold text-slate-800 mb-4">영문 보고 &mdash; 숫자와 이름이 바뀌면 사고가 됩니다</p>
+                    <p class="text-slate-600 leading-relaxed mb-5">
+                        번역과 구조화는 AI가 잘하는 일이지만, 이 보고는 <strong class="text-slate-900">새벽에 임원에게 바로 전달</strong>됩니다.
+                        검토자가 없는 시간대라 오류가 그대로 나갑니다.
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                        <li>&bull; <strong class="text-slate-800">숫자 대조</strong> &mdash; 단말 50대, 지연 45분, 복구 목표 7시. 이 세 값이 원문과 같은지만 확인하면 대부분의 사고를 막습니다.</li>
+                        <li>&bull; <strong class="text-slate-800">확정과 예정의 구분</strong> &mdash; 원문의 <strong>커버 가능</strong>은 예상이고 <strong>정상화</strong>는 완료입니다. 영문에서 둘 다 완료로 표현되면 보고 내용이 사실과 달라집니다.</li>
+                        <li>&bull; <strong class="text-slate-800">책임 서술 확인</strong> &mdash; 원인을 단정하는 문장이 들어가지 않았는지 봅니다. 원인 규명 전 단계에서는 현상과 조치만 적는 편이 안전합니다.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-900 rounded-2xl p-8 text-white">
+                    <p class="text-sm font-bold text-blue-300 mb-4">세 사례에서 실제로 실력이 드러난 지점</p>
+                    <p class="text-slate-300 leading-relaxed mb-5">
+                        AI를 쓴 것 자체는 누구나 할 수 있습니다.
+                        이 기록에서 성과를 만든 것은 <strong class="text-white">AI에게 무엇을 주었는지</strong>입니다.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-5">
+                        <div class="bg-white/10 rounded-xl p-5">
+                            <p class="text-xs font-bold text-blue-300 mb-2">조건으로 분해했습니다</p>
+                            <p class="text-xs text-slate-300 leading-relaxed">막연한 요청을 열과 값 기준의 조건으로 바꿔 전달했습니다. 이 분해가 없으면 AI도 수식을 만들 수 없습니다.</p>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-5">
+                            <p class="text-xs font-bold text-blue-300 mb-2">스키마를 정리해 주었습니다</p>
+                            <p class="text-xs text-slate-300 leading-relaxed">테이블과 컬럼 구조를 먼저 제시했습니다. 스키마 없이 요청하면 존재하지 않는 컬럼을 쓴 쿼리가 나옵니다.</p>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-5">
+                            <p class="text-xs font-bold text-blue-300 mb-2">보고 대상을 지정했습니다</p>
+                            <p class="text-xs text-slate-300 leading-relaxed">외국인 임원 대상이라는 조건을 주어 문체와 구조가 정해졌습니다. 대상 없이 번역만 요청하면 형식이 맞지 않습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 보강: 두 번째 사례 검증과 차트 수치 -->
+        <section class="reveal">
+            <div class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold mb-3">두 번째 사례에서도 같은 것이 빠졌습니다</h2>
+                <p class="text-slate-500 text-base leading-relaxed">
+                    앞에서 도전 1의 수식이 <strong class="text-slate-800">일별 추이</strong>를 빠뜨렸다는 것을 확인했습니다.
+                    같은 방식으로 도전 2의 쿼리를 요구사항과 대조하면 <strong class="text-slate-800">같은 유형의 누락</strong>이 한 번 더 나옵니다.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl border-2 border-amber-300 p-8 shadow-sm mb-6">
+                <p class="text-sm font-bold text-amber-700 mb-5">요청에 있던 이번 주가 쿼리에 없습니다</p>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                        <p class="text-xs font-bold text-slate-500 mb-3">요청</p>
+                        <p class="text-sm text-slate-700 leading-relaxed">
+                            <strong class="text-slate-900">이번 주</strong> 출고 지연된 건 중에서 서울 센터 물량만
+                            센터명과 상품 아이디를 포함해서 뽑아 줄 것
+                        </p>
+                    </div>
+                    <div class="bg-amber-50 rounded-xl p-6 border border-amber-300">
+                        <p class="text-xs font-bold text-amber-800 mb-3">도출된 쿼리의 조건</p>
+                        <p class="text-sm text-slate-700 leading-relaxed">
+                            상태가 지연인 것, 센터 코드가 특정 값인 것.
+                            <strong class="text-amber-800">기간 조건이 없습니다.</strong>
+                            전체 기간의 지연 건이 모두 나옵니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-slate-900 rounded-xl p-6 text-white mb-6">
+                    <p class="text-xs font-bold text-amber-300 mb-3">그런데 이번에는 원인이 다릅니다</p>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                        제공한 스키마를 보면 주문 테이블의 열이
+                        <strong class="text-white">아이디, 상품 아이디, 센터 코드, 상태</strong> 넷뿐입니다.
+                        <strong class="text-amber-300">날짜 열이 아예 없습니다.</strong>
+                        기간으로 거르고 싶어도 걸 수 있는 열이 없습니다.
+                    </p>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        도전 1은 AI가 조건 하나를 놓친 경우였고, 도전 2는
+                        <strong class="text-white">요청자가 필요한 정보를 주지 않은 경우</strong>입니다.
+                        그런데 결과는 같습니다. 조건이 빠진 쿼리가 아무 경고 없이 돌아옵니다.
+                        <strong class="text-amber-300">필요한 열이 스키마에 있는지 먼저 확인하는 것</strong>이
+                        요청을 잘 쓰는 것만큼 중요합니다.
+                    </p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                    <p class="text-xs font-bold text-slate-700 mb-3">센터 코드도 확인이 필요합니다</p>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        요청은 <strong class="text-slate-800">서울 센터</strong>라고 했고 쿼리는 센터 코드를 특정 문자열로 고정했습니다.
+                        그 코드가 실제로 존재하는지는 스키마에 나와 있지 않으므로
+                        <strong class="text-slate-800">추측한 값</strong>입니다.
+                        센터 테이블에는 지역 열이 함께 제공되어 있는데 쓰이지 않았습니다.
+                        서울에 센터가 둘 이상이면 코드 하나로는 일부만 나옵니다.
+                        <strong class="text-slate-800">지역 열로 거르는 편</strong>이 요청 문장에 더 가깝고, 센터가 늘어나도 그대로 작동합니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 rounded-2xl p-8 md:p-10 text-white mb-10">
+                <p class="text-amber-300 font-black text-[10px] tracking-wide mb-5">검증하려면 그 일을 할 줄 알아야 합니다</p>
+                <p class="text-sm md:text-base text-slate-300 leading-relaxed mb-5">
+                    두 사례 모두 <strong class="text-white">결과만 보면 정상으로 보입니다.</strong>
+                    수식은 숫자를 내놓고 쿼리는 행을 반환합니다.
+                    빠진 조건은 <strong class="text-amber-300">요구사항과 결과를 한 줄씩 맞춰볼 때만</strong> 드러납니다.
+                    그리고 그 대조를 하려면 수식과 쿼리를 읽을 줄 알아야 합니다.
+                </p>
+                <p class="text-sm md:text-base text-slate-300 leading-relaxed">
+                    도전 2의 제목은 <strong class="text-white">개발자 없이 데이터 추출</strong>입니다.
+                    쿼리를 받는 것은 개발자 없이 가능합니다.
+                    다만 받은 쿼리가 요청과 맞는지 판단하는 데는
+                    <strong class="text-amber-300">읽을 수 있는 만큼의 지식</strong>이 필요합니다.
+                    제목을 <strong class="text-white">개발자를 기다리지 않고</strong> 정도로 적으면
+                    실제로 한 일에 더 가깝고, 검증 단계를 생략했다는 인상도 주지 않습니다.
+                    이 문서가 스스로 검증 과정을 적어둔 것이 그 지식을 갖췄다는 증거이기도 합니다.
+                </p>
+            </div>
+
+            <div class="mb-10">
+                <h3 class="text-xl font-bold mb-4">절감 배수가 세 작업 모두 같습니다</h3>
+                <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-6">
+                    <table class="w-full min-w-[560px] border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-slate-800 text-white">
+                                <th class="p-3 text-left text-xs font-black">작업</th>
+                                <th class="p-3 text-center text-xs font-black">수동</th>
+                                <th class="p-3 text-center text-xs font-black">도구 활용</th>
+                                <th class="p-3 text-center text-xs font-black">절감</th>
+                                <th class="p-3 text-center text-xs font-black">배수</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">엑셀 조건 검색과 정제</td>
+                                <td class="p-3 text-center text-slate-500">45분</td>
+                                <td class="p-3 text-center font-bold text-slate-700">3분</td>
+                                <td class="p-3 text-center text-slate-600">42분</td>
+                                <td class="p-3 text-center font-black text-amber-700">15.0배</td>
+                            </tr>
+                            <tr class="border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">DB 쿼리 작성</td>
+                                <td class="p-3 text-center text-slate-500">60분</td>
+                                <td class="p-3 text-center font-bold text-slate-700">4분</td>
+                                <td class="p-3 text-center text-slate-600">56분</td>
+                                <td class="p-3 text-center font-black text-amber-700">15.0배</td>
+                            </tr>
+                            <tr class="border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">글로벌 보고 작성</td>
+                                <td class="p-3 text-center text-slate-500">30분</td>
+                                <td class="p-3 text-center font-bold text-slate-700">2분</td>
+                                <td class="p-3 text-center text-slate-600">28분</td>
+                                <td class="p-3 text-center font-black text-amber-700">15.0배</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bg-white rounded-2xl border-2 border-amber-300 p-8 shadow-sm mb-6">
+                    <p class="text-sm font-bold text-amber-700 mb-5">성격이 다른 세 작업이 똑같이 15배입니다</p>
+                    <p class="text-slate-600 leading-relaxed mb-5">
+                        엑셀 수식 작성, 쿼리 작성, 외국어 보고서 작성은 <strong class="text-slate-900">필요한 기술도 걸리는 이유도 다릅니다.</strong>
+                        그런데 세 작업의 절감 배수가 모두 정확히 15배로 같습니다.
+                        45와 3, 60과 4, 30과 2로 나누어떨어지는 정수이기도 합니다.
+                        측정한 값이 이렇게 맞아떨어지기는 어렵습니다.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        한계 항목에 <strong class="text-slate-900">수동 작업 시간은 추정</strong>이라고 이미 밝혀두었으므로 표기 자체는 정직합니다.
+                        다만 차트는 막대 길이로 보여주기 때문에 <strong class="text-amber-800">측정값처럼 읽힙니다.</strong>
+                        발표에서는 <strong class="text-slate-900">같은 배수를 일괄 적용한 값</strong>이라고 먼저 말하고,
+                        총 절감 시간 대신 <strong class="text-slate-900">작업 하나를 실제로 재본 기록</strong>을 하나만 제시하는 편이 설득력이 큽니다.
+                        하나라도 실측이면 나머지 추정의 근거가 생깁니다.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl border-2 border-slate-300 p-8 shadow-sm">
+                    <p class="text-sm font-bold text-slate-800 mb-5">저장해서 다시 쓰면 배수가 크게 떨어집니다</p>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        세 작업 중 <strong class="text-slate-900">엑셀 수식과 쿼리는 한 번 만들면 저장해 두고 재사용</strong>할 수 있습니다.
+                        보고서는 내용이 매번 달라 재사용이 어렵습니다.
+                        같은 작업을 열 번 한다고 놓고 비교하면 이렇게 갈립니다.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-5 mb-6">
+                        <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                            <p class="text-xs font-black text-slate-700 mb-3">엑셀 수식 열 번</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                매번 새로 만들면 450분, 저장해 두고 조건만 바꾸면 90분입니다.
+                                도구를 쓰면 30분입니다.
+                                <strong class="text-slate-800">저장 습관이 있는 사람에게는 15배가 아니라 3배</strong>입니다.
+                            </p>
+                        </div>
+                        <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                            <p class="text-xs font-black text-slate-700 mb-3">쿼리 열 번</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                                같은 방식으로 600분, 105분, 40분입니다.
+                                배수가 <strong class="text-slate-800">15배에서 2.6배</strong>로 내려갑니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-blue-50 rounded-xl p-6 border-2 border-blue-200">
+                        <p class="text-xs font-black text-blue-700 mb-3">그래서 이 도구의 값어치는 반복이 아니라 처음에 있습니다</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            매번 같은 일을 한다면 수식이나 쿼리를 저장하는 것으로 충분합니다.
+                            도구가 크게 이기는 구간은 <strong class="text-slate-800">처음 만나는 조건, 저장해 둔 것이 안 맞는 상황</strong>입니다.
+                            세 사례가 모두 그런 성격이므로 제안의 방향은 맞습니다.
+                            발표에서 <strong class="text-blue-700">반복 업무 자동화가 아니라 비정형 요청 대응</strong>으로 성격을 적으면
+                            되묻기 어려운 주장이 됩니다.
+                            반복 업무라면 도구보다 표준 양식을 만드는 것이 먼저라는 반론이 늘 따라옵니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 rounded-2xl border border-slate-200 p-7">
+                <p class="text-xs font-bold text-slate-500 mb-4">절감 시간을 도입 근거로 쓰려면 빈도가 필요합니다</p>
+                <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                    세 작업을 합치면 한 차례에 126분이 줄어듭니다.
+                    이 값이 얼마나 큰지는 <strong class="text-slate-900">같은 일이 얼마나 자주 생기는지</strong>에 달려 있습니다.
+                </p>
+                <div class="grid md:grid-cols-3 gap-4 mb-5">
+                    <div class="bg-white rounded-xl p-5 border border-slate-200 text-center">
+                        <p class="text-[11px] font-bold text-slate-500 mb-1">주 1회면</p>
+                        <p class="text-xl font-black text-slate-800">연 109시간</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-5 border border-slate-200 text-center">
+                        <p class="text-[11px] font-bold text-slate-500 mb-1">월 1회면</p>
+                        <p class="text-xl font-black text-slate-800">연 25시간</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-5 border border-slate-200 text-center">
+                        <p class="text-[11px] font-bold text-slate-500 mb-1">분기 1회면</p>
+                        <p class="text-xl font-black text-slate-800">연 8시간</p>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    같은 126분이라도 결론이 <strong class="text-slate-900">연 109시간과 연 8시간</strong>으로 갈립니다.
+                    빈도를 적어두면 절감 시간이 도입 근거가 되고, 없으면 인상적인 숫자로만 남습니다.
+                    검증 시간도 함께 세어야 합니다. 앞의 두 사례에서 확인했듯
+                    <strong class="text-slate-900">받은 답을 대조하는 데 드는 시간</strong>은 이 비교에 아직 들어가 있지 않습니다.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 p-7 mt-6">
+                <p class="text-xs font-bold text-slate-500 mb-4">이 절의 한계</p>
+                <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                    <li>&bull; 열 번 반복 비교에서 <strong class="text-slate-800">저장해 둔 수식을 다시 쓰는 데 5분</strong>이 든다고 놓았습니다. 실제 값은 작업에 따라 다르므로 배수의 정확한 크기가 아니라 <strong class="text-slate-800">방향을 보는 계산</strong>입니다.</li>
+                    <li>&bull; 쿼리와 수식의 누락은 <strong class="text-slate-800">문서에 적힌 요청 문장과 결과를 대조</strong>해 찾은 것입니다. 실제 업무에서는 구두로 오간 조건이 더 있었을 수 있습니다.</li>
+                    <li>&bull; 센터 코드가 실제로 어떤 값인지는 <strong class="text-slate-800">이 문서로 확인할 수 없습니다.</strong> 지역 열을 쓰자는 제안은 스키마에 그 열이 있다는 사실에만 근거합니다.</li>
+                    <li>&bull; 빈도별 연간 환산은 <strong class="text-slate-800">126분이 매번 그대로 절감된다는 가정</strong> 위에 있습니다. 실제로는 익숙해질수록 수동 작업 시간도 줄어듭니다.</li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- 보강: 한계 -->
+        <section class="reveal">
+            <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+                <h2 class="text-xl font-bold mb-6">이 기록의 한계</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                        <li>&bull; 본문에 밝힌 대로 <strong class="text-slate-800">수치와 이름은 예시로 재구성</strong>했습니다. 52,140건과 같은 값은 실제 데이터가 아닙니다.</li>
+                        <li>&bull; 시간 절감 비교는 <strong class="text-slate-800">같은 작업을 수동으로 했을 때의 추정</strong>이며 두 방식을 나란히 계측한 값이 아닙니다.</li>
+                        <li>&bull; 세 사례는 <strong class="text-slate-800">한 번씩 처리한 기록</strong>입니다. 반복 적용했을 때의 정확도는 확인되지 않았습니다.</li>
+                    </ul>
+                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                        <li>&bull; 사내 데이터를 외부 AI에 입력할 수 있는지는 <strong class="text-slate-800">각 회사의 보안 지침</strong>에 따릅니다. 스키마와 현장 보고 내용도 판단 대상입니다.</li>
+                        <li>&bull; DB 조회 권한과 운영 환경 분리 여부는 <strong class="text-slate-800">조직 구성에 종속</strong>되므로 그대로 재현되지 않을 수 있습니다.</li>
+                        <li>&bull; AI 모델과 버전에 따라 같은 요청에도 <strong class="text-slate-800">다른 결과가 나옵니다.</strong> 도출된 수식과 쿼리는 한 시점의 결과입니다.</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -572,7 +926,7 @@
             let p2 = document.createElement('div');
             p2.className = 'mb-1 text-indigo-400 font-bold mt-2';
             terminal.appendChild(p2);
-            const execLine = "> 가상 데이터베이스(DB)에서 쿼리 실행 완료.";
+            const execLine = "> 가상 데이터베이스에서 쿼리 실행 완료.";
             for(let char of execLine) {
                 p2.innerHTML += char;
                 await new Promise(r => setTimeout(r, 15)); 

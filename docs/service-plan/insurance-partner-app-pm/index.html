@@ -6,7 +6,7 @@
     <title>보험 파트너 앱 고도화 기획</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     
 
     <style>
@@ -90,16 +90,17 @@
 <body class="flex flex-col min-h-screen">
 
     <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-6 flex justify-between items-center h-16">
-            <div class="flex items-center gap-2">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row md:justify-between md:items-center md:h-16">
+            <div class="flex items-center gap-2 flex-wrap pt-3 md:pt-0">
                 <span class="text-2xl font-black text-[#3182F6]">보험 비교 앱</span>
                 <span class="text-lg font-bold text-[#333D4B]">보험 파트너</span>
                 <span class="ml-2 bg-blue-100 text-blue-600 text-[10px] font-bold px-2 py-0.5 rounded">기능 개선 제안</span>
             </div>
-            <nav class="hidden md:flex space-x-8 h-full">
+            <nav class="flex gap-5 overflow-x-auto whitespace-nowrap pt-2 md:pt-0 md:gap-8 md:h-full">
                 <button class="nav-tab active px-1 flex items-center text-sm font-medium" data-target="page1">기존 설계 방식의 한계</button>
                 <button class="nav-tab px-1 flex items-center text-sm font-medium" data-target="page2">실시간 맞춤형 시뮬레이터</button>
                 <button class="nav-tab px-1 flex items-center text-sm font-medium" data-target="page3">예상 비즈니스 성과</button>
+                <button class="nav-tab px-1 flex items-center text-sm font-medium" data-target="review">수치 검토와 한계</button>
             </nav>
         </div>
     </header>
@@ -160,7 +161,7 @@
         <!-- 2. 기획안 시뮬레이션 -->
         <section id="page2" class="content-section space-y-10">
             <div class="bg-[#3182F6] p-10 rounded-[32px] text-white shadow-xl shadow-blue-100/50">
-                <h3 class="text-sm font-bold opacity-80 mb-3 uppercase tracking-wider">해결 가설</h3>
+                <h3 class="text-sm font-bold opacity-80 mb-3 tracking-wider">해결 가설</h3>
                 <h2 class="text-2xl md:text-3xl font-bold leading-tight">
                     보험사 전산 접속 없이, 보험 파트너 앱 내에서 완결되는<br>
                     <span class="text-blue-200">고객 참여형 '실시간 시뮬레이터'</span> 도입
@@ -284,6 +285,177 @@
             </div>
         </section>
 
+
+        <section id="review" class="content-section space-y-10">
+            <div>
+                <h2 class="text-2xl md:text-3xl font-black text-gray-900 mb-4">시간을 어디서 쓰는지 나눠보면</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    업무 지연 구간 차트의 네 단계를 <strong class="text-gray-900">앱 안과 앱 밖</strong>으로 갈라보면
+                    시뮬레이터가 겨냥하는 구간의 크기가 나옵니다.
+                </p>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border-2 border-gray-200">
+                <table class="w-full min-w-[520px] border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-gray-800 text-white">
+                            <th class="p-3 text-left text-xs font-black">단계</th>
+                            <th class="p-3 text-center text-xs font-black">소요</th>
+                            <th class="p-3 text-center text-xs font-black">비중</th>
+                            <th class="p-3 text-center text-xs font-black">발생 위치</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr class="bg-emerald-50 border-b border-gray-200">
+                                <td class="p-3 font-bold text-gray-800">보장 내용 파악</td>
+                                <td class="p-3 text-center font-black text-emerald-700">5분</td>
+                                <td class="p-3 text-center font-bold text-gray-500">8.3%</td>
+                                <td class="p-3 text-center text-xs font-bold text-emerald-700">파트너 앱 안</td>
+                            </tr>
+                            <tr class="bg-rose-50 border-b border-gray-200">
+                                <td class="p-3 font-bold text-gray-800">가입 설계</td>
+                                <td class="p-3 text-center font-black text-rose-700">25분</td>
+                                <td class="p-3 text-center font-bold text-gray-500">41.7%</td>
+                                <td class="p-3 text-center text-xs font-bold text-rose-700">보험사 전산</td>
+                            </tr>
+                            <tr class="bg-rose-50 border-b border-gray-200">
+                                <td class="p-3 font-bold text-gray-800">비교표 정리</td>
+                                <td class="p-3 text-center font-black text-rose-700">20분</td>
+                                <td class="p-3 text-center font-bold text-gray-500">33.3%</td>
+                                <td class="p-3 text-center text-xs font-bold text-rose-700">수작업</td>
+                            </tr>
+                            <tr class=" border-b border-gray-200">
+                                <td class="p-3 font-bold text-gray-800">고객 안내</td>
+                                <td class="p-3 text-center font-black text-slate-600">10분</td>
+                                <td class="p-3 text-center font-bold text-gray-500">16.7%</td>
+                                <td class="p-3 text-center text-xs font-bold text-slate-600">사람이 하는 일</td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-5">
+                <div class="bg-rose-50 border-2 border-rose-300 rounded-2xl p-6 text-center">
+                    <p class="text-xs font-bold text-rose-700 mb-2">앱 밖에서 발생</p>
+                    <p class="text-4xl font-black text-rose-700 mb-1">45분</p>
+                    <p class="text-xs text-gray-600">전체 60분의 75%</p>
+                </div>
+                <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-6 text-center">
+                    <p class="text-xs font-bold text-emerald-700 mb-2">앱 안에서 발생</p>
+                    <p class="text-4xl font-black text-emerald-700 mb-1">5분</p>
+                    <p class="text-xs text-gray-600">전체의 8.3%</p>
+                </div>
+                <div class="bg-gray-900 rounded-2xl p-6 text-center text-white">
+                    <p class="text-xs font-bold text-blue-300 mb-2">이상적 단축 폭</p>
+                    <p class="text-4xl font-black text-blue-300 mb-1">67%</p>
+                    <p class="text-xs text-gray-400">60분에서 약 20분</p>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 rounded-3xl p-8 md:p-10 text-white">
+                <p class="text-sm font-bold text-blue-300 mb-5">문제 정의가 정확했습니다</p>
+                <p class="leading-relaxed mb-5">
+                    파트너 앱이 담당하는 <strong class="text-white">보장 내용 파악은 이미 5분</strong>으로 짧습니다.
+                    시간을 잡아먹는 것은 <strong class="text-blue-300">보험사 전산 접속 25분과 비교표 정리 20분</strong>,
+                    합쳐서 전체의 <strong class="text-white">75%</strong>입니다.
+                    문서가 &ldquo;조회는 편해졌지만 최종 설계 단계가 남았다&rdquo;고 정리한 것이 수치로 확인됩니다.
+                </p>
+                <p class="leading-relaxed">
+                    남는 <strong class="text-blue-300">고객 안내 10분</strong>은 사람이 해야 하는 일이므로 줄일 대상이 아닙니다.
+                    따라서 시뮬레이터가 완벽히 작동해도 <strong class="text-white">20분 안쪽이 하한</strong>이고,
+                    그 이상을 목표로 잡으면 상담 품질을 깎게 됩니다.
+                    <strong class="text-blue-300">줄일 것과 남길 것을 구분해 적어두면</strong> 목표가 과하지 않다는 근거가 됩니다.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-3xl border-2 border-amber-300 p-8">
+                <p class="text-sm font-black text-amber-700 mb-5">앱 이용 시간 증가는 설계사의 지표가 아닙니다</p>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    기대 성과로 <strong class="text-gray-900">앱 이용 시간 35에서 75로 증가</strong>가 제시되어 있습니다.
+                    플랫폼 관점에서는 좋은 신호인데, 이 기획의 사용자는 <strong class="text-gray-900">설계사</strong>입니다.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                        <p class="text-xs font-black text-gray-700 mb-2">플랫폼이 원하는 것</p>
+                        <p class="text-xs text-gray-600 leading-relaxed">체류 시간과 기능 사용률입니다. <strong class="text-gray-800">오래 쓰면 좋은 지표</strong>입니다.</p>
+                    </div>
+                    <div class="bg-amber-50 rounded-2xl p-6 border border-amber-300">
+                        <p class="text-xs font-black text-amber-800 mb-2">설계사가 원하는 것</p>
+                        <p class="text-xs text-gray-600 leading-relaxed">상담을 <strong class="text-gray-800">빨리 끝내고 다음 고객을 만나는 것</strong>입니다. 앱을 오래 쓰는 것은 목표가 아닙니다.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-900 rounded-2xl p-6 text-white">
+                    <p class="text-xs font-bold text-blue-300 mb-3">같은 수치를 다르게 설명하면 둘 다 성립합니다</p>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        이용 시간이 두 배가 된 것은 업무가 늘어난 것이 아니라
+                        <strong class="text-white">보험사 전산에서 하던 45분이 앱으로 옮겨왔기 때문</strong>입니다.
+                        총 업무 시간은 줄고 그중 앱 비중이 커진 것이므로,
+                        <strong class="text-blue-300">총 상담 시간 감소를 함께 제시</strong>하면 설계사에게도 매력이 생깁니다.
+                        지금처럼 이용 시간 증가만 적으면 <strong class="text-white">쓰는 사람에게는 이득이 안 보입니다.</strong>
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl border-2 border-rose-300 p-8">
+                <p class="text-sm font-black text-rose-700 mb-5">이 기획의 성립 조건은 기술이 아니라 협의입니다</p>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    핵심 제안은 <strong class="text-gray-900">보험사 전산 접속 없이 앱 안에서 보험료를 산출</strong>하는 것입니다.
+                    화면 설계는 가능하지만, 계산에 필요한 것이 앱 밖에 있습니다.
+                </p>
+                <ul class="space-y-3 text-sm text-gray-600 leading-relaxed mb-6">
+                    <li>&bull; <strong class="text-gray-800">요율 데이터 제공</strong> &mdash; 보험료는 각 보험사의 요율표와 인수 기준으로 계산됩니다. 보험사가 이 데이터를 연동해 주지 않으면 앱에서 계산할 수 없습니다</li>
+                    <li>&bull; <strong class="text-gray-800">개정 반영 주기</strong> &mdash; 요율은 개정되며, 반영이 늦으면 앱이 <strong>틀린 금액을 오류 없이 보여줍니다.</strong> 실시간 연동이 아니라면 산출 기준일을 화면에 표시해야 합니다</li>
+                    <li>&bull; <strong class="text-gray-800">순위 노출에 대한 저항</strong> &mdash; 앱이 <strong>최적가 상품</strong>을 계산해 보여주면 보험사 간 순위가 매겨집니다. 하위에 놓이는 보험사는 데이터 제공을 꺼릴 유인이 생깁니다</li>
+                </ul>
+                <div class="bg-rose-50 rounded-2xl p-6 border border-rose-200">
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        <strong class="text-gray-800">그래서 단계 설계가 필요합니다.</strong>
+                        전체 보험사 연동을 전제로 두면 <strong class="text-gray-800">한 곳이 빠져도 서비스가 성립하지 않습니다.</strong>
+                        연동된 보험사만 시뮬레이션하고 나머지는 기존 방식으로 안내하는 <strong class="text-gray-800">혼합 운영</strong>을 기본으로 두면,
+                        협의가 진행되는 만큼 서비스가 확장됩니다.
+                        제안서에 이 구조를 적어두면 <strong class="text-gray-800">전 보험사 협의가 안 되면 못 한다</strong>는 반론을 먼저 막습니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl border-2 border-gray-200 p-8">
+                <p class="text-sm font-black text-gray-800 mb-5">고객에게 보여주는 금액의 성격</p>
+                <p class="text-gray-600 leading-relaxed mb-5">
+                    화면 공유 기능으로 고객이 <strong class="text-gray-900">45,000원</strong>이라는 숫자를 직접 봅니다.
+                    고객이 금액을 조절하며 확인하게 하는 설계 의도는 신뢰 형성에 효과적입니다.
+                    다만 그 숫자가 <strong class="text-gray-900">확정 금액으로 받아들여진다</strong>는 점을 함께 다뤄야 합니다.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-600 leading-relaxed">
+                    <li>&bull; 인수 심사에서 금액이 달라지면 <strong class="text-gray-800">고객은 설계사가 다르게 말했다고 인식</strong>합니다</li>
+                    <li>&bull; 화면에 <strong class="text-gray-800">예상 보험료라는 표기와 산출 기준</strong>이 함께 보여야 하고, 고객이 본 화면이 그대로 기록으로 남으면 분쟁 시 근거가 됩니다</li>
+                    <li>&bull; 건강 상태에 따른 <strong class="text-gray-800">할증 가능성</strong>은 시뮬레이터가 알 수 없으므로, 그 조건도 화면에 명시하는 편이 안전합니다</li>
+                </ul>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-3xl border-2 border-emerald-200 p-7">
+                    <p class="text-sm font-black text-emerald-700 mb-4">측정할 지표</p>
+                    <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
+                        <li>&bull; <strong class="text-gray-800">총 상담 소요 시간</strong> &mdash; 앱 이용 시간이 아니라 이 값이 설계사 관점의 성과입니다. 60분에서 얼마나 줄었는지 봅니다</li>
+                        <li>&bull; <strong class="text-gray-800">보험사 전산 접속 횟수</strong> &mdash; 시뮬레이터로 대체된 비율. 0에 가까울수록 목적 달성입니다</li>
+                        <li>&bull; <strong class="text-gray-800">화면 공유 사용률과 성약률</strong> &mdash; 고객 참여형 설계가 실제로 가입으로 이어지는지</li>
+                        <li>&bull; <strong class="text-gray-800">예상 금액과 확정 금액의 차이</strong> &mdash; 벌어지면 요율 데이터가 낡은 것이거나 조건 표기가 부족한 것입니다</li>
+                        <li>&bull; <strong class="text-gray-800">연동 보험사 수</strong> &mdash; 서비스 가치의 상한을 정하는 값입니다</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-3xl border-2 border-gray-200 p-7">
+                    <p class="text-sm font-black text-gray-500 mb-4">이 제안서의 한계</p>
+                    <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
+                        <li>&bull; 업무 단계별 소요 시간은 <strong class="text-gray-800">지연 구간을 보여주기 위한 값</strong>이며 설계사 대상 실측 조사가 아닙니다. 상품 종류와 숙련도에 따라 크게 달라집니다.</li>
+                        <li>&bull; 앱 이용 시간 35와 75는 <strong class="text-gray-800">도입 전후 기대치</strong>입니다.</li>
+                        <li>&bull; <strong class="text-gray-800">요율 데이터 연동 가능성</strong>은 확인되지 않았습니다. 이 기획의 실현 여부가 여기에 달려 있으므로 가장 먼저 확인할 항목입니다.</li>
+                        <li>&bull; 시뮬레이터의 <strong class="text-gray-800">계산 정확도 검증 방법</strong>은 다루지 않았습니다. 보험사 전산 결과와 대조하는 절차가 필요합니다.</li>
+                        <li>&bull; 보험 상품 비교 제시에는 <strong class="text-gray-800">관련 규제와 설명 의무</strong>가 따릅니다. 화면 구성은 법무와 준법 검토가 선행됩니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="bg-white border-t border-gray-100 py-10 mt-10">
@@ -370,6 +542,12 @@
                     tab.classList.add('active');
                     sections.forEach(s => s.classList.remove('active'));
                     document.getElementById(target).classList.add('active');
+
+                    // 개요는 첫 번째 탭에서만 보여준다
+                    const overview = document.getElementById('overview');
+                    if (overview) {
+                        overview.classList.toggle('hidden', target !== 'page1');
+                    }
                 });
             });
 

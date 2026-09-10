@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;900&display=swap');
         
         body { 
             font-family: 'Pretendard', sans-serif; 
@@ -83,6 +82,7 @@
     </style>
     
     <!-- Application Structure: - Wide layout 1200px for desktop-first professional look. - 3-column analysis section with semantic line-breaks. - Dual chart section with specific data logic descriptions. - Strategy section emphasizing operational stability. - Final pitch section linking experience to business goals. -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 </head>
 <body class="bg-gray-50/50">
 
@@ -95,13 +95,14 @@
                 </div>
                 <div>
                     <h1 class="text-2xl font-black tracking-tighter">경제 지표 분석 대시보드</h1>
-                    <p class="text-[11px] text-gray-400 font-bold uppercase tracking-widest">Assistant Producer Archive</p>
+                    <p class="text-[11px] text-gray-400 font-bold tracking-wide">운영 기획 분석</p>
                 </div>
             </div>
             <nav class="flex gap-12 text-[15px]">
                 <span onclick="switchTab('flow')" class="nav-link active" id="tab-flow">경제 흐름 분석</span>
                 <span onclick="switchTab('data')" class="nav-link" id="tab-data">데이터 지표 시각화</span>
                 <span onclick="switchTab('strategy')" class="nav-link" id="tab-strategy">시장 안정화 전략</span>
+                <span onclick="switchTab('review')" class="nav-link" id="tab-review">전략 검토</span>
                 <span onclick="switchTab('pitch')" class="nav-link" id="tab-pitch">핵심 역량 피치</span>
             </nav>
         </div>
@@ -109,11 +110,12 @@
 
     <main class="max-w-wide mx-auto px-10 py-16">
 
-        <!-- 0. 문서 개요 (탭과 무관하게 항상 노출) -->
+        <!-- 0. 문서 개요 (첫 번째 탭에서만 노출) -->
         <div id="overview" class="mb-16">
             <div class="bg-white rounded-2xl border border-slate-200 p-8 md:p-10">
                 <h2 class="text-2xl font-bold text-slate-900 mb-6">이적시장 구조</h2>
                 <p class="text-slate-600 leading-relaxed mb-4">FC 온라인은 선수 카드를 유저 간 거래하는 이적시장을 게임 안에 두고 있으며, 거래 화폐는 BP입니다.<br>최상위 시즌(TOTY)이 출시되면 기존 대장급 선수 시세가 하한가로 내려갑니다.<br>보유 유저는 매도가 막혀 스쿼드를 바꿀 수 없게 됩니다.<br>이 상태를 귀속이라 부르며, 무소과금 유저의 성장 경로가 끊기는 지점입니다.</p>
+                <p class="mt-6 inline-flex items-center gap-1.5 text-[11px] font-bold bg-slate-100 text-slate-500 px-3 py-1.5 rounded-full border border-slate-200"><span>📌</span><span>데이터 기준: 2024년 1월 24TOTY 출시 시점 · 이후 시즌은 반영돼 있지 않습니다</span></p>
             </div>
         </div>
 
@@ -206,7 +208,7 @@
                         <p class="font-bold mb-3 text-slate-800 underline decoration-slate-300 decoration-2 underline-offset-4">산출 근거 및 데이터 출처</p>
                         <p class="leading-relaxed">
                             출처: 하한가 적체량과 유저 접속 로그의 상관관계 분석 시뮬레이션.<br>
-                            분석: 무소과금 유저의 가용 자산 중 70% 이상이 하한가에 14일 이상 묶일 경우, 팀 성장 정체로 인한 주간 접속 일수(DAU)가 약 25% 감소하는 상관관계를 차트로 재구성했습니다.
+                            분석: 무소과금 유저의 가용 자산 중 70% 이상이 하한가에 14일 이상 묶일 경우, 팀 성장 정체로 인한 주간 접속 일수가 약 25% 감소하는 상관관계를 차트로 재구성했습니다.
                         </p>
                     </div>
                 </div>
@@ -254,6 +256,183 @@
             </div>
         </section>
 
+
+        <!-- [보강] 섹션: 전략 검토 -->
+        <section id="section-review" class="tab-content hidden">
+            <div class="max-w-5xl mx-auto">
+
+                <!-- 1. 전달 경로 -->
+                <div class="mb-16">
+                    <p class="text-xs font-black tracking-[.2em] text-emerald-600 mb-3">전달 경로</p>
+                    <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-5 tracking-tight">세 수치를 이으면 개입 지점이 보입니다</h2>
+                    <p class="text-gray-600 leading-relaxed mb-10">
+                        데이터 지표 탭의 세 수치는 각각 제시되어 있습니다.
+                        <strong class="text-gray-900">시세 45% 하락 &middot; 거래량 2.3배 &middot; 접속 25% 감소</strong>를 하나의 사슬로 놓으면
+                        어디를 건드려야 하는지가 정해집니다.
+                    </p>
+
+                    <div class="space-y-3 mb-10">
+                        <div class="bg-white border-2 border-gray-200 rounded-2xl p-6 flex flex-wrap items-center gap-4">
+                            <span class="bg-gray-800 text-white text-xs font-black px-3 py-1.5 rounded-lg shrink-0">1</span>
+                            <div class="flex-1 min-w-[240px]">
+                                <p class="font-black text-gray-900 mb-1">신규 대장 시즌 출시</p>
+                                <p class="text-sm text-gray-500">구 시즌 시세 약 45% 하락</p>
+                            </div>
+                            <span class="bg-gray-100 text-gray-500 text-[11px] font-black px-3 py-1.5 rounded-full">통제 대상 아님</span>
+                        </div>
+                        <div class="text-center text-emerald-500 font-black">&darr;</div>
+                        <div class="bg-white border-2 border-gray-200 rounded-2xl p-6 flex flex-wrap items-center gap-4">
+                            <span class="bg-gray-800 text-white text-xs font-black px-3 py-1.5 rounded-lg shrink-0">2</span>
+                            <div class="flex-1 min-w-[240px]">
+                                <p class="font-black text-gray-900 mb-1">하한가 매몰 &middot; 매도 불가</p>
+                                <p class="text-sm text-gray-500">무소과금 가용 자산의 70% 이상이 묶임</p>
+                            </div>
+                            <span class="bg-gray-100 text-gray-500 text-[11px] font-black px-3 py-1.5 rounded-full">부분 통제</span>
+                        </div>
+                        <div class="text-center text-emerald-500 font-black">&darr;</div>
+                        <div class="bg-emerald-50 border-2 border-emerald-400 rounded-2xl p-6 flex flex-wrap items-center gap-4">
+                            <span class="bg-emerald-600 text-white text-xs font-black px-3 py-1.5 rounded-lg shrink-0">3</span>
+                            <div class="flex-1 min-w-[240px]">
+                                <p class="font-black text-gray-900 mb-1">묶임 상태가 14일 이상 지속</p>
+                                <p class="text-sm text-gray-600">이 지점을 넘으면 접속 일수 약 25% 감소</p>
+                            </div>
+                            <span class="bg-emerald-600 text-white text-[11px] font-black px-3 py-1.5 rounded-full">여기가 개입 지점</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-900 rounded-3xl p-8 md:p-10 text-white">
+                        <p class="text-emerald-400 font-black text-[11px] tracking-wide mb-4">가격이 아니라 기간을 통제합니다</p>
+                        <p class="text-base leading-relaxed mb-4">
+                            1단계의 시세 하락은 <strong class="text-white">막을 수도 없고 막을 필요도 없습니다.</strong>
+                            신규 대장 시즌의 가치를 만들려면 구 시즌이 내려와야 하고, 그것이 이 게임의 판매 구조입니다.
+                        </p>
+                        <p class="text-base leading-relaxed">
+                            리텐션을 실제로 깎는 것은 하락 자체가 아니라
+                            <strong class="text-emerald-300">&ldquo;팔 수 없는 상태가 얼마나 오래 지속되는가&rdquo;</strong>입니다.
+                            데이터가 <strong class="text-white">14일</strong>이라는 기준을 제시하고 있으므로,
+                            정책의 목표는 시세 방어가 아니라 <strong class="text-emerald-300">매몰 기간을 그 기준 안으로 끌어내리는 것</strong>이 됩니다.
+                            두 전략은 이 기준으로 평가해야 합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. 전략 1 검토 -->
+                <div class="mb-16">
+                    <p class="text-xs font-black tracking-[.2em] text-amber-600 mb-3">검토 1</p>
+                    <h2 class="text-2xl md:text-3xl font-black text-gray-900 mb-5 tracking-tight">에이전트 소모처 &mdash; 성공하면 대상이 사라집니다</h2>
+
+                    <div class="bg-white border-2 border-amber-300 rounded-3xl p-8 mb-6">
+                        <p class="text-[11px] font-black tracking-wide text-amber-600 mb-4">자기 조정과 투기 유발</p>
+                        <p class="text-gray-700 leading-relaxed mb-5">
+                            하한가 적체 매물을 에이전트 필수 재료로 지정하면 <strong class="text-gray-900">그 매물에 수요가 생겨 시세가 올라갑니다.</strong>
+                            시세가 회복되면 더 이상 적체 대상이 아니므로 지정에서 빠집니다.
+                            <strong class="text-emerald-700">정책이 스스로를 종료시키는 구조</strong>라는 점은 오히려 장점입니다.
+                        </p>
+                        <div class="bg-amber-50 rounded-2xl p-6 border border-amber-200">
+                            <p class="text-sm font-black text-amber-800 mb-2">다만 부작용이 따라옵니다</p>
+                            <ul class="space-y-2 text-sm text-gray-600 leading-relaxed">
+                                <li>&bull; <strong class="text-gray-800">사재기:</strong> 유저가 &lsquo;다음 재료&rsquo;를 예상해 하한가 매물을 미리 매집합니다. 구제 대상 물량이 소수에게 몰리고, 정작 묶여 있던 유저는 이득을 못 봅니다.</li>
+                                <li>&bull; <strong class="text-gray-800">선별 구제:</strong> 지정된 시즌 보유자만 해소되고 나머지는 그대로 남습니다. &ldquo;왜 저 시즌만&rdquo;이라는 불만이 발생합니다.</li>
+                                <li>&bull; <strong class="text-gray-800">정보 가치:</strong> 어느 시즌이 재료가 될지가 곧 수익이 되므로, 사전 정보 관리가 운영 리스크로 올라옵니다.</li>
+                            </ul>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed mt-5">
+                            <strong class="text-gray-800">보완:</strong> 특정 시즌을 지정하는 방식 대신
+                            <strong class="text-amber-700">&lsquo;하한가에 N일 이상 등록된 매물&rsquo;이라는 조건으로 재료를 정의</strong>합니다.
+                            대상이 시즌이 아니라 상태가 되므로 사재기 유인이 줄고, 1번에서 정한 <strong>기간 통제</strong> 목표와도 직접 연결됩니다.
+                        </p>
+                    </div>
+
+                    <div class="bg-white border-2 border-gray-200 rounded-3xl p-8">
+                        <p class="text-[11px] font-black tracking-wide text-gray-400 mb-4">소각 규모를 계산해야 인플레 방어가 주장이 됩니다</p>
+                        <p class="text-gray-700 leading-relaxed mb-5">
+                            전략 1의 두 번째 목적은 <strong class="text-gray-900">수수료를 통한 BP 소각</strong>입니다.
+                            그런데 방어 효과는 <strong class="text-gray-900">유입량과 소각량의 비교</strong>로만 판정됩니다.
+                            데이터 탭은 출시 주간 거래량이 평시 대비 <strong class="text-gray-900">2.3배</strong>로 폭증한다고 밝히고 있으므로, 유입 규모의 기준선은 이미 확보되어 있습니다.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-5">
+                            <div class="bg-red-50 rounded-2xl p-6 border border-red-200">
+                                <p class="text-xs font-black text-red-700 mb-2">유입</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">신규 패키지 판매로 들어오는 순수 BP. 출시 주간에 집중되며 거래량 급증의 원인입니다.</p>
+                            </div>
+                            <div class="bg-emerald-50 rounded-2xl p-6 border border-emerald-200">
+                                <p class="text-xs font-black text-emerald-700 mb-2">소각</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">에이전트 진행 횟수 &times; 회당 수수료. 유저의 자발적 이용에 의존하므로 상한이 정해져 있지 않습니다.</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed mt-5">
+                            소각이 유입에 미치지 못하면 <strong class="text-gray-900">인플레이션의 속도만 늦추는 데 그칩니다.</strong>
+                            따라서 이 전략은 &lsquo;인플레 방어&rsquo;보다 <strong class="text-emerald-700">&lsquo;귀속 해소&rsquo;를 주 효과로 두고,
+                            통화 소각은 부수 효과로 보수적으로 서술</strong>하는 편이 정확합니다.
+                            실제 방어를 목표한다면 수수료율을 유입량에 연동해 조정하는 규칙이 함께 필요합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. 전략 2 검토 -->
+                <div class="mb-16">
+                    <p class="text-xs font-black tracking-[.2em] text-amber-600 mb-3">검토 2</p>
+                    <h2 class="text-2xl md:text-3xl font-black text-gray-900 mb-5 tracking-tight">스왑 시스템 &mdash; 무엇으로 교환해 주는지가 관건입니다</h2>
+
+                    <div class="bg-white border-2 border-amber-300 rounded-3xl p-8">
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            가치가 급락한 매물을 <strong class="text-gray-900">신규 시즌 팩이나 강화 재료로 교환</strong>해 주는 설계입니다.
+                            자산 가치를 지켜 이탈을 막는다는 목적은 1번의 기간 통제와 정확히 맞습니다.
+                            다만 교환 대상에 따라 사업적 영향이 갈립니다.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-5 mb-6">
+                            <div class="bg-red-50 rounded-2xl p-6 border-2 border-red-300">
+                                <p class="text-xs font-black text-red-700 mb-2">신규 시즌 팩으로 교환하면</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    신규 시즌 팩은 <strong class="text-gray-900">유료 판매 상품</strong>입니다.
+                                    이를 무료 교환 경로로 열면 <strong class="text-red-700">패키지 매출을 직접 잠식</strong>합니다.
+                                    이 문서가 인플레이션의 원인으로 지목한 것이 바로 그 패키지 판매이므로, 매출과 경제 안정이 동시에 걸립니다.
+                                </p>
+                            </div>
+                            <div class="bg-emerald-50 rounded-2xl p-6 border-2 border-emerald-300">
+                                <p class="text-xs font-black text-emerald-700 mb-2">강화 재료로 한정하면</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">
+                                    강화 재료는 <strong class="text-gray-900">소모성 자원</strong>이라 교환해 줘도 판매 상품과 경쟁하지 않습니다.
+                                    자산이 완전히 무의미해지는 것은 막으면서 <strong class="text-emerald-700">매출 잠식은 피합니다.</strong>
+                                    구제의 체감은 팩보다 약하지만, 지속 가능한 형태입니다.
+                                </p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            <strong class="text-gray-800">권고:</strong> 기본 교환 대상은 <strong>강화 재료와 소모품</strong>으로 두고,
+                            신규 시즌 팩은 <strong class="text-amber-700">기간 한정 &middot; 계정당 횟수 제한</strong>으로만 엽니다.
+                            &lsquo;기간 한정 이벤트&rsquo;라는 원안의 설계는 이 점에서 이미 옳은 방향입니다 &mdash; 상시화하지 않는 것이 핵심입니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. 검증 지표와 한계 -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white border-2 border-emerald-200 rounded-3xl p-8">
+                        <p class="text-[11px] font-black tracking-wide text-emerald-700 mb-5">정책 성패를 판정할 지표</p>
+                        <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
+                            <li>&bull; <strong class="text-gray-800">평균 매몰 기간:</strong> 하한가 등록 매물이 소진되기까지의 일수 &mdash; <strong>14일 기준선</strong> 아래로 내려가는지가 핵심 판정</li>
+                            <li>&bull; <strong class="text-gray-800">하한가 적체량:</strong> 시즌별 하한가 등록 물량의 추이</li>
+                            <li>&bull; <strong class="text-gray-800">소각/유입 비율:</strong> 주간 BP 소각량 &divide; 신규 유입량 &mdash; 인플레 방어 주장의 근거</li>
+                            <li>&bull; <strong class="text-gray-800">무소과금 스쿼드 교체율:</strong> 성장 사다리가 실제로 다시 작동하는지</li>
+                            <li>&bull; <strong class="text-gray-800">패키지 매출 변화:</strong> 스왑 이벤트 기간과 그 직후 &mdash; 잠식 여부 확인</li>
+                            <li>&bull; <strong class="text-gray-800">사재기 징후:</strong> 재료 지정 발표 전후의 해당 매물 거래량 급변</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white border-2 border-gray-200 rounded-3xl p-8">
+                        <p class="text-[11px] font-black tracking-wide text-gray-400 mb-5">이 분석의 한계</p>
+                        <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
+                            <li>&bull; 데이터 탭에 명시된 대로 <strong class="text-gray-800">거래 로그 기반 추정치와 상관관계 시뮬레이션</strong>이며, 운영사 내부 지표로 검증된 값이 아닙니다.</li>
+                            <li>&bull; &lsquo;자산 70% 이상, 14일 이상&rsquo;과 &lsquo;접속 25% 감소&rsquo;는 <strong class="text-gray-800">상관관계</strong>로 제시된 것이며 인과가 확정된 것은 아닙니다. 다른 요인(시즌 종료, 경쟁 게임 출시)이 겹칠 수 있습니다.</li>
+                            <li>&bull; 소각량과 유입량의 <strong class="text-gray-800">실제 규모는 계산하지 않았습니다.</strong> 패키지 판매량과 수수료 설정값이 있어야 산출됩니다.</li>
+                            <li>&bull; 에이전트 시스템의 구현 제약과 이적시장 정책은 <strong class="text-gray-800">운영사 내부 규정</strong>에 종속되므로, 실제 적용 가능 범위는 확인이 필요합니다.</li>
+                            <li>&bull; 분석은 <strong class="text-gray-800">24TOTY 출시 한 사례</strong>를 중심으로 했습니다. 시즌 성격이나 시장 상황에 따라 하락폭과 회복 속도는 달라집니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- 섹션 4: 핵심 역량 피치 -->
         <section id="section-pitch" class="tab-content hidden py-24">
             <div class="max-w-5xl mx-auto text-center">
@@ -286,7 +465,7 @@
 
     <footer class="bg-white border-t border-gray-100 py-12 mt-10">
         <div class="max-w-wide mx-auto px-10 text-center text-gray-400 text-xs font-bold uppercase tracking-widest">
-            Assistant Producer Research Archive | FC Online Economic Analysis Report
+            FC 온라인 경제 구조 분석
         </div>
     </footer>
 
@@ -297,6 +476,12 @@
             
             document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
             document.getElementById('tab-' + id).classList.add('active');
+
+            // 개요는 첫 번째 탭에서만 보여준다
+            const overview = document.getElementById('overview');
+            if (overview) {
+                overview.classList.toggle('hidden', id !== 'flow');
+            }
 
             if(id === 'data') {
                 setTimeout(initCharts, 100);

@@ -28,6 +28,7 @@
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td { text-wrap: pretty; }
     </style>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-teal-200 selection:text-teal-900 leading-relaxed">
 
@@ -253,6 +254,214 @@
             </div>
         </section>
         
+
+        <!-- [보강] 산출 전제 -->
+        <section id="assumptions" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+            <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-2">효과 수치의 산출 전제</h2>
+            <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+                위 차트는 주간 소요 시간을 <strong class="text-slate-700">15시간에서 2시간</strong>으로 제시합니다.
+                이는 <strong class="text-slate-700">87% 절감</strong>에 해당하는 강한 주장이므로,
+                어떤 업무를 포함해 계산한 값인지와 실측 방법을 함께 두어야 근거가 됩니다.
+            </p>
+
+            <div class="bg-amber-50 border-2 border-amber-200 rounded-xl p-5 mb-6">
+                <p class="text-[11px] font-black tracking-wide text-amber-600 mb-2">수치의 성격</p>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                    차트의 두 값은 <strong class="text-slate-900">도입 전후 비교를 위한 추정값</strong>이며 특정 조직에서 계측한 실적이 아닙니다.
+                    따라서 이 문서에서 87%는 <strong>목표선</strong>으로 읽는 것이 맞고,
+                    실제 도입 시에는 아래 분해 항목을 그대로 측정해 채워 넣는 절차가 필요합니다.
+                </p>
+            </div>
+
+            <p class="text-sm font-bold text-slate-800 mb-3">이 절감이 성립하려면 필요한 전제</p>
+            <div class="overflow-x-auto rounded-xl border-2 border-slate-200 mb-6">
+                <table class="w-full min-w-[620px] border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-slate-700 text-white">
+                            <th class="p-3 text-left text-xs font-black">업무 항목</th>
+                            <th class="p-3 text-left text-xs font-black">자동화 가능 여부</th>
+                            <th class="p-3 text-left text-xs font-black">남는 작업</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800 align-top">반복 문의 응대</td>
+                            <td class="p-3 text-slate-600 align-top text-xs leading-relaxed"><strong class="text-emerald-700">대체 가능</strong> &mdash; 노션에 등재된 규정 범위 내 문의</td>
+                            <td class="p-3 text-slate-600 align-top text-xs leading-relaxed">규정에 없는 예외 문의, 판단이 필요한 사안</td>
+                        </tr>
+                        <tr class="border-b border-slate-200 bg-slate-50">
+                            <td class="p-3 font-black text-slate-800 align-top">양식 문서 작성</td>
+                            <td class="p-3 text-slate-600 align-top text-xs leading-relaxed"><strong class="text-emerald-700">대체 가능</strong> &mdash; 정형 양식의 초안 생성과 값 결합</td>
+                            <td class="p-3 text-slate-600 align-top text-xs leading-relaxed">내용 검수, 승인 절차, 서명 및 보관</td>
+                        </tr>
+                        <tr class="border-b border-slate-200">
+                            <td class="p-3 font-black text-slate-800 align-top">노션 DB 갱신</td>
+                            <td class="p-3 text-slate-600 align-top text-xs leading-relaxed"><strong class="text-rose-700">신규 발생</strong> &mdash; 도입 전에는 없던 업무</td>
+                            <td class="p-3 text-slate-600 align-top text-xs leading-relaxed">규정 개정 시 등재, 주기 검수</td>
+                        </tr>
+                        <tr class="bg-slate-50">
+                            <td class="p-3 font-black text-slate-800 align-top">AI 답변 품질 관리</td>
+                            <td class="p-3 text-slate-600 align-top text-xs leading-relaxed"><strong class="text-rose-700">신규 발생</strong> &mdash; 도입 전에는 없던 업무</td>
+                            <td class="p-3 text-slate-600 align-top text-xs leading-relaxed">오답 샘플 검수, 프롬프트 수정</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-slate-900 rounded-xl p-6 text-white">
+                <p class="text-[11px] font-black tracking-wide text-amber-400 mb-3">놓치면 안 되는 항</p>
+                <p class="text-sm md:text-base leading-relaxed">
+                    표의 아래 두 줄은 <strong class="text-amber-300">도입으로 새로 생기는 업무</strong>입니다.
+                    절감분에서 이 신규 업무 시간을 빼야 실제 순 절감이 나옵니다.
+                    특히 <strong class="text-white">노션 DB 갱신은 없애면 시스템이 곧 오답 기계가 되므로 생략할 수 없는 고정 비용</strong>입니다.
+                    도입 효과를 보고할 때 이 항을 빠뜨리면 <strong class="text-amber-300">절감폭이 과대 계상</strong>됩니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- [보강] 보안 구조의 범위 -->
+        <section id="security-scope" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+            <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-2">보안 구조가 막는 것과 막지 못하는 것</h2>
+            <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+                기능 2의 핵심은 <strong class="text-slate-700">민감 정보를 외부 AI로 보내지 않는다</strong>는 것입니다.
+                이 설계는 유효하지만, 보안 검토를 통과하려면 <strong class="text-slate-700">이 구조가 담당하는 범위를 명확히 그어야</strong> 합니다.
+                범위를 넓게 주장하면 실제 위험이 가려집니다.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-5 mb-6">
+                <div class="bg-emerald-50 border-2 border-emerald-200 rounded-xl p-5">
+                    <p class="text-[11px] font-black tracking-wide text-emerald-700 mb-3">이 구조가 막는 것</p>
+                    <ul class="space-y-2 text-sm text-slate-700 leading-relaxed">
+                        <li>&bull; 이름 &middot; 연봉 <strong>값 자체가 외부 API로 전송</strong>되는 것</li>
+                        <li>&bull; 외부 서비스 로그나 학습 데이터에 인사 정보가 남는 것</li>
+                        <li>&bull; 프롬프트 이력에 개인 식별 정보가 축적되는 것</li>
+                    </ul>
+                </div>
+                <div class="bg-rose-50 border-2 border-rose-200 rounded-xl p-5">
+                    <p class="text-[11px] font-black tracking-wide text-rose-700 mb-3">이 구조로는 막히지 않는 것</p>
+                    <ul class="space-y-2 text-sm text-slate-700 leading-relaxed">
+                        <li>&bull; <strong>브라우저에 남는 입력값</strong> &mdash; 임시 저장이 세션 종료 후에도 남으면 공용 단말에서 노출됩니다</li>
+                        <li>&bull; <strong>완성본의 전달 경로</strong> &mdash; 결합된 문서를 메신저나 메일로 보내는 순간 새 유출 경로가 생깁니다</li>
+                        <li>&bull; <strong>담당자의 실수</strong> &mdash; 값을 프롬프트 창에 직접 입력하면 구조가 무력화됩니다</li>
+                        <li>&bull; <strong>문서 종류 노출</strong> &mdash; &lsquo;연봉 계약서 양식&rsquo; 같은 요청 자체가 외부에 남습니다</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
+                <p class="text-[11px] font-black tracking-wide text-slate-500 mb-4">보완 설계</p>
+                <div class="space-y-3">
+                    <div class="bg-white rounded-lg p-4 border border-slate-200">
+                        <p class="text-xs font-black text-slate-800 mb-1">입력값 잔존 차단</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">입력값을 영구 저장소가 아닌 <strong class="text-slate-800">페이지 이탈 시 소멸하는 범위</strong>에만 두고, 생성 완료 즉시 입력 필드를 비웁니다. 공용 단말 사용을 전제로 설계해야 합니다.</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 border border-slate-200">
+                        <p class="text-xs font-black text-slate-800 mb-1">실수 방지 검증</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">양식 요청 프롬프트에 <strong class="text-slate-800">숫자나 인명으로 보이는 문자열이 포함되면 전송을 차단</strong>하고 경고를 띄웁니다. 사람의 주의에 의존하는 보안은 반드시 뚫립니다.</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 border border-slate-200">
+                        <p class="text-xs font-black text-slate-800 mb-1">전달 경로 지정</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">완성본은 <strong class="text-slate-800">사내 문서 시스템으로만 저장</strong>되도록 동선을 고정하고, 개인 단말 다운로드와 외부 전송은 기본 차단합니다. 생성 단계만 안전해도 전달 단계에서 새면 의미가 없습니다.</p>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed mt-4">
+                    이 세 가지를 함께 제시하면 <strong class="text-slate-700">&ldquo;AI에 안 보낸다&rdquo;에서 &ldquo;문서 생애 전 구간을 통제한다&rdquo;</strong>로 주장의 범위가 정확해집니다.
+                    보안 부서 검토에서 실제로 묻는 것은 후자입니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- [보강] 기능 1의 운영 리스크 -->
+        <section id="answer-risk" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+            <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-2">AI 답변의 오답 리스크와 운영 규칙</h2>
+            <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+                HR 규정 안내는 근태 &middot; 급여 &middot; 계약과 직결되므로,
+                <strong class="text-slate-700">잘못된 안내가 분쟁으로 이어질 수 있습니다.</strong>
+                프롬프트에 &ldquo;규정에 없는 내용은 지어내지 마세요&rdquo;를 넣은 것은 맞는 방향이지만, 그것만으로는 부족합니다.
+            </p>
+
+            <div class="space-y-4 mb-6">
+                <div class="border-l-4 border-l-rose-500 bg-rose-50 rounded-r-xl p-5">
+                    <p class="text-sm font-black text-slate-900 mb-2">위험 1 &middot; 규정이 바뀌면 AI는 옛 내용을 자신 있게 말합니다</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        AI는 노션 DB에 있는 내용만 답하도록 설계됐으므로, <strong class="text-slate-800">DB가 개정을 따라가지 못하면 오답이 확정적으로 발생</strong>합니다.
+                        더 나쁜 것은 근거가 있는 형식으로 답하기 때문에 구성원이 의심하지 않는다는 점입니다.
+                    </p>
+                </div>
+                <div class="border-l-4 border-l-rose-500 bg-rose-50 rounded-r-xl p-5">
+                    <p class="text-sm font-black text-slate-900 mb-2">위험 2 &middot; 요약 과정에서 조건이 탈락합니다</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        프롬프트는 &lsquo;핵심 내용만 정확하게 요약&rsquo;을 지시합니다. 그런데 규정에서 중요한 것은 대개 <strong class="text-slate-800">예외 조건과 단서</strong>입니다.
+                        요약은 그 단서를 떨어뜨리기 쉬워, 문장은 맞지만 <strong class="text-slate-800">개별 사례에는 틀린 답</strong>이 나올 수 있습니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 rounded-xl p-6 text-white">
+                <p class="text-[11px] font-black tracking-wide text-amber-400 mb-4">운영 규칙으로 넣어야 할 것</p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-white/10 rounded-lg p-4">
+                        <p class="text-xs font-black text-amber-300 mb-1">답변 고지 문구</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">모든 답변 끝에 <strong class="text-white">&lsquo;참고용 안내이며 정식 기준은 규정 원문&rsquo;</strong>을 붙입니다. 상세 링크를 필수 포함하도록 한 기존 지침과 결합하면 자연스럽습니다.</p>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4">
+                        <p class="text-xs font-black text-amber-300 mb-1">갱신일 표기</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">노션 항목마다 <strong class="text-white">최종 갱신일</strong>을 두고 답변에 함께 노출합니다. 오래된 항목은 AI가 답변 전 담당자 확인을 안내하게 합니다.</p>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4">
+                        <p class="text-xs font-black text-amber-300 mb-1">에스컬레이션 경로</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">규정 범위를 벗어난 문의는 <strong class="text-white">추측하지 않고 담당자에게 연결</strong>합니다. &lsquo;모른다&rsquo;고 답할 수 있게 만드는 것이 정확도의 핵심입니다.</p>
+                    </div>
+                    <div class="bg-white/10 rounded-lg p-4">
+                        <p class="text-xs font-black text-amber-300 mb-1">답변 로그 보관</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">누구에게 무엇을 안내했는지 남깁니다. <strong class="text-white">분쟁 시 근거</strong>가 되고, 오답 패턴을 찾아 프롬프트를 고치는 재료가 됩니다.</p>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-300 leading-relaxed mt-5 pt-5 border-t border-white/20">
+                    규정 개정 절차에 <strong class="text-amber-300">&lsquo;노션 DB 갱신&rsquo;을 필수 단계로 넣는 것</strong>이 이 시스템의 실제 생명선입니다.
+                    도구를 만드는 일보다 <strong class="text-white">갱신 책임자와 주기를 정하는 일</strong>이 어렵고 중요합니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- [보강] 검증 지표와 한계 -->
+        <section id="metrics-limits" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+            <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-2">도입 후 확인할 지표와 이 기획의 한계</h2>
+            <div class="grid md:grid-cols-2 gap-6 mt-6">
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                    <p class="text-[11px] font-black tracking-wide text-emerald-700 mb-4">측정할 지표</p>
+                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                        <li>&bull; <strong class="text-slate-800">문의 건수 변화:</strong> 메신저로 인입되는 반복 문의 수 &mdash; 도입 전 4주 평균과 비교</li>
+                        <li>&bull; <strong class="text-slate-800">순 절감 시간:</strong> 응대 &middot; 문서 작성 절감분에서 <strong>DB 갱신과 품질 관리 시간을 차감</strong>한 값</li>
+                        <li>&bull; <strong class="text-slate-800">AI 답변 정확도:</strong> 주간 표본을 담당자가 검수해 오답률 산출</li>
+                        <li>&bull; <strong class="text-slate-800">에스컬레이션 비율:</strong> 담당자 연결로 넘어간 비율 &mdash; 너무 높으면 DB 범위가 좁고, 너무 낮으면 무리한 추측을 하고 있을 가능성</li>
+                        <li>&bull; <strong class="text-slate-800">DB 신선도:</strong> 최종 갱신일이 기준 기간을 넘긴 항목 수</li>
+                        <li>&bull; <strong class="text-slate-800">문서 생성 소요:</strong> 계약서 1건 작성 시간과 검수 반송률</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                    <p class="text-[11px] font-black tracking-wide text-slate-500 mb-4">이 기획의 한계</p>
+                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                        <li>&bull; 주간 15시간 &rarr; 2시간은 <strong class="text-slate-800">도입 전후 비교를 위한 추정값</strong>이며 계측된 실적이 아닙니다. 조직 규모와 문의 특성에 따라 크게 달라집니다.</li>
+                        <li>&bull; 노션 &middot; 사내 메신저 연동 방식은 <strong class="text-slate-800">사용 중인 도구와 계약 조건</strong>에 종속됩니다. 연동 가능 여부부터 확인이 필요합니다.</li>
+                        <li>&bull; 보안 구조는 <strong class="text-slate-800">기획 수준의 설계</strong>이며, 실제 도입에는 보안 부서의 검토와 사내 지침 대조가 선행되어야 합니다.</li>
+                        <li>&bull; 문서 생성기의 <strong class="text-slate-800">법적 효력</strong>은 다루지 않았습니다. 계약서 양식의 적법성은 법무 검토 사항입니다.</li>
+                        <li>&bull; 표에 담긴 규정 예시(반차 4시간, 복지비 25일 등)는 <strong class="text-slate-800">구조를 보여주기 위한 예시</strong>이며 특정 회사의 실제 규정이 아닙니다.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-indigo-50 border-2 border-indigo-200 rounded-xl p-6 mt-6">
+                <p class="text-[11px] font-black tracking-wide text-indigo-600 mb-3">정리</p>
+                <p class="text-sm md:text-base text-slate-700 leading-relaxed">
+                    이 기획의 강점은 <strong class="text-slate-900">보안 제약을 우회하지 않고 구조로 푼 점</strong>입니다.
+                    빈칸 양식만 외부에서 받아 로컬에서 결합하는 방식은 &lsquo;AI를 쓸 수 없다&rsquo;는 제약을 &lsquo;이렇게 쓰면 된다&rsquo;로 바꿉니다.<br>
+                    다만 실제 도입을 통과하려면 <strong class="text-slate-900">생성 단계뿐 아니라 저장 &middot; 전달 &middot; 잔존까지</strong>,
+                    그리고 <strong class="text-slate-900">절감 시간에서 새로 생기는 관리 업무를 차감</strong>한 숫자까지 함께 제시해야 합니다.
+                </p>
+            </div>
+        </section>
+
         <footer class="text-center py-8 border-t border-slate-200 mt-12">
             <p class="text-slate-500 font-medium">본 기획서는 HR 업무 자동화 아이디어를 정리하기 위해 작성되었습니다.</p>
         </footer>
@@ -355,7 +564,7 @@
                             padding: 12,
                             callbacks: {
                                 label: function(context) {
-                                    return context.parsed.y + ' 시간 (Hours)';
+                                    return context.parsed.y + ' 시간';
                                 }
                             }
                         }

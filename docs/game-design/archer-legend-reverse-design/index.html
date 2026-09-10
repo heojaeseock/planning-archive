@@ -97,14 +97,37 @@
 
             <!-- 문서 개요 (탭과 무관하게 항상 노출) -->
             <div class="px-6 md:px-10 py-10 border-b border-slate-200 bg-white">
-                <h2 class="text-2xl font-bold text-slate-900 mb-5">역기획 정의와 문제</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">역기획은 출시된 게임의 시스템을 분해해 기획서 형태로 재구성하는 작업입니다.<br>궁수의 전설은 동일 등급 장비 3개를 융합해 한 단계 승급하는 구조입니다.<br>그런데 상자 뽑기가 부위를 지정할 수 없어 목표 장비 수급이 정체됩니다.<br>이 지점을 문제로 정의하고 거래소·선택형 상자·프리셋 세 가지를 제안했습니다.</p>
+                <h2 class="text-2xl font-bold text-slate-900 mb-5">역기획 정의와 문서 요약</h2>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    역기획은 출시된 게임의 시스템을 분해해 기획서 형태로 재구성하는 작업입니다.
+                    궁수의 전설은 동일 등급 장비 3개를 융합해 한 단계 승급하는 구조이고, 상자 뽑기는 부위를 지정할 수 없습니다.<br>
+                    이 두 조건을 <strong class="text-slate-900">수치로 환산해 정체의 크기를 특정</strong>하고,
+                    거래소 &middot; 선택형 상자 &middot; 프리셋 세 제안을 그 기준으로 <strong class="text-slate-900">재평가해 실행 순서를 다시 정했습니다.</strong>
+                </p>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-rose-50 border-2 border-rose-200 rounded-2xl p-5">
+                        <p class="text-[10px] font-black tracking-wide text-rose-500 mb-2">결론 1</p>
+                        <p class="text-sm font-bold text-slate-900 mb-2">정체의 크기는 729배입니다</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">3배수 융합으로 81배, 부위 지정 불가로 9배가 곱해집니다. 전설 1개에 필요한 뽑기가 기대값 기준 729회입니다.</p>
+                    </div>
+                    <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-5">
+                        <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-2">결론 2</p>
+                        <p class="text-sm font-bold text-slate-900 mb-2">해결책은 선택형 상자뿐입니다</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">두 배수 중 하나(9배)를 실제로 제거해 729회를 81회로 줄입니다. 나머지 제안은 배수를 없애지 못합니다.</p>
+                    </div>
+                    <div class="bg-slate-100 border-2 border-slate-300 rounded-2xl p-5">
+                        <p class="text-[10px] font-black tracking-wide text-slate-500 mb-2">결론 3</p>
+                        <p class="text-sm font-bold text-slate-900 mb-2">거래소는 보류가 맞습니다</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">수수료로 회수하는 것은 5%인데, 상자 매출과 보석 판매 수요를 잠식합니다. 원안 1번을 보류로 재배치했습니다.</p>
+                    </div>
+                </div>
             </div>
 
             <!-- 네비게이션 탭 -->
             <div class="flex border-b border-slate-200 bg-slate-50 sticky top-0 z-20">
                 <button onclick="openTab(event, 'analysis')" class="tab-btn active flex-1 py-4 text-sm font-bold text-slate-500 border-transparent" id="defaultOpen">📊 1. 역기획 및 한계점 분석</button>
                 <button onclick="openTab(event, 'proposal')" class="tab-btn flex-1 py-4 text-sm font-bold text-slate-500 border-transparent">💡 2. 신규 시스템 제안</button>
+                <button onclick="openTab(event, 'review')" class="tab-btn flex-1 py-4 text-sm font-bold text-slate-500 border-transparent">⚖️ 3. 제안 검토 및 우선순위</button>
             </div>
 
             <!-- 탭 1: 역기획 분석 -->
@@ -118,7 +141,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- 구조도 1 -->
                         <div class="mockup-panel p-6 flex flex-col items-center justify-center min-h-[250px]">
-                            <p class="text-xs text-slate-500 mb-4 font-bold tracking-widest">핵심 순환 구조</p>
+                            <p class="text-xs text-slate-500 mb-4 font-bold tracking-wide">핵심 순환 구조</p>
                             <div class="flex flex-col items-center gap-2 w-full max-w-xs">
                                 <div class="w-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-center py-2 rounded-lg text-sm font-bold">인게임 챕터 플레이 (재화 파밍)</div>
                                 <div class="text-slate-400">⬇️</div>
@@ -132,7 +155,7 @@
 
                         <!-- 구조도 2 -->
                         <div class="mockup-panel p-6 flex flex-col items-center justify-center min-h-[250px]">
-                            <p class="text-xs text-slate-500 mb-4 font-bold tracking-widest">장비 승급 시스템</p>
+                            <p class="text-xs text-slate-500 mb-4 font-bold tracking-wide">장비 승급 시스템</p>
                             <div class="flex flex-col items-center gap-3 w-full">
                                 <div class="flex gap-2">
                                     <div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center border border-slate-300 text-sm font-bold text-slate-600">일반</div>
@@ -213,6 +236,115 @@
                                     세팅을 저장하는 사전 설정(프리셋) 기능이 없어 매번 수동으로 교체해야 하는 불편함이 큽니다.
                                 </p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- [보강] 3배수 융합 구조의 정량 분석 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="text-indigo-600 font-black text-2xl">#</span>
+                        <h3 class="text-xl font-bold text-slate-900">문제를 숫자로 환산하면</h3>
+                    </div>
+                    <div class="content-panel p-6 md:p-8">
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            &lsquo;무작위성이 피로하다&rsquo;는 것은 체감의 문제가 아니라 <strong class="text-slate-900">구조에서 계산으로 나오는 결과</strong>입니다.
+                            동일 등급 3개를 융합해 1개로 승급하는 구조에서 등급이 5단계라면, 요구량은 등급마다 3배씩 누적됩니다.
+                        </p>
+
+                        <div class="grid md:grid-cols-2 gap-6 mb-8">
+                            <div>
+                                <p class="text-[10px] font-black tracking-wide text-slate-400 mb-3">전설 1개를 만드는 데 필요한 하위 등급</p>
+                                <div class="overflow-hidden rounded-2xl border-2 border-slate-200">
+                                    <table class="w-full border-collapse text-sm">
+                                        <thead>
+                                            <tr class="bg-slate-700 text-white">
+                                                <th class="p-3 text-left text-xs font-black">등급</th>
+                                                <th class="p-3 text-center text-xs font-black">필요 수량</th>
+                                                <th class="p-3 text-center text-xs font-black">배수</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                    <tr class="bg-amber-50 border-b border-slate-200">
+                                        <td class="p-3 font-black text-amber-700">전설</td>
+                                        <td class="p-3 text-center font-black text-amber-700">1개</td>
+                                        <td class="p-3 text-center text-xs text-slate-500 font-medium">3<sup>0</sup></td>
+                                    </tr>
+                                    <tr class=" border-b border-slate-200">
+                                        <td class="p-3 font-black text-slate-700">에픽</td>
+                                        <td class="p-3 text-center font-black text-slate-700">3개</td>
+                                        <td class="p-3 text-center text-xs text-slate-500 font-medium">3<sup>1</sup></td>
+                                    </tr>
+                                    <tr class=" border-b border-slate-200">
+                                        <td class="p-3 font-black text-slate-700">레어</td>
+                                        <td class="p-3 text-center font-black text-slate-700">9개</td>
+                                        <td class="p-3 text-center text-xs text-slate-500 font-medium">3<sup>2</sup></td>
+                                    </tr>
+                                    <tr class=" border-b border-slate-200">
+                                        <td class="p-3 font-black text-slate-700">고급</td>
+                                        <td class="p-3 text-center font-black text-slate-700">27개</td>
+                                        <td class="p-3 text-center text-xs text-slate-500 font-medium">3<sup>3</sup></td>
+                                    </tr>
+                                    <tr class="bg-rose-50 border-b border-slate-200">
+                                        <td class="p-3 font-black text-rose-700">일반</td>
+                                        <td class="p-3 text-center font-black text-rose-700">81개</td>
+                                        <td class="p-3 text-center text-xs text-slate-500 font-medium">3<sup>4</sup></td>
+                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="flex flex-col justify-center gap-4">
+                                <div class="bg-rose-50 border-2 border-rose-300 rounded-2xl p-5">
+                                    <p class="text-[10px] font-black tracking-wide text-rose-500 mb-2">슬롯 1개 기준</p>
+                                    <p class="text-3xl font-black text-rose-700 mb-1">일반 81개</p>
+                                    <p class="text-xs text-slate-600 leading-relaxed">전설 장비 하나를 완성하기 위한 최소 재료량입니다.</p>
+                                </div>
+                                <div class="bg-slate-900 rounded-2xl p-5 text-white">
+                                    <p class="text-[10px] font-black tracking-wide text-amber-400 mb-2">장착 슬롯 9종 전부</p>
+                                    <p class="text-3xl font-black text-white mb-1">일반 729개</p>
+                                    <p class="text-xs text-slate-300 leading-relaxed">81 &times; 9. 이것이 이 게임의 최종 성장 목표가 요구하는 재료 총량입니다.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-6 mb-6">
+                            <p class="text-[10px] font-black tracking-wide text-indigo-500 mb-3">여기에 부위 지정 불가가 곱해집니다</p>
+                            <p class="text-sm md:text-base text-slate-700 leading-relaxed mb-5">
+                                상자가 부위를 지정할 수 없으므로, 원하는 슬롯의 장비가 나올 확률은 <strong class="text-slate-900">9종 중 1종</strong>입니다.
+                                즉 위의 재료 요구량에 <strong class="text-indigo-700">다시 9배가 곱해집니다.</strong>
+                            </p>
+                            <div class="grid md:grid-cols-3 gap-3 text-center">
+                                <div class="bg-white rounded-xl p-4 border border-indigo-200">
+                                    <p class="text-[10px] text-slate-500 font-bold mb-1">특정 부위 일반 1개</p>
+                                    <p class="text-xl font-black text-slate-800">9회</p>
+                                </div>
+                                <div class="bg-white rounded-xl p-4 border-2 border-indigo-400">
+                                    <p class="text-[10px] text-slate-500 font-bold mb-1">특정 부위 전설 1개</p>
+                                    <p class="text-xl font-black text-indigo-700">729회</p>
+                                </div>
+                                <div class="bg-white rounded-xl p-4 border border-indigo-200">
+                                    <p class="text-[10px] text-slate-500 font-bold mb-1">9부위 전부 전설</p>
+                                    <p class="text-xl font-black text-slate-800">6,561회</p>
+                                </div>
+                            </div>
+                            <p class="text-[11px] text-slate-500 mt-4 leading-relaxed">
+                                * 뽑기 1회당 장비 1개 획득, 부위는 9종 균등 분포를 가정한 <strong>기대값</strong>입니다. 실제 확률 분포에 따라 달라집니다.
+                            </p>
+                        </div>
+
+                        <div class="bg-slate-900 rounded-2xl p-6 md:p-8 text-white">
+                            <p class="text-amber-400 font-black text-[10px] tracking-wide mb-4">이 계산이 말해주는 것</p>
+                            <p class="text-sm md:text-base leading-relaxed font-medium mb-4">
+                                유저가 느끼는 정체의 원인은 <strong class="text-amber-300">뽑기 확률이 낮아서가 아닙니다.</strong>
+                                <strong class="text-white">3배수 융합(81배)</strong>과 <strong class="text-white">부위 분산(9배)</strong>이 곱해져
+                                <strong class="text-amber-300">729배</strong>가 된 구조 자체가 원인입니다.
+                            </p>
+                            <p class="text-sm md:text-base leading-relaxed font-medium">
+                                따라서 확률을 조금 올리거나 보상을 늘리는 방식으로는 해결되지 않습니다.
+                                <strong class="text-amber-300">두 배수 중 하나를 구조적으로 제거</strong>해야 합니다.
+                                다음 탭의 제안은 이 관점에서 다시 평가되어야 합니다.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -499,6 +631,251 @@
                     </div>
                 </div>
 
+            </div>
+
+            <!-- 탭 3: 제안 검토 및 우선순위 -->
+            <div id="review" class="tab-content p-6 md:p-10 space-y-14">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">제안 검토 및 우선순위</h2>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        앞서 문제의 원인을 <strong class="text-slate-700">3배수 융합(81배) &times; 부위 분산(9배) = 729배</strong>로 특정했습니다.
+                        이 기준으로 세 제안을 다시 평가하면, <strong class="text-slate-700">제안 순서가 바뀌어야 합니다.</strong>
+                    </p>
+                </div>
+
+                <!-- 1. 문제 해결력 평가 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-indigo-600 font-black text-2xl">#</span>
+                        <h3 class="text-xl font-bold text-slate-900">1. 어느 제안이 배수를 제거하는가</h3>
+                    </div>
+                    <div class="content-panel p-6 md:p-8">
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            정체의 원인이 두 배수의 곱이므로, 유효한 제안은 <strong class="text-slate-900">배수를 실제로 줄이는 제안</strong>뿐입니다.
+                            세 제안을 이 기준으로 나누면 결과가 명확하게 갈립니다.
+                        </p>
+                        <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-6">
+                            <table class="w-full min-w-[620px] border-collapse text-sm">
+                                <thead>
+                                    <tr class="bg-slate-700 text-white">
+                                        <th class="p-3 text-left text-xs font-black">제안</th>
+                                        <th class="p-3 text-center text-xs font-black">3배수 융합<br><span class="font-medium opacity-70">81배</span></th>
+                                        <th class="p-3 text-center text-xs font-black">부위 분산<br><span class="font-medium opacity-70">9배</span></th>
+                                        <th class="p-3 text-center text-xs font-black bg-indigo-600">전설 1개<br>필요 뽑기</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-slate-200">
+                                        <td class="p-3 font-bold text-slate-800">현재 (개선 없음)</td>
+                                        <td class="p-3 text-center text-slate-400 font-bold">유지</td>
+                                        <td class="p-3 text-center text-slate-400 font-bold">유지</td>
+                                        <td class="p-3 text-center font-black text-rose-600">729회</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-200 bg-emerald-50">
+                                        <td class="p-3 font-bold text-slate-800">선택형 상자 세분화</td>
+                                        <td class="p-3 text-center text-slate-400 font-bold">유지</td>
+                                        <td class="p-3 text-center text-emerald-700 font-black">제거</td>
+                                        <td class="p-3 text-center font-black text-emerald-700">81회 <span class="text-[10px]">(9분의 1)</span></td>
+                                    </tr>
+                                    <tr class="border-b border-slate-200">
+                                        <td class="p-3 font-bold text-slate-800">유저 간 거래소</td>
+                                        <td class="p-3 text-center text-slate-400 font-bold">유지</td>
+                                        <td class="p-3 text-center text-amber-600 font-bold">우회</td>
+                                        <td class="p-3 text-center font-black text-amber-600">보석 보유량에 종속</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 font-bold text-slate-800">장비 프리셋</td>
+                                        <td class="p-3 text-center text-slate-400 font-bold">해당 없음</td>
+                                        <td class="p-3 text-center text-slate-400 font-bold">해당 없음</td>
+                                        <td class="p-3 text-center text-slate-500 text-xs font-medium">편의성 개선 (수급과 무관)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="bg-emerald-50 border-l-[6px] border-emerald-500 rounded-r-2xl p-6">
+                            <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-3">평가 결과</p>
+                            <p class="text-sm md:text-base text-slate-700 leading-relaxed">
+                                문제를 <strong class="text-slate-900">구조적으로 해결하는 제안은 선택형 상자 하나</strong>입니다.
+                                부위 분산 9배를 직접 제거해 필요 뽑기를 <strong class="text-emerald-700">729회에서 81회로 줄입니다.</strong><br class="hidden md:block">
+                                거래소는 배수를 없애지 않고 <strong>보석으로 우회</strong>하게 해줄 뿐이라, 보석을 확보하지 못한 유저에게는 정체가 그대로 남습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 거래소의 구조적 모순 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-rose-600 font-black text-2xl">#</span>
+                        <h3 class="text-xl font-bold text-slate-900">2. 거래소 제안의 구조적 모순</h3>
+                    </div>
+                    <div class="bg-rose-50 border-2 border-rose-300 rounded-[24px] p-6 md:p-8">
+                        <p class="text-sm md:text-base text-slate-700 leading-relaxed mb-6">
+                            거래소의 기획 의도는 <strong>&ldquo;수수료 5%로 잉여 보석을 회수해 추가 과금을 유도한다&rdquo;</strong>였습니다.
+                            그런데 재화 흐름을 따라가 보면 <strong class="text-rose-700">의도와 결과가 서로 어긋납니다.</strong>
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-5 mb-6">
+                            <div class="bg-white rounded-2xl p-5 border border-rose-200">
+                                <p class="text-[10px] font-black tracking-wide text-slate-400 mb-3">의도한 것</p>
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    거래가 일어날 때마다 수수료 5%가 소각되어 <strong>보석 총량이 줄고</strong>, 줄어든 만큼 다시 구매가 발생한다.
+                                </p>
+                            </div>
+                            <div class="bg-white rounded-2xl p-5 border-2 border-rose-400">
+                                <p class="text-[10px] font-black tracking-wide text-rose-500 mb-3">실제로 일어나는 것</p>
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    보석은 <strong class="text-slate-900">과금으로만 생성</strong>됩니다. 거래소는 이미 발행된 보석을 유저 사이에서 <strong>재분배</strong>할 뿐이고, 소각되는 것은 거래액의 5%뿐입니다.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900 rounded-2xl p-6 text-white mb-6">
+                            <p class="text-rose-400 font-black text-[10px] tracking-wide mb-4">그 대가로 새로 생기는 두 가지 경로</p>
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <span class="shrink-0 w-6 h-6 rounded-md bg-rose-500 text-white text-[11px] font-black flex items-center justify-center">1</span>
+                                    <p class="text-sm leading-relaxed">
+                                        <strong class="text-rose-300">과금 유저의 상자 구매를 대체합니다.</strong>
+                                        원하는 장비를 거래소에서 직접 살 수 있으므로, 상자를 돌릴 이유가 줄어듭니다. 상자 매출이 거래소로 이동합니다.
+                                    </p>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <span class="shrink-0 w-6 h-6 rounded-md bg-rose-500 text-white text-[11px] font-black flex items-center justify-center">2</span>
+                                    <p class="text-sm leading-relaxed">
+                                        <strong class="text-rose-300">보석의 무료 획득 경로가 신설됩니다.</strong>
+                                        무과금이 장비를 팔아 보석을 얻으면, 그만큼 <strong class="text-white">보석을 구매할 필요가 사라집니다.</strong>
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="text-sm leading-relaxed mt-5 pt-5 border-t border-white/20 font-medium">
+                                회수하는 것은 거래액의 <strong class="text-rose-300">5%</strong>이고, 잃는 것은 <strong class="text-rose-300">상자 매출과 보석 판매 수요</strong>입니다.
+                                후자가 더 크면 이 제안은 순손실이 됩니다. 도입 전 <strong class="text-white">거래량 가정에 따른 매출 시뮬레이션</strong>이 반드시 선행되어야 합니다.
+                            </p>
+                        </div>
+                        <div class="bg-white rounded-2xl p-5 border border-rose-200">
+                            <p class="text-[10px] font-black tracking-wide text-slate-400 mb-3">추가로 검토해야 할 리스크</p>
+                            <ul class="space-y-2 text-sm text-slate-600 leading-relaxed">
+                                <li>&bull; <strong class="text-slate-800">작업장 유입:</strong> 장비가 보석으로 환산되면 자동 계정을 대량 운용할 동기가 생깁니다. 계정당 거래 한도와 탐지 체계가 함께 필요합니다.</li>
+                                <li>&bull; <strong class="text-slate-800">현금 거래(RMT):</strong> 유저 간 거래는 외부 현금 거래의 통로가 되기 쉬워, 계정 도용과 사기 관련 CS가 함께 증가합니다.</li>
+                                <li>&bull; <strong class="text-slate-800">유료 재화 기준 거래:</strong> 유료 재화를 매개로 한 유저 간 거래는 환금성 문제를 낳을 수 있어 법무 검토가 선행되어야 합니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 잘 설계된 부분 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-emerald-600 font-black text-2xl">#</span>
+                        <h3 class="text-xl font-bold text-slate-900">3. 원안에서 이미 잘 처리된 부분</h3>
+                    </div>
+                    <div class="content-panel p-6 md:p-8">
+                        <div class="grid md:grid-cols-2 gap-5">
+                            <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-5">
+                                <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-2">선택형 상자 &middot; 등급 상한</p>
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    선택형 상자의 지급 범위를 <strong class="text-slate-900">일반~에픽으로 제한</strong>하고 전설을 제외한 설계는,
+                                    기존 무작위 상자의 <strong>최상위 수요를 지켜내는 장치</strong>입니다. 신규 상품이 기존 상품을 잡아먹는 문제를 미리 막았습니다.
+                                </p>
+                            </div>
+                            <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-5">
+                                <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-2">프리셋 &middot; 1슬롯 무료</p>
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    1번 슬롯을 무료로 열어 불만을 먼저 해소하고 <strong class="text-slate-900">2&middot;3번 슬롯만 유료화</strong>한 구조는,
+                                    편의 기능 유료화에서 나오는 반발을 피하는 표준적인 형태입니다. 무료 구간이 없으면 &lsquo;불편을 팔았다&rsquo;는 반응이 나옵니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. 우선순위 재배치 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-slate-800 font-black text-2xl">#</span>
+                        <h3 class="text-xl font-bold text-slate-900">4. 우선순위 재배치</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="border-2 border-emerald-400 bg-emerald-50/60 rounded-2xl p-5">
+                            <div class="flex flex-wrap items-center gap-3 mb-3">
+                                <span class="bg-emerald-600 text-white text-xs font-black px-3 py-1 rounded-full">1순위</span>
+                                <span class="font-black text-slate-900">선택형 상자 세분화</span>
+                                <span class="ml-auto text-[10px] font-black text-slate-500 tracking-wide">원안 2번 &rarr; 1번</span>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                문제의 두 배수 중 하나(9배)를 <strong class="text-slate-900">유일하게 실제로 제거</strong>하며, 등급 상한 설계로 기존 매출 잠식까지 막혀 있습니다.
+                                신규 상품 추가이므로 경제 구조를 건드리지 않습니다.
+                            </p>
+                        </div>
+                        <div class="border-2 border-indigo-300 bg-indigo-50/60 rounded-2xl p-5">
+                            <div class="flex flex-wrap items-center gap-3 mb-3">
+                                <span class="bg-indigo-600 text-white text-xs font-black px-3 py-1 rounded-full">2순위</span>
+                                <span class="font-black text-slate-900">장비 프리셋</span>
+                                <span class="ml-auto text-[10px] font-black text-slate-500 tracking-wide">원안 3번 &rarr; 2번</span>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                수급 문제와는 무관하지만 <strong class="text-slate-900">리스크가 가장 낮고 불만을 즉시 해소</strong>합니다.
+                                9개 슬롯을 매번 수동 교체하는 구조에서 체감 개선폭이 큽니다.
+                            </p>
+                        </div>
+                        <div class="border-2 border-rose-300 bg-rose-50/60 rounded-2xl p-5">
+                            <div class="flex flex-wrap items-center gap-3 mb-3">
+                                <span class="bg-rose-600 text-white text-xs font-black px-3 py-1 rounded-full">보류</span>
+                                <span class="font-black text-slate-900">유저 간 거래소</span>
+                                <span class="ml-auto text-[10px] font-black text-slate-500 tracking-wide">원안 1번 &rarr; 보류</span>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                배수를 제거하지 못하면서 <strong class="text-rose-700">기존 매출 잠식 &middot; 작업장 &middot; 법무 리스크</strong>를 동시에 안고 옵니다.
+                                구현 규모도 가장 큽니다. 매출 시뮬레이션과 법무 검토 이후에 재상정할 항목입니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. 검증 지표 · 한계 -->
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div class="content-panel p-6 md:p-7">
+                        <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">적용 후 검증 지표</p>
+                        <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                            <li>&bull; <strong class="text-slate-800">선택형 상자:</strong> 등급별 승급 도달 일수, 기존 무작위 상자 판매량 변화(잠식 감시), 상자 매출 합계</li>
+                            <li>&bull; <strong class="text-slate-800">프리셋:</strong> 2&middot;3번 슬롯 해금률, 장비 교체 1회당 소요 시간, 관련 CS 인입 건수</li>
+                            <li>&bull; <strong class="text-slate-800">공통:</strong> 승급 정체 구간(에픽&rarr;전설) 이탈률</li>
+                        </ul>
+                    </div>
+                    <div class="content-panel p-6 md:p-7">
+                        <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">이 검토의 한계</p>
+                        <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                            <li>&bull; 소요량 계산은 <strong class="text-slate-800">3개 융합 &middot; 5등급 &middot; 9슬롯이라는 구조 전제</strong>에서 도출한 값입니다. 융합 실패나 등외 획득 경로가 있으면 달라집니다.</li>
+                            <li>&bull; 뽑기 기대값은 <strong class="text-slate-800">부위 균등 분포 가정</strong>이며, 실제 확률표를 반영한 값이 아닙니다.</li>
+                            <li>&bull; 매출 영향은 방향만 제시했습니다. <strong class="text-slate-800">실제 결제 데이터 없이는 규모를 추정할 수 없습니다.</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 결론 -->
+                <div class="bg-slate-900 rounded-[32px] p-8 md:p-10 text-white relative overflow-hidden shadow-2xl">
+                    <div class="absolute right-0 bottom-0 opacity-10 text-9xl -mb-8 -mr-8 transform rotate-12">⚖️</div>
+                    <div class="relative z-10 max-w-4xl mx-auto">
+                        <p class="text-amber-400 font-black text-[10px] tracking-wide mb-5 text-center">정리</p>
+                        <p class="text-base md:text-lg font-bold leading-relaxed text-center mb-8">
+                            정체의 원인은 확률이 아니라 <strong class="text-amber-300">81배 &times; 9배 = 729배</strong>라는 구조입니다.<br class="hidden md:block">
+                            따라서 <strong class="text-amber-300">배수를 제거하는 제안</strong>만이 실제 해결책이 됩니다.
+                        </p>
+                        <div class="grid md:grid-cols-3 gap-4 text-left">
+                            <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
+                                <p class="text-amber-300 font-black text-sm mb-2">가장 화려한 제안이 가장 위험했습니다</p>
+                                <p class="text-xs text-slate-300 leading-relaxed">거래소는 규모가 가장 크지만 배수를 제거하지 못하고, <strong class="text-white">기존 매출을 잠식</strong>하며 작업장&middot;법무 리스크를 함께 들여옵니다.</p>
+                            </div>
+                            <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
+                                <p class="text-amber-300 font-black text-sm mb-2">가장 단순한 제안이 가장 효과적입니다</p>
+                                <p class="text-xs text-slate-300 leading-relaxed">선택형 상자는 부위 분산 9배를 직접 없애 필요 뽑기를 <strong class="text-white">729회에서 81회로</strong> 줄입니다. 신규 상품이라 경제를 건드리지 않습니다.</p>
+                            </div>
+                            <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
+                                <p class="text-amber-300 font-black text-sm mb-2">순서를 바꾸는 것이 결론입니다</p>
+                                <p class="text-xs text-slate-300 leading-relaxed">원안의 1&rarr;2&rarr;3 순서를 <strong class="text-white">2 &rarr; 3 &rarr; 1(보류)</strong>로 재배치했습니다. 제안을 추가한 것이 아니라 실행 순서를 근거로 정했습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- 푸터 -->
