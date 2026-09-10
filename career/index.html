@@ -41,6 +41,9 @@
     line-height:1.65;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
   h1,h2,h3,h4{text-wrap:balance}
   p,li{text-wrap:pretty}
+  /* 넓은 화면에서만 문장 단위로 줄을 바꾼다. 좁은 화면에서는 저절로 흐르게 둔다 */
+  br.hidden{display:none}
+  @media (min-width:768px){br.hidden.md\:block{display:inline}}
   a{color:inherit}
   img{max-width:100%;height:auto;display:block}
   .wrap{max-width:940px;margin:0 auto;padding:0 22px}

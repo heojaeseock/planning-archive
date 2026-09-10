@@ -158,6 +158,9 @@
   }
   h1,h2,h3{text-wrap:balance}
   p,li{text-wrap:pretty}
+  /* 넓은 화면에서만 문장 단위로 줄을 바꾼다. 좁은 화면에서는 저절로 흐르게 둔다 */
+  br.hidden{display:none}
+  @media (min-width:768px){br.hidden.md\:block{display:inline}}
 
   /* 인쇄 / PDF 저장 */
   @media print{
