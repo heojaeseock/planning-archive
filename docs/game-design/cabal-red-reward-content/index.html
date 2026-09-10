@@ -6,7 +6,7 @@
     <title>카발 RED 보상 콘텐츠 기획</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
         body {
             font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
@@ -223,12 +223,97 @@
             </div>
         </section>
 
+
+        <div class="section-divider"></div>
+
+        <!-- [보강] 소모처가 실제로 작동하는 조건 -->
+        <section id="section-balance" class="mb-12">
+            <div class="mb-6">
+                <span class="text-rose-500 font-bold text-lg mr-2">03</span>
+                <h2 class="text-2xl font-bold text-slate-800 inline-block">소모처를 만들면 가치가 방어되는가</h2>
+                <p class="text-slate-500 mt-2 text-sm">
+                    앞의 순환 구조가 목표를 달성하려면 한 가지 조건이 필요합니다.
+                    <strong class="text-slate-700">소모처의 존재가 아니라 소모 속도</strong>가 관건입니다.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl border-2 border-rose-200 p-6 md:p-8 mb-6">
+                <p class="text-[10px] font-black tracking-wide text-rose-500 mb-4">전제 점검</p>
+                <p class="text-sm md:text-base text-slate-700 leading-relaxed break-keep mb-5">
+                    하한가는 소모처가 있다는 사실만으로 형성되지 않습니다.
+                    아이템이 시장에 들어오는 속도(공급)와 시스템이 빨아들이는 속도(소모)를 비교해야 합니다.
+                    <strong class="text-slate-900">공급이 소모보다 빠르면 소모처가 있어도 재고는 계속 쌓이고 시세는 하한으로 내려갑니다.</strong>
+                </p>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-rose-50 rounded-xl p-5 border border-rose-200">
+                        <p class="text-xs font-black text-rose-600 mb-2">공급 &gt; 소모</p>
+                        <p class="text-xs text-slate-600 leading-relaxed break-keep">재고 누적이 계속됩니다. 소모처는 <strong class="text-slate-800">하락 속도만 늦추는</strong> 역할에 그칩니다.</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-xl p-5 border-2 border-emerald-300">
+                        <p class="text-xs font-black text-emerald-700 mb-2">공급 &asymp; 소모</p>
+                        <p class="text-xs text-slate-600 leading-relaxed break-keep">재고가 균형을 이루며 <strong class="text-slate-800">하한가가 실제로 형성</strong>됩니다. 목표 1이 달성되는 구간입니다.</p>
+                    </div>
+                    <div class="bg-amber-50 rounded-xl p-5 border border-amber-200">
+                        <p class="text-xs font-black text-amber-700 mb-2">공급 &lt; 소모</p>
+                        <p class="text-xs text-slate-600 leading-relaxed break-keep">하위 장비가 <strong class="text-slate-800">희소해져 상위 성장이 막힙니다.</strong> 과도한 소모 설계도 병목이 됩니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 rounded-2xl p-6 md:p-8 text-white mb-6">
+                <p class="text-amber-400 font-black text-[10px] tracking-wide mb-4">놓치기 쉬운 역설</p>
+                <p class="text-sm md:text-base leading-relaxed break-keep mb-4">
+                    소모처를 만들면 잉여 장비에 <strong class="text-white">쓸 곳이 생깁니다.</strong>
+                    그러면 그 장비를 얻으려는 파밍 동기도 함께 강해집니다.
+                </p>
+                <p class="text-sm md:text-base leading-relaxed break-keep">
+                    즉 아스트랄 도감과 장비 추출은 소모를 늘리는 동시에
+                    <strong class="text-amber-300">해당 사냥터의 공급도 늘립니다.</strong>
+                    순환 구조가 자칫 <strong class="text-amber-300">가속 구조</strong>가 될 수 있으므로,
+                    소모처에는 반드시 <strong class="text-white">일일 처리 한도나 결과물 상한</strong>이 함께 걸려야
+                    소모 속도가 공급 속도를 앞지르는 상태를 유지할 수 있습니다.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 md:p-8">
+                <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">설계 시 고정해야 할 값</p>
+                <div class="overflow-x-auto rounded-xl border-2 border-slate-200">
+                    <table class="w-full min-w-[560px] border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-slate-700 text-white">
+                                <th class="p-3 text-left text-xs font-black">구분</th>
+                                <th class="p-3 text-left text-xs font-black">정해야 하는 것</th>
+                                <th class="p-3 text-left text-xs font-black">정하지 않으면</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-slate-200">
+                                <td class="p-3 font-black text-slate-800 align-top">공급</td>
+                                <td class="p-3 text-slate-600 align-top text-xs leading-relaxed break-keep">사냥터별 <strong>시간당 하위 장비 드롭 기대량</strong>과 동시 접속 인구 가정</td>
+                                <td class="p-3 text-slate-600 align-top text-xs leading-relaxed break-keep">소모처 규모를 산정할 기준이 없어 감으로 정하게 됩니다</td>
+                            </tr>
+                            <tr class="border-b border-slate-200 bg-slate-50">
+                                <td class="p-3 font-black text-slate-800 align-top">소모</td>
+                                <td class="p-3 text-slate-600 align-top text-xs leading-relaxed break-keep">도감 등록 &middot; 추출 &middot; 제작 각 단계의 <strong>1인당 일일 소모 상한</strong></td>
+                                <td class="p-3 text-slate-600 align-top text-xs leading-relaxed break-keep">헤비 유저가 소모처를 조기 소진해 이후 재고가 다시 쌓입니다</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-black text-slate-800 align-top">하한</td>
+                                <td class="p-3 text-slate-600 align-top text-xs leading-relaxed break-keep">기축 통화 대비 <strong>방어하려는 최소 시세</strong>를 수치로 명시</td>
+                                <td class="p-3 text-slate-600 align-top text-xs leading-relaxed break-keep">&lsquo;가치 방어 성공&rsquo;을 판정할 수 없어 사후 평가가 불가능해집니다</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
         <div class="section-divider"></div>
 
         <!-- 섹션 3: 운영 관점 & 검증 -->
         <section id="section-ops" class="mb-12">
             <div class="mb-6">
-                <span class="text-green-500 font-bold text-lg mr-2">03</span>
+                <span class="text-green-500 font-bold text-lg mr-2">04</span>
                 <h2 class="text-2xl font-bold text-slate-800 inline-block">데이터 검증 및 인플레이션 대응 매뉴얼</h2>
                 <p class="text-slate-500 mt-2 text-sm">기획 수치가 라이브 서버에 적용되었을 때의 대조 모니터링 및 비정상 데이터 발생 시의 단계적 대응 프로세스입니다.</p>
             </div>
@@ -297,7 +382,222 @@
                 </div>
             </div>
         </section>
-        
+
+        <div class="section-divider"></div>
+
+        <!-- [보강] 판정 지표와 대가 -->
+        <section id="section-metric" class="mb-12">
+            <div class="mb-6">
+                <span class="text-blue-500 font-bold text-lg mr-2">05</span>
+                <h2 class="text-2xl font-bold text-slate-800 inline-block">무엇을 보고 정상과 이상을 판정하는가</h2>
+                <p class="text-slate-500 mt-2 text-sm">
+                    앞의 대응 프로세스는 <strong class="text-slate-700">이상을 인지한 다음</strong>의 절차입니다.
+                    그 앞단에서 &lsquo;이상&rsquo;을 무엇으로 정의할지 지표를 먼저 고정해야 합니다.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-5 mb-6">
+                <div class="bg-white rounded-2xl border-2 border-blue-200 p-6">
+                    <p class="text-[10px] font-black tracking-wide text-blue-500 mb-4">1차 지표 &middot; 균형 감시</p>
+                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed break-keep">
+                        <li>&bull; <strong class="text-slate-800">공급 대비 소모 비율:</strong> 일간 하위 장비 생성량 &divide; 시스템 소모량. 1을 넘는 상태가 이어지면 재고 누적 경보</li>
+                        <li>&bull; <strong class="text-slate-800">거래소 하위 장비 시세:</strong> 기축 통화 대비 추이. 설정한 하한선 이탈 시 알림</li>
+                        <li>&bull; <strong class="text-slate-800">미판매 재고 회전일:</strong> 등록된 매물이 소진되는 데 걸리는 평균 일수</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl border-2 border-blue-200 p-6">
+                    <p class="text-[10px] font-black tracking-wide text-blue-500 mb-4">2차 지표 &middot; 설계 의도 검증</p>
+                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed break-keep">
+                        <li>&bull; <strong class="text-slate-800">소모처 단계별 통과율:</strong> 도감 등록 &rarr; 추출 &rarr; 포스 코어 제작. 특정 단계에서 급락하면 그 지점이 병목</li>
+                        <li>&bull; <strong class="text-slate-800">사냥터 인구 분포:</strong> 파밍이 한 곳에 몰리는 정도. 문제 정의의 출발점이었던 집중 현상이 실제로 완화됐는지</li>
+                        <li>&bull; <strong class="text-slate-800">정체 구간 이탈률:</strong> 목표 2가 겨냥한 성장 정체 구간의 이탈이 줄었는지</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="bg-white rounded-2xl border-2 border-blue-200 p-6 md:p-8 mb-6">
+                <p class="text-[10px] font-black tracking-wide text-blue-500 mb-4">모니터링 수치를 계산하면 경보선이 나옵니다</p>
+                <p class="text-slate-600 leading-relaxed mb-6 break-keep">
+                    시뮬레이션은 다섯 아이템의 계획 수량과 실제 획득량을 함께 보여주고,
+                    버튼을 누르면 <strong class="text-slate-800">미스릴 무기가 50개에서 350개로 뜁니다.</strong>
+                    정상 상태의 두 관측을 계획 대비 편차로 바꾸면 경보선을 어떻게 잡아야 하는지가 나옵니다.
+                </p>
+
+                <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-6">
+                    <table class="w-full min-w-[620px] border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-slate-800 text-white">
+                                <th class="p-3 text-left text-xs font-black">아이템</th>
+                                <th class="p-3 text-center text-xs font-black">계획 수량</th>
+                                <th class="p-3 text-center text-xs font-black">정상 편차 최대</th>
+                                <th class="p-3 text-center text-xs font-black">무작위 변동 3배</th>
+                                <th class="p-3 text-center text-xs font-black">비율 환산</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class=" border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">매터리얼 코어</td>
+                                <td class="p-3 text-center text-slate-600">50,000</td>
+                                <td class="p-3 text-center font-black text-slate-500">2.0%</td>
+                                <td class="p-3 text-center text-slate-600">±671개</td>
+                                <td class="p-3 text-center font-bold text-slate-500">±1.3%</td>
+                            </tr>
+                            <tr class=" border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">업그레이드 코어</td>
+                                <td class="p-3 text-center text-slate-600">15,000</td>
+                                <td class="p-3 text-center font-black text-slate-500">1.3%</td>
+                                <td class="p-3 text-center text-slate-600">±367개</td>
+                                <td class="p-3 text-center font-bold text-slate-500">±2.4%</td>
+                            </tr>
+                            <tr class=" border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">오스미움 방어구</td>
+                                <td class="p-3 text-center text-slate-600">3,000</td>
+                                <td class="p-3 text-center font-black text-slate-500">3.3%</td>
+                                <td class="p-3 text-center text-slate-600">±164개</td>
+                                <td class="p-3 text-center font-bold text-slate-500">±5.5%</td>
+                            </tr>
+                            <tr class="bg-amber-50 border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">미스릴 무기</td>
+                                <td class="p-3 text-center text-slate-600">50</td>
+                                <td class="p-3 text-center font-black text-amber-700">4.0%</td>
+                                <td class="p-3 text-center text-slate-600">±21개</td>
+                                <td class="p-3 text-center font-bold text-amber-700">±42.4%</td>
+                            </tr>
+                            <tr class="bg-rose-50 border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">퍼펙트 코어</td>
+                                <td class="p-3 text-center text-slate-600">10</td>
+                                <td class="p-3 text-center font-black text-rose-700">10.0%</td>
+                                <td class="p-3 text-center text-slate-600">±9개</td>
+                                <td class="p-3 text-center font-bold text-rose-700">±94.9%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bg-rose-50 rounded-2xl p-6 border-2 border-rose-300 mb-6">
+                    <p class="text-sm font-black text-rose-700 mb-4">하나의 비율로 경보선을 두면 양쪽 다 실패합니다</p>
+                    <p class="text-slate-700 leading-relaxed mb-5 break-keep">
+                        계획 수량이 적을수록 정상 편차율이 큽니다.
+                        매터리얼 코어는 5만 개 중 2%가 최대 편차인데,
+                        퍼펙트 코어는 <strong class="text-slate-900">10개 중 1개만 달라도 10%</strong>입니다.
+                        여기에 계획 대비 10%라는 하나의 기준을 걸면 이렇게 됩니다.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <div class="bg-white rounded-xl p-5 border border-rose-200">
+                            <p class="text-xs font-black text-rose-700 mb-2">희귀 아이템은 상시 경보</p>
+                            <p class="text-xs text-slate-600 leading-relaxed break-keep">
+                                퍼펙트 코어는 <strong class="text-slate-800">한 개 차이로 경보</strong>가 울립니다.
+                                매일 울리는 경보는 곧 무시됩니다.
+                            </p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 border border-rose-200">
+                            <p class="text-xs font-black text-rose-700 mb-2">대량 아이템은 조용함</p>
+                            <p class="text-xs text-slate-600 leading-relaxed break-keep">
+                                매터리얼 코어는 <strong class="text-slate-800">5,000개가 초과 생성되어도</strong> 걸리지 않습니다.
+                                인플레이션 총량으로 보면 훨씬 큰 사건입니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 rounded-2xl p-6 md:p-8 text-white mb-6">
+                    <p class="text-blue-400 font-black text-[10px] tracking-wide mb-5">아이템마다 다른 폭을 쓰면 됩니다</p>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-5 break-keep">
+                        드롭이 무작위로 일어난다고 놓으면 하루 획득량의 흔들림은
+                        <strong class="text-white">계획 수량의 제곱근</strong>에 비례합니다.
+                        그 세 배를 경보선으로 잡으면 위 표의 오른쪽 두 열이 나옵니다.
+                        매터리얼 코어는 671개, 퍼펙트 코어는 9개입니다.
+                        비율로는 1.3%와 94.9%로 크게 다르지만
+                        <strong class="text-blue-400">둘 다 평상시에는 걸리지 않고 진짜 이상만 잡는 선</strong>입니다.
+                    </p>
+                    <div class="bg-white/10 rounded-xl p-6">
+                        <p class="text-xs font-black text-blue-300 mb-3">시뮬레이션의 이상 신호는 이 기준으로 확실히 잡힙니다</p>
+                        <p class="text-xs text-slate-300 leading-relaxed break-keep">
+                            미스릴 무기가 50개에서 350개가 되면 흔들림의 <strong class="text-white">42배</strong>를 벗어납니다.
+                            경보선인 21개보다 한참 큽니다.
+                            즉 이 방식은 <strong class="text-blue-300">놓칠 걱정 없이 잘못 울릴 일만 줄입니다.</strong>
+                            운영에서 경보가 신뢰를 잃는 이유는 대개 놓쳐서가 아니라 너무 자주 울려서입니다.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50 rounded-2xl p-6 border-2 border-amber-300">
+                    <p class="text-sm font-black text-amber-800 mb-4">로그 축은 희귀 아이템 쪽만 잘 보여줍니다</p>
+                    <p class="text-slate-700 leading-relaxed mb-5 break-keep">
+                        차트는 5만 개와 10개를 한 화면에 담기 위해 로그 축을 씁니다.
+                        수량 차이가 5,000배인 항목을 나란히 보려면 <strong class="text-slate-900">필요한 선택</strong>입니다.
+                        다만 로그 축에서는 같은 심각도라도 보이는 크기가 달라집니다.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-5 mb-5">
+                        <div class="bg-white rounded-xl p-5 border border-amber-200">
+                            <p class="text-xs font-black text-amber-800 mb-2">미스릴 무기 7배 상승</p>
+                            <p class="text-xs text-slate-600 leading-relaxed break-keep">막대가 <strong class="text-slate-800">눈에 띄게 솟습니다.</strong> 붉게 칠하지 않아도 보입니다.</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 border border-amber-200">
+                            <p class="text-xs font-black text-amber-800 mb-2">매터리얼 코어 10% 초과</p>
+                            <p class="text-xs text-slate-600 leading-relaxed break-keep">막대 길이 변화가 <strong class="text-slate-800">20분의 1 수준</strong>이라 눈으로는 거의 구분되지 않습니다.</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-700 leading-relaxed break-keep">
+                        5,000개 초과 생성은 재화 가치에 직접 영향을 주는 사건인데 화면에서는 조용합니다.
+                        <strong class="text-slate-900">눈으로 보는 감시와 수치로 거는 경보를 나눠야</strong> 하는 이유가 여기 있습니다.
+                        차트는 희귀 아이템의 급증을 빠르게 알아채는 용도로 쓰고,
+                        대량 아이템은 <strong class="text-amber-800">경보선을 넘겼는지 숫자로 판정</strong>합니다.
+                        앞의 1차 지표에 있는 공급 대비 소모 비율이 후자를 담당하는 지표이므로,
+                        두 가지를 같은 화면에 함께 두면 감시 범위가 채워집니다.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="bg-amber-50 rounded-2xl border-2 border-amber-300 p-6 md:p-8 mb-6">
+                <p class="text-[10px] font-black tracking-wide text-amber-600 mb-4">기획안이 요구하는 대가</p>
+                <div class="space-y-4">
+                    <div class="bg-white rounded-xl p-5 border border-amber-200">
+                        <p class="text-sm font-black text-slate-900 mb-2">목표 3(귀속과 거래 분리)은 거래소 활력을 깎습니다</p>
+                        <p class="text-xs text-slate-600 leading-relaxed break-keep">
+                            귀속 재화 비중을 올리면 인플레이션 위험은 줄지만, 거래 가능 물량이 함께 줄어
+                            <strong class="text-slate-800">유저 간 상호작용과 거래 수수료 회수가 감소</strong>합니다.
+                            또 무과금이 시간을 재화로 바꿀 경로가 좁아져, 목표 1이 지키려던 &lsquo;시간의 가치&rsquo;와 부분적으로 충돌합니다.
+                            성장용은 귀속, 소모처 결과물 일부는 거래 가능으로 <strong class="text-slate-800">층을 나누는 설계</strong>가 필요합니다.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-xl p-5 border border-amber-200">
+                        <p class="text-sm font-black text-slate-900 mb-2">Kill-Switch는 정상 유저에게도 페널티입니다</p>
+                        <p class="text-xs text-slate-600 leading-relaxed break-keep">
+                            사냥터 임시 제한은 확산을 막는 가장 빠른 수단이지만,
+                            <strong class="text-slate-800">문제와 무관한 유저의 플레이도 함께 중단</strong>시킵니다.
+                            발동 기준과 최대 지속 시간을 사전에 문서화하고,
+                            발동 시 <strong class="text-slate-800">공지 문구와 보상 기준</strong>을 미리 준비해 두어야 운영 리스크가 관리됩니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 rounded-2xl p-6 md:p-8 text-white">
+                <p class="text-slate-400 font-black text-[10px] tracking-wide mb-5">이 기획안의 한계</p>
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div class="bg-white/5 rounded-xl p-5 border border-white/10">
+                        <p class="text-sm font-bold text-white mb-2">근거 데이터의 성격</p>
+                        <p class="text-xs text-slate-300 leading-relaxed break-keep">불만 요인 분포는 <strong class="text-white">동종 장르 커뮤니티 동향과 VOC 기반 자체 취합</strong>이며 해당 타이틀의 실측이 아닙니다. 표본이 불만 표출 유저에 편중돼 있습니다.</p>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-5 border border-white/10">
+                        <p class="text-sm font-bold text-white mb-2">수치 미확정</p>
+                        <p class="text-xs text-slate-300 leading-relaxed break-keep">드롭률 &middot; 소모 상한 &middot; 방어 하한선은 <strong class="text-white">구조와 항목만 제시</strong>했습니다. 실제 값은 서버 로그와 시뮬레이션으로 정해야 합니다.</p>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-5 border border-white/10">
+                        <p class="text-sm font-bold text-white mb-2">유저 행동 가정</p>
+                        <p class="text-xs text-slate-300 leading-relaxed break-keep">소모처가 생기면 이용할 것이라는 가정에 기대고 있습니다. <strong class="text-white">기대 보상이 파밍 시간에 못 미치면 이용되지 않습니다.</strong></p>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-5 border border-white/10">
+                        <p class="text-sm font-bold text-white mb-2">다루지 않은 범위</p>
+                        <p class="text-xs text-slate-300 leading-relaxed break-keep">외부 현금 거래와 작업장 대응, 서버별 경제 격차는 <strong class="text-white">검토 대상에서 제외</strong>했습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="bg-slate-900 py-8 text-center px-4">
@@ -432,7 +732,7 @@
                     scales: {
                         x: { 
                             type: 'logarithmic', 
-                            title: { display: true, text: '획득 수량 (Log Scale)' },
+                            title: { display: true, text: '획득 수량 · 로그 축' },
                             grid: { color: '#f1f5f9' }
                         },
                         y: { grid: { display: false } }

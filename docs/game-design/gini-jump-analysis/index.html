@@ -124,7 +124,7 @@
                     <div class="flex-1">
                         <p class="text-blue-400 font-bold text-xs mb-3 flex items-center gap-2 uppercase tracking-widest">
                             <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                            Mobile Game Planning & Production
+                            모바일 게임 기획과 제작
                         </p>
                         <h1 class="text-4xl md:text-5xl font-black leading-tight mb-5 tracking-tight">
                             Gini Jump
@@ -163,6 +163,7 @@
                 <button data-target="characters" class="tab-btn flex-1 min-w-[150px] py-5 text-sm font-bold text-gray-600 border-transparent hover:text-blue-600 hover:bg-gray-100">🎨 3. 캐릭터 및 테마 디자인</button>
                 <button data-target="system" class="tab-btn flex-1 min-w-[150px] py-5 text-sm font-bold text-gray-600 border-transparent hover:text-blue-600 hover:bg-gray-100">🎮 4. 핵심 시스템 및 화면</button>
                 <button data-target="effect" class="tab-btn flex-1 min-w-[150px] py-5 text-sm font-bold text-gray-600 border-transparent hover:text-blue-600 hover:bg-gray-100">🚀 5. 기대 효과 및 확장성</button>
+                <button data-target="review" class="tab-btn flex-1 min-w-[150px] py-5 text-sm font-bold text-gray-600 border-transparent hover:text-blue-600 hover:bg-gray-100">🧭 6. 설계 판단 검토</button>
             </div>
 
             <!-- 탭 1: 기획 의도 및 배경 -->
@@ -180,7 +181,7 @@
                     
                     <!-- 캐릭터 선정 매트릭스 UI -->
                     <div class="content-panel p-6 md:p-8 shadow-sm border-gray-100 flex flex-col h-full">
-                        <p class="text-[10px] font-bold text-gray-400 mb-6 uppercase tracking-[0.2em] text-center">Character Selection Matrix</p>
+                        <p class="text-[10px] font-bold text-gray-400 mb-6 tracking-[0.2em] text-center">캐릭터 선택 화면</p>
                         
                         <div class="w-full mx-auto flex-1 flex flex-col justify-center">
                             <div class="grid grid-cols-4 gap-2 mb-4 text-center">
@@ -191,7 +192,7 @@
                             </div>
 
                             <div class="grid grid-cols-4 gap-2 items-center bg-blue-50 border-2 border-blue-200 rounded-2xl p-3 mb-3 relative shadow-md transform scale-[1.02] z-10">
-                                <div class="absolute -top-3 left-4 bg-blue-600 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-tighter shadow-sm">Selected</div>
+                                <div class="absolute -top-3 left-4 bg-blue-600 text-white text-[9px] font-black px-2 py-0.5 rounded-full tracking-tighter shadow-sm">선택됨</div>
                                 <div class="flex flex-col items-center justify-center">
                                     <span class="text-2xl mb-1 drop-shadow-sm">🐹</span>
                                     <span class="text-[10px] md:text-xs font-black text-blue-900 leading-tight">기니점프</span>
@@ -301,23 +302,23 @@
                 </div>
                 
                 <div class="bg-gray-50 p-6 md:p-10 rounded-[2rem] border border-gray-100 text-center shadow-inner">
-                    <p class="text-[10px] font-bold text-gray-400 mb-8 uppercase tracking-[0.2em]">Gini Jump Character Artworks</p>
+                    <p class="text-[10px] font-bold text-gray-400 mb-8 tracking-[0.2em]">캐릭터 원화</p>
                     <div class="max-w-4xl mx-auto mb-10">
                         <img src="Guinea Pig Pixel Art Variations.png" alt="기니점프 캐릭터 테마별 디자인" class="w-full h-auto rounded-2xl shadow-md border border-white" onerror="this.src='';">
                     </div>
                     
                     <div class="flex flex-wrap justify-center gap-3 md:gap-4 max-w-4xl mx-auto mb-10">
                         <div class="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
-                            <span class="text-base">🇰🇷</span><span class="text-[11px] font-black text-slate-700">한국 (Korea)</span>
+                            <span class="text-base">🇰🇷</span><span class="text-[11px] font-black text-slate-700">한국</span>
                         </div>
                         <div class="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
-                            <span class="text-base">🇺🇸</span><span class="text-[11px] font-black text-slate-700">미국 (USA)</span>
+                            <span class="text-base">🇺🇸</span><span class="text-[11px] font-black text-slate-700">미국</span>
                         </div>
                         <div class="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
-                            <span class="text-base">🇫🇷</span><span class="text-[11px] font-black text-slate-700">프랑스 (France)</span>
+                            <span class="text-base">🇫🇷</span><span class="text-[11px] font-black text-slate-700">프랑스</span>
                         </div>
                         <div class="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
-                            <span class="text-base">🇪🇬</span><span class="text-[11px] font-black text-slate-700">이집트 (Egypt)</span>
+                            <span class="text-base">🇪🇬</span><span class="text-[11px] font-black text-slate-700">이집트</span>
                         </div>
                     </div>
 
@@ -379,7 +380,7 @@
                             
                             <!-- 1. 기믹 컴포넌트 시각화 -->
                             <div class="lg:col-span-1 bg-white p-6 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center">
-                                <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-8">Component Gimmicks</span>
+                                <span class="text-[10px] font-black text-gray-400 tracking-wide mb-8">구성 요소별 기믹</span>
                                 <div class="space-y-10 w-full flex-1 flex flex-col justify-center px-2">
                                     <!-- 발판 묘사 -->
                                     <div class="flex items-center justify-between">
@@ -501,15 +502,372 @@
                     <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 space-y-3 shadow-sm transition-transform hover:-translate-y-1">
                         <div class="text-3xl">🎯</div>
                         <h4 class="font-bold text-blue-900 text-sm mb-1">장르 틈새시장 공략</h4>
-                        <p class="text-xs text-gray-700 leading-relaxed">외산 게임이 독점하던 점프 게임 시장의 틈새를 공략하여, 캐주얼한 국산 IP로서의 흥행 가능성을 확인했습니다.</p>
+                        <p class="text-xs text-gray-700 leading-relaxed">외산 게임이 독점하던 점프 게임 시장의 틈새를 겨냥해, 캐주얼한 국산 창작물로 출시까지 완주했습니다. 흥행 여부는 이 문서의 범위에 없습니다.</p>
                     </div>
+                </div>
+            </div>
+
+
+            <!-- 탭 6: 설계 판단 검토 -->
+            <div id="review" class="tab-content p-8 md:p-12 space-y-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-blue-600 font-black text-2xl">#</span>
+                        <h3 class="text-xl font-bold text-gray-900">제약 조건이 만든 선택들</h3>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-8">
+                        이 프로젝트의 조건은 <strong class="text-gray-800">4인 팀 &middot; 15주 &middot; 실제 출시까지 완주</strong>였습니다.
+                        학생 프로젝트에서 가장 큰 실패 요인은 아이디어의 부족이 아니라 <strong class="text-gray-800">미완성</strong>입니다.
+                        아래 세 가지 결정은 이 제약을 기준으로 다시 읽으면 의미가 달라집니다.
+                    </p>
+                </div>
+
+                <!-- 1. 캐릭터 선정 -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                    <p class="text-[10px] font-black tracking-wide text-blue-500 mb-4">판단 01 &middot; 캐릭터 선정</p>
+                    <h4 class="text-lg font-bold text-gray-900 mb-4">창의성 최고점을 버리고 제작 용이성을 택했습니다</h4>
+                    <div class="overflow-x-auto rounded-xl border border-gray-200 mb-5">
+                        <table class="w-full min-w-[480px] border-collapse text-sm bg-white">
+                            <thead>
+                                <tr class="bg-gray-700 text-white">
+                                    <th class="p-3 text-left text-xs font-black">후보</th>
+                                    <th class="p-3 text-center text-xs font-black">창의성</th>
+                                    <th class="p-3 text-center text-xs font-black">제작 용이성</th>
+                                    <th class="p-3 text-center text-xs font-black">협업 가능성</th>
+                                    <th class="p-3 text-center text-xs font-black">합계</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-blue-50 border-b border-gray-200">
+                                    <td class="p-3 font-black text-blue-900">기니점프 <span class="text-[10px]">(선정)</span></td>
+                                    <td class="p-3 text-center font-bold text-gray-500">2</td>
+                                    <td class="p-3 text-center font-black text-blue-700">4</td>
+                                    <td class="p-3 text-center font-black text-blue-700">3</td>
+                                    <td class="p-3 text-center font-black text-blue-900">9</td>
+                                </tr>
+                                <tr class="border-b border-gray-200">
+                                    <td class="p-3 font-bold text-gray-800">늘보런</td>
+                                    <td class="p-3 text-center font-bold text-gray-500">2</td>
+                                    <td class="p-3 text-center font-bold text-gray-600">3</td>
+                                    <td class="p-3 text-center font-bold text-gray-600">3</td>
+                                    <td class="p-3 text-center font-bold text-gray-700">8</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-gray-800">개미핥기</td>
+                                    <td class="p-3 text-center font-black text-rose-600">4</td>
+                                    <td class="p-3 text-center font-bold text-gray-500">2</td>
+                                    <td class="p-3 text-center font-bold text-gray-500">2</td>
+                                    <td class="p-3 text-center font-bold text-gray-700">8</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                        개미핥기가 <strong class="text-rose-600">창의성 4점으로 최고</strong>였지만 제작 용이성과 협업 가능성이 각 2점이었고,
+                        선정된 기니점프는 <strong class="text-blue-700">창의성이 최저 수준(2점)</strong>이었습니다.
+                    </p>
+                    <div class="bg-white rounded-xl p-5 border border-gray-200">
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            <strong class="text-gray-800">이 결정을 뒷받침하는 논리:</strong>
+                            15주 안에 출시까지 가야 하는 조건에서는 <strong>완주 가능성이 아이디어의 신선함보다 앞섭니다.</strong>
+                            제작 용이성과 협업 가능성은 곧 &lsquo;일정 안에 끝낼 수 있는가&rsquo;를 뜻하므로,
+                            세 항목의 단순 합산으로 보이지만 실질적으로는 <strong>일정 리스크에 가중치를 둔 선택</strong>이었습니다.
+                            결과적으로 실제 출시까지 완료했다는 점에서 이 판단은 목표에 부합했습니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. 자이로센서 -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                    <p class="text-[10px] font-black tracking-wide text-blue-500 mb-4">판단 02 &middot; 자이로센서 조작</p>
+                    <h4 class="text-lg font-bold text-gray-900 mb-4">직관성을 얻고 플레이 상황을 내줬습니다</h4>
+                    <div class="grid md:grid-cols-2 gap-5 mb-5">
+                        <div class="bg-white rounded-xl p-5 border-2 border-emerald-200">
+                            <p class="text-xs font-black text-emerald-700 mb-3">얻은 것</p>
+                            <ul class="space-y-2 text-xs text-gray-600 leading-relaxed">
+                                <li>&bull; 조작 설명이 거의 필요 없어 <strong class="text-gray-800">튜토리얼 부담이 낮습니다</strong></li>
+                                <li>&bull; 버튼 UI가 화면을 가리지 않아 <strong class="text-gray-800">작은 화면에 유리합니다</strong></li>
+                                <li>&bull; 같은 장르의 터치 조작 게임들과 <strong class="text-gray-800">차별점이 생깁니다</strong></li>
+                            </ul>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 border-2 border-rose-200">
+                            <p class="text-xs font-black text-rose-700 mb-3">내준 것</p>
+                            <ul class="space-y-2 text-xs text-gray-600 leading-relaxed">
+                                <li>&bull; <strong class="text-gray-800">자세 제약:</strong> 누워서 하거나 이동 중에는 기울기 기준이 흔들려 플레이가 어렵습니다. 캐주얼 게임의 주요 플레이 상황이 배제됩니다</li>
+                                <li>&bull; <strong class="text-gray-800">정밀도 한계:</strong> 미세 조작이 어려워 난이도를 좁게 설계해야 합니다</li>
+                                <li>&bull; <strong class="text-gray-800">기기 편차:</strong> 센서 품질과 손떨림에 따라 체감이 달라집니다</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl p-5 border border-gray-200">
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            <strong class="text-gray-800">표준적인 완화 설계:</strong>
+                            자이로를 기본으로 두되 <strong>터치 조작을 옵션으로 병행</strong>하고,
+                            시작 시 현재 기기 각도를 <strong>중립값으로 캘리브레이션</strong>하는 기능을 제공하면
+                            자세 제약과 기기 편차를 대부분 해소할 수 있습니다.
+                            조작 방식은 게임의 차별점이면서 동시에 <strong class="text-gray-800">이탈 지점</strong>이므로, 대안 경로를 함께 두는 것이 안전합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. 확장성 주장 검토 -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                    <p class="text-[10px] font-black tracking-wide text-blue-500 mb-4">판단 03 &middot; 테마 확장성</p>
+                    <h4 class="text-lg font-bold text-gray-900 mb-4">에셋 추가만으로는 확장이 리텐션이 되지 않습니다</h4>
+                    <p class="text-sm text-gray-700 leading-relaxed mb-5">
+                        5번 탭에서 &lsquo;랜드마크 에셋만 추가하면 무한 확장 가능&rsquo;이라고 정리했습니다.
+                        <strong class="text-gray-900">구조적으로는 맞습니다.</strong>
+                        다만 확장이 실제로 플레이를 늘리려면 조건이 하나 붙습니다.
+                    </p>
+                    <div class="bg-white rounded-xl p-6 border-2 border-blue-200 mb-5">
+                        <p class="text-sm text-gray-700 leading-relaxed">
+                            배경만 바뀌고 <strong class="text-gray-900">발판 &middot; 장애물 &middot; 조작이 동일하면</strong>,
+                            유저에게 새 테마는 &lsquo;같은 게임의 다른 벽지&rsquo;입니다.
+                            시각적 다양성은 <strong>첫인상</strong>에 기여하지만 반복 플레이 동기는 만들지 못합니다.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-xl p-5 border border-gray-200">
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            <strong class="text-gray-800">확장이 의미를 갖는 조건:</strong>
+                            국가별로 <strong>고유 기믹을 하나씩</strong> 부여하면 테마가 콘텐츠가 됩니다.
+                            예를 들어 이집트에 모래바람으로 궤도가 밀리는 요소, 프랑스에 높이 제한 구간을 두는 식입니다.
+                            이렇게 하면 에셋 추가 비용에 기믹 설계 비용이 더해지지만,
+                            <strong class="text-gray-800">테마 수가 곧 플레이 다양성</strong>이 되어 확장성 주장이 실제로 성립합니다.
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- 4. 가중치 민감도 -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                    <p class="text-[10px] font-black tracking-wide text-blue-500 mb-4">판단 04 &middot; 점수표 다시 읽기</p>
+                    <h4 class="text-lg font-bold text-gray-900 mb-4">1점 차이는 가중치를 1.5배만 줘도 뒤집힙니다</h4>
+                    <p class="text-sm text-gray-700 leading-relaxed mb-5">
+                        판단 01의 표에서 합계는 9점 대 8점 대 8점이었습니다.
+                        그런데 그 해설은 &lsquo;실질적으로 일정 리스크에 가중치를 둔 선택&rsquo;이라고 적었습니다.
+                        <strong class="text-gray-900">가중치를 두었다면 합계가 단순 합산이 아니어야 합니다.</strong>
+                        창의성에 얼마나 무게를 두면 결론이 바뀌는지 계산했습니다.
+                    </p>
+
+                    <div class="overflow-x-auto rounded-xl border border-gray-200 mb-5">
+                        <table class="w-full min-w-[620px] border-collapse text-sm bg-white">
+                            <thead>
+                                <tr class="bg-gray-700 text-white">
+                                    <th class="p-3 text-left text-xs font-black">창의성 가중치</th>
+                                    <th class="p-3 text-center text-xs font-black">기니점프</th>
+                                    <th class="p-3 text-center text-xs font-black">늘보런</th>
+                                    <th class="p-3 text-center text-xs font-black">개미핥기</th>
+                                    <th class="p-3 text-center text-xs font-black">1위</th>
+                                    <th class="p-3 text-left text-xs font-black">해석</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-blue-50 border-b border-gray-200">
+                                    <td class="p-3 font-bold text-gray-800">1.0배</td>
+                                    <td class="p-3 text-center font-bold text-gray-700">9</td>
+                                    <td class="p-3 text-center text-gray-500">8</td>
+                                    <td class="p-3 text-center font-bold text-gray-700">8</td>
+                                    <td class="p-3 text-center font-black text-blue-900">기니점프</td>
+                                    <td class="p-3 text-xs text-gray-500">문서의 표와 같은 값</td>
+                                </tr>
+                                <tr class="bg-amber-50 border-b border-gray-200">
+                                    <td class="p-3 font-bold text-gray-800">1.5배</td>
+                                    <td class="p-3 text-center font-bold text-gray-700">10</td>
+                                    <td class="p-3 text-center text-gray-500">9</td>
+                                    <td class="p-3 text-center font-bold text-gray-700">10</td>
+                                    <td class="p-3 text-center font-black text-amber-700">동점</td>
+                                    <td class="p-3 text-xs text-gray-500">결론이 갈리는 경계</td>
+                                </tr>
+                                <tr class="bg-rose-50 border-b border-gray-200">
+                                    <td class="p-3 font-bold text-gray-800">2.0배</td>
+                                    <td class="p-3 text-center font-bold text-gray-700">11</td>
+                                    <td class="p-3 text-center text-gray-500">10</td>
+                                    <td class="p-3 text-center font-bold text-gray-700">12</td>
+                                    <td class="p-3 text-center font-black text-rose-700">개미핥기</td>
+                                    <td class="p-3 text-xs text-gray-500">선정이 뒤집힘</td>
+                                </tr>
+                                <tr class="bg-rose-50 border-b border-gray-200">
+                                    <td class="p-3 font-bold text-gray-800">3.0배</td>
+                                    <td class="p-3 text-center font-bold text-gray-700">13</td>
+                                    <td class="p-3 text-center text-gray-500">12</td>
+                                    <td class="p-3 text-center font-bold text-gray-700">16</td>
+                                    <td class="p-3 text-center font-black text-rose-700">개미핥기</td>
+                                    <td class="p-3 text-xs text-gray-500">격차가 벌어짐</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-5 mb-5">
+                        <div class="bg-white rounded-xl p-5 border-2 border-rose-200">
+                            <p class="text-xs font-black text-rose-700 mb-3">창의성 쪽은 여유가 없습니다</p>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                창의성을 다른 두 항목의 <strong class="text-gray-800">1.5배</strong>로만 보면 기니점프와 개미핥기가 동점이 되고,
+                                2배가 되면 개미핥기가 앞섭니다.
+                                1.5배는 &lsquo;조금 더 중요하다&rsquo; 정도의 무게이므로 <strong class="text-gray-800">경계가 매우 가깝습니다.</strong>
+                            </p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 border-2 border-emerald-200">
+                            <p class="text-xs font-black text-emerald-700 mb-3">제작 용이성 쪽은 여유가 큽니다</p>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                반대로 제작 용이성의 무게를 <strong class="text-gray-800">절반으로 깎아도</strong> 기니점프는 동점을 유지합니다.
+                                절반보다 조금이라도 크면 계속 1위입니다.
+                                즉 이 선정은 <strong class="text-gray-800">제작 용이성을 얼마나 중시했는지에는 둔감하고, 창의성을 얼마나 중시했는지에 민감</strong>합니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-5 border border-gray-200 mb-5">
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            <strong class="text-gray-800">그래서 표에 무엇을 더해야 하는가:</strong>
+                            결론은 그대로 두어도 됩니다. 15주 완주라는 조건에서 창의성 가중치를 1.5배 이상으로 잡을 이유가 없기 때문입니다.
+                            다만 <strong class="text-gray-900">가중치를 표에 적어두면</strong> 같은 결론이 &lsquo;합계가 1점 높아서&rsquo;가 아니라
+                            &lsquo;일정 리스크를 창의성보다 무겁게 보았기 때문&rsquo;이 됩니다.
+                            의사결정 기록에서 재현 가능성을 만드는 것은 점수가 아니라 <strong class="text-gray-800">점수를 더한 규칙</strong>입니다.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-900 rounded-xl p-6 text-white">
+                        <p class="text-[11px] font-black text-amber-400 mb-3">후보는 세 개였지만 실제 선택은 둘 사이였습니다</p>
+                        <p class="text-xs text-gray-300 leading-relaxed mb-4">
+                            늘보런은 창의성 2점, 제작 용이성 3점, 협업 가능성 3점입니다.
+                            기니점프는 같은 순서로 2점, 4점, 3점입니다.
+                            <strong class="text-white">모든 항목에서 기니점프가 같거나 높습니다.</strong>
+                            어떤 가중치를 넣어도 늘보런이 앞설 수 없습니다.
+                        </p>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            따라서 실질적인 결정은 <strong class="text-amber-400">창의성과 제작 용이성 사이의 양자택일</strong>이었고,
+                            비교 대상은 기니점프와 개미핥기 두 개였습니다.
+                            대안 검토의 폭은 후보 개수가 아니라 <strong class="text-white">서로 우열이 갈리는 후보의 개수</strong>로 읽히므로,
+                            늘보런처럼 완전히 밀리는 후보는 표에 남기더라도 그 사실을 함께 적는 편이 낫습니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5. 척도 변별력 -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                    <p class="text-[10px] font-black tracking-wide text-blue-500 mb-4">판단 05 &middot; 척도 점검</p>
+                    <h4 class="text-lg font-bold text-gray-900 mb-4">4점 척도인데 실제로는 세 칸만 썼습니다</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-5">
+                        <div class="bg-white rounded-xl p-5 border border-gray-200 text-center">
+                            <p class="text-[10px] font-bold text-gray-400 mb-2">1점</p>
+                            <p class="text-2xl font-black text-gray-300 mb-1">0칸</p>
+                            <p class="text-[10px] text-gray-500">쓰이지 않음</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 border border-gray-200 text-center">
+                            <p class="text-[10px] font-bold text-gray-400 mb-2">2점</p>
+                            <p class="text-2xl font-black text-gray-700 mb-1">4칸</p>
+                            <p class="text-[10px] text-gray-500">전체 9칸 중</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 border border-gray-200 text-center">
+                            <p class="text-[10px] font-bold text-gray-400 mb-2">3점</p>
+                            <p class="text-2xl font-black text-gray-700 mb-1">3칸</p>
+                            <p class="text-[10px] text-gray-500">전체 9칸 중</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 border border-gray-200 text-center">
+                            <p class="text-[10px] font-bold text-gray-400 mb-2">4점</p>
+                            <p class="text-2xl font-black text-gray-700 mb-1">2칸</p>
+                            <p class="text-[10px] text-gray-500">전체 9칸 중</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-700 leading-relaxed mb-5">
+                        세 항목을 더하면 합계가 나올 수 있는 값은 6점부터 12점까지 <strong class="text-gray-900">일곱 가지</strong>입니다.
+                        그런데 실제 관측된 합계는 8점과 9점 <strong class="text-gray-900">두 가지</strong>뿐입니다.
+                        후보 세 개가 가능 범위의 좁은 구간에 몰려 있으므로,
+                        <strong class="text-gray-900">척도가 후보를 잘 갈라주지 못했다</strong>는 뜻입니다.
+                    </p>
+                    <div class="bg-white rounded-xl p-5 border border-gray-200">
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            <strong class="text-gray-800">이것이 앞의 민감도와 이어지는 이유:</strong>
+                            변별력이 낮은 척도에서 나온 1점 차는 평가자가 한 항목에서 한 칸을 달리 매기면 사라집니다.
+                            점수화 자체는 <strong class="text-gray-800">감으로 고르지 않았다는 기록</strong>이 되므로 의미가 있습니다.
+                            다만 근거의 무게를 점수 차이에 두면 흔들리므로,
+                            <strong class="text-gray-900">각 점수를 그렇게 매긴 이유를 한 줄씩 적는 것</strong>이
+                            척도를 늘리거나 후보를 더하는 것보다 효과가 큽니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 6. 랭킹 설명 불일치 -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                    <p class="text-[10px] font-black tracking-wide text-blue-500 mb-4">판단 06 &middot; 랭킹 시스템</p>
+                    <h4 class="text-lg font-bold text-gray-900 mb-4">같은 기능을 두 곳에서 다르게 설명하고 있습니다</h4>
+                    <div class="grid md:grid-cols-2 gap-5 mb-5">
+                        <div class="bg-white rounded-xl p-5 border-2 border-blue-200">
+                            <p class="text-xs font-black text-blue-700 mb-3">4번 탭의 설명</p>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                &ldquo;반복 플레이 동기를 부여하는 <strong class="text-gray-800">최고 점수 기록</strong> 시스템&rdquo;
+                                <br><br>자기 기록을 갱신하는 개인 목표입니다. 서버가 필요 없고 기기 안에서 완결됩니다.
+                            </p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 border-2 border-amber-200">
+                            <p class="text-xs font-black text-amber-700 mb-3">5번 탭의 설명</p>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                &ldquo;<strong class="text-gray-800">유저 간 점수 대결</strong>을 지원하는 랭킹 시스템을 통해 경쟁심을 유발&rdquo;
+                                <br><br>다른 사람과 겨루는 구조입니다. 기록을 모아 비교하는 서버가 전제됩니다.
+                            </p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-700 leading-relaxed mb-5">
+                        두 설명은 <strong class="text-gray-900">필요한 구현도 다르고 기대 효과의 근거도 다릅니다.</strong>
+                        어느 쪽인지 한 줄로 정하면 5번 탭의 리텐션 주장이 무엇에 기대는지가 분명해집니다.
+                    </p>
+                    <div class="bg-white rounded-xl p-6 border-2 border-rose-200 mb-5">
+                        <p class="text-xs font-black text-rose-700 mb-3">유저 간 대결이라면 판단 02와 충돌합니다</p>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            판단 02에서 자이로 조작의 대가로 <strong class="text-gray-800">기기 편차</strong>를 적었습니다.
+                            센서 품질과 손떨림에 따라 조작 체감이 달라진다는 뜻입니다.
+                            그렇다면 서로 다른 기기로 낸 점수를 나란히 세우는 것은
+                            <strong class="text-rose-700">같은 조건에서 겨룬 결과가 아닙니다.</strong>
+                            조작 방식이 기기에 의존하는 게임에서 순위 경쟁을 핵심 동기로 두면,
+                            잘하는 유저일수록 이 불공정을 먼저 알아차립니다.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-xl p-5 border border-gray-200">
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            <strong class="text-gray-800">기기 편차를 피하면서 경쟁을 살리는 방향:</strong>
+                            절대 점수 대신 <strong class="text-gray-900">직전 기록 대비 향상폭</strong>이나
+                            <strong class="text-gray-900">같은 테마 안에서의 구간별 기록</strong>을 비교 대상으로 삼으면
+                            기기 성능보다 숙련도가 반영됩니다.
+                            4번 탭의 개인 기록 방식이 이미 이 방향에 가까우므로,
+                            5번 탭의 문장을 개인 기록 기준으로 맞추는 것이 구현 부담도 적고 논리도 일관됩니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 7. 검증된 것과 검증되지 않은 것 -->
+                <div class="bg-gray-900 rounded-2xl p-8 md:p-10 text-white">
+                    <p class="text-[10px] font-black tracking-wide text-blue-400 mb-6">이 프로젝트가 증명한 것과 증명하지 않은 것</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white/5 rounded-xl p-6 border border-white/10">
+                            <p class="text-sm font-bold text-emerald-400 mb-3">증명된 것</p>
+                            <ul class="space-y-2 text-xs text-gray-300 leading-relaxed">
+                                <li>&bull; 4인 팀이 15주 안에 <strong class="text-white">기획부터 출시까지 완주</strong>할 수 있다는 실행력</li>
+                                <li>&bull; 유니티 &middot; 자이로 입력 &middot; 픽셀 아트 배경 스크롤을 <strong class="text-white">실제 디바이스에서 동작</strong>시키는 구현 파이프라인</li>
+                                <li>&bull; 후보를 항목별로 점수화해 <strong class="text-white">제약에 맞는 선택을 내리는 의사결정 과정</strong></li>
+                            </ul>
+                        </div>
+                        <div class="bg-white/5 rounded-xl p-6 border border-white/10">
+                            <p class="text-sm font-bold text-amber-400 mb-3">증명되지 않은 것</p>
+                            <ul class="space-y-2 text-xs text-gray-300 leading-relaxed">
+                                <li>&bull; <strong class="text-white">상업적 성과</strong> &mdash; 출시 이후의 설치 수, 잔존율, 매출은 본 문서의 범위에 없습니다</li>
+                                <li>&bull; <strong class="text-white">랭킹 시스템의 리텐션 효과</strong> &mdash; 구현은 했으나 실제 재방문 기여는 측정되지 않았습니다</li>
+                                <li>&bull; <strong class="text-white">테마 확장의 효용</strong> &mdash; 4개국 이후 추가 테마를 붙여 반응을 본 적은 없습니다</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed mt-6 pt-6 border-t border-white/10">
+                        제작 기록으로서 이 문서의 가치는 성과 지표가 아니라
+                        <strong class="text-white">제약 조건 아래에서 무엇을 포기하고 무엇을 지켰는지</strong>에 있습니다.
+                        위 세 판단은 모두 &lsquo;15주 안에 출시&rsquo;라는 하나의 기준에서 파생되었습니다.
+                    </p>
                 </div>
             </div>
 
             <!-- 푸터 -->
             <div class="p-10 bg-gray-950 text-white text-center border-t border-gray-800">
-                <p class="text-xs font-medium text-gray-500 mb-2">Gini Jump Mobile Game Planning & Production</p>
-                <p class="text-[10px] uppercase tracking-[0.4em] opacity-40">Game Development Archive &copy; 허재석</p>
+                <p class="text-xs font-medium text-gray-500 mb-2">지니점프 모바일 게임 기획과 제작</p>
+                <p class="text-[10px] tracking-wide opacity-40">Game Development Archive &copy; 허재석</p>
             </div>
         </div>
     </div>

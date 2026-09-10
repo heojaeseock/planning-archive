@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
-        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
         
         body { 
             font-family: 'Pretendard', sans-serif; 
@@ -77,7 +77,7 @@
     <header class="mb-24 text-center md:text-left">
         <div class="flex items-center justify-center md:justify-start gap-3 mb-6">
             <span class="h-px w-8 bg-teal-600"></span>
-            <span class="text-teal-700 font-bold tracking-widest text-xs uppercase">Global Market Intelligence</span>
+            <span class="text-teal-700 font-bold tracking-wide text-xs">글로벌 시장 분석</span>
         </div>
         <h1 class="text-4xl md:text-6xl font-black text-slate-900 leading-[1.2] tracking-tight text-balanced">
             글로벌 시장 데이터 기반 <br>
@@ -113,7 +113,7 @@
         <div class="bg-white rounded-[3rem] p-10 md:p-14 shadow-sm border border-slate-200/60 relative">
             <!-- 수치 출처 안내문 (가설 기반 추정 명시) -->
             <div class="absolute top-8 right-10 flex items-center gap-2 bg-slate-50 px-4 py-1.5 rounded-full border border-slate-200 group cursor-help transition-colors hover:bg-slate-100">
-                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Data Source</span>
+                <span class="text-[10px] font-bold text-slate-500 tracking-wider">출처</span>
                 <div class="absolute bottom-full right-0 mb-3 w-72 bg-slate-800 text-white text-[12px] p-4 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none leading-relaxed shadow-2xl z-20">
                     본 수치는 글로벌 마켓 Top 50 게임들을 직접 플레이하며 분석한 정성적 데이터와 AI 딥리서치를 활용해 도출한 <strong>'가설 기반 추정 지표'</strong>입니다.
                 </div>
@@ -132,12 +132,12 @@
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div class="p-6 bg-teal-50/50 rounded-[2rem] border border-teal-100/50">
-                            <p class="text-xs font-bold text-teal-600 uppercase mb-2 tracking-widest">예상 재방문 지수</p>
+                            <p class="text-xs font-bold text-teal-600 mb-2 tracking-wide">예상 재방문 지수</p>
                             <p class="text-3xl font-black text-teal-900">35.4% 상회</p>
                         </div>
                         <div class="p-6 bg-slate-50 rounded-[2rem] border border-slate-100">
-                            <p class="text-xs font-bold text-slate-400 uppercase mb-2 tracking-widest">수익 창출 잠재력</p>
-                            <p class="text-3xl font-black text-slate-800">우수(High)</p>
+                            <p class="text-xs font-bold text-slate-400 mb-2 tracking-wide">수익 창출 잠재력</p>
+                            <p class="text-3xl font-black text-slate-800">우수</p>
                         </div>
                     </div>
                 </div>
@@ -151,12 +151,12 @@
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div class="p-6 bg-indigo-50/50 rounded-[2rem] border border-indigo-100/50">
-                            <p class="text-xs font-bold text-indigo-600 uppercase mb-2 tracking-widest">유입 비용 절감액</p>
+                            <p class="text-xs font-bold text-indigo-600 mb-2 tracking-wide">유입 비용 절감액</p>
                             <p class="text-3xl font-black text-indigo-900">약 2.4배 효율</p>
                         </div>
                         <div class="p-6 bg-slate-50 rounded-[2rem] border border-slate-100">
-                            <p class="text-xs font-bold text-slate-400 uppercase mb-2 tracking-widest">바이럴 잠재력</p>
-                            <p class="text-3xl font-black text-slate-800">최상위(Top)</p>
+                            <p class="text-xs font-bold text-slate-400 mb-2 tracking-wide">바이럴 잠재력</p>
+                            <p class="text-3xl font-black text-slate-800">최상위</p>
                         </div>
                     </div>
                 </div>
@@ -199,7 +199,7 @@
                     </div>
                 </div>
                 <div class="md:col-span-5 bg-slate-50 rounded-[2rem] p-8 shadow-inner">
-                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] text-center mb-8">Motivation Index</p>
+                    <p class="text-[10px] font-black text-slate-400 tracking-wide text-center mb-8">동기 지표</p>
                     <div class="h-56 w-full"><canvas id="radar1"></canvas></div>
                 </div>
             </div>
@@ -227,7 +227,7 @@
                     </div>
                 </div>
                 <div class="md:col-span-5 bg-slate-50 rounded-[2rem] p-8 shadow-inner">
-                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] text-center mb-8">Motivation Index</p>
+                    <p class="text-[10px] font-black text-slate-400 tracking-wide text-center mb-8">동기 지표</p>
                     <div class="h-56 w-full"><canvas id="radar2"></canvas></div>
                 </div>
             </div>
@@ -255,9 +255,216 @@
                     </div>
                 </div>
                 <div class="md:col-span-5 bg-slate-50 rounded-[2rem] p-8 shadow-inner">
-                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] text-center mb-8">Motivation Index</p>
+                    <p class="text-[10px] font-black text-slate-400 tracking-wide text-center mb-8">동기 지표</p>
                     <div class="h-56 w-full"><canvas id="radar3"></canvas></div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 보강: 두 지표의 관계 -->
+    <section class="mb-28">
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight">두 지표의 1위가 서로 다릅니다</h2>
+        <p class="text-slate-600 leading-relaxed mb-10 max-w-3xl">
+            1번의 차트 두 개는 각각 다른 것을 1위로 보여줍니다.
+            <strong class="text-slate-900">점유율 1위는 복합 성장형 45%</strong>이고,
+            <strong class="text-slate-900">유입 효율 1위는 시각적 정렬 소재 72</strong>입니다.
+            이 둘을 나란히 놓으면 전략의 근거가 수치로 잡힙니다.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-10">
+            <div class="bg-white border-2 border-slate-200 rounded-[2rem] p-8">
+                <p class="text-sm font-black text-slate-500 mb-4">점유율 &mdash; 무엇이 남는가</p>
+                <ul class="space-y-2 text-sm text-slate-600 leading-relaxed">
+                    <li>&bull; 복합 성장형 <strong class="text-slate-900">45%</strong></li>
+                    <li>&bull; 머지·타이쿤 25%</li>
+                    <li>&bull; 기존 단순 조작형 20%</li>
+                    <li>&bull; 퍼즐 및 기타 10%</li>
+                </ul>
+                <p class="text-xs text-slate-500 leading-relaxed mt-5 pt-5 border-t border-slate-200">
+                    차트 상위권을 지키는 것은 <strong class="text-slate-700">성장 구조를 가진 게임</strong>입니다.
+                    단순 조작형만으로는 20%에 머뭅니다.
+                </p>
+            </div>
+            <div class="bg-white border-2 border-teal-300 rounded-[2rem] p-8">
+                <p class="text-sm font-black text-teal-700 mb-4">유입 효율 &mdash; 무엇이 데려오는가</p>
+                <div class="overflow-x-auto rounded-xl border border-slate-200">
+                    <table class="w-full border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-slate-700 text-white">
+                                <th class="p-3 text-left text-xs font-black">소재</th>
+                                <th class="p-3 text-center text-xs font-black">효율 지표</th>
+                                <th class="p-3 text-center text-xs font-black">정렬 대비</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-teal-50 border-b border-slate-200">
+                                <td class="p-3 font-black text-slate-800">시각적 정렬 소재</td>
+                                <td class="p-3 text-center font-black text-teal-700">72</td>
+                                <td class="p-3 text-center font-bold text-slate-500">-</td>
+                            </tr>
+                            <tr class="border-b border-slate-200 border-b border-slate-200">
+                                <td class="p-3 font-black text-slate-800">성장 지표 소재</td>
+                                <td class="p-3 text-center font-black text-slate-600">45</td>
+                                <td class="p-3 text-center font-bold text-slate-500">1.60배</td>
+                            </tr>
+                            <tr class="border-b border-slate-200 border-b border-slate-200">
+                                <td class="p-3 font-black text-slate-800">경영 시뮬레이션</td>
+                                <td class="p-3 text-center font-black text-slate-600">30</td>
+                                <td class="p-3 text-center font-bold text-slate-500">2.40배</td>
+                            </tr>
+                            <tr class="border-b border-slate-200 border-b border-slate-200">
+                                <td class="p-3 font-black text-slate-800">액션 서바이벌</td>
+                                <td class="p-3 text-center font-black text-slate-600">25</td>
+                                <td class="p-3 text-center font-bold text-slate-500">2.88배</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed mt-5">
+                    광고를 보고 설치까지 오게 만드는 것은 <strong class="text-slate-700">정렬 소재</strong>입니다.
+                    성장 소재는 그 절반 수준입니다.
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-slate-900 rounded-[2.5rem] p-10 md:p-12 text-white mb-10">
+            <p class="text-sm font-black text-teal-400 mb-5">전략 제안이 왜 두 개를 붙였는지</p>
+            <p class="text-lg leading-relaxed mb-6">
+                3번의 전략 제안은 <strong class="text-teal-300">정렬과 타이쿤을 결합</strong>합니다.
+                두 지표를 보면 그것이 취향이 아니라 <strong class="text-white">데이터가 요구하는 조합</strong>이라는 것이 드러납니다.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white/10 rounded-2xl p-6">
+                    <p class="text-sm font-black text-teal-300 mb-2">정렬만 있으면</p>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        유입은 싸지만 <strong class="text-white">남을 이유가 없습니다.</strong>
+                        본문이 정리한 대로 정렬의 보상은 인지적 완결이고, 이는 <strong>그 순간에 소비되고 끝납니다.</strong>
+                        점유율에서 단순 조작형이 20%에 머무는 이유입니다.
+                    </p>
+                </div>
+                <div class="bg-white/10 rounded-2xl p-6">
+                    <p class="text-sm font-black text-teal-300 mb-2">성장만 있으면</p>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        남기는 힘은 있지만 <strong class="text-white">데려오는 비용이 비쌉니다.</strong>
+                        숫자가 늘어나는 화면은 영상에서 시선을 잡지 못합니다.
+                        효율 지표가 45로 정렬의 <strong>62% 수준</strong>입니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-amber-50 border-2 border-amber-300 rounded-[2rem] p-8">
+            <p class="text-sm font-black text-amber-700 mb-4">이 조합에는 조건이 하나 붙습니다</p>
+            <p class="text-slate-700 leading-relaxed mb-5">
+                정렬로 광고를 만들고 안에는 성장 게임을 넣으면 <strong class="text-slate-900">광고와 실제 내용이 어긋납니다.</strong>
+                본문은 <strong>&ldquo;설치 직후 바로 느껴지는 만족감이 이탈률을 낮춘다&rdquo;</strong>고 정리했는데,
+                이 효과는 <strong class="text-amber-800">광고에서 본 것이 게임 안에 실제로 있을 때만</strong> 성립합니다.
+            </p>
+            <div class="bg-white rounded-2xl p-6 border border-amber-200 mb-5">
+                <p class="text-xs font-black text-slate-800 mb-2">어긋날 경우</p>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    설치 직후 이탈률이 오히려 올라갑니다.
+                    광고에서 본 정렬 플레이를 기대했는데 성장 관리 화면이 나오면 기대가 깨집니다.
+                    <strong class="text-slate-800">스토어 정책상 오해를 유발하는 광고로 판단될 여지</strong>도 생기므로, 마케팅 소재 검수 단계에서 함께 볼 항목입니다.
+                </p>
+            </div>
+            <p class="text-slate-700 leading-relaxed">
+                <strong class="text-slate-900">성립 조건:</strong> 정렬을 광고용 소재로만 쓰지 않고
+                <strong class="text-amber-800">실제 핵심 루프에 넣어야</strong> 합니다.
+                3번 제안의 &lsquo;패킹&rsquo;은 정렬 자체가 플레이 행위이므로 이 조건을 만족합니다.
+                반대로 성장 게임에 정렬 연출만 입히는 방식은 유입 효율은 얻고 <strong>이탈률은 잃습니다.</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- 보강: 수치 기준 정리 -->
+    <section class="mb-28">
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight">인용할 때 기준을 함께 적어야 하는 숫자</h2>
+        <p class="text-slate-600 leading-relaxed mb-10 max-w-3xl">
+            본문에는 정렬 소재의 유입 효율이 <strong class="text-slate-900">&ldquo;약 60% 낮은 비용&rdquo;</strong>과
+            <strong class="text-slate-900">&ldquo;약 2.4배 효율&rdquo;</strong> 두 가지로 표현되어 있습니다.
+            같은 사실을 두 방식으로 적은 것처럼 보이지만, 산술적으로는 서로 다른 값입니다.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white border-2 border-slate-200 rounded-[2rem] p-8">
+                <p class="text-sm font-black text-slate-500 mb-3">비용 60% 절감이라면</p>
+                <p class="text-3xl font-black text-slate-900 mb-2">2.50배 효율</p>
+                <p class="text-xs text-slate-600 leading-relaxed">원가의 40%로 같은 설치를 얻는다는 뜻이므로 효율은 1을 0.4로 나눈 값이 됩니다.</p>
+            </div>
+            <div class="bg-white border-2 border-slate-200 rounded-[2rem] p-8">
+                <p class="text-sm font-black text-slate-500 mb-3">2.4배 효율이라면</p>
+                <p class="text-3xl font-black text-slate-900 mb-2">58.3% 절감</p>
+                <p class="text-xs text-slate-600 leading-relaxed">비용이 원가의 41.7%가 되므로 절감률은 60%가 아니라 58.3%입니다.</p>
+            </div>
+        </div>
+
+        <div class="bg-teal-50 border-2 border-teal-200 rounded-[2rem] p-8">
+            <p class="text-sm font-black text-teal-700 mb-4">2.4배가 나온 자리</p>
+            <p class="text-slate-700 leading-relaxed mb-5">
+                효율 지표를 항목별로 나눠보면 <strong class="text-slate-900">정렬 72를 경영 시뮬레이션 30으로 나눈 값이 정확히 2.40배</strong>입니다.
+                즉 2.4배는 전체 평균 대비가 아니라 <strong class="text-teal-800">특정 장르 하나와 비교한 값</strong>입니다.
+                나머지와 비교하면 성장 소재 대비 1.60배, 액션 서바이벌 대비 2.88배, 세 장르 평균 대비 2.16배로 각각 달라집니다.
+            </p>
+            <p class="text-slate-700 leading-relaxed">
+                <strong class="text-slate-900">정리 방향:</strong> &lsquo;타 장르 대비&rsquo;라는 표현 대신
+                <strong class="text-teal-800">어느 장르와 비교한 값인지</strong>를 함께 적으면 됩니다.
+                범위로 말한다면 <strong>1.6배에서 2.9배 사이</strong>가 정확한 서술입니다.
+                하나의 대표값을 쓰려면 세 장르 평균 대비 2.16배가 기준으로 적합합니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- 보강: 수익 모델 검토와 한계 -->
+    <section class="mb-28">
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight">수익 모델에서 확인할 것과 이 분석의 한계</h2>
+
+        <div class="bg-white border-2 border-amber-300 rounded-[2rem] p-8 mb-8">
+            <p class="text-sm font-black text-amber-700 mb-4">보상형 광고로 3배 가속을 주면</p>
+            <p class="text-slate-700 leading-relaxed mb-5">
+                3번 제안의 수익 로드맵은 광고 시청 시 <strong class="text-slate-900">30초간 작업 속도 3배</strong>를 제공합니다.
+                광고 수익이 주축인 캐주얼 게임에서 시청 유인을 만드는 정석적인 방법입니다.
+                다만 가속 배율이 커질수록 <strong class="text-amber-800">성장 속도가 광고 시청량에 종속</strong>됩니다.
+            </p>
+            <div class="grid md:grid-cols-2 gap-5">
+                <div class="bg-amber-50 rounded-2xl p-5 border border-amber-200">
+                    <p class="text-xs font-black text-amber-800 mb-2">광고로 충분히 빠르면</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">시간 단축형 상품을 <strong class="text-slate-800">돈으로 살 이유가 줄어듭니다.</strong> 광고 수익이 결제 수익을 잠식합니다.</p>
+                </div>
+                <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                    <p class="text-xs font-black text-slate-700 mb-2">광고가 너무 느리면</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">시청 유인이 없어 <strong class="text-slate-800">광고 재고가 소진되지 않습니다.</strong> 주 수익원이 작동하지 않습니다.</p>
+                </div>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed mt-5">
+                두 수익원이 서로를 밀어내므로 <strong class="text-slate-900">가속 배율은 하나의 값으로 고정하지 않고</strong>
+                구간별로 다르게 두는 편이 안전합니다.
+                초반에는 광고로 빠르게 진행되게 하고, 후반 구간에서는 배율을 낮춰 결제 상품이 설 자리를 남깁니다.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white border-2 border-emerald-200 rounded-[2rem] p-8">
+                <p class="text-sm font-black text-emerald-700 mb-4">검증할 지표</p>
+                <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                    <li>&bull; <strong class="text-slate-800">광고 소재별 설치 단가</strong> &mdash; 정렬 소재의 효율 우위가 실제로 나타나는지</li>
+                    <li>&bull; <strong class="text-slate-800">설치 직후 이탈률</strong> &mdash; 소재별로 나눠 봅니다. 광고와 내용이 어긋나면 여기서 드러납니다</li>
+                    <li>&bull; <strong class="text-slate-800">정렬 플레이 비중</strong> &mdash; 전체 플레이 시간 중 정렬 행위가 차지하는 비율. 낮으면 광고용 장식에 그친 것입니다</li>
+                    <li>&bull; <strong class="text-slate-800">광고 시청과 결제의 관계</strong> &mdash; 시청량이 많은 유저의 결제율. 낮으면 잠식이 발생하는 것입니다</li>
+                    <li>&bull; <strong class="text-slate-800">구간별 잔존</strong> &mdash; 정렬 재미가 소진되는 시점과 성장 목표가 인수하는 시점이 이어지는지</li>
+                </ul>
+            </div>
+            <div class="bg-white border-2 border-slate-200 rounded-[2rem] p-8">
+                <p class="text-sm font-black text-slate-500 mb-4">이 분석의 한계</p>
+                <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                    <li>&bull; 본문에 밝힌 대로 점유율과 효율 지표는 <strong class="text-slate-800">직접 플레이와 조사에 기반한 가설 기반 추정 지표</strong>이며 마켓이 공개한 값이 아닙니다.</li>
+                    <li>&bull; 효율 지표는 <strong class="text-slate-800">단위가 정의되지 않은 상대값</strong>입니다. 항목 간 비율 비교에만 쓸 수 있고 실제 설치 단가로 환산할 수는 없습니다.</li>
+                    <li>&bull; 재방문 지수와 수익 잠재력은 <strong class="text-slate-800">방향을 표현한 값</strong>이며 측정된 지표가 아닙니다.</li>
+                    <li>&bull; 분석 범위가 <strong class="text-slate-800">북미 마켓</strong>이므로 지역에 따라 선호 소재와 설치 단가가 크게 달라집니다.</li>
+                    <li>&bull; 언급된 개별 타이틀의 성과 요인은 <strong class="text-slate-800">외부에서 관찰한 추론</strong>이며 개발사가 공개한 내용이 아닙니다.</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -269,7 +476,7 @@
             
             <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
                 <div class="lg:col-span-7">
-                    <div class="inline-flex items-center px-5 py-1.5 rounded-full border border-teal-500/30 bg-teal-500/10 text-teal-400 text-xs font-black uppercase mb-8 tracking-widest">Strategy Proposal 2026</div>
+                    <div class="inline-flex items-center px-5 py-1.5 rounded-full border border-teal-500/30 bg-teal-500/10 text-teal-400 text-xs font-black mb-8 tracking-wide">전략 제안</div>
                     <h2 class="text-4xl md:text-5xl font-black mb-10 leading-tight tracking-tight">
                         패킹 마스터: <br>
                         <span class="text-teal-500">시각적 정렬과 물류 타이쿤</span>
@@ -288,17 +495,17 @@
                         <div class="space-y-12">
                             <div class="flex flex-col items-center group">
                                 <span class="text-5xl mb-4 group-hover:scale-110 transition-transform">📦</span>
-                                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.4em]">Puzzle Phase</span>
+                                <span class="text-[10px] font-bold text-slate-500 tracking-wide">퍼즐 구간</span>
                             </div>
                             <div class="w-px h-10 bg-gradient-to-b from-slate-700 to-transparent mx-auto"></div>
                             <div class="flex flex-col items-center group">
                                 <span class="text-5xl mb-4 group-hover:scale-110 transition-transform">🚛</span>
-                                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.4em]">Idle Phase</span>
+                                <span class="text-[10px] font-bold text-slate-500 tracking-wide">방치 구간</span>
                             </div>
                             <div class="w-px h-10 bg-gradient-to-b from-slate-700 to-transparent mx-auto"></div>
                             <div class="flex flex-col items-center group">
                                 <span class="text-5xl mb-4 group-hover:scale-110 transition-transform">🏢</span>
-                                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.4em]">Meta Phase</span>
+                                <span class="text-[10px] font-bold text-slate-500 tracking-wide">성장 구간</span>
                             </div>
                         </div>
                     </div>
@@ -316,7 +523,7 @@
             
             <div class="mb-12 pb-8 border-b border-slate-100">
                 <h3 class="text-3xl font-black text-slate-900 leading-tight">글로벌 마켓 안착 전략 및 <br>비즈니스 모델 분석</h3>
-                <p class="text-slate-500 mt-4 font-medium tracking-wide text-sm">Strategic Deep Dive & Monetization</p>
+                <p class="text-slate-500 mt-4 font-medium tracking-wide text-sm">수익 구조 심층 분석</p>
             </div>
             
             <div class="space-y-12 overflow-y-auto max-h-[50vh] pr-4 custom-scrollbar">
@@ -335,18 +542,18 @@
                     </h4>
                     <div class="grid grid-cols-1 gap-4">
                         <div class="p-7 bg-slate-50 rounded-[2rem] border border-slate-100 transition-colors hover:bg-slate-100">
-                            <p class="font-bold text-slate-900 mb-2">보상형 광고 (Reward Video)</p>
+                            <p class="font-bold text-slate-900 mb-2">보상형 광고</p>
                             <p class="text-sm text-slate-500 leading-relaxed">광고 시청 시 30초간 작업 속도를 3배 가속화하는 '피버 타임' 또는 희귀 수집품이 담긴 '특별 박스'를 제공하여 성장을 촉진합니다.</p>
                         </div>
                         <div class="p-7 bg-slate-50 rounded-[2rem] border border-slate-100 transition-colors hover:bg-slate-100">
-                            <p class="font-bold text-slate-900 mb-2">메타 시스템 (Meta Game)</p>
+                            <p class="font-bold text-slate-900 mb-2">메타 시스템</p>
                             <p class="text-sm text-slate-500 leading-relaxed">창고 확장을 넘어 전 세계 주요 도시 테마를 순차 해금하고, 자동화 직원을 고용 및 육성하는 시스템으로 장기 잔존율을 확보합니다.</p>
                         </div>
                     </div>
                 </section>
 
                 <section class="bg-slate-900 p-10 rounded-[2.5rem] text-white">
-                    <p class="text-[10px] font-black text-teal-400 uppercase tracking-[0.4em] mb-4">Core Philosophy</p>
+                    <p class="text-[10px] font-black text-teal-400 tracking-wide mb-4">핵심 원칙</p>
                     <p class="text-xl font-bold leading-relaxed italic text-teal-50 text-balanced">
                         "시각적 쾌감으로 유입시키고, <br>숫자의 성장으로 유저를 붙잡습니다."
                     </p>
@@ -360,7 +567,7 @@
     </div>
 
     <footer class="mt-32 text-center border-t border-slate-200 pt-12 pb-16">
-        <p class="text-[11px] font-black text-slate-400 uppercase tracking-[0.4em]">Global Game Market Intelligence Report | Casual Game Market Research 2026</p>
+        <p class="text-[11px] font-black text-slate-400 uppercase tracking-[0.4em]">글로벌 캐주얼 게임 시장 조사</p>
     </footer>
 
 </div>
@@ -370,7 +577,7 @@
     let marketChart;
     const marketData = {
         share: {
-            labels: ['복합 성장형(Hybrid)', '기존 단순 조작형', '머지/타이쿤', '퍼즐 및 기타'],
+            labels: ['복합 성장형', '기존 단순 조작형', '머지/타이쿤', '퍼즐 및 기타'],
             data: [45, 20, 25, 10],
             colors: ['#0d9488', '#94a3b8', '#6366f1', '#e2e8f0']
         },

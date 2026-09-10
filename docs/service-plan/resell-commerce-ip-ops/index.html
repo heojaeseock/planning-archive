@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
     <!-- Pretendard Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     
 
     <style>
@@ -57,7 +57,7 @@
     <nav class="w-full md:w-72 bg-white border-r border-gray-200 flex flex-col md:h-full z-20 shadow-md flex-shrink-0">
         <div class="p-7 border-b border-gray-100">
             <h1 class="text-4xl font-extrabold tracking-tighter text-black">리셀 커머스 플랫폼</h1>
-            <p class="text-xs text-gray-500 mt-2 font-bold tracking-widest">IP & 엔터테인먼트 운영</p>
+            <p class="text-xs text-gray-500 mt-2 font-bold tracking-wide">IP & 엔터테인먼트 운영</p>
             <div class="mt-5 inline-block px-3 py-1.5 bg-black text-white text-[11px] font-bold rounded shadow-sm">
                 운영 고도화 제안서
             </div>
@@ -69,33 +69,25 @@
                 <li><button data-target="section-2" class="nav-item w-full text-left px-5 py-3.5 rounded-lg text-sm">2. 데이터 온보딩 자동화</button></li>
                 <li><button data-target="section-3" class="nav-item w-full text-left px-5 py-3.5 rounded-lg text-sm">3. 애자일 현장 플레이북</button></li>
                 <li><button data-target="section-4" class="nav-item w-full text-left px-5 py-3.5 rounded-lg text-sm">4. 실시간 위기 대응망</button></li>
+                <li><button data-target="section-5" class="nav-item w-full text-left px-5 py-3.5 rounded-lg text-sm">5. 수치 검토와 한계</button></li>
             </ul>
         </div>
 
         <!-- Analyst Skill Summary -->
         <div class="p-6 border-t border-gray-100 bg-gray-50">
-            <h4 class="text-[11px] font-bold text-gray-500 mb-4 tracking-wider">이 문서에서 다루는 역량</h4>
-            <div class="space-y-4">
-                <div>
-                    <div class="flex justify-between text-xs mb-1.5"><span class="font-bold text-gray-700">데이터 정제 및 자동화</span><span class="text-gray-500">능숙</span></div>
-                    <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="bg-blue-600 h-1.5 rounded-full" style="width: 95%"></div></div>
-                </div>
-                <div>
-                    <div class="flex justify-between text-xs mb-1.5"><span class="font-bold text-gray-700">실시간 위기 대응</span><span class="text-gray-500">능숙</span></div>
-                    <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="bg-black h-1.5 rounded-full" style="width: 90%"></div></div>
-                </div>
-                <div>
-                    <div class="flex justify-between text-xs mb-1.5"><span class="font-bold text-gray-700">오프라인 현장 관제</span><span class="text-gray-500">우수</span></div>
-                    <div class="w-full bg-gray-200 rounded-full h-1.5"><div class="bg-gray-700 h-1.5 rounded-full" style="width: 75%"></div></div>
-                </div>
-            </div>
+            <h4 class="text-[11px] font-bold text-gray-500 mb-4 tracking-wider">이 문서에서 다루는 주제</h4>
+            <ul class="space-y-2">
+                <li class="text-xs font-bold text-gray-700">데이터 정제 및 자동화</li>
+                <li class="text-xs font-bold text-gray-700">실시간 위기 대응</li>
+                <li class="text-xs font-bold text-gray-700">오프라인 현장 관제</li>
+            </ul>
         </div>
     </nav>
 
     <!-- Main Content Area -->
     <main class="flex-1 overflow-y-auto p-6 md:p-12 lg:p-16 relative" id="main-content">
 
-        <!-- 0. 문서 개요 (탭과 무관하게 항상 노출) -->
+        <!-- 0. 문서 개요 (첫 번째 목차에서만 노출) -->
         <div id="overview" class="max-w-5xl mx-auto mb-14">
             <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
                 <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 leading-snug">플랫폼 구조</h2>
@@ -212,7 +204,7 @@
                         <canvas id="errorChart"></canvas>
                     </div>
                     <div class="text-right text-[11px] text-gray-400 mt-4 font-semibold">
-                        * 출처: 이전 직무 실무 성과 지표 (보안 규정 준수를 위해 원본 수치를 가공 및 비율화함)
+                        * 출처: 담당 서비스의 세팅 검수 경험을 대입한 추정치이며 해당 플랫폼의 실측 값이 아닙니다
                     </div>
                 </div>
             </div>
@@ -239,7 +231,7 @@
                         QR 인증 서버가 멈추거나 특정 굿즈가 예상보다 빨리 품절될 수 있습니다.<br>이때 스태프가 지시를 기다리지 않고 판단할 수 있는 <b>'상황별 권한 위임 매뉴얼'</b>이 고객 경험 훼손을 막습니다.
                     </p>
                     <div class="text-right text-[11px] text-blue-400 mt-3 font-semibold">
-                        * 출처: 2023년 대형 오프라인 스튜디오 총괄 운영 회고 발췌
+                        * 출처: e스포츠 대회 중계 스튜디오 현장 운영을 지원하며 남긴 메모
                     </div>
                 </div>
 
@@ -290,14 +282,14 @@
                     <canvas id="liveTrackingChart"></canvas>
                 </div>
                 <div class="text-right text-[11px] text-gray-400 mb-10 font-semibold">
-                    * 출처: MMORPG 대규모 패치 트래픽 및 에러 로그 상관관계 분석 데이터 (보안을 위해 임의 수치 적용)
+                    * 출처: MMORPG 대규모 패치 때의 트래픽 움직임을 참고해 구성한 모델값이며 실제 로그가 아닙니다
                 </div>
 
                 <!-- Terminal UI -->
                 <div class="bg-gray-900 text-green-400 p-8 rounded-xl font-mono text-base leading-relaxed shadow-2xl relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-full h-1 bg-red-500"></div>
                     <div class="flex justify-between items-center mb-6 border-b border-gray-700 pb-4">
-                        <span class="text-gray-400 font-bold text-sm tracking-widest">// AI 시스템 알림 (메타데이터 기반 자동 생성)</span>
+                        <span class="text-gray-400 font-bold text-sm tracking-wide">// AI 시스템 알림 (메타데이터 기반 자동 생성)</span>
                         <span class="text-xs bg-red-600 text-white px-3 py-1 rounded-full font-bold animate-pulse">긴급</span>
                     </div>
                     <p class="mb-2">> [발생 시간] 14:03:22 (드랍 오픈 3분 경과)</p>
@@ -311,6 +303,223 @@
                             "안녕하세요 리셀 커머스 플랫폼입니다. 현재 접속량 급증으로 결제가 일시 지연되고 있습니다. 고객님의 결제 내역은 안전하게 보관 중이며..." <span class="text-gray-500 text-xs ml-2">(클릭하여 복사)</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-5" class="content-section max-w-5xl mx-auto hidden animate-fade-in">
+            <div class="mb-12">
+                <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">차트를 대응 수단과 맞대어 보면</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    2번과 4번에 각각 오류 분포와 트래픽 곡선이 있습니다.
+                    이 값을 <strong class="text-gray-900">앞에서 제안한 대응 수단과 연결</strong>하면 어디에 먼저 손을 대야 하는지 정해집니다.
+                </p>
+            </div>
+
+            <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 mb-10">
+                <h3 class="text-xl font-black text-gray-900 mb-5">오류 70%는 첫 단계에서 막힙니다</h3>
+                <div class="overflow-x-auto rounded-xl border border-gray-200 mb-6">
+                    <table class="w-full min-w-[440px] border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gray-800 text-white">
+                                <th class="p-3 text-left text-xs font-black">오류 유형</th>
+                                <th class="p-3 text-center text-xs font-black">비중</th>
+                                <th class="p-3 text-left text-xs font-black">담당 단계</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-blue-50 border-b border-gray-200">
+                                <td class="p-3 font-bold text-gray-800">필수값 누락</td>
+                                <td class="p-3 text-center font-black text-blue-700">45%</td>
+                                <td class="p-3 text-gray-600 text-xs">유효성 검사 강제</td>
+                            </tr>
+                            <tr class="bg-slate-50 border-b border-gray-200">
+                                <td class="p-3 font-bold text-gray-800">상품코드 오기입</td>
+                                <td class="p-3 text-center font-black text-slate-700">30%</td>
+                                <td class="p-3 text-gray-600 text-xs">복합 함수 맵핑</td>
+                            </tr>
+                            <tr class="bg-blue-50 border-b border-gray-200">
+                                <td class="p-3 font-bold text-gray-800">수량 및 단가 오류</td>
+                                <td class="p-3 text-center font-black text-blue-700">15%</td>
+                                <td class="p-3 text-gray-600 text-xs">유효성 검사 강제</td>
+                            </tr>
+                            <tr class="bg-blue-50 border-b border-gray-200">
+                                <td class="p-3 font-bold text-gray-800">업로드 포맷 에러</td>
+                                <td class="p-3 text-center font-black text-blue-700">10%</td>
+                                <td class="p-3 text-gray-600 text-xs">유효성 검사 강제</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="grid md:grid-cols-2 gap-5 mb-6">
+                    <div class="bg-blue-50 border-2 border-blue-300 rounded-xl p-6 text-center">
+                        <p class="text-xs font-bold text-blue-700 mb-2">1단계 유효성 검사</p>
+                        <p class="text-4xl font-black text-blue-700 mb-1">70%</p>
+                        <p class="text-xs text-gray-600">필수값 누락 + 단가 오류 + 포맷 에러</p>
+                    </div>
+                    <div class="bg-gray-50 border-2 border-gray-300 rounded-xl p-6 text-center">
+                        <p class="text-xs font-bold text-gray-700 mb-2">2단계 함수 맵핑</p>
+                        <p class="text-4xl font-black text-gray-700 mb-1">30%</p>
+                        <p class="text-xs text-gray-600">상품코드 오기입</p>
+                    </div>
+                </div>
+                <div class="bg-gray-900 rounded-xl p-6 text-white">
+                    <p class="text-sm font-bold text-blue-300 mb-3">가장 큰 오류가 가장 단순한 대응으로 해결됩니다</p>
+                    <p class="text-sm leading-relaxed mb-4">
+                        1위 오류인 <strong class="text-blue-300">필수값 누락 45%</strong>는
+                        템플릿에 유효성 검사를 걸어 <strong class="text-white">저장 자체를 막는</strong> 것으로 대부분 사라집니다.
+                        함수 설계도 필요 없고 시스템 개발도 필요 없습니다.
+                    </p>
+                    <p class="text-sm leading-relaxed">
+                        그래서 도입 순서가 정해집니다.
+                        <strong class="text-blue-300">템플릿 배포가 1순위</strong>이고,
+                        코드 맵핑 자동화가 2순위입니다.
+                        파트너사가 규격에 맞춰 보내기 시작하면 나머지 두 단계의 부담이 함께 줄어듭니다.
+                        <strong class="text-white">가장 앞단에서 막는 것이 가장 저렴합니다.</strong>
+                    </p>
+                </div>
+                <div class="bg-amber-50 border border-amber-300 rounded-xl p-5 mt-5">
+                    <p class="text-xs font-bold text-amber-800 mb-2">템플릿 배포에 따라오는 조건</p>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        유효성 검사는 <strong class="text-gray-800">파트너사가 그 템플릿을 실제로 쓸 때만</strong> 작동합니다.
+                        기존 양식으로 보내는 파트너사가 있으면 그 건은 검증 없이 들어옵니다.
+                        따라서 템플릿 사용을 <strong class="text-gray-800">온보딩 절차의 필수 단계</strong>로 두거나,
+                        비표준 양식 접수 시 담당자가 수동 변환하는 경로를 함께 정해야 합니다.
+                        파트너사 규모가 클수록 이 강제가 어렵다는 점이 실무의 제약입니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 mb-10">
+                <h3 class="text-xl font-black text-gray-900 mb-5">감지 시점을 3분 앞으로 옮길 수 있습니다</h3>
+                <div class="overflow-x-auto rounded-xl border border-gray-200 mb-6">
+                    <table class="w-full min-w-[400px] border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gray-800 text-white">
+                                <th class="p-3 text-left text-xs font-black">시점</th>
+                                <th class="p-3 text-center text-xs font-black">트래픽</th>
+                                <th class="p-3 text-center text-xs font-black">직전 대비</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class=" border-b border-gray-200">
+                                <td class="p-3 font-bold text-gray-800">오픈 10분 전</td>
+                                <td class="p-3 text-center font-black text-gray-600">10</td>
+                                <td class="p-3 text-center text-xs font-bold text-gray-500">&mdash;</td>
+                            </tr>
+                            <tr class=" border-b border-gray-200">
+                                <td class="p-3 font-bold text-gray-800">오픈 5분 전</td>
+                                <td class="p-3 text-center font-black text-gray-600">25</td>
+                                <td class="p-3 text-center text-xs font-bold text-gray-500">+150%</td>
+                            </tr>
+                            <tr class="bg-red-50 border-b border-gray-200">
+                                <td class="p-3 font-bold text-gray-800">드랍 오픈</td>
+                                <td class="p-3 text-center font-black text-red-700">100</td>
+                                <td class="p-3 text-center text-xs font-bold text-gray-500">+300%</td>
+                            </tr>
+                            <tr class="bg-red-50 border-b border-gray-200">
+                                <td class="p-3 font-bold text-gray-800">오픈 3분 후</td>
+                                <td class="p-3 text-center font-black text-red-700">95</td>
+                                <td class="p-3 text-center text-xs font-bold text-gray-500">-5%</td>
+                            </tr>
+                            <tr class="bg-amber-50 border-b border-gray-200">
+                                <td class="p-3 font-bold text-gray-800">오픈 10분 후</td>
+                                <td class="p-3 text-center font-black text-amber-700">70</td>
+                                <td class="p-3 text-center text-xs font-bold text-gray-500">-26%</td>
+                            </tr>
+                            <tr class=" border-b border-gray-200">
+                                <td class="p-3 font-bold text-gray-800">오픈 30분 후</td>
+                                <td class="p-3 text-center font-black text-gray-600">30</td>
+                                <td class="p-3 text-center text-xs font-bold text-gray-500">-57%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-5 mb-6">
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 text-center">
+                        <p class="text-xs font-bold text-gray-600 mb-1">사전 신호</p>
+                        <p class="text-2xl font-black text-gray-800">2.5배</p>
+                        <p class="text-[11px] text-gray-500 mt-1">10분 전 10 → 5분 전 25</p>
+                    </div>
+                    <div class="bg-red-50 border-2 border-red-300 rounded-xl p-5 text-center">
+                        <p class="text-xs font-bold text-red-700 mb-1">오픈 순간</p>
+                        <p class="text-2xl font-black text-red-700">4.0배</p>
+                        <p class="text-[11px] text-gray-500 mt-1">25 → 100</p>
+                    </div>
+                    <div class="bg-amber-50 border border-amber-300 rounded-xl p-5 text-center">
+                        <p class="text-xs font-bold text-amber-700 mb-1">고부하 유지</p>
+                        <p class="text-2xl font-black text-amber-700">약 3분</p>
+                        <p class="text-[11px] text-gray-500 mt-1">오픈 ~ 3분 후 95 이상</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl p-6 text-white mb-5">
+                    <p class="text-sm font-bold text-blue-300 mb-3">감지가 오픈 3분 후인 것이 늦습니다</p>
+                    <p class="text-sm leading-relaxed mb-4">
+                        4번의 곡선에서 이상 감지 시점이 <strong class="text-white">오픈 3분 후</strong>로 표시되어 있습니다.
+                        그런데 그 시점의 값은 이미 <strong class="text-blue-300">95</strong>입니다.
+                        감지한 뒤 대응을 시작하면 고부하 구간이 거의 끝나 있습니다.
+                    </p>
+                    <p class="text-sm leading-relaxed">
+                        곡선을 보면 <strong class="text-blue-300">오픈 5분 전에 이미 25</strong>로 평시의 2.5배입니다.
+                        이 시점을 사전 경보 기준으로 잡으면 오픈 전에 대응 태세를 갖출 수 있습니다.
+                        드랍은 <strong class="text-white">시각이 미리 정해진 이벤트</strong>이므로,
+                        이상 탐지에 의존할 필요 없이 <strong class="text-blue-300">일정 기반으로 사전 배치</strong>하는 것이 더 확실합니다.
+                    </p>
+                </div>
+
+                <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+                    <p class="text-xs font-bold text-blue-800 mb-2">대응 창이 10분이라는 점</p>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        오픈 10분 후에는 70, 30분 후에는 <strong class="text-gray-800">피크의 30%</strong>까지 내려옵니다.
+                        즉 위기 구간이 <strong class="text-gray-800">약 10분</strong>입니다.
+                        이 시간 안에 상황 파악과 안내 문안 송출이 끝나야 하므로,
+                        4번의 사전 준비된 문안이 실효를 갖습니다.
+                        반대로 그 시간을 넘겨 대응하면 트래픽은 이미 정상화되고
+                        <strong class="text-gray-800">불만만 커뮤니티에 남습니다.</strong>
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 mb-10">
+                <h3 class="text-xl font-black text-gray-900 mb-5">범위를 스스로 그은 부분에 대해</h3>
+                <p class="text-gray-600 leading-relaxed mb-5">
+                    1번에서 <strong class="text-gray-900">물류와 배송 등 커머스 특화 인프라는 추가 학습이 필요한 영역</strong>이라고 명시했습니다.
+                    제안서에서 못하는 것을 적는 것은 불리해 보이지만, 실제로는 반대입니다.
+                </p>
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        범위를 그은 문서는 <strong class="text-gray-900">그 안의 주장을 더 믿을 수 있게</strong> 만듭니다.
+                        모든 영역을 다룰 수 있다고 쓰면 어느 항목도 검증되지 않은 상태가 되지만,
+                        세 영역으로 한정하면 <strong class="text-gray-900">그 세 개는 실제 경험</strong>이라는 뜻이 됩니다.
+                        읽는 사람이 확인해야 할 범위도 좁아집니다.
+                        이 서술은 유지하는 편이 낫고, 오히려 <strong class="text-gray-900">학습 계획</strong>을 한 줄 붙이면
+                        범위 밖 영역에 대한 준비까지 보여줄 수 있습니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white border-2 border-green-200 rounded-2xl p-7">
+                    <p class="text-sm font-black text-green-700 mb-4">측정할 지표</p>
+                    <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
+                        <li>&bull; <strong class="text-gray-800">템플릿 사용률</strong> &mdash; 전체 온보딩 건 중 표준 템플릿으로 접수된 비율. 낮으면 유효성 검사가 작동하지 않습니다</li>
+                        <li>&bull; <strong class="text-gray-800">오류 유형별 발생 건수</strong> &mdash; 필수값 누락 45%가 실제로 줄어드는지</li>
+                        <li>&bull; <strong class="text-gray-800">온보딩 소요 시간</strong> &mdash; 파트너사 데이터 접수부터 시스템 등록까지</li>
+                        <li>&bull; <strong class="text-gray-800">드랍 시점 결제 실패율</strong> &mdash; 오픈 후 10분 구간에 한정해 측정합니다</li>
+                        <li>&bull; <strong class="text-gray-800">첫 안내 송출까지의 시간</strong> &mdash; 이상 인지에서 공지까지. 10분 안에 들어와야 합니다</li>
+                    </ul>
+                </div>
+                <div class="bg-white border-2 border-gray-200 rounded-2xl p-7">
+                    <p class="text-sm font-black text-gray-500 mb-4">이 제안서의 한계</p>
+                    <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
+                        <li>&bull; 오류 유형 분포와 트래픽 곡선은 <strong class="text-gray-800">운영 경험에 기반한 모델값</strong>이며 해당 플랫폼의 실측 데이터가 아닙니다.</li>
+                        <li>&bull; 트래픽 단위가 정의되지 않은 <strong class="text-gray-800">상대 지수</strong>이므로 실제 동시접속 규모나 서버 용량과 대조할 수 없습니다.</li>
+                        <li>&bull; 오류 유형과 3단계 대응의 연결은 <strong class="text-gray-800">항목 성격에 따른 추정</strong>입니다. 실제로는 한 오류가 여러 단계에 걸칠 수 있습니다.</li>
+                        <li>&bull; 엑셀 기반 파이프라인은 <strong class="text-gray-800">담당자 의존과 파일 관리 문제</strong>를 안고 있습니다. 규모가 커지면 전용 온보딩 도구로의 이관이 필요합니다.</li>
+                        <li>&bull; 물류와 정산, 이용자 간 거래 분쟁 처리는 <strong class="text-gray-800">본문에 밝힌 대로 다루지 않았습니다.</strong></li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -343,6 +552,12 @@
                         section.classList.add('hidden');
                     }
                 });
+
+                // 개요는 첫 번째 목차에서만 보여준다
+                const overview = document.getElementById('overview');
+                if (overview) {
+                    overview.classList.toggle('hidden', targetId !== 'section-1');
+                }
 
                 // Scroll to top smoothly
                 if (mainContent) {

@@ -114,14 +114,37 @@
 
             <!-- 문서 개요 (탭과 무관하게 항상 노출) -->
             <div class="px-6 md:px-10 py-10 border-b border-slate-200 bg-white">
-                <h2 class="text-2xl font-bold text-slate-900 mb-5">장르 특성</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">자동 사냥과 오프라인 보상이 있어, 유저가 화면을 보지 않는 시간이 긴 장르입니다.<br>실제 플레이는 전투보다 장비 교체와 컬렉션 등록 같은 관리 작업에 가깝습니다.<br>자동 진행 중 발생하는 손실과 관리 피로를 줄이는 개선안 다섯 건을 정리했습니다.</p>
+                <h2 class="text-2xl font-bold text-slate-900 mb-5">장르 특성과 문서 요약</h2>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    자동 사냥과 오프라인 보상이 있어, 유저가 화면을 보지 않는 시간이 긴 장르입니다.
+                    실제 플레이는 전투보다 <strong class="text-slate-900">장비 교체와 컬렉션 등록 같은 관리 작업</strong>에 가깝습니다.<br>
+                    핵심 재미 요소를 개별 기능이 아니라 <strong class="text-slate-900">하나의 순환 루프</strong>로 재배치해 이탈이 발생하는 지점을 특정하고,
+                    그 지점을 겨냥한 개선안 다섯 건을 <strong class="text-slate-900">우선순위 &middot; 대가 &middot; 검증 지표</strong>와 함께 정리했습니다.
+                </p>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-5">
+                        <p class="text-[10px] font-black tracking-wide text-blue-500 mb-2">결론 1</p>
+                        <p class="text-sm font-bold text-slate-900 mb-2">손을 쓰는 구간은 하나뿐입니다</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">접속(룰렛) &rarr; 관리 &rarr; 방치 루프에서 유저가 조작하는 구간은 &lsquo;관리&rsquo;뿐이므로, 체감 품질은 전투가 아니라 관리 쾌적함에서 결정됩니다.</p>
+                    </div>
+                    <div class="bg-rose-50 border-2 border-rose-200 rounded-2xl p-5">
+                        <p class="text-[10px] font-black tracking-wide text-rose-500 mb-2">결론 2</p>
+                        <p class="text-sm font-bold text-slate-900 mb-2">제안 한 건은 제안이 아니었습니다</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">확률 명기는 국내 법령상 의무 사항이므로, 실제 과제를 &lsquo;공개를 전제한 보상 재설계&rsquo;로 다시 정의했습니다.</p>
+                    </div>
+                    <div class="bg-amber-50 border-2 border-amber-300 rounded-2xl p-5">
+                        <p class="text-[10px] font-black tracking-wide text-amber-600 mb-2">결론 3</p>
+                        <p class="text-sm font-bold text-slate-900 mb-2">편의성은 매출을 대가로 요구합니다</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">나머지 네 건 모두 매출 또는 콘텐츠 수명을 대가로 하므로, 대가와 완화 설계를 함께 제시했습니다.</p>
+                    </div>
+                </div>
             </div>
 
             <!-- 네비게이션 탭 -->
             <div class="flex border-b border-slate-200 bg-slate-50 sticky top-0 z-20 backdrop-blur-md">
                 <button onclick="openTab(event, 'analysis')" class="tab-btn active flex-1 py-5 text-sm font-bold text-slate-500 border-transparent" id="defaultOpen">📊 1. 핵심 재미 요소 분석</button>
                 <button onclick="openTab(event, 'improvement')" class="tab-btn flex-1 py-5 text-sm font-bold text-slate-500 border-transparent">💡 2. 시스템 및 UI/UX 개선안</button>
+                <button onclick="openTab(event, 'priority')" class="tab-btn flex-1 py-5 text-sm font-bold text-slate-500 border-transparent">🎯 3. 우선순위 및 검증</button>
             </div>
 
             <!-- 탭 1: 핵심 재미 요소 분석 -->
@@ -174,7 +197,7 @@
                         
                         <!-- 무기 프리셋 UI -->
                         <div class="mockup-panel p-6 h-[240px] flex flex-col justify-between">
-                            <p class="text-[10px] text-blue-400 font-bold mb-4 tracking-widest uppercase text-center">Weapon & Job Preset UI</p>
+                            <p class="text-[10px] text-blue-400 font-bold mb-4 tracking-wide text-center">무기와 직업 프리셋 화면</p>
                             <div class="flex-1 flex items-center justify-center gap-4">
                                 <div class="w-16 h-20 bg-slate-800 border-2 border-blue-500 rounded-lg flex flex-col items-center justify-center gap-1 shadow-lg">
                                     <span class="text-2xl">⚔️</span>
@@ -201,7 +224,7 @@
 
                         <!-- 의뢰 게시판 UI -->
                         <div class="mockup-panel p-6 h-[240px] flex flex-col bg-slate-900 border-amber-900/30">
-                            <p class="text-[10px] text-amber-400 font-bold mb-4 tracking-widest uppercase text-center">Quest Board & Reward Roulette</p>
+                            <p class="text-[10px] text-amber-400 font-bold mb-4 tracking-wide text-center">턼스트 게시판과 보상 룰렛</p>
                             <div class="flex-1 grid grid-cols-2 gap-3 mb-4">
                                 <div class="bg-slate-800 p-3 rounded-lg border border-slate-700 flex justify-between items-center">
                                     <div>
@@ -220,9 +243,80 @@
                             </div>
                             <div class="flex justify-center">
                                 <div class="w-40 h-11 bg-gradient-to-r from-amber-600 to-orange-600 rounded-full flex items-center justify-center gap-2 border-2 border-amber-400 shadow-lg animate-pulse">
-                                    <span class="text-xs font-black italic text-white uppercase">Reward Spin</span>
+                                    <span class="text-xs font-black italic text-white">보상 돌리기</span>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- [보강] 재미 요소의 구조적 관계 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="text-blue-600 font-black text-2xl">#</span>
+                        <h3 class="text-xl font-bold text-slate-900">다섯 요소는 하나의 루프로 맞물립니다</h3>
+                    </div>
+                    <div class="content-panel p-6 md:p-8">
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            위 다섯 요소를 개별 기능으로 보면 흔한 방치형 RPG의 구성입니다.
+                            하지만 <strong class="text-slate-900">각 요소가 유저의 하루에서 담당하는 역할</strong>로 다시 배치하면,
+                            서로 다른 목적을 가진 세 개의 축이 하나의 순환을 이루고 있습니다.
+                        </p>
+
+                        <div class="grid md:grid-cols-3 gap-4 mb-8">
+                            <div class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-5">
+                                <p class="text-[10px] font-black tracking-wide text-blue-500 mb-2">접속 트리거</p>
+                                <p class="font-bold text-slate-900 mb-2 text-sm">의뢰 퀘스트 룰렛</p>
+                                <p class="text-xs text-slate-600 leading-relaxed">무작위 보상과 새로고침이 <strong>&ldquo;오늘 접속할 이유&rdquo;</strong>를 만듭니다. 성장이 아니라 접속 자체가 목적인 장치입니다.</p>
+                            </div>
+                            <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5">
+                                <p class="text-[10px] font-black tracking-wide text-amber-600 mb-2">체류 시간</p>
+                                <p class="font-bold text-slate-900 mb-2 text-sm">자동 사냥 &middot; 오프라인 보상</p>
+                                <p class="text-xs text-slate-600 leading-relaxed">전투를 시스템에 넘겨 유저의 손을 비웁니다. 비워진 손이 <strong>관리 작업으로 이동</strong>합니다.</p>
+                            </div>
+                            <div class="bg-rose-50 border-2 border-rose-200 rounded-2xl p-5">
+                                <p class="text-[10px] font-black tracking-wide text-rose-500 mb-2">매출</p>
+                                <p class="font-bold text-slate-900 mb-2 text-sm">컬렉션 &middot; 무기별 직업 변경</p>
+                                <p class="text-xs text-slate-600 leading-relaxed">수천 개의 수집 대상과 무기별 세트 요구가 <strong>지출의 종착점</strong>이 됩니다. 직업 변경이 자유롭다는 것은 곧 갖춰야 할 세트가 여러 벌이라는 뜻입니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-800 rounded-2xl p-6 md:p-8 text-white mb-6">
+                            <p class="text-blue-400 font-black text-[10px] tracking-wide mb-4">루프의 실제 형태</p>
+                            <div class="flex flex-col md:flex-row items-center justify-between gap-3 mb-6">
+                                <div class="bg-white/10 rounded-xl px-4 py-3 text-center flex-1 w-full">
+                                    <p class="text-xs font-black text-white">룰렛 보상 확인</p>
+                                    <p class="text-[10px] text-slate-400 mt-1">접속</p>
+                                </div>
+                                <span class="text-blue-400 font-black rotate-90 md:rotate-0">&rarr;</span>
+                                <div class="bg-white/10 rounded-xl px-4 py-3 text-center flex-1 w-full">
+                                    <p class="text-xs font-black text-white">장비 교체 &middot; 컬렉션 등록</p>
+                                    <p class="text-[10px] text-slate-400 mt-1">관리 (실제 플레이)</p>
+                                </div>
+                                <span class="text-blue-400 font-black rotate-90 md:rotate-0">&rarr;</span>
+                                <div class="bg-white/10 rounded-xl px-4 py-3 text-center flex-1 w-full">
+                                    <p class="text-xs font-black text-white">자동 사냥 &middot; 접속 종료</p>
+                                    <p class="text-[10px] text-slate-400 mt-1">방치</p>
+                                </div>
+                                <span class="text-blue-400 font-black rotate-90 md:rotate-0">&#8635;</span>
+                            </div>
+                            <p class="text-sm md:text-base leading-relaxed font-medium">
+                                이 루프에서 유저가 실제로 <strong class="text-blue-300">손을 쓰는 구간은 가운데 &lsquo;관리&rsquo; 하나뿐</strong>입니다.
+                                전투는 자동이고 방치는 무조작이므로, 게임의 체감 품질은 전투 재미가 아니라
+                                <strong class="text-blue-300">관리 작업의 쾌적함</strong>에서 결정됩니다.
+                            </p>
+                        </div>
+
+                        <div class="bg-rose-50 border-l-[6px] border-rose-500 rounded-r-2xl p-6">
+                            <p class="text-[10px] font-black tracking-wide text-rose-500 mb-3">그래서 이탈은 어디서 발생하는가</p>
+                            <p class="text-sm md:text-base text-slate-700 leading-relaxed">
+                                이 구조에서 이탈의 원인은 <strong class="text-slate-900">&ldquo;재미가 없어서&rdquo;가 아닙니다.</strong>
+                                유일한 조작 구간인 관리 작업이 무거워지거나, 방치 구간에서 손실이 발생해
+                                <strong class="text-rose-700">&ldquo;내가 없는 동안 시스템이 나를 배신했다&rdquo;</strong>는 경험이 쌓일 때 발생합니다.<br class="hidden md:block">
+                                따라서 개선의 방향은 신규 콘텐츠 추가가 아니라
+                                <strong class="text-slate-900">관리 피로 감소 + 방치 구간의 신뢰 확보</strong>여야 합니다.
+                                다음 탭의 개선안 다섯 건은 모두 이 두 갈래에 속합니다.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -241,7 +335,7 @@
                     <!-- 제안 1 -->
                     <div class="flex flex-col lg:flex-row gap-12 items-center">
                         <div class="flex-1 space-y-5">
-                            <div class="inline-flex items-center px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-xs font-bold border border-blue-100 uppercase tracking-tighter shadow-sm">Proposal 01</div>
+                            <div class="inline-flex items-center px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-xs font-bold border border-blue-100 tracking-tighter shadow-sm">제안 1</div>
                             <h4 class="text-2xl font-bold text-slate-900 leading-tight">코스튬 외형과 능력치 슬롯 분리</h4>
                             <div class="space-y-4">
                                 <div class="bg-red-50 p-5 rounded-2xl border border-red-100 shadow-sm">
@@ -259,16 +353,16 @@
                             </div>
                         </div>
                         <div class="w-full lg:w-1/2 mockup-panel p-8 bg-slate-50 text-slate-900 border-slate-300 shadow-sm">
-                            <p class="text-[10px] text-slate-400 font-bold mb-6 text-center tracking-widest uppercase">Costume Settings Mockup</p>
+                            <p class="text-[10px] text-slate-400 font-bold mb-6 text-center tracking-wide">코스튬 설정 화면</p>
                             <div class="grid grid-cols-2 gap-6">
                                 <div class="bg-white p-5 rounded-2xl border border-blue-200 flex flex-col items-center shadow-sm">
-                                    <span class="text-[10px] font-bold text-blue-600 mb-3 uppercase">Status Slot</span>
+                                    <span class="text-[10px] font-bold text-blue-600 mb-3">능력치 슬롯</span>
                                     <div class="w-16 h-16 bg-indigo-50 rounded-xl flex items-center justify-center text-3xl">🧥</div>
                                     <p class="text-[10px] mt-3 text-slate-500 font-bold">능력치 적용</p>
                                 </div>
                                 <div class="bg-white p-5 rounded-2xl border-2 border-amber-400 flex flex-col items-center relative shadow-md">
-                                    <span class="absolute -top-2.5 bg-amber-400 text-white text-[9px] px-3 py-0.5 rounded-full font-black uppercase shadow-sm">Active</span>
-                                    <span class="text-[10px] font-bold text-amber-600 mb-3 uppercase">Visual Slot</span>
+                                    <span class="absolute -top-2.5 bg-amber-400 text-white text-[9px] px-3 py-0.5 rounded-full font-black shadow-sm">적용 중</span>
+                                    <span class="text-[10px] font-bold text-amber-600 mb-3">외형 슬롯</span>
                                     <div class="w-16 h-16 bg-amber-50 rounded-xl flex items-center justify-center text-3xl">🎩</div>
                                     <p class="text-[10px] mt-3 text-slate-500 font-bold">외형 표시</p>
                                 </div>
@@ -279,7 +373,7 @@
                     <!-- 제안 2 -->
                     <div class="flex flex-col lg:flex-row gap-12 items-center">
                         <div class="flex-1 space-y-5">
-                            <div class="inline-flex items-center px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-xs font-bold border border-blue-100 uppercase tracking-tighter shadow-sm">Proposal 02</div>
+                            <div class="inline-flex items-center px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-xs font-bold border border-blue-100 tracking-tighter shadow-sm">제안 2</div>
                             <h4 class="text-2xl font-bold text-slate-900 leading-tight">진입 전 소모품 경고 시스템</h4>
                             <div class="space-y-4">
                                 <div class="bg-red-50 p-5 rounded-2xl border border-red-100 shadow-sm">
@@ -292,14 +386,14 @@
                                     비접속 플레이 시작 전, 현재 보유한 물약 수량을 시스템이 자동 체크하여 예상 사냥 시간 대비 부족할 경우 팝업으로 즉시 경고합니다.
                                 </p>
                                 <button onclick="simulatePopup()" class="relative px-8 py-3.5 bg-blue-600 text-white rounded-2xl text-xs font-bold shadow-xl shadow-blue-200 hover:bg-blue-700 transition-all active:scale-95 flex items-center gap-2">
-                                    <span class="bg-red-500 text-white text-[10px] font-black px-2 py-0.5 rounded-full animate-click shadow-md">Click!</span>
+                                    <span class="bg-red-500 text-white text-[10px] font-black px-2 py-0.5 rounded-full animate-click shadow-md">눌러보기</span>
                                     경고 알림 시뮬레이션 실행
                                 </button>
                             </div>
                         </div>
                         <div class="w-full lg:w-1/2 mockup-panel p-10 bg-slate-900 flex flex-col items-center justify-center border-slate-700 shadow-lg">
                             <div class="w-full max-w-[260px] bg-slate-800 p-5 rounded-2xl border border-slate-700 shadow-2xl">
-                                <p class="text-[10px] font-bold text-blue-400 mb-4 tracking-wider uppercase text-center">Offline Mode Setup</p>
+                                <p class="text-[10px] font-bold text-blue-400 mb-4 tracking-wider text-center">오프라인 모드 설정</p>
                                 <div class="space-y-3">
                                     <div class="flex justify-between text-[11px]"><span class="text-slate-400">최대 사냥 시간</span><span class="text-white font-bold">10:00:00</span></div>
                                     <div class="flex justify-between text-[11px]"><span class="text-slate-400">보유 회복 물약</span><span class="text-red-400 font-bold">32개 (부족)</span></div>
@@ -312,7 +406,7 @@
                     <!-- 제안 3 -->
                     <div class="flex flex-col lg:flex-row gap-12 items-center">
                         <div class="flex-1 space-y-5">
-                            <div class="inline-flex items-center px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-xs font-bold border border-blue-100 uppercase tracking-tighter shadow-sm">Proposal 03</div>
+                            <div class="inline-flex items-center px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-xs font-bold border border-blue-100 tracking-tighter shadow-sm">제안 3</div>
                             <h4 class="text-2xl font-bold text-slate-900 leading-tight">의뢰 보상 확률의 실시간 명기</h4>
                             <div class="bg-red-50 p-5 rounded-2xl border border-red-100 shadow-sm">
                                 <p class="text-sm text-red-600 font-bold mb-1.5">⚠️ 문제점</p>
@@ -325,7 +419,7 @@
                             </p>
                         </div>
                         <div class="w-full lg:w-1/2 mockup-panel p-8 bg-slate-800 border-slate-700 shadow-md">
-                            <p class="text-[10px] text-amber-400 font-bold mb-5 text-center tracking-widest uppercase">Reward Probability List</p>
+                            <p class="text-[10px] text-amber-400 font-bold mb-5 text-center tracking-wide">보상 확률 목록</p>
                             <div class="bg-slate-900/90 rounded-xl p-5 space-y-3">
                                 <div class="flex justify-between text-[10px] border-b border-slate-700 pb-3">
                                     <span class="text-purple-400 font-bold">[에픽] 신비한 무기 상자</span>
@@ -347,7 +441,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <!-- 제안 4 -->
                         <div class="space-y-5">
-                            <div class="inline-flex items-center px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-[10px] font-bold border border-blue-100 uppercase">Proposal 04</div>
+                            <div class="inline-flex items-center px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-[10px] font-bold border border-blue-100">제안 4</div>
                             <h4 class="text-lg font-bold text-slate-900">컬렉션 일괄 등록 및 즐겨찾기</h4>
                             <p class="text-xs text-slate-600 leading-relaxed">
                                 수천 개의 장비를 일일이 확인하고 등록해야 하는 피로도를 낮추기 위해 <strong>'일괄 등록'</strong>과 자주 찾는 스탯의 <strong>'즐겨찾기'</strong> 고정 기능을 제안합니다.
@@ -359,23 +453,23 @@
                                     <div class="aspect-square bg-slate-700 rounded-xl flex items-center justify-center border-2 border-blue-500 relative text-2xl">💍<div class="absolute -top-1.5 -right-1.5 w-4 h-4 bg-red-500 rounded-full border-2 border-slate-800 animate-pulse shadow-sm"></div></div>
                                     <div class="aspect-square bg-slate-700 rounded-xl flex items-center justify-center border-2 border-blue-500 relative text-2xl">🏹<div class="absolute -top-1.5 -right-1.5 w-4 h-4 bg-red-500 rounded-full border-2 border-slate-800 animate-pulse shadow-sm"></div></div>
                                 </div>
-                                <div class="py-3.5 bg-emerald-600 hover:bg-emerald-500 text-center rounded-2xl text-[11px] font-black shadow-lg transition-colors cursor-pointer uppercase tracking-tight">Register Available Items</div>
+                                <div class="py-3.5 bg-emerald-600 hover:bg-emerald-500 text-center rounded-2xl text-[11px] font-black shadow-lg transition-colors cursor-pointer tracking-tight">등록 가능 아이템</div>
                             </div>
                         </div>
                         
                         <!-- 제안 5 -->
                         <div class="space-y-5">
-                            <div class="inline-flex items-center px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-[10px] font-bold border border-blue-100 uppercase">Proposal 05</div>
+                            <div class="inline-flex items-center px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-[10px] font-bold border border-blue-100">제안 5</div>
                             <h4 class="text-lg font-bold text-slate-900">절전 모드 내 실시간 퀘스트 노출</h4>
                             <p class="text-xs text-slate-600 leading-relaxed">
                                 절전 모드 시 사냥 현황만 확인 가능한 기존 UI에 <strong>현재 수행 중인 핵심 퀘스트의 진행률</strong>을 추가하여 불필요한 모드 해제 조작을 방지합니다.
                             </p>
                             <div class="mockup-panel p-8 bg-black border-slate-800 shadow-2xl flex flex-col justify-center items-center h-[200px]">
-                                <p class="text-[9px] text-slate-600 mb-5 animate-pulse uppercase tracking-[0.4em] font-black">Battery Saving Mode</p>
+                                <p class="text-[9px] text-slate-600 mb-5 animate-pulse tracking-wide font-black">절전 모드</p>
                                 <div class="w-full max-w-[220px] bg-slate-900 p-5 rounded-2xl border border-slate-800 shadow-inner">
                                     <p class="text-[10px] font-bold text-white mb-2.5">메인 퀘스트: 오크 전사 소탕</p>
                                     <div class="status-bar mb-2 shadow-sm"><div class="status-fill w-[85%] bg-blue-500 shadow-[0_0_8px_#3b82f6]"></div></div>
-                                    <div class="flex justify-between text-[10px]"><span class="text-slate-500 font-bold uppercase">Progress</span><span class="text-blue-400 font-black">128 / 150 (85%)</span></div>
+                                    <div class="flex justify-between text-[10px]"><span class="text-slate-500 font-bold">진행도</span><span class="text-blue-400 font-black">128 / 150 (85%)</span></div>
                                 </div>
                             </div>
                         </div>
@@ -384,9 +478,266 @@
                 </div>
             </div>
 
+            <!-- 탭 3: 우선순위 및 검증 -->
+            <div id="priority" class="tab-content p-6 md:p-10 space-y-14">
+                <div class="text-center max-w-2xl mx-auto mb-2">
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">실행 우선순위와 검증 설계</h2>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        개선안 다섯 건을 <strong class="text-slate-700">모두 하는 것</strong>은 계획이 아닙니다.
+                        각 안이 <strong class="text-slate-700">무엇을 대가로 요구하는지</strong>, 어떤 순서로 넣어야 하는지, 그리고 넣은 뒤 무엇으로 성공을 판정할지 정리했습니다.
+                    </p>
+                </div>
+
+                <!-- 1. 법적 요건 선별 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-rose-600 font-black text-2xl">#</span>
+                        <h3 class="text-xl font-bold text-slate-900">1. 먼저: 제안이 아닌 것을 걸러냅니다</h3>
+                    </div>
+                    <div class="bg-rose-50 border-2 border-rose-300 rounded-[24px] p-6 md:p-8">
+                        <div class="flex items-start gap-4 mb-5">
+                            <span class="shrink-0 bg-rose-600 text-white text-[10px] font-black px-3 py-1.5 rounded-full tracking-wide">재분류</span>
+                            <div>
+                                <p class="font-black text-slate-900 text-lg mb-2">Proposal 03 (의뢰 보상 확률 명기)은 개선 제안이 아닙니다</p>
+                                <p class="text-sm text-slate-700 leading-relaxed">
+                                    국내 서비스 게임의 확률형 아이템 확률 정보 표시는
+                                    <strong class="text-rose-700">게임산업진흥에 관한 법률 개정에 따라 의무화된 사항</strong>입니다.
+                                    즉 이 항목은 &ldquo;하면 신뢰도가 올라가는 개선안&rdquo;이 아니라
+                                    <strong class="text-slate-900">미이행 시 법령 위반이 되는 필수 요건</strong>이며, 우선순위 비교의 대상이 아닙니다.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-2xl p-5 border border-rose-200 mb-5">
+                            <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">그래서 실제 기획 과제는 무엇이 되는가</p>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                확률 공개 자체는 협상 대상이 아니므로, 기획자의 과제는
+                                <strong class="text-slate-900">&ldquo;공개할까&rdquo;가 아니라 &ldquo;공개된 상태를 전제로 보상 구조를 어떻게 다시 짤까&rdquo;</strong>로 이동합니다.
+                                에픽 0.50%가 화면에 그대로 노출되면 구매 의욕이 꺾일 수 있으므로,
+                                <strong>천장(확정 획득) &middot; 마일리지 누적 &middot; 중복 보상 교환</strong> 같은 장치를 함께 설계해야
+                                확률 공개가 이탈 요인이 되지 않습니다.
+                            </p>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            표시 범위와 적용 대상의 세부 기준은 시행령으로 정해지며 개정에 따라 달라질 수 있습니다.
+                            그러므로 기획 단계에서 잡아야 할 것은 개별 조항이 아니라
+                            <strong class="text-slate-700">&lsquo;확률이 공개된 상태&rsquo;를 상시 전제로 두는 보상 구조</strong>입니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. 우선순위 매트릭스 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-blue-600 font-black text-2xl">#</span>
+                        <h3 class="text-xl font-bold text-slate-900">2. 남은 네 건의 우선순위</h3>
+                    </div>
+                    <div class="content-panel p-6 md:p-8">
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            앞선 분석에서 이 장르의 이탈 원인을 <strong class="text-slate-900">관리 피로</strong>와 <strong class="text-slate-900">방치 구간의 손실</strong> 두 갈래로 정리했습니다.
+                            그중 <strong class="text-rose-600">방치 구간의 손실</strong>은 유저가 손쓸 수 없는 상태에서 발생하므로 체감 타격이 훨씬 큽니다. 이 기준으로 순서를 매겼습니다.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="border-2 border-rose-300 bg-rose-50/50 rounded-2xl p-5">
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-rose-600 text-white text-xs font-black px-3 py-1 rounded-full">1순위</span>
+                                    <span class="font-black text-slate-900">Proposal 02 &middot; 진입 전 소모품 경고</span>
+                                    <span class="ml-auto text-[10px] font-black text-slate-500 tracking-wide">임팩트 높음 &middot; 비용 낮음</span>
+                                </div>
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    방치 중 사망은 <strong class="text-slate-900">유저가 개입할 수 없는 손실</strong>이라 불만이 가장 강하게 남습니다.
+                                    구현은 진입 시점의 조건 체크와 팝업 한 건으로, 신규 시스템 없이 처리 가능합니다.
+                                </p>
+                            </div>
+                            <div class="border-2 border-amber-300 bg-amber-50/50 rounded-2xl p-5">
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-amber-500 text-white text-xs font-black px-3 py-1 rounded-full">2순위</span>
+                                    <span class="font-black text-slate-900">Proposal 05 &middot; 절전 모드 내 퀘스트 노출</span>
+                                    <span class="ml-auto text-[10px] font-black text-slate-500 tracking-wide">임팩트 중 &middot; 비용 최저</span>
+                                </div>
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    기존 절전 UI에 <strong>표시 항목 하나를 추가</strong>하는 수준이라 리스크가 사실상 없습니다.
+                                    임팩트는 크지 않지만 비용 대비 효율이 가장 높아 다른 작업과 함께 묶기 좋은 항목입니다.
+                                </p>
+                            </div>
+                            <div class="border-2 border-blue-300 bg-blue-50/50 rounded-2xl p-5">
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-blue-600 text-white text-xs font-black px-3 py-1 rounded-full">3순위</span>
+                                    <span class="font-black text-slate-900">Proposal 04 &middot; 컬렉션 일괄 등록</span>
+                                    <span class="ml-auto text-[10px] font-black text-slate-500 tracking-wide">임팩트 높음 &middot; 비용 중</span>
+                                </div>
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    관리 피로의 <strong class="text-slate-900">가장 직접적인 원인</strong>을 건드립니다. 다만 아래 트레이드오프에서 보듯
+                                    콘텐츠 소진 속도를 함께 가속시키므로, 적용 범위를 제한하는 설계가 전제됩니다.
+                                </p>
+                            </div>
+                            <div class="border-2 border-slate-300 bg-slate-50 rounded-2xl p-5">
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-slate-600 text-white text-xs font-black px-3 py-1 rounded-full">보류</span>
+                                    <span class="font-black text-slate-900">Proposal 01 &middot; 외형/능력치 슬롯 분리</span>
+                                    <span class="ml-auto text-[10px] font-black text-slate-500 tracking-wide">임팩트 중 &middot; 매출 리스크 동반</span>
+                                </div>
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    유저 만족도 측면에서는 명확한 개선이지만, <strong class="text-rose-700">코스튬 매출의 근거를 직접 훼손</strong>할 수 있습니다.
+                                    사업 협의와 매출 시뮬레이션 없이 기획 단독으로 추진할 항목이 아니라고 판단했습니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 트레이드오프 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-slate-800 font-black text-2xl">#</span>
+                        <h3 class="text-xl font-bold text-slate-900">3. 각 안이 요구하는 대가</h3>
+                    </div>
+                    <div class="content-panel p-6 md:p-8">
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            유저 편의성 개선은 대부분 <strong class="text-slate-900">매출 또는 콘텐츠 수명을 대가로</strong> 요구합니다.
+                            이 대가를 명시하지 않은 개선안은 사업&middot;개발 협의 단계에서 반드시 되돌아옵니다.
+                        </p>
+                        <div class="overflow-x-auto rounded-2xl border-2 border-slate-200">
+                            <table class="w-full min-w-[640px] border-collapse text-sm">
+                                <thead>
+                                    <tr class="bg-slate-700 text-white">
+                                        <th class="p-3 text-left text-xs font-black">제안</th>
+                                        <th class="p-3 text-left text-xs font-black bg-rose-500">발생하는 대가</th>
+                                        <th class="p-3 text-left text-xs font-black bg-emerald-600">완화 설계</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-slate-200">
+                                        <td class="p-3 font-bold text-slate-800 align-top">01 외형/능력치 분리</td>
+                                        <td class="p-3 text-slate-600 align-top text-xs leading-relaxed">성능 때문에 코스튬을 사던 동기가 사라져 <strong class="text-rose-700">코스튬 매출이 하락</strong>할 수 있습니다.</td>
+                                        <td class="p-3 text-slate-600 align-top text-xs leading-relaxed">외형 슬롯 자체를 유료 해금으로 두거나, 외형 전용 상품 라인을 신설해 매출원을 옮깁니다.</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-200 bg-slate-50">
+                                        <td class="p-3 font-bold text-slate-800 align-top">02 소모품 경고</td>
+                                        <td class="p-3 text-slate-600 align-top text-xs leading-relaxed">사망이 줄면 <strong class="text-rose-700">물약 소모량과 관련 매출이 감소</strong>합니다.</td>
+                                        <td class="p-3 text-slate-600 align-top text-xs leading-relaxed">경고에 &lsquo;부족분 즉시 구매&rsquo; 동선을 붙여 소모 감소를 구매 전환으로 흡수합니다.</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-200">
+                                        <td class="p-3 font-bold text-slate-800 align-top">03 확률 명기 <span class="text-[10px] text-rose-600 font-black">(법적 의무)</span></td>
+                                        <td class="p-3 text-slate-600 align-top text-xs leading-relaxed">낮은 확률이 그대로 노출되어 <strong class="text-rose-700">구매 의욕이 저하</strong>될 수 있습니다.</td>
+                                        <td class="p-3 text-slate-600 align-top text-xs leading-relaxed">천장 &middot; 마일리지 &middot; 중복 교환을 함께 도입해 &lsquo;낮은 확률&rsquo;을 &lsquo;확정 도달 경로&rsquo;로 재구성합니다.</td>
+                                    </tr>
+                                    <tr class="bg-slate-50">
+                                        <td class="p-3 font-bold text-slate-800 align-top">04 일괄 등록</td>
+                                        <td class="p-3 text-slate-600 align-top text-xs leading-relaxed">컬렉션 소비가 빨라져 <strong class="text-rose-700">장기 콘텐츠 수명이 단축</strong>됩니다.</td>
+                                        <td class="p-3 text-slate-600 align-top text-xs leading-relaxed">일괄 등록을 하위 등급에만 허용하고, 상위 등급은 개별 확인을 유지해 소비 속도를 통제합니다.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 font-bold text-slate-800 align-top">05 절전 퀘스트 노출</td>
+                                        <td class="p-3 text-slate-600 align-top text-xs leading-relaxed">확인된 대가가 <strong class="text-emerald-700">없습니다.</strong> 표시 항목 추가에 그칩니다.</td>
+                                        <td class="p-3 text-slate-600 align-top text-xs leading-relaxed">별도 완화 설계 불필요. 저비용 항목으로 우선 처리 가능합니다.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. 검증 지표 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-emerald-600 font-black text-2xl">#</span>
+                        <h3 class="text-xl font-bold text-slate-900">4. 무엇으로 성공을 판정할 것인가</h3>
+                    </div>
+                    <div class="content-panel p-6 md:p-8">
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            개선안마다 <strong class="text-slate-900">사전에 관측할 지표와 판정 기준</strong>을 정해 둬야, 적용 후 효과를 주장이 아니라 데이터로 말할 수 있습니다.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                                <p class="text-xs font-black text-slate-800 mb-3">02 소모품 경고</p>
+                                <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
+                                    <li>&bull; 오프라인 사냥 중 <strong>사망 발생률</strong></li>
+                                    <li>&bull; 방치 중 사망 유저의 <strong>익일 재접속률</strong></li>
+                                    <li>&bull; 경고 팝업 노출 후 <strong>물약 구매 전환율</strong></li>
+                                </ul>
+                            </div>
+                            <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                                <p class="text-xs font-black text-slate-800 mb-3">04 일괄 등록</p>
+                                <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
+                                    <li>&bull; 컬렉션 화면 <strong>1회 체류 시간</strong> (감소가 목표)</li>
+                                    <li>&bull; 등록 <strong>중도 이탈률</strong></li>
+                                    <li>&bull; 상위 등급 컬렉션 <strong>완성 도달 시점</strong> (과속 여부 감시)</li>
+                                </ul>
+                            </div>
+                            <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                                <p class="text-xs font-black text-slate-800 mb-3">03 확률 명기</p>
+                                <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
+                                    <li>&bull; 확률 관련 <strong>CS 인입 건수</strong> (감소가 목표)</li>
+                                    <li>&bull; 공개 전후 <strong>해당 상품 구매 전환율</strong></li>
+                                    <li>&bull; 천장 도달 유저 비율</li>
+                                </ul>
+                            </div>
+                            <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                                <p class="text-xs font-black text-slate-800 mb-3">01 외형/능력치 분리 (보류 항목)</p>
+                                <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
+                                    <li>&bull; 코스튬 <strong>ARPPU 변화</strong></li>
+                                    <li>&bull; 외형 슬롯 <strong>실사용률</strong></li>
+                                    <li>&bull; 적용 전 <strong>사업부 매출 시뮬레이션 합의</strong> 여부</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. 한계 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-slate-400 font-black text-2xl">#</span>
+                        <h3 class="text-xl font-bold text-slate-900">5. 이 기획안의 한계</h3>
+                    </div>
+                    <div class="content-panel p-6 md:p-8">
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                                <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">근거의 성격</p>
+                                <p class="text-xs text-slate-600 leading-relaxed">문제 정의는 <strong>직접 플레이 경험과 공개 커뮤니티 후기</strong>에 기반합니다. 실제 이탈 로그나 CS 인입 통계로 검증한 것이 아니므로, 체감 빈도와 실제 발생 빈도가 다를 수 있습니다.</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                                <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">비용 추정</p>
+                                <p class="text-xs text-slate-600 leading-relaxed">&lsquo;비용 낮음/중&rsquo;은 <strong>기능 범위로부터의 추정</strong>이며 실제 개발 공수 산정이 아닙니다. 내부 구조에 따라 순서가 바뀔 수 있습니다.</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                                <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">다루지 않은 범위</p>
+                                <p class="text-xs text-slate-600 leading-relaxed">밸런스 수치, 서버 부하, 지역별 과금 정책은 외부에서 관측이 어려워 <strong>검토 대상에서 제외</strong>했습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 결론 -->
+                <div class="bg-slate-900 rounded-[32px] p-8 md:p-10 text-white relative overflow-hidden shadow-2xl">
+                    <div class="absolute right-0 bottom-0 opacity-10 text-9xl -mb-8 -mr-8 transform rotate-12">🎯</div>
+                    <div class="relative z-10 max-w-4xl mx-auto">
+                        <p class="text-blue-400 font-black text-[10px] tracking-wide mb-5 text-center">정리</p>
+                        <p class="text-base md:text-lg font-bold leading-relaxed text-center mb-8">
+                            방치형 RPG에서 유저가 손을 쓰는 구간은 <strong class="text-blue-300">&lsquo;관리&rsquo; 하나뿐</strong>입니다.<br class="hidden md:block">
+                            따라서 개선의 대상은 전투 재미가 아니라 <strong class="text-blue-300">관리 피로와 방치 구간의 신뢰</strong>입니다.
+                        </p>
+                        <div class="grid md:grid-cols-3 gap-4 text-left">
+                            <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
+                                <p class="text-blue-300 font-black text-sm mb-2">제안 다섯 건 중 한 건은 제안이 아니었습니다</p>
+                                <p class="text-xs text-slate-300 leading-relaxed">확률 명기는 법적 의무 사항이므로 우선순위 비교에서 분리하고, 실제 과제를 <strong class="text-white">&lsquo;공개를 전제한 보상 재설계&rsquo;</strong>로 다시 정의했습니다.</p>
+                            </div>
+                            <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
+                                <p class="text-blue-300 font-black text-sm mb-2">편의성은 공짜가 아닙니다</p>
+                                <p class="text-xs text-slate-300 leading-relaxed">네 건 모두 매출 또는 콘텐츠 수명을 대가로 요구합니다. 대가와 완화 설계를 함께 제시해야 <strong class="text-white">협의 단계에서 살아남습니다.</strong></p>
+                            </div>
+                            <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
+                                <p class="text-blue-300 font-black text-sm mb-2">순서의 기준은 손실의 성격입니다</p>
+                                <p class="text-xs text-slate-300 leading-relaxed">유저가 <strong class="text-white">개입할 수 없는 상태에서 발생하는 손실</strong>(방치 중 사망)을 최우선으로 두고, 매출 리스크를 동반하는 항목은 사업 협의 전까지 보류했습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- 푸터 -->
             <div class="p-10 bg-slate-900 text-white text-center border-t border-slate-800">
-                <p class="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40 mb-3">Zenonia: Chronobreak Analysis & UX Strategy</p>
+                <p class="text-[10px] font-bold tracking-wide opacity-40 mb-3">제노니아 토지 분석과 사용성 전략</p>
                 <p class="text-xs font-medium text-slate-400">제노니아 게임 시스템 분석 및 개선 기획 작업 기록 &copy; 허재석</p>
             </div>
         </div>
@@ -401,8 +752,8 @@
                 현재 보유한 <strong class="text-red-500 font-bold underline decoration-2 underline-offset-4">회복 물약(32개)</strong>은 예상 사냥 시간(10시간) 대비 매우 부족합니다. 이대로 오프라인 사냥을 시작하시겠습니까?
             </p>
             <div class="flex gap-3">
-                <button onclick="closeModal()" class="flex-1 py-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-2xl text-xs font-black transition-colors shadow-sm uppercase tracking-tighter">마을로 가기</button>
-                <button onclick="closeModal()" class="flex-1 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl text-xs font-black shadow-lg shadow-blue-200 transition-colors uppercase tracking-tighter">무시하고 시작</button>
+                <button onclick="closeModal()" class="flex-1 py-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-2xl text-xs font-black transition-colors shadow-sm tracking-tighter">마을로 가기</button>
+                <button onclick="closeModal()" class="flex-1 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl text-xs font-black shadow-lg shadow-blue-200 transition-colors tracking-tighter">무시하고 시작</button>
             </div>
         </div>
     </div>

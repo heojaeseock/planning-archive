@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap');
         body { font-family: 'Pretendard', sans-serif; background-color: #f1f5f9; color: #334155; }
         
         /* 차트 컨테이너 스타일링 */
@@ -64,6 +63,7 @@
     
 
 
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 </head>
 <body class="antialiased">
 
@@ -72,7 +72,7 @@
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center">
             <div class="flex items-center space-x-2">
                 <span class="text-2xl">🔮</span>
-                <span class="font-bold text-xl tracking-tight text-slate-800">Project C <span class="text-blue-600">Strategy Report</span></span>
+                <h1 class="font-bold text-xl tracking-tight text-slate-800">프로젝트 C <span class="text-blue-600">콘텐츠 전략</span></h1>
             </div>
         </div>
     </header>
@@ -123,8 +123,8 @@
                     <p class="text-sm text-slate-500">육성 시스템과 서사가 유기적으로 연결된 캐릭터 설계</p>
                 </div>
                 <div class="flex bg-slate-100 p-1 rounded-xl">
-                    <button onclick="switchTab('char1')" id="tab1" class="px-6 py-2 rounded-lg text-sm font-bold transition-all bg-white text-blue-600 shadow-sm">Character 01</button>
-                    <button onclick="switchTab('char2')" id="tab2" class="px-6 py-2 rounded-lg text-sm font-bold transition-all text-slate-500">Character 02</button>
+                    <button onclick="switchTab('char1')" id="tab1" class="px-6 py-2 rounded-lg text-sm font-bold transition-all bg-white text-blue-600 shadow-sm">캐릭터 1</button>
+                    <button onclick="switchTab('char2')" id="tab2" class="px-6 py-2 rounded-lg text-sm font-bold transition-all text-slate-500">캐릭터 2</button>
                 </div>
             </div>
 
@@ -136,7 +136,7 @@
                             <div class="flex items-center space-x-4">
                                 <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl">❄️</div>
                                 <div>
-                                    <h3 class="text-xl font-extrabold text-slate-900">클로에 (Chloe)</h3>
+                                    <h3 class="text-xl font-extrabold text-slate-900">클로에</h3>
                                     <p class="text-blue-600 text-sm font-medium">수석 입학생 / 빙결 마법 전공</p>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
                             <div class="flex items-center space-x-4">
                                 <div class="w-16 h-16 bg-violet-100 rounded-2xl flex items-center justify-center text-3xl">🦇</div>
                                 <div>
-                                    <h3 class="text-xl font-extrabold text-slate-900">루나 (Luna)</h3>
+                                    <h3 class="text-xl font-extrabold text-slate-900">루나</h3>
                                     <p class="text-violet-600 text-sm font-medium">열등생 / 흑마법 전공</p>
                                 </div>
                             </div>
@@ -212,9 +212,9 @@
         <!-- 3. Monster Settings with Interaction Guidance -->
         <section id="monster-settings">
             <div class="text-center mb-8">
-                <h2 class="text-2xl font-bold text-slate-900 mb-2">3. 에너미(Enemy) 설정: '내면의 그림자'</h2>
+                <h2 class="text-2xl font-bold text-slate-900 mb-2">3. 에너미 설정: '내면의 그림자'</h2>
                 <div class="inline-flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full border border-blue-100 shadow-sm">
-                    <span class="text-blue-600 text-xs font-bold">💡 Interaction Guide:</span>
+                    <span class="text-blue-600 text-xs font-bold">💡 보는 방법</span>
                     <span class="text-slate-600 text-xs font-medium">카드를 클릭하여 학생들의 <span class="text-blue-600 font-bold">내면(진실)</span>을 확인해보세요.</span>
                     <span class="click-hint text-blue-400">👈</span>
                 </div>
@@ -266,7 +266,396 @@
             </div>
         </section>
 
-        <!-- 4. Summary -->
+
+        <!-- [보강] 4. 설계 검토 -->
+        <section id="design-review">
+            <div class="mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">4. 설계 검토 &mdash; 두 캐릭터는 정반대 리스크를 가집니다</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    클로에와 루나는 같은 <strong class="text-slate-900">결핍 서사</strong> 전략에서 나왔지만,
+                    육성 파라미터를 보면 <strong class="text-slate-900">서로 반대 방향의 문제</strong>를 안고 있습니다.
+                    출시 전에 정리해야 할 지점을 짚었습니다.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <!-- 클로에 -->
+                <div class="bg-white rounded-3xl border-2 border-rose-200 p-7 shadow-sm">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="bg-rose-500 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">검토</span>
+                        <span class="font-black text-slate-900">클로에 &middot; 유지 비용을 부과합니다</span>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                        스트레스 저항이 최저(E)라 유저가 <strong class="text-slate-900">주기적으로 개입해 배드엔딩을 방어</strong>해야 합니다.
+                        개입 명분을 만드는 설계로는 의도가 분명하지만, 두 가지가 따라옵니다.
+                    </p>
+                    <div class="space-y-3 mb-5">
+                        <div class="bg-rose-50 rounded-xl p-4 border border-rose-200">
+                            <p class="text-xs font-black text-rose-700 mb-1">관리 부담이 캐릭터 수에 비례합니다</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">수집형은 보유 캐릭터가 계속 늘어납니다. 각 캐릭터가 주기적 관리를 요구하면 총 부담이 누적되어 <strong class="text-slate-800">수집 자체를 억제</strong>합니다.</p>
+                        </div>
+                        <div class="bg-rose-50 rounded-xl p-4 border border-rose-200">
+                            <p class="text-xs font-black text-rose-700 mb-1">배드엔딩은 처벌로 체감됩니다</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">애정을 전제로 설계한 캐릭터인데, 관리 실패의 결과가 상실이면 <strong class="text-slate-800">감정적 타격이 이탈로 이어집니다.</strong> 유료 획득 캐릭터라면 더 강하게 작용합니다.</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            <strong class="text-slate-800">보완:</strong> 배드엔딩을 <strong class="text-rose-700">영구 손실이 아니라 회복 가능한 상태</strong>로 두고,
+                            관리 실패를 &lsquo;나쁜 결과&rsquo;가 아니라 <strong>다른 서사 분기</strong>로 처리합니다.
+                            실패도 콘텐츠가 되면 처벌이 아니라 선택이 됩니다.
+                            관리 주기도 캐릭터별이 아니라 <strong>전체 공용 자원</strong>으로 묶어 부담이 곱해지지 않게 해야 합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 루나 -->
+                <div class="bg-white rounded-3xl border-2 border-amber-200 p-7 shadow-sm">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="bg-amber-500 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">검토</span>
+                        <span class="font-black text-slate-900">루나 &middot; 매출을 잠식할 수 있습니다</span>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                        호감도에 비례해 능력치 상한이 <strong class="text-slate-900">무한(EX)으로 해금</strong>됩니다.
+                        &lsquo;버려진 아이를 최강으로&rsquo;라는 성취는 강력하지만, 경제 관점에서 문제가 생깁니다.
+                    </p>
+                    <div class="space-y-3 mb-5">
+                        <div class="bg-amber-50 rounded-xl p-4 border border-amber-200">
+                            <p class="text-xs font-black text-amber-700 mb-1">시간만으로 최강에 도달합니다</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">상한이 없으면 무과금도 충분한 시간으로 최상위 스펙을 만듭니다. 그러면 <strong class="text-slate-800">다른 캐릭터를 뽑을 이유가 줄어듭니다.</strong></p>
+                        </div>
+                        <div class="bg-amber-50 rounded-xl p-4 border border-amber-200">
+                            <p class="text-xs font-black text-amber-700 mb-1">유료화하면 서사가 훼손됩니다</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">반대로 호감도 재화를 유료로 팔면 <strong class="text-slate-800">&lsquo;격려&rsquo;가 결제가 됩니다.</strong> 1번에서 내세운 상호 구원 서사의 진정성이 약해집니다.</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            <strong class="text-slate-800">보완:</strong> 무한 성장 대신 <strong class="text-amber-700">고유 역할</strong>을 줍니다.
+                            총 전투력 상한은 다른 캐릭터와 비슷하게 두고, <strong>루나만 가능한 특정 역할</strong>을 부여하면
+                            &lsquo;키워낸 보람&rsquo;은 유지하면서 다른 캐릭터의 구매 동기를 지킵니다.
+                            호감도는 <strong>성능이 아니라 서사와 연출</strong>을 해금하는 축으로 두는 편이 서사 진정성에도 맞습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 결핍 서사의 확장성 -->
+            <div class="bg-slate-900 rounded-3xl p-8 md:p-10 text-white mb-8">
+                <p class="text-amber-400 font-black text-[10px] tracking-wide mb-5">가장 큰 리스크 &middot; 결핍 서사는 소모됩니다</p>
+                <p class="text-sm md:text-base leading-relaxed mb-5">
+                    이 기획의 핵심 기제는 <strong class="text-amber-300">&ldquo;결핍을 채워주는 개입&rdquo;</strong>입니다.
+                    그런데 결핍은 <strong class="text-white">채워지면 사라집니다.</strong>
+                    서사가 완결되는 순간 그 캐릭터에 대한 개입 명분도 함께 종료됩니다.
+                </p>
+                <div class="grid md:grid-cols-2 gap-5 mb-5">
+                    <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
+                        <p class="text-sm font-bold text-amber-300 mb-2">단기 문제 &middot; 일회성 소비</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">결핍 해소 서사를 다 본 유저는 그 캐릭터를 <strong class="text-white">더 이상 돌볼 이유가 없습니다.</strong> 리텐션 기제가 콘텐츠 소비와 함께 소진됩니다.</p>
+                    </div>
+                    <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
+                        <p class="text-sm font-bold text-amber-300 mb-2">장기 문제 &middot; 패턴 반복</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">캐릭터가 수십 종으로 늘면 결핍 유형이 겹칩니다. <strong class="text-white">모두가 상처를 가지면 개별성이 사라지고</strong> 서사가 공식처럼 읽힙니다.</p>
+                    </div>
+                </div>
+                <p class="text-sm md:text-base leading-relaxed">
+                    <strong class="text-white">대응 방향:</strong> 결핍을 한 번에 해소하지 않고
+                    <strong class="text-amber-300">시즌마다 새로운 국면으로 이어지는 단계 구조</strong>로 설계합니다.
+                    또 해소 이후를 위한 <strong class="text-amber-300">&lsquo;관계 유지&rsquo; 콘텐츠</strong>를 별도로 두어야
+                    서사 완결이 곧 캐릭터 은퇴가 되지 않습니다.
+                    캐릭터 확장 시에는 결핍 유형을 미리 분류해 <strong>중복을 관리하는 목록</strong>이 필요합니다.
+                </p>
+            </div>
+
+            <!-- 소재 표현 검토 -->
+            <div class="bg-white rounded-3xl border-2 border-slate-300 p-7 shadow-sm mb-8">
+                <p class="text-[10px] font-black tracking-wide text-slate-500 mb-4">함께 검토해야 할 것 &middot; 소재 표현</p>
+                <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                    번아웃 &middot; 학업 강박 &middot; 가문의 압박 &middot; 트라우마 극복은 서브컬처에서 널리 쓰이는 소재이지만,
+                    이 기획은 그것을 <strong class="text-slate-900">수치와 전투 메커닉으로 직접 다룹니다.</strong>
+                    &lsquo;스트레스 저항도&rsquo; 같은 수치화와 &lsquo;배드엔딩&rsquo;이라는 결과 표현은 문구에 따라 받아들여지는 방식이 크게 달라집니다.
+                </p>
+                <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
+                    <li>&bull; <strong class="text-slate-800">표현 수위:</strong> 배드엔딩이 구체적으로 무엇을 묘사하는지 사전에 정의하고, 자체 표현 가이드를 문서화합니다.</li>
+                    <li>&bull; <strong class="text-slate-800">등급 심의:</strong> 정신 건강 관련 묘사는 연령 등급 판정에 영향을 줄 수 있어 기획 단계에서 확인이 필요합니다.</li>
+                    <li>&bull; <strong class="text-slate-800">지역별 감수성:</strong> 글로벌 서비스를 전제한다면 같은 소재가 지역에 따라 다르게 받아들여질 수 있어, 현지화 검수 범위에 포함해야 합니다.</li>
+                </ul>
+            </div>
+
+            <!-- 검증 지표와 한계 -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-3xl border border-slate-200 p-7 shadow-sm">
+                    <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">가설을 검증할 지표</p>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                        1번의 가설은 <strong class="text-slate-700">&ldquo;결핍이 개입을 부르고 개입이 잔존을 높인다&rdquo;</strong>입니다. 이것은 측정 가능한 형태로 쪼갤 수 있습니다.
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                        <li>&bull; <strong class="text-slate-800">개입 발생률:</strong> 특수 대화 &middot; 격려 이벤트의 1인당 실행 횟수</li>
+                        <li>&bull; <strong class="text-slate-800">개입과 잔존의 상관:</strong> 개입 상위 그룹과 하위 그룹의 D30 잔존 차이 &mdash; 가설의 핵심 검증</li>
+                        <li>&bull; <strong class="text-slate-800">서사 완결 후 사용률:</strong> 결핍 해소 이후 해당 캐릭터의 편성률 변화 &mdash; 소진 여부 확인</li>
+                        <li>&bull; <strong class="text-slate-800">배드엔딩 발생률과 후속 이탈:</strong> 발생 유저의 익주 잔존 &mdash; 처벌로 작동하는지 확인</li>
+                        <li>&bull; <strong class="text-slate-800">캐릭터별 픽업 성과:</strong> 결핍 유형별 소환 전환율 비교</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-3xl border border-slate-200 p-7 shadow-sm">
+                    <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">이 기획안의 한계</p>
+                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                        <li>&bull; 시장 동향의 레이더 차트는 <strong class="text-slate-800">지향점을 표현한 개념도</strong>이며 경쟁 타이틀을 실측 비교한 값이 아닙니다.</li>
+                        <li>&bull; &lsquo;결핍 있는 캐릭터에 지불 용의가 높다&rsquo;는 전제는 <strong class="text-slate-800">장르 관찰에 기반한 가설</strong>입니다. 결제 데이터로 검증되지 않았습니다.</li>
+                        <li>&bull; 육성 파라미터의 등급(S &middot; E &middot; EX)은 <strong class="text-slate-800">방향만 표기</strong>했고 실제 수치 밸런싱은 하지 않았습니다.</li>
+                        <li>&bull; 프로젝트 C는 <strong class="text-slate-800">가칭이며 학원 배경 서브컬처를 전제</strong>했습니다. 세계관이 달라지면 결핍 유형과 에너미 설정을 다시 짜야 합니다.</li>
+                        <li>&bull; 캐릭터 2종과 에너미 3종은 <strong class="text-slate-800">샘플</strong>입니다. 라이브 서비스 규모의 확장 시 발생하는 패턴 중복은 검토 범위 밖입니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- [보강] 5. 표기 점검 -->
+        <section id="notation-review">
+            <div class="mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">5. 표기 점검 &mdash; 게이지와 등급이 서로 다른 말을 합니다</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    2번의 육성 파라미터는 <strong class="text-slate-900">항목 이름, 등급 표기, 막대 길이</strong> 세 가지로 값을 보여줍니다.
+                    셋을 같은 표에 놓으면 한 항목에서 방향이 어긋납니다.
+                </p>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-8">
+                <table class="w-full min-w-[560px] border-collapse text-sm bg-white">
+                    <thead>
+                        <tr class="bg-slate-800 text-white">
+                            <th class="p-3 text-left text-xs font-black">항목</th>
+                            <th class="p-3 text-center text-xs font-black">등급 표기</th>
+                            <th class="p-3 text-center text-xs font-black">막대 길이</th>
+                            <th class="p-3 text-center text-xs font-black">길이 순위</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr class=" border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">루나 · 호감도 비례 성장 가속</td>
+                                <td class="p-3 text-center font-black text-slate-600">무한 (EX)</td>
+                                <td class="p-3 text-center font-bold text-slate-700">100%</td>
+                                <td class="p-3 text-center text-xs font-bold text-slate-600">가장 높음</td>
+                            </tr>
+                            <tr class=" border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">클로에 · 지력 훈련 베이스</td>
+                                <td class="p-3 text-center font-black text-slate-600">최상 (S)</td>
+                                <td class="p-3 text-center font-bold text-slate-700">90%</td>
+                                <td class="p-3 text-center text-xs font-bold text-slate-600">두 번째</td>
+                            </tr>
+                            <tr class="bg-rose-50 border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">클로에 · 스트레스 저항도</td>
+                                <td class="p-3 text-center font-black text-rose-700">최저 (E)</td>
+                                <td class="p-3 text-center font-bold text-slate-700">85%</td>
+                                <td class="p-3 text-center text-xs font-bold text-rose-700">세 번째</td>
+                            </tr>
+                            <tr class="bg-slate-50 border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">루나 · 초기 훈련 효율</td>
+                                <td class="p-3 text-center font-black text-slate-600">최하 (C)</td>
+                                <td class="p-3 text-center font-bold text-slate-700">35%</td>
+                                <td class="p-3 text-center text-xs font-bold text-slate-600">가장 낮음</td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-rose-50 border-2 border-rose-300 rounded-3xl p-8 mb-8">
+                <p class="text-[10px] font-black tracking-wide text-rose-600 mb-5">최저가 최하보다 길게 그려져 있습니다</p>
+                <p class="text-slate-700 leading-relaxed mb-5">
+                    막대 길이로 줄을 세우면 <strong class="text-slate-900">최저 등급인 스트레스 저항도가 85%</strong>로 세 번째이고,
+                    <strong class="text-slate-900">최하 등급인 초기 훈련 효율이 35%</strong>로 가장 짧습니다.
+                    다른 세 항목은 등급이 높을수록 막대가 깁니다.
+                    <strong class="text-rose-700">스트레스 저항도 하나만 반대 방향</strong>으로 그려져 있습니다.
+                </p>
+                <p class="text-slate-700 leading-relaxed mb-5">
+                    의도는 짐작됩니다. 막대를 빨간색으로 칠했으니
+                    &lsquo;스트레스에 시달리는 정도가 85%&rsquo;를 표현하려던 것으로 보입니다.
+                    그런데 항목 이름이 <strong class="text-slate-900">저항도</strong>이고 등급이 <strong class="text-slate-900">최저</strong>이므로,
+                    읽는 사람은 <strong class="text-rose-700">낮은 값을 긴 막대로 본 셈</strong>이 됩니다.
+                </p>
+                <div class="bg-white rounded-2xl p-6 border border-rose-200">
+                    <p class="text-xs font-black text-rose-700 mb-3">이름을 바꾸는 것이 가장 간단합니다</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        <strong class="text-slate-800">스트레스 취약도</strong>로 바꾸고 등급을 <strong class="text-slate-800">최상</strong>으로 적으면
+                        막대 85%도 빨간색도 그대로 맞습니다. 수치를 새로 만들 필요가 없습니다.
+                        반대로 저항도라는 이름을 지키려면 막대를 15%로 줄여야 하는데,
+                        그러면 &lsquo;이 캐릭터의 위험이 크다&rsquo;는 인상이 약해집니다.
+                        <strong class="text-slate-800">부담을 나타내는 지표는 이름부터 부담 방향으로 적는 편</strong>이 오해를 만들지 않습니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white border-2 border-amber-300 rounded-3xl p-8 mb-8">
+                <p class="text-[10px] font-black tracking-wide text-amber-700 mb-5">등급 이름끼리도 맞지 않습니다</p>
+                <p class="text-slate-600 leading-relaxed mb-5">
+                    루나의 초기 훈련 효율은 <strong class="text-slate-900">최하 (C)</strong>이고
+                    클로에의 스트레스 저항도는 <strong class="text-slate-900">최저 (E)</strong>입니다.
+                    C를 최하라고 부르면 그보다 아래인 E가 존재할 수 없습니다.
+                    두 표기가 같은 등급 체계 위에 있지 않습니다.
+                </p>
+                <div class="bg-amber-50 rounded-2xl p-6 border border-amber-200">
+                    <p class="text-xs font-black text-amber-800 mb-3">등급 체계를 먼저 한 줄로 정의하면 됩니다</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        EX와 S부터 E까지 몇 단계인지, 각 단계가 어떤 뜻인지 문서 앞쪽에 적어두면
+                        이후 캐릭터를 추가할 때마다 표기가 흔들리지 않습니다.
+                        4번의 한계 항목이 <strong class="text-slate-800">등급은 방향만 표기했다</strong>고 밝혀두었으므로
+                        실제 수치가 미정인 것은 문제가 아닙니다.
+                        다만 <strong class="text-amber-800">단계의 개수와 이름</strong>은 수치와 별개로 지금 정할 수 있는 항목입니다.
+                        캐릭터가 수십 종으로 늘어난 뒤에 맞추려면 전부 다시 봐야 합니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-lg font-bold text-slate-900 mb-4">지향점 레이더가 포기한 것은 5점뿐입니다</h3>
+                <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-6">
+                    <table class="w-full min-w-[560px] border-collapse text-sm bg-white">
+                        <thead>
+                            <tr class="bg-slate-800 text-white">
+                                <th class="p-3 text-left text-xs font-black">축</th>
+                                <th class="p-3 text-center text-xs font-black">기존 게임</th>
+                                <th class="p-3 text-center text-xs font-black">지향점</th>
+                                <th class="p-3 text-center text-xs font-black">차이</th>
+                                <th class="p-3 text-center text-xs font-black">배수</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-rose-50 border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">비주얼 퀄리티</td>
+                                <td class="p-3 text-center text-slate-500">90</td>
+                                <td class="p-3 text-center font-bold text-slate-700">85</td>
+                                <td class="p-3 text-center font-black text-rose-700">-5</td>
+                                <td class="p-3 text-center text-xs text-rose-700">0.94배</td>
+                            </tr>
+                            <tr class=" border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">서사적 몰입도</td>
+                                <td class="p-3 text-center text-slate-500">60</td>
+                                <td class="p-3 text-center font-bold text-slate-700">95</td>
+                                <td class="p-3 text-center font-black text-slate-600">+35</td>
+                                <td class="p-3 text-center text-xs text-slate-600">1.58배</td>
+                            </tr>
+                            <tr class="bg-blue-50 border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">유저 개입도</td>
+                                <td class="p-3 text-center text-slate-500">40</td>
+                                <td class="p-3 text-center font-bold text-slate-700">100</td>
+                                <td class="p-3 text-center font-black text-blue-700">+60</td>
+                                <td class="p-3 text-center text-xs text-blue-700">2.50배</td>
+                            </tr>
+                            <tr class=" border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">리텐션 잠재력</td>
+                                <td class="p-3 text-center text-slate-500">70</td>
+                                <td class="p-3 text-center font-bold text-slate-700">90</td>
+                                <td class="p-3 text-center font-black text-slate-600">+20</td>
+                                <td class="p-3 text-center text-xs text-slate-600">1.29배</td>
+                            </tr>
+                            <tr class=" border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">BM 확장성</td>
+                                <td class="p-3 text-center text-slate-500">65</td>
+                                <td class="p-3 text-center font-bold text-slate-700">85</td>
+                                <td class="p-3 text-center font-black text-slate-600">+20</td>
+                                <td class="p-3 text-center text-xs text-slate-600">1.31배</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-5 mb-6">
+                    <div class="bg-white border-2 border-slate-300 rounded-2xl p-6 text-center">
+                        <p class="text-[11px] font-bold text-slate-500 mb-2">다섯 축 합계</p>
+                        <p class="text-3xl font-black text-slate-800 mb-1">+40%</p>
+                        <p class="text-xs text-slate-500">325에서 455</p>
+                    </div>
+                    <div class="bg-blue-50 border-2 border-blue-300 rounded-2xl p-6 text-center">
+                        <p class="text-[11px] font-bold text-blue-700 mb-2">올라간 축</p>
+                        <p class="text-3xl font-black text-blue-700 mb-1">4개</p>
+                        <p class="text-xs text-slate-500">내려간 축은 1개</p>
+                    </div>
+                    <div class="bg-rose-50 border-2 border-rose-300 rounded-2xl p-6 text-center">
+                        <p class="text-[11px] font-bold text-rose-700 mb-2">유일한 양보</p>
+                        <p class="text-3xl font-black text-rose-700 mb-1">-5점</p>
+                        <p class="text-xs text-slate-500">비주얼 퀄리티</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 rounded-3xl p-8 md:p-10 text-white mb-6">
+                    <p class="text-blue-300 font-black text-[10px] tracking-wide mb-5">모든 것을 더 잘하겠다는 그림은 전략으로 읽히지 않습니다</p>
+                    <p class="text-sm md:text-base leading-relaxed mb-5">
+                        다섯 축 중 넷이 올라가고 하나만 5점 내려갑니다.
+                        서브컬처 시장에서 <strong class="text-white">비주얼은 진입을 결정하는 축</strong>인데,
+                        5점 차이는 &lsquo;여기를 포기했다&rsquo;로 읽히기에 너무 작습니다.
+                        결과적으로 이 레이더는 <strong class="text-blue-300">어느 것도 양보하지 않은 지향점</strong>이 됩니다.
+                        자원이 유한한 조직에서 이런 그림은 우선순위를 정하지 않았다는 뜻으로 받아들여집니다.
+                    </p>
+                    <p class="text-sm md:text-base leading-relaxed">
+                        이 기획의 실제 주장은 분명합니다.
+                        <strong class="text-white">비주얼 경쟁 대신 서사와 개입으로 승부한다</strong>는 것입니다.
+                        그렇다면 비주얼을 <strong class="text-blue-300">경쟁작보다 확실히 낮게</strong> 두고
+                        서사와 개입에 그만큼 더 배분한 그림이 주장과 맞습니다.
+                        같은 자원으로 다섯 축을 모두 올릴 수 없다는 점을 그림이 스스로 말하게 하는 편이 설득에 유리합니다.
+                    </p>
+                </div>
+
+                <div class="bg-white border-2 border-blue-200 rounded-3xl p-7">
+                    <p class="text-[10px] font-black tracking-wide text-blue-600 mb-4">유저 개입도 100은 목표로 쓰기 어렵습니다</p>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        유저 개입도만 <strong class="text-slate-900">만점 100</strong>입니다. 기존 40의 2.5배로 상승 폭도 가장 큽니다.
+                        방향은 이 기획의 핵심과 정확히 맞습니다.
+                        다만 척도의 끝에 두면 <strong class="text-slate-900">더 올릴 여지가 없다는 뜻</strong>이라
+                        출시 후 개선 목표로 쓸 수 없습니다.
+                        90 정도로 두고 남은 10을 다음 단계로 남겨두면
+                        <strong class="text-blue-700">지향점이 아니라 로드맵</strong>이 됩니다.
+                        4번에서 정리한 결핍 서사의 단계 구조와도 이어집니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white border-2 border-slate-300 rounded-3xl p-8 mb-8">
+                <p class="text-[10px] font-black tracking-wide text-slate-500 mb-5">두 캐릭터가 역전되는 시점이 정해지지 않았습니다</p>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    클로에의 초기 훈련 베이스는 90%, 루나는 35%입니다.
+                    출발 시점의 격차가 <strong class="text-slate-900">2.57배</strong>입니다.
+                    그런데 루나는 호감도에 비례해 상한이 계속 열리므로 언젠가 클로에를 넘어섭니다.
+                    <strong class="text-slate-900">그 역전이 몇 주차에 일어나는지가 이 두 캐릭터의 밸런스 전부</strong>인데 문서에 없습니다.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-rose-50 rounded-2xl p-6 border border-rose-200">
+                        <p class="text-xs font-black text-rose-700 mb-2">역전이 너무 이르면</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            클로에를 키울 이유가 사라집니다. 초기 효율이 높다는 강점이
+                            <strong class="text-slate-800">짧게 쓰고 버리는 특성</strong>이 됩니다.
+                        </p>
+                    </div>
+                    <div class="bg-amber-50 rounded-2xl p-6 border border-amber-200">
+                        <p class="text-xs font-black text-amber-700 mb-2">역전이 너무 늦으면</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            루나를 키울 이유가 사라집니다. 무한 성장이 <strong class="text-slate-800">도달할 수 없는 약속</strong>이 되고,
+                            버려진 아이를 최강으로라는 서사가 성립하지 않습니다.
+                        </p>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    <strong class="text-slate-800">정할 것은 수치가 아니라 기간입니다.</strong>
+                    한 시즌 안에서 역전이 일어나게 할지, 여러 시즌에 걸치게 할지를 먼저 정하면
+                    성장 계수는 그 기간에 맞춰 역산됩니다.
+                    4번에서 무한 성장 대신 <strong class="text-slate-900">고유 역할</strong>을 주자고 한 보완을 택하면
+                    역전 자체가 없어지므로 이 문제도 함께 사라집니다.
+                    두 방향 중 하나를 고르는 것이 다음 단계입니다.
+                </p>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-200 rounded-3xl p-7">
+                <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">이 절의 한계</p>
+                <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                    <li>&bull; 막대 길이는 <strong class="text-slate-800">화면 표현용 값</strong>이며 실제 밸런스 수치가 아닙니다. 여기서 지적한 것은 수치의 옳고 그름이 아니라 <strong class="text-slate-800">세 가지 표기가 서로 다른 방향을 가리킨다</strong>는 점입니다.</li>
+                    <li>&bull; 레이더 차트는 문서가 밝힌 대로 <strong class="text-slate-800">지향점을 표현한 개념도</strong>입니다. 축별 점수를 실제 경쟁작 평가로 읽으면 안 됩니다. 위 계산도 개념도 안에서의 비교입니다.</li>
+                    <li>&bull; 역전 시점은 <strong class="text-slate-800">성장 계수가 정해져야 계산됩니다.</strong> 여기서는 계산하지 않고 정해야 할 항목으로만 남겼습니다.</li>
+                    <li>&bull; 다섯 축의 가중치가 <strong class="text-slate-800">모두 같다고 가정</strong>했습니다. 실제로는 축마다 사업 영향이 다르므로 합계 40%는 방향을 보는 값입니다.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 6. 정리 -->
         <section class="bg-slate-900 rounded-3xl p-10 text-white text-center">
             <h3 class="text-xl md:text-2xl font-bold mb-4 italic leading-relaxed">
                 "캐릭터에 대한 책임감이 결제 동기로 이어지는 구조를 설계했습니다."
@@ -279,7 +668,7 @@
     </main>
 
     <footer class="py-12 text-center text-slate-400 text-xs border-t border-slate-200">
-        <p>&copy; Project C Strategic Proposal · 허재석</p>
+        <p>&copy; 프로젝트 C 콘텐츠 전략 기획안 · 허재석</p>
     </footer>
 
     <!-- JavaScript -->

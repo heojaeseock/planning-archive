@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap');
         
         body { font-family: 'Pretendard', sans-serif; }
 
@@ -50,6 +49,7 @@
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td { text-wrap: pretty; }
     </style>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased leading-relaxed pb-20">
 
@@ -162,7 +162,7 @@
                     </div>
 
                     <div class="mt-10 bg-slate-900 text-white p-6 rounded-2xl text-center">
-                        <p class="text-xs text-slate-400 mb-2 uppercase tracking-widest">Estimated Value</p>
+                        <p class="text-xs text-slate-400 mb-2 tracking-wide">추정값</p>
                         <p class="text-sm text-slate-300 mb-1">총 필요 플레이 타임 : <span id="totalHoursOut" class="text-amber-400 font-bold">80</span> 시간</p>
                         <p class="text-4xl font-black text-white mt-4">₩ <span id="valuePerHourOut">7,500</span></p>
                         <p class="text-xs text-slate-400 mt-2">플레이 1시간의 현금 치환 가치</p>
@@ -181,10 +181,129 @@
             </div>
         </section>
 
+
+        <!-- [보강] 격차의 크기 -->
+        <section id="section-gap" class="space-y-8">
+            <div class="border-l-4 border-rose-500 pl-5">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">3. 두 숫자를 나눠보면 나오는 격차</h2>
+                <p class="text-slate-600 mt-3 text-lg">
+                    위 계산에서 플레이 1시간의 치환 가치는 <strong class="text-slate-900">7,500원</strong>이고,<br class="hidden md:block">
+                    비교 기준으로 둔 2026년 최저임금은 <strong class="text-slate-900">시간당 10,320원</strong>입니다.
+                    <strong class="text-rose-600">이 둘을 나눠야 격차가 보입니다.</strong>
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-5">
+                <div class="bg-white border-2 border-rose-300 rounded-2xl p-6 text-center">
+                    <p class="text-[10px] font-black tracking-wide text-rose-500 mb-2">시간 가치 비율</p>
+                    <p class="text-4xl font-black text-rose-600 mb-1">72.7%</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">플레이 1시간이 최저임금의 <strong>3분의 2 수준</strong>으로 평가됩니다.</p>
+                </div>
+                <div class="bg-white border-2 border-slate-300 rounded-2xl p-6 text-center">
+                    <p class="text-[10px] font-black tracking-wide text-slate-500 mb-2">80시간의 최저임금 환산</p>
+                    <p class="text-4xl font-black text-slate-800 mb-1">825,600<span class="text-lg">원</span></p>
+                    <p class="text-xs text-slate-600 leading-relaxed">패키지 가격 <strong>600,000원</strong>보다 크게 나옵니다.</p>
+                </div>
+                <div class="bg-slate-900 rounded-2xl p-6 text-center text-white">
+                    <p class="text-[10px] font-black tracking-wide text-amber-400 mb-2">차액</p>
+                    <p class="text-4xl font-black text-amber-300 mb-1">225,600<span class="text-lg">원</span></p>
+                    <p class="text-xs text-slate-300 leading-relaxed">같은 기준을 적용하면 <strong class="text-white">과금이 더 저렴합니다.</strong></p>
+                </div>
+            </div>
+
+            <div class="bg-rose-50 border-2 border-rose-300 rounded-2xl p-6 md:p-8">
+                <p class="text-[10px] font-black tracking-wide text-rose-500 mb-4">이 숫자가 의미하는 것</p>
+                <p class="text-sm md:text-base text-slate-700 leading-relaxed mb-4">
+                    최저임금을 시간의 기준값으로 두면, 80시간을 들여 목표에 도달하는 선택은
+                    <strong class="text-slate-900">825,600원어치의 시간을 써서 600,000원짜리 결과를 얻는 일</strong>이 됩니다.
+                    즉 이 구간에서는 <strong class="text-rose-700">계산할 수 있는 유저에게 과금이 합리적 선택</strong>이 됩니다.
+                </p>
+                <p class="text-sm md:text-base text-slate-700 leading-relaxed">
+                    문서가 문제로 삼은 &lsquo;무과금 유저의 시간 가치 하락&rsquo;은 정성적 인상이 아니라
+                    <strong class="text-slate-900">위 나눗셈으로 확인되는 수치</strong>입니다. 그리고 이 격차를 없애는 조건도 계산됩니다.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-5">
+                <div class="bg-white border border-slate-200 rounded-2xl p-6">
+                    <p class="text-[10px] font-black tracking-wide text-slate-400 mb-3">격차를 없애는 조건 &mdash; 가격 쪽</p>
+                    <p class="text-2xl font-black text-slate-900 mb-2">패키지 825,600원</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">현재 가격보다 <strong>37.6% 인상</strong>해야 시간과 비용의 가치가 같아집니다. 매출 관점에서 채택하기 어려운 방향입니다.</p>
+                </div>
+                <div class="bg-white border-2 border-emerald-300 rounded-2xl p-6">
+                    <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-3">격차를 없애는 조건 &mdash; 시간 쪽</p>
+                    <p class="text-2xl font-black text-slate-900 mb-2">소요 58.1시간</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">80시간에서 <strong class="text-emerald-700">27% 단축</strong>하면 됩니다. 약 7.3일이 손익분기점이며, <strong>기획으로 조정 가능한 쪽은 이쪽</strong>입니다.</p>
+                </div>
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8">
+                <h3 class="text-base font-bold text-slate-900 mb-2">파밍 기간별 시간 가치 민감도</h3>
+                <p class="text-sm text-slate-500 mb-5 leading-relaxed">
+                    일 8시간 &middot; 패키지 600,000원을 고정하고 목표 달성 일수만 바꾸면, 시간 가치가 급격히 변합니다.
+                    <strong class="text-slate-700">파밍 구간을 길게 잡을수록 무과금의 시간은 빠르게 싸집니다.</strong>
+                </p>
+                <div class="overflow-x-auto rounded-xl border-2 border-slate-200">
+                    <table class="w-full min-w-[560px] border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-slate-700 text-white">
+                                <th class="p-3 text-left text-xs font-black">목표 달성</th>
+                                <th class="p-3 text-center text-xs font-black">총 플레이</th>
+                                <th class="p-3 text-center text-xs font-black">1시간 가치</th>
+                                <th class="p-3 text-center text-xs font-black">최저임금 대비</th>
+                                <th class="p-3 text-center text-xs font-black">판정</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-emerald-50 border-b border-slate-200">
+                                <td class="p-3 font-black text-slate-800">5일</td>
+                                <td class="p-3 text-center font-bold text-slate-600">40시간</td>
+                                <td class="p-3 text-center font-black text-slate-900">15,000원</td>
+                                <td class="p-3 text-center font-black text-emerald-700">145.3%</td>
+                                <td class="p-3 text-center text-xs font-bold text-emerald-700">시간이 이득</td>
+                            </tr>
+                            <tr class="bg-emerald-50 border-b border-slate-200">
+                                <td class="p-3 font-black text-slate-800">7일</td>
+                                <td class="p-3 text-center font-bold text-slate-600">56시간</td>
+                                <td class="p-3 text-center font-black text-slate-900">10,714원</td>
+                                <td class="p-3 text-center font-black text-emerald-700">103.8%</td>
+                                <td class="p-3 text-center text-xs font-bold text-emerald-700">시간이 이득</td>
+                            </tr>
+                            <tr class="bg-amber-50 border-b border-slate-200">
+                                <td class="p-3 font-black text-slate-800">10일 <span class="text-[10px] font-black text-slate-900">(문서 기준값)</span></td>
+                                <td class="p-3 text-center font-bold text-slate-600">80시간</td>
+                                <td class="p-3 text-center font-black text-slate-900">7,500원</td>
+                                <td class="p-3 text-center font-black text-amber-700">72.7%</td>
+                                <td class="p-3 text-center text-xs font-bold text-amber-700">과금이 유리</td>
+                            </tr>
+                            <tr class="bg-rose-50 border-b border-slate-200">
+                                <td class="p-3 font-black text-slate-800">15일</td>
+                                <td class="p-3 text-center font-bold text-slate-600">120시간</td>
+                                <td class="p-3 text-center font-black text-slate-900">5,000원</td>
+                                <td class="p-3 text-center font-black text-rose-700">48.4%</td>
+                                <td class="p-3 text-center text-xs font-bold text-rose-700">시간 가치 급락</td>
+                            </tr>
+                            <tr class="bg-rose-50 border-b border-slate-200">
+                                <td class="p-3 font-black text-slate-800">20일</td>
+                                <td class="p-3 text-center font-bold text-slate-600">160시간</td>
+                                <td class="p-3 text-center font-black text-slate-900">3,750원</td>
+                                <td class="p-3 text-center font-black text-rose-700">36.3%</td>
+                                <td class="p-3 text-center text-xs font-bold text-rose-700">시간 가치 급락</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-xs text-slate-500 mt-4 leading-relaxed">
+                    <strong class="text-slate-700">기획 기준선:</strong> 7일(56시간) 부근에서 시간 가치가 최저임금과 교차합니다.
+                    성장 구간을 이 안쪽으로 설계하면 &lsquo;시간을 쓰는 선택&rsquo;이 손해가 되지 않습니다.
+                </p>
+            </div>
+        </section>
+
         <!-- Section 3: Insights -->
         <section id="section-insights" class="space-y-8">
             <div class="border-l-4 border-emerald-500 pl-5">
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">3. Project OQ 경제 설계 방안</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">4. Project OQ 경제 설계 방안</h2>
                 <p class="text-slate-600 mt-3 text-lg">
                     단순 파밍의 한계를 넘어 무과금 유저의 플레이 가치를<br class="hidden md:block">
                     그대로 보전하기 위한 두 가지 핵심 기제를 제안합니다.
@@ -213,10 +332,245 @@
             </div>
         </section>
 
-        <!-- Section 4: Sources -->
+
+        <!-- [보강] 제안의 대가와 한계 -->
+        <section id="section-review" class="space-y-8">
+            <div class="border-l-4 border-amber-500 pl-5">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">5. 두 제안이 요구하는 대가</h2>
+                <p class="text-slate-600 mt-3 text-lg">
+                    마일리지 천장과 거래소는 무과금의 시간 가치를 지키는 장치입니다.<br class="hidden md:block">
+                    다만 둘 다 <strong class="text-slate-900">매출 구조를 건드리므로</strong>, 대가를 명시하지 않으면 사업 협의에서 되돌아옵니다.
+                </p>
+            </div>
+
+            <div class="space-y-5">
+                <div class="bg-white border-2 border-amber-300 rounded-2xl p-6 md:p-8">
+                    <div class="flex flex-wrap items-center gap-3 mb-5">
+                        <span class="text-2xl">🛡️</span>
+                        <span class="font-black text-slate-900 text-lg">마일리지형 천장 시스템</span>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-5 mb-5">
+                        <div class="bg-emerald-50 rounded-xl p-5 border border-emerald-200">
+                            <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-2">얻는 것</p>
+                            <p class="text-sm text-slate-600 leading-relaxed">확률 실패로 인한 손실이 사라지므로 <strong class="text-slate-800">투입 시간이 반드시 결과로 환산</strong>됩니다. 위 계산에서 시간 가치의 하한이 보장됩니다.</p>
+                        </div>
+                        <div class="bg-rose-50 rounded-xl p-5 border border-rose-200">
+                            <p class="text-[10px] font-black tracking-wide text-rose-500 mb-2">대가</p>
+                            <p class="text-sm text-slate-600 leading-relaxed">천장은 <strong class="text-slate-800">최대 지출액을 확정</strong>합니다. 확률에 기대어 발생하던 상한 없는 결제가 사라져, 최상위 과금층의 매출 천장이 낮아집니다.</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed p-5 bg-slate-50 rounded-xl border border-slate-200">
+                        <strong class="text-slate-800">판단:</strong> 이 교환은 <strong>서비스 수명을 길게 볼 때만 이득</strong>입니다.
+                        천장 도달까지의 누적 지출을 목표 ARPPU 이상으로 설계하고, 천장 이후에는
+                        <strong class="text-slate-800">외형&middot;편의 등 별도 소비 축</strong>을 두어 지출이 멈추지 않게 해야 성립합니다.
+                    </p>
+                </div>
+
+                <div class="bg-white border-2 border-amber-300 rounded-2xl p-6 md:p-8">
+                    <div class="flex flex-wrap items-center gap-3 mb-5">
+                        <span class="text-2xl">🔄</span>
+                        <span class="font-black text-slate-900 text-lg">거래소 기반 재화 선순환</span>
+                    </div>
+                    <p class="text-sm md:text-base text-slate-700 leading-relaxed mb-5">
+                        제안의 핵심은 <strong>&ldquo;무과금의 노력이 유료 재화로 변환된다&rdquo;</strong>는 것입니다.
+                        이 문장을 재화 흐름으로 다시 쓰면, <strong class="text-slate-900">유료 재화의 무료 획득 경로를 신설한다</strong>는 뜻이 됩니다.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-4 mb-5">
+                        <div class="bg-rose-50 rounded-xl p-5 border border-rose-200">
+                            <p class="text-xs font-black text-rose-600 mb-2">매출 잠식</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">과금 유저가 재료를 거래소에서 사면 <strong class="text-slate-800">패키지를 살 이유가 줄어듭니다.</strong> 무과금은 보석을 벌게 되어 구매 필요가 감소합니다.</p>
+                        </div>
+                        <div class="bg-rose-50 rounded-xl p-5 border border-rose-200">
+                            <p class="text-xs font-black text-rose-600 mb-2">작업장 유입</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">시간이 재화로 확정 환산되면 <strong class="text-slate-800">자동 계정을 대량 운용할 기대 수익</strong>이 생깁니다. 거래 한도와 탐지가 함께 필요합니다.</p>
+                        </div>
+                        <div class="bg-rose-50 rounded-xl p-5 border border-rose-200">
+                            <p class="text-xs font-black text-rose-600 mb-2">시세 통제</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">공급이 늘면 재료 시세가 하락해 <strong class="text-slate-800">무과금의 시간 가치도 함께 떨어집니다.</strong> 제안의 목적과 반대 결과가 날 수 있습니다.</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed p-5 bg-slate-50 rounded-xl border border-slate-200">
+                        <strong class="text-slate-800">보완 방향:</strong> 거래 대상을 <strong>완성 장비가 아닌 중간 재료로 한정</strong>하고,
+                        일일 판매 한도와 수수료로 공급량을 통제합니다.
+                        또 거래소 시세를 상시 관측해 <strong class="text-slate-800">재료 가격이 목표 시간 가치(시간당 10,320원 선)를 밑돌면 획득량을 조정</strong>하는 운영 규칙이 함께 있어야
+                        &lsquo;시간 가치 보전&rsquo;이라는 목적이 유지됩니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 분석의 한계 -->
+            <div class="bg-slate-900 rounded-2xl p-6 md:p-8 text-white">
+                <p class="text-amber-400 font-black text-[10px] tracking-wide mb-5">이 분석의 한계</p>
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div class="bg-white/5 rounded-xl p-5 border border-white/10">
+                        <p class="text-sm font-bold text-amber-300 mb-2">최저임금 비교 자체의 한계</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            플레이 시간을 임금으로 환산하는 것은 <strong class="text-white">&lsquo;플레이가 그 자체로 즐겁지 않다&rsquo;는 가정</strong>을 깔고 있습니다.
+                            게임 플레이는 노동이 아니라 그 자체가 효용이므로, 이 비교는 절대 기준이 아니라
+                            <strong class="text-white">구간 간 비교를 위한 참조선</strong>으로만 유효합니다.
+                        </p>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-5 border border-white/10">
+                        <p class="text-sm font-bold text-amber-300 mb-2">입력값의 성격</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            10일 &middot; 8시간 &middot; 600,000원은 <strong class="text-white">시뮬레이션 전제값</strong>입니다.
+                            실제 소요 시간은 확률 분포에 따라 유저마다 크게 흩어지므로, 평균값 하나로 대표하면 편차가 가려집니다.
+                        </p>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-5 border border-white/10">
+                        <p class="text-sm font-bold text-amber-300 mb-2">매출 영향의 규모</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            천장과 거래소가 매출에 미치는 영향은 <strong class="text-white">방향만 제시했습니다.</strong>
+                            규모는 결제 분포 데이터 없이 추정할 수 없습니다.
+                        </p>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-5 border border-white/10">
+                        <p class="text-sm font-bold text-amber-300 mb-2">적용 범위</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            분석은 <strong class="text-white">1차 승급 구간 한 곳</strong>을 기준으로 했습니다.
+                            후반 구간은 요구 재화와 확률이 달라 같은 비율이 그대로 성립하지 않습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- [보강] 시뮬레이터 판정 기준 -->
+        <section id="section-threshold" class="space-y-8">
+            <div class="border-l-4 border-amber-500 pl-5">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">6. 시뮬레이터와 본문이 같은 값을 반대로 판정합니다</h2>
+                <p class="text-slate-600 mt-3 text-lg">
+                    2번의 시뮬레이터는 계산 결과에 따라 위험, 주의, 안정 세 가지 판정을 띄웁니다.<br class="hidden md:block">
+                    그 판정 경계를 3번의 기준선과 나란히 놓으면 <strong class="text-amber-600">두 곳이 서로 다른 잣대를 쓰고 있습니다.</strong>
+                </p>
+            </div>
+
+            <div class="bg-rose-50 border-2 border-rose-300 rounded-2xl p-6 md:p-8">
+                <p class="text-[10px] font-black tracking-wide text-rose-500 mb-5">기본값 하나로 두 판정이 갈립니다</p>
+                <div class="grid md:grid-cols-3 gap-5 mb-6">
+                    <div class="bg-white rounded-2xl p-6 text-center border border-slate-200">
+                        <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">문서를 열었을 때의 값</p>
+                        <p class="text-3xl font-black text-slate-900 mb-1">7,500원</p>
+                        <p class="text-xs text-slate-500">10일 · 8시간 · 60만원</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 text-center border-2 border-emerald-300">
+                        <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-2">시뮬레이터 판정</p>
+                        <p class="text-3xl font-black text-emerald-700 mb-1">안정</p>
+                        <p class="text-xs text-slate-500">건강한 구간이라고 표시됩니다</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 text-center border-2 border-rose-300">
+                        <p class="text-[10px] font-black tracking-wide text-rose-500 mb-2">3번과 민감도 표의 판정</p>
+                        <p class="text-3xl font-black text-rose-700 mb-1">과금이 유리</p>
+                        <p class="text-xs text-slate-500">최저임금의 72.7%</p>
+                    </div>
+                </div>
+                <p class="text-sm md:text-base text-slate-700 leading-relaxed">
+                    같은 7,500원입니다.
+                    시뮬레이터는 <strong class="text-slate-900">무과금 유저가 시간을 자본으로 바꿀 동기가 충분하다</strong>고 말하고,
+                    바로 아래 3번은 <strong class="text-slate-900">같은 구간에서 과금이 합리적 선택이 된다</strong>고 말합니다.
+                    문서를 처음 열면 초록색 안정 판정이 먼저 보이므로,
+                    <strong class="text-rose-700">문제 제기 문서인데 첫 화면이 문제가 없다고 알립니다.</strong>
+                </p>
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8">
+                <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">판정 경계를 최저임금 기준으로 환산하면</p>
+                <div class="overflow-x-auto rounded-xl border-2 border-slate-200 mb-5">
+                    <table class="w-full min-w-[640px] border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-slate-700 text-white">
+                                <th class="p-3 text-left text-xs font-black">판정</th>
+                                <th class="p-3 text-center text-xs font-black">현재 경계</th>
+                                <th class="p-3 text-center text-xs font-black">최저임금 대비</th>
+                                <th class="p-3 text-center text-xs font-black">표 기준에 맞춘 경계</th>
+                                <th class="p-3 text-center text-xs font-black">해당 금액</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-rose-50 border-b border-slate-200">
+                                <td class="p-3 font-black text-rose-700">위험</td>
+                                <td class="p-3 text-center font-bold text-slate-700">3,000원 미만</td>
+                                <td class="p-3 text-center text-slate-500">29.1% 미만</td>
+                                <td class="p-3 text-center font-bold text-slate-700">50% 미만</td>
+                                <td class="p-3 text-center text-slate-500">5,160원 미만</td>
+                            </tr>
+                            <tr class="bg-amber-50 border-b border-slate-200">
+                                <td class="p-3 font-black text-amber-700">주의</td>
+                                <td class="p-3 text-center font-bold text-slate-700">3,000~6,000원</td>
+                                <td class="p-3 text-center text-slate-500">29.1~58.1%</td>
+                                <td class="p-3 text-center font-bold text-slate-700">50~100%</td>
+                                <td class="p-3 text-center text-slate-500">5,160~10,320원</td>
+                            </tr>
+                            <tr class="bg-emerald-50 border-b border-slate-200">
+                                <td class="p-3 font-black text-emerald-700">안정</td>
+                                <td class="p-3 text-center font-bold text-slate-700">6,000원 이상</td>
+                                <td class="p-3 text-center text-slate-500">58.1% 이상</td>
+                                <td class="p-3 text-center font-bold text-slate-700">100% 이상</td>
+                                <td class="p-3 text-center text-slate-500">10,320원 이상</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                    현재 안정 판정의 경계인 6,000원은 최저임금의 <strong class="text-slate-900">58.1%</strong>입니다.
+                    최저임금을 비교 기준으로 세운 문서가 <strong class="text-slate-900">그 기준의 58%를 건강하다고 선언</strong>하고 있는 셈입니다.
+                    민감도 표는 103.8%를 &lsquo;시간이 이득&rsquo;, 72.7%를 &lsquo;과금이 유리&rsquo;, 48.4%를 &lsquo;급락&rsquo;으로 나눴습니다.
+                    표의 경계는 100%와 50% 부근인데, 시뮬레이터의 경계는 58%와 29%입니다.
+                </p>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    <strong class="text-slate-800">고칠 쪽은 임계값입니다.</strong>
+                    기본값 10일 · 8시간 · 60만원은 3번의 계산과 민감도 표가 모두 기준으로 삼는 값이므로 바꾸면 다른 서술이 어긋납니다.
+                    반면 임계값을 10,320원과 5,160원으로 옮기면
+                    기본값 7,500원이 <strong class="text-slate-900">주의 구간</strong>에 들어가 표의 &lsquo;과금이 유리&rsquo;와 같은 판정이 됩니다.
+                    <strong class="text-slate-800">비교 기준을 하나 세웠으면 판정 경계도 그 기준에서 끌어내야</strong> 문서 전체가 한 잣대로 읽힙니다.
+                </p>
+            </div>
+
+            <div class="bg-slate-900 rounded-2xl p-6 md:p-8 text-white">
+                <p class="text-amber-400 font-black text-[10px] tracking-wide mb-5">슬라이더가 만들 수 있는 값의 분포</p>
+                <p class="text-sm text-slate-300 leading-relaxed mb-6">
+                    세 슬라이더의 범위는 일수 7일에서 60일, 일일 시간 2시간에서 14시간, 비용 5만원에서 150만원입니다.
+                    조합은 모두 <strong class="text-white">102,492가지</strong>이고, 시간 가치는 최소 60원부터 최대 107,142원까지 나옵니다.
+                    그 중 각 판정에 해당하는 비율을 세어봤습니다.
+                </p>
+                <div class="grid md:grid-cols-3 gap-5 mb-6">
+                    <div class="bg-white/5 rounded-xl p-5 border border-white/10 text-center">
+                        <p class="text-[10px] font-black text-emerald-400 mb-2">현재 기준 안정</p>
+                        <p class="text-3xl font-black text-white mb-1">27.5%</p>
+                        <p class="text-[11px] text-slate-400">6,000원 이상인 조합</p>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-5 border border-white/10 text-center">
+                        <p class="text-[10px] font-black text-amber-400 mb-2">현재 기준 주의</p>
+                        <p class="text-3xl font-black text-white mb-1">23.9%</p>
+                        <p class="text-[11px] text-slate-400">3,000원에서 6,000원 사이</p>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-5 border border-white/10 text-center">
+                        <p class="text-[10px] font-black text-blue-300 mb-2">최저임금 이상</p>
+                        <p class="text-3xl font-black text-white mb-1">13.8%</p>
+                        <p class="text-[11px] text-slate-400">10,320원 이상인 조합</p>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-300 leading-relaxed mb-5">
+                    현재 임계값에서는 조합 넷 중 하나 이상이 안정으로 판정됩니다.
+                    최저임금을 넘는 조합은 <strong class="text-white">13.8%</strong>뿐이므로,
+                    임계값을 최저임금으로 옮기면 안정 판정이 절반 아래로 줄어듭니다.
+                    <strong class="text-amber-400">시뮬레이터를 어떻게 움직여도 대부분 구간이 최저임금에 미치지 못한다</strong>는 것이
+                    이 문서가 보이려던 사실에 더 가깝습니다.
+                </p>
+                <p class="text-xs text-slate-400 leading-relaxed pt-5 border-t border-white/10">
+                    이 비율은 슬라이더 조합을 모두 같은 확률로 셈한 값입니다.
+                    실제 유저의 플레이 일수와 시간 분포는 균등하지 않으므로,
+                    <strong class="text-slate-300">실제로 어느 구간에 유저가 몰려 있는지는 이 계산으로 알 수 없습니다.</strong>
+                    조합의 분포가 아니라 <strong class="text-slate-300">판정 경계가 기준과 어긋나 있다는 점</strong>이 이 절의 지적입니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- 참조 자료 -->
         <section id="section-sources">
             <div class="bg-slate-100 p-8 rounded-2xl border border-slate-200">
-                <h3 class="text-sm font-extrabold text-slate-500 uppercase tracking-widest mb-4">데이터 참조 및 지표 근거</h3>
+                <h3 class="text-sm font-extrabold text-slate-500 tracking-wide mb-4">데이터 참조 및 지표 근거</h3>
                 <ul class="text-xs md:text-sm text-slate-500 space-y-3 leading-snug">
                     <li class="flex items-start gap-2"><span>•</span> <span><strong>게임 데이터 :</strong> 바람의나라: 연 커뮤니티 내 아이템 획득 및 강화 확률 기반 시뮬레이션 결과 반영</span></li>
                     <li class="flex items-start gap-2"><span>•</span> <span><strong>경제 지표 :</strong> 2026년 고용노동부 고시 최저임금 (시간당 10,320원) 비교 데이터 활용</span></li>
@@ -263,7 +617,7 @@
                 data: {
                     labels: ['현재 플레이 가치', '2026 최저시급'],
                     datasets: [{
-                        label: '원화 가치 (KRW)',
+                        label: '원화 가치',
                         data: [0, MINIMUM_WAGE_2026],
                         backgroundColor: ['rgba(245, 158, 11, 0.85)', 'rgba(148, 163, 184, 0.4)'],
                         borderColor: ['rgba(245, 158, 11, 1)', 'rgba(148, 163, 184, 1)'],

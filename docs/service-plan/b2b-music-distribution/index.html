@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     
     <style>
-        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
         
         body {
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
@@ -94,7 +94,7 @@
     <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-6 h-16 flex justify-center md:justify-start items-center">
             <div class="font-black text-xl tracking-tight text-slate-800">
-                <span class="text-indigo-600">MUSIC PLATFORM</span> PROPOSAL
+                <span class="text-indigo-600">음원 플랫폼</span> 사업 제안
             </div>
         </div>
     </nav>
@@ -128,7 +128,7 @@
         <section id="sec-intro">
             <h2 class="text-2xl font-black text-slate-800 mb-6 flex items-center gap-2">
                 <span class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center text-sm shadow-sm">1</span> 
-                풀어야 할 과제 (Problem)
+                풀어야 할 과제
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="bento-card p-8 bg-gradient-to-br from-white to-slate-50">
@@ -162,7 +162,7 @@
             <div class="bento-card p-8">
                 <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
                     <div class="lg:col-span-2">
-                        <div class="inline-block px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold mb-3 shadow-sm">내 경험 (Game Ops)</div>
+                        <div class="inline-block px-3 py-1 bg-slate-100 text-slate-600 rounded-md text-xs font-bold mb-3 shadow-sm">내 경험</div>
                         <h3 class="text-2xl font-black leading-tight mb-2">복잡한 결제 로그<br>처리 시간 대폭 단축</h3>
                         <p class="text-slate-500 text-sm mb-4 leading-relaxed">
                             이기종 로우 데이터를 엑셀 복합 함수로 표준화하여<br class="hidden lg:block"> 휴먼 에러를 크게 줄였습니다.
@@ -172,7 +172,7 @@
                     <div class="hidden lg:flex justify-center text-3xl text-indigo-200">➡️</div>
                     
                     <div class="lg:col-span-2 bg-indigo-50 rounded-xl p-6 border border-indigo-100">
-                        <div class="inline-block px-3 py-1 bg-indigo-600 text-white rounded-md text-xs font-bold mb-3 shadow-sm">적용 (Music B2B)</div>
+                        <div class="inline-block px-3 py-1 bg-indigo-600 text-white rounded-md text-xs font-bold mb-3 shadow-sm">적용</div>
                         <h3 class="text-xl font-black leading-tight mb-3 text-indigo-900">크로스보더 정산 파이프라인</h3>
                         <ul class="text-sm text-indigo-800 space-y-2 font-medium">
                             <li>✔️ Spotify, YouTube, 멜론 등 양식 <b>마스터 통합</b></li>
@@ -183,11 +183,11 @@
                 </div>
 
                 <div class="mt-10 pt-8 border-t border-slate-100">
-                    <h4 class="text-sm font-bold text-slate-400 text-center mb-4 uppercase tracking-widest">월말 정산 리소스 절감 효과</h4>
+                    <h4 class="text-sm font-bold text-slate-400 text-center mb-4 tracking-wide">월말 정산 리소스 절감 효과</h4>
                     <div class="chart-container" style="height: 120px;">
                         <canvas id="timeChart"></canvas>
                     </div>
-                    <p class="text-[11px] text-slate-400 text-right mt-3">* 출처: 과거 담당 라이브 게임 프로젝트 수작업 대비 함수 기반 템플릿 도입 전후 실측 데이터 (2024)</p>
+                    <p class="text-[11px] text-slate-400 text-right mt-3">* 출처: 담당 중인 라이브 게임 프로젝트에서 수작업을 함수 기반 템플릿으로 바꿔 본 경험을 대입한 추정치</p>
                 </div>
             </div>
         </section>
@@ -283,7 +283,7 @@
                     <div onclick="showWorkflowDetail(4)" class="cursor-pointer group bg-slate-50 hover:bg-indigo-50 rounded-xl p-5 border border-slate-200 hover:border-indigo-300 text-center relative transition-all shadow-sm hover:shadow-md">
                         <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md click-indicator whitespace-nowrap hidden md:block">👆 클릭</div>
                         <div class="text-3xl mb-3 group-hover:scale-110 transition-transform mt-2">🛡️</div>
-                        <h4 class="font-black text-slate-800 group-hover:text-indigo-900 text-sm mb-2">4. 조치 및 록인</h4>
+                        <h4 class="font-black text-slate-800 group-hover:text-indigo-900 text-sm mb-2">4. 조치 및 락인</h4>
                         <p class="text-xs text-slate-500">테이크다운 완료 및<br>파트너사 결과 리포팅</p>
                     </div>
                 </div>
@@ -297,6 +297,397 @@
                     </div>
                 </div>
 
+            </div>
+        </section>
+
+
+        <section id="sec-review">
+            <div class="mb-10">
+                <h2 class="text-3xl font-black text-slate-900 mb-3">곡선을 두 종류의 효과로 나누면</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    관제 개입 곡선을 시점별로 비교하면
+                    <strong class="text-slate-900">관제만으로 얻는 부분과 사전 영업으로 얻는 부분</strong>이 갈립니다.
+                    이 구분이 성과 주장의 정확도를 결정합니다.
+                </p>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-10">
+                <table class="w-full min-w-[600px] border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-slate-800 text-white">
+                            <th class="p-3 text-left text-xs font-black">시점</th>
+                            <th class="p-3 text-center text-xs font-black">미관제</th>
+                            <th class="p-3 text-center text-xs font-black">개입</th>
+                            <th class="p-3 text-center text-xs font-black">차이</th>
+                            <th class="p-3 text-center text-xs font-black">비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr class=" border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">발매 0h</td>
+                                <td class="p-3 text-center font-bold text-slate-500">100</td>
+                                <td class="p-3 text-center font-black text-slate-600">100</td>
+                                <td class="p-3 text-center font-bold text-slate-600">+0</td>
+                                <td class="p-3 text-center text-xs font-bold text-slate-600">&mdash;</td>
+                            </tr>
+                            <tr class="bg-indigo-50 border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">8h</td>
+                                <td class="p-3 text-center font-bold text-slate-500">70</td>
+                                <td class="p-3 text-center font-black text-indigo-700">105</td>
+                                <td class="p-3 text-center font-bold text-slate-600">+35</td>
+                                <td class="p-3 text-center text-xs font-bold text-indigo-700">발매 시점 초과</td>
+                            </tr>
+                            <tr class=" border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">16h</td>
+                                <td class="p-3 text-center font-bold text-slate-500">45</td>
+                                <td class="p-3 text-center font-black text-slate-600">90</td>
+                                <td class="p-3 text-center font-bold text-slate-600">+45</td>
+                                <td class="p-3 text-center text-xs font-bold text-slate-600">&mdash;</td>
+                            </tr>
+                            <tr class="bg-indigo-50 border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">24h</td>
+                                <td class="p-3 text-center font-bold text-slate-500">30</td>
+                                <td class="p-3 text-center font-black text-indigo-700">115</td>
+                                <td class="p-3 text-center font-bold text-slate-600">+85</td>
+                                <td class="p-3 text-center text-xs font-bold text-indigo-700">발매 시점 초과</td>
+                            </tr>
+                            <tr class="bg-emerald-50 border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">32h</td>
+                                <td class="p-3 text-center font-bold text-slate-500">20</td>
+                                <td class="p-3 text-center font-black text-emerald-700">100</td>
+                                <td class="p-3 text-center font-bold text-slate-600">+80</td>
+                                <td class="p-3 text-center text-xs font-bold text-emerald-700">&mdash;</td>
+                            </tr>
+                            <tr class="bg-emerald-50 border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">40h</td>
+                                <td class="p-3 text-center font-bold text-slate-500">15</td>
+                                <td class="p-3 text-center font-black text-emerald-700">85</td>
+                                <td class="p-3 text-center font-bold text-slate-600">+70</td>
+                                <td class="p-3 text-center text-xs font-bold text-emerald-700">&mdash;</td>
+                            </tr>
+                            <tr class="bg-emerald-50 border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">48h</td>
+                                <td class="p-3 text-center font-bold text-slate-500">10</td>
+                                <td class="p-3 text-center font-black text-emerald-700">75</td>
+                                <td class="p-3 text-center font-bold text-slate-600">+65</td>
+                                <td class="p-3 text-center text-xs font-bold text-emerald-700">&mdash;</td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-5 mb-10">
+                <div class="bg-white border-2 border-slate-300 rounded-2xl p-6 text-center">
+                    <p class="text-xs font-bold text-slate-500 mb-2">48시간 시점 비교</p>
+                    <p class="text-4xl font-black text-slate-800 mb-1">7.5배</p>
+                    <p class="text-xs text-slate-600">75 대 10</p>
+                </div>
+                <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-6 text-center">
+                    <p class="text-xs font-bold text-emerald-700 mb-2">누적 트래픽 비교</p>
+                    <p class="text-4xl font-black text-emerald-700 mb-1">2.31배</p>
+                    <p class="text-xs text-slate-600">합계 670 대 290</p>
+                </div>
+                <div class="bg-slate-900 rounded-2xl p-6 text-center text-white">
+                    <p class="text-xs font-bold text-indigo-300 mb-2">감소율 차이</p>
+                    <p class="text-4xl font-black text-indigo-300 mb-1">90 대 25</p>
+                    <p class="text-xs text-slate-400">48시간 동안의 하락폭</p>
+                </div>
+            </div>
+
+            <div class="bg-white border-2 border-indigo-300 rounded-2xl p-8 mb-10">
+                <p class="text-sm font-black text-indigo-700 mb-5">개입 곡선이 발매 시점을 넘는 구간이 있습니다</p>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    8시간에 105, 24시간에 115로 <strong class="text-slate-900">발매 시점 100을 넘습니다.</strong>
+                    누락을 복구하는 것만으로는 원래 받을 수준인 100을 회복하는 데 그치므로,
+                    100을 넘는 부분은 <strong class="text-indigo-700">없던 노출을 새로 확보한 결과</strong>입니다.
+                    두 효과는 필요한 역량이 다릅니다.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-emerald-50 rounded-2xl p-6 border-2 border-emerald-200">
+                        <p class="text-xs font-bold text-emerald-700 mb-2">관제로 얻는 부분</p>
+                        <p class="text-sm font-bold text-slate-900 mb-3">누락 복구 · 100 유지</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            가사 누락, 크레딧 오류, 사전 피칭된 배너의 미노출을 <strong class="text-slate-800">발견해서 되돌리는 것</strong>입니다.
+                            전수 검사와 핫라인으로 처리되므로 <strong class="text-slate-800">관제 체계만으로 달성 가능</strong>합니다.
+                        </p>
+                    </div>
+                    <div class="bg-indigo-50 rounded-2xl p-6 border-2 border-indigo-300">
+                        <p class="text-xs font-bold text-indigo-700 mb-2">영업으로 얻는 부분</p>
+                        <p class="text-sm font-bold text-slate-900 mb-3">추가 확보 · 100 초과</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            초기 반응이 좋을 때 <strong class="text-slate-800">플랫폼에 추가 노출을 요청해 따내는 것</strong>입니다.
+                            관제가 근거 데이터를 만들어 주지만, 실제 확보는 <strong class="text-slate-800">담당자와의 관계와 협상</strong>에 달려 있습니다.
+                        </p>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    <strong class="text-slate-800">보고할 때의 정확한 서술:</strong>
+                    관제 체계가 보장하는 것은 <strong class="text-slate-900">하락 방어</strong>이고,
+                    100을 넘는 부분은 <strong class="text-slate-900">관제가 만든 근거로 협상이 성공했을 때</strong>의 결과입니다.
+                    두 효과를 합쳐 관제의 성과로 제시하면, 관제 체계만 도입한 조직에서 재현되지 않아 신뢰를 잃습니다.
+                    분리해 적으면 <strong class="text-slate-900">관제는 확실한 하한을, 영업은 상방을</strong> 담당한다는 구조가 됩니다.
+                </p>
+            </div>
+
+            <div class="bg-white border-2 border-amber-300 rounded-2xl p-8 mb-10">
+                <p class="text-sm font-black text-amber-700 mb-5">두 성과 지표 중 어느 것을 쓸지 정해야 합니다</p>
+                <p class="text-slate-600 leading-relaxed mb-5">
+                    같은 곡선에서 <strong class="text-slate-900">48시간 시점 비교는 7.5배</strong>, <strong class="text-slate-900">누적 비교는 2.31배</strong>가 나옵니다.
+                    두 값 모두 사실이지만 뜻하는 것이 다릅니다.
+                </p>
+                <div class="grid md:grid-cols-2 gap-5 mb-5">
+                    <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                        <p class="text-xs font-bold text-slate-700 mb-2">시점 비교 7.5배</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">48시간이 지난 뒤의 <strong class="text-slate-800">잔존 노출 수준</strong> 차이입니다. 이후 장기 성과와 연결되지만 초기 총량은 반영하지 않습니다.</p>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                        <p class="text-xs font-bold text-slate-700 mb-2">누적 비교 2.31배</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">48시간 동안 <strong class="text-slate-800">실제로 발생한 재생 총량</strong>에 가깝습니다. 정산 수익과 직결되는 값입니다.</p>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    <strong class="text-slate-800">권고:</strong> 정산 수익을 근거로 제시할 때는 <strong class="text-slate-900">누적 2.31배</strong>를 쓰고,
+                    시점 값은 <strong class="text-slate-900">차트로 보여주되 배수로 강조하지 않는</strong> 편이 안전합니다.
+                    7.5배는 극적이지만 미관제 값이 10까지 떨어진 결과라, 분모가 작아 생긴 배수입니다.
+                    분모가 작을 때의 배수는 되묻기 쉬운 지점입니다.
+                </p>
+            </div>
+
+            <div class="bg-white border-2 border-rose-300 rounded-2xl p-8 mb-10">
+                <p class="text-sm font-black text-rose-700 mb-5">규모가 맞지 않는 부분이 있습니다</p>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    문제 정의에서 <strong class="text-slate-900">하루 수만 곡이 새로 등록된다</strong>고 했고,
+                    해결책 2는 <strong class="text-slate-900">곡당 48시간 관제</strong>입니다.
+                    20개 플랫폼을 48시간 동안 확인하는 작업을 모든 신곡에 적용할 수는 없습니다.
+                </p>
+                <div class="bg-rose-50 rounded-2xl p-6 border border-rose-200 mb-6">
+                    <p class="text-xs font-bold text-rose-800 mb-3">계산해 보면</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        발매는 대개 자정 기준으로 이뤄지므로 48시간 관제는 <strong class="text-slate-800">심야를 두 번 포함</strong>합니다.
+                        곡당 관제에 인력이 붙는 구조라면 동시에 다룰 수 있는 곡 수가 곧 팀 규모로 제한됩니다.
+                        따라서 이 전략은 전체 유통 물량이 아니라 <strong class="text-slate-800">선별된 곡에만 적용</strong>되는 것이 전제입니다.
+                    </p>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                    <strong class="text-slate-800">보완 방향:</strong> 선별 기준을 명시하면 제안이 실행 가능해집니다.
+                </p>
+                <ul class="space-y-2 text-sm text-slate-600 leading-relaxed">
+                    <li>&bull; <strong class="text-slate-800">전수 대상</strong> &mdash; 메타데이터 자동 검사는 규칙 기반이라 모든 곡에 적용할 수 있습니다. 가사와 크레딧 노출 여부는 스크립트로 확인 가능합니다</li>
+                    <li>&bull; <strong class="text-slate-800">선별 대상</strong> &mdash; 사람이 붙는 실시간 관제는 <strong>사전 피칭이 성사된 곡</strong>과 <strong>계약상 프로모션이 걸린 곡</strong>으로 한정합니다. 지킬 것이 있는 곡에만 관제 가치가 있습니다</li>
+                    <li>&bull; <strong class="text-slate-800">경보 기반</strong> &mdash; 나머지 곡은 자동 검사에서 이상이 잡힐 때만 사람이 개입합니다. 상시 관제가 아니라 예외 대응입니다</li>
+                </ul>
+            </div>
+
+            <div class="bg-white border-2 border-slate-200 rounded-2xl p-8 mb-10">
+                <p class="text-sm font-black text-slate-800 mb-4">정산 파이프라인의 유지 비용</p>
+                <p class="text-slate-600 leading-relaxed">
+                    20개 플랫폼 양식을 마스터로 통합하면 검수 시간이 <strong class="text-slate-900">120에서 30으로 75% 줄어듭니다.</strong>
+                    다만 통합 매핑은 <strong class="text-slate-900">각 플랫폼의 양식이 고정되어 있을 때만</strong> 유효합니다.
+                    플랫폼이 정산서 항목이나 요율 구조를 바꾸면 그 매핑이 조용히 깨지고,
+                    <strong class="text-slate-900">틀린 값이 오류 없이 계산됩니다.</strong>
+                    양식 변경을 감지하는 검증을 함께 두어야 합니다.
+                    가장 단순한 방법은 <strong class="text-slate-900">항목 수와 열 이름을 매달 대조</strong>해 달라지면 경고를 띄우는 것입니다.
+                    자동화가 만드는 위험은 실패가 아니라 <strong class="text-slate-900">조용한 성공</strong>입니다.
+                </p>
+            </div>
+
+
+            <div class="bg-white border-2 border-indigo-300 rounded-2xl p-8 mb-10">
+                <p class="text-sm font-black text-indigo-700 mb-5">곡선에 남은 개입 흔적은 두 번뿐입니다</p>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    개입 곡선이 <strong class="text-slate-900">올라가는 구간</strong>이 개입이 들어간 지점입니다.
+                    구간별로 나눠보면 여섯 구간 중 두 곳만 상승하고 네 곳은 하락합니다.
+                </p>
+
+                <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-6">
+                    <table class="w-full min-w-[720px] border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-slate-800 text-white">
+                                <th class="p-3 text-left text-xs font-black">구간</th>
+                                <th class="p-3 text-center text-xs font-black">미관제 변화</th>
+                                <th class="p-3 text-center text-xs font-black">미관제 변화율</th>
+                                <th class="p-3 text-center text-xs font-black">개입 변화</th>
+                                <th class="p-3 text-center text-xs font-black">개입 변화율</th>
+                                <th class="p-3 text-center text-xs font-black">구분</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-indigo-50 border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">0h → 8h</td>
+                                <td class="p-3 text-center font-bold text-slate-500">-30</td>
+                                <td class="p-3 text-center text-slate-500 text-xs">-30.0%</td>
+                                <td class="p-3 text-center font-bold text-slate-700">+5</td>
+                                <td class="p-3 text-center font-black text-slate-800 text-xs">+5.0%</td>
+                                <td class="p-3 text-center text-xs font-bold text-indigo-700">개입</td>
+                            </tr>
+                            <tr class=" border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">8h → 16h</td>
+                                <td class="p-3 text-center font-bold text-slate-500">-25</td>
+                                <td class="p-3 text-center text-slate-500 text-xs">-35.7%</td>
+                                <td class="p-3 text-center font-bold text-slate-700">-15</td>
+                                <td class="p-3 text-center font-black text-slate-800 text-xs">-14.3%</td>
+                                <td class="p-3 text-center text-xs font-bold text-slate-500">자연 하락</td>
+                            </tr>
+                            <tr class="bg-indigo-50 border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">16h → 24h</td>
+                                <td class="p-3 text-center font-bold text-slate-500">-15</td>
+                                <td class="p-3 text-center text-slate-500 text-xs">-33.3%</td>
+                                <td class="p-3 text-center font-bold text-slate-700">+25</td>
+                                <td class="p-3 text-center font-black text-slate-800 text-xs">+27.8%</td>
+                                <td class="p-3 text-center text-xs font-bold text-indigo-700">개입</td>
+                            </tr>
+                            <tr class=" border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">24h → 32h</td>
+                                <td class="p-3 text-center font-bold text-slate-500">-10</td>
+                                <td class="p-3 text-center text-slate-500 text-xs">-33.3%</td>
+                                <td class="p-3 text-center font-bold text-slate-700">-15</td>
+                                <td class="p-3 text-center font-black text-slate-800 text-xs">-13.0%</td>
+                                <td class="p-3 text-center text-xs font-bold text-slate-500">자연 하락</td>
+                            </tr>
+                            <tr class=" border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">32h → 40h</td>
+                                <td class="p-3 text-center font-bold text-slate-500">-5</td>
+                                <td class="p-3 text-center text-slate-500 text-xs">-25.0%</td>
+                                <td class="p-3 text-center font-bold text-slate-700">-15</td>
+                                <td class="p-3 text-center font-black text-slate-800 text-xs">-15.0%</td>
+                                <td class="p-3 text-center text-xs font-bold text-slate-500">자연 하락</td>
+                            </tr>
+                            <tr class=" border-b border-slate-200">
+                                <td class="p-3 font-bold text-slate-800">40h → 48h</td>
+                                <td class="p-3 text-center font-bold text-slate-500">-5</td>
+                                <td class="p-3 text-center text-slate-500 text-xs">-33.3%</td>
+                                <td class="p-3 text-center font-bold text-slate-700">-10</td>
+                                <td class="p-3 text-center font-black text-slate-800 text-xs">-11.8%</td>
+                                <td class="p-3 text-center text-xs font-bold text-slate-500">자연 하락</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-5 mb-6">
+                    <div class="bg-indigo-50 border-2 border-indigo-300 rounded-2xl p-6 text-center">
+                        <p class="text-xs font-bold text-indigo-700 mb-2">개입 흔적</p>
+                        <p class="text-4xl font-black text-indigo-700 mb-1">2번</p>
+                        <p class="text-xs text-slate-600">8시간과 24시간 지점</p>
+                    </div>
+                    <div class="bg-slate-50 border-2 border-slate-300 rounded-2xl p-6 text-center">
+                        <p class="text-xs font-bold text-slate-600 mb-2">상승 합계</p>
+                        <p class="text-4xl font-black text-slate-700 mb-1">+30</p>
+                        <p class="text-xs text-slate-600">하락 합계는 -55</p>
+                    </div>
+                    <div class="bg-slate-900 rounded-2xl p-6 text-center text-white">
+                        <p class="text-xs font-bold text-emerald-300 mb-2">그 결과</p>
+                        <p class="text-4xl font-black text-emerald-300 mb-1">2.31배</p>
+                        <p class="text-xs text-slate-400">48시간 누적 비교</p>
+                    </div>
+                </div>
+
+                <div class="bg-indigo-50 rounded-2xl p-6 border-2 border-indigo-200">
+                    <p class="text-xs font-black text-indigo-800 mb-3">상시 관제가 아니라 시점 개입입니다</p>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        24시간 이후 세 구간은 모두 하락합니다. 개입 흔적이 없습니다.
+                        그런데도 미관제 곡선보다 훨씬 높은 수준을 유지하는 것은
+                        <strong class="text-slate-800">앞선 두 번의 개입이 만든 결과가 이어지기 때문</strong>입니다.
+                        즉 이 곡선이 보여주는 것은 48시간 내내 사람이 붙어 있는 상태가 아니라,
+                        <strong class="text-indigo-800">두 번의 정확한 개입</strong>입니다.
+                        앞에서 지적한 인력 규모 문제가 여기서 완화됩니다.
+                        곡당 48시간 상주가 아니라 <strong class="text-slate-800">발매 직후와 하루 뒤 두 시점의 점검</strong>으로 설계하면
+                        같은 인력으로 다룰 수 있는 곡 수가 크게 늘어납니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white border-2 border-amber-300 rounded-2xl p-8 mb-10">
+                <p class="text-sm font-black text-amber-700 mb-5">절대값으로 보면 개입 곡선이 더 많이 떨어집니다</p>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    24시간 이후 구간에서 미관제 곡선은 10, 5, 5씩 떨어지고
+                    개입 곡선은 <strong class="text-slate-900">15, 15, 10씩 떨어집니다.</strong>
+                    숫자만 보면 개입한 쪽이 더 크게 빠지는 것처럼 보입니다.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                        <p class="text-xs font-black text-slate-700 mb-3">절대 하락폭</p>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            개입 곡선이 <strong class="text-slate-800">더 큽니다.</strong>
+                            높은 수준에서 떨어지므로 같은 비율이라도 절대값이 큽니다.
+                        </p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-2xl p-6 border-2 border-emerald-200">
+                        <p class="text-xs font-black text-emerald-700 mb-3">하락률</p>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            개입 곡선이 <strong class="text-slate-800">3분의 1 수준입니다.</strong>
+                            미관제는 매 구간 25에서 33%씩 빠지는데 개입 곡선은 12에서 15%입니다.
+                        </p>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    <strong class="text-slate-800">발표에서 주의할 지점입니다.</strong>
+                    차트를 절대값 축으로 보여주면 개입 곡선의 후반 기울기가 더 급해 보입니다.
+                    실제로 방어되고 있는 것은 <strong class="text-slate-900">하락 속도</strong>이므로,
+                    후반 구간을 설명할 때는 <strong class="text-amber-800">구간별 하락률을 함께 제시</strong>하는 편이 정확합니다.
+                    앞에서 7.5배 대신 누적 2.31배를 쓰자고 한 것과 같은 이유입니다.
+                    <strong class="text-slate-900">분모가 달라지면 같은 데이터가 다르게 읽힙니다.</strong>
+                </p>
+            </div>
+
+            <div class="bg-white border-2 border-slate-200 rounded-2xl p-8 mb-10">
+                <p class="text-sm font-black text-slate-800 mb-5">개입 시점의 시각이 실행 가능성을 정합니다</p>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                    음원 발매는 대개 자정에 이뤄집니다. 그 기준으로 곡선의 개입 지점을 시각으로 바꾸면
+                    <strong class="text-slate-900">8시간 지점은 오전 8시</strong>, <strong class="text-slate-900">24시간 지점은 다음날 자정</strong>입니다.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-emerald-50 rounded-2xl p-6 border-2 border-emerald-200">
+                        <p class="text-xs font-black text-emerald-700 mb-2">오전 8시 개입</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            업무 시작 시각이므로 <strong class="text-slate-800">플랫폼 담당자와 연락이 됩니다.</strong>
+                            누락 복구 요청을 넣기에 적절한 시점입니다.
+                        </p>
+                    </div>
+                    <div class="bg-amber-50 rounded-2xl p-6 border-2 border-amber-200">
+                        <p class="text-xs font-black text-amber-700 mb-2">다음날 자정 개입</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            국내 플랫폼은 <strong class="text-slate-800">대응할 사람이 없는 시각</strong>입니다.
+                            이 지점에서 상승 폭이 가장 큰데, 그 조치를 누가 하는지가 정해져야 합니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-slate-900 rounded-2xl p-6 text-white">
+                    <p class="text-xs font-black text-indigo-300 mb-3">해외 플랫폼이 포함된 구조가 여기서 유리합니다</p>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        이 제안은 <strong class="text-white">20개 플랫폼의 크로스보더 유통</strong>을 다룹니다.
+                        한국 자정은 유럽과 미주의 업무 시간에 걸칩니다.
+                        즉 국내 담당자가 잠든 시각에 <strong class="text-indigo-300">해외 플랫폼 쪽은 응답이 가능</strong>합니다.
+                        시차를 부담이 아니라 <strong class="text-white">개입 창을 넓히는 조건</strong>으로 적어두면,
+                        24시간 지점의 개입이 왜 가능한지를 설명할 수 있습니다.
+                        국내 플랫폼 대상 조치는 오전 8시 지점으로 모으고,
+                        자정 지점은 해외 플랫폼 조치에 배정하는 것이 <strong class="text-indigo-300">인력을 늘리지 않고 두 시점을 쓰는 방법</strong>입니다.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white border-2 border-emerald-200 rounded-2xl p-7">
+                    <p class="text-sm font-black text-emerald-700 mb-4">측정할 지표</p>
+                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                        <li>&bull; <strong class="text-slate-800">누락 발견 건수와 복구율</strong> &mdash; 관제가 실제로 되돌린 건수. 이것이 관제 고유의 성과입니다</li>
+                        <li>&bull; <strong class="text-slate-800">추가 확보 성공률</strong> &mdash; 요청한 추가 노출 중 실제로 받은 비율. 영업 성과와 분리해 기록합니다</li>
+                        <li>&bull; <strong class="text-slate-800">48시간 누적 재생 수</strong> &mdash; 관제 적용 곡과 미적용 곡 비교. 선별 기준의 타당성을 검증합니다</li>
+                        <li>&bull; <strong class="text-slate-800">정산 불일치 건수</strong> &mdash; 계약 요율 대비 실제 입금액의 차이가 발생한 건수</li>
+                        <li>&bull; <strong class="text-slate-800">양식 변경 감지 횟수</strong> &mdash; 플랫폼 양식이 바뀐 것을 사후가 아니라 사전에 잡았는지</li>
+                    </ul>
+                </div>
+                <div class="bg-white border-2 border-slate-200 rounded-2xl p-7">
+                    <p class="text-sm font-black text-slate-500 mb-4">이 제안서의 한계</p>
+                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                        <li>&bull; 트래픽 곡선은 본문에 밝힌 대로 <strong class="text-slate-800">자체 시뮬레이션 모델링 추정치</strong>이며 실제 발매 데이터가 아닙니다.</li>
+                        <li>&bull; 관제와 영업 효과의 분리는 <strong class="text-slate-800">곡선 형태에서 도출한 해석</strong>입니다. 원본 모델이 두 효과를 나눠 설계했는지는 확인할 수 없습니다.</li>
+                        <li>&bull; 정산 검수 절감은 <strong class="text-slate-800">게임 프로젝트 경험을 대입한 추정치</strong>이며 음원 정산에서 같은 폭이 재현된다는 근거는 아닙니다.</li>
+                        <li>&bull; 플랫폼 담당자 핫라인은 <strong class="text-slate-800">계약과 관계가 전제</strong>됩니다. 신규 유통사에는 그 경로 자체가 없을 수 있습니다.</li>
+                        <li>&bull; 저작권 분쟁과 무단 사용 대응의 <strong class="text-slate-800">법적 절차</strong>는 다루지 않았습니다.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -318,7 +709,7 @@
             new Chart(ctxTime, {
                 type: 'bar',
                 data: {
-                    labels: ['수작업 검수 (Before)', '자동화 파이프라인 (After)'],
+                    labels: ['수작업 검수', '자동화 파이프라인'],
                     datasets: [{
                         data: [120, 30],
                         backgroundColor: ['#e2e8f0', '#4f46e5'],
@@ -408,31 +799,31 @@
 
         const workflowDetails = {
             1: {
-                title: "🚨 1. 유출 및 침해 탐지 (Detection)",
+                title: "🚨 1. 유출과 침해 탐지",
                 items: [
                     { label: "🎮 게임 경험", text: "어뷰저의 비정상 로그 패턴을 실시간 감지하여 증거 수집" },
                     { label: "🎵 음악 적용", text: "커뮤니티 및 플랫폼 내 불법 복제 콘텐츠의 사전 발굴" }
                 ]
             },
             2: {
-                title: "🎫 2. Jira 티켓팅 구조화 (Ticketing)",
+                title: "🎫 2. Jira 티켓 구조화",
                 items: [
                     { label: "🎮 게임 경험", text: "이슈 로그 및 재현 스텝을 Jira 티켓으로 표준화 등록" },
                     { label: "🎵 음악 적용", text: "침해 URL 및 ISRC 정보를 규격화된 템플릿으로 생성" }
                 ]
             },
             3: {
-                title: "⚖️ 3. 유관부서 할당 및 SLA 관리 (Routing)",
+                title: "⚖️ 3. 유관부서 할당과 SLA 관리",
                 items: [
                     { label: "🎮 게임 경험", text: "이슈 치명도에 따른 SLA 설정 및 유관 부서 할당" },
                     { label: "🎵 음악 적용", text: "심각도별 법무·사업팀 배정 및 조치 일정 트래킹" }
                 ]
             },
             4: {
-                title: "🛡️ 4. 조치 및 파트너사 록인 (Resolution)",
+                title: "🛡️ 4. 조치와 파트너사 락인",
                 items: [
                     { label: "🎮 게임 경험", text: "제재 내역의 투명한 공지로 유저 커뮤니티 신뢰 회복" },
-                    { label: "🎵 음악 적용", text: "조치 결과 리포팅을 통한 파트너사와의 록인 달성" }
+                    { label: "🎵 음악 적용", text: "조치 결과 리포팅을 통한 파트너사와의 락인 달성" }
                 ]
             }
         };

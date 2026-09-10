@@ -36,6 +36,7 @@
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td { text-wrap: pretty; }
     </style>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 </head>
 <body class="bg-stone-50 text-stone-800 selection:bg-red-100 selection:text-red-900">
 
@@ -44,7 +45,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <span class="text-xl font-bold text-red-700">&#9733; DNF M <span class="text-stone-800 font-medium text-lg">CN Strategy 2026</span></span>
+                    <span class="text-xl font-bold text-red-700">&#9733; DNF M <span class="text-stone-800 font-medium text-lg">중국 시장 전략</span></span>
                 </div>
                 <div class="hidden md:flex items-center space-x-10 text-sm font-semibold">
                     <a href="#section-performance" class="text-stone-500 hover:text-red-700 transition">성과 분석</a>
@@ -56,7 +57,7 @@
     </nav>
 
     <header class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-700 text-white text-[10px] font-black rounded uppercase tracking-[0.2em] mb-6">Research Draft</div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-700 text-white text-[10px] font-black rounded tracking-[0.2em] mb-6">조사 초안</div>
         <h1 class="text-4xl md:text-6xl font-extrabold text-stone-900 mb-8 tracking-tight leading-[1.1]">지하성과 용사: 기원<br><span class="text-red-700">라이브 서비스 데이터 분석 및 운영 제언</span></h1>
         <p class="text-xl text-stone-600 max-w-4xl leading-relaxed font-light">
             2025~2026년 중국 시장의 공개 지표를 조합해 추정한 자료입니다. <br class="hidden md:block">현지 유저의 집단 경쟁 심리를 자극하여 매출과 리텐션을 동시 확보하는 기획안을 포함합니다.
@@ -94,13 +95,13 @@
                 <div class="space-y-6">
                     <div class="methodology-box">
                         <h4 class="text-red-900 font-bold text-sm mb-3 flex items-center gap-2">
-                            데이터 검증 및 모델링 근거 (Methodology)
+                            데이터 검증 및 모델링 근거
                         </h4>
                         <ul class="text-[12px] text-red-800 space-y-2 leading-relaxed opacity-90">
-                            <li>• <strong>Financials:</strong> 텐센트 IR 분기별 실적 및 게임 부문 가이드라인 분석</li>
-                            <li>• <strong>Store Data:</strong> Qimai, Sensor Tower 기반 중국 iOS 매출 순위 가중치 산출</li>
-                            <li>• <strong>Social Index:</strong> NGA, Bilibili 내 핵심 키워드 언급량 및 긍정 반응률 트래킹</li>
-                            <li class="pt-2 border-t border-red-200 italic">* 정확한 매출액은 비공개이므로 <strong>성능 지표(Index)</strong>를 활용해 상대 가치로 트렌드를 시각화했습니다.</li>
+                            <li>• <strong>실적:</strong> 텐센트 IR 분기별 실적 및 게임 부문 가이드라인 분석</li>
+                            <li>• <strong>스토어 데이터:</strong> Qimai, Sensor Tower 기반 중국 iOS 매출 순위 가중치 산출</li>
+                            <li>• <strong>소셜 지표:</strong> NGA, Bilibili 내 핵심 키워드 언급량 및 긍정 반응률 트래킹</li>
+                            <li class="pt-2 border-t border-red-200 italic">* 정확한 매출액은 비공개이므로 <strong>성능 지표</strong>를 활용해 상대 가치로 트렌드를 시각화했습니다.</li>
                         </ul>
                     </div>
                     <div class="p-6 bg-stone-50 rounded-2xl border border-stone-200">
@@ -134,8 +135,8 @@
 
             <div class="bg-white rounded-3xl shadow-sm border border-stone-200 p-8 md:p-12 flex flex-col">
                 <div class="flex border-b border-stone-100 mb-10">
-                    <button onclick="switchTab('cn')" id="tab-cn" class="flex-1 py-4 text-center tab-active transition-all">중국(CN) 전략</button>
-                    <button onclick="switchTab('kr')" id="tab-kr" class="flex-1 py-4 text-center tab-inactive transition-all text-stone-400">한국(KR) 기조</button>
+                    <button onclick="switchTab('cn')" id="tab-cn" class="flex-1 py-4 text-center tab-active transition-all">중국 전략</button>
+                    <button onclick="switchTab('kr')" id="tab-kr" class="flex-1 py-4 text-center tab-inactive transition-all text-stone-400">한국 기조</button>
                 </div>
                 <div id="content-cn" class="space-y-6 flex-1">
                     <div class="p-6 bg-red-50/30 rounded-2xl border border-red-100/50">
@@ -143,7 +144,7 @@
                         <p class="text-stone-600 text-sm leading-relaxed">히든 아바타 및 한정 오라의 성능 편차를 통해 핵심 과금러의 명예와 성능 소구력을 동시에 확보하는 수직적 확장 전략.</p>
                     </div>
                     <div class="p-6 bg-amber-50/30 rounded-2xl border border-amber-100/50">
-                        <h4 class="font-bold text-amber-800 text-lg mb-2">집단 소셜 바인딩 (Guild-Centric)</h4>
+                        <h4 class="font-bold text-amber-800 text-lg mb-2">집단 소셜 바인딩</h4>
                         <p class="text-stone-600 text-sm leading-relaxed">이벤트 재화 수급을 길드 활동과 연동하여, 개인의 이탈이 집단의 손실로 이어지게 함으로써 리텐션을 강력하게 고정.</p>
                     </div>
                 </div>
@@ -161,7 +162,7 @@
             <div class="absolute -top-32 -right-32 w-[500px] h-[500px] bg-red-600/10 rounded-full blur-[120px]"></div>
             
             <div class="relative z-10 mb-16">
-                <span class="text-amber-500 font-black text-xs tracking-[0.3em] uppercase mb-4 block">Operation Planning 2026</span>
+                <span class="text-amber-500 font-black text-xs tracking-wide mb-4 block">운영 기획</span>
                 <h2 class="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">03. 하반기 라이브 업데이트 제언</h2>
                 <p class="text-zinc-400 text-lg max-w-2xl leading-relaxed">중국 유저의 페르소나를 반영한 두 가지 핵심 전략 기획안입니다.</p>
             </div>
@@ -178,7 +179,7 @@
                             </div>
                         </div>
                         <div class="flex items-center gap-4">
-                            <span class="tag tag-amber">Social RvR</span>
+                            <span class="tag tag-amber">진영전 콘텐잖</span>
                             <span id="prop-icon-1" class="text-zinc-600 text-2xl transition-transform duration-500">▼</span>
                         </div>
                     </div>
@@ -222,7 +223,7 @@
                             </div>
                         </div>
                         <div class="flex items-center gap-4">
-                            <span class="tag tag-red">Viral UGC</span>
+                            <span class="tag tag-red">유저 콘텐츠 확산</span>
                             <span id="prop-icon-2" class="text-zinc-600 text-2xl transition-transform duration-500">▼</span>
                         </div>
                     </div>
@@ -256,10 +257,249 @@
                 </div>
             </div>
         </section>
+
+        <!-- 보강: 이벤트 의존도 -->
+        <section id="section-dependency" class="bg-white rounded-3xl shadow-sm border border-stone-200 p-8 md:p-12">
+            <h2 class="text-2xl md:text-3xl font-black text-stone-900 mb-4">지수를 이벤트 시점과 사이 구간으로 나눠보면</h2>
+            <p class="text-stone-600 leading-relaxed mb-10">
+                성과 지수를 이벤트가 있던 달과 없던 달로 갈라 평균을 내면
+                이 서비스의 매출 구조가 무엇에 기대고 있는지 드러납니다.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-10">
+                <div class="bg-red-50 border-2 border-red-200 rounded-2xl p-7 text-center">
+                    <p class="text-xs font-bold text-red-700 mb-2">이벤트 구간 평균</p>
+                    <p class="text-4xl font-black text-red-700 mb-2">94.0</p>
+                    <p class="text-xs text-stone-600">춘절 · 노동절 · 1주년 · 국경절 · 26춘절</p>
+                </div>
+                <div class="bg-stone-100 border-2 border-stone-300 rounded-2xl p-7 text-center">
+                    <p class="text-xs font-bold text-stone-600 mb-2">사이 구간 평균</p>
+                    <p class="text-4xl font-black text-stone-700 mb-2">60.0</p>
+                    <p class="text-xs text-stone-600">최저는 06월 50</p>
+                </div>
+                <div class="bg-zinc-950 rounded-2xl p-7 text-center text-white">
+                    <p class="text-xs font-bold text-red-400 mb-2">이벤트 배수</p>
+                    <p class="text-4xl font-black text-red-400 mb-2">1.57배</p>
+                    <p class="text-xs text-zinc-400">이벤트가 지수를 이만큼 끌어올립니다</p>
+                </div>
+            </div>
+
+            <div class="bg-stone-50 rounded-2xl p-8 border-2 border-stone-200 mb-8">
+                <p class="text-sm font-bold text-stone-800 mb-4">두 가지가 함께 보입니다</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-xl p-6 border border-stone-200">
+                        <p class="text-xs font-bold text-red-700 mb-2">이벤트 캘린더가 곧 매출 계획입니다</p>
+                        <p class="text-xs text-stone-600 leading-relaxed">
+                            대형 이벤트 없이는 지수가 60 수준으로 내려앉습니다.
+                            <strong class="text-stone-800">중국의 명절 일정이 사실상 매출 일정</strong>이므로,
+                            춘절과 국경절을 놓치면 그 분기는 회복할 방법이 없습니다.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-stone-200">
+                        <p class="text-xs font-bold text-stone-700 mb-2">1년 성장은 완만합니다</p>
+                        <p class="text-xs text-stone-600 leading-relaxed">
+                            25년 춘절 100에서 26년 춘절 105로 <strong class="text-stone-800">+5%</strong>입니다.
+                            이벤트 피크는 유지되지만 눈에 띄게 커지지는 않았습니다.
+                            성숙기에 들어선 서비스의 모습입니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border-2 border-amber-300 p-8">
+                <p class="text-sm font-bold text-amber-700 mb-4">그래서 제언의 방향을 다시 봐야 합니다</p>
+                <p class="text-stone-700 leading-relaxed mb-5">
+                    3번의 제안 두 건은 모두 <strong class="text-stone-900">새로운 대형 이벤트</strong>입니다.
+                    이벤트를 늘리면 피크는 만들 수 있지만, <strong class="text-amber-800">이벤트 의존도는 함께 올라갑니다.</strong>
+                    이미 1.57배에 기대고 있는 구조에서 의존도를 더 높이는 것이 맞는 방향인지 확인이 필요합니다.
+                </p>
+                <div class="bg-amber-50 rounded-xl p-6 border border-amber-200">
+                    <p class="text-xs font-bold text-amber-800 mb-2">사이 구간을 올리는 것이 다른 선택입니다</p>
+                    <p class="text-xs text-stone-600 leading-relaxed">
+                        지수가 가장 낮은 지점은 <strong class="text-stone-800">06월의 50</strong>입니다.
+                        여기를 60~65 수준으로 올리는 것은 이벤트 피크를 105에서 110으로 올리는 것보다
+                        <strong class="text-stone-800">전체 합계에 더 크게 기여</strong>합니다.
+                        피크는 유저가 이미 결제할 준비를 한 시점이라 여력이 제한되지만,
+                        사이 구간은 손대지 않은 영역입니다.
+                        상시 콘텐츠 보강과 이벤트 신설은 목적이 다르므로 함께 검토해야 합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 보강: 서버 격차 정리 -->
+        <section id="section-gap" class="bg-white rounded-3xl shadow-sm border border-stone-200 p-8 md:p-12">
+            <h2 class="text-2xl md:text-3xl font-black text-stone-900 mb-4">두 서버는 다섯 항목 중 넷에서 갈립니다</h2>
+            <p class="text-stone-600 leading-relaxed mb-10">
+                레이더 차트를 격차로 환산하면 어느 항목에서 얼마나 벌어지는지가 숫자로 잡힙니다.
+                이 표가 <strong class="text-stone-900">중국 전략을 그대로 가져올 수 없는 이유</strong>를 보여줍니다.
+            </p>
+
+            <div class="overflow-x-auto rounded-2xl border-2 border-stone-200 mb-10">
+                <table class="w-full min-w-[520px] border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-stone-800 text-white">
+                            <th class="p-3 text-left text-xs font-black">항목</th>
+                            <th class="p-3 text-center text-xs font-black">중국</th>
+                            <th class="p-3 text-center text-xs font-black">한국</th>
+                            <th class="p-3 text-center text-xs font-black">격차</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr class=" border-b border-stone-200">
+                                <td class="p-3 font-black text-stone-800">과금 상한선</td>
+                                <td class="p-3 text-center font-bold text-red-700">98</td>
+                                <td class="p-3 text-center font-bold text-blue-700">68</td>
+                                <td class="p-3 text-center font-black text-stone-600">+30</td>
+                            </tr>
+                            <tr class=" border-b border-stone-200">
+                                <td class="p-3 font-black text-stone-800">소셜 바인딩</td>
+                                <td class="p-3 text-center font-bold text-red-700">92</td>
+                                <td class="p-3 text-center font-bold text-blue-700">55</td>
+                                <td class="p-3 text-center font-black text-stone-600">+37</td>
+                            </tr>
+                            <tr class="bg-blue-50 border-b border-stone-200">
+                                <td class="p-3 font-black text-stone-800">다캐릭 편의</td>
+                                <td class="p-3 text-center font-bold text-red-700">65</td>
+                                <td class="p-3 text-center font-bold text-blue-700">92</td>
+                                <td class="p-3 text-center font-black text-blue-700">-27</td>
+                            </tr>
+                            <tr class="bg-red-50 border-b border-stone-200">
+                                <td class="p-3 font-black text-stone-800">로컬 콜라보</td>
+                                <td class="p-3 text-center font-bold text-red-700">95</td>
+                                <td class="p-3 text-center font-bold text-blue-700">45</td>
+                                <td class="p-3 text-center font-black text-red-700">+50</td>
+                            </tr>
+                            <tr class=" border-b border-stone-200">
+                                <td class="p-3 font-black text-stone-800">경쟁적 PvP</td>
+                                <td class="p-3 text-center font-bold text-red-700">88</td>
+                                <td class="p-3 text-center font-bold text-blue-700">60</td>
+                                <td class="p-3 text-center font-black text-stone-600">+28</td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-red-50 border-2 border-red-200 rounded-2xl p-7">
+                    <p class="text-sm font-bold text-red-700 mb-3">가장 큰 격차는 로컬 콜라보 +50</p>
+                    <p class="text-sm text-stone-600 leading-relaxed">
+                        과금 상한선이나 PvP보다 <strong class="text-stone-900">현지 콜라보의 격차가 더 큽니다.</strong>
+                        이는 BM 설계 차이가 아니라 <strong class="text-stone-900">시장의 IP 환경과 퍼블리셔 역량</strong>의 차이입니다.
+                        중국 성과에서 이 부분이 기여한 몫은 다른 시장에서 그대로 재현되지 않습니다.
+                    </p>
+                </div>
+                <div class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-7">
+                    <p class="text-sm font-bold text-blue-700 mb-3">한국이 앞서는 항목은 하나입니다</p>
+                    <p class="text-sm text-stone-600 leading-relaxed">
+                        다캐릭 편의 <strong class="text-stone-900">92 대 65</strong>로 27점 앞섭니다.
+                        두 서버가 <strong class="text-stone-900">서로 다른 것을 팔고 있다</strong>는 뜻입니다.
+                        중국은 한 캐릭터의 상한을 올려서, 한국은 여러 캐릭터를 편하게 키우게 해서 매출을 만듭니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-zinc-950 rounded-2xl p-8 text-white">
+                <p class="text-sm font-bold text-red-400 mb-5">이 분석을 쓰는 방법</p>
+                <p class="leading-relaxed mb-5">
+                    격차가 큰 항목은 <strong class="text-red-300">이식이 아니라 참고 대상</strong>입니다.
+                    과금 상한 확장과 소셜 바인딩은 중국 유저의 경쟁 문화 위에서 작동하므로,
+                    같은 장치를 다른 시장에 옮기면 <strong class="text-white">강제성으로만 체감</strong>될 수 있습니다.
+                </p>
+                <p class="leading-relaxed">
+                    반대로 이식 가능한 것은 <strong class="text-red-300">방법론</strong>입니다.
+                    이벤트 시점과 사이 구간을 나눠 관리한다는 접근, 개인 성과와 집단 성과를 합산해 점수를 낸다는 구조는
+                    문화와 무관하게 적용됩니다.
+                    <strong class="text-white">무엇을 배우려는 것인지 먼저 정하면</strong> 이 표가 판단 기준이 됩니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- 보강: 제안 검토 -->
+        <section id="section-review" class="bg-white rounded-3xl shadow-sm border border-stone-200 p-8 md:p-12">
+            <h2 class="text-2xl md:text-3xl font-black text-stone-900 mb-4">제안 두 건에서 확인할 것</h2>
+
+            <div class="space-y-6 mb-8">
+                <div class="bg-white rounded-2xl border-l-4 border-l-red-600 border border-stone-200 p-7">
+                    <p class="font-black text-stone-900 mb-4">서버 대항전 · 패배한 쪽이 남습니다</p>
+                    <p class="text-sm text-stone-600 leading-relaxed mb-5">
+                        승리 세력에게 <strong class="text-stone-900">경매장 수수료 3% 인하</strong>를 주는 설계는 참전 동기를 만듭니다.
+                        다만 전 서버 통합 경쟁이므로 <strong class="text-red-700">대다수는 패배 측에 속합니다.</strong>
+                        승자에게만 보상이 가면 패배 서버는 참여 비용만 지불한 셈이 되고, 이것이 반복되면 이탈 사유가 됩니다.
+                    </p>
+                    <div class="bg-stone-50 rounded-xl p-5 border border-stone-200 mb-5">
+                        <p class="text-xs font-bold text-stone-700 mb-2">보완 방향</p>
+                        <p class="text-xs text-stone-600 leading-relaxed">
+                            패배 측에도 <strong class="text-stone-800">참여도에 비례한 최소 보상</strong>을 둡니다.
+                            보급 기부량이 일정 수준을 넘으면 승패와 무관하게 지급하는 방식이면,
+                            &lsquo;이기지 못했지만 헛되지 않았다&rsquo;는 상태가 됩니다.
+                            승패 보상의 격차는 유지하되 <strong class="text-stone-800">0과 1의 차이로 만들지 않는 것</strong>이 핵심입니다.
+                        </p>
+                    </div>
+                    <div class="bg-amber-50 rounded-xl p-5 border border-amber-200">
+                        <p class="text-xs font-bold text-amber-800 mb-2">소셜 바인딩이 이미 92라는 점</p>
+                        <p class="text-xs text-stone-600 leading-relaxed">
+                            문서는 이 전략의 원리를 <strong class="text-stone-800">&ldquo;개인의 이탈이 집단의 손실로 이어지게 함&rdquo;</strong>이라고 적었습니다.
+                            리텐션 장치로는 강력하지만, 같은 문장은 <strong class="text-stone-800">유저가 빠지기 어려운 상태</strong>를 뜻하기도 합니다.
+                            바인딩 지수가 이미 92인 상태에서 더 강화하면 소속감이 의무로 전환될 수 있으므로,
+                            주말 고정 시간대 참여를 강제하는 부분은 <strong class="text-stone-800">비동기 참여 경로</strong>와 함께 설계하는 편이 안전합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border-l-4 border-l-red-600 border border-stone-200 p-7">
+                    <p class="font-black text-stone-900 mb-4">인플루언서 챌린지 · 콘텐츠가 사람에 묶입니다</p>
+                    <p class="text-sm text-stone-600 leading-relaxed mb-5">
+                        숏폼 트래픽을 인게임으로 연동하는 방향은 중국 시장 특성에 맞습니다.
+                        다만 콘텐츠의 수명이 <strong class="text-red-700">참여 스트리머의 활동 여부</strong>에 종속됩니다.
+                        주요 스트리머가 다른 게임으로 옮기면 시스템은 남고 콘텐츠는 비게 됩니다.
+                    </p>
+                    <div class="bg-stone-50 rounded-xl p-5 border border-stone-200">
+                        <p class="text-xs font-bold text-stone-700 mb-2">보완 방향</p>
+                        <p class="text-xs text-stone-600 leading-relaxed">
+                            스피드런 기록 경쟁 자체를 <strong class="text-stone-800">일반 유저도 참여하는 상시 시스템</strong>으로 두고,
+                            스트리머 참여는 그 위에 얹는 이벤트로 분리합니다.
+                            이렇게 하면 특정 인물이 빠져도 <strong class="text-stone-800">기반 콘텐츠는 계속 돌아갑니다.</strong>
+                            후원 시스템은 결제 흐름과 정산이 얽히므로 현지 법규 확인이 선행됩니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-stone-100 rounded-2xl p-7 border-2 border-stone-300">
+                <p class="text-sm font-bold text-stone-800 mb-3">매출 30% 증대라는 기대치</p>
+                <p class="text-sm text-stone-600 leading-relaxed">
+                    RvR 제안의 기대 효과에 <strong class="text-stone-900">강화 재화 소모 30% 증대</strong>가 적혀 있습니다.
+                    방향은 타당하지만 산출 근거가 문서에 없습니다.
+                    앞의 이벤트 배수 1.57배가 <strong class="text-stone-900">이미 관측된 값</strong>이므로,
+                    새 이벤트의 기대치는 그 범위 안에서 제시하는 편이 설득력이 있습니다.
+                    30%라는 값을 유지하려면 <strong class="text-stone-900">참여율과 1인당 소모량 가정</strong>을 함께 적어야 합니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- 보강: 한계 -->
+        <section id="section-limits" class="bg-white rounded-3xl shadow-sm border border-stone-200 p-8 md:p-12">
+            <h2 class="text-2xl font-black text-stone-900 mb-6">이 리포트의 한계</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <ul class="space-y-3 text-sm text-stone-600 leading-relaxed">
+                    <li>&bull; 본문에 밝힌 대로 중국 매출은 비공개이므로 모든 수치가 <strong class="text-stone-800">공개 지표를 조합한 상대 지수 추정값</strong>입니다. 절대 금액으로 환산할 수 없습니다.</li>
+                    <li>&bull; 이벤트 배수 1.57배는 <strong class="text-stone-800">추정 지수에서 산출한 값</strong>이므로 원본 추정의 오차를 함께 물려받습니다. 방향은 신뢰할 수 있으나 소수점 자리까지 확정된 값은 아닙니다.</li>
+                    <li>&bull; 이벤트와 사이 구간의 구분은 <strong class="text-stone-800">대형 업데이트 시점 기준</strong>입니다. 소규모 이벤트는 사이 구간에 포함되어 있습니다.</li>
+                </ul>
+                <ul class="space-y-3 text-sm text-stone-600 leading-relaxed">
+                    <li>&bull; 레이더 점수는 <strong class="text-stone-800">운영 기조를 정성 평가해 수치화한 것</strong>이며 측정 단위가 정의된 지표가 아닙니다. 항목 간 격차의 크기는 비교 참고용입니다.</li>
+                    <li>&bull; 커뮤니티 반응 분석은 <strong class="text-stone-800">공개 게시판의 언급량 기반</strong>이라 표현하는 유저에 편중됩니다.</li>
+                    <li>&bull; 제안 두 건의 <strong class="text-stone-800">개발 공수와 현지 심의 통과 가능성</strong>은 검토하지 않았습니다. 특히 후원 시스템은 결제 관련 규제 확인이 필요합니다.</li>
+                    <li>&bull; 매출 기대치는 <strong class="text-stone-800">방향만 제시</strong>했으며 참여율 가정이 없어 규모를 산정하지 않았습니다.</li>
+                </ul>
+            </div>
+        </section>
+
     </main>
 
     <footer class="bg-zinc-950 py-20 border-t border-zinc-900 text-center">
-        <p class="text-zinc-600 text-xs tracking-widest uppercase mb-4">Strategic Intelligence Report</p>
+        <p class="text-zinc-600 text-xs tracking-wide mb-4">던파 모바일 중국 서비스 분석</p>
         <p class="text-white font-black text-lg tracking-tight italic">지하성과 용사: 기원 &copy; 허재석</p>
     </footer>
 
@@ -318,7 +558,7 @@
             data: {
                 labels: ['25.01', '춘절', '03', '노동절', '06', '1주년', '08', '국경절', '연말', '26.춘절'],
                 datasets: [{ 
-                    label: '성능 지표 (Index)', 
+                    label: '성능 지표 ', 
                     data: [60, 100, 55, 80, 50, 95, 65, 90, 70, 105], 
                     backgroundColor: '#b91c1c',
                     borderRadius: 10,
@@ -359,8 +599,8 @@
             data: {
                 labels: ['과금 상한선', '소셜 바인딩', '다캐릭 편의', '로컬 콜라보', '경쟁적 PvP'],
                 datasets: [
-                    { label: '중국(CN)', data: [98, 92, 65, 95, 88], borderColor: '#b91c1c', backgroundColor: 'rgba(185, 28, 28, 0.2)', borderWidth: 4, pointBackgroundColor: '#b91c1c' },
-                    { label: '한국(KR)', data: [68, 55, 92, 45, 60], borderColor: '#2563eb', backgroundColor: 'rgba(37, 99, 235, 0.2)', borderWidth: 4, pointBackgroundColor: '#2563eb' }
+                    { label: '중국', data: [98, 92, 65, 95, 88], borderColor: '#b91c1c', backgroundColor: 'rgba(185, 28, 28, 0.2)', borderWidth: 4, pointBackgroundColor: '#b91c1c' },
+                    { label: '한국', data: [68, 55, 92, 45, 60], borderColor: '#2563eb', backgroundColor: 'rgba(37, 99, 235, 0.2)', borderWidth: 4, pointBackgroundColor: '#2563eb' }
                 ]
             },
             options: { 

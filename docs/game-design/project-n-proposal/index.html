@@ -110,6 +110,7 @@
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td { text-wrap: pretty; }
     </style>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 </head>
 <body class="antialiased scroll-smooth font-sans selection:bg-brand-500 selection:text-white keep-all">
 
@@ -124,6 +125,8 @@
                 <a href="#s1" class="hover:text-brand-500 transition-colors">1. 데이터 분석</a>
                 <a href="#s2" class="hover:text-brand-500 transition-colors">2. 밸런스 검증</a>
                 <a href="#s3" class="hover:text-brand-500 transition-colors">3. 위기 대응</a>
+                <a href="#s4" class="hover:text-brand-500 transition-colors">4. 연결 구조</a>
+                <a href="#s5" class="hover:text-brand-500 transition-colors">5. 검토</a>
             </div>
         </div>
     </nav>
@@ -257,6 +260,173 @@
                 <!-- Detail Card -->
                 <div id="crisis-desc" class="bg-brand-50 border-2 border-brand-200 rounded-3xl p-6 md:p-8 min-h-[220px] fade-in max-w-3xl mx-auto">
                     <!-- JS injects content -->
+                </div>
+            </div>
+        </section>
+
+        <!-- [보강] 4. 세 솔루션의 연결 구조 -->
+        <section id="s4" class="scroll-mt-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-2xl bg-brand-500 text-white font-black text-xl flex items-center justify-center shrink-0">4</div>
+                <h2 class="text-2xl md:text-3xl font-black text-surface-dark">세 솔루션은 하나의 사이클입니다</h2>
+            </div>
+
+            <p class="text-gray-600 leading-relaxed mb-8">
+                앞의 세 가지를 <strong class="text-surface-dark">각각의 제안</strong>으로 두면 역량 목록이 됩니다.
+                운영 실무에서는 세 개가 <strong class="text-surface-dark">시간순으로 맞물린 하나의 루프</strong>로 작동합니다.
+                어느 단계가 비면 다음 단계의 부담이 커집니다.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-5 mb-8">
+                <div class="bg-white rounded-2xl p-6 border-t-4 border-t-blue-500 shadow-sm">
+                    <p class="text-[10px] font-black tracking-wide text-blue-500 mb-2">예방 &middot; 솔루션 2</p>
+                    <p class="font-black text-surface-dark mb-3">밸런스 검증</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">출시 전에 스펙을 교정해 <strong class="text-surface-dark">사고 발생 자체를 줄입니다.</strong> 여기서 걸러내지 못한 것이 3번으로 넘어갑니다.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border-t-4 border-t-orange-500 shadow-sm">
+                    <p class="text-[10px] font-black tracking-wide text-orange-500 mb-2">대응 &middot; 솔루션 3</p>
+                    <p class="font-black text-surface-dark mb-3">위기 대응</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">이미 발생한 사고의 <strong class="text-surface-dark">피해를 줄입니다.</strong> 대응 과정에서 이탈 사유와 결제 반응 데이터가 쌓입니다.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border-t-4 border-t-green-500 shadow-sm">
+                    <p class="text-[10px] font-black tracking-wide text-green-600 mb-2">학습 &middot; 솔루션 1</p>
+                    <p class="font-black text-surface-dark mb-3">이탈 방어</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">쌓인 데이터로 <strong class="text-surface-dark">이탈 원인을 갱신</strong>합니다. 갱신된 원인이 다시 2번의 검증 항목이 됩니다.</p>
+                </div>
+            </div>
+
+            <div class="bg-surface-dark rounded-3xl p-8 md:p-10 text-white">
+                <p class="text-brand-400 font-black text-[10px] tracking-wide mb-5">루프가 닫히는 지점</p>
+                <p class="text-sm md:text-base leading-relaxed mb-5">
+                    솔루션 1의 이탈 원인 1순위가 <strong class="text-brand-300">소환 및 과금 피로도</strong>이고 2순위가 <strong class="text-brand-300">파워 인플레이션</strong>입니다.
+                    그런데 솔루션 2가 바로 <strong class="text-white">파워 인플레이션을 출시 전에 차단하는 프로세스</strong>입니다.
+                </p>
+                <p class="text-sm md:text-base leading-relaxed">
+                    즉 두 제안은 <strong class="text-brand-300">같은 문제의 사후 측정과 사전 차단</strong>입니다.
+                    이 연결을 명시하면 세 솔루션이 &lsquo;할 수 있는 일 세 가지&rsquo;가 아니라
+                    <strong class="text-white">하나의 문제를 세 시점에서 다루는 체계</strong>로 읽힙니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- [보강] 5. 제안 검토 -->
+        <section id="s5" class="scroll-mt-24">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-2xl bg-orange-500 text-white font-black text-xl flex items-center justify-center shrink-0">5</div>
+                <h2 class="text-2xl md:text-3xl font-black text-surface-dark">제안 검토 &mdash; 실무에서 걸리는 지점</h2>
+            </div>
+
+            <!-- 5-1. 인플레이션 차단과 신캐 매출의 충돌 -->
+            <div class="bg-white rounded-3xl p-8 border-2 border-orange-200 shadow-sm mb-6">
+                <p class="text-[10px] font-black tracking-wide text-orange-500 mb-4">검토 01 &middot; 솔루션 2</p>
+                <h3 class="text-lg font-black text-surface-dark mb-4">평균에 맞추면 신규 캐릭터가 팔리지 않습니다</h3>
+                <p class="text-sm text-gray-600 leading-relaxed mb-5">
+                    검증 프로세스는 <strong class="text-surface-dark">기존 평균 &rarr; 신캐 초안 비교 &rarr; 최종 교정</strong>으로 스펙을 평균 근처로 되돌립니다.
+                    인플레이션 차단에는 맞지만, 수집형 게임의 매출 구조와 정면으로 충돌합니다.
+                </p>
+                <div class="grid md:grid-cols-2 gap-4 mb-5">
+                    <div class="bg-blue-50 rounded-2xl p-5 border border-blue-200">
+                        <p class="text-xs font-black text-blue-700 mb-2">인플레이션 관점</p>
+                        <p class="text-xs text-gray-600 leading-relaxed">신캐가 강하면 기존 캐릭터의 활용처가 사라집니다. <strong class="text-surface-dark">이탈 원인 2순위</strong>가 바로 이것입니다.</p>
+                    </div>
+                    <div class="bg-orange-50 rounded-2xl p-5 border border-orange-200">
+                        <p class="text-xs font-black text-orange-700 mb-2">매출 관점</p>
+                        <p class="text-xs text-gray-600 leading-relaxed">신캐가 기존 캐릭터와 비슷하면 <strong class="text-surface-dark">뽑을 이유가 없습니다.</strong> 수집형의 주 매출원이 신규 캐릭터 소환입니다.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-5 border border-gray-200">
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        <strong class="text-surface-dark">보완 방향:</strong> 절대 스펙을 평균에 맞추는 대신
+                        <strong class="text-orange-700">역할을 차별화</strong>합니다.
+                        총 전투력은 기존 최상위권과 비슷하게 두고, <strong>특정 콘텐츠나 특정 조합에서만 우위</strong>를 갖도록 설계하면
+                        구매 동기는 생기고 기존 캐릭터는 다른 용도로 살아남습니다.
+                        검증 기준도 &lsquo;평균 대비 스펙&rsquo; 하나가 아니라
+                        <strong class="text-surface-dark">&lsquo;기존 캐릭터의 사용률이 얼마나 떨어지는가&rsquo;</strong>로 함께 보아야 합니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 5-2. 시간 기준 -> 상태 기준 -->
+            <div class="bg-white rounded-3xl p-8 border-2 border-orange-200 shadow-sm mb-6">
+                <p class="text-[10px] font-black tracking-wide text-orange-500 mb-4">검토 02 &middot; 솔루션 3</p>
+                <h3 class="text-lg font-black text-surface-dark mb-4">시간 기준보다 상태 기준이 안전합니다</h3>
+                <p class="text-sm text-gray-600 leading-relaxed mb-5">
+                    대응 매뉴얼은 <strong class="text-surface-dark">+2H &middot; +12H &middot; +24H</strong>로 짜여 있습니다.
+                    단계 구분은 명확하지만, 시각을 기준으로 삼으면 두 가지 상황에서 무너집니다.
+                </p>
+                <div class="space-y-3 mb-5">
+                    <div class="flex items-start gap-3 bg-gray-50 rounded-xl p-4 border border-gray-200">
+                        <span class="shrink-0 text-lg">⏰</span>
+                        <p class="text-xs text-gray-600 leading-relaxed"><strong class="text-surface-dark">심야 발생:</strong> 새벽 3시에 발생하면 +2H는 새벽 5시입니다. 유관 부서 확인 없이 공지를 낼 수 없고, 그렇다고 아침까지 기다리면 매뉴얼을 위반하게 됩니다.</p>
+                    </div>
+                    <div class="flex items-start gap-3 bg-gray-50 rounded-xl p-4 border border-gray-200">
+                        <span class="shrink-0 text-lg">⚠️</span>
+                        <p class="text-xs text-gray-600 leading-relaxed"><strong class="text-surface-dark">사실 미확인:</strong> 시각에 맞춰 공지를 내려면 확인이 덜 된 내용을 쓰게 됩니다. 부정확한 1차 공지는 정정 공지를 부르고, <strong>2차 사고</strong>가 됩니다.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-5 border border-gray-200">
+                    <p class="text-xs text-gray-600 leading-relaxed mb-3">
+                        <strong class="text-surface-dark">보완 방향:</strong> 각 단계의 <strong class="text-orange-700">진입 조건</strong>을 정의하고, 시간은 목표치로만 둡니다.
+                    </p>
+                    <ul class="space-y-2 text-xs text-gray-600 leading-relaxed">
+                        <li>&bull; <strong class="text-surface-dark">1단계 진입:</strong> 재현 확인 완료 &amp; 영향 범위 1차 특정 <span class="text-gray-400">(목표 2시간 내)</span></li>
+                        <li>&bull; <strong class="text-surface-dark">2단계 진입:</strong> 원인 규명 &amp; 매출/신뢰 영향 산출 완료 <span class="text-gray-400">(목표 12시간 내)</span></li>
+                        <li>&bull; <strong class="text-surface-dark">3단계 진입:</strong> 수정 배포 완료 &amp; 보상안 승인 <span class="text-gray-400">(목표 24시간 내)</span></li>
+                    </ul>
+                    <p class="text-xs text-gray-600 leading-relaxed mt-3">
+                        조건 미충족 시에는 <strong class="text-surface-dark">&lsquo;확인 중&rsquo; 상태를 알리는 것 자체가 1단계</strong>가 됩니다.
+                        원안이 &ldquo;현재 로그를 분석 중입니다&rdquo;라는 안내를 1차 방어로 쓴 것은 이 관점에 이미 부합합니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 5-3. 매출 기반 설득의 한계 -->
+            <div class="bg-white rounded-3xl p-8 border-2 border-orange-200 shadow-sm mb-6">
+                <p class="text-[10px] font-black tracking-wide text-orange-500 mb-4">검토 03 &middot; 솔루션 3</p>
+                <h3 class="text-lg font-black text-surface-dark mb-4">매출 기반 설득은 강력하지만 기준이 하나면 위험합니다</h3>
+                <p class="text-sm text-gray-600 leading-relaxed mb-5">
+                    &ldquo;DPS 15% 누락&rdquo;을 <strong class="text-surface-dark">&ldquo;핵심 과금 유저의 환불 요구 폭증, 일매출 타격&rdquo;</strong>으로 바꿔 말하는 것은
+                    개발 우선순위를 끌어올리는 실효적인 방법입니다. 이 부분은 원안의 강점입니다.
+                </p>
+                <div class="bg-orange-50 rounded-2xl p-5 border border-orange-200 mb-5">
+                    <p class="text-xs font-black text-orange-700 mb-2">다만 매출만을 기준으로 두면</p>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        <strong class="text-surface-dark">무과금 &middot; 저과금 유저에게만 영향을 주는 이슈가 구조적으로 후순위</strong>가 됩니다.
+                        이런 이슈는 즉시 매출로 환산되지 않지만 커뮤니티 신뢰를 깎고, 신규 유입의 첫인상을 결정합니다.
+                        결국 <strong class="text-surface-dark">시차를 두고 매출에 반영</strong>되므로 당시에는 근거를 대기 어렵습니다.
+                    </p>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-5 border border-gray-200">
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        <strong class="text-surface-dark">보완 방향:</strong> 긴급도 산정에 <strong class="text-orange-700">두 축</strong>을 둡니다.
+                        <strong>즉시 매출 영향</strong>(환불 요청 수, 결제 이탈)과
+                        <strong>신뢰 영향</strong>(영향 유저 수, 커뮤니티 확산 속도, 재발 여부)을 각각 산출해
+                        어느 한쪽만 높아도 우선 처리 대상이 되게 합니다.
+                        재발 이슈는 <strong class="text-surface-dark">1회 영향이 작아도 누적 신뢰 손실이 크므로</strong> 별도 가중치가 필요합니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 5-4. 검증 지표와 한계 -->
+            <div class="grid md:grid-cols-2 gap-5">
+                <div class="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm">
+                    <p class="text-[10px] font-black tracking-wide text-gray-400 mb-4">이 체계가 작동하는지 보는 지표</p>
+                    <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
+                        <li>&bull; <strong class="text-surface-dark">예방 효율:</strong> 출시 후 긴급 밸런스 패치 건수 &mdash; 솔루션 2가 실제로 걸러내고 있는지</li>
+                        <li>&bull; <strong class="text-surface-dark">기존 캐릭터 생존율:</strong> 신캐 출시 전후 기존 상위 캐릭터의 사용률 변화</li>
+                        <li>&bull; <strong class="text-surface-dark">대응 속도:</strong> 각 게이트 통과까지 실제 소요 시간과 목표치의 차이</li>
+                        <li>&bull; <strong class="text-surface-dark">대응 품질:</strong> 정정 공지 발생 건수 &mdash; 1차 공지의 정확도를 보여줍니다</li>
+                        <li>&bull; <strong class="text-surface-dark">회복 여부:</strong> 사고 후 환불 취소율과 결제 잔존율 (원안에 이미 포함된 항목)</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm">
+                    <p class="text-[10px] font-black tracking-wide text-gray-400 mb-4">이 제안서의 한계</p>
+                    <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
+                        <li>&bull; 이탈 원인 비중(45% &middot; 30% &middot; 25%)은 <strong class="text-surface-dark">라이브 운영 경험을 바탕으로 도출한 예상 지표</strong>이며 특정 타이틀의 실측이 아닙니다.</li>
+                        <li>&bull; 밸런스 검증 차트는 <strong class="text-surface-dark">프로세스 시연용 가상 데이터</strong>입니다. 실제 적용에는 해당 게임의 스탯 체계와 콘텐츠 구성이 필요합니다.</li>
+                        <li>&bull; 프로젝트 N은 <strong class="text-surface-dark">웹툰 IP 기반 수집형 RPG를 전제한 가칭</strong>입니다. 장르가 달라지면 이탈 원인의 순서부터 바뀝니다.</li>
+                        <li>&bull; 대응 목표 시간은 <strong class="text-surface-dark">조직의 온콜 체계와 개발 배포 주기</strong>에 종속됩니다. 조직 구조를 모르는 상태의 기준값입니다.</li>
+                    </ul>
                 </div>
             </div>
         </section>

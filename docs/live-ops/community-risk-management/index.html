@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
-        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
         
         body { 
             font-family: 'Pretendard', sans-serif; 
@@ -169,7 +169,7 @@
                 <div class="p-8 card border-l-8 border-[#FF7E36] hover:shadow-md transition-shadow">
                     <div class="flex items-center gap-3 mb-6">
                         <span class="text-2xl">🌍</span>
-                        <h4 class="font-bold text-xl">비정상 위치(Geo) 기반 계정 탈취 방어</h4>
+                        <h4 class="font-bold text-xl">비정상 위치 기반 계정 탈취 방어</h4>
                     </div>
                     <div class="space-y-4 text-sm text-gray-600 leading-relaxed">
                         <p><strong>이상 징후 (Impossible Travel):</strong><br> 물리적으로 이동 불가능한 시간(예: 서울 접속 10분 후 제주 IP) 내에 <strong>새로운 기기</strong>로 로그인하여 고액 매물 등록</p>
@@ -213,7 +213,7 @@
                             <button onclick="runSimulation('cooldown', this)" class="sim-btn w-full py-5 px-6 bg-[#F9FAFB] hover:bg-orange-50 border border-gray-200 hover:border-orange-200 rounded-[28px] text-left transition-all flex items-center justify-between group shadow-sm">
                                 <div>
                                     <span class="inline-block px-2 py-1 bg-orange-100 text-orange-600 rounded-lg text-[10px] font-bold mb-2">Step 1. 행동 마찰 부여</span>
-                                    <p class="font-bold text-base">송금 전 쿨다운(Cool-down) 팝업</p>
+                                    <p class="font-bold text-base">송금 전 쿨다운 팝업</p>
                                     <p class="text-xs text-gray-400 mt-1">계좌 복사 시 3초 지연시켜 충동적 입금 방지</p>
                                 </div>
                                 <span class="text-2xl group-hover:scale-110 transition-transform">⏳</span>
@@ -263,6 +263,249 @@
         </section>
 
         <!-- 핵심 요약 -->
+
+        <!-- 보강: 절감률의 이면 -->
+        <section id="filter-tradeoff" class="space-y-8">
+            <div>
+                <h2 class="text-2xl md:text-3xl font-black text-gray-900 mb-4">절감률을 뒤집어 읽으면</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    검수 업무량이 100에서 25로 줄었습니다.
+                    같은 숫자를 반대편에서 보면 <strong class="text-gray-900">사람이 보지 않는 건이 75%</strong>라는 뜻입니다.
+                    효율을 보고할 때 이 면을 함께 적어야 정확합니다.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-emerald-50 border-2 border-emerald-200 rounded-3xl p-8">
+                    <p class="text-sm font-black text-emerald-700 mb-3">얻은 것</p>
+                    <p class="text-4xl font-black text-emerald-700 mb-3">75% 절감</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        전수 조사에서 선별 검수로 바꿔 <strong class="text-gray-900">같은 인력으로 네 배의 물량</strong>을 감당할 수 있게 됩니다.
+                        검수자가 위험도 높은 건에만 집중하므로 판정 품질도 올라갑니다.
+                    </p>
+                </div>
+                <div class="bg-amber-50 border-2 border-amber-300 rounded-3xl p-8">
+                    <p class="text-sm font-black text-amber-700 mb-3">함께 생긴 것</p>
+                    <p class="text-4xl font-black text-amber-700 mb-3">75% 미검수</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        필터를 통과한 건은 <strong class="text-gray-900">아무도 보지 않습니다.</strong>
+                        그 안에 진짜 위험이 섞여 있으면 사고가 난 뒤에야 알게 됩니다.
+                        절감률만으로는 이 부분이 보이지 않습니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white border-2 border-gray-200 rounded-3xl p-8">
+                <p class="text-sm font-black text-gray-800 mb-5">미탐이 조금만 있어도 규모가 커집니다</p>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    전체 검수 대상을 1만 건으로 가정하면 필터 통과분은 7,500건입니다.
+                    이 안에 위험이 얼마나 섞여 있느냐에 따라 놓치는 건수가 정해집니다.
+                </p>
+                <div class="overflow-x-auto rounded-2xl border-2 border-gray-200 mb-6">
+                    <table class="w-full min-w-[420px] border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-gray-800 text-white">
+                                <th class="p-3 text-center text-xs font-black">통과분 내 미탐율</th>
+                                <th class="p-3 text-center text-xs font-black">통과 건수</th>
+                                <th class="p-3 text-center text-xs font-black">놓친 위험</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class=" border-b border-gray-200">
+                                <td class="p-3 text-center font-black text-gray-600">0.5%</td>
+                                <td class="p-3 text-center font-bold text-gray-600">7,500건</td>
+                                <td class="p-3 text-center font-black text-gray-600">38건</td>
+                            </tr>
+                            <tr class="bg-amber-50 border-b border-gray-200">
+                                <td class="p-3 text-center font-black text-amber-700">1.0%</td>
+                                <td class="p-3 text-center font-bold text-gray-600">7,500건</td>
+                                <td class="p-3 text-center font-black text-amber-700">75건</td>
+                            </tr>
+                            <tr class="bg-rose-50 border-b border-gray-200">
+                                <td class="p-3 text-center font-black text-rose-700">2.0%</td>
+                                <td class="p-3 text-center font-bold text-gray-600">7,500건</td>
+                                <td class="p-3 text-center font-black text-rose-700">150건</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-xs text-gray-500 leading-relaxed">
+                    * 1만 건은 계산 구조를 보여주기 위한 가정값입니다. 실제 규모는 플랫폼의 일일 등록 건수에 따라 달라집니다.
+                </p>
+            </div>
+
+            <div class="bg-gray-900 rounded-3xl p-8 md:p-10 text-white">
+                <p class="text-sm font-black text-amber-300 mb-5">그래서 함께 측정해야 하는 지표</p>
+                <p class="leading-relaxed mb-5">
+                    절감률은 <strong class="text-white">투입 대비 산출</strong>을 보여주지만
+                    <strong class="text-amber-300">놓친 위험의 크기</strong>는 말해주지 않습니다.
+                    두 지표를 나란히 두면 필터 기준이 적절한지 판단할 수 있습니다.
+                </p>
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div class="bg-white/10 rounded-2xl p-6">
+                        <p class="text-sm font-black text-amber-300 mb-2">미탐율 측정 방법</p>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            필터를 통과한 건 중에서 <strong class="text-white">나중에 신고나 사기 접수로 드러난 건</strong>을 역추적합니다.
+                            사후 신고 건의 원래 필터 판정을 확인하면 미탐율이 나옵니다.
+                            이 값이 오르면 사기 수법이 필터를 우회하기 시작한 신호입니다.
+                        </p>
+                    </div>
+                    <div class="bg-white/10 rounded-2xl p-6">
+                        <p class="text-sm font-black text-amber-300 mb-2">표본 검수로 보완</p>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            통과분에서 <strong class="text-white">주기적으로 표본을 뽑아 사람이 확인</strong>합니다.
+                            전수 검수로 돌아가지 않으면서 필터의 정확도를 계속 알 수 있습니다.
+                            표본에서 위험이 발견되면 그 패턴을 필터 기준에 추가합니다.
+                        </p>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-300 leading-relaxed mt-6 pt-6 border-t border-white/20">
+                    <strong class="text-white">효율화의 목표는 절감률 자체가 아니라</strong>
+                    <strong class="text-amber-300">같은 미탐율을 유지하면서 검수량을 줄이는 것</strong>입니다.
+                    미탐율이 함께 올라갔다면 그것은 효율화가 아니라 감시 축소입니다.
+                    두 값을 함께 보고하면 이 구분이 명확해집니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- 보강: 정책 두 건의 오탐 -->
+        <section id="policy-review" class="space-y-8">
+            <div>
+                <h2 class="text-2xl md:text-3xl font-black text-gray-900 mb-4">정책 두 건에서 정상 이용자가 걸리는 지점</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    탐지 정책은 <strong class="text-gray-900">막는 힘이 강해질수록 정상 이용자도 함께 걸립니다.</strong>
+                    두 제안이 어떤 정상 행동을 오탐할 수 있는지 정리했습니다.
+                </p>
+            </div>
+
+            <div class="bg-white border-2 border-gray-200 rounded-3xl p-8">
+                <p class="text-sm font-black text-gray-800 mb-4">위치 기반 탐지 · 기기 변경 교차 검증은 이미 들어가 있습니다</p>
+                <p class="text-gray-600 leading-relaxed mb-5">
+                    이동 불가능한 시간 안에 다른 지역 접속을 잡는 방식은 표준적인 탐지입니다.
+                    문서가 <strong class="text-gray-900">기기 변경과 이동 소요 시간을 교차 검증</strong>해 여행객을 걸러내겠다고 명시한 부분은
+                    오탐을 줄이는 정확한 보완입니다. 남은 오탐 요인은 위치 정보 자체의 부정확성입니다.
+                </p>
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200 mb-5">
+                    <p class="text-xs font-black text-gray-700 mb-3">여전히 오탐이 발생하는 경우</p>
+                    <ul class="space-y-2 text-xs text-gray-600 leading-relaxed">
+                        <li>&bull; <strong class="text-gray-800">모바일 통신사 IP</strong> &mdash; 실제 위치와 다른 지역으로 잡히는 경우가 흔합니다. 기지국 사정에 따라 갑자기 먼 지역 IP가 배정될 수 있습니다</li>
+                        <li>&bull; <strong class="text-gray-800">VPN과 회사망</strong> &mdash; 원격 근무나 보안 프로그램이 IP를 다른 지역으로 바꿉니다</li>
+                        <li>&bull; <strong class="text-gray-800">여행 중 기기 교체</strong> &mdash; 분실이나 고장으로 현지에서 기기를 바꾸면 두 조건이 동시에 충족됩니다</li>
+                    </ul>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                    <strong class="text-gray-800">보완 방향:</strong> 계정 보호 조치는 정확도보다
+                    <strong class="text-gray-900">해제 경로의 속도</strong>가 더 중요합니다.
+                    오탐이 발생해도 본인 인증으로 <strong>즉시 풀릴 수 있으면</strong> 피해가 지연에 그칩니다.
+                    반대로 해제에 상담원 확인이 필요하면, 오탐 한 건이 거래 기회 손실과 CS 인입으로 이어집니다.
+                    탐지 기준을 조이기 전에 해제 동선을 먼저 만들어야 합니다.
+                </p>
+            </div>
+
+            <div class="bg-white border-2 border-gray-200 rounded-3xl p-8">
+                <p class="text-sm font-black text-gray-800 mb-4">신뢰 점수 탐지 · 무료 나눔은 선의의 행동입니다</p>
+                <p class="text-gray-600 leading-relaxed mb-5">
+                    단기간 무료 나눔으로 신뢰도를 쌓고 고액 물품을 등록하는 패턴은 실제 사기 수법입니다.
+                    다만 <strong class="text-gray-900">무료 나눔 자체는 선의의 이용자도 하는 행동</strong>이고,
+                    나눔을 많이 한 이용자가 고액 물품을 팔 때 제약을 받으면 억울함이 생깁니다.
+                </p>
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200 mb-5">
+                    <p class="text-xs font-black text-gray-700 mb-3">나눔 횟수보다 나눔의 형태를 봐야 합니다</p>
+                    <ul class="space-y-2 text-xs text-gray-600 leading-relaxed">
+                        <li>&bull; <strong class="text-gray-800">상대의 다양성</strong> &mdash; 소수의 동일 계정과 반복 거래했는지. 자기 계정끼리 거래해 점수를 만드는 경우가 여기서 잡힙니다</li>
+                        <li>&bull; <strong class="text-gray-800">기간 집중도</strong> &mdash; 며칠 안에 몰려 있는지, 오랜 기간에 걸쳐 있는지</li>
+                        <li>&bull; <strong class="text-gray-800">거래 완결성</strong> &mdash; 실제로 만나 물건이 전달됐는지 확인할 흔적이 있는지</li>
+                        <li>&bull; <strong class="text-gray-800">계정 연령</strong> &mdash; 가입 직후 나눔이 집중되는 패턴인지</li>
+                    </ul>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                    이렇게 보면 <strong class="text-gray-900">오래 활동한 선의의 이용자는 걸리지 않고</strong>
+                    단기간에 점수를 만든 계정만 남습니다.
+                    문서의 대응 방향이 <strong class="text-gray-900">차단이 아니라 본인 인증 추가와 검수 우선순위 분류</strong>인 것은
+                    오탐 상황에서 정상 이용자의 거래를 완전히 막지 않는 설계이므로 적절합니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- 보강: 구조적 한계 -->
+        <section id="structural" class="space-y-8">
+            <div>
+                <h2 class="text-2xl md:text-3xl font-black text-gray-900 mb-4">플랫폼이 할 수 있는 일의 상한</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    서두에서 이 서비스의 구조를 <strong class="text-gray-900">거래 대금이 플랫폼을 거치지 않고 앱 밖에서 오간다</strong>고 정리했습니다.
+                    이 한 문장이 리스크 정책의 범위를 결정합니다.
+                </p>
+            </div>
+
+            <div class="bg-amber-50 border-2 border-amber-300 rounded-3xl p-8">
+                <p class="text-sm font-black text-amber-700 mb-5">사전 탐지로 전환한 것은 선택이 아니라 제약입니다</p>
+                <p class="text-gray-700 leading-relaxed mb-5">
+                    문서는 <strong class="text-gray-900">&ldquo;사후 환불 대응 대신 사전 탐지로 전환&rdquo;</strong>을 설계 방향으로 적었습니다.
+                    방향은 옳지만, 정확히 말하면 <strong class="text-amber-800">플랫폼이 대금을 보유하지 않으므로 환불할 수단 자체가 없습니다.</strong>
+                    사후 대응이 불가능하기 때문에 사전 탐지만 남는 구조입니다.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    이 점을 명시하면 정책의 성격이 분명해집니다.
+                    탐지와 경고, 계정 조치까지가 플랫폼의 영역이고
+                    <strong class="text-gray-900">피해 보전은 영역 밖</strong>입니다.
+                    따라서 목표는 피해 구제율이 아니라 <strong class="text-amber-800">피해 발생 자체의 감소</strong>여야 하고,
+                    성과 지표도 그렇게 잡아야 합니다.
+                </p>
+            </div>
+
+            <div class="bg-white border-2 border-gray-200 rounded-3xl p-8">
+                <p class="text-sm font-black text-gray-800 mb-4">근본 해결책과 그 대가</p>
+                <p class="text-gray-600 leading-relaxed mb-5">
+                    대금이 플랫폼을 거치게 만드는 <strong class="text-gray-900">안전결제 도입</strong>이 구조적 해결입니다.
+                    대금을 보유하면 사후 환불이 가능해지고, 사기 유인 자체가 크게 줄어듭니다.
+                    다만 그 대가가 이 서비스의 정체성과 충돌합니다.
+                </p>
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div class="bg-gray-50 rounded-2xl p-5 border border-gray-200">
+                        <p class="text-xs font-black text-gray-800 mb-2">수수료 저항</p>
+                        <p class="text-xs text-gray-600 leading-relaxed">이웃 간 소액 직거래에서 수수료는 체감이 큽니다. <strong class="text-gray-800">무료 직거래라는 이용 동기</strong>가 약해집니다.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl p-5 border border-gray-200">
+                        <p class="text-xs font-black text-gray-800 mb-2">직거래 문화와의 충돌</p>
+                        <p class="text-xs text-gray-600 leading-relaxed">만나서 물건을 보고 현장에서 정산하는 방식이 이 서비스의 특징입니다. <strong class="text-gray-800">결제를 앞에 두면 동선이 바뀝니다.</strong></p>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed mt-5">
+                    <strong class="text-gray-800">현실적인 방향:</strong> 전면 도입이 아니라
+                    <strong class="text-gray-900">고액 거래와 원거리 배송 거래에 한정해 선택적으로 제공</strong>하는 방식입니다.
+                    사기 피해가 집중되는 구간에만 적용하면 수수료 저항을 최소화하면서 위험을 줄일 수 있습니다.
+                    이 문서의 탐지 정책은 <strong class="text-gray-900">그 전 단계에서 작동하는 방어선</strong>으로 위치가 정해집니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- 보강: 검증 지표와 한계 -->
+        <section id="metrics-limits" class="space-y-8">
+            <h2 class="text-2xl md:text-3xl font-black text-gray-900">측정할 지표와 이 기획안의 한계</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white border-2 border-emerald-200 rounded-3xl p-8">
+                    <p class="text-sm font-black text-emerald-700 mb-4">측정할 지표</p>
+                    <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
+                        <li>&bull; <strong class="text-gray-800">미탐율</strong> &mdash; 필터 통과 후 사기로 접수된 건의 비율. 절감률과 반드시 함께 봅니다</li>
+                        <li>&bull; <strong class="text-gray-800">오탐율</strong> &mdash; 계정 보호 조치 중 정상 이용자로 확인된 비율</li>
+                        <li>&bull; <strong class="text-gray-800">보호 해제 소요 시간</strong> &mdash; 오탐 유저가 다시 거래할 수 있게 되기까지. 오탐의 실제 피해 크기를 결정합니다</li>
+                        <li>&bull; <strong class="text-gray-800">쿨다운 이탈률</strong> &mdash; 3초 지연 후 송금을 포기한 비율. 마찰의 효과 크기입니다</li>
+                        <li>&bull; <strong class="text-gray-800">사기 접수 건수와 피해액</strong> &mdash; 최종 목표 지표. 검수 효율이 올라도 이 값이 그대로면 정책이 작동하지 않는 것입니다</li>
+                    </ul>
+                </div>
+                <div class="bg-white border-2 border-gray-200 rounded-3xl p-8">
+                    <p class="text-sm font-black text-gray-500 mb-4">이 기획안의 한계</p>
+                    <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
+                        <li>&bull; 75% 절감은 본문에 밝힌 대로 <strong class="text-gray-800">이전 라이브 서비스에서 측정한 값</strong>입니다. 업무 성격이 다른 중고거래 플랫폼에서 같은 폭이 재현된다는 근거는 아닙니다.</li>
+                        <li>&bull; 미탐율 계산의 1만 건은 <strong class="text-gray-800">구조를 보여주기 위한 가정값</strong>입니다.</li>
+                        <li>&bull; 3초 쿨다운의 <strong class="text-gray-800">시간 근거는 제시되지 않았습니다.</strong> 이미 설득된 피해자에게는 마찰이 작동하지 않으므로 효과 범위가 충동 입금에 한정됩니다.</li>
+                        <li>&bull; 탐지 정책의 <strong class="text-gray-800">개인정보 처리 범위</strong>는 다루지 않았습니다. 위치와 기기 정보 수집은 별도 동의와 보관 기준이 필요합니다.</li>
+                        <li>&bull; 안전결제 도입의 매출 영향과 <strong class="text-gray-800">전자금융 관련 요건</strong>은 검토 범위 밖입니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <footer class="bg-gray-900 p-10 md:p-12 rounded-[48px] text-white">
             <h4 class="text-2xl font-bold mb-10 text-center">핵심 역량 요약</h4>
             <div class="space-y-8 max-w-2xl mx-auto text-gray-400">

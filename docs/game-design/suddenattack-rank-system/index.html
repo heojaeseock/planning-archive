@@ -93,7 +93,7 @@
                     <div>
                         <p class="text-sky-600 font-black tracking-widest text-xs mb-3 flex items-center gap-2 uppercase">
                             <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
-                            RANKED MATCH SYSTEM ANALYSIS
+                            랭크 매치 시스템 분석
                         </p>
                         <h1 class="text-3xl md:text-5xl font-black leading-tight text-slate-900 mb-2">
                             서든어택 랭크전<br>
@@ -135,6 +135,7 @@
             <div class="flex border-b border-slate-200 bg-slate-50/50 sticky top-0 z-20 backdrop-blur-md">
                 <button onclick="openTab(event, 'analysis')" class="tab-btn active flex-1 py-5 text-sm font-bold text-slate-500 border-transparent" id="defaultOpen">📊 1. 랭크전 현황 분석</button>
                 <button onclick="openTab(event, 'proposal')" class="tab-btn flex-1 py-5 text-sm font-bold text-slate-500 border-transparent">💡 2. 신규 시스템 기획</button>
+                <button onclick="openTab(event, 'gap')" class="tab-btn flex-1 py-5 text-sm font-bold text-slate-500 border-transparent">🔎 3. 정합성 점검 및 우선순위</button>
             </div>
 
             <!-- 탭 1: 현황 및 문제점 -->
@@ -174,7 +175,7 @@
                         </h3>
                         <div class="content-panel p-8 space-y-8 shadow-sm">
                             <div>
-                                <p class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-widest">랭크전 주요 불만 유형 분포 (Total 100%)</p>
+                                <p class="text-xs font-bold text-slate-400 mb-4 tracking-wide">랭크전 주요 불만 유형 분포 (Total 100%)</p>
                                 <p class="text-[11px] text-slate-400 mb-4">* 공식 통계가 아니라, 커뮤니티·인게임 신고 게시글의 불만 유형을 직접 분류해 비율로 환산한 자체 취합 값입니다.</p>
                                 <div class="space-y-5">
                                     <div>
@@ -209,7 +210,7 @@
                 <!-- 제안 1: 리플레이 -->
                 <div class="flex flex-col lg:flex-row gap-12 items-center">
                     <div class="flex-1 space-y-5">
-                        <span class="px-3 py-1 bg-sky-100 text-sky-700 text-[10px] font-black rounded-full uppercase">Proposal 01</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 text-[10px] font-black rounded-full">제안 1</span>
                         <h4 class="text-2xl font-bold text-slate-900 leading-tight">리플레이 시스템 도입</h4>
                         <div class="space-y-4">
                             <p class="text-sm text-slate-500 leading-relaxed">
@@ -224,7 +225,7 @@
                     <div class="w-full lg:w-1/2 mockup-ui p-6 h-[260px] flex flex-col">
                         <div class="flex justify-between items-center mb-4 border-b border-slate-800 pb-2">
                             <span class="font-bold">최근 경기 리플레이</span>
-                            <span class="text-[10px] text-slate-500 italic">Recent 5 Matches</span>
+                            <span class="text-[10px] text-slate-500 italic">최근 5경기</span>
                         </div>
                         <div class="space-y-2 flex-1">
                             <div class="bg-slate-800/50 p-2 rounded flex justify-between items-center border border-slate-700">
@@ -245,14 +246,14 @@
                                 <button  class="bg-slate-600 px-2 py-1 rounded text-[9px] font-bold" tabindex="-1" style="cursor:default">다시보기</button>
                             </div>
                         </div>
-                        <div class="mt-4 text-[9px] text-slate-500 text-center uppercase tracking-widest">Replay Data Storage: 4/5 Used</div>
+                        <div class="mt-4 text-[9px] text-slate-500 text-center tracking-wide">리플레이 저장 4/5 사용</div>
                     </div>
                 </div>
 
                 <!-- 제안 2: POTG -->
                 <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
                     <div class="flex-1 space-y-5">
-                        <span class="px-3 py-1 bg-sky-100 text-sky-700 text-[10px] font-black rounded-full uppercase">Proposal 02</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 text-[10px] font-black rounded-full">제안 2</span>
                         <h4 class="text-2xl font-bold text-slate-900 leading-tight">랭크전 POTG 시스템</h4>
                         <div class="space-y-4">
                             <p class="text-sm text-slate-500 leading-relaxed">
@@ -282,7 +283,7 @@
                 <!-- 제안 3: 사후 채팅 -->
                 <div class="flex flex-col lg:flex-row gap-12 items-center">
                     <div class="flex-1 space-y-5">
-                        <span class="px-3 py-1 bg-sky-100 text-sky-700 text-[10px] font-black rounded-full uppercase">Proposal 03</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 text-[10px] font-black rounded-full">제안 3</span>
                         <h4 class="text-2xl font-bold text-slate-900 leading-tight">사후 채팅 활성화 시스템</h4>
                         <div class="space-y-4">
                             <p class="text-sm text-slate-500 leading-relaxed">
@@ -320,8 +321,8 @@
                 <!-- 제안 4: 맵 밴 -->
                 <div class="flex flex-col lg:flex-row-reverse gap-12 items-center">
                     <div class="flex-1 space-y-5">
-                        <span class="px-3 py-1 bg-sky-100 text-sky-700 text-[10px] font-black rounded-full uppercase">Proposal 04</span>
-                        <h4 class="text-2xl font-bold text-slate-900 leading-tight">랭크전 맵 밴(Map Ban) 기능</h4>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 text-[10px] font-black rounded-full">제안 4</span>
+                        <h4 class="text-2xl font-bold text-slate-900 leading-tight">랭크전 맵 밴 기능</h4>
                         <div class="space-y-4">
                             <p class="text-sm text-slate-500 leading-relaxed">
                                 <strong>[기획 사유]</strong> 특정 맵 편중이나 비선호 맵 매칭 시 발생하는 매칭 이탈(닷지) 및 유저 불만을 최소화해야 합니다.
@@ -342,7 +343,7 @@
                             </div>
                             <div class="bg-red-900/20 rounded-xl border-2 border-red-600 flex flex-col items-center justify-center p-2 relative overflow-hidden shadow-lg">
                                 <div class="absolute inset-0 bg-red-600/10 flex items-center justify-center z-10">
-                                    <span class="text-red-600 font-black text-2xl rotate-12 opacity-80 uppercase tracking-tighter">Banned</span>
+                                    <span class="text-red-600 font-black text-2xl rotate-12 opacity-80 tracking-tighter">제재</span>
                                 </div>
                                 <span class="text-2xl mb-2 grayscale opacity-40">🚂</span>
                                 <span class="text-[9px] font-bold text-slate-500">화이트스콜</span>
@@ -360,7 +361,7 @@
                 <!-- 제안 5: 보상 시스템 -->
                 <div class="space-y-10">
                     <div class="max-w-2xl mx-auto text-center space-y-4">
-                        <span class="px-3 py-1 bg-sky-100 text-sky-700 text-[10px] font-black rounded-full uppercase">Proposal 05</span>
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 text-[10px] font-black rounded-full">제안 5</span>
                         <h4 class="text-2xl font-bold text-slate-900 leading-tight">티어별 전용 보상 체계 수립</h4>
                         <p class="text-sm text-slate-500 leading-relaxed">
                             시즌 최종 달성 티어에 따라 경험치, 포인트 외에도 <strong>유료 캐시 및 SP</strong>를 차등 지급하여<br class="hidden md:block"> 최상위 티어 유지에 대한 강력한 메리트를 제공합니다.
@@ -393,9 +394,273 @@
 
             </div>
 
+            <!-- 탭 3: 정합성 점검 및 우선순위 -->
+            <div id="gap" class="tab-content p-6 md:p-10 space-y-14">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4 tracking-tight">정합성 점검 및 우선순위</h2>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        제안을 나열한 뒤에는 <strong class="text-slate-700">&ldquo;내가 정의한 문제를 실제로 덮고 있는가&rdquo;</strong>를 되짚어야 합니다.
+                        1번 탭의 불만 분포와 2번 탭의 제안 다섯 건을 맞대어 보면 <strong class="text-slate-700">비어 있는 칸이 드러납니다.</strong>
+                    </p>
+                </div>
+
+                <!-- 1. 커버리지 매트릭스 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-rose-500 font-black text-2xl">#</span>
+                        <h3 class="text-xl font-bold text-slate-900">1. 문제 &times; 제안 커버리지</h3>
+                    </div>
+                    <div class="content-panel p-6 md:p-8">
+                        <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-6">
+                            <table class="w-full min-w-[600px] border-collapse text-sm">
+                                <thead>
+                                    <tr class="bg-slate-800 text-white">
+                                        <th class="p-3 text-left text-xs font-black">불만 유형</th>
+                                        <th class="p-3 text-center text-xs font-black">비중</th>
+                                        <th class="p-3 text-left text-xs font-black">대응 제안</th>
+                                        <th class="p-3 text-center text-xs font-black">커버</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="bg-rose-50 border-b-2 border-rose-200">
+                                        <td class="p-3 font-black text-rose-800">서버/입장 렉 (탈주 처리)</td>
+                                        <td class="p-3 text-center font-black text-rose-700 text-base">41%</td>
+                                        <td class="p-3 text-rose-700 font-bold text-xs">없음</td>
+                                        <td class="p-3 text-center text-xl font-black text-rose-600">✕</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-200">
+                                        <td class="p-3 font-bold text-slate-800">기타 (UX 불편 및 오류)</td>
+                                        <td class="p-3 text-center font-bold text-slate-600">31%</td>
+                                        <td class="p-3 text-slate-600 text-xs">04 맵 밴 (부분)</td>
+                                        <td class="p-3 text-center text-lg font-black text-amber-500">△</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-200 bg-slate-50">
+                                        <td class="p-3 font-bold text-slate-800">보이스톡 시스템 오류</td>
+                                        <td class="p-3 text-center font-bold text-slate-600">15%</td>
+                                        <td class="p-3 text-slate-600 text-xs">03 사후 채팅</td>
+                                        <td class="p-3 text-center text-lg font-black text-amber-500">△</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 font-bold text-slate-800">불법 프로그램 의심</td>
+                                        <td class="p-3 text-center font-bold text-slate-600">13%</td>
+                                        <td class="p-3 text-slate-600 text-xs">01 리플레이</td>
+                                        <td class="p-3 text-center text-lg font-black text-emerald-600">○</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="bg-rose-50 border-2 border-rose-300 rounded-2xl p-6">
+                            <p class="text-[10px] font-black tracking-wide text-rose-500 mb-3">점검 결과</p>
+                            <p class="text-sm md:text-base text-slate-700 leading-relaxed">
+                                1번 탭은 스스로 <strong class="text-slate-900">&ldquo;기술적 결함 방어가 최우선 과제&rdquo;</strong>라고 결론냈고, 그 비중은 <strong class="text-rose-700">41%로 1위</strong>입니다.
+                                그런데 제안 다섯 건 중 <strong class="text-rose-700">이 항목을 다루는 제안이 하나도 없습니다.</strong><br class="hidden md:block">
+                                제안들은 13%(핵), 15%(보이스톡), 그리고 성취 동기 쪽에 몰려 있습니다.
+                                가장 큰 문제를 정의해 놓고 대응은 나머지에 배치한 상태입니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 41%에 대한 대응 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-blue-600 font-black text-2xl">#</span>
+                        <h3 class="text-xl font-bold text-slate-900">2. 빈 칸을 메우는 제안 &mdash; 기획으로 할 수 있는 것</h3>
+                    </div>
+                    <div class="content-panel p-6 md:p-8">
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            서버 안정화 자체는 인프라&middot;개발 영역이라 기획서가 약속할 수 없습니다.
+                            그러나 <strong class="text-slate-900">&ldquo;튕김이 탈주로 처리되는 것&rdquo;은 판정 로직의 문제</strong>이므로 기획 영역입니다.
+                            41%의 불만이 강한 이유는 렉 자체보다 <strong class="text-slate-900">억울한 페널티</strong>에 있습니다.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="border-2 border-blue-300 bg-blue-50/60 rounded-2xl p-5">
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">신규 제안 A</span>
+                                    <span class="font-black text-slate-900">재접속 허용</span>
+                                </div>
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    비정상 종료 시 일정 시간 <strong class="text-slate-900">해당 슬롯을 비워 두고 복귀를 허용</strong>합니다.
+                                    복귀에 성공하면 탈주 판정을 취소합니다. 팀은 인원 공백을 견디는 대신 경기 자체가 무산되지 않습니다.
+                                </p>
+                            </div>
+                            <div class="border-2 border-blue-300 bg-blue-50/60 rounded-2xl p-5">
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">신규 제안 B</span>
+                                    <span class="font-black text-slate-900">비정상 종료와 고의 탈주 분리 판정</span>
+                                </div>
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    종료 직전 <strong class="text-slate-900">패킷 유실 &middot; 응답 지연 &middot; 클라이언트 크래시 로그</strong>를 근거로 두 경우를 나눕니다.
+                                    기술적 원인으로 판정되면 페널티를 면제하고, 반복 패턴은 별도 누적 관리합니다.
+                                </p>
+                            </div>
+                            <div class="border-2 border-blue-300 bg-blue-50/60 rounded-2xl p-5">
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">신규 제안 C</span>
+                                    <span class="font-black text-slate-900">입장 실패 시 매칭 자동 복구</span>
+                                </div>
+                                <p class="text-sm text-slate-600 leading-relaxed">
+                                    입장 단계에서 실패한 경우 <strong class="text-slate-900">경기를 성립시키지 않고 큐로 되돌립니다.</strong>
+                                    &lsquo;시작도 못 했는데 패배&rsquo;가 가장 큰 불만 유형이므로, 성립 조건을 뒤로 미루는 것만으로 상당 부분이 해소됩니다.
+                                </p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed mt-6 pt-6 border-t border-slate-200">
+                            세 제안 모두 <strong class="text-slate-700">서버 성능을 개선하지 않고도</strong> 불만의 원인인 &lsquo;억울한 손실&rsquo;을 제거합니다.
+                            근본 해결(인프라 개선)과 병행할 수 있는 완충 장치입니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. 기존 제안의 재검토 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-amber-500 font-black text-2xl">#</span>
+                        <h3 class="text-xl font-bold text-slate-900">3. 기존 제안에서 다시 봐야 할 두 건</h3>
+                    </div>
+                    <div class="space-y-5">
+                        <div class="bg-amber-50 border-2 border-amber-300 rounded-[24px] p-6 md:p-7">
+                            <div class="flex flex-wrap items-center gap-3 mb-4">
+                                <span class="bg-amber-500 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">재검토</span>
+                                <span class="font-black text-slate-900">Proposal 03 &middot; 사후 채팅</span>
+                            </div>
+                            <p class="text-sm text-slate-700 leading-relaxed mb-4">
+                                사망한 유저가 아군에게 브리핑을 보내는 구조는, 경쟁 FPS에서 통상 금지하는
+                                <strong class="text-amber-800">관전 정보 전달(고스팅)</strong>에 해당합니다.
+                                사망자는 관전 시점에서 <strong class="text-slate-900">생존자가 볼 수 없는 적 위치를 볼 수 있기 때문</strong>입니다.
+                            </p>
+                            <div class="bg-white rounded-2xl p-5 border border-amber-200 mb-4">
+                                <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">원안의 제한이 충분하지 않은 이유</p>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    원안은 &lsquo;생존자는 팀원의 사후 채팅만 수신&rsquo;으로 악용을 막으려 했습니다.
+                                    그런데 막아야 하는 것은 <strong>적 팀의 열람</strong>이 아니라 <strong class="text-slate-800">사망자가 관전으로 얻은 정보가 생존자에게 흐르는 것</strong>입니다. 제한의 방향이 어긋나 있습니다.
+                                </p>
+                            </div>
+                            <p class="text-sm text-slate-700 leading-relaxed">
+                                <strong class="text-slate-900">대안:</strong> 기획 사유가 &lsquo;보이스톡 오류 보완&rsquo;이었으므로, 목표를 <strong class="text-amber-800">생존자 간 텍스트 소통 강화</strong>로 되돌리는 편이 정합적입니다.
+                                라디오 메시지(정형 문구) 단축키, 핑(위치 표시) 시스템처럼 <strong>관전 정보가 섞이지 않는 수단</strong>이 같은 문제를 부작용 없이 해결합니다.
+                                사후 채팅을 유지하려면 사망자의 <strong>관전 시점을 제한</strong>하는 설계가 선행되어야 합니다.
+                            </p>
+                        </div>
+
+                        <div class="bg-amber-50 border-2 border-amber-300 rounded-[24px] p-6 md:p-7">
+                            <div class="flex flex-wrap items-center gap-3 mb-4">
+                                <span class="bg-amber-500 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">재검토</span>
+                                <span class="font-black text-slate-900">Proposal 05 &middot; 티어 보상에 유료 캐시 포함</span>
+                            </div>
+                            <p class="text-sm text-slate-700 leading-relaxed mb-4">
+                                최상위 티어에 <strong>유료 캐시를 직접 지급</strong>하는 설계는 두 가지를 동시에 불러옵니다.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                <div class="bg-white rounded-2xl p-5 border border-amber-200">
+                                    <p class="text-xs font-black text-rose-600 mb-2">매출 잠식</p>
+                                    <p class="text-xs text-slate-600 leading-relaxed">상위 티어 유저는 원래 결제력이 높은 층입니다. 이들에게 캐시를 지급하면 <strong class="text-slate-800">그만큼의 결제가 사라집니다.</strong></p>
+                                </div>
+                                <div class="bg-white rounded-2xl p-5 border border-amber-200">
+                                    <p class="text-xs font-black text-rose-600 mb-2">어뷰징 유인</p>
+                                    <p class="text-xs text-slate-600 leading-relaxed">보상이 현금성이면 <strong class="text-slate-800">대리 랭크 &middot; 승부 조작 &middot; 부계정 팀 매칭</strong>의 기대 수익이 생깁니다. 랭크의 신뢰도 자체가 위협받습니다.</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-700 leading-relaxed">
+                                <strong class="text-slate-900">대안:</strong> 동기 부여의 핵심은 금액이 아니라 <strong class="text-amber-800">희소성과 가시성</strong>입니다.
+                                시즌 한정 칭호 &middot; 무기 스킨 &middot; 프로필 배경처럼 <strong>거래도 환금도 되지 않는 외형 보상</strong>이
+                                같은 명예욕을 자극하면서 매출 잠식과 어뷰징 유인을 만들지 않습니다.
+                                Proposal 02(POTG)와 결합해 &lsquo;보이는 성취&rsquo;로 묶으면 효과가 더 커집니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. 우선순위 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-slate-800 font-black text-2xl">#</span>
+                        <h3 class="text-xl font-bold text-slate-900">4. 실행 우선순위</h3>
+                    </div>
+                    <div class="content-panel p-6 md:p-8">
+                        <div class="space-y-3">
+                            <div class="flex flex-wrap items-center gap-3 p-4 bg-rose-50 rounded-xl border-2 border-rose-300">
+                                <span class="bg-rose-600 text-white text-xs font-black px-3 py-1 rounded-full shrink-0">1순위</span>
+                                <span class="font-black text-slate-900 text-sm">신규 A&middot;B&middot;C (재접속 &middot; 분리 판정 &middot; 입장 복구)</span>
+                                <span class="ml-auto text-[10px] font-bold text-slate-500">불만 41% 직접 대응</span>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-3 p-4 bg-blue-50 rounded-xl border border-blue-200">
+                                <span class="bg-blue-600 text-white text-xs font-black px-3 py-1 rounded-full shrink-0">2순위</span>
+                                <span class="font-black text-slate-900 text-sm">Proposal 01 리플레이</span>
+                                <span class="ml-auto text-[10px] font-bold text-slate-500">13% 대응 + 신고 정확도 향상</span>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-3 p-4 bg-blue-50 rounded-xl border border-blue-200">
+                                <span class="bg-blue-600 text-white text-xs font-black px-3 py-1 rounded-full shrink-0">3순위</span>
+                                <span class="font-black text-slate-900 text-sm">Proposal 02 POTG + 05(외형 보상으로 수정)</span>
+                                <span class="ml-auto text-[10px] font-bold text-slate-500">성취 노출 묶음 처리</span>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-3 p-4 bg-slate-50 rounded-xl border border-slate-200">
+                                <span class="bg-slate-500 text-white text-xs font-black px-3 py-1 rounded-full shrink-0">4순위</span>
+                                <span class="font-black text-slate-900 text-sm">Proposal 04 맵 밴</span>
+                                <span class="ml-auto text-[10px] font-bold text-slate-500">매칭 시간 증가 &middot; 맵 편중 심화 감시 필요</span>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-3 p-4 bg-amber-50 rounded-xl border border-amber-300">
+                                <span class="bg-amber-500 text-white text-xs font-black px-3 py-1 rounded-full shrink-0">보류</span>
+                                <span class="font-black text-slate-900 text-sm">Proposal 03 사후 채팅</span>
+                                <span class="ml-auto text-[10px] font-bold text-slate-500">고스팅 검토 후 대안(핑&middot;라디오)으로 대체</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. 검증 지표 · 한계 -->
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div class="content-panel p-6 md:p-7">
+                        <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">검증 지표</p>
+                        <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                            <li>&bull; <strong class="text-slate-800">재접속:</strong> 비정상 종료 중 복귀 성공률, 탈주 페널티 부과 건수 변화</li>
+                            <li>&bull; <strong class="text-slate-800">분리 판정:</strong> 페널티 이의 제기 CS 인입 건수 (감소가 목표)</li>
+                            <li>&bull; <strong class="text-slate-800">입장 복구:</strong> 입장 실패로 성립된 경기 비율</li>
+                            <li>&bull; <strong class="text-slate-800">리플레이:</strong> 신고 처리율과 제재 확정률</li>
+                            <li>&bull; <strong class="text-slate-800">맵 밴:</strong> 평균 매칭 대기 시간, 맵별 선택 편중도</li>
+                        </ul>
+                    </div>
+                    <div class="content-panel p-6 md:p-7">
+                        <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">이 점검의 한계</p>
+                        <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
+                            <li>&bull; 41% 등 비중은 <strong class="text-slate-800">커뮤니티 게시글을 직접 분류한 자체 취합 값</strong>이며 공식 통계가 아닙니다. 표본이 불만 표출 유저에 편중돼 있습니다.</li>
+                            <li>&bull; 재접속&middot;분리 판정은 <strong class="text-slate-800">클라이언트 로그 수집 범위</strong>에 따라 구현 가능성이 달라집니다.</li>
+                            <li>&bull; 매출 잠식 규모는 <strong class="text-slate-800">결제 데이터 없이 추정하지 않았습니다.</strong> 방향만 제시했습니다.</li>
+                            <li>&bull; 개발 공수는 산정하지 않았습니다. 우선순위는 <strong class="text-slate-800">문제 비중과 리스크 기준</strong>입니다.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 결론 -->
+                <div class="bg-slate-900 rounded-[32px] p-8 md:p-10 text-white relative overflow-hidden shadow-2xl">
+                    <div class="absolute right-0 bottom-0 opacity-10 text-9xl -mb-8 -mr-8 transform rotate-12">🔎</div>
+                    <div class="relative z-10 max-w-4xl mx-auto">
+                        <p class="text-blue-400 font-black text-[10px] tracking-wide mb-5 text-center">정리</p>
+                        <p class="text-base md:text-lg font-bold leading-relaxed text-center mb-8">
+                            제안을 늘리는 것보다 <strong class="text-blue-300">정의한 문제를 실제로 덮었는지 확인하는 일</strong>이 먼저입니다.<br class="hidden md:block">
+                            점검 결과 가장 큰 문제(41%)가 비어 있었고, 제안 두 건은 부작용을 안고 있었습니다.
+                        </p>
+                        <div class="grid md:grid-cols-3 gap-4 text-left">
+                            <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
+                                <p class="text-blue-300 font-black text-sm mb-2">빈 칸을 메웠습니다</p>
+                                <p class="text-xs text-slate-300 leading-relaxed">서버 성능은 기획 영역이 아니지만 <strong class="text-white">탈주 판정 로직은 기획 영역</strong>입니다. 재접속&middot;분리 판정&middot;입장 복구로 &lsquo;억울한 손실&rsquo;을 제거합니다.</p>
+                            </div>
+                            <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
+                                <p class="text-blue-300 font-black text-sm mb-2">부작용을 걸러냈습니다</p>
+                                <p class="text-xs text-slate-300 leading-relaxed">사후 채팅은 <strong class="text-white">고스팅</strong>, 캐시 보상은 <strong class="text-white">매출 잠식과 대리 유인</strong>을 만듭니다. 핑&middot;라디오와 외형 보상으로 대체했습니다.</p>
+                            </div>
+                            <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
+                                <p class="text-blue-300 font-black text-sm mb-2">순서를 문제 비중에 맞췄습니다</p>
+                                <p class="text-xs text-slate-300 leading-relaxed">기존 제안은 13%&middot;15% 문제에 몰려 있었습니다. <strong class="text-white">41%를 1순위로</strong> 올리고 나머지를 뒤로 재배치했습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- 푸터 -->
             <div class="p-10 bg-slate-950 border-t border-slate-900 text-center">
-                <p class="text-[10px] font-bold text-slate-600 uppercase tracking-[0.4em] mb-3">Sudden Attack Rank Match Redesign Project</p>
+                <p class="text-[10px] font-bold text-slate-600 tracking-wide mb-3">서든어택 랭크 매치 개선 기획</p>
                 <p class="text-xs text-slate-500 font-medium">서든어택 시스템 분석 및 기획 작업 기록 &copy; 허재석</p>
             </div>
         </div>
