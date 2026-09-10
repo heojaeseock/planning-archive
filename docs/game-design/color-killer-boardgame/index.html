@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
     <title>Color Killer 보드게임 기획·제작</title>
     <meta name="description" content="Color Killer 보드게임 기획·제작. 특수 카드 4종으로 역전 요소를 만든 창작 보드게임.">
 <meta property="og:type" content="article">
@@ -273,17 +274,17 @@
                         <!-- 일반 카드 이미지 -->
                         <div class="bg-white rounded-xl border border-slate-100 p-4 shadow-sm">
                             <p class="text-[11px] font-black text-slate-400 tracking-wide text-center mb-3">일반 카드 구성 (5종)</p>
-                            <img alt="컬러킬러 일반 카드 5종 구성" src="cards_normal.png" class="w-full h-auto object-contain mx-auto hover:scale-[1.02] transition-transform cursor-pointer" onclick="openImageModal(this.src)" onerror="this.src='[일반 카드]';">
+                            <img alt="컬러킬러 일반 카드 5종 구성" src="cards_normal.png" class="w-full h-auto object-contain mx-auto hover:scale-[1.02] transition-transform cursor-pointer" onclick="openImageModal(this.src)" onerror="this.src='[일반 카드]';" decoding="async" loading="lazy">
                         </div>
                         
                         <!-- 특수 카드 이미지 미리보기 (비율 강제 고정 추가) -->
                         <div class="bg-slate-50 rounded-xl border border-slate-200 p-4 shadow-sm">
                             <p class="text-[11px] font-black text-slate-500 tracking-wide text-center mb-3">특수 카드 구성 (4종)</p>
                             <div class="grid grid-cols-4 gap-2 max-w-[280px] mx-auto mb-2">
-                                <img alt="특수 카드 흰색 카드" src="card_white.png" class="w-full aspect-[2/3] object-contain object-center rounded-md cursor-pointer hover:-translate-y-1 transition-transform border border-slate-200 shadow-sm bg-white p-1" onclick="openImageModal(this.src)" onerror="this.src='[흰색 카드]';">
-                                <img alt="특수 카드 블랙 카드" src="card_black.png" class="w-full aspect-[2/3] object-contain object-center rounded-md cursor-pointer hover:-translate-y-1 transition-transform border border-slate-200 shadow-sm bg-white p-1" onclick="openImageModal(this.src)" onerror="this.src='[블랙 카드]';">
-                                <img alt="특수 카드 무지개 카드" src="card_rainbow.png" class="w-full aspect-[2/3] object-contain object-center rounded-md cursor-pointer hover:-translate-y-1 transition-transform border border-slate-200 shadow-sm bg-white p-1" onclick="openImageModal(this.src)" onerror="this.src='[무지개 카드]';">
-                                <img alt="특수 카드 약탈 카드" src="card_plunder.png" class="w-full aspect-[2/3] object-contain object-center rounded-md cursor-pointer hover:-translate-y-1 transition-transform border border-slate-200 shadow-sm bg-white p-1" onclick="openImageModal(this.src)" onerror="this.src='[약탈 카드]';">
+                                <img alt="특수 카드 흰색 카드" src="card_white.png" class="w-full aspect-[2/3] object-contain object-center rounded-md cursor-pointer hover:-translate-y-1 transition-transform border border-slate-200 shadow-sm bg-white p-1" onclick="openImageModal(this.src)" onerror="this.src='[흰색 카드]';" decoding="async" loading="lazy">
+                                <img alt="특수 카드 블랙 카드" src="card_black.png" class="w-full aspect-[2/3] object-contain object-center rounded-md cursor-pointer hover:-translate-y-1 transition-transform border border-slate-200 shadow-sm bg-white p-1" onclick="openImageModal(this.src)" onerror="this.src='[블랙 카드]';" decoding="async" loading="lazy">
+                                <img alt="특수 카드 무지개 카드" src="card_rainbow.png" class="w-full aspect-[2/3] object-contain object-center rounded-md cursor-pointer hover:-translate-y-1 transition-transform border border-slate-200 shadow-sm bg-white p-1" onclick="openImageModal(this.src)" onerror="this.src='[무지개 카드]';" decoding="async" loading="lazy">
+                                <img alt="특수 카드 약탈 카드" src="card_plunder.png" class="w-full aspect-[2/3] object-contain object-center rounded-md cursor-pointer hover:-translate-y-1 transition-transform border border-slate-200 shadow-sm bg-white p-1" onclick="openImageModal(this.src)" onerror="this.src='[약탈 카드]';" decoding="async" loading="lazy">
                             </div>
                             <p class="text-[10px] text-center text-slate-400 font-bold">* 상세 기능은 '차별화: 특수 카드' 탭 참조</p>
                         </div>
@@ -336,7 +337,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
                 <!-- 흰색 카드 -->
                 <div class="content-card p-5 md:p-6 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 border-t-4 border-t-emerald-400 h-full w-full">
-                    <img alt="특수 카드 흰색 카드" src="card_white.png" class="game-card-img mb-6 cursor-pointer shrink-0" onclick="openImageModal(this.src)" onerror="this.src='[흰색 카드]';">
+                    <img alt="특수 카드 흰색 카드" src="card_white.png" class="game-card-img mb-6 cursor-pointer shrink-0" onclick="openImageModal(this.src)" onerror="this.src='[흰색 카드]';" decoding="async" loading="lazy">
                     <div class="flex flex-col flex-1 w-full">
                         <!-- 뱃지 영역 높이 고정 -->
                         <div class="mb-4 shrink-0 h-6 flex items-center justify-center w-full">
@@ -355,7 +356,7 @@
 
                 <!-- 블랙 카드 -->
                 <div class="content-card p-5 md:p-6 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 border-t-4 border-t-slate-800 h-full w-full">
-                    <img alt="특수 카드 블랙 카드" src="card_black.png" class="game-card-img mb-6 cursor-pointer shrink-0" onclick="openImageModal(this.src)" onerror="this.src='[블랙 카드]';">
+                    <img alt="특수 카드 블랙 카드" src="card_black.png" class="game-card-img mb-6 cursor-pointer shrink-0" onclick="openImageModal(this.src)" onerror="this.src='[블랙 카드]';" decoding="async" loading="lazy">
                     <div class="flex flex-col flex-1 w-full">
                         <!-- 뱃지 영역 높이 고정 -->
                         <div class="mb-4 shrink-0 h-6 flex items-center justify-center w-full">
@@ -374,7 +375,7 @@
 
                 <!-- 무지개 카드 -->
                 <div class="content-card p-5 md:p-6 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 border-t-4 border-t-orange-400 h-full w-full">
-                    <img alt="특수 카드 무지개 카드" src="card_rainbow.png" class="game-card-img mb-6 cursor-pointer shrink-0" onclick="openImageModal(this.src)" onerror="this.src='[무지개 카드]';">
+                    <img alt="특수 카드 무지개 카드" src="card_rainbow.png" class="game-card-img mb-6 cursor-pointer shrink-0" onclick="openImageModal(this.src)" onerror="this.src='[무지개 카드]';" decoding="async" loading="lazy">
                     <div class="flex flex-col flex-1 w-full">
                         <!-- 뱃지 영역 높이 고정 -->
                         <div class="mb-4 shrink-0 h-6 flex items-center justify-center w-full">
@@ -393,7 +394,7 @@
 
                 <!-- 약탈 카드 -->
                 <div class="content-card p-5 md:p-6 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300 border-t-4 border-t-amber-400 h-full w-full">
-                    <img alt="특수 카드 약탈 카드" src="card_plunder.png" class="game-card-img mb-6 cursor-pointer shrink-0" onclick="openImageModal(this.src)" onerror="this.src='[약탈 카드]';">
+                    <img alt="특수 카드 약탈 카드" src="card_plunder.png" class="game-card-img mb-6 cursor-pointer shrink-0" onclick="openImageModal(this.src)" onerror="this.src='[약탈 카드]';" decoding="async" loading="lazy">
                     <div class="flex flex-col flex-1 w-full">
                         <!-- 뱃지 영역 높이 고정 -->
                         <div class="mb-4 shrink-0 h-6 flex items-center justify-center w-full">

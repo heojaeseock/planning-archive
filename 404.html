@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>페이지를 찾을 수 없습니다 | 허재석 기획·운영 아카이브</title>
+<meta name="description" content="주소가 바뀌었거나 없는 페이지입니다. 작업 기록 46건 목록으로 돌아가실 수 있습니다.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<style>
+  :root{
+    --bg:#fbfbfc; --surface:#fff; --border:#e2e5ea;
+    --text:#111621; --muted:#535c6b;
+    --accent:#1f4fd8; --accent-weak:#eef2ff;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0d1016; --surface:#151a22; --border:#252d3a;
+      --text:#e9edf3; --muted:#9ba4b2;
+      --accent:#7ea3ff; --accent-weak:#18233d;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    background:var(--bg);color:var(--text);padding:32px 22px;
+    font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased;word-break:keep-all}
+  .box{width:100%;max-width:560px}
+  .code{margin:0 0 14px;font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--accent)}
+  h1{margin:0 0 14px;font-size:clamp(24px,5vw,32px);font-weight:800;letter-spacing:-.025em;line-height:1.35}
+  p{margin:0 0 28px;font-size:15.5px;color:var(--muted)}
+  .links{display:flex;flex-wrap:wrap;gap:10px}
+  a.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;
+    font-size:14.5px;font-weight:700;text-decoration:none;border:1px solid var(--border);
+    background:var(--surface);color:var(--text)}
+  a.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+</style>
+</head>
+<body>
+  <div class="box">
+    <p class="code">404</p>
+    <h1>찾으시는 페이지가 없습니다</h1>
+    <p>주소가 바뀌었거나 잘못 입력된 것 같습니다.<br>아래에서 작업 기록 46건 목록으로 이동하실 수 있습니다.</p>
+    <div class="links">
+      <a class="btn primary" href="/planning-archive/"><span aria-hidden="true">←</span>작업 기록 46건</a>
+      <a class="btn" href="/planning-archive/career/">경력기술서</a>
+    </div>
+  </div>
+</body>
+</html>
