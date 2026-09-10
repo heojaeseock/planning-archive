@@ -149,7 +149,7 @@
     <!-- Header / Hero -->
     <header class="pt-32 pb-20 px-4 border-b border-slate-200 bg-gradient-to-b from-slate-200 to-surface-100">
         <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-brand-600 font-bold tracking-wide text-sm mb-4">방치형 RPG 라이브 운영 기록</h2>
+            <p class="text-brand-600 font-bold tracking-wide text-sm mb-4">방치형 RPG 라이브 운영 기록</p>
             <h1 class="text-3xl md:text-5xl font-black text-slate-900 mb-8 leading-tight">
                 방치형 RPG 업데이트 사고 예방 <br class="hidden md:block"/> 
                 파이프라인 및 개선 기획서
@@ -286,7 +286,7 @@
                     <!-- Step 2 -->
                     <div class="qa-step content-card p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5 transition-all opacity-50 grayscale" id="qa-item-2">
                         <div>
-                            <h4 class="font-bold text-slate-900 text-lg mb-1"><span class="text-brand-500 mr-2">2단계.</span>리소스 및 텍스트 검증</h4>
+                            <h3 class="font-bold text-slate-900 text-lg mb-1"><span class="text-brand-500 mr-2">2단계.</span>리소스 및 텍스트 검증</h3>
                             <p class="text-sm text-slate-500">스킬 및 아이템 툴팁 오탈자 확인, 누락으로 인한 더미 이미지 노출 방지, 팝업 및 타격 사운드 정상 출력 확인</p>
                         </div>
                         <button onclick="completeQaStep(this, 2)" disabled class="whitespace-nowrap px-6 py-2.5 bg-slate-50 text-slate-400 font-bold rounded-lg border border-slate-100 cursor-not-allowed transition-colors">
@@ -296,7 +296,7 @@
                     <!-- Step 3 -->
                     <div class="qa-step content-card p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5 transition-all opacity-50 grayscale" id="qa-item-3">
                         <div>
-                            <h4 class="font-bold text-slate-900 text-lg mb-1"><span class="text-brand-500 mr-2">3단계.</span>UI/UX 해상도 대응</h4>
+                            <h3 class="font-bold text-slate-900 text-lg mb-1"><span class="text-brand-500 mr-2">3단계.</span>UI/UX 해상도 대응</h3>
                             <p class="text-sm text-slate-500">태블릿 및 기기 비율별 UI 잘림 현상 확인, 버튼 터치 영역 겹침 방지, 팝업 간 레이어 꼬임 점검</p>
                         </div>
                         <button onclick="completeQaStep(this, 3)" disabled class="whitespace-nowrap px-6 py-2.5 bg-slate-50 text-slate-400 font-bold rounded-lg border border-slate-100 cursor-not-allowed transition-colors">
@@ -306,7 +306,7 @@
                     <!-- Step 4 -->
                     <div class="qa-step content-card p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5 transition-all opacity-50 grayscale" id="qa-item-4">
                         <div>
-                            <h4 class="font-bold text-slate-900 text-lg mb-1"><span class="text-brand-500 mr-2">4단계.</span>악용 케이스 검증</h4>
+                            <h3 class="font-bold text-slate-900 text-lg mb-1"><span class="text-brand-500 mr-2">4단계.</span>악용 케이스 검증</h3>
                             <p class="text-sm text-slate-500">재화 소모 시 음수 전환 및 보유 한도 초과 테스트, 상품 결제 진행 중 네트워크 강제 단절 방어, 다중 터치 오작동 방지</p>
                         </div>
                         <button onclick="completeQaStep(this, 4)" disabled class="whitespace-nowrap px-6 py-2.5 bg-slate-50 text-slate-400 font-bold rounded-lg border border-slate-100 cursor-not-allowed transition-colors">
@@ -316,7 +316,7 @@
                     <!-- Step 5 -->
                     <div class="qa-step content-card p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5 transition-all opacity-50 grayscale" id="qa-item-5">
                         <div>
-                            <h4 class="font-bold text-slate-900 text-lg mb-1"><span class="text-brand-500 mr-2">5단계.</span>라이브 환경 시뮬레이션</h4>
+                            <h3 class="font-bold text-slate-900 text-lg mb-1"><span class="text-brand-500 mr-2">5단계.</span>라이브 환경 시뮬레이션</h3>
                             <p class="text-sm text-brand-600 font-medium">최종 관문: 실제 유저와 동일한 일반 계정 권한으로 테스트 서버에 접속하여, 업데이트 직후 유저의 진입 동선을 그대로 재현.</p>
                         </div>
                         <button onclick="completeQaStep(this, 5)" disabled class="whitespace-nowrap px-6 py-2.5 bg-slate-50 text-slate-400 font-bold rounded-lg border border-slate-100 cursor-not-allowed transition-colors">
@@ -358,14 +358,14 @@
 
                     <div class="relative z-10 mb-8 content-card p-5">
                         <div class="absolute -left-[41px] bg-slate-100 border-4 border-slate-300 w-6 h-6 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-slate-800 text-lg mb-1">2단계: 긴급 점검</h4>
+                        <h3 class="font-bold text-slate-800 text-lg mb-1">2단계: 긴급 점검</h3>
                         <p class="text-sm text-slate-500 mb-4">유관 부서와 협력하여 원인을 규명합니다. 재화 관련 중대 버그 확인 시 즉시 서버 긴급 점검에 돌입합니다.</p>
                         <span class="inline-block bg-red-50 text-red-600 px-3 py-1 rounded-md text-xs border border-red-200 font-bold">실행: 긴급 점검 진행 및 예상 시간 공유</span>
                     </div>
 
                     <div class="relative z-10 mb-8 content-card p-5">
                         <div class="absolute -left-[41px] bg-slate-100 border-4 border-slate-300 w-6 h-6 rounded-full mt-1"></div>
-                        <h4 class="font-bold text-slate-800 text-lg mb-1">3단계: 조치 및 보상</h4>
+                        <h3 class="font-bold text-slate-800 text-lg mb-1">3단계: 조치 및 보상</h3>
                         <p class="text-sm text-slate-500 mb-4">데이터 수정을 완료하고, 유저들이 겪은 불편도와 시간에 비례하는 타당한 보상안을 내부적으로 논의 및 결재받습니다.</p>
                         <span class="inline-block bg-blue-50 text-blue-600 px-3 py-1 rounded-md text-xs border border-blue-200 font-bold">실행: 점검 종료 및 보상 지급 안내</span>
                     </div>
