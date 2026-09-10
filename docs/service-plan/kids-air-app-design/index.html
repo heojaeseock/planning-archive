@@ -227,7 +227,11 @@
         <section class="max-w-5xl w-full mb-14">
             <div class="content-card p-10 space-y-5">
                 <h2 class="text-2xl font-black text-slate-900">프로젝트 개요</h2>
-                <p class="text-slate-500 leading-relaxed font-medium">어린이집 실내 공기질을 보호자가 확인할 수 있게 만든 앱으로, 대학 재학 중 기획·디자인해 안드로이드로 출시했습니다. 기존 미세먼지 앱이 실외 수치를 다루는 것과 달리 실내 측정값을 대상으로 했습니다. 정부 공공데이터를 받아 색상과 이모지로 상태를 표시하는 구조입니다.</p>
+                <p class="text-slate-500 leading-relaxed font-medium">
+                    어린이집 실내 공기질을 보호자가 확인할 수 있게 만든 앱으로, 대학 재학 중 기획·디자인해 안드로이드로 출시했습니다. <br class="hidden md:block">
+                    기존 미세먼지 앱이 실외 수치를 다루는 것과 달리 실내 측정값을 대상으로 했습니다. <br class="hidden md:block">
+                    정부 공공데이터를 받아 색상과 이모지로 상태를 표시하는 구조입니다.
+                </p>
             </div>
         </section>
 
@@ -315,8 +319,9 @@
                 <div class="space-y-6 mb-10 text-center">
                     <h3 class="text-3xl font-black text-slate-900 border-b-4 border-slate-100 pb-6">화면 구조 설계</h3>
                     <p class="text-slate-600 text-base leading-relaxed font-medium max-w-3xl mx-auto">
-                        공공데이터 API를 실시간으로 가공하여 스플래시, 메인 대시보드, 상세 조회, 개인 위젯 설정까지 이어지는 매끄러운 흐름을 기획했습니다. 사용자가 원하는 정보를 최소한의 터치로 찾을 수 있도록 최적화했습니다. 
-                    </p>
+                     공공데이터 API를 실시간으로 가공하여 스플래시, 메인 대시보드, 상세 조회, 개인 위젯 설정까지 이어지는 매끄러운 흐름을 기획했습니다. <br class="hidden md:block">
+                    사용자가 원하는 정보를 최소한의 터치로 찾을 수 있도록 최적화했습니다.
+                </p>
                 </div>
                 
                 <div class="space-y-4">
@@ -349,8 +354,9 @@
                 <div class="max-w-3xl mb-16 relative z-10 text-center md:text-left">
                     <h3 class="text-4xl font-black text-slate-900 mb-8">주요 화면 및 UX 기획</h3>
                     <p class="text-slate-600 text-lg leading-relaxed font-medium">
-                        어린이집 실내 환경을 투명하게 공개하여 학부모의 신뢰를 얻는 것이 핵심입니다. 누구나 쉽게 공기질의 상태를 판별할 수 있도록 직관적인 인터페이스를 설계했습니다. 
-                    </p>
+                     어린이집 실내 환경을 투명하게 공개하여 학부모의 신뢰를 얻는 것이 핵심입니다. <br class="hidden md:block">
+                    누구나 쉽게 공기질의 상태를 판별할 수 있도록 직관적인 인터페이스를 설계했습니다.
+                </p>
                 </div>
 
                 <div class="ui-stage flex flex-col lg:flex-row gap-16 items-center justify-center">
@@ -507,7 +513,7 @@
             <section>
                 <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">이 서비스가 성립하려면 먼저 확인할 것</h2>
                 <p class="text-slate-600 leading-relaxed mb-8">
-                    기획의 핵심은 <strong class="text-slate-900">어린이집 실내 공기질을 실시간으로 보여주는 것</strong>입니다.
+                     기획의 핵심은 <strong class="text-slate-900">어린이집 실내 공기질을 실시간으로 보여주는 것</strong>입니다. <br class="hidden md:block">
                     이 한 문장에 확인이 필요한 전제가 들어 있습니다.
                 </p>
 
@@ -517,43 +523,41 @@
                         <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
                             <p class="text-xs font-black text-slate-700 mb-2">공공데이터로 받을 수 있는 것</p>
                             <p class="text-xs text-slate-600 leading-relaxed">
-                                어린이집은 실내공기질 관련 법령에 따라 <strong class="text-slate-800">정기 측정</strong> 의무가 있습니다.
-                                이 측정 결과는 공개 대상이 되므로 조회가 가능합니다.
-                            </p>
+                     어린이집은 실내공기질 관련 법령에 따라 <strong class="text-slate-800">정기 측정</strong> 의무가 있습니다. <br class="hidden md:block">
+                    이 측정 결과는 공개 대상이 되므로 조회가 가능합니다.
+                </p>
                         </div>
                         <div class="bg-amber-50 rounded-xl p-6 border border-amber-300">
                             <p class="text-xs font-black text-amber-800 mb-2">공공데이터로 받기 어려운 것</p>
                             <p class="text-xs text-slate-600 leading-relaxed">
-                                <strong class="text-slate-800">지금 이 순간의 수치</strong>입니다.
-                                정기 측정은 주기가 길어 <strong>오늘의 환기 상태</strong>를 알려주지 않습니다.
-                                시간대별 변화를 보여주려면 각 시설에 센서가 설치되어 데이터를 송출해야 합니다.
-                            </p>
+                     <strong class="text-slate-800">지금 이 순간의 수치</strong>입니다. 정기 측정은 주기가 길어 <strong>오늘의 환기 상태</strong>를 알려주지 않습니다. <br class="hidden md:block">
+                    시간대별 변화를 보여주려면 각 시설에 센서가 설치되어 데이터를 송출해야 합니다.
+                </p>
                         </div>
                     </div>
                     <div class="bg-slate-900 rounded-xl p-6 text-white">
                         <p class="text-xs font-black text-amber-300 mb-3">그래서 서비스가 두 종류로 갈립니다</p>
                         <p class="text-sm text-slate-300 leading-relaxed mb-4">
-                            공공데이터만으로 만들면 <strong class="text-white">시설별 정기 측정 결과를 조회하는 앱</strong>이 됩니다.
-                            학부모가 어린이집을 고를 때 참고하는 용도이고, 매일 볼 서비스는 아닙니다.
-                        </p>
+                     공공데이터만으로 만들면 <strong class="text-white">시설별 정기 측정 결과를 조회하는 앱</strong>이 됩니다. <br class="hidden md:block">
+                    학부모가 어린이집을 고를 때 참고하는 용도이고, 매일 볼 서비스는 아닙니다.
+                </p>
                         <p class="text-sm text-slate-300 leading-relaxed">
-                            문서가 기획한 <strong class="text-amber-300">시간대별 실시간 확인</strong>은
-                            <strong class="text-white">센서 설치가 선행되어야</strong> 성립합니다.
-                            즉 이 앱은 소프트웨어 기획이 아니라 <strong class="text-amber-300">센서 공급을 포함한 사업</strong>이 됩니다.
-                            어느 쪽을 만들 것인지 정하면 필요한 자원과 사업 구조가 달라집니다.
-                        </p>
+                     문서가 기획한 <strong class="text-amber-300">시간대별 실시간 확인</strong>은 <strong class="text-white">센서 설치가 선행되어야</strong> 성립합니다. <br class="hidden md:block">
+                    즉 이 앱은 소프트웨어 기획이 아니라 <strong class="text-amber-300">센서 공급을 포함한 사업</strong>이 됩니다. <br class="hidden md:block">
+                    어느 쪽을 만들 것인지 정하면 필요한 자원과 사업 구조가 달라집니다.
+                </p>
                     </div>
                     <p class="text-xs text-slate-500 leading-relaxed mt-5">
-                        기획서에 이 구분을 적어두면 <strong class="text-slate-700">데이터 확보 방안이 없다는 지적을 먼저 차단</strong>할 수 있습니다.
-                        학생 프로젝트에서 실시간을 전제한 것은 문제가 아니지만, 그 전제를 명시하지 않으면 실현 가능성을 되묻게 됩니다.
-                    </p>
+                     기획서에 이 구분을 적어두면 <strong class="text-slate-700">데이터 확보 방안이 없다는 지적을 먼저 차단</strong>할 수 있습니다. <br class="hidden md:block">
+                    학생 프로젝트에서 실시간을 전제한 것은 문제가 아니지만, 그 전제를 명시하지 않으면 실현 가능성을 되묻게 됩니다.
+                </p>
                 </div>
             </section>
 
             <section>
                 <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">데이터를 주는 쪽과 이익을 얻는 쪽이 다릅니다</h2>
                 <p class="text-slate-600 leading-relaxed mb-8">
-                    이 서비스의 사용자는 <strong class="text-slate-900">학부모</strong>이고, 데이터를 제공하는 쪽은 <strong class="text-slate-900">어린이집</strong>입니다.
+                     이 서비스의 사용자는 <strong class="text-slate-900">학부모</strong>이고, 데이터를 제공하는 쪽은 <strong class="text-slate-900">어린이집</strong>입니다. <br class="hidden md:block">
                     둘의 이해가 같은 방향이 아니라는 점이 사업 구조의 핵심 과제입니다.
                 </p>
 
@@ -561,18 +565,17 @@
                     <div class="bg-white rounded-2xl border-2 border-slate-200 p-7">
                         <p class="text-xs font-black text-slate-600 mb-3">학부모가 원하는 것</p>
                         <p class="text-sm text-slate-700 leading-relaxed">
-                            자녀가 있는 공간의 <strong class="text-slate-900">실제 상태</strong>입니다.
-                            나쁜 수치도 알아야 의미가 있습니다.
-                            문서가 서술한 <strong>투명한 공개</strong>가 이 요구에 해당합니다.
-                        </p>
+                     자녀가 있는 공간의 <strong class="text-slate-900">실제 상태</strong>입니다. <br class="hidden md:block">
+                    나쁜 수치도 알아야 의미가 있습니다. <br class="hidden md:block">
+                    문서가 서술한 <strong>투명한 공개</strong>가 이 요구에 해당합니다.
+                </p>
                     </div>
                     <div class="bg-rose-50 rounded-2xl border-2 border-rose-300 p-7">
                         <p class="text-xs font-black text-rose-700 mb-3">어린이집 입장에서는</p>
                         <p class="text-sm text-slate-700 leading-relaxed">
-                            나쁜 수치가 공개되면 <strong class="text-slate-900">불리합니다.</strong>
-                            좋을 때만 공개하면 데이터의 신뢰가 사라지고,
-                            항상 공개하면 참여할 동기가 약해집니다.
-                        </p>
+                     나쁜 수치가 공개되면 <strong class="text-slate-900">불리합니다.</strong> 좋을 때만 공개하면 데이터의 신뢰가 사라지고, <br class="hidden md:block">
+                    항상 공개하면 참여할 동기가 약해집니다.
+                </p>
                     </div>
                 </div>
 
@@ -582,69 +585,66 @@
                         <div class="bg-emerald-50 rounded-xl p-5 border border-emerald-200">
                             <p class="text-xs font-black text-emerald-800 mb-2">절대 수치 대신 개선 활동을 보여주기</p>
                             <p class="text-xs text-slate-600 leading-relaxed">
-                                오늘의 미세먼지 농도가 아니라 <strong class="text-slate-800">환기를 몇 번 했는지, 공기청정기를 언제 켰는지</strong>를 기록으로 보여줍니다.
-                                외부 공기가 나쁜 날에는 실내 수치도 나빠지지만, 그것은 시설의 잘못이 아닙니다.
-                                <strong class="text-slate-800">관리 노력은 시설이 통제할 수 있는 부분</strong>이므로 공개해도 불리하지 않습니다.
-                                문서에 이미 있는 &lsquo;공기청정기 가동 여부 확인&rsquo; 요구가 이 방향과 맞습니다.
-                            </p>
+                     오늘의 미세먼지 농도가 아니라 <strong class="text-slate-800">환기를 몇 번 했는지, 공기청정기를 언제 켰는지</strong>를 기록으로 보여줍니다. <br class="hidden md:block">
+                    외부 공기가 나쁜 날에는 실내 수치도 나빠지지만, 그것은 시설의 잘못이 아닙니다. <br class="hidden md:block">
+                    <strong class="text-slate-800">관리 노력은 시설이 통제할 수 있는 부분</strong>이므로 공개해도 불리하지 않습니다. <br class="hidden md:block">
+                    문서에 이미 있는 &lsquo;공기청정기 가동 여부 확인&rsquo; 요구가 이 방향과 맞습니다.
+                </p>
                         </div>
                         <div class="bg-emerald-50 rounded-xl p-5 border border-emerald-200">
                             <p class="text-xs font-black text-emerald-800 mb-2">시설에 판매하는 구조로 두기</p>
                             <p class="text-xs text-slate-600 leading-relaxed">
-                                학부모용 무료 앱이 아니라 <strong class="text-slate-800">어린이집이 도입하는 신뢰 확보 도구</strong>로 위치를 잡습니다.
-                                원아 모집에서 차별점이 되므로 시설이 비용을 낼 이유가 생기고,
-                                <strong class="text-slate-800">데이터 제공자와 고객이 같아져</strong> 이해 상충이 사라집니다.
-                            </p>
+                     학부모용 무료 앱이 아니라 <strong class="text-slate-800">어린이집이 도입하는 신뢰 확보 도구</strong>로 위치를 잡습니다. <br class="hidden md:block">
+                    원아 모집에서 차별점이 되므로 시설이 비용을 낼 이유가 생기고, <br class="hidden md:block">
+                    <strong class="text-slate-800">데이터 제공자와 고객이 같아져</strong> 이해 상충이 사라집니다.
+                </p>
                         </div>
                     </div>
                     <p class="text-xs text-slate-500 leading-relaxed mt-5 pt-5 border-t border-emerald-200">
-                        두 방향 모두 <strong class="text-slate-700">약점으로 적은 초기 사용자 확보</strong> 문제와 이어집니다.
-                        학부모부터 모으려 하면 볼 데이터가 없고, 시설부터 확보하면 데이터와 사용자가 함께 들어옵니다.
-                        어느 쪽을 먼저 잡을지가 이 서비스의 첫 결정입니다.
-                    </p>
+                     두 방향 모두 <strong class="text-slate-700">약점으로 적은 초기 사용자 확보</strong> 문제와 이어집니다. <br class="hidden md:block">
+                    학부모부터 모으려 하면 볼 데이터가 없고, 시설부터 확보하면 데이터와 사용자가 함께 들어옵니다. <br class="hidden md:block">
+                    어느 쪽을 먼저 잡을지가 이 서비스의 첫 결정입니다.
+                </p>
                 </div>
             </section>
 
             <section>
                 <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">위협으로 적은 항목이 가장 현실적입니다</h2>
                 <p class="text-slate-600 leading-relaxed mb-8">
-                    분석에서 위협으로 <strong class="text-slate-900">기존 대형 알림장 앱의 기능 확장</strong>을 꼽았습니다.
+                     분석에서 위협으로 <strong class="text-slate-900">기존 대형 알림장 앱의 기능 확장</strong>을 꼽았습니다. <br class="hidden md:block">
                     네 항목 중 실현 가능성이 가장 높은 것이고, 이유는 사용 빈도에 있습니다.
                 </p>
 
                 <div class="bg-white rounded-2xl border-2 border-slate-300 p-8 mb-6">
                     <p class="text-sm font-black text-slate-800 mb-5">단독 앱은 열 이유가 하루 한 번입니다</p>
                     <p class="text-slate-600 leading-relaxed mb-5">
-                        공기질 확인은 <strong class="text-slate-900">하루에 한두 번 보는 정보</strong>입니다.
-                        그 빈도로는 앱을 설치하고 유지할 동기가 약합니다.
-                        반면 알림장 앱은 <strong class="text-slate-900">등하원 알림과 사진, 공지</strong>로 매일 열립니다.
-                        그 앱에 공기질 화면이 하나 추가되면 별도 앱의 존재 이유가 사라집니다.
-                    </p>
+                     공기질 확인은 <strong class="text-slate-900">하루에 한두 번 보는 정보</strong>입니다. <br class="hidden md:block">
+                    그 빈도로는 앱을 설치하고 유지할 동기가 약합니다. <br class="hidden md:block">
+                    반면 알림장 앱은 <strong class="text-slate-900">등하원 알림과 사진, 공지</strong>로 매일 열립니다. <br class="hidden md:block">
+                    그 앱에 공기질 화면이 하나 추가되면 별도 앱의 존재 이유가 사라집니다.
+                </p>
                     <div class="bg-emerald-50 rounded-xl p-6 border border-emerald-200 mb-5">
                         <p class="text-xs font-black text-emerald-800 mb-2">위젯을 넣은 것은 이 문제에 대한 정확한 대응입니다</p>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                            문서가 <strong class="text-slate-800">앱을 열지 않고도 배경화면에서 확인</strong>하는 위젯을 설계한 것은
-                            낮은 사용 빈도 문제를 우회하는 방법입니다.
-                            앱을 여는 행동이 필요 없으면 사용 빈도가 낮아도 서비스가 유지됩니다.
-                            SWOT의 위협에 대한 대응이 이미 화면 설계에 들어가 있는 셈입니다.
-                        </p>
+                     문서가 <strong class="text-slate-800">앱을 열지 않고도 배경화면에서 확인</strong>하는 위젯을 설계한 것은 낮은 사용 빈도 문제를 우회하는 방법입니다. <br class="hidden md:block">
+                    앱을 여는 행동이 필요 없으면 사용 빈도가 낮아도 서비스가 유지됩니다. <br class="hidden md:block">
+                    SWOT의 위협에 대한 대응이 이미 화면 설계에 들어가 있는 셈입니다.
+                </p>
                     </div>
                     <p class="text-sm text-slate-600 leading-relaxed">
-                        <strong class="text-slate-800">다만 위젯만으로는 부족합니다.</strong>
-                        알림장 앱도 위젯을 만들 수 있습니다.
-                        구조적인 대응은 <strong class="text-slate-900">경쟁하지 않고 들어가는 것</strong>입니다.
-                        알림장 앱에 데이터를 공급하는 방식이면 위협이 유통 경로로 바뀝니다.
-                        단독 서비스로 남을지 공급자가 될지는 <strong class="text-slate-900">사업 구조의 선택</strong>이고,
-                        강점으로 적은 <strong>실내 공기질 특화</strong>는 후자에서 더 잘 작동합니다.
-                    </p>
+                     <strong class="text-slate-800">다만 위젯만으로는 부족합니다.</strong> 알림장 앱도 위젯을 만들 수 있습니다. <br class="hidden md:block">
+                    구조적인 대응은 <strong class="text-slate-900">경쟁하지 않고 들어가는 것</strong>입니다. <br class="hidden md:block">
+                    알림장 앱에 데이터를 공급하는 방식이면 위협이 유통 경로로 바뀝니다. <br class="hidden md:block">
+                    단독 서비스로 남을지 공급자가 될지는 <strong class="text-slate-900">사업 구조의 선택</strong>이고, <br class="hidden md:block">
+                    강점으로 적은 <strong>실내 공기질 특화</strong>는 후자에서 더 잘 작동합니다.
+                </p>
                 </div>
             </section>
 
             <section>
                 <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">색상과 이모지 표시에서 정해둘 것</h2>
                 <p class="text-slate-600 leading-relaxed mb-8">
-                    복잡한 수치 대신 색상과 이모지로 상태를 알리는 설계는
-                    <strong class="text-slate-900">학부모가 대상이라는 점에서 정확한 판단</strong>입니다.
+                     복잡한 수치 대신 색상과 이모지로 상태를 알리는 설계는 <strong class="text-slate-900">학부모가 대상이라는 점에서 정확한 판단</strong>입니다. <br class="hidden md:block">
                     다만 판정 기준을 명시해야 표시가 신뢰를 얻습니다.
                 </p>
                 <div class="bg-white rounded-2xl border-2 border-slate-200 p-7">
