@@ -142,6 +142,29 @@
     header{padding:26px 0 32px} section{padding:34px 0}
     .job{padding:20px 18px}
   }
+
+  /* 인쇄 / PDF 저장 */
+  @media print{
+    :root{
+      --bg:#fff; --surface:#fff; --surface-2:#fff; --border:#c9ced6; --border-2:#b4bac4;
+      --text:#000; --muted:#33383f; --faint:#5a606a;
+      --accent:#1f4fd8; --accent-weak:#f2f5ff;
+    }
+    body{background:#fff;color:#000;font-size:10.5pt;line-height:1.5}
+    .wrap{max-width:none;padding:0}
+    .top,.back{display:none !important}
+    a[aria-label="문서 목록으로 돌아가기"],
+    div[aria-hidden="true"][style*="104px"]{display:none !important}
+    a[href^="../"],a[href^="http"]{text-decoration:none}
+    section{padding:14px 0;break-inside:auto}
+    .job,.box,.award,figure.shot,.svc{break-inside:avoid}
+    h2{break-after:avoid}
+    h3,h4{break-after:avoid}
+    .shots,.shots2{break-inside:avoid}
+    .shotcap{display:none}
+    img{max-width:100%;height:auto}
+    @page{margin:14mm 12mm}
+  }
 </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 </head>
