@@ -289,8 +289,7 @@
     <section id="s4" class="mb-20 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">
         <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-4">시나리오를 용량 기준으로 다시 보면</h2>
         <p class="text-slate-600 leading-relaxed mb-8">
-                     전략 2의 시뮬레이션에는 서버 용량선이 함께 그려져 있습니다. <br class="hidden md:block">
-                    시간대별 값을 <strong class="text-slate-900">용량 초과분</strong>으로 환산하면 완화안이 무엇을 해결하고 무엇을 남기는지 보입니다.
+                    전략 2의 시뮬레이션에는 서버 용량선이 함께 그려져 있습니다. 시간대별 값을 <strong class="text-slate-900">용량 초과분</strong>으로 환산하면 완화안이 무엇을 해결하고 무엇을 남기는지 보입니다.
                 </p>
 
         <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-8">
@@ -379,14 +378,12 @@
         <div class="bg-slate-900 rounded-2xl p-8 text-white mb-8">
             <p class="text-sm font-black text-blue-300 mb-5">증설이 아니라 우회를 택한 것이 맞는 판단입니다</p>
             <p class="leading-relaxed mb-5">
-                     폭주 피크를 감당하려면 상시 용량을 95 이상으로 두어야 합니다. <br class="hidden md:block">
-                    그런데 평시 사용량은 20이므로 <strong class="text-blue-300">이용률이 21%</strong>에 그칩니다. <br class="hidden md:block">
+                     폭주 피크를 감당하려면 상시 용량을 95 이상으로 두어야 합니다. 그런데 평시 사용량은 20이므로 <strong class="text-blue-300">이용률이 21%</strong>에 그칩니다. <br class="hidden md:block">
                     1년 중 하루를 위해 <strong class="text-white">평상시 8할을 비워두는 인프라</strong>를 유지하는 셈입니다.
                 </p>
             <p class="leading-relaxed">
                      그래서 <strong class="text-blue-300">가벼운 텍스트 뷰로 트래픽을 우회</strong>하는 접근이 합리적입니다. <br class="hidden md:block">
-                    용량을 늘리는 대신 <strong class="text-white">한 요청의 무게를 줄이는</strong> 방향이고, <br class="hidden md:block">
-                    시즌성 스파이크가 뚜렷한 서비스에서 비용 효율이 훨씬 높습니다.
+                    용량을 늘리는 대신 <strong class="text-white">한 요청의 무게를 줄이는</strong> 방향이고, 시즌성 스파이크가 뚜렷한 서비스에서 비용 효율이 훨씬 높습니다.
                 </p>
         </div>
 
@@ -396,8 +393,7 @@
                 <div class="bg-white rounded-xl p-6 border border-amber-200">
                     <p class="text-xs font-black text-slate-800 mb-2">여유가 6.2%뿐입니다</p>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                     완화 후 피크 75는 용량 80에 대해 <strong class="text-slate-800">여유가 5</strong>입니다. <br class="hidden md:block">
-                    트래픽 예측이 조금만 틀리거나 응시 인원이 예년보다 많으면 다시 초과합니다. <br class="hidden md:block">
+                     완화 후 피크 75는 용량 80에 대해 <strong class="text-slate-800">여유가 5</strong>입니다. 트래픽 예측이 조금만 틀리거나 응시 인원이 예년보다 많으면 다시 초과합니다. <br class="hidden md:block">
                     <strong class="text-amber-800">전환 시점을 피크 도달 후가 아니라 사전으로</strong> 옮기는 편이 안전합니다. <br class="hidden md:block">
                     16:40의 30 시점에서 이미 평시의 2배이므로, 이때 전환을 시작하면 피크를 더 낮출 수 있습니다.
                 </p>
@@ -405,8 +401,7 @@
                 <div class="bg-white rounded-xl p-6 border border-amber-200">
                     <p class="text-xs font-black text-slate-800 mb-2">17시 30분도 초과 구간입니다</p>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                     폭주 시나리오에서 17:30의 값은 <strong class="text-slate-800">85로 용량을 초과</strong>합니다. <br class="hidden md:block">
-                    17시 피크만 보면 놓치기 쉬운 지점입니다. <br class="hidden md:block">
+                     폭주 시나리오에서 17:30의 값은 <strong class="text-slate-800">85로 용량을 초과</strong>합니다. 17시 피크만 보면 놓치기 쉬운 지점입니다. <br class="hidden md:block">
                     완화안은 이 시점을 50까지 낮추므로 실제로 두 구간을 함께 처리하는데, <br class="hidden md:block">
                     <strong class="text-amber-800">전환 유지 시간</strong>을 명시하지 않으면 17시만 넘기고 되돌릴 위험이 있습니다. <br class="hidden md:block">
                     정상 UI 복귀는 값이 용량의 절반 아래로 내려온 뒤로 정해두는 편이 안전합니다.
@@ -440,8 +435,7 @@
                 </div>
             </div>
             <p class="text-sm text-slate-600 leading-relaxed mb-5">
-                     체크리스트의 세 항목은 자동화에 적합한 형태입니다. <br class="hidden md:block">
-                    <strong class="text-slate-900">코드 일치 여부, 음수 값, 결측치</strong>는 모두 참과 거짓이 명확해 규칙으로 판정할 수 있고 오탐 위험이 낮습니다. <br class="hidden md:block">
+                     체크리스트의 세 항목은 자동화에 적합한 형태입니다. <strong class="text-slate-900">코드 일치 여부, 음수 값, 결측치</strong>는 모두 참과 거짓이 명확해 규칙으로 판정할 수 있고 오탐 위험이 낮습니다. <br class="hidden md:block">
                     이런 항목을 고른 것이 이 자동화가 실제로 작동하는 이유입니다.
                 </p>
             <div class="bg-white rounded-xl p-6 border border-slate-200">
@@ -452,8 +446,7 @@
                     <li>&bull; <strong class="text-slate-800">누락되지 않은 오기재</strong> &mdash; 칸이 채워져 있으나 내용이 잘못된 경우. 결측치 탐지로는 잡히지 않습니다</li>
                 </ul>
                 <p class="text-xs text-slate-600 leading-relaxed mt-4 pt-4 border-t border-slate-200">
-                     남는 10시간은 <strong class="text-slate-800">이 영역을 보는 시간</strong>으로 정의해두면 좋습니다. <br class="hidden md:block">
-                    자동화의 목표를 0시간으로 잡으면 규칙 밖 오류가 무검수로 남습니다. <br class="hidden md:block">
+                     남는 10시간은 <strong class="text-slate-800">이 영역을 보는 시간</strong>으로 정의해두면 좋습니다. 자동화의 목표를 0시간으로 잡으면 규칙 밖 오류가 무검수로 남습니다. <br class="hidden md:block">
                     <strong class="text-slate-800">절감의 상한을 명시하는 것</strong>이 자동화 제안의 신뢰도를 높입니다.
                 </p>
             </div>
@@ -463,33 +456,27 @@
             <p class="text-sm font-black text-slate-800 mb-5">VOC 번역이 규모에서 작동하려면</p>
             <p class="text-slate-600 leading-relaxed mb-5">
                      감정적 표현을 재현 스텝으로 옮기는 접근은 개발팀 소통에서 효과가 분명합니다. <br class="hidden md:block">
-                    다만 데모의 세 건과 달리 <strong class="text-slate-900">실제 리뷰는 대량으로 들어옵니다.</strong> <br class="hidden md:block">
-                    규모에서 작동하려면 두 가지가 필요합니다.
+                    다만 데모의 세 건과 달리 <strong class="text-slate-900">실제 리뷰는 대량으로 들어옵니다.</strong> 규모에서 작동하려면 두 가지가 필요합니다.
                 </p>
             <div class="grid md:grid-cols-2 gap-5 mb-5">
                 <div class="bg-white rounded-xl p-6 border border-slate-200">
                     <p class="text-xs font-black text-slate-800 mb-2">번역 전에 분류가 필요합니다</p>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                     모든 리뷰를 재현 스텝으로 옮길 수는 없습니다. <br class="hidden md:block">
-                    <strong class="text-slate-800">같은 증상의 반복 건수</strong>를 먼저 세어 다수 건부터 처리하면 한 건을 번역하는 노력이 여러 유저의 문제를 해결합니다. <br class="hidden md:block">
+                     모든 리뷰를 재현 스텝으로 옮길 수는 없습니다. <strong class="text-slate-800">같은 증상의 반복 건수</strong>를 먼저 세어 다수 건부터 처리하면 한 건을 번역하는 노력이 여러 유저의 문제를 해결합니다. <br class="hidden md:block">
                     단건 리뷰는 재현 가능성도 낮습니다.
                 </p>
                 </div>
                 <div class="bg-white rounded-xl p-6 border border-slate-200">
                     <p class="text-xs font-black text-slate-800 mb-2">재현에 필요한 정보가 리뷰에 없습니다</p>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                     데모의 리뷰에는 기기 정보가 있지만, 실제로는 <strong class="text-slate-800">앱 버전과 발생 시점, <br class="hidden md:block">
-                    네트워크 환경</strong>이 빠져 있는 경우가 대부분입니다. <br class="hidden md:block">
-                    재현 스텝을 쓰려면 이 정보가 있어야 하므로, <br class="hidden md:block">
-                    <strong class="text-slate-800">앱 내 문의 경로에서 환경 정보를 자동 첨부</strong>하는 설계가 함께 가야 합니다.
+                     데모의 리뷰에는 기기 정보가 있지만, 실제로는 <strong class="text-slate-800">앱 버전과 발생 시점, 네트워크 환경</strong>이 빠져 있는 경우가 대부분입니다. <br class="hidden md:block">
+                    재현 스텝을 쓰려면 이 정보가 있어야 하므로, <strong class="text-slate-800">앱 내 문의 경로에서 환경 정보를 자동 첨부</strong>하는 설계가 함께 가야 합니다.
                 </p>
                 </div>
             </div>
             <p class="text-sm text-slate-600 leading-relaxed">
-                     <strong class="text-slate-800">스토어 리뷰의 제약:</strong> 스토어 리뷰는 되묻기가 어렵습니다. <br class="hidden md:block">
-                    추가 정보가 필요하면 답글로 앱 내 문의를 안내하는 동선이 필요하고, 이 과정에서 상당수가 이탈합니다. <br class="hidden md:block">
-                    따라서 스토어 리뷰는 <strong class="text-slate-900">증상 빈도를 파악하는 용도</strong>로, <br class="hidden md:block">
-                    재현 스텝 작성은 <strong class="text-slate-900">앱 내 문의 건</strong>을 기반으로 하는 편이 현실적입니다.
+                     <strong class="text-slate-800">스토어 리뷰의 제약:</strong> 스토어 리뷰는 되묻기가 어렵습니다. 추가 정보가 필요하면 답글로 앱 내 문의를 안내하는 동선이 필요하고, 이 과정에서 상당수가 이탈합니다. <br class="hidden md:block">
+                    따라서 스토어 리뷰는 <strong class="text-slate-900">증상 빈도를 파악하는 용도</strong>로, 재현 스텝 작성은 <strong class="text-slate-900">앱 내 문의 건</strong>을 기반으로 하는 편이 현실적입니다.
                 </p>
         </div>
     </section>
@@ -499,8 +486,7 @@
     <section id="s5b" class="mb-20 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">
         <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-4">완화 곡선에서 70이 어디로 갔는지</h2>
         <p class="text-slate-600 leading-relaxed mb-8">
-                     앞에서 용량 초과분을 봤습니다. <br class="hidden md:block">
-                    이번에는 <strong class="text-slate-900">곡선 아래 총량</strong>과 시간대별 감소율을 보면 완화안이 무엇을 한 것인지가 더 분명해집니다.
+                    앞에서 용량 초과분을 봤습니다. 이번에는 <strong class="text-slate-900">곡선 아래 총량</strong>과 시간대별 감소율을 보면 완화안이 무엇을 한 것인지가 더 분명해집니다.
                 </p>
 
         <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-8">
@@ -590,41 +576,34 @@
             <p class="text-sm font-black text-amber-800 mb-5">세로축이 사람 수인지 서버 부하인지에 따라 뜻이 갈립니다</p>
             <p class="text-slate-700 leading-relaxed mb-5">
                      완화 수단은 <strong class="text-slate-900">무거운 동적 화면 대신 텍스트 기반 가채점 페이지로 우회</strong>하는 것입니다. <br class="hidden md:block">
-                    경량 페이지로 바꿔도 <strong class="text-slate-900">서비스에 들어오는 사람 수는 줄지 않습니다.</strong> <br class="hidden md:block">
-                    줄어드는 것은 요청당 서버가 하는 일입니다. <br class="hidden md:block">
+                    경량 페이지로 바꿔도 <strong class="text-slate-900">서비스에 들어오는 사람 수는 줄지 않습니다.</strong> 줄어드는 것은 요청당 서버가 하는 일입니다. <br class="hidden md:block">
                     그런데 전략 설명은 이 값을 <strong class="text-amber-800">동시접속 트래픽</strong>이라고 부릅니다.
                 </p>
             <div class="grid md:grid-cols-2 gap-6 mb-5">
                 <div class="bg-white rounded-2xl p-6 border border-slate-200">
                     <p class="text-xs font-black text-slate-700 mb-2">사람 수라면</p>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                     70만큼이 <strong class="text-slate-800">서비스를 쓰지 못한 것</strong>이 됩니다. <br class="hidden md:block">
-                    수능 당일 가채점은 대체재가 있으므로, 못 들어온 유저는 다른 서비스로 갑니다. <br class="hidden md:block">
+                     70만큼이 <strong class="text-slate-800">서비스를 쓰지 못한 것</strong>이 됩니다. 수능 당일 가채점은 대체재가 있으므로, 못 들어온 유저는 다른 서비스로 갑니다. <br class="hidden md:block">
                     장애는 막았지만 이용자는 잃은 결과입니다.
                 </p>
                 </div>
                 <div class="bg-white rounded-2xl p-6 border-2 border-emerald-300">
                     <p class="text-xs font-black text-emerald-700 mb-2">서버 부하라면</p>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                     같은 사람이 <strong class="text-slate-800">가벼운 화면으로 서비스를 받은 것</strong>입니다. <br class="hidden md:block">
-                    아무도 잃지 않고 부하만 23.6% 줄였다는 뜻이므로 제안이 훨씬 강해집니다.
+                    같은 사람이 <strong class="text-slate-800">가벼운 화면으로 서비스를 받은 것</strong>입니다. 아무도 잃지 않고 부하만 23.6% 줄였다는 뜻이므로 제안이 훨씬 강해집니다.
                 </p>
                 </div>
             </div>
             <p class="text-slate-700 leading-relaxed">
-                     제안의 성격상 <strong class="text-slate-900">후자가 의도일 것</strong>입니다. <br class="hidden md:block">
-                    축 이름을 <strong class="text-emerald-700">서버 부하</strong>로 적고 동시접속자 수는 폭주와 완화에서 같다는 점을 한 줄 덧붙이면, <br class="hidden md:block">
-                    같은 그래프가 <strong class="text-slate-900">이용자를 지키면서 장애를 막았다</strong>는 뜻이 됩니다. <br class="hidden md:block">
-                    지금 표기로는 읽는 사람이 반대로 해석할 여지가 남습니다.
+                     제안의 성격상 <strong class="text-slate-900">후자가 의도일 것</strong>입니다. 축 이름을 <strong class="text-emerald-700">서버 부하</strong>로 적고 동시접속자 수는 폭주와 완화에서 같다는 점을 한 줄 덧붙이면, <br class="hidden md:block">
+                    같은 그래프가 <strong class="text-slate-900">이용자를 지키면서 장애를 막았다</strong>는 뜻이 됩니다. 지금 표기로는 읽는 사람이 반대로 해석할 여지가 남습니다.
                 </p>
         </div>
 
         <div class="bg-white border-2 border-emerald-300 rounded-2xl p-8 mb-8">
             <p class="text-sm font-black text-emerald-700 mb-5">감소율이 25%로 수렴하는 것이 경량 페이지의 실력입니다</p>
             <p class="text-slate-600 leading-relaxed mb-5">
-                     시간대별 감소율이 0, 21.1, 41.2, 25.0, 25.0%입니다. <br class="hidden md:block">
-                    후반 두 구간이 <strong class="text-slate-900">정확히 25%로 같습니다.</strong> <br class="hidden md:block">
-                    상황이 안정된 뒤의 값이므로 이것이 경량 페이지가 실제로 줄이는 부하 비율로 읽힙니다.
+                    시간대별 감소율이 0, 21.1, 41.2, 25.0, 25.0%입니다. 후반 두 구간이 <strong class="text-slate-900">정확히 25%로 같습니다.</strong> 상황이 안정된 뒤의 값이므로 이것이 경량 페이지가 실제로 줄이는 부하 비율로 읽힙니다.
                 </p>
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
@@ -648,19 +627,16 @@
             <p class="text-emerald-400 font-black text-[10px] tracking-wide mb-5">이 이벤트는 사후 대응이 아니라 사전 배포가 가능합니다</p>
             <p class="text-sm md:text-base text-slate-300 leading-relaxed mb-5">
                      시뮬레이션은 <strong class="text-white">장애 위험을 감지한 뒤 비상용 웹뷰를 배포</strong>하는 순서로 그려져 있습니다. <br class="hidden md:block">
-                    그런데 수능 종료 시각은 <strong class="text-emerald-400">몇 달 전에 공지되는 확정 일정</strong>입니다. <br class="hidden md:block">
-                    폭주 시점을 정확히 아는데 감지를 기다릴 이유가 없습니다.
+                    그런데 수능 종료 시각은 <strong class="text-emerald-400">몇 달 전에 공지되는 확정 일정</strong>입니다. 폭주 시점을 정확히 아는데 감지를 기다릴 이유가 없습니다.
                 </p>
             <p class="text-sm md:text-base text-slate-300 leading-relaxed mb-5">
-                     17시 구간의 감소율이 21.1%에 그친 것도 전환이 그때 시작되기 때문입니다. <br class="hidden md:block">
-                    <strong class="text-white">종료 30분 전에 경량 모드로 미리 전환</strong>해 두면 가장 위험한 17시 구간부터 25%가 적용됩니다. <br class="hidden md:block">
+                     17시 구간의 감소율이 21.1%에 그친 것도 전환이 그때 시작되기 때문입니다. <strong class="text-white">종료 30분 전에 경량 모드로 미리 전환</strong>해 두면 가장 위험한 17시 구간부터 25%가 적용됩니다. <br class="hidden md:block">
                     95가 아니라 처음부터 71 수준으로 들어가므로 용량선에 훨씬 여유가 생깁니다.
                 </p>
             <div class="bg-white/10 rounded-xl p-6 border border-white/20">
                 <p class="text-xs font-black text-emerald-400 mb-3">사후 대응으로 그린 것이 제안을 낮춰 보이게 합니다</p>
                 <p class="text-xs text-slate-300 leading-relaxed">
-                     감지 후 대응은 <strong class="text-white">언제 일어날지 모르는 장애</strong>에 쓰는 방식입니다. <br class="hidden md:block">
-                    시각이 정해진 이벤트에는 사전 전환이 맞고, 실행 난이도도 더 낮습니다. <br class="hidden md:block">
+                     감지 후 대응은 <strong class="text-white">언제 일어날지 모르는 장애</strong>에 쓰는 방식입니다. 시각이 정해진 이벤트에는 사전 전환이 맞고, 실행 난이도도 더 낮습니다. <br class="hidden md:block">
                     버튼 순서를 <strong class="text-emerald-400">사전 전환과 비상 대응 두 가지</strong>로 나눠 보여주면 운영 계획을 세울 줄 안다는 점이 함께 전달됩니다. <br class="hidden md:block">
                     감지 대응은 <strong class="text-white">예측하지 못한 다른 폭주</strong>를 위한 두 번째 장치로 남겨둡니다.
                 </p>
@@ -707,17 +683,14 @@
             <div class="bg-amber-50 rounded-2xl p-6 border border-amber-200 mb-5">
                 <p class="text-xs font-black text-amber-800 mb-3">결제가 막히는 건이 보통으로 잡혀 있습니다</p>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                     배속 터치 프리징은 <strong class="text-slate-800">높음</strong>, 결제 버튼이 가려지는 건은 <strong class="text-slate-800">보통</strong>입니다. <br class="hidden md:block">
-                    프리징은 사용 불편이고 결제 차단은 <strong class="text-amber-800">매출이 발생하지 않는 상태</strong>입니다. <br class="hidden md:block">
+                     배속 터치 프리징은 <strong class="text-slate-800">높음</strong>, 결제 버튼이 가려지는 건은 <strong class="text-slate-800">보통</strong>입니다. 프리징은 사용 불편이고 결제 차단은 <strong class="text-amber-800">매출이 발생하지 않는 상태</strong>입니다. <br class="hidden md:block">
                     어느 쪽이 급한지는 기준에 따라 갈리는데, 그 기준이 문서에 없습니다. <br class="hidden md:block">
                     영향 범위로 볼지 매출 영향으로 볼지 복구 난이도로 볼지를 정해두지 않으면 <strong class="text-slate-800">번역은 되지만 순서는 담당자마다 달라집니다.</strong>
                 </p>
             </div>
             <p class="text-sm text-slate-600 leading-relaxed">
-                     <strong class="text-slate-800">번역 다음에 필요한 것은 분류 규칙입니다.</strong> <br class="hidden md:block">
-                    세 건이 세 조직으로 흩어지므로, 어느 조직으로 보낼지와 어느 순서로 처리할지를 <strong class="text-slate-900">티켓 양식에 미리 넣어두어야</strong> 실제 운영에서 작동합니다. <br class="hidden md:block">
-                    전략 3이 만든 재현 스텝은 개발팀이 바로 착수할 수 있게 해주지만, <br class="hidden md:block">
-                    <strong class="text-slate-900">어느 개발팀인지</strong>는 아직 사람이 판단하고 있습니다. <br class="hidden md:block">
+                     <strong class="text-slate-800">번역 다음에 필요한 것은 분류 규칙입니다.</strong> 세 건이 세 조직으로 흩어지므로, 어느 조직으로 보낼지와 어느 순서로 처리할지를 <strong class="text-slate-900">티켓 양식에 미리 넣어두어야</strong> 실제 운영에서 작동합니다. <br class="hidden md:block">
+                    전략 3이 만든 재현 스텝은 개발팀이 바로 착수할 수 있게 해주지만, <strong class="text-slate-900">어느 개발팀인지</strong>는 아직 사람이 판단하고 있습니다. <br class="hidden md:block">
                     유형과 화면 위치로 담당을 자동 배정하는 규칙을 붙이면 전략 1의 자동화와 같은 성격의 개선이 됩니다.
                 </p>
         </div>
