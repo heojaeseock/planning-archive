@@ -107,7 +107,7 @@
             <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
                 <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 leading-snug">플랫폼 구조</h2>
                 <p class="text-gray-600 leading-relaxed mb-4">
-                    리셀 커머스는 한정판 상품을 정가 추첨 판매와 이용자 간 재판매로 유통하는 플랫폼입니다. <br class="hidden md:block">
+                     리셀 커머스는 한정판 상품을 정가 추첨 판매와 이용자 간 재판매로 유통하는 플랫폼입니다. <br class="hidden md:block">
                     정가 판매를 여는 시점을 드랍이라 하며, 해당 1분에 트래픽이 집중됩니다. <br class="hidden md:block">
                     결제 지연 한 건이 커뮤니티 확산으로 이어지는 구조입니다.
                 </p>
@@ -162,9 +162,11 @@
                         <span class="text-2xl">💡</span> 핵심 제안: 커머스 도메인으로의 역량 확장
                     </h4>
                     <p class="text-base text-gray-700 text-body">
-                        물류 및 배송 등 커머스 특화 인프라 지식은 추가 학습이 필요한 영역으로 정리했습니다.<br><br>
-                        대신 리셀 커머스 IP 비즈니스의 주요 리스크는 <b>'트래픽 병목 통제'</b>, <b>'데이터 정합성 유지'</b>, <b>'돌발 상황에서의 오프라인 관제'</b>입니다.<br>세 가지 모두 라이브 운영에서 직접 다뤄 온 영역이라, 이 문서에 해결 방안을 정리했습니다.
-                    </p>
+                     물류 및 배송 등 커머스 특화 인프라 지식은 추가 학습이 필요한 영역으로 정리했습니다. <br class="hidden md:block">
+                    대신 리셀 커머스 IP 비즈니스의 주요 리스크는 <b>'트래픽 병목 통제'</b>, <br class="hidden md:block">
+                    <b>'데이터 정합성 유지'</b>, <b>'돌발 상황에서의 오프라인 관제'</b>입니다. <br class="hidden md:block">
+                    세 가지 모두 라이브 운영에서 직접 다뤄 온 영역이라, 이 문서에 해결 방안을 정리했습니다.
+                </p>
                 </div>
             </div>
         </section>
@@ -185,7 +187,8 @@
             <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-200 mb-8">
                 <h3 class="text-2xl font-bold mb-5 text-gray-900">온보딩 오류를 어디서 걸러내는가?</h3>
                 <p class="text-lg text-gray-600 mb-10 text-body">
-                     다양한 파트너사가 전달하는 비표준 데이터, 예를 들어 상품 코드나 가격 등을 수기로 취합하는 것은 필연적인 사고를 낳습니다. <br class="hidden md:block">
+                     다양한 파트너사가 전달하는 비표준 데이터, <br class="hidden md:block">
+                    예를 들어 상품 코드나 가격 등을 수기로 취합하는 것은 필연적인 사고를 낳습니다. <br class="hidden md:block">
                     <b>3단계 엑셀 데이터 엔지니어링</b>을 통해 리스크를 통제합니다.
                 </p>
                 
@@ -196,8 +199,8 @@
                             <h4 class="font-extrabold text-lg text-blue-600 leading-none mt-0.5">유효성 검사 강제</h4>
                         </div>
                         <p class="text-sm text-gray-600 text-body">
-                            파트너사 입력 템플릿 단계부터 데이터 유효성 검사를 적용해 규격 외 사이즈나 음수 금액 등의 오기입을 시스템적으로 저장 불가 처리합니다.
-                        </p>
+                    파트너사 입력 템플릿 단계부터 데이터 유효성 검사를 적용해 규격 외 사이즈나 음수 금액 등의 오기입을 시스템적으로 저장 불가 처리합니다.
+                </p>
                     </div>
                     <div class="p-7 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">
                         <div class="flex items-center gap-3 mb-4">
@@ -205,8 +208,8 @@
                             <h4 class="font-extrabold text-lg text-green-600 leading-none mt-0.5">복합 함수 맵핑</h4>
                         </div>
                         <p class="text-sm text-gray-600 text-body">
-                            INDEX/MATCH, IFERROR 등의 함수를 조합하여 파트너사의 고유 상품 코드를 리셀 커머스 플랫폼의 내부 시스템 표준 코드와 자동으로 맵핑합니다.
-                        </p>
+                    INDEX/MATCH, IFERROR 등의 함수를 조합하여 파트너사의 고유 상품 코드를 리셀 커머스 플랫폼의 내부 시스템 표준 코드와 자동으로 맵핑합니다.
+                </p>
                     </div>
                     <div class="p-7 bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">
                         <div class="flex items-center gap-3 mb-4">
@@ -214,8 +217,8 @@
                             <h4 class="font-extrabold text-lg text-red-600 leading-none mt-0.5">교차 검증 시각화</h4>
                         </div>
                         <p class="text-sm text-gray-600 text-body">
-                            조건부 서식을 활용해 재고 수량 불일치나 필수 값 누락 등 잠재적 오류가 발생한 셀을 붉은색으로 강제 표시하여 검수자의 실수를 차단합니다.
-                        </p>
+                    조건부 서식을 활용해 재고 수량 불일치나 필수 값 누락 등 잠재적 오류가 발생한 셀을 붉은색으로 강제 표시하여 검수자의 실수를 차단합니다.
+                </p>
                     </div>
                 </div>
 
@@ -239,8 +242,7 @@
                     병목 없는 현장을 위한 '분산형 액션 플레이북'
                 </h2>
                 <p class="text-gray-600 text-lg md:text-xl text-body font-medium">
-                    현장의 단기 스태프들이 중앙 지휘부의 지시를 기다리느라 발생하는 
-                    <b>초동 대응의 골든타임 누수</b>를 사전에 방어합니다.
+                    현장의 단기 스태프들이 중앙 지휘부의 지시를 기다리느라 발생하는 <b>초동 대응의 골든타임 누수</b>를 사전에 방어합니다.
                 </p>
             </div>
 
@@ -248,9 +250,10 @@
                 <div class="insight-box p-8 mb-10 rounded-xl shadow-inner border-l-blue-600 bg-blue-50">
                     <h3 class="font-bold text-blue-900 mb-3 text-lg flex items-center gap-2"><span>💡</span> 오프라인 현장 관제 인사이트</h3>
                     <p class="text-base text-gray-800 text-body">
-                        대규모 팝업이나 e스포츠 행사 시 가장 큰 리스크는 <b>'중앙 지휘부와의 소통이 지연될 때'</b> 발생합니다.<br><br>
-                        QR 인증 서버가 멈추거나 특정 굿즈가 예상보다 빨리 품절될 수 있습니다.<br>이때 스태프가 지시를 기다리지 않고 판단할 수 있는 <b>'상황별 권한 위임 매뉴얼'</b>이 고객 경험 훼손을 막습니다.
-                    </p>
+                     대규모 팝업이나 e스포츠 행사 시 가장 큰 리스크는 <b>'중앙 지휘부와의 소통이 지연될 때'</b> 발생합니다. <br class="hidden md:block">
+                    QR 인증 서버가 멈추거나 특정 굿즈가 예상보다 빨리 품절될 수 있습니다. <br class="hidden md:block">
+                    이때 스태프가 지시를 기다리지 않고 판단할 수 있는 <b>'상황별 권한 위임 매뉴얼'</b>이 고객 경험 훼손을 막습니다.
+                </p>
                     <div class="text-right text-[11px] text-blue-400 mt-3 font-semibold">
                         * 출처: e스포츠 대회 중계 스튜디오 현장 운영을 지원하며 남긴 메모
                     </div>
@@ -292,9 +295,11 @@
                         <span class="text-2xl">🛡️</span> 핵심 방어: AI 도입 시 데이터 컴플라이언스 준수
                     </h3>
                     <p class="text-base text-gray-800 text-body">
-                        생성형 AI를 실무에 도입할 때 가장 경계해야 할 부분은 <b>'고객 개인정보 및 결제 데이터 유출'</b>입니다.<br><br>
-                        제가 기획하는 시스템은 개인식별정보를 철저히 배제합니다. <b>'에러 코드명(예: PG_Timeout_504)'</b>과 <b>'초당 에러 발생 건수'</b> 같은 익명 메타데이터만 프롬프트로 보냅니다.<br>고객 정보를 넘기지 않고 유관 부서 전파용 리포트와 고객센터 공지 초안을 자동으로 만듭니다.
-                    </p>
+                     생성형 AI를 실무에 도입할 때 가장 경계해야 할 부분은 <b>'고객 개인정보 및 결제 데이터 유출'</b>입니다. <br class="hidden md:block">
+                    제가 기획하는 시스템은 개인식별정보를 철저히 배제합니다. <br class="hidden md:block">
+                    <b>'에러 코드명(예: PG_Timeout_504)'</b>과 <b>'초당 에러 발생 건수'</b> 같은 익명 메타데이터만 프롬프트로 보냅니다. <br class="hidden md:block">
+                    고객 정보를 넘기지 않고 유관 부서 전파용 리포트와 고객센터 공지 초안을 자동으로 만듭니다.
+                </p>
                 </div>
 
                 <h3 class="text-2xl font-bold mb-8 text-center text-gray-900">드랍 및 티켓팅 실시간 관제 대시보드</h3>
@@ -391,8 +396,8 @@
                     함수 설계도 필요 없고 시스템 개발도 필요 없습니다.
                 </p>
                     <p class="text-sm leading-relaxed">
-                     그래서 도입 순서가 정해집니다. <strong class="text-blue-300">템플릿 배포가 1순위</strong>이고, <br class="hidden md:block">
-                    코드 맵핑 자동화가 2순위입니다. <br class="hidden md:block">
+                     그래서 도입 순서가 정해집니다. <br class="hidden md:block">
+                    <strong class="text-blue-300">템플릿 배포가 1순위</strong>이고, 코드 맵핑 자동화가 2순위입니다. <br class="hidden md:block">
                     파트너사가 규격에 맞춰 보내기 시작하면 나머지 두 단계의 부담이 함께 줄어듭니다. <br class="hidden md:block">
                     <strong class="text-white">가장 앞단에서 막는 것이 가장 저렴합니다.</strong>
                 </p>
@@ -483,17 +488,16 @@
                     <p class="text-sm leading-relaxed">
                      곡선을 보면 <strong class="text-blue-300">오픈 5분 전에 이미 25</strong>로 평시의 2.5배입니다. <br class="hidden md:block">
                     이 시점을 사전 경보 기준으로 잡으면 오픈 전에 대응 태세를 갖출 수 있습니다. <br class="hidden md:block">
-                    드랍은 <strong class="text-white">시각이 미리 정해진 이벤트</strong>이므로, <br class="hidden md:block">
-                    이상 탐지에 의존할 필요 없이 <strong class="text-blue-300">일정 기반으로 사전 배치</strong>하는 것이 더 확실합니다.
+                    드랍은 <strong class="text-white">시각이 미리 정해진 이벤트</strong>이므로, 이상 탐지에 의존할 필요 없이 <strong class="text-blue-300">일정 기반으로 사전 배치</strong>하는 것이 더 확실합니다.
                 </p>
                 </div>
 
                 <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
                     <p class="text-xs font-bold text-blue-800 mb-2">대응 창이 10분이라는 점</p>
                     <p class="text-xs text-gray-600 leading-relaxed">
-                     오픈 10분 후에는 70, 30분 후에는 <strong class="text-gray-800">피크의 30%</strong>까지 내려옵니다. 즉 위기 구간이 <strong class="text-gray-800">약 10분</strong>입니다. <br class="hidden md:block">
-                    이 시간 안에 상황 파악과 안내 문안 송출이 끝나야 하므로, <br class="hidden md:block">
-                    4번의 사전 준비된 문안이 실효를 갖습니다. <br class="hidden md:block">
+                     오픈 10분 후에는 70, 30분 후에는 <strong class="text-gray-800">피크의 30%</strong>까지 내려옵니다. <br class="hidden md:block">
+                    즉 위기 구간이 <strong class="text-gray-800">약 10분</strong>입니다. <br class="hidden md:block">
+                    이 시간 안에 상황 파악과 안내 문안 송출이 끝나야 하므로, 4번의 사전 준비된 문안이 실효를 갖습니다. <br class="hidden md:block">
                     반대로 그 시간을 넘겨 대응하면 트래픽은 이미 정상화되고 <strong class="text-gray-800">불만만 커뮤니티에 남습니다.</strong>
                 </p>
                 </div>
