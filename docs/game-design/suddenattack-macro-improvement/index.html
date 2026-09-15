@@ -114,8 +114,6 @@
                             서든어택 매크로 시스템<br>
                             분석 및 UI/UX 고도화
                         </h1>
-                        <div class="flex flex-wrap gap-4 mt-6 text-slate-300 text-sm font-bold">
-                        </div>
                     </div>
                     <!-- 전술 통신/채팅 아이콘 -->
                     <div class="w-24 h-24 rounded-3xl bg-slate-950 border-b-4 border-emerald-500 flex items-center justify-center shadow-2xl shrink-0">
@@ -131,7 +129,7 @@
             </div>
 
             <!-- 문서 개요 (탭과 무관하게 항상 노출) -->
-            <div class="px-6 md:px-10 py-10 border-b border-slate-200 bg-white">
+            <div class="px-6 md:px-10 pt-10 pb-8 bg-white">
                 <h2 class="text-2xl font-bold text-slate-900 mb-5">기능 정의와 문제</h2>
                 <p class="text-slate-600 leading-relaxed mb-4 max-w-[46em]">
                     고스트 채팅 매크로는 사망한 유저가 단축키로 사전 등록 문구를 생존 팀원에게 전달하는 기능입니다. <br class="hidden md:block">
@@ -139,6 +137,35 @@
                     사전 등록 문구만 쓸 수 있어 상세한 브리핑이 어렵습니다. <br class="hidden md:block">
                     본문의 개피는 체력 잔량이 적다는 뜻, 컨뒤는 컨테이너 뒤에 적이 있다는 뜻의 유저 표현입니다.
                 </p>
+            </div>
+
+            <!-- 이 문서가 하는 말 -->
+            <div class="px-6 md:px-10 pb-10 border-b border-slate-200 bg-white">
+<section aria-label="이 문서가 하는 말">
+  <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+    <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
+      <p class="text-[11px] font-black tracking-[0.12em] text-blue-700 mb-3">한 줄 요약</p>
+      <p class="text-lg md:text-2xl font-extrabold text-slate-900 leading-snug bal max-w-[34em]">허위 정보와 도배는 따로 난 문제가 아닙니다. <span class="text-blue-700">죽은 사람이 산 사람보다 많이 본다</span>는 한 가지 구조에서 같이 나옵니다</p>
+    </div>
+    <div class="px-6 md:px-9 py-6 md:py-7">
+      <p class="text-[11px] font-black tracking-[0.12em] text-slate-400 mb-4">그래서 무엇을 손봐야 하는가</p>
+      <div class="grid md:grid-cols-3 gap-3">
+        <div class="rounded-xl border border-slate-200 p-4">
+          <p class="text-sm font-black text-slate-900 mb-1.5 bal">두 제안의 방향부터 맞춘다</p>
+          <p class="text-xs text-slate-500 leading-relaxed bal">횟수 제한은 전달을 줄이고 AI 추천은 늘려, 서로 반대로 밀고 있었습니다</p>
+        </div>
+        <div class="rounded-xl border border-slate-200 p-4">
+          <p class="text-sm font-black text-slate-900 mb-1.5 bal">전달을 늦춘다</p>
+          <p class="text-xs text-slate-500 leading-relaxed bal">죽고 몇 초 뒤에 보내면 '어디서 죽었다'는 남고 '지금 벽 뒤에 누가 있다'는 사라집니다</p>
+        </div>
+        <div class="rounded-xl border border-slate-200 p-4">
+          <p class="text-sm font-black text-slate-900 mb-1.5 bal">늦추는 시간으로 세기를 조절한다</p>
+          <p class="text-xs text-slate-500 leading-relaxed bal">기능을 없애지 않고 숫자 하나만 바꿔 강약을 정할 수 있습니다</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
             </div>
 
             <!-- 네비게이션 탭 -->
@@ -154,39 +181,7 @@
                     
                     <div class="space-y-8">
                         <!-- 도입 배경 -->
-                        <!-- 이 문서가 하는 말 -->
-<div class="text-center max-w-2xl mx-auto mb-10 pt-10">
-<section class="mb-12" aria-label="이 문서가 하는 말">
-  <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
-    <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-      <p class="text-[11px] font-black tracking-[0.12em] text-blue-700 mb-3">한 줄 요약</p>
-      <p class="text-lg md:text-2xl font-extrabold text-slate-900 leading-snug bal max-w-[34em]">허위 정보와 도배는 따로 난 문제가 아닙니다. <span class="text-blue-700">죽은 사람이 산 사람보다 많이 본다</span>는 한 가지 구조에서 같이 나옵니다</p>
-    </div>
-    <div class="px-6 md:px-9 py-6 md:py-7">
-      <p class="text-[11px] font-black tracking-[0.12em] text-slate-400 mb-4">그래서 무엇을 손봐야 하는가</p>
-      <div class="grid md:grid-cols-3 gap-3">
-        <div class="rounded-xl border border-slate-200 p-4">
-          <p class="text-sm font-black text-slate-900 mb-1.5 bal">두 제안이 서로 반대로 밀고 있었음</p>
-          <p class="text-xs text-slate-500 leading-relaxed bal">횟수 제한은 전달을 줄이고, AI 추천은 전달을 늘립니다</p>
-        </div>
-        <div class="rounded-xl border border-slate-200 p-4">
-          <p class="text-sm font-black text-slate-900 mb-1.5 bal">전달을 늦춘다</p>
-          <p class="text-xs text-slate-500 leading-relaxed bal">죽고 몇 초 뒤에 보내면 '어디서 죽었다'는 남고 '지금 벽 뒤에 누가 있다'는 사라집니다</p>
-        </div>
-        <div class="rounded-xl border border-slate-200 p-4">
-          <p class="text-sm font-black text-slate-900 mb-1.5 bal">늦추는 시간이 조절 손잡이</p>
-          <p class="text-xs text-slate-500 leading-relaxed bal">기능을 없애지 않고 숫자 하나로 세기를 조절할 수 있습니다</p>
-        </div>
-      </div>
-    </div>
-    <div class="px-6 md:px-9 py-4 bg-slate-50 border-t border-slate-200">
-      <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">고스트 채팅은 죽은 유저가 산 팀원에게 상황을 알리는 기능입니다.</p>
-    </div>
-  </div>
-</section>
-</div>
-
-<section>
+                        <section>
                             <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 mb-4">
                                 <span class="text-sky-500">#</span> 기능 개요 및 도입 배경
                             </h3>
@@ -203,18 +198,18 @@
                         <!-- 현황 분석 (장단점) -->
                         <section>
                             <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 mb-4">
-                                <span class="text-sky-500">#</span> 현황 분석 (유저 반응)
+                                <span class="text-sky-500">#</span> 유저 반응으로 본 현황
                             </h3>
                             <div class="space-y-4">
                                 <div class="bg-emerald-50 p-5 rounded-2xl border border-emerald-100 shadow-sm">
-                                    <h4 class="font-bold text-emerald-800 mb-2 flex items-center gap-2">👍 긍정적 반응 (장점)</h4>
+                                    <h4 class="font-bold text-emerald-800 mb-2 flex items-center gap-2">👍 이 기능이 잘하고 있는 것</h4>
                                     <ul class="text-sm text-slate-600 leading-relaxed space-y-1">
                                         <li>• 보이스톡 미사용 유저도 쉽게 전략을 전달하는 대안</li>
                                         <li>• 적 위치, HP 상태 등을 실시간 공유하여 팀 플레이 효율 향상</li>
                                     </ul>
                                 </div>
                                 <div class="bg-red-50 p-5 rounded-2xl border border-red-100 shadow-sm">
-                                    <h4 class="font-bold text-red-800 mb-2 flex items-center gap-2">👎 개선 필요 지점 (단점)</h4>
+                                    <h4 class="font-bold text-red-800 mb-2 flex items-center gap-2">👎 개선이 필요한 지점</h4>
                                     <ul class="text-sm text-slate-600 leading-relaxed space-y-2">
                                         <li><strong>정보 신뢰성 하락:</strong> 사망 유저의 허위 정보(낚시)나 악의적 도배로 혼란 초래</li>
                                         <li><strong>문구 제한성:</strong> 사전 설정된 문구만 사용 가능하여 세밀한 브리핑 불가</li>
@@ -264,7 +259,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="text-[11px] text-slate-500 text-center font-bold">▲ 화면을 가리는 악의적 도배 및 낚시성 브리핑 화면 (가상 구현)</p>
+                        <p class="text-[11px] text-slate-500 text-center font-bold">▲ 도배와 낚시성 브리핑으로 화면이 가려지는 상황을 재현한 화면입니다</p>
                     </div>
 
                 </div>
@@ -480,7 +475,7 @@
             <div id="root" class="tab-content p-6 md:p-10 space-y-14">
                 <div class="text-center max-w-2xl mx-auto">
                     <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">근본 원인 및 제안 검토</h2>
-                    <p class="text-slate-500 text-sm leading-relaxed">
+                    <p class="text-slate-500 text-sm leading-relaxed text-left max-w-[42em] mx-auto">
                     1번 탭에서 문제의 원인을 <strong class="text-slate-700">사망자의 정보 우위</strong>로 특정했습니다. <br class="hidden md:block">
                     이 기준으로 제안 세 건을 평가하면, <strong class="text-slate-700">두 제안이 서로 반대 방향으로 작동하고 있습니다.</strong>
                 </p>
