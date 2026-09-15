@@ -102,7 +102,8 @@
             animation: float 2s infinite ease-in-out;
         }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
@@ -283,21 +284,21 @@
                         <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md click-indicator whitespace-nowrap">👆 클릭</div>
                         <div class="text-3xl mb-3 group-hover:scale-110 transition-transform mt-2">🚨</div>
                         <h3 class="font-black text-slate-800 group-hover:text-indigo-900 text-sm mb-2">1. 유출 및 침해 탐지</h3>
-                        <p class="text-xs text-slate-500">미발매 음원 사전 유출 및 불법 복제 콘텐츠 발견</p>
+                        <p class="text-slate-500 text-sm">미발매 음원 사전 유출 및 불법 복제 콘텐츠 발견</p>
                         <div class="hidden md:block absolute top-1/2 -right-3 text-slate-300 transform -translate-y-1/2 text-xl z-10">▶</div>
                     </div>
                     <div onclick="showWorkflowDetail(2)" class="cursor-pointer group bg-slate-50 hover:bg-indigo-50 rounded-xl p-5 border border-slate-200 hover:border-indigo-300 text-center relative transition-all shadow-sm hover:shadow-md">
                         <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md click-indicator whitespace-nowrap hidden md:block">👆 클릭</div>
                         <div class="text-3xl mb-3 group-hover:scale-110 transition-transform mt-2">🎫</div>
                         <h3 class="font-black text-slate-800 group-hover:text-indigo-900 text-sm mb-2">2. Jira 티켓팅</h3>
-                        <p class="text-xs text-slate-500">증빙 캡처 및 ISRC 등 사전 규격화 템플릿 등록</p>
+                        <p class="text-slate-500 text-sm">증빙 캡처 및 ISRC 등 사전 규격화 템플릿 등록</p>
                         <div class="hidden md:block absolute top-1/2 -right-3 text-slate-300 transform -translate-y-1/2 text-xl z-10">▶</div>
                     </div>
                     <div onclick="showWorkflowDetail(3)" class="cursor-pointer group bg-slate-50 hover:bg-indigo-50 rounded-xl p-5 border border-slate-200 hover:border-indigo-300 text-center relative transition-all shadow-sm hover:shadow-md">
                         <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md click-indicator whitespace-nowrap hidden md:block">👆 클릭</div>
                         <div class="text-3xl mb-3 group-hover:scale-110 transition-transform mt-2">⚖️</div>
                         <h3 class="font-black text-slate-800 group-hover:text-indigo-900 text-sm mb-2">3. 유관부서 할당</h3>
-                        <p class="text-xs text-slate-500">긴급도(SLA) 설정 후 법무 및 사업팀 즉시 알림</p>
+                        <p class="text-slate-500 text-sm">긴급도(SLA) 설정 후 법무 및 사업팀 즉시 알림</p>
                         <div class="hidden md:block absolute top-1/2 -right-3 text-slate-300 transform -translate-y-1/2 text-xl z-10">▶</div>
                     </div>
                     <div onclick="showWorkflowDetail(4)" class="cursor-pointer group bg-slate-50 hover:bg-indigo-50 rounded-xl p-5 border border-slate-200 hover:border-indigo-300 text-center relative transition-all shadow-sm hover:shadow-md">
@@ -415,7 +416,8 @@
             <div class="bg-white border-2 border-indigo-300 rounded-2xl p-8 mb-10">
                 <p class="text-sm font-black text-indigo-700 mb-5">개입 곡선이 발매 시점을 넘는 구간이 있습니다</p>
                 <p class="text-slate-600 leading-relaxed mb-6">
-                    8시간에 105, 24시간에 115로 <strong class="text-slate-900">발매 시점 100을 넘습니다.</strong> 누락을 복구하는 것만으로는 원래 받을 수준인 100을 회복하는 데 그치므로, 100을 넘는 부분은 <strong class="text-indigo-700">없던 노출을 새로 확보한 결과</strong>입니다. <br class="hidden md:block">
+                    8시간에 105, 24시간에 115로 <strong class="text-slate-900">발매 시점 100을 넘습니다.</strong> <br class="hidden md:block">
+                    누락을 복구하는 것만으로는 원래 받을 수준인 100을 회복하는 데 그치므로, 100을 넘는 부분은 <strong class="text-indigo-700">없던 노출을 새로 확보한 결과</strong>입니다. <br class="hidden md:block">
                     두 효과는 필요한 역량이 다릅니다.
                 </p>
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
@@ -437,7 +439,8 @@
                     </div>
                 </div>
                 <p class="text-sm text-slate-600 leading-relaxed">
-                    <strong class="text-slate-800">보고할 때의 정확한 서술:</strong> 관제 체계가 보장하는 것은 <strong class="text-slate-900">하락 방어</strong>이고, 100을 넘는 부분은 <strong class="text-slate-900">관제가 만든 근거로 협상이 성공했을 때</strong>의 결과입니다. 두 효과를 합쳐 관제의 성과로 제시하면, 관제 체계만 도입한 조직에서 재현되지 않아 신뢰를 잃습니다. <br class="hidden md:block">
+                    <strong class="text-slate-800">보고할 때의 정확한 서술:</strong> 관제 체계가 보장하는 것은 <strong class="text-slate-900">하락 방어</strong>이고, 100을 넘는 부분은 <strong class="text-slate-900">관제가 만든 근거로 협상이 성공했을 때</strong>의 결과입니다. <br class="hidden md:block">
+                    두 효과를 합쳐 관제의 성과로 제시하면, 관제 체계만 도입한 조직에서 재현되지 않아 신뢰를 잃습니다. <br class="hidden md:block">
                     분리해 적으면 <strong class="text-slate-900">관제는 확실한 하한을, 영업은 상방을</strong> 담당한다는 구조가 됩니다.
                 </p>
             </div>

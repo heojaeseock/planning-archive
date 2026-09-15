@@ -103,7 +103,8 @@
             border: 1px solid #e2e8f0;
         }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
@@ -342,7 +343,10 @@
                     <div class="relative z-10 mb-8 content-card p-5">
                         <div class="absolute -left-[41px] bg-slate-100 border-4 border-slate-300 w-6 h-6 rounded-full mt-1"></div>
                         <h3 class="font-bold text-slate-800 text-lg mb-1">2단계: 긴급 점검</h3>
-                        <p class="text-sm text-slate-500 mb-4">유관 부서와 협력하여 원인을 규명합니다. 재화 관련 중대 버그 확인 시 즉시 서버 긴급 점검에 돌입합니다.</p>
+                        <p class="text-sm text-slate-500 mb-4">
+                    유관 부서와 협력하여 원인을 규명합니다. <br class="hidden md:block">
+                    재화 관련 중대 버그 확인 시 즉시 서버 긴급 점검에 돌입합니다.
+                </p>
                         <span class="inline-block bg-red-50 text-red-600 px-3 py-1 rounded-md text-xs border border-red-200 font-bold">실행: 긴급 점검 진행 및 예상 시간 공유</span>
                     </div>
 
@@ -508,15 +512,21 @@
                     <div class="grid md:grid-cols-3 gap-4">
                         <div class="bg-white/10 rounded-xl p-5">
                             <p class="text-xs font-bold text-teal-300 mb-2">1차 확인 · D+7</p>
-                            <p class="text-xs text-slate-300 leading-relaxed">방향이 맞는지만 봅니다. 이 시점의 목표는 +46.7%입니다.</p>
+                            <p class="text-slate-300 leading-relaxed text-sm">
+                    방향이 맞는지만 봅니다. <br class="hidden md:block">
+                    이 시점의 목표는 +46.7%입니다.
+                </p>
                         </div>
                         <div class="bg-white/10 rounded-xl p-5">
                             <p class="text-xs font-bold text-teal-300 mb-2">본 판정 · D+30</p>
-                            <p class="text-xs text-slate-300 leading-relaxed">효과가 가장 크게 벌어지는 구간입니다. 성과 보고는 여기를 기준으로 합니다.</p>
+                            <p class="text-slate-300 leading-relaxed text-sm">
+                    효과가 가장 크게 벌어지는 구간입니다. <br class="hidden md:block">
+                    성과 보고는 여기를 기준으로 합니다.
+                </p>
                         </div>
                         <div class="bg-white/10 rounded-xl p-5">
                             <p class="text-xs font-bold text-teal-300 mb-2">함께 볼 것</p>
-                            <p class="text-xs text-slate-300 leading-relaxed">같은 기간 신규 유입량. 유입이 늘면 잔존율이 희석되어 개선이 가려집니다.</p>
+                            <p class="text-slate-300 leading-relaxed text-sm">같은 기간 신규 유입량. 유입이 늘면 잔존율이 희석되어 개선이 가려집니다.</p>
                         </div>
                     </div>
                 </div>
@@ -538,16 +548,20 @@
                     <div class="grid md:grid-cols-3 gap-5 mb-6">
                         <div class="bg-amber-50 rounded-xl p-5 border border-amber-200">
                             <p class="text-xs font-bold text-amber-800 mb-2">접속 시간 감소</p>
-                            <p class="text-xs text-slate-600 leading-relaxed">숙제가 차지했던 시간이 사라집니다. 대체할 콘텐츠가 없으면 <strong class="text-slate-800">접속 자체가 짧아집니다.</strong></p>
+                            <p class="text-slate-600 leading-relaxed text-sm">
+                    숙제가 차지했던 시간이 사라집니다. <br class="hidden md:block">
+                    대체할 콘텐츠가 없으면 <strong class="text-slate-800">접속 자체가 짧아집니다.</strong>
+                </p>
                         </div>
                         <div class="bg-amber-50 rounded-xl p-5 border border-amber-200">
                             <p class="text-xs font-bold text-amber-800 mb-2">노출 기회 감소</p>
-                            <p class="text-xs text-slate-600 leading-relaxed">던전 입장 동선에서 보던 상품과 이벤트 배너가 <strong class="text-slate-800">한 번의 클릭으로 건너뛰어집니다.</strong></p>
+                            <p class="text-slate-600 leading-relaxed text-sm">던전 입장 동선에서 보던 상품과 이벤트 배너가 <strong class="text-slate-800">한 번의 클릭으로 건너뛰어집니다.</strong></p>
                         </div>
                         <div class="bg-amber-50 rounded-xl p-5 border border-amber-200">
                             <p class="text-xs font-bold text-amber-800 mb-2">입장권 소비 가속</p>
-                            <p class="text-xs text-slate-600 leading-relaxed">
-                    일괄 소모이므로 보유 입장권이 빨리 비워집니다. <strong class="text-slate-800">추가 구매 수요가 생기는 것은 이득</strong>이지만, 재화 순환 속도가 달라집니다.
+                            <p class="text-slate-600 leading-relaxed text-sm">
+                    일괄 소모이므로 보유 입장권이 빨리 비워집니다. <br class="hidden md:block">
+                    <strong class="text-slate-800">추가 구매 수요가 생기는 것은 이득</strong>이지만, 재화 순환 속도가 달라집니다.
                 </p>
                         </div>
                     </div>

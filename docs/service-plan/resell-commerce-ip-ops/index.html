@@ -64,7 +64,8 @@
         }
         .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
@@ -164,8 +165,7 @@
                         <span class="text-2xl">💡</span> 핵심 제안: 커머스 도메인으로의 역량 확장
                     </h4>
                     <p class="text-base text-gray-700 text-body">
-                    물류 및 배송 등 커머스 특화 인프라 지식은 추가 학습이 필요한 영역으로 정리했습니다. <br class="hidden md:block">
-                    대신 리셀 커머스 IP 비즈니스의 주요 리스크는 <b>'트래픽 병목 통제'</b>, <b>'데이터 정합성 유지'</b>, <b>'돌발 상황에서의 오프라인 관제'</b>입니다. <br class="hidden md:block">
+                    물류 및 배송 등 커머스 특화 인프라 지식은 추가 학습이 필요한 영역으로 정리했습니다. 대신 리셀 커머스 IP 비즈니스의 주요 리스크는 <b>'트래픽 병목 통제'</b>, <b>'데이터 정합성 유지'</b>, <b>'돌발 상황에서의 오프라인 관제'</b>입니다. <br class="hidden md:block">
                     세 가지 모두 라이브 운영에서 직접 다뤄 온 영역이라, 이 문서에 해결 방안을 정리했습니다.
                 </p>
                 </div>
@@ -188,7 +188,8 @@
             <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-200 mb-8">
                 <h3 class="text-2xl font-bold mb-5 text-gray-900">온보딩 오류를 어디서 걸러내는가?</h3>
                 <p class="text-lg text-gray-600 mb-10 text-body">
-                     다양한 파트너사가 전달하는 비표준 데이터, 예를 들어 상품 코드나 가격 등을 수기로 취합하는 것은 필연적인 사고를 낳습니다. <b>3단계 엑셀 데이터 엔지니어링</b>을 통해 리스크를 통제합니다.
+                    다양한 파트너사가 전달하는 비표준 데이터, 예를 들어 상품 코드나 가격 등을 수기로 취합하는 것은 필연적인 사고를 낳습니다. <br class="hidden md:block">
+                    <b>3단계 엑셀 데이터 엔지니어링</b>을 통해 리스크를 통제합니다.
                 </p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
@@ -197,7 +198,7 @@
                             <div class="flex items-center justify-center w-6 h-6 rounded bg-blue-100 text-blue-700 font-extrabold text-sm shrink-0">1</div>
                             <h4 class="font-extrabold text-lg text-blue-600 leading-none mt-0.5">유효성 검사 강제</h4>
                         </div>
-                        <p class="text-sm text-gray-600 text-body">
+                        <p class="text-gray-600 text-body text-sm">
                     파트너사 입력 템플릿 단계부터 데이터 유효성 검사를 적용해 규격 외 사이즈나 음수 금액 등의 오기입을 시스템적으로 저장 불가 처리합니다.
                 </p>
                     </div>
@@ -206,7 +207,7 @@
                             <div class="flex items-center justify-center w-6 h-6 rounded bg-green-100 text-green-700 font-extrabold text-sm shrink-0">2</div>
                             <h4 class="font-extrabold text-lg text-green-600 leading-none mt-0.5">복합 함수 맵핑</h4>
                         </div>
-                        <p class="text-sm text-gray-600 text-body">
+                        <p class="text-gray-600 text-body text-sm">
                     INDEX/MATCH, IFERROR 등의 함수를 조합하여 파트너사의 고유 상품 코드를 리셀 커머스 플랫폼의 내부 시스템 표준 코드와 자동으로 맵핑합니다.
                 </p>
                     </div>
@@ -215,7 +216,7 @@
                             <div class="flex items-center justify-center w-6 h-6 rounded bg-red-100 text-red-700 font-extrabold text-sm shrink-0">3</div>
                             <h4 class="font-extrabold text-lg text-red-600 leading-none mt-0.5">교차 검증 시각화</h4>
                         </div>
-                        <p class="text-sm text-gray-600 text-body">
+                        <p class="text-gray-600 text-body text-sm">
                     조건부 서식을 활용해 재고 수량 불일치나 필수 값 누락 등 잠재적 오류가 발생한 셀을 붉은색으로 강제 표시하여 검수자의 실수를 차단합니다.
                 </p>
                     </div>
@@ -295,7 +296,8 @@
                     </h3>
                     <p class="text-base text-gray-800 text-body">
                     생성형 AI를 실무에 도입할 때 가장 경계해야 할 부분은 <b>'고객 개인정보 및 결제 데이터 유출'</b>입니다. <br class="hidden md:block">
-                    제가 기획하는 시스템은 개인식별정보를 철저히 배제합니다. <b>'에러 코드명(예: PG_Timeout_504)'</b>과 <b>'초당 에러 발생 건수'</b> 같은 익명 메타데이터만 프롬프트로 보냅니다. <br class="hidden md:block">
+                    제가 기획하는 시스템은 개인식별정보를 철저히 배제합니다. <br class="hidden md:block">
+                    <b>'에러 코드명(예: PG_Timeout_504)'</b>과 <b>'초당 에러 발생 건수'</b> 같은 익명 메타데이터만 프롬프트로 보냅니다. <br class="hidden md:block">
                     고객 정보를 넘기지 않고 유관 부서 전파용 리포트와 고객센터 공지 초안을 자동으로 만듭니다.
                 </p>
                 </div>

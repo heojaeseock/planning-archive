@@ -97,7 +97,8 @@
             background: #2563eb;
         }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
@@ -283,18 +284,22 @@
                             <div class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-5">
                                 <p class="text-[10px] font-black tracking-wide text-blue-500 mb-2">접속 트리거</p>
                                 <p class="font-bold text-slate-900 mb-2 text-sm">의뢰 퀘스트 룰렛</p>
-                                <p class="text-xs text-slate-600 leading-relaxed">무작위 보상과 새로고침이 <strong>&ldquo;오늘 접속할 이유&rdquo;</strong>를 만듭니다. 성장이 아니라 접속 자체가 목적인 장치입니다.</p>
+                                <p class="text-slate-600 leading-relaxed text-sm">
+                    무작위 보상과 새로고침이 <strong>&ldquo;오늘 접속할 이유&rdquo;</strong>를 만듭니다. <br class="hidden md:block">
+                    성장이 아니라 접속 자체가 목적인 장치입니다.
+                </p>
                             </div>
                             <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5">
                                 <p class="text-[10px] font-black tracking-wide text-amber-600 mb-2">체류 시간</p>
                                 <p class="font-bold text-slate-900 mb-2 text-sm">자동 사냥 &middot; 오프라인 보상</p>
-                                <p class="text-xs text-slate-600 leading-relaxed">전투를 시스템에 넘겨 유저의 손을 비웁니다. 비워진 손이 <strong>관리 작업으로 이동</strong>합니다.</p>
+                                <p class="text-slate-600 leading-relaxed text-sm">전투를 시스템에 넘겨 유저의 손을 비웁니다. 비워진 손이 <strong>관리 작업으로 이동</strong>합니다.</p>
                             </div>
                             <div class="bg-rose-50 border-2 border-rose-200 rounded-2xl p-5">
                                 <p class="text-[10px] font-black tracking-wide text-rose-500 mb-2">매출</p>
                                 <p class="font-bold text-slate-900 mb-2 text-sm">컬렉션 &middot; 무기별 직업 변경</p>
-                                <p class="text-xs text-slate-600 leading-relaxed">
-                    수천 개의 수집 대상과 무기별 세트 요구가 <strong>지출의 종착점</strong>이 됩니다. 직업 변경이 자유롭다는 것은 곧 갖춰야 할 세트가 여러 벌이라는 뜻입니다.
+                                <p class="text-slate-600 leading-relaxed text-sm">
+                    수천 개의 수집 대상과 무기별 세트 요구가 <strong>지출의 종착점</strong>이 됩니다. <br class="hidden md:block">
+                    직업 변경이 자유롭다는 것은 곧 갖춰야 할 세트가 여러 벌이라는 뜻입니다.
                 </p>
                             </div>
                         </div>
@@ -703,17 +708,18 @@
                         <div class="grid md:grid-cols-3 gap-4">
                             <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
                                 <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">근거의 성격</p>
-                                <p class="text-xs text-slate-600 leading-relaxed">
-                    문제 정의는 <strong>직접 플레이 경험과 공개 커뮤니티 후기</strong>에 기반합니다. 실제 이탈 로그나 CS 인입 통계로 검증한 것이 아니므로, 체감 빈도와 실제 발생 빈도가 다를 수 있습니다.
+                                <p class="text-slate-600 leading-relaxed text-sm">
+                    문제 정의는 <strong>직접 플레이 경험과 공개 커뮤니티 후기</strong>에 기반합니다. <br class="hidden md:block">
+                    실제 이탈 로그나 CS 인입 통계로 검증한 것이 아니므로, 체감 빈도와 실제 발생 빈도가 다를 수 있습니다.
                 </p>
                             </div>
                             <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
                                 <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">비용 추정</p>
-                                <p class="text-xs text-slate-600 leading-relaxed">&lsquo;비용 낮음/중&rsquo;은 <strong>기능 범위로부터의 추정</strong>이며 실제 개발 공수 산정이 아닙니다. 내부 구조에 따라 순서가 바뀔 수 있습니다.</p>
+                                <p class="text-slate-600 leading-relaxed text-sm">&lsquo;비용 낮음/중&rsquo;은 <strong>기능 범위로부터의 추정</strong>이며 실제 개발 공수 산정이 아닙니다. 내부 구조에 따라 순서가 바뀔 수 있습니다.</p>
                             </div>
                             <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
                                 <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">다루지 않은 범위</p>
-                                <p class="text-xs text-slate-600 leading-relaxed">밸런스 수치, 서버 부하, 지역별 과금 정책은 외부에서 관측이 어려워 <strong>검토 대상에서 제외</strong>했습니다.</p>
+                                <p class="text-slate-600 leading-relaxed text-sm">밸런스 수치, 서버 부하, 지역별 과금 정책은 외부에서 관측이 어려워 <strong>검토 대상에서 제외</strong>했습니다.</p>
                             </div>
                         </div>
                     </div>
@@ -731,19 +737,20 @@
                         <div class="grid md:grid-cols-3 gap-4 text-left">
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
                                 <p class="text-blue-300 font-black text-sm mb-2">제안 다섯 건 중 한 건은 제안이 아니었습니다</p>
-                                <p class="text-xs text-slate-300 leading-relaxed">
+                                <p class="text-slate-300 leading-relaxed text-sm">
                     확률 명기는 법적 의무 사항이므로 우선순위 비교에서 분리하고, 실제 과제를 <strong class="text-white">&lsquo;공개를 전제한 보상 재설계&rsquo;</strong>로 다시 정의했습니다.
                 </p>
                             </div>
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
                                 <p class="text-blue-300 font-black text-sm mb-2">편의성은 공짜가 아닙니다</p>
-                                <p class="text-xs text-slate-300 leading-relaxed">
-                    네 건 모두 매출 또는 콘텐츠 수명을 대가로 요구합니다. 대가와 완화 설계를 함께 제시해야 <strong class="text-white">협의 단계에서 살아남습니다.</strong>
+                                <p class="text-slate-300 leading-relaxed text-sm">
+                    네 건 모두 매출 또는 콘텐츠 수명을 대가로 요구합니다. <br class="hidden md:block">
+                    대가와 완화 설계를 함께 제시해야 <strong class="text-white">협의 단계에서 살아남습니다.</strong>
                 </p>
                             </div>
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
                                 <p class="text-blue-300 font-black text-sm mb-2">순서의 기준은 손실의 성격입니다</p>
-                                <p class="text-xs text-slate-300 leading-relaxed">유저가 <strong class="text-white">개입할 수 없는 상태에서 발생하는 손실</strong>(방치 중 사망)을 최우선으로 두고, 매출 리스크를 동반하는 항목은 사업 협의 전까지 보류했습니다.</p>
+                                <p class="text-slate-300 leading-relaxed text-sm">유저가 <strong class="text-white">개입할 수 없는 상태에서 발생하는 손실</strong>(방치 중 사망)을 최우선으로 두고, 매출 리스크를 동반하는 항목은 사업 협의 전까지 보류했습니다.</p>
                             </div>
                         </div>
                     </div>

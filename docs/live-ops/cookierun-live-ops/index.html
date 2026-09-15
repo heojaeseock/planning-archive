@@ -108,7 +108,8 @@
         }
         body { word-break: keep-all; overflow-wrap: break-word; }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -213,7 +214,10 @@
             </div>
             <div class="bg-white p-6 rounded-3xl border-4 border-[#FF4D6D] shadow-[6px_6px_0_#FF4D6D]">
                 <h3 class="text-2xl font-bold text-[#FF4D6D] mb-3">🌍 글로벌 문안 기준</h3>
-                <p class="text-lg text-gray-700 font-bold leading-relaxed">문장을 짧게 끊고 보상 내역을 이미지로 함께 보여 줍니다. 수령 기한은 시차 혼선을 피하기 위해 UTC로 표기합니다.</p>
+                <p class="text-lg text-gray-700 font-bold leading-relaxed">
+                    문장을 짧게 끊고 보상 내역을 이미지로 함께 보여 줍니다. <br class="hidden md:block">
+                    수령 기한은 시차 혼선을 피하기 위해 UTC로 표기합니다.
+                </p>
             </div>
         </div>
 
@@ -401,8 +405,7 @@
     <section class="cookie-card p-10 md:p-14 mb-16 bg-[#FFFDF5]">
         <h2 class="text-2xl md:text-3xl font-black text-[#4E342E] mb-4">두 권역의 총점이 다르면 격차를 그대로 읽을 수 없습니다</h2>
         <p class="text-[#5D4037] leading-relaxed mb-10">
-                    성향 차트의 다섯 축을 더하면 <strong class="text-[#4E342E]">한국이 420, 글로벌이 370</strong>입니다. <br class="hidden md:block">
-                    다섯 축 중 넷에서 한국이 높습니다. <br class="hidden md:block">
+                    성향 차트의 다섯 축을 더하면 <strong class="text-[#4E342E]">한국이 420, 글로벌이 370</strong>입니다. 다섯 축 중 넷에서 한국이 높습니다. <br class="hidden md:block">
                     그런데 이 차트가 재는 것은 <strong class="text-[#4E342E]">무엇을 더 좋아하는가</strong>이지 누가 더 열심히 하는가가 아닙니다. <br class="hidden md:block">
                     총점을 맞추고 다시 비교했습니다.
                 </p>
@@ -467,7 +470,8 @@
         <div class="bg-white rounded-2xl p-8 border-2 border-[#A5D6A7] mb-8">
             <p class="text-sm font-black text-[#2E7D32] mb-5">격차 10짜리 두 축은 실제로 차이가 없습니다</p>
             <p class="text-[#5D4037] leading-relaxed mb-6">
-                    과금 의지와 커뮤니티는 원래 값으로 보면 한국이 각각 10씩 높습니다. 그런데 각 권역 안에서 차지하는 비중으로 바꾸면 <strong class="text-[#2E7D32]">과금 의지는 20.2 대 20.3, 커뮤니티는 21.4 대 21.6</strong>입니다. <br class="hidden md:block">
+                    과금 의지와 커뮤니티는 원래 값으로 보면 한국이 각각 10씩 높습니다. <br class="hidden md:block">
+                    그런데 각 권역 안에서 차지하는 비중으로 바꾸면 <strong class="text-[#2E7D32]">과금 의지는 20.2 대 20.3, 커뮤니티는 21.4 대 21.6</strong>입니다. <br class="hidden md:block">
                     사실상 같습니다.
                 </p>
             <p class="text-[#5D4037] leading-relaxed">
@@ -497,7 +501,8 @@
                 </div>
             </div>
             <p class="text-[#5D4037] leading-relaxed">
-                    비중으로 보면 <strong class="text-[#C2185B]">비주얼 축의 격차가 가장 큽니다.</strong> 원래 값에서는 파밍 효율이 35로 가장 커 보였는데, 총점을 맞추면 비주얼이 11.4로 파밍 효율 6.6의 <strong class="text-[#4E342E]">거의 두 배</strong>가 됩니다. <br class="hidden md:block">
+                    비중으로 보면 <strong class="text-[#C2185B]">비주얼 축의 격차가 가장 큽니다.</strong> <br class="hidden md:block">
+                    원래 값에서는 파밍 효율이 35로 가장 커 보였는데, 총점을 맞추면 비주얼이 11.4로 파밍 효율 6.6의 <strong class="text-[#4E342E]">거의 두 배</strong>가 됩니다. <br class="hidden md:block">
                     글로벌 유저에게 비주얼이 차지하는 비중이 25.7%로 다섯 축 중 가장 크기 때문입니다. <br class="hidden md:block">
                     권역별 콘텐츠 우선순위를 정할 때 <strong class="text-[#4E342E]">글로벌은 스킨을 첫 번째로</strong> 두는 근거가 여기서 나옵니다.
                 </p>
@@ -506,13 +511,11 @@
         <div class="bg-[#E8F5E9] rounded-2xl p-8 border-2 border-[#A5D6A7]">
             <p class="text-sm font-black text-[#2E7D32] mb-5">공통 항목을 따로 둔 판단이 수치로 뒷받침됩니다</p>
             <p class="text-[#5D4037] leading-relaxed mb-6">
-                    문안 기준에서 <strong class="text-[#4E342E]">공통 필수 항목</strong>을 먼저 두고 권역별 기준을 그 위에 얹었습니다. <br class="hidden md:block">
-                    차트를 비중으로 보면 <strong class="text-[#2E7D32]">과금 의지와 커뮤니티가 두 권역에서 같은 비중</strong>이므로, 이 두 영역과 관련된 운영은 실제로 공통으로 가도 무리가 없습니다. <br class="hidden md:block">
+                    문안 기준에서 <strong class="text-[#4E342E]">공통 필수 항목</strong>을 먼저 두고 권역별 기준을 그 위에 얹었습니다. 차트를 비중으로 보면 <strong class="text-[#2E7D32]">과금 의지와 커뮤니티가 두 권역에서 같은 비중</strong>이므로, 이 두 영역과 관련된 운영은 실제로 공통으로 가도 무리가 없습니다. <br class="hidden md:block">
                     보상 지급이나 커뮤니티 대응 원칙을 권역별로 나눌 이유가 없다는 뜻입니다.
                 </p>
             <p class="text-[#5D4037] leading-relaxed">
-                    반대로 <strong class="text-[#4E342E]">콘텐츠 구성과 이벤트 설계</strong>는 세 축에서 갈리므로 나누는 것이 맞습니다. <br class="hidden md:block">
-                    투트랙을 어디까지 적용할지 정할 때 <strong class="text-[#2E7D32]">비중 격차가 5를 넘는 축만 나눈다</strong>처럼 선을 그으면 앞에서 지적한 관리 부담과 문안 어긋남의 위험도 함께 줄어듭니다. <br class="hidden md:block">
+                    반대로 <strong class="text-[#4E342E]">콘텐츠 구성과 이벤트 설계</strong>는 세 축에서 갈리므로 나누는 것이 맞습니다. 투트랙을 어디까지 적용할지 정할 때 <strong class="text-[#2E7D32]">비중 격차가 5를 넘는 축만 나눈다</strong>처럼 선을 그으면 앞에서 지적한 관리 부담과 문안 어긋남의 위험도 함께 줄어듭니다. <br class="hidden md:block">
                     나눌 곳과 합칠 곳을 수치로 가르면 투트랙의 범위가 무한정 넓어지지 않습니다.
                 </p>
         </div>
@@ -596,7 +599,8 @@
                 <p class="font-black text-[#4E342E] mb-3">권역 시차와 심야 대응</p>
                 <p class="text-sm text-[#5D4037] leading-relaxed">
                     1단계의 <strong class="text-[#4E342E]">감지 즉시 1차 공지</strong>는 담당자가 깨어 있을 때만 가능합니다. <br class="hidden md:block">
-                    글로벌 서비스는 한국 기준 심야에 활동 시간대가 오므로, <strong class="text-[#C62828]">한국에서 자는 시간에 글로벌 1단계 사고</strong>가 발생하는 상황을 전제해야 합니다. 사전 승인된 최소 문안을 두어 담당자가 아니어도 송출할 수 있게 하거나, 당직 체계를 함께 설계해야 이 기준이 지켜집니다. <br class="hidden md:block">
+                    글로벌 서비스는 한국 기준 심야에 활동 시간대가 오므로, <strong class="text-[#C62828]">한국에서 자는 시간에 글로벌 1단계 사고</strong>가 발생하는 상황을 전제해야 합니다. <br class="hidden md:block">
+                    사전 승인된 최소 문안을 두어 담당자가 아니어도 송출할 수 있게 하거나, 당직 체계를 함께 설계해야 이 기준이 지켜집니다. <br class="hidden md:block">
                     시차는 투트랙 운영의 가장 실질적인 제약입니다.
                 </p>
             </div>

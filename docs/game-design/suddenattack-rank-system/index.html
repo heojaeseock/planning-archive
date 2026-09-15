@@ -95,7 +95,8 @@
         }
         .animate-pulse-soft { animation: pulse-soft 2s infinite; }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
@@ -674,15 +675,24 @@
                         <div class="grid md:grid-cols-3 gap-4 text-left">
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
                                 <p class="text-blue-300 font-black text-sm mb-2">빈 칸을 메웠습니다</p>
-                                <p class="text-xs text-slate-300 leading-relaxed">서버 성능은 기획 영역이 아니지만 <strong class="text-white">탈주 판정 로직은 기획 영역</strong>입니다. 재접속&middot;분리 판정&middot;입장 복구로 &lsquo;억울한 손실&rsquo;을 제거합니다.</p>
+                                <p class="text-slate-300 leading-relaxed text-sm">
+                    서버 성능은 기획 영역이 아니지만 <strong class="text-white">탈주 판정 로직은 기획 영역</strong>입니다. <br class="hidden md:block">
+                    재접속&middot;분리 판정&middot;입장 복구로 &lsquo;억울한 손실&rsquo;을 제거합니다.
+                </p>
                             </div>
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
                                 <p class="text-blue-300 font-black text-sm mb-2">부작용을 걸러냈습니다</p>
-                                <p class="text-xs text-slate-300 leading-relaxed">사후 채팅은 <strong class="text-white">고스팅</strong>, 캐시 보상은 <strong class="text-white">매출 잠식과 대리 유인</strong>을 만듭니다. 핑&middot;라디오와 외형 보상으로 대체했습니다.</p>
+                                <p class="text-slate-300 leading-relaxed text-sm">
+                    사후 채팅은 <strong class="text-white">고스팅</strong>, 캐시 보상은 <strong class="text-white">매출 잠식과 대리 유인</strong>을 만듭니다. <br class="hidden md:block">
+                    핑&middot;라디오와 외형 보상으로 대체했습니다.
+                </p>
                             </div>
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
                                 <p class="text-blue-300 font-black text-sm mb-2">순서를 문제 비중에 맞췄습니다</p>
-                                <p class="text-xs text-slate-300 leading-relaxed">기존 제안은 13%&middot;15% 문제에 몰려 있었습니다. <strong class="text-white">41%를 1순위로</strong> 올리고 나머지를 뒤로 재배치했습니다.</p>
+                                <p class="text-slate-300 leading-relaxed text-sm">
+                    기존 제안은 13%&middot;15% 문제에 몰려 있었습니다. <br class="hidden md:block">
+                    <strong class="text-white">41%를 1순위로</strong> 올리고 나머지를 뒤로 재배치했습니다.
+                </p>
                             </div>
                         </div>
                     </div>

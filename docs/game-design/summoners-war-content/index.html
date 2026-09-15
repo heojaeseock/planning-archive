@@ -114,7 +114,8 @@
         .reward-tag:hover { transform: scale(1.05); border-color: #10b981; }
         body { word-break: keep-all; overflow-wrap: break-word; }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -210,8 +211,8 @@
         <div class="p-10 bg-white rounded-2xl border border-blue-50">
             <h3 class="text-blue-600 font-black mb-4">몬스터 시너지 조합 예시</h3>
             <p class="text-slate-600 leading-relaxed text-lg">
-                    단일 딜러는 스스로 이 모든 조건을 충족할 수 없습니다. 공략을 위해서는 <span class="emphasis-dark">불 실프(지속 피해)</span>, <span class="emphasis-dark">물 미스틱위치(강화 방해)</span>, <span class="emphasis-dark">빛 이누가미(방깎)</span> 처럼 역할이 뚜렷한 유닛들을 조합해야 합니다. <br class="hidden md:block">
-                    이러한 룰셋은 유저가 창고에 넣어두었던 다양한 등급의 몬스터들을 다시 연구하고 육성하게 만드는 명확한 명분을 제공합니다.
+                    단일 딜러는 스스로 이 모든 조건을 충족할 수 없습니다. <br class="hidden md:block">
+                    공략을 위해서는 <span class="emphasis-dark">불 실프(지속 피해)</span>, <span class="emphasis-dark">물 미스틱위치(강화 방해)</span>, <span class="emphasis-dark">빛 이누가미(방깎)</span> 처럼 역할이 뚜렷한 유닛들을 조합해야 합니다. 이러한 룰셋은 유저가 창고에 넣어두었던 다양한 등급의 몬스터들을 다시 연구하고 육성하게 만드는 명확한 명분을 제공합니다.
                 </p>
         </div>
     </section>
@@ -285,7 +286,8 @@
         <div class="bg-rose-50 border-2 border-rose-200 rounded-2xl p-6 md:p-8 mb-6">
             <p class="text-[10px] font-black tracking-wide text-rose-500 mb-4">함정 &middot; 국민 덱이 사라지지 않고 3인조로 바뀝니다</p>
             <p class="text-sm md:text-base text-slate-700 leading-relaxed mb-5">
-                     세 가지 상태 이상을 동시에 요구하면, 유저는 각 슬롯마다 <strong class="text-slate-900">그 상태 이상을 가장 안정적으로 부여하는 유닛 하나</strong>를 찾습니다. 효율이 검증되는 순간 각 슬롯의 정답도 하나로 수렴합니다.
+                    세 가지 상태 이상을 동시에 요구하면, 유저는 각 슬롯마다 <strong class="text-slate-900">그 상태 이상을 가장 안정적으로 부여하는 유닛 하나</strong>를 찾습니다. <br class="hidden md:block">
+                    효율이 검증되는 순간 각 슬롯의 정답도 하나로 수렴합니다.
                 </p>
             <div class="grid md:grid-cols-3 gap-4 mb-5">
                 <div class="bg-white rounded-xl p-4 border border-rose-200 text-center">
@@ -359,8 +361,8 @@
                     <span class="font-black text-slate-900">전부 요구에서 선택 요구로</span>
                 </div>
                 <p class="text-sm text-slate-600 leading-relaxed">
-                    &lsquo;3종 모두&rsquo; 대신 <strong class="text-slate-900">&lsquo;제시된 5종 중 3종&rsquo;</strong> 형태로 바꾸면, 보유 상황에 따라 서로 다른 해법이 성립합니다. <br class="hidden md:block">
-                    진입 장벽도 함께 낮아집니다. 난이도는 조건 개수가 아니라 <strong>보스 체력과 제한 턴</strong>으로 조절하는 편이 다양성을 해치지 않습니다.
+                    &lsquo;3종 모두&rsquo; 대신 <strong class="text-slate-900">&lsquo;제시된 5종 중 3종&rsquo;</strong> 형태로 바꾸면, 보유 상황에 따라 서로 다른 해법이 성립합니다. 진입 장벽도 함께 낮아집니다. <br class="hidden md:block">
+                    난이도는 조건 개수가 아니라 <strong>보스 체력과 제한 턴</strong>으로 조절하는 편이 다양성을 해치지 않습니다.
                 </p>
             </div>
         </div>
@@ -521,8 +523,7 @@
                 </p>
             <p class="text-sm md:text-base text-slate-700 leading-relaxed">
                     반대로 보면 이 던전이 <strong class="text-amber-800">창고 몬스터를 꺼내는 최대치</strong>도 같은 비율입니다. <br class="hidden md:block">
-                    1번 차트의 비주류 사용률 18%가 던전 편성 기준으로는 최대 60%까지 올라갈 수 있습니다. <br class="hidden md:block">
-                    다만 그것은 조건 슬롯 세 칸이 모두 비주류로 채워질 때의 값이고, 각 슬롯의 최적해가 이미 쓰이던 상위권 유닛이라면 <strong class="text-slate-900">18%에서 한 발도 움직이지 않습니다.</strong> <br class="hidden md:block">
+                    1번 차트의 비주류 사용률 18%가 던전 편성 기준으로는 최대 60%까지 올라갈 수 있습니다. 다만 그것은 조건 슬롯 세 칸이 모두 비주류로 채워질 때의 값이고, 각 슬롯의 최적해가 이미 쓰이던 상위권 유닛이라면 <strong class="text-slate-900">18%에서 한 발도 움직이지 않습니다.</strong> <br class="hidden md:block">
                     따라서 6번의 사용 집중도 지표는 방향만이 아니라 <strong class="text-amber-800">던전 편성 안의 비주류 비율</strong>을 함께 봐야 판정이 됩니다.
                 </p>
         </div>

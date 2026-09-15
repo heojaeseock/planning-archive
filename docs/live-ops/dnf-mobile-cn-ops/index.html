@@ -51,7 +51,8 @@
         .tag-red { background: rgba(239, 68, 68, 0.1); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.2); }
         body { word-break: keep-all; overflow-wrap: break-word; }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -216,22 +217,25 @@
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                             <div class="bg-zinc-900/40 p-8 rounded-3xl border border-zinc-800/50">
                                 <h4 class="text-amber-500 font-black text-lg mb-5 flex items-center gap-2">기획 배경</h4>
-                                <p class="text-zinc-400 text-sm leading-relaxed">현재 중국 시장 내 상위 길드 간의 소강상태를 타파하기 위한 집단적 명예욕 자극이 필요합니다. 개인의 과시를 넘어선 서버 단위의 소속감을 고취하여 신규 경쟁 동력을 확보합니다.</p>
+                                <p class="text-zinc-400 leading-relaxed text-xs">
+                    현재 중국 시장 내 상위 길드 간의 소강상태를 타파하기 위한 집단적 명예욕 자극이 필요합니다. <br class="hidden md:block">
+                    개인의 과시를 넘어선 서버 단위의 소속감을 고취하여 신규 경쟁 동력을 확보합니다.
+                </p>
                             </div>
                             <div class="bg-zinc-900/40 p-8 rounded-3xl border border-zinc-800/50">
                                 <h4 class="text-amber-500 font-black text-lg mb-5 flex items-center gap-2">핵심 메커니즘</h4>
                                 <ul class="text-zinc-400 text-sm space-y-4 leading-relaxed">
-                                    <li>• <strong class="text-zinc-200">거점 점령:</strong> 주말 21시 전 서버 세력 간 성지 쟁탈전 (동기 방식).</li>
-                                    <li>• <strong class="text-zinc-200">응원 및 보급:</strong> 전투 비참여 유저는 재료 기부를 통해 세력 버프 중첩 기여.</li>
-                                    <li>• <strong class="text-zinc-200">점수 합산:</strong> 랭커의 승수와 일반 유저의 보급량을 합산하여 최종 승리 세력 결정.</li>
+                                    <li class="text-sm">• <strong class="text-zinc-200">거점 점령:</strong> 주말 21시 전 서버 세력 간 성지 쟁탈전 (동기 방식).</li>
+                                    <li class="text-sm">• <strong class="text-zinc-200">응원 및 보급:</strong> 전투 비참여 유저는 재료 기부를 통해 세력 버프 중첩 기여.</li>
+                                    <li class="text-sm">• <strong class="text-zinc-200">점수 합산:</strong> 랭커의 승수와 일반 유저의 보급량을 합산하여 최종 승리 세력 결정.</li>
                                 </ul>
                             </div>
                             <div class="bg-zinc-900/40 p-8 rounded-3xl border border-zinc-800/50">
                                 <h4 class="text-amber-500 font-black text-lg mb-5 flex items-center gap-2">BM 및 기대효과</h4>
                                 <ul class="text-zinc-400 text-sm space-y-4 leading-relaxed">
-                                    <li>• <strong class="text-zinc-200">참전 한정 패키지:</strong> 세력 소속감이 강조된 엠블럼 아바타 및 전용 칭호.</li>
-                                    <li>• <strong class="text-zinc-200">서버 낙수 보상:</strong> 승리 서버 전체에 경매장 수수료 3% 한정 인하.</li>
-                                    <li>• <strong class="text-zinc-200">매출:</strong> 경쟁 가속화로 인한 강화/증폭 재화 소모 30% 증대.</li>
+                                    <li class="text-sm">• <strong class="text-zinc-200">참전 한정 패키지:</strong> 세력 소속감이 강조된 엠블럼 아바타 및 전용 칭호.</li>
+                                    <li class="text-sm">• <strong class="text-zinc-200">서버 낙수 보상:</strong> 승리 서버 전체에 경매장 수수료 3% 한정 인하.</li>
+                                    <li class="text-sm">• <strong class="text-zinc-200">매출:</strong> 경쟁 가속화로 인한 강화/증폭 재화 소모 30% 증대.</li>
                                 </ul>
                             </div>
                         </div>
@@ -258,22 +262,25 @@
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                             <div class="bg-zinc-900/40 p-8 rounded-3xl border border-zinc-800/50">
                                 <h4 class="text-red-500 font-black text-lg mb-5 flex items-center gap-2">기획 배경</h4>
-                                <p class="text-zinc-400 text-sm leading-relaxed">중국 내 틱톡 및 비리비리 기반의 숏폼 트래픽을 인게임으로 직접 연동하여 보는 재미를 매출로 전환합니다. 스트리머와 팬덤의 상호작용을 공식화합니다.</p>
+                                <p class="text-zinc-400 leading-relaxed text-xs">
+                    중국 내 틱톡 및 비리비리 기반의 숏폼 트래픽을 인게임으로 직접 연동하여 보는 재미를 매출로 전환합니다. <br class="hidden md:block">
+                    스트리머와 팬덤의 상호작용을 공식화합니다.
+                </p>
                             </div>
                             <div class="bg-zinc-900/40 p-8 rounded-3xl border border-zinc-800/50">
                                 <h4 class="text-red-500 font-black text-lg mb-5 flex items-center gap-2">핵심 메커니즘</h4>
                                 <ul class="text-zinc-400 text-sm space-y-4 leading-relaxed">
-                                    <li>• <strong class="text-zinc-200">스피드런 레이스:</strong> 지정된 시간에 열리는 특수 타임어택 레이드 중계.</li>
-                                    <li>• <strong class="text-zinc-200">인게임 후원:</strong> 유료 재화로 버프 꽃가루를 구매하여 방송 중인 스트리머에게 투척.</li>
-                                    <li>• <strong class="text-zinc-200">참여 보상:</strong> 후원 유저에게는 해당 스트리머의 기록에 비례한 가챠 재화 페이백.</li>
+                                    <li class="text-sm">• <strong class="text-zinc-200">스피드런 레이스:</strong> 지정된 시간에 열리는 특수 타임어택 레이드 중계.</li>
+                                    <li class="text-sm">• <strong class="text-zinc-200">인게임 후원:</strong> 유료 재화로 버프 꽃가루를 구매하여 방송 중인 스트리머에게 투척.</li>
+                                    <li class="text-sm">• <strong class="text-zinc-200">참여 보상:</strong> 후원 유저에게는 해당 스트리머의 기록에 비례한 가챠 재화 페이백.</li>
                                 </ul>
                             </div>
                             <div class="bg-zinc-900/40 p-8 rounded-3xl border border-zinc-800/50">
                                 <h4 class="text-red-500 font-black text-lg mb-5 flex items-center gap-2">BM 및 기대효과</h4>
                                 <ul class="text-zinc-400 text-sm space-y-4 leading-relaxed">
-                                    <li>• <strong class="text-zinc-200">후원 재화:</strong> 스트리머 후원 전용 코인 BM (전통적인 BJ 후원 시스템 결합).</li>
-                                    <li>• <strong class="text-zinc-200">브랜드 노출:</strong> 외부 플랫폼 검색어 순위 상승 및 브랜드 화제성 50% 향상.</li>
-                                    <li>• <strong class="text-zinc-200">잔존율:</strong> 비전투 유저(시청층)의 앱 체류 시간 2배 증대.</li>
+                                    <li class="text-sm">• <strong class="text-zinc-200">후원 재화:</strong> 스트리머 후원 전용 코인 BM (전통적인 BJ 후원 시스템 결합).</li>
+                                    <li class="text-sm">• <strong class="text-zinc-200">브랜드 노출:</strong> 외부 플랫폼 검색어 순위 상승 및 브랜드 화제성 50% 향상.</li>
+                                    <li class="text-sm">• <strong class="text-zinc-200">잔존율:</strong> 비전투 유저(시청층)의 앱 체류 시간 2배 증대.</li>
                                 </ul>
                             </div>
                         </div>
@@ -313,14 +320,15 @@
                     <div class="bg-white rounded-xl p-6 border border-stone-200">
                         <p class="text-xs font-bold text-red-700 mb-2">이벤트 캘린더가 곧 매출 계획입니다</p>
                         <p class="text-xs text-stone-600 leading-relaxed">
-                    대형 이벤트 없이는 지수가 60 수준으로 내려앉습니다. <strong class="text-stone-800">중국의 명절 일정이 사실상 매출 일정</strong>이므로, 춘절과 국경절을 놓치면 그 분기는 회복할 방법이 없습니다.
+                    대형 이벤트 없이는 지수가 60 수준으로 내려앉습니다. <br class="hidden md:block">
+                    <strong class="text-stone-800">중국의 명절 일정이 사실상 매출 일정</strong>이므로, 춘절과 국경절을 놓치면 그 분기는 회복할 방법이 없습니다.
                 </p>
                     </div>
                     <div class="bg-white rounded-xl p-6 border border-stone-200">
                         <p class="text-xs font-bold text-stone-700 mb-2">1년 성장은 완만합니다</p>
                         <p class="text-xs text-stone-600 leading-relaxed">
-                    25년 춘절 100에서 26년 춘절 105로 <strong class="text-stone-800">+5%</strong>입니다. <br class="hidden md:block">
-                    이벤트 피크는 유지되지만 눈에 띄게 커지지는 않았습니다. 성숙기에 들어선 서비스의 모습입니다.
+                    25년 춘절 100에서 26년 춘절 105로 <strong class="text-stone-800">+5%</strong>입니다. 이벤트 피크는 유지되지만 눈에 띄게 커지지는 않았습니다. <br class="hidden md:block">
+                    성숙기에 들어선 서비스의 모습입니다.
                 </p>
                     </div>
                 </div>
@@ -336,7 +344,8 @@
                 <div class="bg-amber-50 rounded-xl p-6 border border-amber-200">
                     <p class="text-xs font-bold text-amber-800 mb-2">사이 구간을 올리는 것이 다른 선택입니다</p>
                     <p class="text-xs text-stone-600 leading-relaxed">
-                    지수가 가장 낮은 지점은 <strong class="text-stone-800">06월의 50</strong>입니다. 여기를 60~65 수준으로 올리는 것은 이벤트 피크를 105에서 110으로 올리는 것보다 <strong class="text-stone-800">전체 합계에 더 크게 기여</strong>합니다. <br class="hidden md:block">
+                    지수가 가장 낮은 지점은 <strong class="text-stone-800">06월의 50</strong>입니다. <br class="hidden md:block">
+                    여기를 60~65 수준으로 올리는 것은 이벤트 피크를 105에서 110으로 올리는 것보다 <strong class="text-stone-800">전체 합계에 더 크게 기여</strong>합니다. <br class="hidden md:block">
                     피크는 유저가 이미 결제할 준비를 한 시점이라 여력이 제한되지만, 사이 구간은 손대지 않은 영역입니다. <br class="hidden md:block">
                     상시 콘텐츠 보강과 이벤트 신설은 목적이 다르므로 함께 검토해야 합니다.
                 </p>
@@ -401,7 +410,8 @@
                 <div class="bg-red-50 border-2 border-red-200 rounded-2xl p-7">
                     <p class="text-sm font-bold text-red-700 mb-3">가장 큰 격차는 로컬 콜라보 +50</p>
                     <p class="text-sm text-stone-600 leading-relaxed">
-                    과금 상한선이나 PvP보다 <strong class="text-stone-900">현지 콜라보의 격차가 더 큽니다.</strong> 이는 BM 설계 차이가 아니라 <strong class="text-stone-900">시장의 IP 환경과 퍼블리셔 역량</strong>의 차이입니다. <br class="hidden md:block">
+                    과금 상한선이나 PvP보다 <strong class="text-stone-900">현지 콜라보의 격차가 더 큽니다.</strong> <br class="hidden md:block">
+                    이는 BM 설계 차이가 아니라 <strong class="text-stone-900">시장의 IP 환경과 퍼블리셔 역량</strong>의 차이입니다. <br class="hidden md:block">
                     중국 성과에서 이 부분이 기여한 몫은 다른 시장에서 그대로 재현되지 않습니다.
                 </p>
                 </div>
@@ -443,7 +453,8 @@
                     <div class="bg-stone-50 rounded-xl p-5 border border-stone-200 mb-5">
                         <p class="text-xs font-bold text-stone-700 mb-2">보완 방향</p>
                         <p class="text-xs text-stone-600 leading-relaxed">
-                    패배 측에도 <strong class="text-stone-800">참여도에 비례한 최소 보상</strong>을 둡니다. 보급 기부량이 일정 수준을 넘으면 승패와 무관하게 지급하는 방식이면, &lsquo;이기지 못했지만 헛되지 않았다&rsquo;는 상태가 됩니다. <br class="hidden md:block">
+                    패배 측에도 <strong class="text-stone-800">참여도에 비례한 최소 보상</strong>을 둡니다. <br class="hidden md:block">
+                    보급 기부량이 일정 수준을 넘으면 승패와 무관하게 지급하는 방식이면, &lsquo;이기지 못했지만 헛되지 않았다&rsquo;는 상태가 됩니다. <br class="hidden md:block">
                     승패 보상의 격차는 유지하되 <strong class="text-stone-800">0과 1의 차이로 만들지 않는 것</strong>이 핵심입니다.
                 </p>
                     </div>
@@ -467,7 +478,8 @@
                     <div class="bg-stone-50 rounded-xl p-5 border border-stone-200">
                         <p class="text-xs font-bold text-stone-700 mb-2">보완 방향</p>
                         <p class="text-xs text-stone-600 leading-relaxed">
-                    스피드런 기록 경쟁 자체를 <strong class="text-stone-800">일반 유저도 참여하는 상시 시스템</strong>으로 두고, 스트리머 참여는 그 위에 얹는 이벤트로 분리합니다. 이렇게 하면 특정 인물이 빠져도 <strong class="text-stone-800">기반 콘텐츠는 계속 돌아갑니다.</strong> <br class="hidden md:block">
+                    스피드런 기록 경쟁 자체를 <strong class="text-stone-800">일반 유저도 참여하는 상시 시스템</strong>으로 두고, 스트리머 참여는 그 위에 얹는 이벤트로 분리합니다. <br class="hidden md:block">
+                    이렇게 하면 특정 인물이 빠져도 <strong class="text-stone-800">기반 콘텐츠는 계속 돌아갑니다.</strong> <br class="hidden md:block">
                     후원 시스템은 결제 흐름과 정산이 얽히므로 현지 법규 확인이 선행됩니다.
                 </p>
                     </div>
@@ -478,7 +490,8 @@
                 <p class="text-sm font-bold text-stone-800 mb-3">매출 30% 증대라는 기대치</p>
                 <p class="text-sm text-stone-600 leading-relaxed">
                     RvR 제안의 기대 효과에 <strong class="text-stone-900">강화 재화 소모 30% 증대</strong>가 적혀 있습니다. <br class="hidden md:block">
-                    방향은 타당하지만 산출 근거가 문서에 없습니다. 앞의 이벤트 배수 1.57배가 <strong class="text-stone-900">이미 관측된 값</strong>이므로, 새 이벤트의 기대치는 그 범위 안에서 제시하는 편이 설득력이 있습니다. <br class="hidden md:block">
+                    방향은 타당하지만 산출 근거가 문서에 없습니다. <br class="hidden md:block">
+                    앞의 이벤트 배수 1.57배가 <strong class="text-stone-900">이미 관측된 값</strong>이므로, 새 이벤트의 기대치는 그 범위 안에서 제시하는 편이 설득력이 있습니다. <br class="hidden md:block">
                     30%라는 값을 유지하려면 <strong class="text-stone-900">참여율과 1인당 소모량 가정</strong>을 함께 적어야 합니다.
                 </p>
             </div>

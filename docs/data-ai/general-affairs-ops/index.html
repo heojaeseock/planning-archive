@@ -96,7 +96,8 @@
             border-color: #cbd5e1;
         }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
@@ -138,8 +139,7 @@
                 <p class="text-xl text-gray-500 mb-8 font-medium">대규모 게임 라이브 운영 프로세스의 경영분석 직무 적용 방안</p>
                 <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-gray-600 shadow-sm">
                     <p class="text-base text-gray-800 leading-relaxed">
-                    <strong>제안 목적:</strong> 대형 게임 서비스를 운영하며 체득한 <strong>'데이터 자동화'</strong>와 <strong>'위기 대응 시스템화'</strong> 방식을 뷰티 브랜드 기업의 사내 자산·인프라 관리에 적용해 정리했습니다. <br class="hidden md:block">
-                    하드웨어 관리 중심의 총무 업무를 넘어 <strong>자동화된 데이터 관리와 AI 기반 1차 대응 체계</strong>를 구축하는 방안을 정리했습니다. <br class="hidden md:block">
+                    <strong>제안 목적:</strong> 대형 게임 서비스를 운영하며 체득한 <strong>'데이터 자동화'</strong>와 <strong>'위기 대응 시스템화'</strong> 방식을 뷰티 브랜드 기업의 사내 자산·인프라 관리에 적용해 정리했습니다. 하드웨어 관리 중심의 총무 업무를 넘어 <strong>자동화된 데이터 관리와 AI 기반 1차 대응 체계</strong>를 구축하는 방안을 정리했습니다. <br class="hidden md:block">
                     단순 반복 업무의 병목을 걷어내고, 자산 운용 효율화와 비용 절감에 집중할 수 있는 환경을 제안합니다.
                 </p>
                 </div>
@@ -183,7 +183,8 @@
                         <div class="text-3xl mb-4">💻</div>
                         <h4 class="font-bold mb-3 text-lg text-gray-900">사내 자산 추적의 어려움</h4>
                         <p class="text-sm text-gray-600 leading-relaxed">
-                     임직원의 입·퇴사와 부서 이동에 따른 PC·소프트웨어 지급 현황을 수작업으로 관리하면 기록 누락이 생깁니다. 쓰지 않는 라이선스 비용도 그대로 나가면서 손실로 이어집니다.
+                    임직원의 입·퇴사와 부서 이동에 따른 PC·소프트웨어 지급 현황을 수작업으로 관리하면 기록 누락이 생깁니다. <br class="hidden md:block">
+                    쓰지 않는 라이선스 비용도 그대로 나가면서 손실로 이어집니다.
                 </p>
                     </div>
                     <div class="bg-gray-50 border border-gray-100 p-7 rounded-2xl">
@@ -265,8 +266,8 @@
                 </div>
 
                 <p class="mb-8 text-gray-700">
-                     복잡한 신규 게임 시스템과 콘텐츠를 유저가 직관적으로 이해할 수 있도록 <strong>'사용자 맞춤형 콘텐츠 가이드'를 기획했던 노하우</strong>를 사내로 가져옵니다. 사내망 설정법과 복잡한 복지 신청 절차를 임직원 누구나 따라 하기 쉽게 규격화하고, <br class="hidden md:block">
-                    이를 사내 메신저 연동 AI에 학습시켜 총무팀의 단순 응대 리소스를 크게 감축합니다.
+                    복잡한 신규 게임 시스템과 콘텐츠를 유저가 직관적으로 이해할 수 있도록 <strong>'사용자 맞춤형 콘텐츠 가이드'를 기획했던 노하우</strong>를 사내로 가져옵니다. <br class="hidden md:block">
+                    사내망 설정법과 복잡한 복지 신청 절차를 임직원 누구나 따라 하기 쉽게 규격화하고, 이를 사내 메신저 연동 AI에 학습시켜 총무팀의 단순 응대 리소스를 크게 감축합니다.
                 </p>
 
                 <!-- 아코디언 버튼 -->
@@ -387,8 +388,7 @@
             <section id="section5" class="mb-20 scroll-mt-24">
                 <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3">[분석] 인원보다 부하가 빠르게 늘어납니다</h2>
                 <p class="text-gray-500 font-medium leading-relaxed mb-8">
-                    1번의 차트는 임직원 수와 업무 부하량을 나란히 보여줍니다. <br class="hidden md:block">
-                    두 선을 <strong class="text-gray-800">나눠 보면</strong> 이 제안의 근거가 더 분명해집니다. <br class="hidden md:block">
+                    1번의 차트는 임직원 수와 업무 부하량을 나란히 보여줍니다. 두 선을 <strong class="text-gray-800">나눠 보면</strong> 이 제안의 근거가 더 분명해집니다. <br class="hidden md:block">
                     단순히 &lsquo;사람이 늘어 힘들다&rsquo;가 아니라, <strong class="text-gray-800">증원으로는 따라잡을 수 없는 구조</strong>라는 점이 드러납니다.
                 </p>
 
@@ -458,8 +458,7 @@
                 <div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-6 md:p-8 mb-6">
                     <p class="text-[11px] font-black tracking-wide text-blue-600 mb-3">이 차이가 의미하는 것</p>
                     <p class="text-sm md:text-base text-gray-700 font-medium leading-relaxed mb-4">
-                    인원이 4.33배 늘었는데 부하는 5.00배 늘었습니다. <br class="hidden md:block">
-                    <strong class="text-gray-900">1인당 부하가 함께 증가한다는 뜻</strong>입니다. <br class="hidden md:block">
+                    인원이 4.33배 늘었는데 부하는 5.00배 늘었습니다. <strong class="text-gray-900">1인당 부하가 함께 증가한다는 뜻</strong>입니다. <br class="hidden md:block">
                     조직이 커지면 관리 대상이 인원 수만큼 늘어나는 것이 아니라, <strong class="text-blue-700">부서 이동 &middot; 자산 이력 &middot; 권한 조합처럼 관계의 수만큼</strong> 늘어나기 때문입니다.
                 </p>
                     <p class="text-sm md:text-base text-gray-700 font-medium leading-relaxed">
@@ -531,7 +530,8 @@
                     <div class="bg-gray-900 rounded-lg p-5 text-white">
                         <p class="text-xs font-black text-blue-300 mb-2">그래서 다음 단계를 함께 제시해야 합니다</p>
                         <p class="text-xs text-gray-300 leading-relaxed">
-                     엑셀 단계에서 <strong class="text-white">어떤 항목을 관리해야 하는지 확정</strong>한 뒤, 그 정의를 그대로 전용 자산관리 도구로 이관하는 경로를 로드맵에 넣습니다. 이렇게 제시하면 엑셀 자동화가 임시방편이 아니라 <strong class="text-blue-300">요구사항을 검증하는 1단계</strong>로 읽힙니다.
+                    엑셀 단계에서 <strong class="text-white">어떤 항목을 관리해야 하는지 확정</strong>한 뒤, 그 정의를 그대로 전용 자산관리 도구로 이관하는 경로를 로드맵에 넣습니다. <br class="hidden md:block">
+                    이렇게 제시하면 엑셀 자동화가 임시방편이 아니라 <strong class="text-blue-300">요구사항을 검증하는 1단계</strong>로 읽힙니다.
                 </p>
                     </div>
                 </div>
@@ -577,7 +577,10 @@
                         </div>
                         <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
                             <p class="text-xs font-black text-gray-800 mb-1">해제 절차</p>
-                            <p class="text-xs text-gray-600 leading-relaxed">발동보다 <strong class="text-gray-800">해제 기준</strong>이 더 자주 빠집니다. 언제 정상 복귀를 알릴지 함께 정의해야 합니다.</p>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                    발동보다 <strong class="text-gray-800">해제 기준</strong>이 더 자주 빠집니다. <br class="hidden md:block">
+                    언제 정상 복귀를 알릴지 함께 정의해야 합니다.
+                </p>
                         </div>
                         <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
                             <p class="text-xs font-black text-gray-800 mb-1">SLA 선행</p>

@@ -124,7 +124,8 @@
             transition: all 0.3s ease;
         }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
@@ -524,7 +525,10 @@
                     <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 space-y-3 shadow-sm transition-transform hover:-translate-y-1">
                         <div class="text-3xl">🎯</div>
                         <h4 class="font-bold text-blue-900 text-sm mb-1">장르 틈새시장 공략</h4>
-                        <p class="text-xs text-gray-700 leading-relaxed">외산 게임이 독점하던 점프 게임 시장의 틈새를 겨냥해, 캐주얼한 국산 창작물로 출시까지 완주했습니다. 흥행 여부는 이 문서의 범위에 없습니다.</p>
+                        <p class="text-xs text-gray-700 leading-relaxed">
+                    외산 게임이 독점하던 점프 게임 시장의 틈새를 겨냥해, 캐주얼한 국산 창작물로 출시까지 완주했습니다. <br class="hidden md:block">
+                    흥행 여부는 이 문서의 범위에 없습니다.
+                </p>
                     </div>
                 </div>
             </div>
@@ -537,8 +541,7 @@
                         <h3 class="text-xl font-bold text-gray-900">제약 조건이 만든 선택들</h3>
                     </div>
                     <p class="text-gray-500 text-sm leading-relaxed mb-8">
-                    이 프로젝트의 조건은 <strong class="text-gray-800">4인 팀 &middot; 15주 &middot; 실제 출시까지 완주</strong>였습니다. <br class="hidden md:block">
-                    학생 프로젝트에서 가장 큰 실패 요인은 아이디어의 부족이 아니라 <strong class="text-gray-800">미완성</strong>입니다. <br class="hidden md:block">
+                    이 프로젝트의 조건은 <strong class="text-gray-800">4인 팀 &middot; 15주 &middot; 실제 출시까지 완주</strong>였습니다. 학생 프로젝트에서 가장 큰 실패 요인은 아이디어의 부족이 아니라 <strong class="text-gray-800">미완성</strong>입니다. <br class="hidden md:block">
                     아래 세 가지 결정은 이 제약을 기준으로 다시 읽으면 의미가 달라집니다.
                 </p>
                 </div>
@@ -589,8 +592,8 @@
                 </p>
                     <div class="bg-white rounded-xl p-5 border border-gray-200">
                         <p class="text-xs text-gray-600 leading-relaxed">
-                    <strong class="text-gray-800">이 결정을 뒷받침하는 논리:</strong> 15주 안에 출시까지 가야 하는 조건에서는 <strong>완주 가능성이 아이디어의 신선함보다 앞섭니다.</strong> 제작 용이성과 협업 가능성은 곧 &lsquo;일정 안에 끝낼 수 있는가&rsquo;를 뜻하므로, 세 항목의 단순 합산으로 보이지만 실질적으로는 <strong>일정 리스크에 가중치를 둔 선택</strong>이었습니다. <br class="hidden md:block">
-                    결과적으로 실제 출시까지 완료했다는 점에서 이 판단은 목표에 부합했습니다.
+                    <strong class="text-gray-800">이 결정을 뒷받침하는 논리:</strong> 15주 안에 출시까지 가야 하는 조건에서는 <strong>완주 가능성이 아이디어의 신선함보다 앞섭니다.</strong> <br class="hidden md:block">
+                    제작 용이성과 협업 가능성은 곧 &lsquo;일정 안에 끝낼 수 있는가&rsquo;를 뜻하므로, 세 항목의 단순 합산으로 보이지만 실질적으로는 <strong>일정 리스크에 가중치를 둔 선택</strong>이었습니다. 결과적으로 실제 출시까지 완료했다는 점에서 이 판단은 목표에 부합했습니다.
                 </p>
                     </div>
                 </div>
@@ -712,7 +715,8 @@
                         <div class="bg-white rounded-xl p-5 border-2 border-rose-200">
                             <p class="text-xs font-black text-rose-700 mb-3">창의성 쪽은 여유가 없습니다</p>
                             <p class="text-xs text-gray-600 leading-relaxed">
-                     창의성을 다른 두 항목의 <strong class="text-gray-800">1.5배</strong>로만 보면 기니점프와 개미핥기가 동점이 되고, 2배가 되면 개미핥기가 앞섭니다. 1.5배는 &lsquo;조금 더 중요하다&rsquo; 정도의 무게이므로 <strong class="text-gray-800">경계가 매우 가깝습니다.</strong>
+                    창의성을 다른 두 항목의 <strong class="text-gray-800">1.5배</strong>로만 보면 기니점프와 개미핥기가 동점이 되고, 2배가 되면 개미핥기가 앞섭니다. <br class="hidden md:block">
+                    1.5배는 &lsquo;조금 더 중요하다&rsquo; 정도의 무게이므로 <strong class="text-gray-800">경계가 매우 가깝습니다.</strong>
                 </p>
                         </div>
                         <div class="bg-white rounded-xl p-5 border-2 border-emerald-200">
@@ -728,7 +732,8 @@
                     <div class="bg-white rounded-xl p-5 border border-gray-200 mb-5">
                         <p class="text-xs text-gray-600 leading-relaxed">
                     <strong class="text-gray-800">그래서 표에 무엇을 더해야 하는가:</strong> 결론은 그대로 두어도 됩니다. <br class="hidden md:block">
-                    15주 완주라는 조건에서 창의성 가중치를 1.5배 이상으로 잡을 이유가 없기 때문입니다. 다만 <strong class="text-gray-900">가중치를 표에 적어두면</strong> 같은 결론이 &lsquo;합계가 1점 높아서&rsquo;가 아니라 &lsquo;일정 리스크를 창의성보다 무겁게 보았기 때문&rsquo;이 됩니다. <br class="hidden md:block">
+                    15주 완주라는 조건에서 창의성 가중치를 1.5배 이상으로 잡을 이유가 없기 때문입니다. <br class="hidden md:block">
+                    다만 <strong class="text-gray-900">가중치를 표에 적어두면</strong> 같은 결론이 &lsquo;합계가 1점 높아서&rsquo;가 아니라 &lsquo;일정 리스크를 창의성보다 무겁게 보았기 때문&rsquo;이 됩니다. <br class="hidden md:block">
                     의사결정 기록에서 재현 가능성을 만드는 것은 점수가 아니라 <strong class="text-gray-800">점수를 더한 규칙</strong>입니다.
                 </p>
                     </div>
@@ -742,7 +747,8 @@
                     어떤 가중치를 넣어도 늘보런이 앞설 수 없습니다.
                 </p>
                         <p class="text-xs text-gray-300 leading-relaxed">
-                     따라서 실질적인 결정은 <strong class="text-amber-400">창의성과 제작 용이성 사이의 양자택일</strong>이었고, 비교 대상은 기니점프와 개미핥기 두 개였습니다. 대안 검토의 폭은 후보 개수가 아니라 <strong class="text-white">서로 우열이 갈리는 후보의 개수</strong>로 읽히므로, 늘보런처럼 완전히 밀리는 후보는 표에 남기더라도 그 사실을 함께 적는 편이 낫습니다.
+                    따라서 실질적인 결정은 <strong class="text-amber-400">창의성과 제작 용이성 사이의 양자택일</strong>이었고, 비교 대상은 기니점프와 개미핥기 두 개였습니다. <br class="hidden md:block">
+                    대안 검토의 폭은 후보 개수가 아니라 <strong class="text-white">서로 우열이 갈리는 후보의 개수</strong>로 읽히므로, 늘보런처럼 완전히 밀리는 후보는 표에 남기더라도 그 사실을 함께 적는 편이 낫습니다.
                 </p>
                     </div>
                 </div>
@@ -780,7 +786,8 @@
                 </p>
                     <div class="bg-white rounded-xl p-5 border border-gray-200">
                         <p class="text-xs text-gray-600 leading-relaxed">
-                    <strong class="text-gray-800">이것이 앞의 민감도와 이어지는 이유:</strong> 변별력이 낮은 척도에서 나온 1점 차는 평가자가 한 항목에서 한 칸을 달리 매기면 사라집니다. 점수화 자체는 <strong class="text-gray-800">감으로 고르지 않았다는 기록</strong>이 되므로 의미가 있습니다. <br class="hidden md:block">
+                    <strong class="text-gray-800">이것이 앞의 민감도와 이어지는 이유:</strong> 변별력이 낮은 척도에서 나온 1점 차는 평가자가 한 항목에서 한 칸을 달리 매기면 사라집니다. <br class="hidden md:block">
+                    점수화 자체는 <strong class="text-gray-800">감으로 고르지 않았다는 기록</strong>이 되므로 의미가 있습니다. <br class="hidden md:block">
                     다만 근거의 무게를 점수 차이에 두면 흔들리므로, <strong class="text-gray-900">각 점수를 그렇게 매긴 이유를 한 줄씩 적는 것</strong>이 척도를 늘리거나 후보를 더하는 것보다 효과가 큽니다.
                 </p>
                     </div>
@@ -849,7 +856,8 @@
                         </div>
                     </div>
                     <p class="text-xs text-gray-400 leading-relaxed mt-6 pt-6 border-t border-white/10">
-                     제작 기록으로서 이 문서의 가치는 성과 지표가 아니라 <strong class="text-white">제약 조건 아래에서 무엇을 포기하고 무엇을 지켰는지</strong>에 있습니다. 위 세 판단은 모두 &lsquo;15주 안에 출시&rsquo;라는 하나의 기준에서 파생되었습니다.
+                    제작 기록으로서 이 문서의 가치는 성과 지표가 아니라 <strong class="text-white">제약 조건 아래에서 무엇을 포기하고 무엇을 지켰는지</strong>에 있습니다. <br class="hidden md:block">
+                    위 세 판단은 모두 &lsquo;15주 안에 출시&rsquo;라는 하나의 기준에서 파생되었습니다.
                 </p>
                 </div>
             </div>

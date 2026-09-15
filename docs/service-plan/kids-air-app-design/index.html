@@ -180,7 +180,8 @@
             padding: 12px 0;
         }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
@@ -484,21 +485,21 @@
                 <div class="content-card p-12 group hover:bg-sky-600 transition-all duration-500 hover:-translate-y-4">
                     <div class="text-6xl mb-10 transition-transform duration-500">🏛️</div>
                     <h4 class="font-black text-slate-900 text-xl mb-6 group-hover:text-white">공공데이터 선순환</h4>
-                    <p class="text-sm text-slate-500 leading-relaxed group-hover:text-sky-100 font-bold">
+                    <p class="text-slate-500 leading-relaxed group-hover:text-sky-100 font-bold text-sm">
                         정부의 데이터를 사용자 친화적으로 재가공하여 영유아 보육 환경의 투명성을 높였습니다.
                     </p>
                 </div>
                 <div class="content-card p-12 group hover:bg-emerald-600 transition-all duration-500 hover:-translate-y-4">
                     <div class="text-6xl mb-10 transition-transform duration-500">🌿</div>
                     <h4 class="font-black text-slate-900 text-xl mb-6 group-hover:text-white">보육 환경 개선</h4>
-                    <p class="text-sm text-slate-500 leading-relaxed group-hover:text-emerald-100 font-bold">
+                    <p class="text-slate-500 leading-relaxed group-hover:text-emerald-100 font-bold text-sm">
                         수치 공개를 통해 어린이집 스스로 쾌적한 환경을 유지하도록 유도하는 계기를 마련했습니다.
                     </p>
                 </div>
                 <div class="content-card p-12 group hover:bg-slate-900 transition-all duration-500 hover:-translate-y-4">
                     <div class="text-6xl mb-10 transition-transform duration-500">🏆</div>
                     <h4 class="font-black text-slate-900 text-xl mb-6 group-hover:text-white">시장 선점 효과</h4>
-                    <p class="text-sm text-slate-500 leading-relaxed group-hover:text-slate-400 font-bold">
+                    <p class="text-slate-500 leading-relaxed group-hover:text-slate-400 font-bold text-sm">
                     기획 당시 확인한 범위에서는 어린이집 실내 공기질만 다루는 앱이 없어, 기존 알림장 앱과 겹치지 않는 자리를 잡을 수 있다고 판단했습니다.
                 </p>
                 </div>

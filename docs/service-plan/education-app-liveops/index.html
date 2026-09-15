@@ -68,7 +68,8 @@
         .btn-interactive:active { transform: scale(0.97); }
         body { word-break: keep-all; overflow-wrap: break-word; }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
@@ -227,7 +228,10 @@
                             <span class="text-[11px] bg-red-100 text-red-700 px-2 py-0.5 rounded-md font-bold">별점 1점</span>
                             <span class="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-medium">아이패드</span>
                         </div>
-                        <p class="text-[15px] text-slate-800 font-medium leading-snug">"1.5배속 누르면 갑자기 멈추고 렉 걸려요. ㅠㅠ"</p>
+                        <p class="text-[15px] text-slate-800 font-medium leading-snug">
+                    "1.5배속 누르면 갑자기 멈추고 렉 걸려요. <br class="hidden md:block">
+                    ㅠㅠ"
+                </p>
                     </div>
 
                     <div class="voc-card interactive-card p-5 bg-white border border-slate-200 rounded-2xl cursor-pointer hover:border-blue-400" data-index="1">

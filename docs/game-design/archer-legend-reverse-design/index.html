@@ -80,7 +80,8 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
@@ -886,17 +887,20 @@
                         <div class="grid md:grid-cols-3 gap-4 text-left">
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
                                 <p class="text-amber-300 font-black text-sm mb-2">가장 화려한 제안이 가장 위험했습니다</p>
-                                <p class="text-xs text-slate-300 leading-relaxed">
+                                <p class="text-slate-300 leading-relaxed text-sm">
                     거래소는 규모가 가장 크지만 배수를 제거하지 못하고, <strong class="text-white">기존 매출을 잠식</strong>하며 작업장&middot;법무 리스크를 함께 들여옵니다.
                 </p>
                             </div>
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
                                 <p class="text-amber-300 font-black text-sm mb-2">가장 단순한 제안이 가장 효과적입니다</p>
-                                <p class="text-xs text-slate-300 leading-relaxed">선택형 상자는 부위 분산 9배를 직접 없애 필요 뽑기를 <strong class="text-white">729회에서 81회로</strong> 줄입니다. 신규 상품이라 경제를 건드리지 않습니다.</p>
+                                <p class="text-slate-300 leading-relaxed text-sm">선택형 상자는 부위 분산 9배를 직접 없애 필요 뽑기를 <strong class="text-white">729회에서 81회로</strong> 줄입니다. 신규 상품이라 경제를 건드리지 않습니다.</p>
                             </div>
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
                                 <p class="text-amber-300 font-black text-sm mb-2">순서를 바꾸는 것이 결론입니다</p>
-                                <p class="text-xs text-slate-300 leading-relaxed">원안의 1&rarr;2&rarr;3 순서를 <strong class="text-white">2 &rarr; 3 &rarr; 1(보류)</strong>로 재배치했습니다. 제안을 추가한 것이 아니라 실행 순서를 근거로 정했습니다.</p>
+                                <p class="text-slate-300 leading-relaxed text-sm">
+                    원안의 1&rarr;2&rarr;3 순서를 <strong class="text-white">2 &rarr; 3 &rarr; 1(보류)</strong>로 재배치했습니다. <br class="hidden md:block">
+                    제안을 추가한 것이 아니라 실행 순서를 근거로 정했습니다.
+                </p>
                             </div>
                         </div>
                     </div>

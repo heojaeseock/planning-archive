@@ -59,7 +59,8 @@ body { font-family: 'Pretendard', sans-serif; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         body { word-break: keep-all; overflow-wrap: break-word; }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
@@ -270,8 +271,7 @@ body { font-family: 'Pretendard', sans-serif; }
         <div class="bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-8 mb-6">
             <p class="text-sm font-black text-indigo-700 mb-4">쏠림이 뜻하는 것</p>
             <p class="text-slate-700 leading-relaxed mb-5">
-                    후원은 <strong class="text-slate-900">소수의 고액 후원자</strong>에게서 나옵니다. <br class="hidden md:block">
-                    구독은 다수의 소액 결제가 매달 반복됩니다. <br class="hidden md:block">
+                    후원은 <strong class="text-slate-900">소수의 고액 후원자</strong>에게서 나옵니다. 구독은 다수의 소액 결제가 매달 반복됩니다. <br class="hidden md:block">
                     금액의 크기가 아니라 <strong class="text-indigo-700">들어오는 방식</strong>이 다릅니다.
                 </p>
             <div class="grid md:grid-cols-2 gap-5">
@@ -297,7 +297,8 @@ body { font-family: 'Pretendard', sans-serif; }
             <p class="text-slate-700 leading-relaxed">
                     SOOP의 수익성 우위는 <strong class="text-slate-900">고액 후원자를 이미 확보한 크리에이터</strong>에게 해당합니다. <br class="hidden md:block">
                     시청자가 없는 신입은 후원 68% 구조의 혜택을 받을 수 없습니다. <br class="hidden md:block">
-                    반대로 구독은 소액이라도 <strong class="text-amber-800">시청자 수에 비례해 쌓입니다.</strong> 따라서 &ldquo;SOOP이 수익성에서 우위&rdquo;라는 결론은 <strong class="text-slate-900">이미 자리 잡은 크리에이터 기준</strong>이고, 신입 유입 관점에서는 같은 순서로 읽히지 않습니다. <br class="hidden md:block">
+                    반대로 구독은 소액이라도 <strong class="text-amber-800">시청자 수에 비례해 쌓입니다.</strong> <br class="hidden md:block">
+                    따라서 &ldquo;SOOP이 수익성에서 우위&rdquo;라는 결론은 <strong class="text-slate-900">이미 자리 잡은 크리에이터 기준</strong>이고, 신입 유입 관점에서는 같은 순서로 읽히지 않습니다. <br class="hidden md:block">
                     플랫폼 전략을 세울 때 <strong class="text-slate-900">기성과 신입을 나눠 봐야</strong> 하는 이유입니다.
                 </p>
         </div>
@@ -397,13 +398,11 @@ body { font-family: 'Pretendard', sans-serif; }
         <div class="bg-amber-50 border-2 border-amber-300 rounded-2xl p-8 mb-6">
             <p class="text-sm font-black text-amber-700 mb-4">던전앤파이터가 유일하게 접근을 허용했습니다</p>
             <p class="text-slate-700 leading-relaxed mb-5">
-                    던파는 RPG인데 치지직 점유가 45%입니다. <br class="hidden md:block">
-                    같은 RPG인 메이플이 28%인 것과 비교하면 <strong class="text-slate-900">17%p 차이</strong>가 납니다. <br class="hidden md:block">
+                    던파는 RPG인데 치지직 점유가 45%입니다. 같은 RPG인 메이플이 28%인 것과 비교하면 <strong class="text-slate-900">17%p 차이</strong>가 납니다. <br class="hidden md:block">
                     카테고리만으로는 설명되지 않는 편차이므로, 이 문서의 다음 과제는 <strong class="text-amber-800">&ldquo;던파에서 무엇이 달랐는가&rdquo;</strong>를 찾는 일입니다.
                 </p>
             <p class="text-slate-700 leading-relaxed">
-                    편차의 원인이 <strong class="text-slate-900">특정 대형 스트리머의 이적</strong>이라면 재현할 수 없는 우연이고, <strong class="text-slate-900">콘텐츠 구조나 플랫폼 협업 방식</strong>이라면 다른 타이틀에도 적용할 수 있는 방법이 됩니다. <br class="hidden md:block">
-                    전자와 후자를 가르는 것이 실무에서 가장 중요한 확인 사항입니다. <br class="hidden md:block">
+                    편차의 원인이 <strong class="text-slate-900">특정 대형 스트리머의 이적</strong>이라면 재현할 수 없는 우연이고, <strong class="text-slate-900">콘텐츠 구조나 플랫폼 협업 방식</strong>이라면 다른 타이틀에도 적용할 수 있는 방법이 됩니다. 전자와 후자를 가르는 것이 실무에서 가장 중요한 확인 사항입니다. <br class="hidden md:block">
                     평균에서 벗어난 값은 오류가 아니라 <strong class="text-amber-800">가장 정보가 많은 지점</strong>입니다.
                 </p>
         </div>

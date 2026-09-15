@@ -101,7 +101,8 @@
         }
         body { word-break: keep-all; overflow-wrap: break-word; }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
@@ -155,19 +156,19 @@
                 <div class="bg-white p-8 rounded-[28px] border border-gray-100 shadow-sm">
                     <div class="text-4xl mb-4">&#128680;</div>
                     <h2 class="text-lg font-bold mb-2">설계 과정의 단절</h2>
-                    <p class="text-sm text-gray-500 leading-relaxed">
+                    <p class="text-gray-500 leading-relaxed text-sm">
                     보험 파트너 앱에서 보장 분석을 마친 후, 견적을 내기 위해 앱을 종료하고 컴퓨터로 보험사 전산에 접속해야 합니다.
                 </p>
                 </div>
                 <div class="bg-white p-8 rounded-[28px] border border-gray-100 shadow-sm">
                     <div class="text-4xl mb-4">&#9201;</div>
                     <h2 class="text-lg font-bold mb-2">실시간 대응 불가</h2>
-                    <p class="text-sm text-gray-500 leading-relaxed">상담 중 고객이 "암 진단비를 1천만 원 올리면 얼마인가요?"라고 물었을 때 즉시 대답하기 어렵습니다.</p>
+                    <p class="text-gray-500 leading-relaxed text-sm">상담 중 고객이 "암 진단비를 1천만 원 올리면 얼마인가요?"라고 물었을 때 즉시 대답하기 어렵습니다.</p>
                 </div>
                 <div class="bg-white p-8 rounded-[28px] border border-gray-100 shadow-sm">
                     <div class="text-4xl mb-4">&#128201;</div>
                     <h2 class="text-lg font-bold mb-2">고객 참여도 하락</h2>
-                    <p class="text-sm text-gray-500 leading-relaxed">
+                    <p class="text-gray-500 leading-relaxed text-sm">
                     설계사가 일방적으로 만들어온 인쇄물 형태의 비교표로는 고객의 적극적인 가입 의지를 끌어내기 어렵습니다.
                 </p>
                 </div>

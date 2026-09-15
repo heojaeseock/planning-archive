@@ -82,7 +82,8 @@
         }
         body { word-break: keep-all; overflow-wrap: break-word; }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
@@ -148,7 +149,8 @@
                     <div>
                         <h3 class="text-2xl font-bold text-slate-900 mb-5">복합 장르(하이브리드)의 시장 안착</h3>
                         <p class="text-slate-600 leading-relaxed text-lg">
-                     단순 조작을 넘어, <strong>방치형 성장</strong> 구조와 <strong>장기적 목표</strong> 요소가 결합된 복합 장르 게임이 북미 차트 상위권의 45% 내외를 점유하고 있습니다. 이는 짧은 시간 속에서도 지속적인 보람을 원하는 이용자 니즈가 반영된 결과입니다.
+                    단순 조작을 넘어, <strong>방치형 성장</strong> 구조와 <strong>장기적 목표</strong> 요소가 결합된 복합 장르 게임이 북미 차트 상위권의 45% 내외를 점유하고 있습니다. <br class="hidden md:block">
+                    이는 짧은 시간 속에서도 지속적인 보람을 원하는 이용자 니즈가 반영된 결과입니다.
                 </p>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">

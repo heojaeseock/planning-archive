@@ -83,7 +83,8 @@
         }
         body { word-break: keep-all; overflow-wrap: break-word; }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
@@ -325,7 +326,8 @@
                     <p class="text-[10px] font-black tracking-wide text-cfred mb-3 italic">리스크 2</p>
                     <p class="font-black text-slate-900 mb-3">진입 장벽이 오히려 올라갑니다</p>
                     <p class="text-sm text-slate-600 leading-relaxed">
-                    이 문서 첫 장은 M4A1의 낮은 반동이 <strong>초보자 적응을 돕는다</strong>고 정리했습니다. 그런데 Variable Barrel은 <strong class="text-slate-900">두 반동 패턴과 전환 타이밍까지</strong> 익혀야 합니다. <br class="hidden md:block">
+                    이 문서 첫 장은 M4A1의 낮은 반동이 <strong>초보자 적응을 돕는다</strong>고 정리했습니다. <br class="hidden md:block">
+                    그런데 Variable Barrel은 <strong class="text-slate-900">두 반동 패턴과 전환 타이밍까지</strong> 익혀야 합니다. <br class="hidden md:block">
                     숙련자용 무기이지, 신규 유입에는 불리합니다.
                 </p>
                 </div>
@@ -346,8 +348,7 @@
                         <p class="font-black text-white mb-3 text-sm">1. 전환을 &lsquo;재장전급&rsquo; 행동으로 취급</p>
                         <p class="text-sm text-slate-300 leading-relaxed">
                     전환 중 <strong class="text-white">사격 불가 &middot; 이동 속도 감소</strong>를 부여합니다. <br class="hidden md:block">
-                    교전 중 전환은 사실상 불가능해지고, 유저는 <strong class="text-cfred">교전 진입 전에 모드를 결정</strong>해야 합니다. <br class="hidden md:block">
-                    이렇게 하면 &lsquo;전술적 조작&rsquo;이 반응 속도 경쟁이 아니라 판단의 문제가 됩니다.
+                    교전 중 전환은 사실상 불가능해지고, 유저는 <strong class="text-cfred">교전 진입 전에 모드를 결정</strong>해야 합니다. 이렇게 하면 &lsquo;전술적 조작&rsquo;이 반응 속도 경쟁이 아니라 판단의 문제가 됩니다.
                 </p>
                     </div>
                     <div>
@@ -401,7 +402,8 @@
             <div class="border border-slate-200 rounded-xl p-6 bg-white">
                 <p class="text-[10px] font-black tracking-wide text-slate-400 mb-3 italic">해법 A &middot; 성능을 옮기지 않고 &lsquo;성격&rsquo;을 판다</p>
                 <p class="text-sm text-slate-600 leading-relaxed">
-                     유료 무기의 반동 <strong class="text-slate-900">총량은 유지하되 패턴만 다르게</strong> 설계합니다. 강해지는 것이 아니라 <strong>다르게 익혀야 하는</strong> 무기가 되므로, 숙련의 가치를 훼손하지 않으면서 구매 동기를 만듭니다.
+                    유료 무기의 반동 <strong class="text-slate-900">총량은 유지하되 패턴만 다르게</strong> 설계합니다. <br class="hidden md:block">
+                    강해지는 것이 아니라 <strong>다르게 익혀야 하는</strong> 무기가 되므로, 숙련의 가치를 훼손하지 않으면서 구매 동기를 만듭니다.
                 </p>
             </div>
             <div class="border border-slate-200 rounded-xl p-6 bg-white">
@@ -513,8 +515,7 @@
                     </div>
                 </div>
                 <p class="text-sm text-slate-600 leading-relaxed">
-                    첫 발 이후 좌우가 <strong class="text-slate-900">한 번도 예외 없이 번갈아</strong> 나갑니다. <br class="hidden md:block">
-                    방향 순서는 고정이고 <strong class="text-emerald-700">진폭만 커집니다.</strong> <br class="hidden md:block">
+                    첫 발 이후 좌우가 <strong class="text-slate-900">한 번도 예외 없이 번갈아</strong> 나갑니다. 방향 순서는 고정이고 <strong class="text-emerald-700">진폭만 커집니다.</strong> <br class="hidden md:block">
                     이것이 첫 장에서 말한 학습 가능한 반동의 실체입니다. <br class="hidden md:block">
                     무작위로 흩어지면 외울 대상이 없지만, 순서가 고정되어 있으면 <strong class="text-slate-900">유저는 방향을 기억하고 크기만 감으로 맞춥니다.</strong> <br class="hidden md:block">
                     시뮬레이션 데이터가 문서의 전제와 같은 방향으로 만들어져 있습니다.
@@ -524,9 +525,8 @@
             <div class="bg-cfred/5 border-2 border-cfred/40 rounded-xl p-8 mb-8">
                 <p class="text-[10px] font-black tracking-wide text-cfred mb-5 italic">후반 구간에서 성질이 바뀝니다</p>
                 <p class="text-sm md:text-base text-slate-700 leading-relaxed mb-6">
-                    좌우 산포를 수직 상승으로 나눈 값이 초탄 0.40, 중반 0.34입니다. <br class="hidden md:block">
-                    <strong class="text-slate-900">수직이 좌우보다 세 배쯤 큽니다.</strong> 마우스로 아래로 당기는 한 방향 보정만으로 상당 부분 잡힙니다. <br class="hidden md:block">
-                    그런데 후반 구간은 이 값이 <strong class="text-cfred">1.13으로 뒤집힙니다.</strong> <br class="hidden md:block">
+                    좌우 산포를 수직 상승으로 나눈 값이 초탄 0.40, 중반 0.34입니다. <strong class="text-slate-900">수직이 좌우보다 세 배쯤 큽니다.</strong> <br class="hidden md:block">
+                    마우스로 아래로 당기는 한 방향 보정만으로 상당 부분 잡힙니다. 그런데 후반 구간은 이 값이 <strong class="text-cfred">1.13으로 뒤집힙니다.</strong> <br class="hidden md:block">
                     좌우가 수직보다 커지므로 매 발 방향을 바꿔가며 보정해야 합니다.
                 </p>
                 <div class="grid md:grid-cols-2 gap-5 mb-6">
@@ -547,7 +547,8 @@
                 </div>
                 <p class="text-sm text-slate-600 leading-relaxed">
                     <strong class="text-slate-800">그래서 반동이 커진다는 말의 실체는 위로 올라가는 것이 아니라 좌우로 흩어지는 것</strong>입니다. <br class="hidden md:block">
-                    학습 가능성은 후반 구간에서 사실상 끊깁니다. 이 구간을 유저가 &lsquo;실력으로 극복할 대상&rsquo;으로 두면 좌절이 되고, <strong class="text-cfred">애초에 쓰지 말아야 하는 구간</strong>으로 두면 점사라는 정답이 생깁니다. <br class="hidden md:block">
+                    학습 가능성은 후반 구간에서 사실상 끊깁니다. <br class="hidden md:block">
+                    이 구간을 유저가 &lsquo;실력으로 극복할 대상&rsquo;으로 두면 좌절이 되고, <strong class="text-cfred">애초에 쓰지 말아야 하는 구간</strong>으로 두면 점사라는 정답이 생깁니다. <br class="hidden md:block">
                     시뮬레이션이 구간을 셋으로 나눈 것은 후자를 가리키는 설계이고, 좌표가 그것을 지지합니다.
                 </p>
             </div>
@@ -566,9 +567,8 @@
                     진입 장벽이 오히려 올라간다고 앞 장에서 적은 리스크가 여기서 구체적인 모습을 갖습니다.
                 </p>
                 <p class="text-sm md:text-base text-slate-300 leading-relaxed">
-                     <strong class="text-cfred">좌우 순서는 두 모드에서 동일하게 두고 진폭과 수직 상승만 다르게</strong> 설계하면, <br class="hidden md:block">
-                    유저는 이미 익힌 방향 감각을 그대로 쓰면서 크기만 다시 맞추면 됩니다. <br class="hidden md:block">
-                    조작감을 상품으로 팔 때의 해법 A가 &lsquo;패턴만 다르게&rsquo;라고 한 것을 <strong class="text-white">방향은 같게, 크기는 다르게</strong>로 좁혀 적으면 실행 지침이 됩니다. 같은 총기 안에서 두 모드를 익히는 비용을 낮추는 방법입니다.
+                    <strong class="text-cfred">좌우 순서는 두 모드에서 동일하게 두고 진폭과 수직 상승만 다르게</strong> 설계하면, 유저는 이미 익힌 방향 감각을 그대로 쓰면서 크기만 다시 맞추면 됩니다. 조작감을 상품으로 팔 때의 해법 A가 &lsquo;패턴만 다르게&rsquo;라고 한 것을 <strong class="text-white">방향은 같게, 크기는 다르게</strong>로 좁혀 적으면 실행 지침이 됩니다. <br class="hidden md:block">
+                    같은 총기 안에서 두 모드를 익히는 비용을 낮추는 방법입니다.
                 </p>
             </div>
         </div>
@@ -632,15 +632,13 @@
                     <strong class="text-slate-900">단점이 그림에서는 강점으로 보입니다.</strong>
                 </p>
             <p class="text-sm md:text-base text-slate-700 leading-relaxed mb-5">
-                    앞에서 정리한 밸런스 축과도 어긋납니다. <br class="hidden md:block">
-                    거기서는 M4A1을 안정적인 총기로, AK-47을 위험을 감수하는 대신 보상이 큰 총기로 나눠 두었습니다. <br class="hidden md:block">
+                    앞에서 정리한 밸런스 축과도 어긋납니다. 거기서는 M4A1을 안정적인 총기로, AK-47을 위험을 감수하는 대신 보상이 큰 총기로 나눠 두었습니다. <br class="hidden md:block">
                     두 총기는 우열 관계가 아니라 성격이 다른 선택지입니다. <br class="hidden md:block">
                     그런데 차트에서는 <strong class="text-slate-900">AK-47이 모든 면에서 앞서는 총기처럼</strong> 그려집니다.
                 </p>
             <p class="text-sm md:text-base text-slate-700 leading-relaxed">
-                    <strong class="text-cfred">고치는 방법은 축 이름을 바꾸는 것입니다.</strong> <br class="hidden md:block">
-                    난이도 대신 <strong class="text-slate-900">숙련 접근성</strong>으로 두고 값을 뒤집어 넣으면 다섯 축이 모두 같은 방향이 되고 면적이 그대로 우열을 뜻하게 됩니다. <br class="hidden md:block">
-                    M4A1이 70, AK-47이 5가 됩니다. 수치를 새로 만드는 것이 아니라 <strong class="text-slate-900">같은 값을 방향만 맞춰 다시 적는 것</strong>이므로 근거는 그대로 유지됩니다.
+                    <strong class="text-cfred">고치는 방법은 축 이름을 바꾸는 것입니다.</strong> 난이도 대신 <strong class="text-slate-900">숙련 접근성</strong>으로 두고 값을 뒤집어 넣으면 다섯 축이 모두 같은 방향이 되고 면적이 그대로 우열을 뜻하게 됩니다. M4A1이 70, AK-47이 5가 됩니다. <br class="hidden md:block">
+                    수치를 새로 만드는 것이 아니라 <strong class="text-slate-900">같은 값을 방향만 맞춰 다시 적는 것</strong>이므로 근거는 그대로 유지됩니다.
                 </p>
         </div>
 
@@ -701,17 +699,20 @@
                     <div class="bg-white/5 border border-white/10 rounded-xl p-6">
                         <p class="text-cfred font-black text-xs tracking-wide mb-3 italic">확인한 것</p>
                         <p class="text-sm text-white font-bold mb-2">반동은 결함이 아니라 밸런스 축입니다</p>
-                        <p class="text-xs text-slate-400 leading-relaxed">저반동 M4A1과 고반동 AK-47이 공존하는 이유는 &lsquo;안정성&rsquo;과 &lsquo;결정력&rsquo;을 맞바꾸게 만든 설계에 있습니다.</p>
+                        <p class="text-slate-400 leading-relaxed text-sm">저반동 M4A1과 고반동 AK-47이 공존하는 이유는 &lsquo;안정성&rsquo;과 &lsquo;결정력&rsquo;을 맞바꾸게 만든 설계에 있습니다.</p>
                     </div>
                     <div class="bg-white/5 border border-white/10 rounded-xl p-6">
                         <p class="text-cfred font-black text-xs tracking-wide mb-3 italic">리스크</p>
                         <p class="text-sm text-white font-bold mb-2">신규 총기의 브레이크는 전환 비용입니다</p>
-                        <p class="text-xs text-slate-400 leading-relaxed">두 모드를 담은 총기는 방치하면 상위 호환이 됩니다. 전환 페널티와 모드별 결손이 유일한 통제 수단입니다.</p>
+                        <p class="text-slate-400 leading-relaxed text-sm">
+                    두 모드를 담은 총기는 방치하면 상위 호환이 됩니다. <br class="hidden md:block">
+                    전환 페널티와 모드별 결손이 유일한 통제 수단입니다.
+                </p>
                     </div>
                     <div class="bg-white/5 border border-white/10 rounded-xl p-6">
                         <p class="text-cfred font-black text-xs tracking-wide mb-3 italic">충돌 지점</p>
                         <p class="text-sm text-white font-bold mb-2">조작감은 밸런스이면서 상품입니다</p>
-                        <p class="text-xs text-slate-400 leading-relaxed">반동 제어를 실력으로 정의한 순간, 저반동 무기를 파는 일은 P2W가 됩니다. 수치가 아니라 감각을 팔아야 합니다.</p>
+                        <p class="text-slate-400 leading-relaxed text-sm">반동 제어를 실력으로 정의한 순간, 저반동 무기를 파는 일은 P2W가 됩니다. 수치가 아니라 감각을 팔아야 합니다.</p>
                     </div>
                 </div>
 

@@ -84,7 +84,8 @@
             -webkit-text-fill-color: transparent;
         }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
@@ -377,7 +378,8 @@
                         <span class="px-3 py-1 bg-purple-100 text-purple-700 text-[10px] font-black rounded-full tracking-wide">요인 5</span>
                         <h3 class="text-2xl font-bold text-slate-900 leading-tight">전 연령층을 포용하는 정교한 수익 모델 구조</h3>
                         <p class="text-sm text-slate-600 leading-relaxed">
-                     소액 결제와 치장(스킨) 위주의 1020 세대부터, 고액 결제와 스펙/성장 위주의 3040 이상 하드코어 세대까지 모든 과금 패턴을 포괄합니다. 가벼운 방치형 유저와 PVP 경쟁 유저의 플레이 스타일을 함께 수용하는 밸런싱입니다.
+                    소액 결제와 치장(스킨) 위주의 1020 세대부터, 고액 결제와 스펙/성장 위주의 3040 이상 하드코어 세대까지 모든 과금 패턴을 포괄합니다. <br class="hidden md:block">
+                    가벼운 방치형 유저와 PVP 경쟁 유저의 플레이 스타일을 함께 수용하는 밸런싱입니다.
                 </p>
                     </div>
                     <div class="w-full lg:w-1/2 mockup-ui bg-slate-900 p-6 h-[280px] flex flex-col justify-center shadow-xl">
@@ -415,7 +417,10 @@
                         <div class="content-panel p-6 border-t-[6px] border-t-sky-500">
                             <p class="text-[10px] font-black tracking-wide text-sky-500 mb-2">1단계 &middot; 유입</p>
                             <p class="font-black text-slate-900 mb-3 text-sm">요인 04 &middot; 01</p>
-                            <p class="text-xs text-slate-600 leading-relaxed">밈 기반 대량 광고와 친숙한 IP가 <strong class="text-slate-800">진입 장벽을 낮춥니다.</strong> 게임 내용이 아니라 아는 캐릭터로 클릭을 만듭니다.</p>
+                            <p class="text-xs text-slate-600 leading-relaxed">
+                    밈 기반 대량 광고와 친숙한 IP가 <strong class="text-slate-800">진입 장벽을 낮춥니다.</strong> <br class="hidden md:block">
+                    게임 내용이 아니라 아는 캐릭터로 클릭을 만듭니다.
+                </p>
                         </div>
                         <div class="content-panel p-6 border-t-[6px] border-t-emerald-500">
                             <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-2">2단계 &middot; 정착</p>
@@ -452,7 +457,8 @@
                             </div>
                         </div>
                         <p class="text-sm md:text-base text-slate-700 leading-relaxed">
-                    광고를 보고 유입된 라이트 유저 대부분은 <strong class="text-slate-900">랭킹 경쟁에서 우위를 점할 수 없습니다.</strong> 즉 이 모델은 폭넓은 유저층을 <strong>확보</strong>하는 구조가 아니라, <strong class="text-amber-700">폭넓게 유입시켜 소수를 남기고 나머지를 다시 광고로 채우는</strong> 구조로 작동합니다. <br class="hidden md:block">
+                    광고를 보고 유입된 라이트 유저 대부분은 <strong class="text-slate-900">랭킹 경쟁에서 우위를 점할 수 없습니다.</strong> <br class="hidden md:block">
+                    즉 이 모델은 폭넓은 유저층을 <strong>확보</strong>하는 구조가 아니라, <strong class="text-amber-700">폭넓게 유입시켜 소수를 남기고 나머지를 다시 광고로 채우는</strong> 구조로 작동합니다. <br class="hidden md:block">
                     높은 매출과 높은 이탈이 동시에 나타나며, 그 결과 <strong class="text-slate-900">매출이 마케팅 집행 규모에 종속</strong>됩니다. <br class="hidden md:block">
                     요인 04(공격적 광고)가 선택이 아니라 <strong>필수 조건</strong>이 되는 이유입니다.
                 </p>
@@ -587,17 +593,17 @@
                         <div class="grid md:grid-cols-3 gap-4 text-left">
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
                                 <p class="text-amber-300 font-black text-sm mb-2">벤치마킹할 것</p>
-                                <p class="text-xs text-slate-300 leading-relaxed">
+                                <p class="text-slate-300 leading-relaxed text-sm">
                     성향이 반대인 두 장르를 섞지 않고 <strong class="text-white">퍼널의 앞단과 뒷단에 분리 배치</strong>한 방식. 유입 문법과 과금 문법을 다르게 쓸 수 있습니다.
                 </p>
                             </div>
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
                                 <p class="text-amber-300 font-black text-sm mb-2">따라 하면 안 되는 것</p>
-                                <p class="text-xs text-slate-300 leading-relaxed">마케팅 집행에 매출이 종속되는 구조. 광고를 멈추면 매출이 함께 멈추므로 <strong class="text-white">자체 유입 축이 없으면 위험</strong>합니다.</p>
+                                <p class="text-slate-300 leading-relaxed text-sm">마케팅 집행에 매출이 종속되는 구조. 광고를 멈추면 매출이 함께 멈추므로 <strong class="text-white">자체 유입 축이 없으면 위험</strong>합니다.</p>
                             </div>
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
                                 <p class="text-amber-300 font-black text-sm mb-2">전망을 다시 쓰면</p>
-                                <p class="text-xs text-slate-300 leading-relaxed">&lsquo;장기 캐시카우&rsquo;는 <strong class="text-white">콜라보 효율 추이와 통합 후 최상위층 잔존</strong>이 유지된다는 조건 아래에서만 성립합니다.</p>
+                                <p class="text-slate-300 leading-relaxed text-sm">&lsquo;장기 캐시카우&rsquo;는 <strong class="text-white">콜라보 효율 추이와 통합 후 최상위층 잔존</strong>이 유지된다는 조건 아래에서만 성립합니다.</p>
                             </div>
                         </div>
                     </div>

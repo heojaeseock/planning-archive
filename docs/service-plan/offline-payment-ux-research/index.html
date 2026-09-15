@@ -98,7 +98,8 @@
             transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
         }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
@@ -217,11 +218,11 @@
                                 <span class="text-2xl">✨</span> 시스템 도입 후 전환
                             </h3>
                             <ul class="space-y-6">
-                                <li>
+                                <li class="text-sm">
                                     <strong class="text-lg text-[#191f28] block mb-1">오퍼레이션 최소화 (도입 후 목표)</strong>
                                     <span class="text-[#4e5968] block leading-relaxed">엑셀/Jira 연동 파이프라인으로 리크루팅과 보상 프로세스를 자동화하여 병목을 제거합니다.</span>
                                 </li>
-                                <li>
+                                <li class="text-sm">
                                     <strong class="text-lg text-[#191f28] block mb-1">DIY 리서치 확대와 인사이트 자산화</strong>
                                     <span class="text-[#4e5968] block leading-relaxed">확보된 시간으로 메이커용 리서치 가이드를 구축하고, 전사적인 인사이트 자산화에 집중합니다.</span>
                                 </li>
@@ -265,15 +266,15 @@
                             <div class="grid md:grid-cols-3 gap-4">
                                 <div class="bg-[#f9fafb] p-5 rounded-xl border border-gray-100">
                                     <h4 class="font-bold text-[#191f28] mb-2 text-[15px]">1. 패널 자동 추출</h4>
-                                    <p class="text-sm text-[#4e5968] leading-relaxed">결제액, 업종 조건에 맞는 사장님 타겟 데이터를 엑셀 로직으로 오차 없이 필터링합니다.</p>
+                                    <p class="text-[#4e5968] leading-relaxed text-sm">결제액, 업종 조건에 맞는 사장님 타겟 데이터를 엑셀 로직으로 오차 없이 필터링합니다.</p>
                                 </div>
                                 <div class="bg-[#f9fafb] p-5 rounded-xl border border-gray-100">
                                     <h4 class="font-bold text-[#191f28] mb-2 text-[15px]">2. 커뮤니케이션 자동화</h4>
-                                    <p class="text-sm text-[#4e5968] leading-relaxed">슬랙 웹훅과 캘린더를 연동하여 인터뷰 일정 조율 및 알림을 시스템화합니다.</p>
+                                    <p class="text-[#4e5968] leading-relaxed text-sm">슬랙 웹훅과 캘린더를 연동하여 인터뷰 일정 조율 및 알림을 시스템화합니다.</p>
                                 </div>
                                 <div class="bg-[#f9fafb] p-5 rounded-xl border border-gray-100">
                                     <h4 class="font-bold text-[#191f28] mb-2 text-[15px]">3. 오지급 방지 정산</h4>
-                                    <p class="text-sm text-[#4e5968] leading-relaxed">Jira 티켓과 연동된 승인 파이프라인을 세팅하여 누락과 에러 없는 보상을 지급합니다.</p>
+                                    <p class="text-[#4e5968] leading-relaxed text-sm">Jira 티켓과 연동된 승인 파이프라인을 세팅하여 누락과 에러 없는 보상을 지급합니다.</p>
                                 </div>
                             </div>
                         </div>
@@ -474,8 +475,7 @@
                 <div class="bg-slate-900 rounded-2xl p-6 text-white">
                     <p class="text-xs font-bold text-blue-300 mb-2">보완 방향</p>
                     <p class="text-sm leading-relaxed">
-                    DIY 리서치의 <strong class="text-blue-300">대상자 선정과 결론 도출 두 지점에만 검수를 붙입니다.</strong> <br class="hidden md:block">
-                    수행 전에 누구를 만날지 확인하고, 수행 후에 결론이 표본 크기에 비해 과한지 확인하는 방식입니다. <br class="hidden md:block">
+                    DIY 리서치의 <strong class="text-blue-300">대상자 선정과 결론 도출 두 지점에만 검수를 붙입니다.</strong> 수행 전에 누구를 만날지 확인하고, 수행 후에 결론이 표본 크기에 비해 과한지 확인하는 방식입니다. <br class="hidden md:block">
                     전 과정을 검수하면 DIY의 목적인 속도가 사라지므로, <strong class="text-white">앞과 뒤만 잡고 가운데는 맡기는 것</strong>이 30p 안에서 감당 가능한 형태입니다.
                 </p>
                 </div>

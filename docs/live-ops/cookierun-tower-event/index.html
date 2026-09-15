@@ -102,7 +102,8 @@
             gap: 8px;
         }
         h1,h2,h3,h4 { text-wrap: balance; }
-        p, li, td { text-wrap: pretty; }
+        p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
@@ -237,21 +238,30 @@
                         <div class="content-panel p-6 border-amber-200 text-center flex flex-col items-center">
                             <div class="text-5xl mb-4">🐰</div>
                             <h4 class="font-bold text-amber-900 mb-2">크리스마스 토끼</h4>
-                            <p class="text-xs text-amber-600 leading-relaxed">이벤트 기간 중 스토리 모드에 한정 출현하는 특수 몬스터입니다. 처치 시 당근 드랍 확률이 가장 높습니다.</p>
+                            <p class="text-amber-600 leading-relaxed text-sm">
+                    이벤트 기간 중 스토리 모드에 한정 출현하는 특수 몬스터입니다. <br class="hidden md:block">
+                    처치 시 당근 드랍 확률이 가장 높습니다.
+                </p>
                             <span class="mt-4 px-2 py-1 bg-red-50 text-[10px] font-bold text-red-500 rounded border border-red-100">신규 제작 리소스</span>
                         </div>
                         <!-- 오브젝트 2 -->
                         <div class="content-panel p-6 border-amber-200 text-center flex flex-col items-center">
                             <div class="text-5xl mb-4">🥕</div>
                             <h4 class="font-bold text-amber-900 mb-2">루돌프의 당근</h4>
-                            <p class="text-xs text-amber-600 leading-relaxed">이벤트 퀘스트 핵심 아이템입니다. 총 10개를 수집하여 산타맛 쿠키에게 전달해야 합니다.</p>
+                            <p class="text-amber-600 leading-relaxed text-sm">
+                    이벤트 퀘스트 핵심 아이템입니다. <br class="hidden md:block">
+                    총 10개를 수집하여 산타맛 쿠키에게 전달해야 합니다.
+                </p>
                             <span class="mt-4 px-2 py-1 bg-amber-50 text-[10px] font-bold text-amber-600 rounded border border-amber-100">기존 리소스 활용</span>
                         </div>
                         <!-- 오브젝트 3 -->
                         <div class="content-panel p-6 border-amber-200 text-center flex flex-col items-center">
                             <div class="text-5xl mb-4">🎁</div>
                             <h4 class="font-bold text-amber-900 mb-2">이벤트 선물상자</h4>
-                            <p class="text-xs text-amber-600 leading-relaxed">최종 보상 아이템입니다. 사용 시 무작위로 레어에서 에픽 등급의 장비를 획득할 수 있습니다.</p>
+                            <p class="text-amber-600 leading-relaxed text-sm">
+                    최종 보상 아이템입니다. <br class="hidden md:block">
+                    사용 시 무작위로 레어에서 에픽 등급의 장비를 획득할 수 있습니다.
+                </p>
                             <span class="mt-4 px-2 py-1 bg-green-50 text-[10px] font-bold text-green-600 rounded border border-green-100">기간 한정 소모품</span>
                         </div>
                     </div>
