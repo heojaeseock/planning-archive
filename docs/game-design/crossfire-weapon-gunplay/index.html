@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>크로스파이어 무기 조작감 분석</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="크로스파이어 무기 조작감 분석. 반동·명중률을 수치로 분해하고 모드 전환형 신규 무기 제안.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,26 +21,10 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Pretendard', 'sans-serif'] },
-                    colors: {
-                        cfred: '#ff4655', 
-                        cfbg: '#f8fafc',
-                        cfcard: '#ffffff',
-                        cftext: '#0f172a',
-                        cfmuted: '#64748b',
-                        cfdark: '#0f172a'
-                    }
-                }
-            }
-        }
-    </script>
+    
     <style>
         /**/
         /**/
@@ -312,7 +299,6 @@
         </div>
     </section>
 
-
     <!-- [보강] 05. 제안 리스크 검토 -->
     <section id="validation" class="py-20 px-6 bg-slate-50 border-y border-slate-200">
         <div class="max-w-6xl mx-auto">
@@ -443,7 +429,6 @@
         </div>
     </section>
 
-
     <!-- [보강] 07. 탄착 데이터 검증 -->
     <section class="py-20 px-6 bg-slate-50 border-y border-slate-200">
         <div class="max-w-6xl mx-auto">
@@ -459,12 +444,12 @@
                 <table class="w-full min-w-[680px] border-collapse text-sm">
                     <thead>
                         <tr class="bg-slate-900 text-white">
-                            <th class="p-3 text-left text-xs font-black">구간</th>
-                            <th class="p-3 text-center text-xs font-black">발수</th>
-                            <th class="p-3 text-center text-xs font-black">좌우 산포 폭</th>
-                            <th class="p-3 text-center text-xs font-black">수직 상승 최대</th>
-                            <th class="p-3 text-center text-xs font-black">좌우 나누기 수직</th>
-                            <th class="p-3 text-center text-xs font-black">성격</th>
+                            <th scope="col" class="p-3 text-left text-xs font-black">구간</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">발수</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">좌우 산포 폭</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">수직 상승 최대</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">좌우 나누기 수직</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">성격</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>Color Killer 보드게임 기획·제작</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="Color Killer 보드게임 기획·제작. 특수 카드 4종으로 역전 요소를 만든 창작 보드게임.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,7 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     
     <style>
@@ -58,7 +61,6 @@
         }
 
         .modern-nav-btn {
-            @apply py-3 px-2 md:py-5 md:px-3 rounded-2xl font-black text-xs md:text-sm flex flex-col items-center justify-center gap-1 md:gap-2;
             background-color: #f8fafc;
             border: 2px solid #cbd5e1;
             border-bottom-width: 6px;
@@ -156,11 +158,9 @@
             top: 24px;
             left: 24px;
             z-index: 1100;
-            @apply flex items-center gap-3 px-8 py-3 bg-white text-orange-600 rounded-full font-black text-base shadow-2xl transition-all cursor-pointer border-2 border-slate-100;
             box-shadow: 0 15px 30px rgba(0,0,0,0.4);
         }
         .modal-back-btn:hover {
-            @apply bg-orange-50 border-orange-300;
             transform: translateX(4px);
         }
         h1,h2,h3,h4 { text-wrap: balance; }
@@ -507,7 +507,6 @@
                 </div>
             </div>
         </div>
-
 
         <!-- [보강] 밸런스 검토 탭 -->
         <div id="balance" class="max-w-5xl w-full tab-content space-y-12">

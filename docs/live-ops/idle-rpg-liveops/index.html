@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>방치형 RPG 라이브 운영 기록</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="방치형 RPG 라이브 운영 기록. 지표와 민심을 함께 보며 사고 대응 공지까지 작성한 운영 기록.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,37 +21,13 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="tailwind.css">
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Noto Sans KR"', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            500: '#3b82f6', // Bright Blue
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                        },
-                        surface: {
-                            100: '#f1f5f9', // Soft background
-                            200: '#e2e8f0', // Card borders
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    
     <style>
         body {
             font-family: 'Noto Sans KR', sans-serif;
@@ -453,11 +432,11 @@
                     <table class="w-full min-w-[560px] border-collapse text-sm bg-white">
                         <thead>
                             <tr class="bg-slate-800 text-white">
-                                <th class="p-3 text-left text-xs font-black">구간</th>
-                                <th class="p-3 text-center text-xs font-black">기존</th>
-                                <th class="p-3 text-center text-xs font-black">목표</th>
-                                <th class="p-3 text-center text-xs font-black">증가폭</th>
-                                <th class="p-3 text-center text-xs font-black">상대 개선율</th>
+                                <th scope="col" class="p-3 text-left text-xs font-black">구간</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">기존</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">목표</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">증가폭</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">상대 개선율</th>
                             </tr>
                         </thead>
                         <tbody>

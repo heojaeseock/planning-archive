@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>커머스 AI PM 업무 설계</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="커머스 AI PM 업무 설계. 업무 프로세스 자동화와 동향 리포팅을 PM 관점에서 설계.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,8 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<!-- Tailwind CSS 로드 최적화: production 에서는 빌드된 css를 쓰는 것이 좋으나 여기선 CDN 유지 -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
         
@@ -341,7 +343,6 @@
             </div>
         </section>
 
-
         <section id="review" class="scroll-mt-24">
             <div class="mb-10">
                 <h2 class="text-3xl font-bold text-slate-900 mb-2">5. 수치 검토와 남는 리스크</h2>
@@ -400,7 +401,6 @@
                 </p>
             </div>
 
-
             <div class="bg-white rounded-3xl border-2 border-amber-300 p-8 shadow-sm mb-10">
                 <h3 class="text-xl font-bold text-slate-900 mb-5">단계 2에서 부담이 오히려 늘어납니다</h3>
                 <p class="text-slate-600 leading-relaxed mb-6">
@@ -412,12 +412,12 @@
                     <table class="w-full min-w-[600px] border-collapse text-sm">
                         <thead>
                             <tr class="bg-slate-800 text-white">
-                                <th class="p-3 text-left text-xs font-black">단계</th>
-                                <th class="p-3 text-left text-xs font-black">화면 표기</th>
-                                <th class="p-3 text-center text-xs font-black">수작업</th>
-                                <th class="p-3 text-center text-xs font-black">자동화</th>
-                                <th class="p-3 text-center text-xs font-black">합계</th>
-                                <th class="p-3 text-center text-xs font-black">기준 대비</th>
+                                <th scope="col" class="p-3 text-left text-xs font-black">단계</th>
+                                <th scope="col" class="p-3 text-left text-xs font-black">화면 표기</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">수작업</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">자동화</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">합계</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">기준 대비</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -497,16 +497,15 @@
                 </div>
             </div>
 
-
             <div class="bg-white rounded-3xl border-2 border-slate-200 p-8 shadow-sm mb-10">
                 <h3 class="text-xl font-bold text-slate-900 mb-5">예외 케이스 건수를 다시 읽으면</h3>
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <div class="overflow-hidden rounded-2xl border border-slate-200">
+                    <div class="overflow-x-auto rounded-2xl border border-slate-200">
                         <table class="w-full border-collapse text-sm">
                             <thead>
                                 <tr class="bg-slate-800 text-white">
-                                    <th class="p-3 text-left text-xs font-black">시점</th>
-                                    <th class="p-3 text-center text-xs font-black">예외 케이스</th>
+                                    <th scope="col" class="p-3 text-left text-xs font-black">시점</th>
+                                    <th scope="col" class="p-3 text-center text-xs font-black">예외 케이스</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>브롤스타즈 시스템 구조 분석</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="브롤스타즈 시스템 구조 분석. 71종 브롤러의 클래스 체계와 레벨별 요구 재화를 수치화.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,7 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
         body { 
@@ -418,11 +421,11 @@
                             <table class="w-full bs-table min-w-[600px] border-collapse">
                                 <thead>
                                     <tr>
-                                        <th class="bg-blue-600 w-1/5">레벨</th>
-                                        <th class="bg-blue-500 w-1/5">파워 포인트</th>
-                                        <th class="bg-blue-600 w-1/5">누적 파워 포인트</th>
-                                        <th class="bg-blue-500 w-1/5">코인</th>
-                                        <th class="bg-blue-600 w-1/5">누적 코인</th>
+                                        <th scope="col" class="bg-blue-600 w-1/5">레벨</th>
+                                        <th scope="col" class="bg-blue-500 w-1/5">파워 포인트</th>
+                                        <th scope="col" class="bg-blue-600 w-1/5">누적 파워 포인트</th>
+                                        <th scope="col" class="bg-blue-500 w-1/5">코인</th>
+                                        <th scope="col" class="bg-blue-600 w-1/5">누적 코인</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -480,10 +483,10 @@
                             <table class="bs-table w-full min-w-[560px] border-collapse">
                                 <thead>
                                     <tr class="bg-slate-700">
-                                        <th>레벨 구간</th>
-                                        <th class="bg-rose-500">파워 포인트<br><span class="font-medium opacity-80">전 구간 대비</span></th>
-                                        <th class="bg-emerald-600">코인<br><span class="font-medium opacity-80">전 구간 대비</span></th>
-                                        <th>파워 포인트 = 앞 두 구간의 합</th>
+                                        <th scope="col">레벨 구간</th>
+                                        <th scope="col" class="bg-rose-500">파워 포인트<br><span class="font-medium opacity-80">전 구간 대비</span></th>
+                                        <th scope="col" class="bg-emerald-600">코인<br><span class="font-medium opacity-80">전 구간 대비</span></th>
+                                        <th scope="col">파워 포인트 = 앞 두 구간의 합</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -791,10 +794,10 @@
                             <table class="bs-table w-full min-w-[620px] border-collapse">
                                 <thead>
                                     <tr class="bg-slate-700">
-                                        <th class="text-left">전제</th>
-                                        <th class="bg-blue-600">브롤스타즈</th>
-                                        <th class="bg-slate-500">모바일 MMORPG 일반</th>
-                                        <th class="bg-rose-500">이식 시 문제</th>
+                                        <th scope="col" class="text-left">전제</th>
+                                        <th scope="col" class="bg-blue-600">브롤스타즈</th>
+                                        <th scope="col" class="bg-slate-500">모바일 MMORPG 일반</th>
+                                        <th scope="col" class="bg-rose-500">이식 시 문제</th>
                                     </tr>
                                 </thead>
                                 <tbody>

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>Kids Air 앱 기획</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="Kids Air 앱 기획. 어린이 대기질 정보 앱을 기획하고 안드로이드로 구현.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,7 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     
@@ -66,18 +69,15 @@
         }
 
         .modern-nav-btn {
-            @apply py-5 px-3 rounded-2xl font-black text-sm transition-all duration-200 border-2 border-slate-300 flex flex-col items-center justify-center gap-2;
             background: #ffffff; 
             color: #475569;
             box-shadow: 0 4px 0 0 #e2e8f0; 
         }
         .modern-nav-btn:hover {
-            @apply border-sky-400 text-sky-700 bg-sky-50;
             transform: translateY(-2px);
             box-shadow: 0 6px 0 0 #bae6fd;
         }
         .modern-nav-btn.active {
-            @apply border-sky-500 text-white bg-sky-600;
             box-shadow: 0 0 0 0 transparent;
             transform: translateY(4px); 
         }
@@ -150,11 +150,9 @@
             top: 24px;
             left: 24px;
             z-index: 1100;
-            @apply flex items-center gap-3 px-8 py-3 bg-white text-sky-600 rounded-full font-black text-base shadow-2xl transition-all cursor-pointer border-2 border-slate-200;
             box-shadow: 0 15px 30px rgba(0,0,0,0.4);
         }
         .modal-back-btn:hover {
-            @apply bg-sky-50 border-sky-300;
             transform: translateX(4px);
         }
 
@@ -169,14 +167,12 @@
             table-layout: fixed; 
         }
         .mock-table th {
-            @apply bg-slate-50 text-slate-400 font-bold py-3;
             text-align: center;
             vertical-align: middle;
             line-height: 1;
             padding: 12px 0;
         }
         .mock-table td {
-            @apply border-b border-slate-50 py-3;
             text-align: center;
             vertical-align: middle;
             font-weight: 700;
@@ -404,10 +400,10 @@
                                 </colgroup>
                                 <thead>
                                     <tr>
-                                        <th>시간</th>
-                                        <th>온도</th>
-                                        <th>미세</th>
-                                        <th>초미세</th>
+                                        <th scope="col">시간</th>
+                                        <th scope="col">온도</th>
+                                        <th scope="col">미세</th>
+                                        <th scope="col">초미세</th>
                                     </tr>
                                 </thead>
                                 <tbody id="tableBody">
@@ -510,7 +506,6 @@
                 </div>
             </div>
         </div>
-
 
         <div id="premise" class="max-w-5xl w-full tab-content space-y-12">
 

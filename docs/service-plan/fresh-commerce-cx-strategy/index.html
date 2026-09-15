@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>신선식품 커머스 CX 위기 대응</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="신선식품 커머스 CX 위기 대응. 기상·물류 변수를 데이터로 바꿔 문의 폭증에 대비하는 체계.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -20,7 +23,7 @@
 <meta name="twitter:card" content="summary">
 <!-- 폰트 및 필수 라이브러리 로드 -->
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.544.0/dist/umd/lucide.min.js"></script>
     <style>
@@ -275,7 +278,6 @@
             </div>
         </div>
 
-
         <section class="mt-16 space-y-8">
             <div class="bg-white rounded-[40px] p-8 md:p-14 shadow-sm border border-slate-100 space-y-10">
                 <div>
@@ -290,13 +292,13 @@
                     <table class="w-full min-w-[720px] border-collapse text-sm">
                         <thead>
                             <tr class="bg-slate-900 text-white">
-                                <th class="p-3 text-left text-xs font-bold">시점</th>
-                                <th class="p-3 text-center text-xs font-bold">문의 유입</th>
-                                <th class="p-3 text-center text-xs font-bold">문의 배수</th>
-                                <th class="p-3 text-center text-xs font-bold">응대 지연</th>
-                                <th class="p-3 text-center text-xs font-bold">지연 배수</th>
-                                <th class="p-3 text-center text-xs font-bold">지연 배수 나누기 문의 배수</th>
-                                <th class="p-3 text-center text-xs font-bold">구간 증가폭</th>
+                                <th scope="col" class="p-3 text-left text-xs font-bold">시점</th>
+                                <th scope="col" class="p-3 text-center text-xs font-bold">문의 유입</th>
+                                <th scope="col" class="p-3 text-center text-xs font-bold">문의 배수</th>
+                                <th scope="col" class="p-3 text-center text-xs font-bold">응대 지연</th>
+                                <th scope="col" class="p-3 text-center text-xs font-bold">지연 배수</th>
+                                <th scope="col" class="p-3 text-center text-xs font-bold">지연 배수 나누기 문의 배수</th>
+                                <th scope="col" class="p-3 text-center text-xs font-bold">구간 증가폭</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -414,10 +416,10 @@
                     <table class="w-full min-w-[560px] border-collapse text-sm">
                         <thead>
                             <tr class="bg-slate-900 text-white">
-                                <th class="p-3 text-left text-xs font-bold">구간</th>
-                                <th class="p-3 text-center text-xs font-bold">누적 문의</th>
-                                <th class="p-3 text-center text-xs font-bold">수작업 정제</th>
-                                <th class="p-3 text-center text-xs font-bold">자동화 정제</th>
+                                <th scope="col" class="p-3 text-left text-xs font-bold">구간</th>
+                                <th scope="col" class="p-3 text-center text-xs font-bold">누적 문의</th>
+                                <th scope="col" class="p-3 text-center text-xs font-bold">수작업 정제</th>
+                                <th scope="col" class="p-3 text-center text-xs font-bold">자동화 정제</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -638,8 +640,8 @@
                     <table class="w-full min-w-[560px] border-collapse text-sm">
                         <thead>
                             <tr class="bg-slate-900 text-white">
-                                <th class="p-3 text-left text-xs font-bold">확인할 지표</th>
-                                <th class="p-3 text-left text-xs font-bold">보는 이유</th>
+                                <th scope="col" class="p-3 text-left text-xs font-bold">확인할 지표</th>
+                                <th scope="col" class="p-3 text-left text-xs font-bold">보는 이유</th>
                             </tr>
                         </thead>
                         <tbody>

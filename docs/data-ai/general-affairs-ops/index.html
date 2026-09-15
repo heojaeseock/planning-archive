@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>총무·경영지원 업무 자동화 기획</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="총무·경영지원 업무 자동화 기획. 수작업 병목을 함수·템플릿 기반 파이프라인으로 전환.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,8 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="tailwind.css">
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
@@ -415,10 +417,10 @@
                     <table class="w-full min-w-[520px] border-collapse text-sm bg-white">
                         <thead>
                             <tr class="bg-gray-700 text-white">
-                                <th class="p-3 text-left text-xs font-black">연도</th>
-                                <th class="p-3 text-center text-xs font-black">임직원 수</th>
-                                <th class="p-3 text-center text-xs font-black">부하 지수</th>
-                                <th class="p-3 text-center text-xs font-black">1인당 부하</th>
+                                <th scope="col" class="p-3 text-left text-xs font-black">연도</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">임직원 수</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">부하 지수</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">1인당 부하</th>
                             </tr>
                         </thead>
                         <tbody>

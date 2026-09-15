@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>AI 기반 HR 어시스턴트 기획</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="AI 기반 HR 어시스턴트 기획. 민감 정보를 노출하지 않고 인사 문의를 자동 응대하는 설계.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,7 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
         body { 
@@ -127,10 +130,10 @@
                 <table class="w-full text-sm notion-table bg-white min-w-[600px]">
                     <thead>
                         <tr>
-                            <th class="w-1/6">카테고리</th>
-                            <th class="w-1/3">자주 묻는 질문</th>
-                            <th class="w-2/5">핵심 규정 요약 (AI 학습용)</th>
-                            <th class="w-1/6">상세 링크</th>
+                            <th scope="col" class="w-1/6">카테고리</th>
+                            <th scope="col" class="w-1/3">자주 묻는 질문</th>
+                            <th scope="col" class="w-2/5">핵심 규정 요약 (AI 학습용)</th>
+                            <th scope="col" class="w-1/6">상세 링크</th>
                         </tr>
                     </thead>
                     <tbody id="notion-db-body" class="cursor-pointer">
@@ -310,9 +313,9 @@
                 <table class="w-full min-w-[620px] border-collapse text-sm">
                     <thead>
                         <tr class="bg-slate-700 text-white">
-                            <th class="p-3 text-left text-xs font-black">업무 항목</th>
-                            <th class="p-3 text-left text-xs font-black">자동화 가능 여부</th>
-                            <th class="p-3 text-left text-xs font-black">남는 작업</th>
+                            <th scope="col" class="p-3 text-left text-xs font-black">업무 항목</th>
+                            <th scope="col" class="p-3 text-left text-xs font-black">자동화 가능 여부</th>
+                            <th scope="col" class="p-3 text-left text-xs font-black">남는 작업</th>
                         </tr>
                     </thead>
                     <tbody>

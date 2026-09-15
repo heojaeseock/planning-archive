@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>한정판 드랍 이벤트 운영 기획</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="한정판 드랍 이벤트 운영 기획. 결제 이상 징후를 감지해 즉시 조치하는 드랍 운영 체계.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,8 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="tailwind.css">
     <!-- Chart.js & DataLabels Plugin -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
@@ -343,9 +345,9 @@
                     <table class="w-full min-w-[440px] border-collapse text-sm">
                         <thead>
                             <tr class="bg-gray-800 text-white">
-                                <th class="p-3 text-left text-xs font-black">오류 유형</th>
-                                <th class="p-3 text-center text-xs font-black">비중</th>
-                                <th class="p-3 text-left text-xs font-black">담당 단계</th>
+                                <th scope="col" class="p-3 text-left text-xs font-black">오류 유형</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">비중</th>
+                                <th scope="col" class="p-3 text-left text-xs font-black">담당 단계</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -412,9 +414,9 @@
                     <table class="w-full min-w-[400px] border-collapse text-sm">
                         <thead>
                             <tr class="bg-gray-800 text-white">
-                                <th class="p-3 text-left text-xs font-black">시점</th>
-                                <th class="p-3 text-center text-xs font-black">트래픽</th>
-                                <th class="p-3 text-center text-xs font-black">직전 대비</th>
+                                <th scope="col" class="p-3 text-left text-xs font-black">시점</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">트래픽</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">직전 대비</th>
                             </tr>
                         </thead>
                         <tbody>

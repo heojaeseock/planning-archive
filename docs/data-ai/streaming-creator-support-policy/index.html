@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>크리에이터 지원 정책 비교 분석</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="크리에이터 지원 정책 비교 분석. 신규 창작자 정착 정책과 락인 전략을 플랫폼별로 비교.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,7 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
@@ -274,7 +277,7 @@
                                 <div class="flex items-center gap-4 p-4 border border-slate-100 rounded-2xl hover:bg-amber-50/30 transition-colors">
                                     <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center font-bold text-amber-600 text-xs">Lv.3</div>
                                     <div class="flex-1">
-                                        <h5 class="font-bold text-xs text-slate-800첫 정산 성공 (10만원 이상)</h5>
+                                        <h4 class="font-bold text-xs text-slate-800">첫 정산 성공 (10만원 이상)</h4>
                                         <p class="text-[10px] text-slate-500">보상: 수수료 1개월간 5% 인하 및 송출 장비 우선 지원</p>
                                     </div>
                                 </div>
@@ -300,7 +303,6 @@
         </div>
     </section>
 
-
     <!-- [보강] 5. 생존 곡선 재해석 -->
     <section class="mb-20">
         <p class="text-xs font-black tracking-[.2em] text-indigo-600 mb-3">다시 계산하기</p>
@@ -313,10 +315,10 @@
             <table class="w-full min-w-[560px] border-collapse text-sm">
                 <thead>
                     <tr class="bg-slate-700 text-white">
-                        <th class="p-3 text-left text-xs font-black">구간</th>
-                        <th class="p-3 text-center text-xs font-black">잔존율</th>
-                        <th class="p-3 text-center text-xs font-black">구간 감소</th>
-                        <th class="p-3 text-center text-xs font-black">상대 이탈률</th>
+                        <th scope="col" class="p-3 text-left text-xs font-black">구간</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">잔존율</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">구간 감소</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">상대 이탈률</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -475,11 +477,11 @@
             <table class="w-full min-w-[520px] border-collapse text-sm">
                 <thead>
                     <tr class="bg-slate-700 text-white">
-                        <th class="p-3 text-left text-xs font-black">항목</th>
-                        <th class="p-3 text-center text-xs font-black">SOOP</th>
-                        <th class="p-3 text-center text-xs font-black">치지직</th>
-                        <th class="p-3 text-center text-xs font-black">격차</th>
-                        <th class="p-3 text-center text-xs font-black">전략 대응</th>
+                        <th scope="col" class="p-3 text-left text-xs font-black">항목</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">SOOP</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">치지직</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">격차</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">전략 대응</th>
                     </tr>
                 </thead>
                 <tbody>

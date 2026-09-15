@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>쿠키런: 모험의 탑 이벤트 기획</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="쿠키런: 모험의 탑 이벤트 기획. 수집·교환 구조를 활용한 시즌 이벤트 설계와 운영 프로세스.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,7 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
@@ -372,7 +375,6 @@
 
             </div>
 
-
             <!-- 보강: 확률 설계 검토 -->
             <div class="p-8 md:p-12 border-t-4 border-amber-200">
                 <h2 class="text-2xl md:text-3xl font-black text-amber-900 mb-4">확률 세 개를 필요 시행으로 바꿔보면</h2>
@@ -384,9 +386,9 @@
                     <table class="w-full min-w-[440px] border-collapse text-sm bg-white">
                         <thead>
                             <tr class="bg-amber-800 text-white">
-                                <th class="p-3 text-left text-xs font-black">획득 경로</th>
-                                <th class="p-3 text-center text-xs font-black">확률</th>
-                                <th class="p-3 text-center text-xs font-black">당근 10개까지</th>
+                                <th scope="col" class="p-3 text-left text-xs font-black">획득 경로</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">확률</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">당근 10개까지</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -503,7 +505,6 @@
                 </div>
             </div>
 
-
             <!-- 보강: 기대값의 흩어짐 -->
             <div class="p-8 md:p-12 border-t-4 border-amber-200">
                 <h2 class="text-2xl md:text-3xl font-black text-amber-900 mb-4">기대값 20회 뒤에 숨은 흩어짐</h2>
@@ -516,12 +517,12 @@
                     <table class="w-full min-w-[660px] border-collapse text-sm bg-white">
                         <thead>
                             <tr class="bg-amber-800 text-white">
-                                <th class="p-3 text-left text-xs font-black">획득 경로</th>
-                                <th class="p-3 text-center text-xs font-black">확률</th>
-                                <th class="p-3 text-center text-xs font-black">평균</th>
-                                <th class="p-3 text-center text-xs font-black">열 명 중 한 명</th>
-                                <th class="p-3 text-center text-xs font-black">백 명 중 한 명</th>
-                                <th class="p-3 text-center text-xs font-black">평균과의 차이</th>
+                                <th scope="col" class="p-3 text-left text-xs font-black">획득 경로</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">확률</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">평균</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">열 명 중 한 명</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">백 명 중 한 명</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">평균과의 차이</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -639,7 +640,6 @@
                 </p>
                 </div>
             </div>
-
 
             <!-- 보강: 검증 지표와 한계 -->
             <div class="p-8 md:p-12 border-t-4 border-amber-200">

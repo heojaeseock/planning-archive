@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>서브컬처 타겟 유저 분석 및 캐릭터 기획</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="서브컬처 타겟 유저 분석 및 캐릭터 기획. 유저 페르소나를 정의하고 육성 파라미터까지 연결한 캐릭터 설계.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,7 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
         body { font-family: 'Pretendard', sans-serif; background-color: #f1f5f9; color: #334155; }
@@ -75,7 +78,6 @@
     </style>
 
     
-
 
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -285,7 +287,6 @@
             </div>
         </section>
 
-
         <!-- [보강] 4. 설계 검토 -->
         <section id="design-review">
             <div class="mb-8">
@@ -434,7 +435,6 @@
             </div>
         </section>
 
-
         <!-- [보강] 5. 표기 점검 -->
         <section id="notation-review">
             <div class="mb-8">
@@ -449,10 +449,10 @@
                 <table class="w-full min-w-[560px] border-collapse text-sm bg-white">
                     <thead>
                         <tr class="bg-slate-800 text-white">
-                            <th class="p-3 text-left text-xs font-black">항목</th>
-                            <th class="p-3 text-center text-xs font-black">등급 표기</th>
-                            <th class="p-3 text-center text-xs font-black">막대 길이</th>
-                            <th class="p-3 text-center text-xs font-black">길이 순위</th>
+                            <th scope="col" class="p-3 text-left text-xs font-black">항목</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">등급 표기</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">막대 길이</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">길이 순위</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -528,11 +528,11 @@
                     <table class="w-full min-w-[560px] border-collapse text-sm bg-white">
                         <thead>
                             <tr class="bg-slate-800 text-white">
-                                <th class="p-3 text-left text-xs font-black">축</th>
-                                <th class="p-3 text-center text-xs font-black">기존 게임</th>
-                                <th class="p-3 text-center text-xs font-black">지향점</th>
-                                <th class="p-3 text-center text-xs font-black">차이</th>
-                                <th class="p-3 text-center text-xs font-black">배수</th>
+                                <th scope="col" class="p-3 text-left text-xs font-black">축</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">기존 게임</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">지향점</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">차이</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">배수</th>
                             </tr>
                         </thead>
                         <tbody>

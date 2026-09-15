@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <title>하이브리드 캐주얼 장르 분석 및 운영 제언</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
 <meta name="description" content="하이브리드 캐주얼 장르 분석 및 운영 제언. 하이퍼캐주얼의 한계와 하이브리드 전환을 분석하고 소프트런칭 지표까지 정리.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,7 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
@@ -132,39 +135,39 @@
       <table class="cmp">
         <thead>
           <tr>
-            <th>비교 항목</th>
-            <th>하이퍼캐주얼</th>
-            <th>딥 하이퍼캐주얼</th>
-            <th>하이브리드 캐주얼</th>
+            <th scope="col">비교 항목</th>
+            <th scope="col">하이퍼캐주얼</th>
+            <th scope="col">딥 하이퍼캐주얼</th>
+            <th scope="col">하이브리드 캐주얼</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th>대표 게임</th>
+            <th scope="row">대표 게임</th>
             <td>Tall Man Run</td>
             <td>Mob Control</td>
             <td>Alien Invasion, Legend of Slime</td>
           </tr>
           <tr>
-            <th>플레이 흐름</th>
+            <th scope="row">플레이 흐름</th>
             <td>단순 원터치 조작으로<br>즉각적인 만족감 제공</td>
             <td>기본 조작에 기지 건설 등<br>가벼운 부가 콘텐츠 결합</td>
             <td>RPG 수준 경제 시스템,<br>성장과 자원 관리에 집중</td>
           </tr>
           <tr>
-            <th>성장의 깊이</th>
+            <th scope="row">성장의 깊이</th>
             <td>단일 축의 단순한 성장</td>
             <td>카드 수집, 기지 확장 등<br>수평적 성장</td>
             <td>6~7개 이상의<br>다차원적·수직적 성장</td>
           </tr>
           <tr>
-            <th>수익 모델</th>
+            <th scope="row">수익 모델</th>
             <td>인앱 광고 95% 이상 의존</td>
             <td>광고 70%,<br>인앱 결제 30%</td>
             <td>인앱 결제 중심으로<br>50~60% 이상 이동</td>
           </tr>
           <tr>
-            <th>핵심 지표</th>
+            <th scope="row">핵심 지표</th>
             <td>초기 잔존율 집중<br>(D1, D3)</td>
             <td>중기 잔존율<br>(D7 10~15%)</td>
             <td>중장기 잔존율<br>(D7 15~20% 이상, D30)</td>
@@ -317,7 +320,6 @@
     </div>
   </section>
 
-
   <!-- [보강] 6. 세 지표를 하나의 판정식으로 -->
   <section class="mb-14">
     <p class="text-xs font-black tracking-[.16em] text-indigo-600 mb-4">손익 구조</p>
@@ -347,9 +349,9 @@
         <table class="w-full min-w-[600px] border-collapse text-sm">
           <thead>
             <tr class="bg-slate-700 text-white">
-              <th class="p-3 text-left text-xs font-black">4번의 지표</th>
-              <th class="p-3 text-left text-xs font-black">식에서의 위치</th>
-              <th class="p-3 text-left text-xs font-black">이 지표가 나쁘면</th>
+              <th scope="col" class="p-3 text-left text-xs font-black">4번의 지표</th>
+              <th scope="col" class="p-3 text-left text-xs font-black">식에서의 위치</th>
+              <th scope="col" class="p-3 text-left text-xs font-black">이 지표가 나쁘면</th>
             </tr>
           </thead>
           <tbody>

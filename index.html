@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light dark">
 <title>허재석 | 기획·운영 아카이브</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="description" content="게임 운영·GM, 사업 PM, 마케팅, 데이터 분석 관점으로 정리한 기획·분석 문서 46건">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
@@ -24,6 +27,7 @@
     --bg:#fbfbfc; --surface:#fff; --surface-2:#f4f5f7; --border:#e2e5ea; --border-2:#d3d8e0;
     --text:#111621; --muted:#535c6b; --faint:#8b93a1;
     --accent:#1f4fd8; --accent-weak:#eef2ff;
+    --gd:#b3243c;  --gd-bg:#fdecef;
     --gm:#b4530a;  --gm-bg:#fff3e8;
     --pm:#1f4fd8;  --pm-bg:#eef2ff;
     --mkt:#a5147a; --mkt-bg:#fdecf7;
@@ -35,6 +39,7 @@
       --bg:#0d1016; --surface:#151a22; --surface-2:#1b2230; --border:#252d3a; --border-2:#333c4c;
       --text:#e9edf3; --muted:#9ba4b2; --faint:#6a7381;
       --accent:#7ea3ff; --accent-weak:#18233d;
+      --gd:#ff9aab;  --gd-bg:#3a1520;
       --gm:#ffb27a;  --gm-bg:#33220f;
       --pm:#9fb9ff;  --pm-bg:#18233d;
       --mkt:#f79ad6; --mkt-bg:#33132a;
@@ -140,6 +145,21 @@
   .card p{margin:0;font-size:13px;color:var(--muted);line-height:1.6}
   .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}
   .tag{font-size:11px;font-weight:700;padding:3px 7px;border-radius:5px}
+
+  .picks{margin:20px 0 0;padding:15px 17px;border:1px solid var(--border);
+    border-radius:11px;background:var(--surface-2)}
+  .picks-head{margin:0 0 9px;font-size:13px;font-weight:700;color:var(--muted)}
+  .picks-list{margin:0;padding:0;list-style:none;display:grid;gap:7px}
+  .picks-list li{counter-increment:pick}
+  .picks-list a{display:flex;gap:9px;align-items:baseline;text-decoration:none;color:inherit}
+  .picks-list a:hover b{color:var(--accent)}
+  .picks-list b{font-size:14px;font-weight:700;color:var(--text);white-space:nowrap}
+  .picks-list span{font-size:12.5px;color:var(--faint)}
+  @media (max-width:640px){
+    .picks-list a{flex-direction:column;gap:2px}
+    .picks-list b{white-space:normal}
+  }
+  .t-gd{color:var(--gd);background:var(--gd-bg)}
   .t-gm{color:var(--gm);background:var(--gm-bg)}
   .t-pm{color:var(--pm);background:var(--pm-bg)}
   .t-mkt{color:var(--mkt);background:var(--mkt-bg)}
@@ -205,6 +225,16 @@
       <span class="cta-go" aria-hidden="true">→</span>
     </a>
 
+
+    <div class="picks">
+      <p class="picks-head">시간이 없으시면 이 3건만 보셔도 됩니다.</p>
+      <ol class="picks-list">
+        <li><a href="docs/game-design/suddenattack-rank-system/index.html"><b>서든어택 랭크전 시스템 기획</b><span>이탈 원인을 짚고 시스템 5종까지 설계한 기획서</span></a></li>
+        <li><a href="docs/live-ops/dnf-mobile-cn-ops/index.html"><b>던파 모바일 중국 운영 전략 리포트</b><span>외부 지표만으로 성과를 모델링한 운영 제언</span></a></li>
+        <li><a href="docs/game-design/crossfire-weapon-gunplay/index.html"><b>크로스파이어 무기 조작감 분석</b><span>반동·명중률을 수치로 분해한 밸런스 분석</span></a></li>
+      </ol>
+    </div>
+
     <p class="guide"><span class="guide-line"></span>아래는 작업 기록 46건입니다. <b>직무 버튼</b>으로 원하는 직무 문서만 골라 보실 수 있습니다.</p>
   </header>
 
@@ -212,10 +242,11 @@
     <div class="bar-inner">
       <div class="pills">
         <button class="pill" aria-pressed="true"  data-j="all">전체<span class="c">46</span></button>
-        <button class="pill" aria-pressed="false" data-j="gm">게임 운영·GM<span class="c">8</span></button>
-        <button class="pill" aria-pressed="false" data-j="pm">사업·서비스 기획<span class="c">19</span></button>
-        <button class="pill" aria-pressed="false" data-j="mkt">마케팅<span class="c">5</span></button>
+        <button class="pill" aria-pressed="false" data-j="gd">게임 기획<span class="c">14</span></button>
+        <button class="pill" aria-pressed="false" data-j="gm">라이브 운영·GM<span class="c">8</span></button>
         <button class="pill" aria-pressed="false" data-j="data">데이터 분석<span class="c">11</span></button>
+        <button class="pill" aria-pressed="false" data-j="pm">사업·서비스 기획<span class="c">10</span></button>
+        <button class="pill" aria-pressed="false" data-j="mkt">마케팅<span class="c">5</span></button>
         <button class="pill" aria-pressed="false" data-j="cm">커뮤니티·CS<span class="c">3</span></button>
       </div>
       <input class="search" type="search" placeholder="검색 (예: 역기획, 분석, 제안)" aria-label="문서 검색">
@@ -234,65 +265,65 @@
     </div>
     <div class="grid">
       <div class="ghead" data-cat="game-design"><h2>게임 시스템 기획·역기획 <span class="cat-n" data-total="12">12건</span></h2><p>상용 게임의 시스템을 분해하고, 개선안까지 설계한 기록입니다.</p></div>
-      <a class="card" data-cat="game-design" data-jobs="pm" data-q="경제 밸런스 기획 (Project OQ) 플레이 시간의 현금 가치를 계산해 확정 성장 경로를 설계" href="docs/game-design/project-oq-economy-balance/index.html">
-        <h3>경제 밸런스 기획 (Project OQ)</h3>
+      <a class="card" data-cat="game-design" data-jobs="gd" data-q="Project OQ 경제 밸런스 기획 플레이 시간의 현금 가치를 계산해 확정 성장 경로를 설계" href="docs/game-design/project-oq-economy-balance/index.html">
+        <h3>Project OQ 경제 밸런스 기획</h3>
         <p>플레이 시간의 현금 가치를 계산해 확정 성장 경로를 설계</p>
-        <div class="tags"><span class="tag t-pm">사업·서비스 기획</span></div>
+        <div class="tags"><span class="tag t-gd">게임 기획</span></div>
       </a>
-      <a class="card" data-cat="game-design" data-jobs="pm" data-q="서든어택 랭크전 시스템 기획 이탈 원인 분석 후 리플레이·명장면 다시보기 POTG·맵 밴 등 5종 시스템 설계" href="docs/game-design/suddenattack-rank-system/index.html">
+      <a class="card" data-cat="game-design" data-jobs="gd" data-q="서든어택 랭크전 시스템 기획 이탈 원인 분석 후 리플레이·명장면 다시보기 POTG·맵 밴 등 5종 시스템 설계" href="docs/game-design/suddenattack-rank-system/index.html">
         <h3>서든어택 랭크전 시스템 기획</h3>
         <p>이탈 원인 분석 후 리플레이·명장면 다시보기·맵 밴 등 5종 시스템 설계</p>
-        <div class="tags"><span class="tag t-pm">사업·서비스 기획</span></div>
+        <div class="tags"><span class="tag t-gd">게임 기획</span></div>
       </a>
-      <a class="card" data-cat="game-design" data-jobs="pm" data-q="서든어택 매크로 시스템 개선 도배·낚시 브리핑을 막는 사용 제한과 조작 편의성 개선안" href="docs/game-design/suddenattack-macro-improvement/index.html">
+      <a class="card" data-cat="game-design" data-jobs="gd" data-q="서든어택 매크로 시스템 개선 도배·낚시 브리핑을 막는 사용 제한과 조작 편의성 개선안" href="docs/game-design/suddenattack-macro-improvement/index.html">
         <h3>서든어택 매크로 시스템 개선</h3>
         <p>도배·낚시 브리핑을 막는 사용 제한과 조작 편의성 개선안</p>
-        <div class="tags"><span class="tag t-pm">사업·서비스 기획</span></div>
+        <div class="tags"><span class="tag t-gd">게임 기획</span></div>
       </a>
-      <a class="card" data-cat="game-design" data-jobs="pm" data-q="궁수의 전설 역기획 및 개선 제안 성장 곡선과 과금 구조를 역으로 분석해 신규 시스템 3종을 제안" href="docs/game-design/archer-legend-reverse-design/index.html">
+      <a class="card" data-cat="game-design" data-jobs="gd" data-q="궁수의 전설 역기획 및 개선 제안 성장 곡선과 과금 구조를 역으로 분석해 신규 시스템 3종을 제안" href="docs/game-design/archer-legend-reverse-design/index.html">
         <h3>궁수의 전설 역기획 및 개선 제안</h3>
         <p>성장 곡선과 과금 구조를 역으로 분석해 신규 시스템 3종을 제안</p>
-        <div class="tags"><span class="tag t-pm">사업·서비스 기획</span></div>
+        <div class="tags"><span class="tag t-gd">게임 기획</span></div>
       </a>
-      <a class="card" data-cat="game-design" data-jobs="pm" data-q="서머너즈 워 신규 콘텐츠 기획 비주류 몬스터가 공략 열쇠가 되는 PvE 던전 룰셋 설계" href="docs/game-design/summoners-war-content/index.html">
+      <a class="card" data-cat="game-design" data-jobs="gd" data-q="서머너즈 워 신규 콘텐츠 기획 비주류 몬스터가 공략 열쇠가 되는 PvE 던전 룰셋 설계" href="docs/game-design/summoners-war-content/index.html">
         <h3>서머너즈 워 신규 콘텐츠 기획</h3>
         <p>비주류 몬스터가 공략 열쇠가 되는 PvE 던전 룰셋 설계</p>
-        <div class="tags"><span class="tag t-pm">사업·서비스 기획</span></div>
+        <div class="tags"><span class="tag t-gd">게임 기획</span></div>
       </a>
-      <a class="card" data-cat="game-design" data-jobs="pm" data-q="카발 RED 보상 콘텐츠 기획 잉여 장비가 가치를 잃지 않도록 소모처를 만드는 순환 설계" href="docs/game-design/cabal-red-reward-content/index.html">
+      <a class="card" data-cat="game-design" data-jobs="gd" data-q="카발 RED 보상 콘텐츠 기획 잉여 장비가 가치를 잃지 않도록 소모처를 만드는 순환 설계" href="docs/game-design/cabal-red-reward-content/index.html">
         <h3>카발 RED 보상 콘텐츠 기획</h3>
         <p>잉여 장비가 가치를 잃지 않도록 소모처를 만드는 순환 설계</p>
-        <div class="tags"><span class="tag t-pm">사업·서비스 기획</span></div>
+        <div class="tags"><span class="tag t-gd">게임 기획</span></div>
       </a>
-      <a class="card" data-cat="game-design" data-jobs="pm" data-q="서브컬처 타겟 유저 분석 및 캐릭터 기획 유저 페르소나를 정의하고 육성 파라미터까지 연결한 캐릭터 설계" href="docs/game-design/project-c-content-strategy/index.html">
+      <a class="card" data-cat="game-design" data-jobs="gd" data-q="서브컬처 타겟 유저 분석 및 캐릭터 기획 유저 페르소나를 정의하고 육성 파라미터까지 연결한 캐릭터 설계" href="docs/game-design/project-c-content-strategy/index.html">
         <h3>서브컬처 타겟 유저 분석 및 캐릭터 기획</h3>
         <p>유저 페르소나를 정의하고 육성 파라미터까지 연결한 캐릭터 설계</p>
-        <div class="tags"><span class="tag t-pm">사업·서비스 기획</span></div>
+        <div class="tags"><span class="tag t-gd">게임 기획</span></div>
       </a>
-      <a class="card" data-cat="game-design" data-jobs="pm" data-q="크로스파이어 무기 조작감 분석 반동·명중률을 수치로 분해하고 모드 전환형 신규 무기 제안" href="docs/game-design/crossfire-weapon-gunplay/index.html">
+      <a class="card" data-cat="game-design" data-jobs="gd" data-q="크로스파이어 무기 조작감 분석 반동·명중률을 수치로 분해하고 모드 전환형 신규 무기 제안" href="docs/game-design/crossfire-weapon-gunplay/index.html">
         <h3>크로스파이어 무기 조작감 분석</h3>
         <p>반동·명중률을 수치로 분해하고 모드 전환형 신규 무기 제안</p>
-        <div class="tags"><span class="tag t-pm">사업·서비스 기획</span></div>
+        <div class="tags"><span class="tag t-gd">게임 기획</span></div>
       </a>
-      <a class="card" data-cat="game-design" data-jobs="pm" data-q="제노니아 시스템 분석 및 개선 기획 핵심 재미 요소를 짚고 UI/UX 개선안 5종을 설계" href="docs/game-design/zenonia-analysis/index.html">
+      <a class="card" data-cat="game-design" data-jobs="gd" data-q="제노니아 시스템 분석 및 개선 기획 핵심 재미 요소를 짚고 UI/UX 개선안 5종을 설계" href="docs/game-design/zenonia-analysis/index.html">
         <h3>제노니아 시스템 분석 및 개선 기획</h3>
         <p>핵심 재미 요소를 짚고 UI/UX 개선안 5종을 설계</p>
-        <div class="tags"><span class="tag t-pm">사업·서비스 기획</span></div>
+        <div class="tags"><span class="tag t-gd">게임 기획</span></div>
       </a>
-      <a class="card" data-cat="game-design" data-jobs="data" data-q="브롤스타즈 시스템 구조 분석 71종 브롤러의 클래스 체계와 레벨별 요구 재화를 수치화" href="docs/game-design/brawlstars-system-analysis/index.html">
+      <a class="card" data-cat="game-design" data-jobs="gd,data" data-q="브롤스타즈 시스템 구조 분석 71종 브롤러의 클래스 체계와 레벨별 요구 재화를 수치화" href="docs/game-design/brawlstars-system-analysis/index.html">
         <h3>브롤스타즈 시스템 구조 분석</h3>
         <p>71종 브롤러의 클래스 체계와 레벨별 요구 재화를 수치화</p>
-        <div class="tags"><span class="tag t-data">데이터 분석</span></div>
+        <div class="tags"><span class="tag t-gd">게임 기획</span><span class="tag t-data">데이터 분석</span></div>
       </a>
-      <a class="card" data-cat="game-design" data-jobs="data" data-q="버섯커 키우기 흥행 요인 분석 방치형과 경쟁형 BM을 결합한 수익 구조를 5개 요인으로 분해" href="docs/game-design/legend-of-mushroom-analysis/index.html">
+      <a class="card" data-cat="game-design" data-jobs="gd,data" data-q="버섯커 키우기 흥행 요인 분석 방치형과 경쟁형 BM을 결합한 수익 구조를 5개 요인으로 분해" href="docs/game-design/legend-of-mushroom-analysis/index.html">
         <h3>버섯커 키우기 흥행 요인 분석</h3>
         <p>방치형과 경쟁형 BM을 결합한 수익 구조를 5개 요인으로 분해</p>
-        <div class="tags"><span class="tag t-data">데이터 분석</span></div>
+        <div class="tags"><span class="tag t-gd">게임 기획</span><span class="tag t-data">데이터 분석</span></div>
       </a>
-      <a class="card" data-cat="game-design" data-jobs="data" data-q="캐주얼 스포츠 게임 기획 분석 물리 기반 조작의 재미를 구성 요소로 분해" href="docs/data-ai/casual-sports-game-analysis/index.html">
+      <a class="card" data-cat="game-design" data-jobs="gd,data" data-q="캐주얼 스포츠 게임 기획 분석 물리 기반 조작의 재미를 구성 요소로 분해" href="docs/data-ai/casual-sports-game-analysis/index.html">
         <h3>캐주얼 스포츠 게임 기획 분석</h3>
         <p>물리 기반 조작의 재미를 구성 요소로 분해</p>
-        <div class="tags"><span class="tag t-data">데이터 분석</span></div>
+        <div class="tags"><span class="tag t-gd">게임 기획</span><span class="tag t-data">데이터 분석</span></div>
       </a>
       <div class="ghead" data-cat="live-ops"><h2>게임 라이브 운영 <span class="cat-n" data-total="6">6건</span></h2><p>서비스가 돌아가는 동안 생기는 문제를 다룬 기록입니다. 이벤트 설계, 이슈 대응, 공지 작성.</p></div>
       <a class="card" data-cat="live-ops" data-jobs="gm" data-q="던파 모바일 중국 운영 전략 리포트 외부 지표로 성과를 모델링하고 하반기 업데이트 2종 제언" href="docs/live-ops/dnf-mobile-cn-ops/index.html">
@@ -320,8 +351,8 @@
         <p>이탈 방어·인플레이션 검증·위기 대응을 프로세스로 정리</p>
         <div class="tags"><span class="tag t-gm">게임 운영·GM</span></div>
       </a>
-      <a class="card" data-cat="live-ops" data-jobs="gm" data-q="라이브 운영 전략 (쿠키런 스타일) 시즌 운영 주기와 유저 잔존을 함께 관리하는 운영안" href="docs/live-ops/cookierun-live-ops/index.html">
-        <h3>라이브 운영 전략 (쿠키런 스타일)</h3>
+      <a class="card" data-cat="live-ops" data-jobs="gm" data-q="쿠키런 권역별 라이브 운영 전략 시즌 운영 주기와 유저 잔존을 함께 관리하는 운영안" href="docs/live-ops/cookierun-live-ops/index.html">
+        <h3>쿠키런 권역별 라이브 운영 전략</h3>
         <p>시즌 운영 주기와 유저 잔존을 함께 관리하는 운영안</p>
         <div class="tags"><span class="tag t-gm">게임 운영·GM</span></div>
       </a>
@@ -351,8 +382,8 @@
         <p>평가 흐름 전체를 뜯어 병목을 자동화로 대체하는 제안</p>
         <div class="tags"><span class="tag t-data">데이터 분석</span></div>
       </a>
-      <a class="card" data-cat="data-ai" data-jobs="data" data-q="AI로 푸는 물류 데이터 실무 3종 엑셀 조건 집계·SQL 추출·영문 긴급 보고를 AI로 처리한 기록" href="docs/data-ai/cfs-data-assistant/index.html">
-        <h3>AI로 푸는 물류 데이터 실무 3종</h3>
+      <a class="card" data-cat="data-ai" data-jobs="data" data-q="AI로 처리한 물류 데이터 실무 3종 엑셀 조건 집계·SQL 추출·영문 긴급 보고를 AI로 처리한 기록" href="docs/data-ai/cfs-data-assistant/index.html">
+        <h3>AI로 처리한 물류 데이터 실무 3종</h3>
         <p>엑셀 조건 집계·SQL 추출·영문 긴급 보고를 AI로 처리한 기록</p>
         <div class="tags"><span class="tag t-data">데이터 분석</span></div>
       </a>
@@ -362,8 +393,8 @@
         <div class="tags"><span class="tag t-data">데이터 분석</span></div>
       </a>
       <div class="ghead" data-cat="marketing"><h2>마케팅·캠페인 <span class="cat-n" data-total="5">5건</span></h2><p>유저와 고객을 모으는 기획입니다. <br class="hidden md:block">캠페인 설계, 오프라인 팝업, 광고, CRM.</p></div>
-      <a class="card" data-cat="marketing" data-jobs="mkt" data-q="오프라인 팝업 캠페인 기획 (랜덤다이스) 현장 운영 시나리오와 돌발 상황 대처법까지 담은 캠페인안" href="docs/live-ops/randomdice-popup-campaign/index.html">
-        <h3>오프라인 팝업 캠페인 기획 (랜덤다이스)</h3>
+      <a class="card" data-cat="marketing" data-jobs="mkt" data-q="랜덤다이스 오프라인 팝업 캠페인 기획 현장 운영 시나리오와 돌발 상황 대처법까지 담은 캠페인안" href="docs/live-ops/randomdice-popup-campaign/index.html">
+        <h3>랜덤다이스 오프라인 팝업 캠페인 기획</h3>
         <p>현장 운영 시나리오와 돌발 상황 대처법까지 담은 캠페인안</p>
         <div class="tags"><span class="tag t-mkt">마케팅</span></div>
       </a>
@@ -459,15 +490,15 @@
         <p>어린이 대기질 정보 앱을 기획하고 안드로이드로 구현</p>
         <div class="tags"><span class="tag t-pm">사업·서비스 기획</span></div>
       </a>
-      <a class="card" data-cat="campus" data-jobs="pm" data-q="Color Killer 보드게임 기획·제작 특수 카드 4종으로 역전 요소를 만든 창작 보드게임" href="docs/game-design/color-killer-boardgame/index.html">
+      <a class="card" data-cat="campus" data-jobs="gd,pm" data-q="Color Killer 보드게임 기획·제작 특수 카드 4종으로 역전 요소를 만든 창작 보드게임" href="docs/game-design/color-killer-boardgame/index.html">
         <h3>Color Killer 보드게임 기획·제작</h3>
         <p>특수 카드 4종으로 역전 요소를 만든 창작 보드게임</p>
-        <div class="tags"><span class="tag t-pm">사업·서비스 기획</span></div>
+        <div class="tags"><span class="tag t-gd">게임 기획</span><span class="tag t-pm">사업·서비스 기획</span></div>
       </a>
-      <a class="card" data-cat="campus" data-jobs="pm" data-q="Gini Jump 게임 기획·제작 자이로센서 조작의 2D 점프 게임을 기획해 실제 앱으로 출시" href="docs/game-design/gini-jump-analysis/index.html">
+      <a class="card" data-cat="campus" data-jobs="gd,pm" data-q="Gini Jump 게임 기획·제작 자이로센서 조작의 2D 점프 게임을 기획해 실제 앱으로 출시" href="docs/game-design/gini-jump-analysis/index.html">
         <h3>Gini Jump 게임 기획·제작</h3>
         <p>자이로센서 조작의 2D 점프 게임을 기획해 실제 앱으로 출시</p>
-        <div class="tags"><span class="tag t-pm">사업·서비스 기획</span></div>
+        <div class="tags"><span class="tag t-gd">게임 기획</span><span class="tag t-pm">사업·서비스 기획</span></div>
       </a>
     </div>
     <p class="empty" hidden>조건에 맞는 문서가 없습니다. 검색어를 지우거나 <b>전체</b>를 눌러 보세요.</p>

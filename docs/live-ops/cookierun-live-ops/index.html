@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
-    <title>라이브 운영 전략 (쿠키런 스타일)</title>
-    <meta name="description" content="라이브 운영 전략 (쿠키런 스타일). 시즌 운영 주기와 유저 잔존을 함께 관리하는 운영안.">
+    <title>쿠키런 권역별 라이브 운영 전략</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+    <meta name="description" content="쿠키런 권역별 라이브 운영 전략. 시즌 운영 주기와 유저 잔존을 함께 관리하는 운영안.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="허재석 기획·운영 아카이브">
-<meta property="og:title" content="라이브 운영 전략 (쿠키런 스타일)">
-<meta property="og:description" content="라이브 운영 전략 (쿠키런 스타일). 시즌 운영 주기와 유저 잔존을 함께 관리하는 운영안.">
+<meta property="og:title" content="쿠키런 권역별 라이브 운영 전략">
+<meta property="og:description" content="쿠키런 권역별 라이브 운영 전략. 시즌 운영 주기와 유저 잔존을 함께 관리하는 운영안.">
 <link rel="canonical" href="https://heojaeseock.github.io/planning-archive/docs/live-ops/cookierun-live-ops/">
 <meta property="og:url" content="https://heojaeseock.github.io/planning-archive/docs/live-ops/cookierun-live-ops/">
 <meta property="og:image" content="https://heojaeseock.github.io/planning-archive/img/profile.jpg">
@@ -18,7 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
         /* 가독성이 검증된 폰트 조합: 제목(Black Han Sans), 본문(NanumSquareRound) */
@@ -111,10 +114,6 @@
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
 <body class="p-4 md:p-10">
-
-
-
-
 
 <div class="max-w-6xl mx-auto">
     
@@ -219,9 +218,9 @@
             <table class="w-full text-left border-collapse">
                 <thead>
                     <tr class="bg-[#8B4513] text-white">
-                        <th class="p-4 rounded-tl-2xl text-lg">등급</th>
-                        <th class="p-4 text-lg">판단 기준</th>
-                        <th class="p-4 rounded-tr-2xl text-lg">공지·보상 처리</th>
+                        <th scope="col" class="p-4 rounded-tl-2xl text-lg">등급</th>
+                        <th scope="col" class="p-4 text-lg">판단 기준</th>
+                        <th scope="col" class="p-4 rounded-tr-2xl text-lg">공지·보상 처리</th>
                     </tr>
                 </thead>
                 <tbody class="text-gray-700 font-bold">
@@ -292,7 +291,6 @@
         </div>
     </section>
 
-
     <!-- 보강: 성향 격차 해석 -->
     <section class="cookie-card p-10 md:p-14 mb-16">
         <h2 class="text-2xl md:text-3xl font-black text-[#4E342E] mb-4">격차가 큰 항목과 작은 항목을 나눠보면</h2>
@@ -305,10 +303,10 @@
             <table class="w-full min-w-[520px] border-collapse text-sm bg-white">
                 <thead>
                     <tr class="bg-[#5D4037] text-white">
-                        <th class="p-3 text-left text-xs font-black">항목</th>
-                        <th class="p-3 text-center text-xs font-black">한국</th>
-                        <th class="p-3 text-center text-xs font-black">글로벌</th>
-                        <th class="p-3 text-center text-xs font-black">격차</th>
+                        <th scope="col" class="p-3 text-left text-xs font-black">항목</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">한국</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">글로벌</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">격차</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -392,7 +390,6 @@
         </div>
     </section>
 
-
     <!-- 보강: 성향 차트 정규화 -->
     <section class="cookie-card p-10 md:p-14 mb-16 bg-[#FFFDF5]">
         <h2 class="text-2xl md:text-3xl font-black text-[#4E342E] mb-4">두 권역의 총점이 다르면 격차를 그대로 읽을 수 없습니다</h2>
@@ -406,12 +403,12 @@
             <table class="w-full min-w-[680px] border-collapse text-sm bg-white">
                 <thead>
                     <tr class="bg-[#5D4037] text-white">
-                        <th class="p-3 text-left text-xs font-black">항목</th>
-                        <th class="p-3 text-center text-xs font-black">원래 격차</th>
-                        <th class="p-3 text-center text-xs font-black">한국 비중</th>
-                        <th class="p-3 text-center text-xs font-black">글로벌 비중</th>
-                        <th class="p-3 text-center text-xs font-black">비중 격차</th>
-                        <th class="p-3 text-center text-xs font-black">판정</th>
+                        <th scope="col" class="p-3 text-left text-xs font-black">항목</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">원래 격차</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">한국 비중</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">글로벌 비중</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">비중 격차</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">판정</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -520,7 +517,6 @@
             </ul>
         </div>
     </section>
-
 
     <!-- 보강: 투트랙의 비용 -->
     <section class="cookie-card p-10 md:p-14 mb-16 bg-[#FFFBEB]">

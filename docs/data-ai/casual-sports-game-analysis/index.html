@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>캐주얼 스포츠 게임 기획 분석</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="캐주얼 스포츠 게임 기획 분석. 물리 기반 조작의 재미를 구성 요소로 분해.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,37 +21,9 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        sand: {
-                            50: '#fdfbf7',
-                            100: '#f8f4ec',
-                            200: '#efe6d5',
-                            300: '#e3d0b3',
-                            800: '#644d32',
-                            900: '#53402a',
-                        },
-                        coral: {
-                            500: '#f05a4f',
-                            600: '#dc4034',
-                        },
-                        ocean: {
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
         
@@ -116,7 +91,6 @@
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
 <body class="antialiased relative">
-
 
     <div class="fixed inset-0 bg-pattern pointer-events-none z-0"></div>
 
@@ -298,7 +272,6 @@
             </div>
         </section>
 
-
         <!-- 보강: 파라미터 해석 -->
         <section id="tradeoff" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 mb-24 scroll-mt-24">
             <h2 class="text-2xl md:text-3xl font-black text-sand-900 mb-4">무엇을 내주고 무엇을 얻었는지</h2>
@@ -310,10 +283,10 @@
                 <table class="w-full min-w-[520px] border-collapse text-sm">
                     <thead>
                         <tr class="bg-sand-800 text-white">
-                            <th class="p-3 text-left text-xs font-black">항목</th>
-                            <th class="p-3 text-center text-xs font-black">캐주얼</th>
-                            <th class="p-3 text-center text-xs font-black">하드코어</th>
-                            <th class="p-3 text-center text-xs font-black">격차</th>
+                            <th scope="col" class="p-3 text-left text-xs font-black">항목</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">캐주얼</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">하드코어</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">격차</th>
                         </tr>
                     </thead>
                     <tbody>

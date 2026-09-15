@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>카발 RED 보상 콘텐츠 기획</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="카발 RED 보상 콘텐츠 기획. 잉여 장비가 가치를 잃지 않도록 소모처를 만드는 순환 설계.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,7 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
@@ -244,7 +247,6 @@
             </div>
         </section>
 
-
         <div class="section-divider"></div>
 
         <!-- [보강] 소모처가 실제로 작동하는 조건 -->
@@ -297,9 +299,9 @@
                     <table class="w-full min-w-[560px] border-collapse text-sm">
                         <thead>
                             <tr class="bg-slate-700 text-white">
-                                <th class="p-3 text-left text-xs font-black">구분</th>
-                                <th class="p-3 text-left text-xs font-black">정해야 하는 것</th>
-                                <th class="p-3 text-left text-xs font-black">정하지 않으면</th>
+                                <th scope="col" class="p-3 text-left text-xs font-black">구분</th>
+                                <th scope="col" class="p-3 text-left text-xs font-black">정해야 하는 것</th>
+                                <th scope="col" class="p-3 text-left text-xs font-black">정하지 않으면</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -432,7 +434,6 @@
                 </div>
             </div>
 
-
             <div class="bg-white rounded-2xl border-2 border-blue-200 p-6 md:p-8 mb-6">
                 <p class="text-[10px] font-black tracking-wide text-blue-500 mb-4">모니터링 수치를 계산하면 경보선이 나옵니다</p>
                 <p class="text-slate-600 leading-relaxed mb-6 break-keep">
@@ -444,11 +445,11 @@
                     <table class="w-full min-w-[620px] border-collapse text-sm">
                         <thead>
                             <tr class="bg-slate-800 text-white">
-                                <th class="p-3 text-left text-xs font-black">아이템</th>
-                                <th class="p-3 text-center text-xs font-black">계획 수량</th>
-                                <th class="p-3 text-center text-xs font-black">정상 편차 최대</th>
-                                <th class="p-3 text-center text-xs font-black">무작위 변동 3배</th>
-                                <th class="p-3 text-center text-xs font-black">비율 환산</th>
+                                <th scope="col" class="p-3 text-left text-xs font-black">아이템</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">계획 수량</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">정상 편차 최대</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">무작위 변동 3배</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">비율 환산</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -556,7 +557,6 @@
                 </p>
                 </div>
             </div>
-
 
             <div class="bg-amber-50 rounded-2xl border-2 border-amber-300 p-6 md:p-8 mb-6">
                 <p class="text-[10px] font-black tracking-wide text-amber-600 mb-4">기획안이 요구하는 대가</p>

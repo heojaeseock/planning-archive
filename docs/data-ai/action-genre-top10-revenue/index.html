@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>액션 장르 매출 TOP 10 분석</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="액션 장르 매출 TOP 10 분석. 10종을 직접 플레이해 개발 국가·타겟 연령·BM을 비교.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,7 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
         body { 
@@ -421,12 +424,12 @@
                             <table class="w-full text-left custom-table min-w-[800px]">
                                 <thead>
                                     <tr>
-                                        <th>순위</th>
-                                        <th>타이틀</th>
-                                        <th>개발 국가</th>
-                                        <th>주요 장르</th>
-                                        <th>핵심 과금 요소</th>
-                                        <th>주요 특징</th>
+                                        <th scope="col">순위</th>
+                                        <th scope="col">타이틀</th>
+                                        <th scope="col">개발 국가</th>
+                                        <th scope="col">주요 장르</th>
+                                        <th scope="col">핵심 과금 요소</th>
+                                        <th scope="col">주요 특징</th>
                                     </tr>
                                 </thead>
                                 <tbody class="font-medium text-slate-600">
@@ -521,7 +524,6 @@
                 </div>
             </div>
 
-
             <!-- 보강: 패턴 정리와 한계 -->
             <div id="pattern" class="tab-content p-6 md:p-10 space-y-12">
                 <div class="text-center max-w-2xl mx-auto">
@@ -537,11 +539,11 @@
                         <table class="w-full min-w-[680px] border-collapse text-sm">
                             <thead>
                                 <tr class="bg-slate-700 text-white">
-                                    <th class="p-3 text-left text-xs font-black">유형</th>
-                                    <th class="p-3 text-center text-xs font-black">건수</th>
-                                    <th class="p-3 text-left text-xs font-black">해당 타이틀</th>
-                                    <th class="p-3 text-left text-xs font-black">지적된 내용</th>
-                                    <th class="p-3 text-center text-xs font-black">담당 영역</th>
+                                    <th scope="col" class="p-3 text-left text-xs font-black">유형</th>
+                                    <th scope="col" class="p-3 text-center text-xs font-black">건수</th>
+                                    <th scope="col" class="p-3 text-left text-xs font-black">해당 타이틀</th>
+                                    <th scope="col" class="p-3 text-left text-xs font-black">지적된 내용</th>
+                                    <th scope="col" class="p-3 text-center text-xs font-black">담당 영역</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -603,7 +605,6 @@
                     </div>
                 </div>
 
-
                 <div>
                     <h3 class="text-lg font-black text-slate-800 mb-4">열 종을 빠짐없이 세면 아홉 유형이 나옵니다</h3>
                     <p class="text-slate-500 text-sm leading-relaxed mb-5">
@@ -615,11 +616,11 @@
                         <table class="w-full min-w-[760px] border-collapse text-sm">
                             <thead>
                                 <tr class="bg-slate-700 text-white">
-                                    <th class="p-3 text-left text-xs font-black">유형</th>
-                                    <th class="p-3 text-center text-xs font-black">건수</th>
-                                    <th class="p-3 text-left text-xs font-black">해당 타이틀</th>
-                                    <th class="p-3 text-left text-xs font-black">지적된 내용</th>
-                                    <th class="p-3 text-center text-xs font-black">담당 영역</th>
+                                    <th scope="col" class="p-3 text-left text-xs font-black">유형</th>
+                                    <th scope="col" class="p-3 text-center text-xs font-black">건수</th>
+                                    <th scope="col" class="p-3 text-left text-xs font-black">해당 타이틀</th>
+                                    <th scope="col" class="p-3 text-left text-xs font-black">지적된 내용</th>
+                                    <th scope="col" class="p-3 text-center text-xs font-black">담당 영역</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -823,7 +824,6 @@
                 </p>
                     </div>
                 </div>
-
 
                 <div>
                     <h3 class="text-lg font-black text-slate-800 mb-4">연령 타겟과 과금 모델이 맞물리는 지점</h3>

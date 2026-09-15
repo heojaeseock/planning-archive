@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>궁수의 전설 역기획 및 개선 제안</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="궁수의 전설 역기획 및 개선 제안. 성장 곡선과 과금 구조를 역으로 분석해 신규 시스템 3종을 제안.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,7 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
         body { 
@@ -266,13 +269,13 @@
                         <div class="grid md:grid-cols-2 gap-6 mb-8">
                             <div>
                                 <p class="text-[10px] font-black tracking-wide text-slate-400 mb-3">전설 1개를 만드는 데 필요한 하위 등급</p>
-                                <div class="overflow-hidden rounded-2xl border-2 border-slate-200">
+                                <div class="overflow-x-auto rounded-2xl border-2 border-slate-200">
                                     <table class="w-full border-collapse text-sm">
                                         <thead>
                                             <tr class="bg-slate-700 text-white">
-                                                <th class="p-3 text-left text-xs font-black">등급</th>
-                                                <th class="p-3 text-center text-xs font-black">필요 수량</th>
-                                                <th class="p-3 text-center text-xs font-black">배수</th>
+                                                <th scope="col" class="p-3 text-left text-xs font-black">등급</th>
+                                                <th scope="col" class="p-3 text-center text-xs font-black">필요 수량</th>
+                                                <th scope="col" class="p-3 text-center text-xs font-black">배수</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -665,10 +668,10 @@
                             <table class="w-full min-w-[620px] border-collapse text-sm">
                                 <thead>
                                     <tr class="bg-slate-700 text-white">
-                                        <th class="p-3 text-left text-xs font-black">제안</th>
-                                        <th class="p-3 text-center text-xs font-black">3배수 융합<br><span class="font-medium opacity-70">81배</span></th>
-                                        <th class="p-3 text-center text-xs font-black">부위 분산<br><span class="font-medium opacity-70">9배</span></th>
-                                        <th class="p-3 text-center text-xs font-black bg-indigo-600">전설 1개<br>필요 뽑기</th>
+                                        <th scope="col" class="p-3 text-left text-xs font-black">제안</th>
+                                        <th scope="col" class="p-3 text-center text-xs font-black">3배수 융합<br><span class="font-medium opacity-70">81배</span></th>
+                                        <th scope="col" class="p-3 text-center text-xs font-black">부위 분산<br><span class="font-medium opacity-70">9배</span></th>
+                                        <th scope="col" class="p-3 text-center text-xs font-black bg-indigo-600">전설 1개<br>필요 뽑기</th>
                                     </tr>
                                 </thead>
                                 <tbody>

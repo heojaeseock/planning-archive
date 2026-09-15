@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>교육 앱 라이브 운영 설계</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="교육 앱 라이브 운영 설계. 강의 중단 없는 학습 경험을 위한 운영·모니터링 체계.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,7 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
@@ -284,7 +287,6 @@
             </div>
         </section>
 
-
     <!-- 보강: 트래픽 수치 검토 -->
     <section id="s4" class="mb-20 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">
         <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-4">시나리오를 용량 기준으로 다시 보면</h2>
@@ -296,11 +298,11 @@
             <table class="w-full min-w-[560px] border-collapse text-sm">
                 <thead>
                     <tr class="bg-slate-800 text-white">
-                        <th class="p-3 text-left text-xs font-black">시각</th>
-                        <th class="p-3 text-center text-xs font-black">평시</th>
-                        <th class="p-3 text-center text-xs font-black">폭주</th>
-                        <th class="p-3 text-center text-xs font-black">완화 후</th>
-                        <th class="p-3 text-center text-xs font-black">용량 80 대비</th>
+                        <th scope="col" class="p-3 text-left text-xs font-black">시각</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">평시</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">폭주</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">완화 후</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">용량 80 대비</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -481,7 +483,6 @@
         </div>
     </section>
 
-
     <!-- 보강: 완화 곡선과 티켓 분류 -->
     <section id="s5b" class="mb-20 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">
         <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-4">완화 곡선에서 70이 어디로 갔는지</h2>
@@ -493,11 +494,11 @@
             <table class="w-full min-w-[600px] border-collapse text-sm">
                 <thead>
                     <tr class="bg-slate-800 text-white">
-                        <th class="p-3 text-left text-xs font-black">시각</th>
-                        <th class="p-3 text-center text-xs font-black">폭주</th>
-                        <th class="p-3 text-center text-xs font-black">완화 후</th>
-                        <th class="p-3 text-center text-xs font-black">감소율</th>
-                        <th class="p-3 text-center text-xs font-black">구간</th>
+                        <th scope="col" class="p-3 text-left text-xs font-black">시각</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">폭주</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">완화 후</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">감소율</th>
+                        <th scope="col" class="p-3 text-center text-xs font-black">구간</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -652,10 +653,10 @@
                 <table class="w-full min-w-[560px] border-collapse text-sm">
                     <thead>
                         <tr class="bg-slate-800 text-white">
-                            <th class="p-3 text-left text-xs font-black">유형</th>
-                            <th class="p-3 text-left text-xs font-black">내용</th>
-                            <th class="p-3 text-center text-xs font-black">우선순위</th>
-                            <th class="p-3 text-center text-xs font-black">담당</th>
+                            <th scope="col" class="p-3 text-left text-xs font-black">유형</th>
+                            <th scope="col" class="p-3 text-left text-xs font-black">내용</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">우선순위</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">담당</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -705,7 +706,6 @@
             </ul>
         </div>
     </section>
-
 
     <!-- 보강: 검증 지표와 한계 -->
     <section id="s6" class="mb-12 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">

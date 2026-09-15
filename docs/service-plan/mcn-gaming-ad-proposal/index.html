@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>MCN 게이밍 광고 기획</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     
 
     <meta name="description" content="MCN 게이밍 광고 기획. 크리에이터 DB와 신작 데이터를 교차해 광고를 매칭하는 기획.">
@@ -21,31 +24,10 @@
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Pretendard', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            DEFAULT: '#FFD100', // MCN 기업 시그니처 옐로우
-                            hover: '#E5BC00',
-                            light: '#FFF5CC'
-                        },
-                        slate: {
-                            850: '#152033',
-                            900: '#0F172A',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    
 
     <style>
         body {
@@ -381,10 +363,10 @@
                     <table class="w-full min-w-[480px] border-collapse text-sm bg-white">
                         <thead>
                             <tr class="bg-slate-800 text-white">
-                                <th class="p-3 text-left text-xs font-black">항목</th>
-                                <th class="p-3 text-center text-xs font-black">도입 전</th>
-                                <th class="p-3 text-center text-xs font-black">도입 후</th>
-                                <th class="p-3 text-center text-xs font-black">변화</th>
+                                <th scope="col" class="p-3 text-left text-xs font-black">항목</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">도입 전</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">도입 후</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">변화</th>
                             </tr>
                         </thead>
                         <tbody>

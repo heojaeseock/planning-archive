@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>글로벌 캐주얼 게임 시장 분석</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="글로벌 캐주얼 게임 시장 분석. 지역별 시장 규모와 성장 동력을 지표로 정리.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,7 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
@@ -84,7 +87,6 @@
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
 </head>
 <body class="bg-slate-50/50">
-
 
 <div class="max-w-5xl mx-auto px-6 py-16">
     
@@ -289,7 +291,6 @@
         </div>
     </section>
 
-
     <!-- 보강: 두 지표의 관계 -->
     <section class="mb-28">
         <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight">두 지표의 1위가 서로 다릅니다</h2>
@@ -318,9 +319,9 @@
                     <table class="w-full border-collapse text-sm">
                         <thead>
                             <tr class="bg-slate-700 text-white">
-                                <th class="p-3 text-left text-xs font-black">소재</th>
-                                <th class="p-3 text-center text-xs font-black">효율 지표</th>
-                                <th class="p-3 text-center text-xs font-black">정렬 대비</th>
+                                <th scope="col" class="p-3 text-left text-xs font-black">소재</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">효율 지표</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">정렬 대비</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -531,7 +532,7 @@
     <!-- 상세 전략 모달 -->
     <div id="proposal-modal" class="p-6">
         <div class="bg-white w-full max-w-2xl rounded-[3.5rem] p-12 md:p-16 relative shadow-2xl">
-            <button onclick="toggleModal(false)" class="absolute top-10 right-10 text-slate-300 hover:text-slate-900 transition-colors">
+            <button aria-label="닫기" onclick="toggleModal(false)" class="absolute top-10 right-10 text-slate-300 hover:text-slate-900 transition-colors">
                 <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             

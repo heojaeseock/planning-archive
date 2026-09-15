@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>Gini Jump 게임 기획·제작</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="Gini Jump 게임 기획·제작. 자이로센서 조작의 2D 점프 게임을 기획해 실제 앱으로 출시.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,7 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
         body { 
@@ -324,7 +327,7 @@
                 <div class="bg-gray-50 p-6 md:p-10 rounded-[2rem] border border-gray-100 text-center shadow-inner">
                     <p class="text-[10px] font-bold text-gray-400 mb-8 tracking-[0.2em]">캐릭터 원화</p>
                     <div class="max-w-4xl mx-auto mb-10">
-                        <img src="guinea-pig-pixel-art-variations.webp" alt="기니점프 캐릭터 테마별 디자인" class="w-full h-auto rounded-2xl shadow-md border border-white" onerror="this.src='';" width="989" height="197">
+                        <img src="guinea-pig-pixel-art-variations.webp" loading="lazy" decoding="async" alt="기니점프 캐릭터 테마별 디자인" class="w-full h-auto rounded-2xl shadow-md border border-white" onerror="this.src='';" width="989" height="197">
                     </div>
                     
                     <div class="flex flex-wrap justify-center gap-3 md:gap-4 max-w-4xl mx-auto mb-10">
@@ -527,7 +530,6 @@
                 </div>
             </div>
 
-
             <!-- 탭 6: 설계 판단 검토 -->
             <div id="review" class="tab-content p-8 md:p-12 space-y-12">
                 <div>
@@ -549,11 +551,11 @@
                         <table class="w-full min-w-[480px] border-collapse text-sm bg-white">
                             <thead>
                                 <tr class="bg-gray-700 text-white">
-                                    <th class="p-3 text-left text-xs font-black">후보</th>
-                                    <th class="p-3 text-center text-xs font-black">창의성</th>
-                                    <th class="p-3 text-center text-xs font-black">제작 용이성</th>
-                                    <th class="p-3 text-center text-xs font-black">협업 가능성</th>
-                                    <th class="p-3 text-center text-xs font-black">합계</th>
+                                    <th scope="col" class="p-3 text-left text-xs font-black">후보</th>
+                                    <th scope="col" class="p-3 text-center text-xs font-black">창의성</th>
+                                    <th scope="col" class="p-3 text-center text-xs font-black">제작 용이성</th>
+                                    <th scope="col" class="p-3 text-center text-xs font-black">협업 가능성</th>
+                                    <th scope="col" class="p-3 text-center text-xs font-black">합계</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -649,7 +651,6 @@
                     </div>
                 </div>
 
-
                 <!-- 4. 가중치 민감도 -->
                 <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
                     <p class="text-[10px] font-black tracking-wide text-blue-500 mb-4">판단 04 &middot; 점수표 다시 읽기</p>
@@ -663,12 +664,12 @@
                         <table class="w-full min-w-[620px] border-collapse text-sm bg-white">
                             <thead>
                                 <tr class="bg-gray-700 text-white">
-                                    <th class="p-3 text-left text-xs font-black">창의성 가중치</th>
-                                    <th class="p-3 text-center text-xs font-black">기니점프</th>
-                                    <th class="p-3 text-center text-xs font-black">늘보런</th>
-                                    <th class="p-3 text-center text-xs font-black">개미핥기</th>
-                                    <th class="p-3 text-center text-xs font-black">1위</th>
-                                    <th class="p-3 text-left text-xs font-black">해석</th>
+                                    <th scope="col" class="p-3 text-left text-xs font-black">창의성 가중치</th>
+                                    <th scope="col" class="p-3 text-center text-xs font-black">기니점프</th>
+                                    <th scope="col" class="p-3 text-center text-xs font-black">늘보런</th>
+                                    <th scope="col" class="p-3 text-center text-xs font-black">개미핥기</th>
+                                    <th scope="col" class="p-3 text-center text-xs font-black">1위</th>
+                                    <th scope="col" class="p-3 text-left text-xs font-black">해석</th>
                                 </tr>
                             </thead>
                             <tbody>

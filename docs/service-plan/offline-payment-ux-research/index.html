@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>오프라인 UX 리서치 운영 설계</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="오프라인 UX 리서치 운영 설계. 현장 리서치의 반복 작업을 줄여 인사이트 산출을 늘리는 체계.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,7 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
@@ -354,7 +357,6 @@
             </div>
         </section>
 
-
         <section id="review" class="mb-20">
             <div class="mb-10">
                 <h2 class="text-3xl font-black text-slate-900 mb-3">리소스 재배분을 숫자로 보면</h2>
@@ -368,11 +370,11 @@
                 <table class="w-full min-w-[560px] border-collapse text-sm">
                     <thead>
                         <tr class="bg-slate-800 text-white">
-                            <th class="p-3 text-left text-xs font-black">항목</th>
-                            <th class="p-3 text-center text-xs font-black">도입 전</th>
-                            <th class="p-3 text-center text-xs font-black">도입 후</th>
-                            <th class="p-3 text-center text-xs font-black">변화</th>
-                            <th class="p-3 text-center text-xs font-black">증감률</th>
+                            <th scope="col" class="p-3 text-left text-xs font-black">항목</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">도입 전</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">도입 후</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">변화</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">증감률</th>
                         </tr>
                     </thead>
                     <tbody>

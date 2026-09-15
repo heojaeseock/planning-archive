@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
     <title>보험 파트너 앱 고도화 기획</title>
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
     <meta name="description" content="보험 파트너 앱 고도화 기획. 파트너의 업무 흐름을 단축하는 앱 개선 우선순위 도출.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
@@ -18,7 +21,7 @@
 <meta property="og:image:height" content="404">
 <meta property="og:image:alt" content="허재석 프로필 사진">
 <meta name="twitter:card" content="summary">
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     
@@ -132,7 +135,6 @@
                 </p>
             </div>
         </section>
-
 
         <!-- 1. 문제 정의 (기존 앱의 한계점) -->
         <section id="page1" class="content-section active space-y-10">
@@ -308,7 +310,6 @@
             </div>
         </section>
 
-
         <section id="review" class="content-section space-y-10">
             <div>
                 <h2 class="text-2xl md:text-3xl font-black text-gray-900 mb-4">시간을 어디서 쓰는지 나눠보면</h2>
@@ -322,10 +323,10 @@
                 <table class="w-full min-w-[520px] border-collapse text-sm">
                     <thead>
                         <tr class="bg-gray-800 text-white">
-                            <th class="p-3 text-left text-xs font-black">단계</th>
-                            <th class="p-3 text-center text-xs font-black">소요</th>
-                            <th class="p-3 text-center text-xs font-black">비중</th>
-                            <th class="p-3 text-center text-xs font-black">발생 위치</th>
+                            <th scope="col" class="p-3 text-left text-xs font-black">단계</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">소요</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">비중</th>
+                            <th scope="col" class="p-3 text-center text-xs font-black">발생 위치</th>
                         </tr>
                     </thead>
                     <tbody>
