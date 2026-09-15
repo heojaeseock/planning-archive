@@ -383,7 +383,9 @@
             <div class="mb-10">
                 <h2 class="text-2xl md:text-3xl font-bold mb-3">받은 답을 검증하는 단계</h2>
                 <p class="text-slate-500 text-base leading-relaxed">
-                     앞의 세 사례는 AI가 결과를 만들어내는 과정입니다. 실무에서 이 흐름이 완성되려면 <strong class="text-slate-800">받은 답이 요구사항과 맞는지 확인하는 단계</strong>가 붙어야 합니다. 실제로 첫 번째 사례에서 확인이 필요한 지점이 있습니다.
+                    앞의 세 사례는 AI가 결과를 만들어내는 과정입니다. <br class="hidden md:block">
+                    실무에서 이 흐름이 완성되려면 <strong class="text-slate-800">받은 답이 요구사항과 맞는지 확인하는 단계</strong>가 붙어야 합니다. <br class="hidden md:block">
+                    실제로 첫 번째 사례에서 확인이 필요한 지점이 있습니다.
                 </p>
             </div>
 
@@ -401,9 +403,9 @@
                         <p class="text-xs font-bold text-amber-800 mb-3">도출된 수식</p>
                         <p class="text-sm font-mono text-slate-800 mb-3">=COUNTIFS(D:D, "에러", C:C, "")</p>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                            두 조건을 만족하는 <strong class="text-amber-800">전체 기간 총 건수</strong>를 셉니다.
-                            날짜별로 나누는 부분이 없습니다.
-                        </p>
+                    두 조건을 만족하는 <strong class="text-amber-800">전체 기간 총 건수</strong>를 셉니다. <br class="hidden md:block">
+                    날짜별로 나누는 부분이 없습니다.
+                </p>
                     </div>
                 </div>
                 <div class="bg-slate-900 rounded-xl p-6 text-white mb-6">
@@ -429,7 +431,8 @@
             <div class="bg-white rounded-2xl border-2 border-slate-200 p-8 shadow-sm">
                 <p class="text-sm font-bold text-slate-700 mb-4">이 지점이 문서의 강점을 오히려 분명하게 합니다</p>
                 <p class="text-slate-600 leading-relaxed">
-                    AI는 요청받은 조건을 수식으로 옮기는 일은 정확히 했습니다. 빠진 것은 <strong class="text-slate-900">요구사항에 있던 &lsquo;일별 추이&rsquo;라는 단어</strong>입니다. <br class="hidden md:block">
+                    AI는 요청받은 조건을 수식으로 옮기는 일은 정확히 했습니다. <br class="hidden md:block">
+                    빠진 것은 <strong class="text-slate-900">요구사항에 있던 &lsquo;일별 추이&rsquo;라는 단어</strong>입니다. <br class="hidden md:block">
                     이런 누락은 결과만 보면 드러나지 않고, <strong class="text-slate-900">요구사항과 결과를 하나씩 대조할 때만</strong> 잡힙니다. <br class="hidden md:block">
                     도구를 쓰는 능력과 도구의 답을 검수하는 능력은 별개이고, 실무에서 신뢰를 만드는 것은 후자입니다.
                 </p>
@@ -441,7 +444,8 @@
             <div class="mb-10">
                 <h2 class="text-2xl md:text-3xl font-bold mb-3">사례별로 확인해야 할 것</h2>
                 <p class="text-slate-500 text-base leading-relaxed">
-                    세 사례는 각각 다른 종류의 위험을 가집니다. 실행 전에 무엇을 보는지 정해두면 같은 방식을 반복해서 쓸 수 있습니다.
+                    세 사례는 각각 다른 종류의 위험을 가집니다. <br class="hidden md:block">
+                    실행 전에 무엇을 보는지 정해두면 같은 방식을 반복해서 쓸 수 있습니다.
                 </p>
             </div>
 
@@ -475,22 +479,29 @@
                 <div class="bg-slate-900 rounded-2xl p-8 text-white">
                     <p class="text-sm font-bold text-blue-300 mb-4">세 사례에서 실제로 실력이 드러난 지점</p>
                     <p class="text-slate-300 leading-relaxed mb-5">
-                        AI를 쓴 것 자체는 누구나 할 수 있습니다.
-                        이 기록에서 성과를 만든 것은 <strong class="text-white">AI에게 무엇을 주었는지</strong>입니다.
-                    </p>
+                    AI를 쓴 것 자체는 누구나 할 수 있습니다. <br class="hidden md:block">
+                    이 기록에서 성과를 만든 것은 <strong class="text-white">AI에게 무엇을 주었는지</strong>입니다.
+                </p>
                     <div class="grid md:grid-cols-3 gap-5">
                         <div class="bg-white/10 rounded-xl p-5">
                             <p class="text-xs font-bold text-blue-300 mb-2">조건으로 분해했습니다</p>
-                            <p class="text-xs text-slate-300 leading-relaxed">막연한 요청을 열과 값 기준의 조건으로 바꿔 전달했습니다. 이 분해가 없으면 AI도 수식을 만들 수 없습니다.</p>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                    막연한 요청을 열과 값 기준의 조건으로 바꿔 전달했습니다. <br class="hidden md:block">
+                    이 분해가 없으면 AI도 수식을 만들 수 없습니다.
+                </p>
                         </div>
                         <div class="bg-white/10 rounded-xl p-5">
                             <p class="text-xs font-bold text-blue-300 mb-2">스키마를 정리해 주었습니다</p>
-                            <p class="text-xs text-slate-300 leading-relaxed">테이블과 컬럼 구조를 먼저 제시했습니다. 스키마 없이 요청하면 존재하지 않는 컬럼을 쓴 쿼리가 나옵니다.</p>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                    테이블과 컬럼 구조를 먼저 제시했습니다. <br class="hidden md:block">
+                    스키마 없이 요청하면 존재하지 않는 컬럼을 쓴 쿼리가 나옵니다.
+                </p>
                         </div>
                         <div class="bg-white/10 rounded-xl p-5">
                             <p class="text-xs font-bold text-blue-300 mb-2">보고 대상을 지정했습니다</p>
                             <p class="text-xs text-slate-300 leading-relaxed">
-                    외국인 임원 대상이라는 조건을 주어 문체와 구조가 정해졌습니다. 대상 없이 번역만 요청하면 형식이 맞지 않습니다.
+                    외국인 임원 대상이라는 조건을 주어 문체와 구조가 정해졌습니다. <br class="hidden md:block">
+                    대상 없이 번역만 요청하면 형식이 맞지 않습니다.
                 </p>
                         </div>
                     </div>
@@ -503,7 +514,8 @@
             <div class="mb-10">
                 <h2 class="text-2xl md:text-3xl font-bold mb-3">두 번째 사례에서도 같은 것이 빠졌습니다</h2>
                 <p class="text-slate-500 text-base leading-relaxed">
-                    앞에서 도전 1의 수식이 <strong class="text-slate-800">일별 추이</strong>를 빠뜨렸다는 것을 확인했습니다. 같은 방식으로 도전 2의 쿼리를 요구사항과 대조하면 <strong class="text-slate-800">같은 유형의 누락</strong>이 한 번 더 나옵니다.
+                    앞에서 도전 1의 수식이 <strong class="text-slate-800">일별 추이</strong>를 빠뜨렸다는 것을 확인했습니다. <br class="hidden md:block">
+                    같은 방식으로 도전 2의 쿼리를 요구사항과 대조하면 <strong class="text-slate-800">같은 유형의 누락</strong>이 한 번 더 나옵니다.
                 </p>
             </div>
 
@@ -520,10 +532,9 @@
                     <div class="bg-amber-50 rounded-xl p-6 border border-amber-300">
                         <p class="text-xs font-bold text-amber-800 mb-3">도출된 쿼리의 조건</p>
                         <p class="text-sm text-slate-700 leading-relaxed">
-                            상태가 지연인 것, 센터 코드가 특정 값인 것.
-                            <strong class="text-amber-800">기간 조건이 없습니다.</strong>
-                            전체 기간의 지연 건이 모두 나옵니다.
-                        </p>
+                    상태가 지연인 것, 센터 코드가 특정 값인 것. <strong class="text-amber-800">기간 조건이 없습니다.</strong> <br class="hidden md:block">
+                    전체 기간의 지연 건이 모두 나옵니다.
+                </p>
                     </div>
                 </div>
                 <div class="bg-slate-900 rounded-xl p-6 text-white mb-6">
@@ -553,12 +564,14 @@
             <div class="bg-slate-900 rounded-2xl p-8 md:p-10 text-white mb-10">
                 <p class="text-amber-300 font-black text-[10px] tracking-wide mb-5">검증하려면 그 일을 할 줄 알아야 합니다</p>
                 <p class="text-sm md:text-base text-slate-300 leading-relaxed mb-5">
-                    두 사례 모두 <strong class="text-white">결과만 보면 정상으로 보입니다.</strong> 수식은 숫자를 내놓고 쿼리는 행을 반환합니다. <br class="hidden md:block">
+                    두 사례 모두 <strong class="text-white">결과만 보면 정상으로 보입니다.</strong> <br class="hidden md:block">
+                    수식은 숫자를 내놓고 쿼리는 행을 반환합니다. <br class="hidden md:block">
                     빠진 조건은 <strong class="text-amber-300">요구사항과 결과를 한 줄씩 맞춰볼 때만</strong> 드러납니다. <br class="hidden md:block">
                     그리고 그 대조를 하려면 수식과 쿼리를 읽을 줄 알아야 합니다.
                 </p>
                 <p class="text-sm md:text-base text-slate-300 leading-relaxed">
-                    도전 2의 제목은 <strong class="text-white">개발자 없이 데이터 추출</strong>입니다. 쿼리를 받는 것은 개발자 없이 가능합니다. <br class="hidden md:block">
+                    도전 2의 제목은 <strong class="text-white">개발자 없이 데이터 추출</strong>입니다. <br class="hidden md:block">
+                    쿼리를 받는 것은 개발자 없이 가능합니다. <br class="hidden md:block">
                     다만 받은 쿼리가 요청과 맞는지 판단하는 데는 <strong class="text-amber-300">읽을 수 있는 만큼의 지식</strong>이 필요합니다. <br class="hidden md:block">
                     제목을 <strong class="text-white">개발자를 기다리지 않고</strong> 정도로 적으면 실제로 한 일에 더 가깝고, 검증 단계를 생략했다는 인상도 주지 않습니다. <br class="hidden md:block">
                     이 문서가 스스로 검증 과정을 적어둔 것이 그 지식을 갖췄다는 증거이기도 합니다.
@@ -608,7 +621,8 @@
                     <p class="text-sm font-bold text-amber-700 mb-5">성격이 다른 세 작업이 똑같이 15배입니다</p>
                     <p class="text-slate-600 leading-relaxed mb-5">
                     엑셀 수식 작성, 쿼리 작성, 외국어 보고서 작성은 <strong class="text-slate-900">필요한 기술도 걸리는 이유도 다릅니다.</strong> <br class="hidden md:block">
-                    그런데 세 작업의 절감 배수가 모두 정확히 15배로 같습니다. 45와 3, 60과 4, 30과 2로 나누어떨어지는 정수이기도 합니다. <br class="hidden md:block">
+                    그런데 세 작업의 절감 배수가 모두 정확히 15배로 같습니다. <br class="hidden md:block">
+                    45와 3, 60과 4, 30과 2로 나누어떨어지는 정수이기도 합니다. <br class="hidden md:block">
                     측정한 값이 이렇게 맞아떨어지기는 어렵습니다.
                 </p>
                     <p class="text-slate-600 leading-relaxed">
@@ -621,22 +635,24 @@
                 <div class="bg-white rounded-2xl border-2 border-slate-300 p-8 shadow-sm">
                     <p class="text-sm font-bold text-slate-800 mb-5">저장해서 다시 쓰면 배수가 크게 떨어집니다</p>
                     <p class="text-slate-600 leading-relaxed mb-6">
-                    세 작업 중 <strong class="text-slate-900">엑셀 수식과 쿼리는 한 번 만들면 저장해 두고 재사용</strong>할 수 있습니다. 보고서는 내용이 매번 달라 재사용이 어렵습니다. <br class="hidden md:block">
+                    세 작업 중 <strong class="text-slate-900">엑셀 수식과 쿼리는 한 번 만들면 저장해 두고 재사용</strong>할 수 있습니다. <br class="hidden md:block">
+                    보고서는 내용이 매번 달라 재사용이 어렵습니다. <br class="hidden md:block">
                     같은 작업을 열 번 한다고 놓고 비교하면 이렇게 갈립니다.
                 </p>
                     <div class="grid md:grid-cols-2 gap-5 mb-6">
                         <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
                             <p class="text-xs font-black text-slate-700 mb-3">엑셀 수식 열 번</p>
                             <p class="text-xs text-slate-600 leading-relaxed">
-                     매번 새로 만들면 450분, 저장해 두고 조건만 바꾸면 90분입니다. 도구를 쓰면 30분입니다. <strong class="text-slate-800">저장 습관이 있는 사람에게는 15배가 아니라 3배</strong>입니다.
+                    매번 새로 만들면 450분, 저장해 두고 조건만 바꾸면 90분입니다. 도구를 쓰면 30분입니다. <br class="hidden md:block">
+                    <strong class="text-slate-800">저장 습관이 있는 사람에게는 15배가 아니라 3배</strong>입니다.
                 </p>
                         </div>
                         <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
                             <p class="text-xs font-black text-slate-700 mb-3">쿼리 열 번</p>
                             <p class="text-xs text-slate-600 leading-relaxed">
-                                같은 방식으로 600분, 105분, 40분입니다.
-                                배수가 <strong class="text-slate-800">15배에서 2.6배</strong>로 내려갑니다.
-                            </p>
+                    같은 방식으로 600분, 105분, 40분입니다. <br class="hidden md:block">
+                    배수가 <strong class="text-slate-800">15배에서 2.6배</strong>로 내려갑니다.
+                </p>
                         </div>
                     </div>
                     <div class="bg-blue-50 rounded-xl p-6 border-2 border-blue-200">
@@ -655,7 +671,8 @@
             <div class="bg-slate-50 rounded-2xl border border-slate-200 p-7">
                 <p class="text-xs font-bold text-slate-500 mb-4">절감 시간을 도입 근거로 쓰려면 빈도가 필요합니다</p>
                 <p class="text-sm text-slate-600 leading-relaxed mb-5">
-                    세 작업을 합치면 한 차례에 126분이 줄어듭니다. 이 값이 얼마나 큰지는 <strong class="text-slate-900">같은 일이 얼마나 자주 생기는지</strong>에 달려 있습니다.
+                    세 작업을 합치면 한 차례에 126분이 줄어듭니다. <br class="hidden md:block">
+                    이 값이 얼마나 큰지는 <strong class="text-slate-900">같은 일이 얼마나 자주 생기는지</strong>에 달려 있습니다.
                 </p>
                 <div class="grid md:grid-cols-3 gap-4 mb-5">
                     <div class="bg-white rounded-xl p-5 border border-slate-200 text-center">
