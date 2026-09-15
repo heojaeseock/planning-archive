@@ -664,7 +664,12 @@
             for (var i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // 탭 줄은 화면에 붙어 있으므로 맨 위로 올릴 이유가 없다.
+            // 새 내용의 첫머리가 탭 줄 바로 아래에 오도록만 맞춘다.
+            var bar = evt.currentTarget.parentElement;
+            var panel = document.getElementById(tabName);
+            var y = panel.getBoundingClientRect().top + window.pageYOffset - bar.offsetHeight;
+            if (window.pageYOffset > y) { window.scrollTo({ top: y, behavior: 'smooth' }); }
         }
     </script>
 <div aria-hidden="true" style="height:104px"></div>
