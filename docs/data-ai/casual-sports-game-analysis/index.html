@@ -21,14 +21,16 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="캐주얼 스포츠 게임 기획 분석">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
+    <script>Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";</script>
     
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
         
         body {
-            font-family: 'Pretendard', sans-serif;
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
             background-color: #fdfbf7; 
             color: #333;
         }
@@ -87,6 +89,7 @@
         body { word-break: keep-all; overflow-wrap: break-word; }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -147,7 +150,7 @@
                     <div class="space-y-4">
                         <div class="p-5 bg-sand-50 rounded-xl border border-sand-100 hover:border-coral-200 transition-colors">
                             <h3 class="text-lg font-bold text-sand-900 mb-2">1. 과장된 공의 궤적</h3>
-                            <p class="text-sand-800 leading-relaxed text-sm">
+                            <p class="text-sand-800 leading-relaxed text-sm bal">
                     실제보다 낮은 중력을 적용하여 공이 공중에 머무는 시간을 늘립니다. <br class="hidden md:block">
                     유저가 공의 낙하 지점을 예측하고 대응할 시간적 여유를 확보해줍니다.
                 </p>
@@ -240,8 +243,8 @@
                         <div id="gimmick1-details" class="hidden fade-in space-y-3 mt-4 text-sm bg-white p-4 rounded-xl border border-sand-100">
                             <h4 class="font-bold text-sand-900 border-b border-sand-100 pb-2">기획 의도</h4>
                             <ul class="list-disc pl-5 space-y-2 text-sand-700">
-                                <li>정형화된 패스 루트를 차단하여 경기마다 새로운 <strong>의외성</strong>을 제공합니다.</li>
-                                <li>초보자에게 '운'을 통한 득점 기회를 제공하여 중도 이탈을 방지합니다.</li>
+                                <li class="bal">정형화된 패스 루트를 차단하여 경기마다 새로운 <strong>의외성</strong>을 제공합니다.</li>
+                                <li class="bal">초보자에게 '운'을 통한 득점 기회를 제공하여 중도 이탈을 방지합니다.</li>
                             </ul>
                         </div>
                     </div>
@@ -330,7 +333,7 @@
                 <div class="bg-white rounded-2xl border-2 border-emerald-200 p-7">
                     <p class="text-sm font-black text-emerald-700 mb-3">얻은 것</p>
                     <p class="text-3xl font-black text-sand-900 mb-2">+47.5점</p>
-                    <p class="text-sm text-sand-600 leading-relaxed">
+                    <p class="text-sm text-sand-600 leading-relaxed bal">
                     조작 관련 네 항목의 평균이 하드코어 43.75에서 <strong class="text-sand-900">91.25로</strong> 올라갑니다. <br class="hidden md:block">
                     조작이 쉽고 반응이 빠르고 맞히기 편합니다.
                 </p>
@@ -425,7 +428,8 @@
                     </ul>
                 </div>
                 <p class="text-sm text-sand-600 leading-relaxed">
-                    여기에 <strong class="text-sand-900">운으로 득점하는 범퍼</strong>와 <strong class="text-sand-900">무작위 물리 변화</strong>가 더해지면, 이겨도 자기 실력으로 느껴지지 않고 져도 자기 잘못으로 느껴지지 않는 상태가 됩니다. <br class="hidden md:block">
+                    여기에 <strong class="text-sand-900">운으로 득점하는 범퍼</strong>와 <strong class="text-sand-900">무작위 물리 변화</strong>가 더해지면, <br class="hidden md:block">
+                    이겨도 자기 실력으로 느껴지지 않고 져도 자기 잘못으로 느껴지지 않는 상태가 됩니다. <br class="hidden md:block">
                     초보 이탈을 막으려던 장치가 <strong class="text-amber-800">숙련 유저의 이탈을 만드는</strong> 지점이 여기입니다. <br class="hidden md:block">
                     완화 장치는 개별 효과가 아니라 <strong class="text-sand-900">합계로 관리</strong>해야 하고, 새 장치를 넣을 때는 기존 장치 하나를 줄이는 편이 안전합니다.
                 </p>
@@ -449,20 +453,20 @@
                     <p class="text-sm font-black text-emerald-700 mb-4">프로토타입에서 측정할 것</p>
                     <ul class="space-y-3 text-sm text-sand-600 leading-relaxed">
                         <li>&bull; <strong class="text-sand-800">실력 반영도</strong> &mdash; 상위 숙련 그룹과 하위 그룹의 승률 차이. 차이가 너무 작으면 완화 장치가 과합니다</li>
-                        <li>&bull; <strong class="text-sand-800">범퍼 관여 득점 비율</strong> &mdash; 전체 득점 중 범퍼를 거친 비율. 높으면 운의 비중이 큰 것입니다</li>
-                        <li>&bull; <strong class="text-sand-800">숙련 유저 잔존</strong> &mdash; 상위 그룹의 재접속률. 이 값이 떨어지면 위 지적이 현실화된 것입니다</li>
-                        <li>&bull; <strong class="text-sand-800">히트박스 민감도</strong> &mdash; 배율을 조정하며 신규 이탈과 숙련 잔존을 함께 봅니다</li>
+                        <li class="bal">&bull; <strong class="text-sand-800">범퍼 관여 득점 비율</strong> &mdash; 전체 득점 중 범퍼를 거친 비율. 높으면 운의 비중이 큰 것입니다</li>
+                        <li class="bal">&bull; <strong class="text-sand-800">숙련 유저 잔존</strong> &mdash; 상위 그룹의 재접속률. 이 값이 떨어지면 위 지적이 현실화된 것입니다</li>
+                        <li class="bal">&bull; <strong class="text-sand-800">히트박스 민감도</strong> &mdash; 배율을 조정하며 신규 이탈과 숙련 잔존을 함께 봅니다</li>
                         <li>&bull; <strong class="text-sand-800">역전 발생률</strong> &mdash; 너무 높으면 앞서는 의미가 사라집니다</li>
                     </ul>
                 </div>
                 <div class="bg-white rounded-2xl border-2 border-sand-200 p-7">
                     <p class="text-sm font-black text-sand-600 mb-4">이 분석의 한계</p>
                     <ul class="space-y-3 text-sm text-sand-600 leading-relaxed">
-                        <li>&bull; 본문에 밝힌 대로 파라미터 수치는 <strong class="text-sand-800">기획 의도를 시각화한 값</strong>이며 실제 엔진에서 추출한 값이 아닙니다. 항목 간 상대 비교에만 쓸 수 있습니다.</li>
-                        <li>&bull; 히트박스 <strong class="text-sand-800">15~20%</strong>는 관찰과 추정에 기반한 범위이며 개발사가 공개한 값이 아닙니다.</li>
-                        <li>&bull; 분석 대상이 <strong class="text-sand-800">세 종</strong>이라 장르 전체를 대표한다고 보기는 어렵습니다.</li>
+                        <li class="bal">&bull; 본문에 밝힌 대로 파라미터 수치는 <strong class="text-sand-800">기획 의도를 시각화한 값</strong>이며 실제 엔진에서 추출한 값이 아닙니다. 항목 간 상대 비교에만 쓸 수 있습니다.</li>
+                        <li class="bal">&bull; 히트박스 <strong class="text-sand-800">15~20%</strong>는 관찰과 추정에 기반한 범위이며 개발사가 공개한 값이 아닙니다.</li>
+                        <li class="bal">&bull; 분석 대상이 <strong class="text-sand-800">세 종</strong>이라 장르 전체를 대표한다고 보기는 어렵습니다.</li>
                         <li>&bull; 기믹 두 건은 <strong class="text-sand-800">구현하거나 테스트하지 않은 제안</strong>입니다. 예상되는 부작용은 구조에서 도출한 것이며 측정된 결과가 아닙니다.</li>
-                        <li>&bull; 네트워크 지연이 물리 연산 체감에 미치는 영향은 <strong class="text-sand-800">다루지 않았습니다.</strong> 실시간 대전에서는 이 요인이 조작 반응성보다 크게 작용할 수 있습니다.</li>
+                        <li class="bal">&bull; 네트워크 지연이 물리 연산 체감에 미치는 영향은 <strong class="text-sand-800">다루지 않았습니다.</strong> 실시간 대전에서는 이 요인이 조작 반응성보다 크게 작용할 수 있습니다.</li>
                     </ul>
                 </div>
             </div>

@@ -21,13 +21,15 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="글로벌 캐주얼 게임 시장 분석">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
+    <script>Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";</script>
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
         
         body { 
-            font-family: 'Pretendard', sans-serif; 
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; 
             background-color: #fcfcfc; 
             color: #1e293b; 
             overflow-x: hidden;
@@ -83,6 +85,7 @@
         body { word-break: keep-all; overflow-wrap: break-word; }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -148,7 +151,7 @@
                 <div id="info-share" class="lg:col-span-7 space-y-10">
                     <div>
                         <h3 class="text-2xl font-bold text-slate-900 mb-5">복합 장르(하이브리드)의 시장 안착</h3>
-                        <p class="text-slate-600 leading-relaxed text-lg">
+                        <p class="text-slate-600 leading-relaxed text-lg bal">
                     단순 조작을 넘어, <strong>방치형 성장</strong> 구조와 <strong>장기적 목표</strong> 요소가 결합된 복합 장르 게임이 북미 차트 상위권의 45% 내외를 점유하고 있습니다. <br class="hidden md:block">
                     이는 짧은 시간 속에서도 지속적인 보람을 원하는 이용자 니즈가 반영된 결과입니다.
                 </p>
@@ -168,7 +171,7 @@
                 <div id="info-performance" class="lg:col-span-7 space-y-10 hidden">
                     <div>
                         <h3 class="text-2xl font-bold text-slate-900 mb-5">정돈의 쾌감을 활용한 유입 전략</h3>
-                        <p class="text-slate-600 leading-relaxed text-lg">
+                        <p class="text-slate-600 leading-relaxed text-lg bal">
                     정리 정돈 및 세척과 같이 <strong>시각적 정렬의 재미</strong>를 강조한 소재는 타 장르 대비 이용자 유입 비용이 약 60% 낮게 형성됩니다. <br class="hidden md:block">
                     시각적 시원함과 경쾌한 피드백이 영상 매체에서 이용자의 시선을 즉시 사로잡기 때문입니다.
                 </p>
@@ -310,7 +313,7 @@
                     <li>&bull; 기존 단순 조작형 20%</li>
                     <li>&bull; 퍼즐 및 기타 10%</li>
                 </ul>
-                <p class="text-xs text-slate-500 leading-relaxed mt-5 pt-5 border-t border-slate-200">
+                <p class="text-xs text-slate-500 leading-relaxed mt-5 pt-5 border-t border-slate-200 bal">
                     차트 상위권을 지키는 것은 <strong class="text-slate-700">성장 구조를 가진 게임</strong>입니다. <br class="hidden md:block">
                     단순 조작형만으로는 20%에 머뭅니다.
                 </p>
@@ -350,7 +353,7 @@
                         </tbody>
                     </table>
                 </div>
-                <p class="text-xs text-slate-500 leading-relaxed mt-5">
+                <p class="text-xs text-slate-500 leading-relaxed mt-5 bal">
                     광고를 보고 설치까지 오게 만드는 것은 <strong class="text-slate-700">정렬 소재</strong>입니다. <br class="hidden md:block">
                     성장 소재는 그 절반 수준입니다.
                 </p>
@@ -374,7 +377,7 @@
                 </div>
                 <div class="bg-white/10 rounded-2xl p-6">
                     <p class="text-sm font-black text-teal-300 mb-2">성장만 있으면</p>
-                    <p class="text-sm text-slate-300 leading-relaxed">
+                    <p class="text-sm text-slate-300 leading-relaxed bal">
                     남기는 힘은 있지만 <strong class="text-white">데려오는 비용이 비쌉니다.</strong> <br class="hidden md:block">
                     숫자가 늘어나는 화면은 영상에서 시선을 잡지 못합니다. <br class="hidden md:block">
                     효율 지표가 45로 정렬의 <strong>62% 수준</strong>입니다.
@@ -387,7 +390,8 @@
             <p class="text-sm font-black text-amber-700 mb-4">이 조합에는 조건이 하나 붙습니다</p>
             <p class="text-slate-700 leading-relaxed mb-5">
                     정렬로 광고를 만들고 안에는 성장 게임을 넣으면 <strong class="text-slate-900">광고와 실제 내용이 어긋납니다.</strong> <br class="hidden md:block">
-                    본문은 <strong>&ldquo;설치 직후 바로 느껴지는 만족감이 이탈률을 낮춘다&rdquo;</strong>고 정리했는데, 이 효과는 <strong class="text-amber-800">광고에서 본 것이 게임 안에 실제로 있을 때만</strong> 성립합니다.
+                    본문은 <strong>&ldquo;설치 직후 바로 느껴지는 만족감이 이탈률을 낮춘다&rdquo;</strong>고 정리했는데, <br class="hidden md:block">
+                    이 효과는 <strong class="text-amber-800">광고에서 본 것이 게임 안에 실제로 있을 때만</strong> 성립합니다.
                 </p>
             <div class="bg-white rounded-2xl p-6 border border-amber-200 mb-5">
                 <p class="text-xs font-black text-slate-800 mb-2">어긋날 경우</p>
@@ -422,7 +426,7 @@
             <div class="bg-white border-2 border-slate-200 rounded-[2rem] p-8">
                 <p class="text-sm font-black text-slate-500 mb-3">2.4배 효율이라면</p>
                 <p class="text-3xl font-black text-slate-900 mb-2">58.3% 절감</p>
-                <p class="text-xs text-slate-600 leading-relaxed">비용이 원가의 41.7%가 되므로 절감률은 60%가 아니라 58.3%입니다.</p>
+                <p class="text-xs text-slate-600 leading-relaxed bal">비용이 원가의 41.7%가 되므로 절감률은 60%가 아니라 58.3%입니다.</p>
             </div>
         </div>
 
@@ -478,7 +482,7 @@
             <div class="bg-white border-2 border-emerald-200 rounded-[2rem] p-8">
                 <p class="text-sm font-black text-emerald-700 mb-4">검증할 지표</p>
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                    <li>&bull; <strong class="text-slate-800">광고 소재별 설치 단가</strong> &mdash; 정렬 소재의 효율 우위가 실제로 나타나는지</li>
+                    <li class="bal">&bull; <strong class="text-slate-800">광고 소재별 설치 단가</strong> &mdash; 정렬 소재의 효율 우위가 실제로 나타나는지</li>
                     <li>&bull; <strong class="text-slate-800">설치 직후 이탈률</strong> &mdash; 소재별로 나눠 봅니다. 광고와 내용이 어긋나면 여기서 드러납니다</li>
                     <li>&bull; <strong class="text-slate-800">정렬 플레이 비중</strong> &mdash; 전체 플레이 시간 중 정렬 행위가 차지하는 비율. 낮으면 광고용 장식에 그친 것입니다</li>
                     <li>&bull; <strong class="text-slate-800">광고 시청과 결제의 관계</strong> &mdash; 시청량이 많은 유저의 결제율. 낮으면 잠식이 발생하는 것입니다</li>
@@ -488,8 +492,8 @@
             <div class="bg-white border-2 border-slate-200 rounded-[2rem] p-8">
                 <p class="text-sm font-black text-slate-500 mb-4">이 분석의 한계</p>
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                    <li>&bull; 본문에 밝힌 대로 점유율과 효율 지표는 <strong class="text-slate-800">직접 플레이와 조사에 기반한 가설 기반 추정 지표</strong>이며 마켓이 공개한 값이 아닙니다.</li>
-                    <li>&bull; 효율 지표는 <strong class="text-slate-800">단위가 정의되지 않은 상대값</strong>입니다. 항목 간 비율 비교에만 쓸 수 있고 실제 설치 단가로 환산할 수는 없습니다.</li>
+                    <li class="bal">&bull; 본문에 밝힌 대로 점유율과 효율 지표는 <strong class="text-slate-800">직접 플레이와 조사에 기반한 가설 기반 추정 지표</strong>이며 마켓이 공개한 값이 아닙니다.</li>
+                    <li class="bal">&bull; 효율 지표는 <strong class="text-slate-800">단위가 정의되지 않은 상대값</strong>입니다. 항목 간 비율 비교에만 쓸 수 있고 실제 설치 단가로 환산할 수는 없습니다.</li>
                     <li>&bull; 재방문 지수와 수익 잠재력은 <strong class="text-slate-800">방향을 표현한 값</strong>이며 측정된 지표가 아닙니다.</li>
                     <li>&bull; 분석 범위가 <strong class="text-slate-800">북미 마켓</strong>이므로 지역에 따라 선호 소재와 설치 단가가 크게 달라집니다.</li>
                     <li>&bull; 언급된 개별 타이틀의 성과 요인은 <strong class="text-slate-800">외부에서 관찰한 추론</strong>이며 개발사가 공개한 내용이 아닙니다.</li>

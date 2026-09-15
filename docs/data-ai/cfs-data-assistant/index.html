@@ -22,7 +22,8 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="AI로 처리한 물류 데이터 실무 3종">
 <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="tailwind.css">
     
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
@@ -33,7 +34,7 @@
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
         
         body { 
-            font-family: 'Pretendard', sans-serif; 
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; 
             background-color: #f1f5f9; 
             color: #334155; 
             overflow-x: hidden; 
@@ -77,6 +78,7 @@
         #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -326,13 +328,13 @@
                     <div class="bg-[#fef01b] rounded-xl p-4 shadow-sm relative flex flex-col">
                         <div class="text-xs font-bold text-slate-600 mb-3 border-b border-yellow-300 pb-2">💬 현장 매니저 리포트 (02:15 AM)</div>
                         <div class="space-y-2 flex-1">
-                            <div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm inline-block max-w-[95%] leading-relaxed">
+                            <div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm inline-block max-w-[95%] leading-relaxed bal">
                                 담당자님, 신규 도입 단말기 50대 와이파이 연결 끊김 이슈 발생했습니다.
                             </div>
                             <div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm inline-block max-w-[95%] leading-relaxed">
                                 피킹 45분 지연됐는데 구형 기기로 롤백해서 정상화했습니다. 지연 물량은 7시 전까지 커버 가능합니다.
                             </div>
-                            <div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm inline-block max-w-[95%] leading-relaxed">
+                            <div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm inline-block max-w-[95%] leading-relaxed bal">
                                 디렉터님께 긴급 보고 부탁드립니다. IT팀과는 오전 중 회의 잡겠습니다.
                             </div>
                         </div>
@@ -361,7 +363,7 @@
 
                         <div class="p-4 border-b border-slate-100 space-y-2 text-sm bg-white">
                             <div class="flex gap-2"><span class="text-slate-400 w-12">받는 사람:</span> <span class="font-bold">director@logistics-hq.example.com</span></div>
-                            <div class="flex gap-2"><span class="text-slate-400 w-12">제목:</span> <span class="font-bold text-brand-accent">[Urgent] Night Shift Delay Resolved - Network Issue</span></div>
+                            <div class="flex gap-2 bal"><span class="text-slate-400 w-12">제목:</span> <span class="font-bold text-brand-accent">[Urgent] Night Shift Delay Resolved - Network Issue</span></div>
                         </div>
                         
                         <div class="p-4 flex-1 text-sm text-slate-700 space-y-3 overflow-y-auto bg-white" id="email-body">
@@ -424,7 +426,7 @@
                     <p class="text-xs font-bold text-slate-700 mb-3">함께 확인할 두 가지</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                         <li>&bull; <strong class="text-slate-800">빈칸의 정의</strong> &mdash; 조건에 쓴 빈 문자열은 아무것도 입력되지 않은 셀과, 수식 결과가 빈 문자열인 셀을 함께 셉니다. 원본이 시스템에서 내려온 파일이라면 후자가 섞여 있을 수 있어 실제 결측과 다르게 집계됩니다.</li>
-                        <li>&bull; <strong class="text-slate-800">불량률의 분모</strong> &mdash; 일별 추이를 보려면 분모도 일별 입고 건수여야 합니다. 전체 52,140건을 분모로 쓰면 날짜별 값이 모두 작게 나와 추이가 눌립니다.</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">불량률의 분모</strong> &mdash; 일별 추이를 보려면 분모도 일별 입고 건수여야 합니다. 전체 52,140건을 분모로 쓰면 날짜별 값이 모두 작게 나와 추이가 눌립니다.</li>
                     </ul>
                 </div>
             </div>
@@ -460,7 +462,7 @@
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                         <li>&bull; <strong class="text-slate-800">건수 대조</strong> &mdash; 이미 아는 값과 맞춰봅니다. 서울 센터 전체 출고 건수를 알고 있다면, 지연 건이 그보다 클 수 없습니다. JOIN 조건이 잘못되면 행이 중복되어 건수가 부풀어 오르므로 여기서 잡힙니다.</li>
                         <li>&bull; <strong class="text-slate-800">이번 주의 기준</strong> &mdash; 월요일 시작인지 최근 7일인지에 따라 결과가 달라집니다. 요청자가 말한 기간을 날짜로 되물어 확정합니다.</li>
-                        <li>&bull; <strong class="text-slate-800">조회 부하와 권한</strong> &mdash; 운영 DB에 직접 조회하면 대량 스캔이 서비스에 영향을 줄 수 있습니다. 조회 전용 환경과 허용된 범위를 사전에 확인해 둡니다.</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">조회 부하와 권한</strong> &mdash; 운영 DB에 직접 조회하면 대량 스캔이 서비스에 영향을 줄 수 있습니다. 조회 전용 환경과 허용된 범위를 사전에 확인해 둡니다.</li>
                     </ul>
                 </div>
 
@@ -472,8 +474,8 @@
                 </p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                         <li>&bull; <strong class="text-slate-800">숫자 대조</strong> &mdash; 단말 50대, 지연 45분, 복구 목표 7시. 이 세 값이 원문과 같은지만 확인하면 대부분의 사고를 막습니다.</li>
-                        <li>&bull; <strong class="text-slate-800">확정과 예정의 구분</strong> &mdash; 원문의 <strong>커버 가능</strong>은 예상이고 <strong>정상화</strong>는 완료입니다. 영문에서 둘 다 완료로 표현되면 보고 내용이 사실과 달라집니다.</li>
-                        <li>&bull; <strong class="text-slate-800">책임 서술 확인</strong> &mdash; 원인을 단정하는 문장이 들어가지 않았는지 봅니다. 원인 규명 전 단계에서는 현상과 조치만 적는 편이 안전합니다.</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">확정과 예정의 구분</strong> &mdash; 원문의 <strong>커버 가능</strong>은 예상이고 <strong>정상화</strong>는 완료입니다. 영문에서 둘 다 완료로 표현되면 보고 내용이 사실과 달라집니다.</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">책임 서술 확인</strong> &mdash; 원인을 단정하는 문장이 들어가지 않았는지 봅니다. 원인 규명 전 단계에서는 현상과 조치만 적는 편이 안전합니다.</li>
                     </ul>
                 </div>
 
@@ -532,7 +534,7 @@
                     </div>
                     <div class="bg-amber-50 rounded-xl p-6 border border-amber-300">
                         <p class="text-xs font-bold text-amber-800 mb-3">도출된 쿼리의 조건</p>
-                        <p class="text-sm text-slate-700 leading-relaxed">
+                        <p class="text-sm text-slate-700 leading-relaxed bal">
                     상태가 지연인 것, 센터 코드가 특정 값인 것. <strong class="text-amber-800">기간 조건이 없습니다.</strong> <br class="hidden md:block">
                     전체 기간의 지연 건이 모두 나옵니다.
                 </p>
@@ -646,7 +648,8 @@
                         <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
                             <p class="text-xs font-black text-slate-700 mb-3">엑셀 수식 열 번</p>
                             <p class="text-xs text-slate-600 leading-relaxed">
-                    매번 새로 만들면 450분, 저장해 두고 조건만 바꾸면 90분입니다. <br class="hidden md:block">
+                    매번 새로 만들면 450분, <br class="hidden md:block">
+                    저장해 두고 조건만 바꾸면 90분입니다. <br class="hidden md:block">
                     도구를 쓰면 30분입니다. <br class="hidden md:block">
                     <strong class="text-slate-800">저장 습관이 있는 사람에게는 15배가 아니라 3배</strong>입니다.
                 </p>
@@ -703,9 +706,9 @@
             <div class="bg-white rounded-2xl border border-slate-200 p-7 mt-6">
                 <p class="text-xs font-bold text-slate-500 mb-4">이 절의 한계</p>
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                    <li>&bull; 열 번 반복 비교에서 <strong class="text-slate-800">저장해 둔 수식을 다시 쓰는 데 5분</strong>이 든다고 놓았습니다. 실제 값은 작업에 따라 다르므로 배수의 정확한 크기가 아니라 <strong class="text-slate-800">방향을 보는 계산</strong>입니다.</li>
-                    <li>&bull; 쿼리와 수식의 누락은 <strong class="text-slate-800">문서에 적힌 요청 문장과 결과를 대조</strong>해 찾은 것입니다. 실제 업무에서는 구두로 오간 조건이 더 있었을 수 있습니다.</li>
-                    <li>&bull; 센터 코드가 실제로 어떤 값인지는 <strong class="text-slate-800">이 문서로 확인할 수 없습니다.</strong> 지역 열을 쓰자는 제안은 스키마에 그 열이 있다는 사실에만 근거합니다.</li>
+                    <li class="bal">&bull; 열 번 반복 비교에서 <strong class="text-slate-800">저장해 둔 수식을 다시 쓰는 데 5분</strong>이 든다고 놓았습니다. 실제 값은 작업에 따라 다르므로 배수의 정확한 크기가 아니라 <strong class="text-slate-800">방향을 보는 계산</strong>입니다.</li>
+                    <li class="bal">&bull; 쿼리와 수식의 누락은 <strong class="text-slate-800">문서에 적힌 요청 문장과 결과를 대조</strong>해 찾은 것입니다. 실제 업무에서는 구두로 오간 조건이 더 있었을 수 있습니다.</li>
+                    <li class="bal">&bull; 센터 코드가 실제로 어떤 값인지는 <strong class="text-slate-800">이 문서로 확인할 수 없습니다.</strong> 지역 열을 쓰자는 제안은 스키마에 그 열이 있다는 사실에만 근거합니다.</li>
                     <li>&bull; 빈도별 연간 환산은 <strong class="text-slate-800">126분이 매번 그대로 절감된다는 가정</strong> 위에 있습니다. 실제로는 익숙해질수록 수동 작업 시간도 줄어듭니다.</li>
                 </ul>
             </div>
@@ -750,9 +753,10 @@
             
             <div class="relative z-10 flex flex-col items-center">
                 <h3 class="text-3xl font-extrabold mb-4 tracking-tight">업무 효율 개선 효과를 정리했습니다</h3>
-                <p class="text-slate-300 text-sm md:text-base max-w-2xl mx-auto mb-10 leading-relaxed word-break-keep">
+                <p class="text-slate-300 text-sm md:text-base max-w-2xl mx-auto mb-10 leading-relaxed word-break-keep bal">
                     기술이나 코딩 지식 자체보다 더 중요한 것은 <strong>'문제를 끝까지 파고들어 해답을 찾아내는 집요함'</strong>이라고 생각합니다. <br class="hidden md:block">
-                    AI라는 강력한 도구를 무기로 삼아 복잡한 데이터를 단순화하고, 물류 현장에 필요한 오퍼레이션 개선안을 정리했습니다.
+                    AI라는 강력한 도구를 무기로 삼아 복잡한 데이터를 단순화하고, <br class="hidden md:block">
+                    물류 현장에 필요한 오퍼레이션 개선안을 정리했습니다.
                 </p>
             </div>
         </section>
@@ -992,7 +996,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const ctx = document.getElementById('impactChart').getContext('2d');
             
-            Chart.defaults.font.family = "'Pretendard', sans-serif";
+            Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";
             
             new Chart(ctx, {
                 type: 'bar',

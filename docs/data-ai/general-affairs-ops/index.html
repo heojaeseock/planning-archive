@@ -21,9 +21,11 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="총무·경영지원 업무 자동화 기획">
 <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="tailwind.css">
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
+    <script>Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";</script>
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
         
@@ -34,7 +36,7 @@
         }
         
         body {
-            font-family: 'Pretendard', sans-serif;
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
             background-color: #ffffff;
             color: #37352f;
             line-height: 1.75;
@@ -97,6 +99,7 @@
         }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -190,7 +193,7 @@
                     <div class="bg-gray-50 border border-gray-100 p-7 rounded-2xl">
                         <div class="text-3xl mb-4">🗣️</div>
                         <h4 class="font-bold mb-3 text-lg text-gray-900">IT 문의 대응의 비효율성</h4>
-                        <p class="text-sm text-gray-600 leading-relaxed">
+                        <p class="text-sm text-gray-600 leading-relaxed bal">
                     "프로그램 권한이 없다고 뜹니다", "복지 신청은 어디서 하나요?"와 같은 단순 반복 문의가 쏟아집니다. <br class="hidden md:block">
                     담당자가 일일이 응대하는 것은 핵심 기획 업무의 몰입을 방해하는 가장 큰 요인입니다.
                 </p>
@@ -219,7 +222,8 @@
                     </li>
                     <li>
                         <strong class="text-gray-900">시각적 알림 및 비용 방어:</strong> 
-                        조건부 서식을 적용하여 고가의 라이선스 만료 7일 전, 미반납 자산 등을 붉은색으로 자동 강조하여 불필요한 결제를 사전 차단합니다.
+                        조건부 서식을 적용하여 고가의 라이선스 만료 7일 전, <br class="hidden md:block">
+                    미반납 자산 등을 붉은색으로 자동 강조하여 불필요한 결제를 사전 차단합니다.
                     </li>
                     <li>
                         <strong class="text-gray-900">오류 차단:</strong> 
@@ -261,13 +265,15 @@
                     <h3 class="text-lg font-bold text-purple-900 mb-3">🤖 약점 극복: 시스템을 통한 효율적인 1차 대응</h3>
                     <p class="text-sm text-purple-800 leading-relaxed">
                     모든 PC 하드웨어 장애를 내부에서 직접 고치는 것은 효율적이지 않습니다. <br class="hidden md:block">
-                    문의의 대부분을 차지하는 <strong>단순 설정 및 권한 문의는 AI 챗봇이 즉각 해결</strong>하고, 실제 기기 고장처럼 사람이 가야 하는 건은 전담 파트너사로 자동 연결되도록 <strong>대응 단계를 분리</strong>합니다.
+                    문의의 대부분을 차지하는 <strong>단순 설정 및 권한 문의는 AI 챗봇이 즉각 해결</strong>하고, <br class="hidden md:block">
+                    실제 기기 고장처럼 사람이 가야 하는 건은 전담 파트너사로 자동 연결되도록 <strong>대응 단계를 분리</strong>합니다.
                 </p>
                 </div>
 
                 <p class="mb-8 text-gray-700">
                     복잡한 신규 게임 시스템과 콘텐츠를 유저가 직관적으로 이해할 수 있도록 <strong>'사용자 맞춤형 콘텐츠 가이드'를 기획했던 노하우</strong>를 사내로 가져옵니다. <br class="hidden md:block">
-                    사내망 설정법과 복잡한 복지 신청 절차를 임직원 누구나 따라 하기 쉽게 규격화하고, 이를 사내 메신저 연동 AI에 학습시켜 총무팀의 단순 응대 리소스를 크게 감축합니다.
+                    사내망 설정법과 복잡한 복지 신청 절차를 임직원 누구나 따라 하기 쉽게 규격화하고, <br class="hidden md:block">
+                    이를 사내 메신저 연동 AI에 학습시켜 총무팀의 단순 응대 리소스를 크게 감축합니다.
                 </p>
 
                 <!-- 아코디언 버튼 -->
@@ -523,7 +529,7 @@
                         </div>
                         <div class="bg-amber-50 rounded-lg p-5 border border-amber-200">
                             <p class="text-xs font-black text-amber-700 mb-2">파일 기반의 한계</p>
-                            <p class="text-xs text-gray-600 leading-relaxed">
+                            <p class="text-xs text-gray-600 leading-relaxed bal">
                     동시 편집 충돌과 버전 분기가 생기고, <strong class="text-gray-800">인사 데이터가 담긴 파일이 개별 단말에 산재</strong>합니다. <br class="hidden md:block">
                     보안 관점에서 별도 관리가 필요합니다.
                 </p>
@@ -549,7 +555,7 @@
                     급한 건이 챗봇 단계에서 시간을 소모하면 도입 전보다 나빠집니다.
                 </p>
                     <ul class="space-y-2 text-xs text-gray-600 leading-relaxed mb-5">
-                        <li>&bull; <strong class="text-gray-800">에스컬레이션 상한:</strong> 챗봇 응대 2회 내 미해결이면 자동으로 담당자에게 넘깁니다. 유저가 &lsquo;상담원 연결&rsquo;을 즉시 고를 수 있는 경로도 항상 열어 둡니다.</li>
+                        <li class="bal">&bull; <strong class="text-gray-800">에스컬레이션 상한:</strong> 챗봇 응대 2회 내 미해결이면 자동으로 담당자에게 넘깁니다. 유저가 &lsquo;상담원 연결&rsquo;을 즉시 고를 수 있는 경로도 항상 열어 둡니다.</li>
                         <li>&bull; <strong class="text-gray-800">긴급 우회:</strong> 네트워크 단절처럼 업무 중단급 사안은 <strong>챗봇을 건너뛰는 별도 채널</strong>을 둡니다.</li>
                         <li>&bull; <strong class="text-gray-800">지식 갱신:</strong> 복지 절차나 포털 메뉴가 바뀌면 챗봇은 <strong>옛 안내를 자신 있게 반복</strong>합니다. 절차 변경 시 챗봇 지식 갱신을 필수 단계로 넣어야 합니다.</li>
                     </ul>
@@ -579,14 +585,14 @@
                         </div>
                         <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
                             <p class="text-xs font-black text-gray-800 mb-1">해제 절차</p>
-                            <p class="text-xs text-gray-600 leading-relaxed">
+                            <p class="text-xs text-gray-600 leading-relaxed bal">
                     발동보다 <strong class="text-gray-800">해제 기준</strong>이 더 자주 빠집니다. <br class="hidden md:block">
                     언제 정상 복귀를 알릴지 함께 정의해야 합니다.
                 </p>
                         </div>
                         <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
                             <p class="text-xs font-black text-gray-800 mb-1">SLA 선행</p>
-                            <p class="text-xs text-gray-600 leading-relaxed">
+                            <p class="text-xs text-gray-600 leading-relaxed bal">
                     파트너사 핫라인은 <strong class="text-gray-800">계약이 있어야 작동</strong>합니다. <br class="hidden md:block">
                     협약 체결과 대응 시간 명문화가 프로세스보다 먼저입니다.
                 </p>
@@ -599,19 +605,22 @@
                     <div class="bg-white border-2 border-green-200 rounded-xl p-6">
                         <p class="text-[11px] font-black tracking-wide text-green-700 mb-4">도입 후 측정할 지표</p>
                         <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
-                            <li>&bull; <strong class="text-gray-800">순 절감 시간:</strong> 자산 대장 절감분에서 <strong>대장 유지·챗봇 지식 갱신 시간을 차감</strong>한 값</li>
-                            <li>&bull; <strong class="text-gray-800">라이선스 비용 절감:</strong> 미사용 라이선스 수 &times; 단가 &times; 방치 기간 &mdash; 만료 알림 도입 전후 비교</li>
+                            <li class="bal">&bull; <strong class="text-gray-800">순 절감 시간:</strong> 자산 대장 절감분에서 <strong>대장 유지·챗봇 지식 갱신 시간을 차감</strong>한 값</li>
+                            <li class="bal">&bull; <strong class="text-gray-800">라이선스 비용 절감:</strong> 미사용 라이선스 수 &times; 단가 &times; 방치 기간 &mdash; 만료 알림 도입 전후 비교</li>
                             <li>&bull; <strong class="text-gray-800">자산 대장 정확도:</strong> 실물 재고 조사와 대장의 불일치 건수</li>
-                            <li>&bull; <strong class="text-gray-800">챗봇 해결률과 지연:</strong> 1차 해결 비율, 그리고 <strong>에스컬레이션 건의 총 소요 시간</strong></li>
+                            <li>&bull; <strong class="text-gray-800">챗봇 해결률과 지연:</strong> 1차 해결 비율, <br class="hidden md:block">
+                    그리고 <strong>에스컬레이션 건의 총 소요 시간</strong></li>
                             <li>&bull; <strong class="text-gray-800">오탐률:</strong> 위기 대응 발동 중 실제 장애가 아닌 비율</li>
                         </ul>
                     </div>
                     <div class="bg-white border-2 border-gray-200 rounded-xl p-6">
                         <p class="text-[11px] font-black tracking-wide text-gray-400 mb-4">이 제안서의 한계</p>
                         <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
-                            <li>&bull; 임직원 수와 부하 지수는 <strong class="text-gray-800">성장 추세를 표현한 모델값</strong>이며 특정 기업의 실측 데이터가 아닙니다. 2024는 예상, 2025는 목표로 표기된 값입니다.</li>
+                            <li>&bull; 임직원 수와 부하 지수는 <strong class="text-gray-800">성장 추세를 표현한 모델값</strong>이며 특정 기업의 실측 데이터가 아닙니다. 2024는 예상, <br class="hidden md:block">
+                    2025는 목표로 표기된 값입니다.</li>
                             <li>&bull; 부하 지수는 <strong class="text-gray-800">단위가 정의되지 않은 상대 지표</strong>입니다. 실제 도입 시에는 문의 건수 &middot; 처리 시간처럼 셀 수 있는 값으로 대체해야 합니다.</li>
-                            <li>&bull; 4시간 &rarr; 1시간은 <strong class="text-gray-800">추정값</strong>이며, 자산 규모와 데이터 상태에 따라 크게 달라집니다.</li>
+                            <li>&bull; 4시간 &rarr; 1시간은 <strong class="text-gray-800">추정값</strong>이며, <br class="hidden md:block">
+                    자산 규모와 데이터 상태에 따라 크게 달라집니다.</li>
                             <li>&bull; 챗봇 &middot; 메신저 연동 가능 여부는 <strong class="text-gray-800">사용 중인 도구와 계약</strong>에 종속됩니다.</li>
                             <li>&bull; 게임 운영 경험의 적용 가능성은 <strong class="text-gray-800">업무 구조의 유사성</strong>에 근거한 판단이며, 성과로 증명된 것은 아닙니다.</li>
                         </ul>

@@ -26,7 +26,7 @@
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
         body {
-            font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
             background-color: #f8fafc; /* Slate 50 */
             color: #1e293b; /* Slate 800 */
             word-break: keep-all; 
@@ -79,6 +79,7 @@
         }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -300,7 +301,8 @@
                 </p>
                 <p class="text-sm md:text-base leading-relaxed break-keep">
                     즉 아스트랄 도감과 장비 추출은 소모를 늘리는 동시에 <strong class="text-amber-300">해당 사냥터의 공급도 늘립니다.</strong> <br class="hidden md:block">
-                    순환 구조가 자칫 <strong class="text-amber-300">가속 구조</strong>가 될 수 있으므로, 소모처에는 반드시 <strong class="text-white">일일 처리 한도나 결과물 상한</strong>이 함께 걸려야 소모 속도가 공급 속도를 앞지르는 상태를 유지할 수 있습니다.
+                    순환 구조가 자칫 <strong class="text-amber-300">가속 구조</strong>가 될 수 있으므로, <br class="hidden md:block">
+                    소모처에는 반드시 <strong class="text-white">일일 처리 한도나 결과물 상한</strong>이 함께 걸려야 소모 속도가 공급 속도를 앞지르는 상태를 유지할 수 있습니다.
                 </p>
             </div>
 
@@ -406,7 +408,7 @@
                             <span class="font-bold text-green-600 break-keep">3단계. 재화 소모처 연계 기획</span>
                             <span id="m-icon3" class="text-slate-400 transition-transform duration-300 flex-shrink-0 ml-2">▼</span>
                         </button>
-                        <div id="manual3" class="hidden p-4 bg-slate-50 text-sm text-slate-600 border-t border-slate-200 leading-relaxed">
+                        <div id="manual3" class="hidden p-4 bg-slate-50 text-sm text-slate-600 border-t border-slate-200 leading-relaxed bal">
                             이미 재화가 초과 공급되어 경제 밸런스에 타격이 예상될 경우, 유저의 반발을 최소화하기 위해 <strong>잉여 재화를 매력적인 소모품으로 교환할 수 있는 이벤트나 제작식</strong>을 기획하여 시장의 자연스러운 소모를 유도합니다.
                         </div>
                     </div>
@@ -431,8 +433,8 @@
                     <p class="text-[10px] font-black tracking-wide text-blue-500 mb-4">1차 지표 &middot; 균형 감시</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed break-keep">
                         <li>&bull; <strong class="text-slate-800">공급 대비 소모 비율:</strong> 일간 하위 장비 생성량 &divide; 시스템 소모량. 1을 넘는 상태가 이어지면 재고 누적 경보</li>
-                        <li>&bull; <strong class="text-slate-800">거래소 하위 장비 시세:</strong> 기축 통화 대비 추이. 설정한 하한선 이탈 시 알림</li>
-                        <li>&bull; <strong class="text-slate-800">미판매 재고 회전일:</strong> 등록된 매물이 소진되는 데 걸리는 평균 일수</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">거래소 하위 장비 시세:</strong> 기축 통화 대비 추이. 설정한 하한선 이탈 시 알림</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">미판매 재고 회전일:</strong> 등록된 매물이 소진되는 데 걸리는 평균 일수</li>
                     </ul>
                 </div>
                 <div class="bg-white rounded-2xl border-2 border-blue-200 p-6">
@@ -440,7 +442,7 @@
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed break-keep">
                         <li>&bull; <strong class="text-slate-800">소모처 단계별 통과율:</strong> 도감 등록 &rarr; 추출 &rarr; 포스 코어 제작. 특정 단계에서 급락하면 그 지점이 병목</li>
                         <li>&bull; <strong class="text-slate-800">사냥터 인구 분포:</strong> 파밍이 한 곳에 몰리는 정도. 문제 정의의 출발점이었던 집중 현상이 실제로 완화됐는지</li>
-                        <li>&bull; <strong class="text-slate-800">정체 구간 이탈률:</strong> 목표 2가 겨냥한 성장 정체 구간의 이탈이 줄었는지</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">정체 구간 이탈률:</strong> 목표 2가 겨냥한 성장 정체 구간의 이탈이 줄었는지</li>
                     </ul>
                 </div>
             </div>
@@ -520,7 +522,7 @@
                         </div>
                         <div class="bg-white rounded-xl p-5 border border-rose-200">
                             <p class="text-xs font-black text-rose-700 mb-2">대량 아이템은 조용함</p>
-                            <p class="text-xs text-slate-600 leading-relaxed break-keep">
+                            <p class="text-xs text-slate-600 leading-relaxed break-keep bal">
                     매터리얼 코어는 <strong class="text-slate-800">5,000개가 초과 생성되어도</strong> 걸리지 않습니다. <br class="hidden md:block">
                     인플레이션 총량으로 보면 훨씬 큰 사건입니다.
                 </p>
@@ -564,7 +566,7 @@
                         </div>
                         <div class="bg-white rounded-xl p-5 border border-amber-200">
                             <p class="text-xs font-black text-amber-800 mb-2">매터리얼 코어 10% 초과</p>
-                            <p class="text-xs text-slate-600 leading-relaxed break-keep">막대 길이 변화가 <strong class="text-slate-800">20분의 1 수준</strong>이라 눈으로는 거의 구분되지 않습니다.</p>
+                            <p class="text-xs text-slate-600 leading-relaxed break-keep bal">막대 길이 변화가 <strong class="text-slate-800">20분의 1 수준</strong>이라 눈으로는 거의 구분되지 않습니다.</p>
                         </div>
                     </div>
                     <p class="text-slate-700 leading-relaxed break-keep text-sm">
@@ -590,7 +592,8 @@
                         <p class="text-sm font-black text-slate-900 mb-2">Kill-Switch는 정상 유저에게도 페널티입니다</p>
                         <p class="text-xs text-slate-600 leading-relaxed break-keep">
                     사냥터 임시 제한은 확산을 막는 가장 빠른 수단이지만, <strong class="text-slate-800">문제와 무관한 유저의 플레이도 함께 중단</strong>시킵니다. <br class="hidden md:block">
-                    발동 기준과 최대 지속 시간을 사전에 문서화하고, 발동 시 <strong class="text-slate-800">공지 문구와 보상 기준</strong>을 미리 준비해 두어야 운영 리스크가 관리됩니다.
+                    발동 기준과 최대 지속 시간을 사전에 문서화하고, <br class="hidden md:block">
+                    발동 시 <strong class="text-slate-800">공지 문구와 보상 기준</strong>을 미리 준비해 두어야 운영 리스크가 관리됩니다.
                 </p>
                     </div>
                 </div>
@@ -608,14 +611,14 @@
                     </div>
                     <div class="bg-white/5 rounded-xl p-5 border border-white/10">
                         <p class="text-sm font-bold text-white mb-2">수치 미확정</p>
-                        <p class="text-xs text-slate-300 leading-relaxed break-keep">
+                        <p class="text-xs text-slate-300 leading-relaxed break-keep bal">
                     드롭률 &middot; 소모 상한 &middot; 방어 하한선은 <strong class="text-white">구조와 항목만 제시</strong>했습니다. <br class="hidden md:block">
                     실제 값은 서버 로그와 시뮬레이션으로 정해야 합니다.
                 </p>
                     </div>
                     <div class="bg-white/5 rounded-xl p-5 border border-white/10">
                         <p class="text-sm font-bold text-white mb-2">유저 행동 가정</p>
-                        <p class="text-xs text-slate-300 leading-relaxed break-keep">
+                        <p class="text-xs text-slate-300 leading-relaxed break-keep bal">
                     소모처가 생기면 이용할 것이라는 가정에 기대고 있습니다. <br class="hidden md:block">
                     <strong class="text-white">기대 보상이 파밍 시간에 못 미치면 이용되지 않습니다.</strong>
                 </p>
@@ -695,7 +698,7 @@
         }
 
         Chart.defaults.color = '#64748b'; // slate-500
-        Chart.defaults.font.family = "'Pretendard', sans-serif";
+        Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";
 
         let vocChartInstance = null;
         let monitoringChartInstance = null;

@@ -25,7 +25,7 @@
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
         body { 
-            font-family: 'Pretendard', sans-serif; 
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; 
             background-color: #f3f4f6; 
             color: #1f2937; 
             margin: 0;
@@ -125,6 +125,7 @@
         }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -148,7 +149,7 @@
                         <h1 class="text-4xl md:text-5xl font-black leading-tight mb-5 tracking-tight">
                             Gini Jump
                         </h1>
-                        <p class="text-gray-300 text-sm md:text-base leading-relaxed max-w-2xl mb-6 font-medium">
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed max-w-2xl mb-6 font-medium bal">
                     코로나19 팬데믹 시기, 여행에 대한 대리 만족을 주는 '방구석 세계 여행' 콘셉트의 2D 모바일 점프 아케이드 게임입니다. <br class="hidden md:block">
                     자이로센서를 활용한 직관적인 조작과 각국의 랜드마크를 담은 픽셀 아트 배경을 구현하여 유니티 엔진 기반으로 실제 앱 출시까지 완수했습니다.
                 </p>
@@ -595,7 +596,8 @@
                     <div class="bg-white rounded-xl p-5 border border-gray-200">
                         <p class="text-xs text-gray-600 leading-relaxed">
                     <strong class="text-gray-800">이 결정을 뒷받침하는 논리:</strong> 15주 안에 출시까지 가야 하는 조건에서는 <strong>완주 가능성이 아이디어의 신선함보다 앞섭니다.</strong> <br class="hidden md:block">
-                    제작 용이성과 협업 가능성은 곧 &lsquo;일정 안에 끝낼 수 있는가&rsquo;를 뜻하므로, 세 항목의 단순 합산으로 보이지만 실질적으로는 <strong>일정 리스크에 가중치를 둔 선택</strong>이었습니다. <br class="hidden md:block">
+                    제작 용이성과 협업 가능성은 곧 &lsquo;일정 안에 끝낼 수 있는가&rsquo;를 뜻하므로, <br class="hidden md:block">
+                    세 항목의 단순 합산으로 보이지만 실질적으로는 <strong>일정 리스크에 가중치를 둔 선택</strong>이었습니다. <br class="hidden md:block">
                     결과적으로 실제 출시까지 완료했다는 점에서 이 판단은 목표에 부합했습니다.
                 </p>
                     </div>
@@ -617,8 +619,8 @@
                         <div class="bg-white rounded-xl p-5 border-2 border-rose-200">
                             <p class="text-xs font-black text-rose-700 mb-3">내준 것</p>
                             <ul class="space-y-2 text-xs text-gray-600 leading-relaxed">
-                                <li>&bull; <strong class="text-gray-800">자세 제약:</strong> 누워서 하거나 이동 중에는 기울기 기준이 흔들려 플레이가 어렵습니다. 캐주얼 게임의 주요 플레이 상황이 배제됩니다</li>
-                                <li>&bull; <strong class="text-gray-800">정밀도 한계:</strong> 미세 조작이 어려워 난이도를 좁게 설계해야 합니다</li>
+                                <li class="bal">&bull; <strong class="text-gray-800">자세 제약:</strong> 누워서 하거나 이동 중에는 기울기 기준이 흔들려 플레이가 어렵습니다. 캐주얼 게임의 주요 플레이 상황이 배제됩니다</li>
+                                <li class="bal">&bull; <strong class="text-gray-800">정밀도 한계:</strong> 미세 조작이 어려워 난이도를 좁게 설계해야 합니다</li>
                                 <li>&bull; <strong class="text-gray-800">기기 편차:</strong> 센서 품질과 손떨림에 따라 체감이 달라집니다</li>
                             </ul>
                         </div>
@@ -718,14 +720,14 @@
                     <div class="grid md:grid-cols-2 gap-5 mb-5">
                         <div class="bg-white rounded-xl p-5 border-2 border-rose-200">
                             <p class="text-xs font-black text-rose-700 mb-3">창의성 쪽은 여유가 없습니다</p>
-                            <p class="text-xs text-gray-600 leading-relaxed">
+                            <p class="text-xs text-gray-600 leading-relaxed bal">
                     창의성을 다른 두 항목의 <strong class="text-gray-800">1.5배</strong>로만 보면 기니점프와 개미핥기가 동점이 되고, 2배가 되면 개미핥기가 앞섭니다. <br class="hidden md:block">
                     1.5배는 &lsquo;조금 더 중요하다&rsquo; 정도의 무게이므로 <strong class="text-gray-800">경계가 매우 가깝습니다.</strong>
                 </p>
                         </div>
                         <div class="bg-white rounded-xl p-5 border-2 border-emerald-200">
                             <p class="text-xs font-black text-emerald-700 mb-3">제작 용이성 쪽은 여유가 큽니다</p>
-                            <p class="text-xs text-gray-600 leading-relaxed">
+                            <p class="text-xs text-gray-600 leading-relaxed bal">
                     반대로 제작 용이성의 무게를 <strong class="text-gray-800">절반으로 깎아도</strong> 기니점프는 동점을 유지합니다. <br class="hidden md:block">
                     절반보다 조금이라도 크면 계속 1위입니다. <br class="hidden md:block">
                     즉 이 선정은 <strong class="text-gray-800">제작 용이성을 얼마나 중시했는지에는 둔감하고, 창의성을 얼마나 중시했는지에 민감</strong>합니다.
@@ -752,7 +754,8 @@
                 </p>
                         <p class="text-xs text-gray-300 leading-relaxed">
                     따라서 실질적인 결정은 <strong class="text-amber-400">창의성과 제작 용이성 사이의 양자택일</strong>이었고, 비교 대상은 기니점프와 개미핥기 두 개였습니다. <br class="hidden md:block">
-                    대안 검토의 폭은 후보 개수가 아니라 <strong class="text-white">서로 우열이 갈리는 후보의 개수</strong>로 읽히므로, 늘보런처럼 완전히 밀리는 후보는 표에 남기더라도 그 사실을 함께 적는 편이 낫습니다.
+                    대안 검토의 폭은 후보 개수가 아니라 <strong class="text-white">서로 우열이 갈리는 후보의 개수</strong>로 읽히므로, <br class="hidden md:block">
+                    늘보런처럼 완전히 밀리는 후보는 표에 남기더라도 그 사실을 함께 적는 편이 낫습니다.
                 </p>
                     </div>
                 </div>
@@ -789,7 +792,7 @@
                     후보 세 개가 가능 범위의 좁은 구간에 몰려 있으므로, <strong class="text-gray-900">척도가 후보를 잘 갈라주지 못했다</strong>는 뜻입니다.
                 </p>
                     <div class="bg-white rounded-xl p-5 border border-gray-200">
-                        <p class="text-xs text-gray-600 leading-relaxed">
+                        <p class="text-xs text-gray-600 leading-relaxed bal">
                     <strong class="text-gray-800">이것이 앞의 민감도와 이어지는 이유:</strong> 변별력이 낮은 척도에서 나온 1점 차는 평가자가 한 항목에서 한 칸을 달리 매기면 사라집니다. <br class="hidden md:block">
                     점수화 자체는 <strong class="text-gray-800">감으로 고르지 않았다는 기록</strong>이 되므로 의미가 있습니다. <br class="hidden md:block">
                     다만 근거의 무게를 점수 차이에 두면 흔들리므로, <strong class="text-gray-900">각 점수를 그렇게 매긴 이유를 한 줄씩 적는 것</strong>이 척도를 늘리거나 후보를 더하는 것보다 효과가 큽니다.
@@ -833,7 +836,8 @@
                     <div class="bg-white rounded-xl p-5 border border-gray-200">
                         <p class="text-xs text-gray-600 leading-relaxed">
                     <strong class="text-gray-800">기기 편차를 피하면서 경쟁을 살리는 방향:</strong> 절대 점수 대신 <strong class="text-gray-900">직전 기록 대비 향상폭</strong>이나 <strong class="text-gray-900">같은 테마 안에서의 구간별 기록</strong>을 비교 대상으로 삼으면 기기 성능보다 숙련도가 반영됩니다. <br class="hidden md:block">
-                    4번 탭의 개인 기록 방식이 이미 이 방향에 가까우므로, 5번 탭의 문장을 개인 기록 기준으로 맞추는 것이 구현 부담도 적고 논리도 일관됩니다.
+                    4번 탭의 개인 기록 방식이 이미 이 방향에 가까우므로, <br class="hidden md:block">
+                    5번 탭의 문장을 개인 기록 기준으로 맞추는 것이 구현 부담도 적고 논리도 일관됩니다.
                 </p>
                     </div>
                 </div>
@@ -845,17 +849,18 @@
                         <div class="bg-white/5 rounded-xl p-6 border border-white/10">
                             <p class="text-sm font-bold text-emerald-400 mb-3">증명된 것</p>
                             <ul class="space-y-2 text-xs text-gray-300 leading-relaxed">
-                                <li>&bull; 4인 팀이 15주 안에 <strong class="text-white">기획부터 출시까지 완주</strong>할 수 있다는 실행력</li>
+                                <li class="bal">&bull; 4인 팀이 15주 안에 <strong class="text-white">기획부터 출시까지 완주</strong>할 수 있다는 실행력</li>
                                 <li>&bull; 유니티 &middot; 자이로 입력 &middot; 픽셀 아트 배경 스크롤을 <strong class="text-white">실제 디바이스에서 동작</strong>시키는 구현 파이프라인</li>
-                                <li>&bull; 후보를 항목별로 점수화해 <strong class="text-white">제약에 맞는 선택을 내리는 의사결정 과정</strong></li>
+                                <li class="bal">&bull; 후보를 항목별로 점수화해 <strong class="text-white">제약에 맞는 선택을 내리는 의사결정 과정</strong></li>
                             </ul>
                         </div>
                         <div class="bg-white/5 rounded-xl p-6 border border-white/10">
                             <p class="text-sm font-bold text-amber-400 mb-3">증명되지 않은 것</p>
                             <ul class="space-y-2 text-xs text-gray-300 leading-relaxed">
-                                <li>&bull; <strong class="text-white">상업적 성과</strong> &mdash; 출시 이후의 설치 수, 잔존율, 매출은 본 문서의 범위에 없습니다</li>
+                                <li>&bull; <strong class="text-white">상업적 성과</strong> &mdash; 출시 이후의 설치 수, <br class="hidden md:block">
+                    잔존율, 매출은 본 문서의 범위에 없습니다</li>
                                 <li>&bull; <strong class="text-white">랭킹 시스템의 잔존율 효과</strong> &mdash; 구현은 했으나 실제 재방문 기여는 측정되지 않았습니다</li>
-                                <li>&bull; <strong class="text-white">테마 확장의 효용</strong> &mdash; 4개국 이후 추가 테마를 붙여 반응을 본 적은 없습니다</li>
+                                <li class="bal">&bull; <strong class="text-white">테마 확장의 효용</strong> &mdash; 4개국 이후 추가 테마를 붙여 반응을 본 적은 없습니다</li>
                             </ul>
                         </div>
                     </div>

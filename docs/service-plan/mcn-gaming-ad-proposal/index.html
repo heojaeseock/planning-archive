@@ -26,12 +26,13 @@
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
+    <script>Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";</script>
     
     
 
     <style>
         body {
-            font-family: 'Pretendard', sans-serif;
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
             background-color: #F8FAFC; /* 아주 밝은 쿨그레이 배경 */
             color: #1E293B; /* 진한 먹색 텍스트로 가독성 확보 */
         }
@@ -90,6 +91,7 @@
         }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -134,7 +136,8 @@
         <div class="max-w-4xl mx-auto px-6">
             <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-6">사업 구조</h2>
             <p class="text-slate-600 leading-relaxed mb-4">
-                    MCN은 크리에이터가 소속된 매니지먼트 회사이며, Gaming AD는 게임사 광고를 소속 크리에이터 방송으로 집행하는 사업입니다. <br class="hidden md:block">
+                    MCN은 크리에이터가 소속된 매니지먼트 회사이며, <br class="hidden md:block">
+                    Gaming AD는 게임사 광고를 소속 크리에이터 방송으로 집행하는 사업입니다. <br class="hidden md:block">
                     부담은 두 구간입니다. <br class="hidden md:block">
                     매 건 새로 쓰는 제안 준비, 그리고 광고비가 이미 집행된 생방송 중의 돌발 상황입니다.
                 </p>
@@ -146,7 +149,8 @@
             <div class="text-center mb-16 max-w-2xl mx-auto">
                 <h2 class="text-3xl font-bold text-slate-900 mb-4">현장의 딜레마와 해결 목표</h2>
                 <p class="text-slate-500">
-                    현재 마케팅 대행사와 게임사가 각각 겪고 있는 핵심 고충을 파악하고, 이를 해결하여 MCN의 영업 경쟁력을 높입니다.
+                    현재 마케팅 대행사와 게임사가 각각 겪고 있는 핵심 고충을 파악하고, <br class="hidden md:block">
+                    이를 해결하여 MCN의 영업 경쟁력을 높입니다.
                 </p>
             </div>
 
@@ -156,7 +160,7 @@
                     <div class="hover-card p-8 rounded-2xl">
                         <div class="text-3xl mb-4">💼</div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">대행사의 고충 : 부족한 영업 시간</h3>
-                        <p class="text-slate-600">
+                        <p class="text-slate-600 bal">
                      매번 신규 게임을 분석하고 크리에이터를 매칭하는 제안서 작성 업무에 치여, <br class="hidden md:block">
                     정작 중요한 신규 게임사 발굴과 밀착 영업에 쓸 시간이 부족합니다.
                 </p>
@@ -164,7 +168,7 @@
                     <div class="hover-card p-8 rounded-2xl">
                         <div class="text-3xl mb-4">🏢</div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">게임사의 불안 : 생방송 리스크</h3>
-                        <p class="text-slate-600">
+                        <p class="text-slate-600 bal">
                      거액을 투자한 방송 중 게임 서버가 다운되거나 크리에이터의 말실수로 민심이 폭발할 경우, <br class="hidden md:block">
                     브랜드가 훼손될 수 있다는 통제 불가능한 리스크를 가장 두려워합니다.
                 </p>
@@ -178,7 +182,7 @@
                         <canvas id="resourceChart" role="img" aria-label="막대 차트. 항목 도입 전 (현재), 도입 후 (개선). 계열 단순 반복 업무 (제안서 작성 등), 고부가가치 업무 (신규 영업/기획)"></canvas>
                     </div>
                     <div class="mt-8 p-4 bg-white rounded-lg border-l-4 border-brand shadow-sm">
-                        <p class="text-sm text-slate-600">
+                        <p class="text-sm text-slate-600 bal">
                      <strong class="text-slate-900">데이터 산출 근거:</strong> 반복적인 크리에이터 탐색 및 초안 작성 시간을 단축하여, <br class="hidden md:block">
                     확보된 시간을 <span class="font-bold text-slate-900">영업 활동에 집중</span>할 수 있는 환경을 만듭니다.
                 </p>
@@ -207,7 +211,8 @@
                     <p class="text-slate-600 leading-relaxed">
                     출시 전인 신작 게임의 정보(세계관, 타겟층, 핵심 비즈니스 모델)는 게임사의 1급 기밀입니다. <br class="hidden md:block">
                     입력한 내용이 외부 서버로 전송되는 일반 AI 대신, 사내망에만 설치해 외부와 연결되지 않는 로컬 AI를 사용합니다. <br class="hidden md:block">
-                    신작 정보가 회사 밖으로 나가는 경로 자체를 만들지 않는 방식이라, 클라이언트가 가장 우려하는 유출 리스크를 구조적으로 차단할 수 있습니다.
+                    신작 정보가 회사 밖으로 나가는 경로 자체를 만들지 않는 방식이라, <br class="hidden md:block">
+                    클라이언트가 가장 우려하는 유출 리스크를 구조적으로 차단할 수 있습니다.
                 </p>
                 </div>
             </div>
@@ -352,7 +357,7 @@
     <section id="review" class="py-20 bg-white border-t border-slate-200">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">제안이 성립하는 조건</h2>
-            <p class="text-slate-600 leading-relaxed mb-12 max-w-3xl">
+            <p class="text-slate-600 leading-relaxed mb-12 max-w-3xl bal">
                     리소스 변화 수치를 계산하고, 두 솔루션이 실제로 작동하려면 <strong class="text-slate-900">계약과 인프라에서 무엇이 먼저 정해져야 하는지</strong> 정리했습니다.
                 </p>
 
@@ -410,14 +415,14 @@
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div class="bg-emerald-50 rounded-2xl p-6 border-2 border-emerald-200">
                         <p class="text-xs font-black text-emerald-700 mb-3">로컬 구축의 강점</p>
-                        <p class="text-xs text-slate-600 leading-relaxed">
+                        <p class="text-xs text-slate-600 leading-relaxed bal">
                     전송 경로가 없으므로 <strong class="text-slate-800">계약이나 약관에 의존하지 않습니다.</strong> <br class="hidden md:block">
                     기밀 유출을 구조로 막았다는 설명은 계약서 조항보다 설득력이 있습니다.
                 </p>
                     </div>
                     <div class="bg-amber-50 rounded-2xl p-6 border-2 border-amber-300">
                         <p class="text-xs font-black text-amber-800 mb-3">따라오는 부담</p>
-                        <p class="text-xs text-slate-600 leading-relaxed">
+                        <p class="text-xs text-slate-600 leading-relaxed bal">
                     모델을 돌릴 <strong class="text-slate-800">서버와 유지 인력</strong>이 필요합니다. <br class="hidden md:block">
                     콘텐츠 매니지먼트 회사에 이 역량이 없다면 도입 자체가 프로젝트가 됩니다.
                 </p>
@@ -445,10 +450,11 @@
                     실무에서 함께 보는 항목이 몇 개 더 있습니다.
                 </p>
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed mb-6">
-                    <li>&bull; <strong class="text-slate-800">경쟁사 광고 이력</strong> &mdash; 직전에 같은 장르 경쟁 게임 광고를 했다면 부적합합니다. 시청자가 진정성을 의심하고, 클라이언트도 꺼립니다. 매칭에서 <strong>먼저 걸러내야 하는 조건</strong>입니다</li>
+                    <li>&bull; <strong class="text-slate-800">경쟁사 광고 이력</strong> &mdash; 직전에 같은 장르 경쟁 게임 광고를 했다면 부적합합니다. 시청자가 진정성을 의심하고, <br class="hidden md:block">
+                    클라이언트도 꺼립니다. 매칭에서 <strong>먼저 걸러내야 하는 조건</strong>입니다</li>
                     <li>&bull; <strong class="text-slate-800">과거 유사 게임 성과</strong> &mdash; 같은 장르 방송의 시청자 수와 반응. 성향이 맞아도 성과가 없었다면 다시 확인할 필요가 있습니다</li>
                     <li>&bull; <strong class="text-slate-800">스케줄 가용성</strong> &mdash; 매칭이 맞아도 일정이 안 되면 제안이 무의미합니다. 이 정보는 사내에 있으므로 자동 확인이 가능합니다</li>
-                    <li>&bull; <strong class="text-slate-800">과거 논란 이력</strong> &mdash; 브랜드 안전 관점에서 확인이 필요합니다. 2번 솔루션이 방송 중 리스크를 다루는데, 매칭 단계에서 걸러내는 것이 더 앞선 방어입니다</li>
+                    <li class="bal">&bull; <strong class="text-slate-800">과거 논란 이력</strong> &mdash; 브랜드 안전 관점에서 확인이 필요합니다. 2번 솔루션이 방송 중 리스크를 다루는데, 매칭 단계에서 걸러내는 것이 더 앞선 방어입니다</li>
                 </ul>
                 <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
                     <p class="text-xs text-slate-600 leading-relaxed">
@@ -505,15 +511,15 @@
                         <li>&bull; <strong class="text-slate-800">제안서 작성 소요 시간</strong> &mdash; 초안 생성과 검수를 나눠 기록합니다. 목표 10은 검수만 남은 상태입니다</li>
                         <li>&bull; <strong class="text-slate-800">제안 수락률</strong> &mdash; 자동화 도입 전후 비교. 시간이 줄어도 수락률이 떨어지면 초안 품질 문제입니다</li>
                         <li>&bull; <strong class="text-slate-800">매칭 반송률</strong> &mdash; AI가 제안한 크리에이터가 담당자 검토에서 제외된 비율. 높으면 기준에 빠진 항목이 있습니다</li>
-                        <li>&bull; <strong class="text-slate-800">신규 게임사 접촉 건수</strong> &mdash; 확보한 60p가 실제로 영업으로 갔는지 보여주는 값입니다</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">신규 게임사 접촉 건수</strong> &mdash; 확보한 60p가 실제로 영업으로 갔는지 보여주는 값입니다</li>
                         <li>&bull; <strong class="text-slate-800">방송 중 사고 발생률과 대응 소요 시간</strong> &mdash; 계약 조항 도입 전후 비교</li>
                     </ul>
                 </div>
                 <div class="bg-white rounded-3xl border-2 border-slate-200 p-7">
                     <p class="text-sm font-black text-slate-500 mb-4">이 제안서의 한계</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li>&bull; 리소스 변화 수치는 본문에 밝힌 대로 <strong class="text-slate-800">기대치</strong>이며 도입 후 실측이 아닙니다.</li>
-                        <li>&bull; 두 항목의 합이 100이 되도록 구성한 <strong class="text-slate-800">상대 비중</strong>이라 절대 시간으로 환산할 수 없습니다.</li>
+                        <li class="bal">&bull; 리소스 변화 수치는 본문에 밝힌 대로 <strong class="text-slate-800">기대치</strong>이며 도입 후 실측이 아닙니다.</li>
+                        <li class="bal">&bull; 두 항목의 합이 100이 되도록 구성한 <strong class="text-slate-800">상대 비중</strong>이라 절대 시간으로 환산할 수 없습니다.</li>
                         <li>&bull; 로컬 AI의 <strong class="text-slate-800">구축 비용과 필요 사양</strong>은 계산하지 않았습니다. 모델 크기와 처리량에 따라 크게 달라집니다.</li>
                         <li>&bull; 매칭 품질은 <strong class="text-slate-800">사내 크리에이터 데이터의 정리 수준</strong>에 종속됩니다. 과거 성과가 기록되어 있지 않으면 자동 필터링이 불가능합니다.</li>
                         <li>&bull; 계약 조항 신설은 <strong class="text-slate-800">법무 검토와 클라이언트 협의</strong>가 선행됩니다. 제안서에서 약속할 수 있는 범위가 아닙니다.</li>

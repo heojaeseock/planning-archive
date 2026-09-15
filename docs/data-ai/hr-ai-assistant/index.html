@@ -23,9 +23,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
+    <script>Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";</script>
     <style>
         body { 
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif; 
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; 
             word-break: keep-all; /* 한글 단어 끊김 방지 */
         }
         .chart-container { 
@@ -44,6 +45,7 @@
         .notion-table th { background-color: #f8fafc; font-weight: 600; text-align: left; }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
@@ -110,7 +112,8 @@
                         </li>
                         <li class="flex items-start">
                             <span class="mr-2 mt-1 text-teal-500">▪️</span> 
-                            <div><strong>보안형 로컬 AI 생성기 도입:</strong><br>외부 서버 통신을 제한하고, 담당자의 브라우저 내부에서만 민감 정보를 결합하는 자체 자동화 문서 생성기를 기획하여 보안을 강화합니다.</div>
+                            <div><strong>보안형 로컬 AI 생성기 도입:</strong><br>외부 서버 통신을 제한하고, <br class="hidden md:block">
+                    담당자의 브라우저 내부에서만 민감 정보를 결합하는 자체 자동화 문서 생성기를 기획하여 보안을 강화합니다.</div>
                         </li>
                     </ul>
                 </div>
@@ -188,7 +191,8 @@
             </h2>
             <p class="text-slate-600 mb-8">
                     실무에 직접 도입하여 성공적으로 활용했던 AI 문서 자동 생성기 기획 경험을 응용한 핵심 보안 기능입니다. <br class="hidden md:block">
-                    연봉 계약서처럼 민감한 문서를 작성할 때, <strong>외부 AI 서버로는 개인정보(이름, 연봉 등)는 전송되지 않으며,</strong> 담당자의 브라우저 내부에서만 데이터가 안전하게 결합되는 과정을 체험해 보세요.
+                    연봉 계약서처럼 민감한 문서를 작성할 때, <strong>외부 AI 서버로는 개인정보(이름, <br class="hidden md:block">
+                    연봉 등)는 전송되지 않으며,</strong> 담당자의 브라우저 내부에서만 데이터가 안전하게 결합되는 과정을 체험해 보세요.
                 </p>
 
             <div class="flex flex-col md:flex-row gap-4 md:gap-8 mb-10 items-center justify-center text-center">
@@ -236,7 +240,8 @@
                             <div class="bg-white border border-blue-200 p-5 rounded-lg text-sm text-slate-600 font-mono h-56 overflow-y-auto leading-relaxed">
                                 [근로계약서 초안]<br><br>
                                 제 1조 (목적) 본 계약은 회사와 [CANDIDATE_NAME] 간의 근로 조건을 명확히 함을 목적으로 한다.<br><br>
-                                제 2조 (임금) [CANDIDATE_NAME]의 계약 연봉은 [SALARY_AMOUNT]으로 정하며, 제수당을 포함한 포괄임금으로 한다.<br><br>
+                                제 2조 (임금) [CANDIDATE_NAME]의 계약 연봉은 [SALARY_AMOUNT]으로 정하며, <br class="hidden md:block">
+                    제수당을 포함한 포괄임금으로 한다.<br><br>
                                 제 3조 (성실의무) 근로자는 회사의 제반 규정을 준수하며 부여된 업무를 성실히 수행하여야 한다.
                             </div>
                         </div>
@@ -270,13 +275,14 @@
                         <p class="text-sm text-slate-600 leading-relaxed">
                     반복적인 사내 문의 응대와 문서 템플릿 작성에 드는 <strong>주간 소요 시간을 크게 줄일 수 있습니다</strong>. <br class="hidden md:block">
                     도입 시 기대 수준이며 실측치는 아닙니다. <br class="hidden md:block">
-                    확보한 시간은 조직 문화 개선, 채용 기획 등 다른 HR 업무에 쓸 수 있습니다.
+                    확보한 시간은 조직 문화 개선, <br class="hidden md:block">
+                    채용 기획 등 다른 HR 업무에 쓸 수 있습니다.
                 </p>
                     </div>
                     <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-md hover:shadow-lg transition-shadow relative overflow-hidden">
                         <div class="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
                         <h3 class="font-bold text-lg text-slate-800 mb-3">🛡️ 개인정보 유출 경로 차단</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">
+                        <p class="text-sm text-slate-600 leading-relaxed bal">
                     이름, 연봉, 평가 등 민감한 <strong>인사 데이터가 외부 서버로 전송되는 경로 자체를 만들지 않습니다</strong>. <br class="hidden md:block">
                     민감 정보는 담당자 브라우저 안에서만 결합되므로 외부망 유출 경로가 차단됩니다. <br class="hidden md:block">
                     AI의 편리함과 속도는 취하되 보안 리스크는 줄이는 실무 환경을 만듭니다.
@@ -285,7 +291,7 @@
                     <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-md hover:shadow-lg transition-shadow relative overflow-hidden">
                         <div class="absolute top-0 left-0 w-1 h-full bg-purple-500"></div>
                         <h3 class="font-bold text-lg text-slate-800 mb-3">📚 HR 지식 자산의 중앙화</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">
+                        <p class="text-sm text-slate-600 leading-relaxed bal">
                      파편화되어 있던 HR 응대 히스토리와 정책을 <strong>노션 단일 채널로 자산화</strong>하여, 담당자 부재나 교체 시에도 일관된 정책 안내가 가능해집니다.
                 </p>
                     </div>
@@ -377,10 +383,10 @@
                 <div class="bg-rose-50 border-2 border-rose-200 rounded-xl p-5">
                     <p class="text-[11px] font-black tracking-wide text-rose-700 mb-3">이 구조로는 막히지 않는 것</p>
                     <ul class="space-y-2 text-sm text-slate-700 leading-relaxed">
-                        <li>&bull; <strong>브라우저에 남는 입력값</strong> &mdash; 임시 저장이 세션 종료 후에도 남으면 공용 단말에서 노출됩니다</li>
+                        <li class="bal">&bull; <strong>브라우저에 남는 입력값</strong> &mdash; 임시 저장이 세션 종료 후에도 남으면 공용 단말에서 노출됩니다</li>
                         <li>&bull; <strong>완성본의 전달 경로</strong> &mdash; 결합된 문서를 메신저나 메일로 보내는 순간 새 유출 경로가 생깁니다</li>
-                        <li>&bull; <strong>담당자의 실수</strong> &mdash; 값을 프롬프트 창에 직접 입력하면 구조가 무력화됩니다</li>
-                        <li>&bull; <strong>문서 종류 노출</strong> &mdash; &lsquo;연봉 계약서 양식&rsquo; 같은 요청 자체가 외부에 남습니다</li>
+                        <li class="bal">&bull; <strong>담당자의 실수</strong> &mdash; 값을 프롬프트 창에 직접 입력하면 구조가 무력화됩니다</li>
+                        <li class="bal">&bull; <strong>문서 종류 노출</strong> &mdash; &lsquo;연봉 계약서 양식&rsquo; 같은 요청 자체가 외부에 남습니다</li>
                     </ul>
                 </div>
             </div>
@@ -448,7 +454,7 @@
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="bg-white/10 rounded-lg p-4">
                         <p class="text-xs font-black text-amber-300 mb-1">답변 고지 문구</p>
-                        <p class="text-xs text-slate-300 leading-relaxed">
+                        <p class="text-xs text-slate-300 leading-relaxed bal">
                     모든 답변 끝에 <strong class="text-white">&lsquo;참고용 안내이며 정식 기준은 규정 원문&rsquo;</strong>을 붙입니다. <br class="hidden md:block">
                     상세 링크를 필수 포함하도록 한 기존 지침과 결합하면 자연스럽습니다.
                 </p>
@@ -462,14 +468,14 @@
                     </div>
                     <div class="bg-white/10 rounded-lg p-4">
                         <p class="text-xs font-black text-amber-300 mb-1">에스컬레이션 경로</p>
-                        <p class="text-xs text-slate-300 leading-relaxed">
+                        <p class="text-xs text-slate-300 leading-relaxed bal">
                     규정 범위를 벗어난 문의는 <strong class="text-white">추측하지 않고 담당자에게 연결</strong>합니다. <br class="hidden md:block">
                     &lsquo;모른다&rsquo;고 답할 수 있게 만드는 것이 정확도의 핵심입니다.
                 </p>
                     </div>
                     <div class="bg-white/10 rounded-lg p-4">
                         <p class="text-xs font-black text-amber-300 mb-1">답변 로그 보관</p>
-                        <p class="text-xs text-slate-300 leading-relaxed">
+                        <p class="text-xs text-slate-300 leading-relaxed bal">
                     누구에게 무엇을 안내했는지 남깁니다. <br class="hidden md:block">
                     <strong class="text-white">분쟁 시 근거</strong>가 되고, 오답 패턴을 찾아 프롬프트를 고치는 재료가 됩니다.
                 </p>
@@ -489,8 +495,8 @@
                 <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
                     <p class="text-[11px] font-black tracking-wide text-emerald-700 mb-4">측정할 지표</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li>&bull; <strong class="text-slate-800">문의 건수 변화:</strong> 메신저로 인입되는 반복 문의 수 &mdash; 도입 전 4주 평균과 비교</li>
-                        <li>&bull; <strong class="text-slate-800">순 절감 시간:</strong> 응대 &middot; 문서 작성 절감분에서 <strong>DB 갱신과 품질 관리 시간을 차감</strong>한 값</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">문의 건수 변화:</strong> 메신저로 인입되는 반복 문의 수 &mdash; 도입 전 4주 평균과 비교</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">순 절감 시간:</strong> 응대 &middot; 문서 작성 절감분에서 <strong>DB 갱신과 품질 관리 시간을 차감</strong>한 값</li>
                         <li>&bull; <strong class="text-slate-800">AI 답변 정확도:</strong> 주간 표본을 담당자가 검수해 오답률 산출</li>
                         <li>&bull; <strong class="text-slate-800">에스컬레이션 비율:</strong> 담당자 연결로 넘어간 비율 &mdash; 너무 높으면 DB 범위가 좁고, 너무 낮으면 무리한 추측을 하고 있을 가능성</li>
                         <li>&bull; <strong class="text-slate-800">DB 신선도:</strong> 최종 갱신일이 기준 기간을 넘긴 항목 수</li>
@@ -500,7 +506,7 @@
                 <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
                     <p class="text-[11px] font-black tracking-wide text-slate-500 mb-4">이 기획의 한계</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li>&bull; 주간 15시간 &rarr; 2시간은 <strong class="text-slate-800">도입 전후 비교를 위한 추정값</strong>이며 계측된 실적이 아닙니다. 조직 규모와 문의 특성에 따라 크게 달라집니다.</li>
+                        <li class="bal">&bull; 주간 15시간 &rarr; 2시간은 <strong class="text-slate-800">도입 전후 비교를 위한 추정값</strong>이며 계측된 실적이 아닙니다. 조직 규모와 문의 특성에 따라 크게 달라집니다.</li>
                         <li>&bull; 노션 &middot; 사내 메신저 연동 방식은 <strong class="text-slate-800">사용 중인 도구와 계약 조건</strong>에 종속됩니다. 연동 가능 여부부터 확인이 필요합니다.</li>
                         <li>&bull; 보안 구조는 <strong class="text-slate-800">기획 수준의 설계</strong>이며, 실제 도입에는 보안 부서의 검토와 사내 지침 대조가 선행되어야 합니다.</li>
                         <li>&bull; 문서 생성기의 <strong class="text-slate-800">법적 효력</strong>은 다루지 않았습니다. 계약서 양식의 적법성은 법무 검토 사항입니다.</li>
@@ -514,7 +520,8 @@
                 <p class="text-sm md:text-base text-slate-700 leading-relaxed">
                     이 기획의 강점은 <strong class="text-slate-900">보안 제약을 우회하지 않고 구조로 푼 점</strong>입니다. <br class="hidden md:block">
                     빈칸 양식만 외부에서 받아 로컬에서 결합하는 방식은 &lsquo;AI를 쓸 수 없다&rsquo;는 제약을 &lsquo;이렇게 쓰면 된다&rsquo;로 바꿉니다. <br class="hidden md:block">
-                    다만 실제 도입을 통과하려면 <strong class="text-slate-900">생성 단계뿐 아니라 저장 &middot; 전달 &middot; 잔존까지</strong>, 그리고 <strong class="text-slate-900">절감 시간에서 새로 생기는 관리 업무를 차감</strong>한 숫자까지 함께 제시해야 합니다.
+                    다만 실제 도입을 통과하려면 <strong class="text-slate-900">생성 단계뿐 아니라 저장 &middot; 전달 &middot; 잔존까지</strong>, <br class="hidden md:block">
+                    그리고 <strong class="text-slate-900">절감 시간에서 새로 생기는 관리 업무를 차감</strong>한 숫자까지 함께 제시해야 합니다.
                 </p>
             </div>
         </section>

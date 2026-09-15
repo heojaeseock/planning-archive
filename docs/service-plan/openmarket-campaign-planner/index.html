@@ -21,8 +21,10 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="오픈마켓 캠페인 기획">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
+    <script>Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";</script>
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
         
@@ -34,7 +36,7 @@
         }
 
         body { 
-            font-family: 'Pretendard', -apple-system, sans-serif; 
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; 
             background-color: var(--g-bg); 
             color: #2D3748; 
             line-height: 1.6;
@@ -199,6 +201,7 @@
         }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -239,13 +242,13 @@
                 <div class="grid md:grid-cols-2 gap-8 text-left">
                     <div class="p-10 bg-slate-50 rounded-[40px] border border-slate-100 h-full flex flex-col justify-center">
                         <span class="text-red-500 font-black text-xs block mb-4">📍 운영 효율 저하</span>
-                        <p class="text-slate-800 font-bold text-xl leading-snug">
+                        <p class="text-slate-800 font-bold text-xl leading-snug bal">
                             반복적인 수작업 검수를 자동화하여 기획을 위한 <span class="옐로우-포인트">전략적 시간</span>을 확보합니다.
                         </p>
                     </div>
                     <div class="p-10 bg-slate-50 rounded-[40px] border border-slate-100 h-full flex flex-col justify-center">
                         <span class="text-red-500 font-black text-xs block mb-4">⚠️ 브랜드 신뢰도 하락</span>
-                        <p class="text-slate-800 font-bold text-xl leading-snug">
+                        <p class="text-slate-800 font-bold text-xl leading-snug bal">
                             가격 오류를 사전에 차단해 구매 <span class="옐로우-포인트">전환율의 하락</span>을 방어하는 방안을 정리했습니다.
                         </p>
                     </div>
@@ -522,7 +525,7 @@
                 <div class="bg-white border-2 border-emerald-200 rounded-2xl p-7">
                     <p class="text-sm font-black text-emerald-700 mb-4">측정할 지표</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li>&bull; <strong class="text-slate-800">전환 대 클릭 비율</strong> &mdash; 두 지표를 따로 보지 않고 비율로 관측합니다. 정상 구간 59% 수준이 기준선입니다</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">전환 대 클릭 비율</strong> &mdash; 두 지표를 따로 보지 않고 비율로 관측합니다. 정상 구간 59% 수준이 기준선입니다</li>
                         <li>&bull; <strong class="text-slate-800">가격 오류 검출 건수</strong> &mdash; 오픈 전 단계에서 잡은 건수와 오픈 후 발견된 건수를 나눠 기록합니다. 후자가 0에 가까워야 사전 차단이 작동하는 것입니다</li>
                         <li>&bull; <strong class="text-slate-800">이상 감지에서 교체까지의 시간</strong> &mdash; 손실이 누적되는 구간의 길이입니다</li>
                         <li>&bull; <strong class="text-slate-800">경보 정확도</strong> &mdash; 기술 경보와 가격 경보가 실제 원인과 맞았는지</li>
@@ -532,7 +535,7 @@
                 <div class="bg-white border-2 border-slate-200 rounded-2xl p-7">
                     <p class="text-sm font-black text-slate-500 mb-4">이 기획안의 한계</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li>&bull; 지표 수치는 <strong class="text-slate-800">대응 흐름을 보여주기 위한 시연 값</strong>이며 실제 캠페인 데이터가 아닙니다.</li>
+                        <li class="bal">&bull; 지표 수치는 <strong class="text-slate-800">대응 흐름을 보여주기 위한 시연 값</strong>이며 실제 캠페인 데이터가 아닙니다.</li>
                         <li>&bull; 검수 시간 절감은 <strong class="text-slate-800">게임 운영에서의 성과</strong>를 적용한 것이며 상품 데이터에서 같은 폭이 나온다는 근거는 아닙니다.</li>
                         <li>&bull; 하락 폭과 원인의 관계는 <strong class="text-slate-800">일반적인 패턴에 근거한 판단</strong>이며 이 플랫폼의 로그로 검증한 것이 아닙니다. 경보 기준값도 도입 후 조정이 필요합니다.</li>
                         <li>&bull; 엑셀 기반 검수는 <strong class="text-slate-800">담당자 의존과 파일 관리 문제</strong>가 남습니다. 캠페인 규모가 커지면 전용 도구 검토가 필요합니다.</li>
@@ -676,7 +679,8 @@
                         <p class="text-xs font-black text-rose-700 mb-2">한 구간만 보면 위험합니다</p>
                         <p class="text-xs text-slate-600 leading-relaxed">
                     정상 변동과 경보선이 가까워서 <strong class="text-slate-800">평범한 흔들림이 경보로 올라올 수 있습니다.</strong> <br class="hidden md:block">
-                    잘못된 경보가 반복되면 담당자가 경보를 무시하게 되고, 그때부터는 경보가 없는 것과 같습니다.
+                    잘못된 경보가 반복되면 담당자가 경보를 무시하게 되고, <br class="hidden md:block">
+                    그때부터는 경보가 없는 것과 같습니다.
                 </p>
                     </div>
                     <div class="bg-emerald-50 rounded-2xl p-6 border border-emerald-200">
@@ -702,9 +706,9 @@
             <div class="bg-slate-900 rounded-2xl p-8 text-white">
                 <p class="text-sm font-black text-amber-400 mb-5">이 계산이 기대는 전제</p>
                 <ul class="space-y-3 text-sm text-slate-300 leading-relaxed">
-                    <li>&bull; 정상 구간이 <strong class="text-white">여섯 개 시점</strong>뿐입니다. 흩어진 정도를 이 개수로 추정했으므로 실제 캠페인 로그에서는 값이 달라집니다. 도입 초기에는 경보를 기록만 남기고 며칠분 데이터로 기준값을 다시 잡는 편이 안전합니다.</li>
+                    <li class="bal">&bull; 정상 구간이 <strong class="text-white">여섯 개 시점</strong>뿐입니다. 흩어진 정도를 이 개수로 추정했으므로 실제 캠페인 로그에서는 값이 달라집니다. 도입 초기에는 경보를 기록만 남기고 며칠분 데이터로 기준값을 다시 잡는 편이 안전합니다.</li>
                     <li>&bull; 시뮬레이션 값은 <strong class="text-white">대응 흐름을 보이기 위한 시연 수치</strong>입니다. 위 계산은 그 수치를 그대로 따라간 것이며 실제 지표 분포가 아닙니다.</li>
-                    <li>&bull; 캠페인 성격에 따라 정상 변동 폭이 크게 다를 수 있습니다. 오픈 직후와 마감 직전은 평소와 다르게 움직이므로, <strong class="text-white">시간대별로 기준선을 따로 두는 것</strong>이 필요할 수 있습니다.</li>
+                    <li class="bal">&bull; 캠페인 성격에 따라 정상 변동 폭이 크게 다를 수 있습니다. 오픈 직후와 마감 직전은 평소와 다르게 움직이므로, <strong class="text-white">시간대별로 기준선을 따로 두는 것</strong>이 필요할 수 있습니다.</li>
                     <li>&bull; 여기서는 <strong class="text-white">비율 한 가지</strong>로만 판정했습니다. 노출 수가 급감하는 경우처럼 비율은 정상인데 절대량이 무너지는 상황은 이 기준으로 잡히지 않습니다.</li>
                 </ul>
             </div>

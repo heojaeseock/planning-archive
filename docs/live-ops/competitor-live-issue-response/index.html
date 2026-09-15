@@ -24,10 +24,11 @@
 <!-- - 단일 페이지 스크롤 레이아웃 - 스크롤 위치에 따라 실시간으로 반응하는 고성능 내비게이션 바 - 가독성을 최우선으로 한 한국어 줄바꿈 설정 -->
     <link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
+    <script>Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";</script>
     <style>
         
         body { 
-            font-family: 'Pretendard', sans-serif; 
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; 
             scroll-behavior: smooth; 
             word-break: keep-all; /* 단어 단위 줄바꿈 */
             overflow-wrap: break-word; 
@@ -73,6 +74,7 @@
         section { scroll-margin-top: 80px; }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
@@ -137,9 +139,10 @@
                     </h3>
                 </div>
                 
-                <p class="text-slate-600 mb-12 text-lg">
+                <p class="text-slate-600 mb-12 text-lg bal">
                     타사 출시 직후, 유저들의 구매가 집중되는 유료 상품의 설명이 실제 기능과 다르게 번역되었습니다. <br class="hidden md:block">
-                    유저들은 <strong>"사기 뽑기"</strong>라며 분노했고, 운영진은 이를 해결하기 위해 회사의 큰 손해를 감수하는 파격적인 결정을 내렸습니다.
+                    유저들은 <strong>"사기 뽑기"</strong>라며 분노했고, <br class="hidden md:block">
+                    운영진은 이를 해결하기 위해 회사의 큰 손해를 감수하는 파격적인 결정을 내렸습니다.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -155,7 +158,7 @@
                         <div class="text-[15px] text-slate-500 space-y-4">
                             <p>• <strong>1시간 내 빠른 공지:</strong> 문제를 확인 중임을 즉각 알려 유저들의 막연한 불안감을 해소했습니다.</p>
                             <p>• <strong>전액 재화 돌려주기:</strong> 사용한 재화를 전부 환급하되, 뽑은 아이템은 그대로 두어 유저의 이득을 보전했습니다.</p>
-                            <p>• <strong>진심 어린 사과:</strong> 외부 업체 탓을 하지 않고 전적으로 운영진 과실임을 인정하며 정면 돌파했습니다.</p>
+                            <p class="bal">• <strong>진심 어린 사과:</strong> 외부 업체 탓을 하지 않고 전적으로 운영진 과실임을 인정하며 정면 돌파했습니다.</p>
                         </div>
                     </div>
                 </div>
@@ -242,7 +245,8 @@
                         <h3 class="text-2xl font-bold text-slate-900">이슈 발생 시 '보상 기준 미리 정하기'</h3>
                     </div>
                     <p class="text-slate-600 mb-10 text-lg leading-relaxed text-center md:text-left">
-                    사고가 터졌을 때 "얼마를 줄지" 회의하느라 시간을 허비하지 않도록, 보상 범위를 미리 <strong>사업부</strong>와 합의해 두어 대응 속도를 높입니다.
+                    사고가 터졌을 때 "얼마를 줄지" 회의하느라 시간을 허비하지 않도록, <br class="hidden md:block">
+                    보상 범위를 미리 <strong>사업부</strong>와 합의해 두어 대응 속도를 높입니다.
                 </p>
                     <div class="bg-blue-50/50 p-8 rounded-3xl border border-blue-100">
                         <h4 class="font-bold text-sm text-blue-800 mb-6 tracking-wider">실무 가이드 예시</h4>
@@ -430,7 +434,8 @@
                     <p class="text-sm text-slate-600 leading-relaxed">
                     뽑은 아이템을 회수하지 않고 재화만 환급하면 유저는 <strong class="text-slate-900">아이템과 재화를 모두 보유</strong>합니다. <br class="hidden md:block">
                     신뢰 회복 효과는 크지만, 그만큼 <strong class="text-amber-700">게임 내 재화가 추가로 풀립니다.</strong> <br class="hidden md:block">
-                    초기 서비스는 경제 규모가 작아 이 충격을 흡수할 수 있지만, 성숙한 경제에서는 인플레이션과 밸런스 영향을 함께 계산해야 합니다.
+                    초기 서비스는 경제 규모가 작아 이 충격을 흡수할 수 있지만, <br class="hidden md:block">
+                    성숙한 경제에서는 인플레이션과 밸런스 영향을 함께 계산해야 합니다.
                 </p>
                 </div>
                 <div class="bg-white border-l-4 border-l-slate-400 border border-slate-200 rounded-2xl p-7">
@@ -448,15 +453,17 @@
                 <p class="text-sm font-black text-amber-700 mb-4">보상 기준표에 상한이 필요합니다</p>
                 <p class="text-slate-700 leading-relaxed mb-5">
                     제안된 기준표는 중대한 오류에 <strong class="text-slate-900">재화 100% 환급</strong>을 명시합니다. <br class="hidden md:block">
-                    기준이 명확해 협의 시간을 줄이는 장점이 있지만, 그대로 두면 <strong class="text-amber-800">사고 규모와 무관하게 100%를 적용해야 합니다.</strong>
+                    기준이 명확해 협의 시간을 줄이는 장점이 있지만, <br class="hidden md:block">
+                    그대로 두면 <strong class="text-amber-800">사고 규모와 무관하게 100%를 적용해야 합니다.</strong>
                 </p>
                 <div class="bg-white rounded-xl p-6 border border-amber-200">
                     <p class="text-xs font-black text-slate-800 mb-3">기준표를 실행 가능하게 만드는 항목</p>
                     <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
                         <li>&bull; <strong class="text-slate-800">사전 승인 한도</strong> &mdash; 총 환급액이 일정 금액 이하면 실무 즉시 집행, 초과하면 경영 판단으로 넘김. 대부분의 사고는 한도 안에서 끝나므로 속도가 확보됩니다</li>
-                        <li>&bull; <strong class="text-slate-800">아이템 회수 여부</strong> &mdash; 재화만 환급할지 아이템도 회수할지 미리 정합니다. 회수하지 않으면 유저 만족은 크지만 경제에 영향이 남습니다</li>
-                        <li>&bull; <strong class="text-slate-800">중대와 일반의 판정 기준</strong> &mdash; 유료 상품 여부만으로 가를지, 영향 유저 수도 볼지. 판정이 모호하면 기준표가 있어도 회의가 열립니다</li>
-                        <li>&bull; <strong class="text-slate-800">사업부 합의 시점</strong> &mdash; 기준표는 사고 전에 합의되어야 합니다. 사고 후 합의하면 제안의 목적이 사라집니다</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">아이템 회수 여부</strong> &mdash; 재화만 환급할지 아이템도 회수할지 미리 정합니다. 회수하지 않으면 유저 만족은 크지만 경제에 영향이 남습니다</li>
+                        <li>&bull; <strong class="text-slate-800">중대와 일반의 판정 기준</strong> &mdash; 유료 상품 여부만으로 가를지, <br class="hidden md:block">
+                    영향 유저 수도 볼지. 판정이 모호하면 기준표가 있어도 회의가 열립니다</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">사업부 합의 시점</strong> &mdash; 기준표는 사고 전에 합의되어야 합니다. 사고 후 합의하면 제안의 목적이 사라집니다</li>
                     </ul>
                 </div>
             </div>
@@ -517,7 +524,7 @@
                         <li>&bull; <strong class="text-slate-800">환급 규모와 재무 영향</strong>은 공개되지 않아 다루지 않았습니다. 전액 환급의 실제 비용을 모르므로 감당 가능성을 판단할 수 없습니다.</li>
                         <li>&bull; 사고 이후의 <strong class="text-slate-800">장기 지표 변화</strong>는 확인하지 않았습니다. 여론이 회복된 것과 매출·잔존이 회복된 것은 별개입니다.</li>
                         <li>&bull; 단일 사례 분석이므로 <strong class="text-slate-800">일반화에 한계</strong>가 있습니다. 같은 대응이 다른 게임에서 같은 결과를 낸다는 근거는 아닙니다.</li>
-                        <li>&bull; 오표기의 <strong class="text-slate-800">법적 성격</strong>은 검토 범위 밖입니다. 유료 상품의 성능 표시 오류는 지역에 따라 규제 사안이 될 수 있습니다.</li>
+                        <li class="bal">&bull; 오표기의 <strong class="text-slate-800">법적 성격</strong>은 검토 범위 밖입니다. 유료 상품의 성능 표시 오류는 지역에 따라 규제 사안이 될 수 있습니다.</li>
                     </ul>
                 </div>
             </div>

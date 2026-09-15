@@ -25,7 +25,7 @@
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
         body { 
-            font-family: 'Pretendard', sans-serif; 
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; 
             background-color: #f1f5f9; 
             color: #1e293b; 
             margin: 0;
@@ -98,6 +98,7 @@
         }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -277,7 +278,8 @@
                     <div class="content-panel p-6 md:p-8">
                         <p class="text-slate-600 leading-relaxed mb-6">
                     위 다섯 요소를 개별 기능으로 보면 흔한 방치형 RPG의 구성입니다. <br class="hidden md:block">
-                    하지만 <strong class="text-slate-900">각 요소가 유저의 하루에서 담당하는 역할</strong>로 다시 배치하면, 서로 다른 목적을 가진 세 개의 축이 하나의 순환을 이루고 있습니다.
+                    하지만 <strong class="text-slate-900">각 요소가 유저의 하루에서 담당하는 역할</strong>로 다시 배치하면, <br class="hidden md:block">
+                    서로 다른 목적을 가진 세 개의 축이 하나의 순환을 이루고 있습니다.
                 </p>
 
                         <div class="grid md:grid-cols-3 gap-4 mb-8">
@@ -336,7 +338,8 @@
                             <p class="text-[10px] font-black tracking-wide text-rose-500 mb-3">그래서 이탈은 어디서 발생하는가</p>
                             <p class="text-sm md:text-base text-slate-700 leading-relaxed">
                     이 구조에서 이탈의 원인은 <strong class="text-slate-900">&ldquo;재미가 없어서&rdquo;가 아닙니다.</strong> <br class="hidden md:block">
-                    유일한 조작 구간인 관리 작업이 무거워지거나, 방치 구간에서 손실이 발생해 <strong class="text-rose-700">&ldquo;내가 없는 동안 시스템이 나를 배신했다&rdquo;</strong>는 경험이 쌓일 때 발생합니다. <br class="hidden md:block">
+                    유일한 조작 구간인 관리 작업이 무거워지거나, <br class="hidden md:block">
+                    방치 구간에서 손실이 발생해 <strong class="text-rose-700">&ldquo;내가 없는 동안 시스템이 나를 배신했다&rdquo;</strong>는 경험이 쌓일 때 발생합니다. <br class="hidden md:block">
                     따라서 개선의 방향은 신규 콘텐츠 추가가 아니라 <strong class="text-slate-900">관리 피로 감소 + 방치 구간의 신뢰 확보</strong>여야 합니다. <br class="hidden md:block">
                     다음 탭의 개선안 다섯 건은 모두 이 두 갈래에 속합니다.
                 </p>
@@ -405,7 +408,7 @@
                     물약 부족 상태로 오프라인 모드 진입 시, 자동 사냥 중 캐릭터가 사망하여 경험치 손실 및 부정적 플레이 경험이 누적됩니다.
                 </p>
                                 </div>
-                                <p class="text-sm text-slate-600 leading-relaxed">
+                                <p class="text-sm text-slate-600 leading-relaxed bal">
                     비접속 플레이 시작 전, 현재 보유한 물약 수량을 시스템이 자동 체크하여 예상 사냥 시간 대비 부족할 경우 팝업으로 즉시 경고합니다.
                 </p>
                                 <button onclick="simulatePopup()" class="relative px-8 py-3.5 bg-blue-600 text-white rounded-2xl text-xs font-bold shadow-xl shadow-blue-200 hover:bg-blue-700 transition-all active:scale-95 flex items-center gap-2">
@@ -433,11 +436,11 @@
                             <h3 class="text-2xl font-bold text-slate-900 leading-tight">의뢰 보상 확률의 실시간 명기</h3>
                             <div class="bg-red-50 p-5 rounded-2xl border border-red-100 shadow-sm">
                                 <p class="text-sm text-red-600 font-bold mb-1.5">⚠️ 문제점</p>
-                                <p class="text-sm text-slate-700 leading-relaxed">
+                                <p class="text-sm text-slate-700 leading-relaxed bal">
                     불투명한 보상 획득 확률로 인해 유저들이 시스템을 신뢰하지 못하고 불필요한 고객 문의 및 불만이 인입되는 리스크가 존재합니다.
                 </p>
                             </div>
-                            <p class="text-sm text-slate-600 leading-relaxed">
+                            <p class="text-sm text-slate-600 leading-relaxed bal">
                     의뢰 게시판 UI 내에 각 아이템 등급별 실제 획득 확률을 명확히 기재하여 시스템의 투명성을 높이고 데이터 기반의 정당성을 확보합니다.
                 </p>
                         </div>
@@ -466,7 +469,7 @@
                         <div class="space-y-5">
                             <div class="inline-flex items-center px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-[10px] font-bold border border-blue-100">제안 4</div>
                             <h4 class="text-lg font-bold text-slate-900">컬렉션 일괄 등록 및 즐겨찾기</h4>
-                            <p class="text-xs text-slate-600 leading-relaxed">
+                            <p class="text-xs text-slate-600 leading-relaxed bal">
                     수천 개의 장비를 일일이 확인하고 등록해야 하는 피로도를 낮추기 위해 <strong>'일괄 등록'</strong>과 자주 찾는 스탯의 <strong>'즐겨찾기'</strong> 고정 기능을 제안합니다.
                 </p>
                             <div class="mockup-panel p-8 bg-slate-800 border-slate-700 shadow-sm flex flex-col justify-between h-[200px]">
@@ -484,7 +487,7 @@
                         <div class="space-y-5">
                             <div class="inline-flex items-center px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-[10px] font-bold border border-blue-100">제안 5</div>
                             <h4 class="text-lg font-bold text-slate-900">절전 모드 내 실시간 퀘스트 노출</h4>
-                            <p class="text-xs text-slate-600 leading-relaxed">
+                            <p class="text-xs text-slate-600 leading-relaxed bal">
                     절전 모드 시 사냥 현황만 확인 가능한 기존 UI에 <strong>현재 수행 중인 핵심 퀘스트의 진행률</strong>을 추가하여 불필요한 모드 해제 조작을 방지합니다.
                 </p>
                             <div class="mockup-panel p-8 bg-black border-slate-800 shadow-2xl flex flex-col justify-center items-center h-[200px]">
@@ -522,7 +525,7 @@
                             <span class="shrink-0 bg-rose-600 text-white text-[10px] font-black px-3 py-1.5 rounded-full tracking-wide">재분류</span>
                             <div>
                                 <p class="font-black text-slate-900 text-lg mb-2">제안 3 (의뢰 보상 확률 명기)은 개선 제안이 아닙니다</p>
-                                <p class="text-sm text-slate-700 leading-relaxed">
+                                <p class="text-sm text-slate-700 leading-relaxed bal">
                     국내 서비스 게임의 확률형 아이템 확률 정보 표시는 <strong class="text-rose-700">게임산업진흥에 관한 법률 개정에 따라 의무화된 사항</strong>입니다. <br class="hidden md:block">
                     즉 이 항목은 &ldquo;하면 신뢰도가 올라가는 개선안&rdquo;이 아니라 <strong class="text-slate-900">미이행 시 법령 위반이 되는 필수 요건</strong>이며, 우선순위 비교의 대상이 아닙니다.
                 </p>
@@ -531,7 +534,8 @@
                         <div class="bg-white rounded-2xl p-5 border border-rose-200 mb-5">
                             <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">그래서 실제 기획 과제는 무엇이 되는가</p>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                    확률 공개 자체는 협상 대상이 아니므로, 기획자의 과제는 <strong class="text-slate-900">&ldquo;공개할까&rdquo;가 아니라 &ldquo;공개된 상태를 전제로 보상 구조를 어떻게 다시 짤까&rdquo;</strong>로 이동합니다. <br class="hidden md:block">
+                    확률 공개 자체는 협상 대상이 아니므로, <br class="hidden md:block">
+                    기획자의 과제는 <strong class="text-slate-900">&ldquo;공개할까&rdquo;가 아니라 &ldquo;공개된 상태를 전제로 보상 구조를 어떻게 다시 짤까&rdquo;</strong>로 이동합니다. <br class="hidden md:block">
                     에픽 0.50%가 화면에 그대로 노출되면 구매 의욕이 꺾일 수 있으므로, <strong>천장(확정 획득) &middot; 마일리지 누적 &middot; 중복 보상 교환</strong> 같은 장치를 함께 설계해야 확률 공개가 이탈 요인이 되지 않습니다.
                 </p>
                         </div>

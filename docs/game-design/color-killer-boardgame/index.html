@@ -26,7 +26,7 @@
     
     <style>
         body { 
-            font-family: 'Pretendard', sans-serif; 
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; 
             background-color: #f8fafc; 
             color: #334155; 
             margin: 0;
@@ -165,6 +165,7 @@
         }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -329,7 +330,8 @@
                             <div class="text-2xl mt-1">🏆</div>
                             <div>
                                 <h4 class="font-black text-slate-800 text-base mb-2">승패 조건</h4>
-                                <p class="text-sm text-slate-500 leading-relaxed font-medium">손패가 다 떨어지면 패배 처리되며, 최종 생존하거나 획득한 카드가 제일 많은 사람이 우승을 차지합니다.</p>
+                                <p class="text-sm text-slate-500 leading-relaxed font-medium bal">손패가 다 떨어지면 패배 처리되며, <br class="hidden md:block">
+                    최종 생존하거나 획득한 카드가 제일 많은 사람이 우승을 차지합니다.</p>
                             </div>
                         </div>
                     </div>
@@ -341,7 +343,7 @@
         <div id="special-cards" class="max-w-5xl w-full tab-content space-y-12">
             <div class="text-center max-w-2xl mx-auto mb-10">
                 <h3 class="text-3xl font-black text-slate-900 mb-4">차별화 요소: 특수 카드 시스템</h3>
-                <p class="text-slate-600 text-base leading-relaxed font-medium">
+                <p class="text-slate-600 text-base leading-relaxed font-medium bal">
                     단순한 순발력 게임을 넘어, 플레이어 간의 치열한 눈치싸움과 역전을 가능하게 만드는 고유한 특수 카드를 도입했습니다.
                 </p>
             </div>
@@ -440,7 +442,8 @@
                                 <div>
                                     <p class="text-sm text-slate-700 font-bold mb-1 flex items-center gap-2"><span class="text-red-500">🔻 문제점</span> (A4 용지 사용)</p>
                                     <p class="text-sm text-slate-600 leading-relaxed">
-                    초기 프로토타입 단계에서 일반 A4 용지로 카드를 제작했더니, 뒷면이 투과되어 상대방의 패가 보인다는 중대한 지적이 접수되었습니다.
+                    초기 프로토타입 단계에서 일반 A4 용지로 카드를 제작했더니, <br class="hidden md:block">
+                    뒷면이 투과되어 상대방의 패가 보인다는 중대한 지적이 접수되었습니다.
                 </p>
                                 </div>
                                 <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
@@ -461,7 +464,7 @@
                             <div class="space-y-4">
                                 <div>
                                     <p class="text-sm text-slate-700 font-bold mb-1 flex items-center gap-2"><span class="text-red-500">🔻 문제점</span> (진행 속도 저하)</p>
-                                    <p class="text-sm text-slate-600 leading-relaxed">
+                                    <p class="text-sm text-slate-600 leading-relaxed bal">
                     원래 기획했던 '투시 능력' 카드가 플레이어들의 장고를 유발해 전체적인 게임 속도가 크게 늘어지는 현상을 플레이 테스트 중 발견했습니다.
                 </p>
                                 </div>
@@ -685,9 +688,10 @@
                     투시 카드를 삭제해 얻은 템포 개선을 페널티가 다시 상쇄할 수 있습니다.
                 </p>
                     <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
-                        <li>&bull; <strong class="text-slate-800">경감안 A:</strong> 오타격 시 <strong>중앙 더미에 1장</strong>만 내놓게 합니다. 손실이 1장으로 줄고, 다른 플레이어에게 직접 이득이 가지 않아 견제 심리도 줄어듭니다.</li>
+                        <li>&bull; <strong class="text-slate-800">경감안 A:</strong> 오타격 시 <strong>중앙 더미에 1장</strong>만 내놓게 합니다. 손실이 1장으로 줄고, <br class="hidden md:block">
+                    다른 플레이어에게 직접 이득이 가지 않아 견제 심리도 줄어듭니다.</li>
                         <li>&bull; <strong class="text-slate-800">경감안 B:</strong> 첫 오타격은 <strong>경고만</strong>, 두 번째부터 페널티를 적용해 초반 학습 구간을 보호합니다.</li>
-                        <li>&bull; <strong class="text-slate-800">유지 근거:</strong> 반대로 페널티를 그대로 둔다면, 그것은 <strong>&lsquo;신중함도 실력&rsquo;이라는 설계 선택</strong>입니다. 이 경우 룰 설명서에 판단 조건을 한 장으로 정리해 오판 자체를 줄여야 합니다.</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">유지 근거:</strong> 반대로 페널티를 그대로 둔다면, 그것은 <strong>&lsquo;신중함도 실력&rsquo;이라는 설계 선택</strong>입니다. 이 경우 룰 설명서에 판단 조건을 한 장으로 정리해 오판 자체를 줄여야 합니다.</li>
                     </ul>
                 </div>
             </section>
@@ -697,24 +701,26 @@
                 <div class="bg-white rounded-2xl border-2 border-emerald-200 p-6 md:p-7">
                     <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-4">다음 플레이 테스트에서 세어볼 것</p>
                     <p class="text-xs text-slate-500 leading-relaxed mb-4">
-                    앞의 개선 2건은 &lsquo;투과된다&rsquo;, &lsquo;늘어진다&rsquo;처럼 <strong class="text-slate-700">체감으로 잡아낸 문제</strong>였습니다. <br class="hidden md:block">
+                    앞의 개선 2건은 &lsquo;투과된다&rsquo;, <br class="hidden md:block">
+                    &lsquo;늘어진다&rsquo;처럼 <strong class="text-slate-700">체감으로 잡아낸 문제</strong>였습니다. <br class="hidden md:block">
                     아래는 세어보면 확인되는 항목입니다.
                 </p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                         <li>&bull; <strong class="text-slate-800">무지개 승률:</strong> 무지개를 낸 사람이 그 타격을 가져간 비율. 8할을 넘으면 낸 사람 확정 승리가 맞습니다</li>
                         <li>&bull; <strong class="text-slate-800">좌석별 최종 순위:</strong> 여러 판을 돌려 특정 좌석이 불리한지 확인 &mdash; 블랙 카드 편향 검증</li>
-                        <li>&bull; <strong class="text-slate-800">오타격 빈도:</strong> 판당 발생 횟수와, 오타격 이후 그 플레이어의 최종 순위</li>
-                        <li>&bull; <strong class="text-slate-800">타격 간 평균 간격:</strong> 페널티가 소극적 플레이를 만드는지 보는 템포 지표</li>
+                        <li>&bull; <strong class="text-slate-800">오타격 빈도:</strong> 판당 발생 횟수와, <br class="hidden md:block">
+                    오타격 이후 그 플레이어의 최종 순위</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">타격 간 평균 간격:</strong> 페널티가 소극적 플레이를 만드는지 보는 템포 지표</li>
                         <li>&bull; <strong class="text-slate-800">약탈 대상 분포:</strong> 실제로 선두에게 몰리는지</li>
                     </ul>
                 </div>
                 <div class="bg-white rounded-2xl border-2 border-slate-200 p-6 md:p-7">
                     <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">이 검토의 한계</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li>&bull; 특수 카드 <strong class="text-slate-800">4종의 실제 장수 배분은 문서에 없어</strong> 종당 2.5장을 균등 가정으로 계산했습니다. 실제 배분이 다르면 밀도 해석이 달라집니다.</li>
-                        <li>&bull; 1인 8.75장은 <strong class="text-slate-800">35장 균등 분배 가정</strong>입니다. 실제 룰에서 더미를 남긴다면 초기 패가 줄어 페널티 손실률은 더 커집니다.</li>
+                        <li class="bal">&bull; 특수 카드 <strong class="text-slate-800">4종의 실제 장수 배분은 문서에 없어</strong> 종당 2.5장을 균등 가정으로 계산했습니다. 실제 배분이 다르면 밀도 해석이 달라집니다.</li>
+                        <li class="bal">&bull; 1인 8.75장은 <strong class="text-slate-800">35장 균등 분배 가정</strong>입니다. 실제 룰에서 더미를 남긴다면 초기 패가 줄어 페널티 손실률은 더 커집니다.</li>
                         <li>&bull; 무지개 &middot; 블랙 &middot; 약탈의 편향은 <strong class="text-slate-800">규칙 구조에서 도출한 예측</strong>이며, 실제 플레이 데이터로 측정된 것이 아닙니다.</li>
-                        <li>&bull; 반응 지연의 크기는 연령과 숙련도에 따라 크게 달라집니다. <strong class="text-slate-800">권장 연령 7세 이상</strong>이라는 폭넓은 대상에서는 편차가 더 클 수 있습니다.</li>
+                        <li class="bal">&bull; 반응 지연의 크기는 연령과 숙련도에 따라 크게 달라집니다. <strong class="text-slate-800">권장 연령 7세 이상</strong>이라는 폭넓은 대상에서는 편차가 더 클 수 있습니다.</li>
                     </ul>
                 </div>
             </section>
@@ -723,7 +729,8 @@
             <section class="bg-indigo-600 rounded-3xl p-8 md:p-10 text-white">
                 <p class="text-indigo-200 font-black text-[10px] tracking-wide mb-5 text-center">정리</p>
                 <p class="text-base md:text-lg font-bold leading-relaxed text-center mb-8">
-                    특수 카드는 순발력 단일 변수를 <strong class="text-white">완화하는 데 성공했지만</strong>, 그 대신 <strong class="text-yellow-300">낸 사람 우위 &middot; 좌석 편향 &middot; 견제 집중</strong>이라는 새로운 변수를 만들었습니다.
+                    특수 카드는 순발력 단일 변수를 <strong class="text-white">완화하는 데 성공했지만</strong>, <br class="hidden md:block">
+                    그 대신 <strong class="text-yellow-300">낸 사람 우위 &middot; 좌석 편향 &middot; 견제 집중</strong>이라는 새로운 변수를 만들었습니다.
                 </p>
                 <div class="grid md:grid-cols-3 gap-4 text-left">
                     <div class="bg-white/10 rounded-2xl p-5 border border-white/20">

@@ -21,11 +21,12 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="크리에이터 지원 정책 비교 분석">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
-        body { font-family: 'Pretendard', sans-serif; background-color: #ffffff; color: #1e293b; }
+        body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; background-color: #ffffff; color: #1e293b; }
         .chart-container { position: relative; width: 100%; height: 280px; }
         .interactive-card { transition: all 0.2s ease; border: 1px solid #e2e8f0; cursor: pointer; }
         .interactive-card:hover { border-color: #4f46e5; background-color: #f8fafc; transform: translateY(-2px); }
@@ -36,6 +37,7 @@
         body { word-break: keep-all; overflow-wrap: break-word; }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -49,7 +51,7 @@
             서비스 기획 분석
         </div>
         <h1 class="text-4xl font-black text-slate-900 tracking-tight mb-4">SOOP·치지직 신입 스트리머 락인 전략 비교</h1>
-        <p class="text-slate-500 text-lg max-w-2xl leading-relaxed">
+        <p class="text-slate-500 text-lg max-w-2xl leading-relaxed bal">
             국내 스트리밍 시장 재편에 따른 플랫폼 지속 성장 동력 확보 및 신규 크리에이터 정착 지원 정책 제언
         </p>
                 <p class="mt-6 inline-flex items-center gap-1.5 text-[11px] font-bold bg-slate-100 text-slate-500 px-3 py-1.5 rounded-full border border-slate-200"><span>📌</span><span>데이터 기준: 2024년 2분기까지 공개된 자료 · 이후 정책 변경은 반영돼 있지 않습니다</span></p>
@@ -75,14 +77,15 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
                 <h3 class="font-bold text-lg mb-4 text-indigo-600">시장 경쟁 상황</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">
+                <p class="text-sm text-slate-600 leading-relaxed bal">
                     트위치 철수 이후 국내 라이브 스트리밍 시장은 <strong>SOOP(기성 팬덤)</strong>과 <strong>치지직(네이버 인프라)</strong>의 양강 구도로 굳어졌습니다. <br class="hidden md:block">
-                    초기 유입 경쟁 단계는 지났고, 지금은 콘텐츠 다양성을 채울 신규 인력이 들어와 자리를 잡는지가 플랫폼 성장의 핵심 지표입니다.
+                    초기 유입 경쟁 단계는 지났고, <br class="hidden md:block">
+                    지금은 콘텐츠 다양성을 채울 신규 인력이 들어와 자리를 잡는지가 플랫폼 성장의 핵심 지표입니다.
                 </p>
             </div>
             <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
                 <h3 class="font-bold text-lg mb-4 text-indigo-600">기획자 관점의 시사점</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">
+                <p class="text-sm text-slate-600 leading-relaxed bal">
                     신입 스트리머 확보는 단순히 채널 수를 늘리는 일이 아닙니다. <br class="hidden md:block">
                     대형 크리에이터 한 명에 대한 의존도를 낮추고, 광고·후원 모델의 저변을 넓히는 일입니다. <br class="hidden md:block">
                     <strong>'플랫폼 리스크 분산'</strong>과 <strong>'LTV(고객 생애 가치) 향상'</strong>을 위한 핵심 전략입니다.
@@ -164,7 +167,7 @@
                 <div class="chart-container">
                     <canvas id="survivalChart" role="img" aria-label="꺾은선 차트. 항목 시작, 1개월, 2개월, 3개월, 4개월, 6개월. 계열 생존율(%)"></canvas>
                 </div>
-                <div class="mt-4 p-4 bg-slate-50 rounded-2xl text-[11px] text-slate-500 leading-relaxed">
+                <div class="mt-4 p-4 bg-slate-50 rounded-2xl text-[11px] text-slate-500 leading-relaxed bal">
                     <span class="font-bold text-slate-800">고립감 분석:</span> 신입 버프 종료 직후인 1~3개월 차에 <strong>80% 이상의 최다 이탈</strong> 발생. 주된 원인은 시청자 0명 상태의 장기화에 따른 심리적 고립감 및 트래픽 정체임.
                 </div>
             </div>
@@ -204,7 +207,7 @@
                                     <span class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-sm">01</span>
                                     공식 멘토링 합방 (SOOP-Mate)
                                 </h3>
-                                <p class="text-sm text-slate-600 leading-relaxed">
+                                <p class="text-sm text-slate-600 leading-relaxed bal">
                     기성 대형 BJ(파트너/베스트)와 신입 BJ를 공식 시스템으로 매칭하여 트래픽의 낙수 효과와 커뮤니티 소속감을 강제로 제공하는 전략입니다.
                 </p>
                             </div>
@@ -372,7 +375,7 @@
             <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-7">
                 <p class="text-[11px] font-black tracking-wide text-emerald-700 mb-3">발견 2</p>
                 <p class="font-black text-slate-900 mb-3">3개월을 넘기면 안정권입니다</p>
-                <p class="text-sm text-slate-600 leading-relaxed">
+                <p class="text-sm text-slate-600 leading-relaxed bal">
                     상대 이탈률이 <strong class="text-emerald-700">42.2% &rarr; 24.3% &rarr; 14.3%</strong>로 급격히 낮아집니다. <br class="hidden md:block">
                     3개월 생존자는 이미 자기 시청자를 확보한 상태로 볼 수 있습니다.
                 </p>
@@ -549,7 +552,8 @@
             <p class="text-slate-700 leading-relaxed">
                     신입 입장에서 대중성은 <strong class="text-slate-900">성장의 상한</strong>을 결정합니다. <br class="hidden md:block">
                     수익화가 빨라도 도달 가능한 시청자 풀이 좁으면 일정 규모에서 정체됩니다. <br class="hidden md:block">
-                    <strong class="text-indigo-700">3개월을 넘긴 생존자가 그 다음에 부딪히는 벽</strong>이 여기이므로, 이 문서의 범위(초기 90일 정착)에서는 대응하지 않는 것이 맞되, <strong class="text-slate-900">후속 과제로 명시</strong>해 두는 편이 정확합니다. <br class="hidden md:block">
+                    <strong class="text-indigo-700">3개월을 넘긴 생존자가 그 다음에 부딪히는 벽</strong>이 여기이므로, <br class="hidden md:block">
+                    이 문서의 범위(초기 90일 정착)에서는 대응하지 않는 것이 맞되, <strong class="text-slate-900">후속 과제로 명시</strong>해 두는 편이 정확합니다. <br class="hidden md:block">
                     정책이 다루는 구간과 다루지 않는 구간을 구분해 적는 것이 제안의 신뢰도를 높입니다.
                 </p>
         </div>
@@ -564,11 +568,11 @@
                 <p class="text-[11px] font-black tracking-wide text-emerald-700 mb-4">측정할 지표</p>
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                     <li>&bull; <strong class="text-slate-800">합방 후 팔로우 전환율:</strong> 합방 유입 시청자 중 신입 채널을 팔로우하고 <strong>다음 방송에 재방문</strong>한 비율 &mdash; 6번의 핵심 판정</li>
-                    <li>&bull; <strong class="text-slate-800">구간별 잔존율:</strong> 특히 <strong>1&rarr;2개월 상대 이탈률 52.9%</strong>가 내려가는지</li>
-                    <li>&bull; <strong class="text-slate-800">고정 시청자 수:</strong> 합방 없는 일반 방송의 평균 동시 시청자 추이</li>
+                    <li class="bal">&bull; <strong class="text-slate-800">구간별 잔존율:</strong> 특히 <strong>1&rarr;2개월 상대 이탈률 52.9%</strong>가 내려가는지</li>
+                    <li class="bal">&bull; <strong class="text-slate-800">고정 시청자 수:</strong> 합방 없는 일반 방송의 평균 동시 시청자 추이</li>
                     <li>&bull; <strong class="text-slate-800">멘토 참여율과 재참여율:</strong> 낮으면 인센티브 설계 문제</li>
                     <li>&bull; <strong class="text-slate-800">기성 BJ 노출 지표:</strong> 슬롯 배정으로 인한 잠식 여부</li>
-                    <li>&bull; <strong class="text-slate-800">패스 단계별 도달률:</strong> 특정 퀘스트에서 급락하면 그 목표가 과도한 것</li>
+                    <li class="bal">&bull; <strong class="text-slate-800">패스 단계별 도달률:</strong> 특정 퀘스트에서 급락하면 그 목표가 과도한 것</li>
                 </ul>
             </div>
             <div class="bg-white border-2 border-slate-200 rounded-3xl p-7">
@@ -577,7 +581,7 @@
                     <li>&bull; 하단 출처에 명시된 대로 <strong class="text-slate-800">공개 데이터와 시장 추정치를 재가공</strong>한 것이며 플랫폼 내부 지표가 아닙니다.</li>
                     <li>&bull; 생존 곡선의 값은 <strong class="text-slate-800">공개 잔존율 통계 기반 추정</strong>입니다. 구간별 이탈률은 그 값에서 산출한 것이므로 원본 추정의 오차를 함께 물려받습니다.</li>
                     <li>&bull; 경쟁력 레이더의 점수는 <strong class="text-slate-800">정성 평가를 수치화한 것</strong>이며 측정 단위가 정의된 지표가 아닙니다. 항목 간 격차의 크기는 비교 참고용입니다.</li>
-                    <li>&bull; 기대 효과는 문서에 표기된 대로 <strong class="text-slate-800">실측치가 아닌 목표 수준</strong>입니다.</li>
+                    <li class="bal">&bull; 기대 효과는 문서에 표기된 대로 <strong class="text-slate-800">실측치가 아닌 목표 수준</strong>입니다.</li>
                     <li>&bull; 노출 슬롯의 총량과 배정 규칙은 <strong class="text-slate-800">플랫폼 내부 정책</strong>이라 잠식 규모는 추정하지 않았습니다.</li>
                 </ul>
             </div>
@@ -592,13 +596,13 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-[11px] text-slate-400 leading-relaxed">
             <ul class="space-y-1 list-disc pl-4">
                 <li>SOOP(구 아프리카TV) 2024년 2분기 IR 경영 실적 보고서</li>
-                <li>Naver 치지직 공식 라운지 공지사항 및 스트리머 등급 정책 가이드</li>
-                <li>모바일인덱스(Mobile Index) 2024 라이브 스트리밍 앱 잔존율 통계</li>
+                <li class="bal">Naver 치지직 공식 라운지 공지사항 및 스트리머 등급 정책 가이드</li>
+                <li class="bal">모바일인덱스(Mobile Index) 2024 라이브 스트리밍 앱 잔존율 통계</li>
             </ul>
             <ul class="space-y-1 list-disc pl-4">
-                <li>소프트콘 뷰어쉽(Softcone) 실시간 카테고리별 시청자 분포 통계</li>
-                <li>한국콘텐츠진흥원 2023 크리에이터 미디어 산업 실태조사 보고서</li>
-                <li>신입 스트리머 유입 후 LTV(생애가치) 자체 시뮬레이션 모델 (공개 지표 기반 추정)</li>
+                <li class="bal">소프트콘 뷰어쉽(Softcone) 실시간 카테고리별 시청자 분포 통계</li>
+                <li class="bal">한국콘텐츠진흥원 2023 크리에이터 미디어 산업 실태조사 보고서</li>
+                <li class="bal">신입 스트리머 유입 후 LTV(생애가치) 자체 시뮬레이션 모델 (공개 지표 기반 추정)</li>
             </ul>
         </div>
         <p class="mt-8 text-center text-[10px] text-slate-300 italic">
@@ -638,7 +642,7 @@
     // Charts Initialization
     document.addEventListener('DOMContentLoaded', () => {
         Chart.defaults.color = '#94a3b8';
-        Chart.defaults.font.family = 'Pretendard';
+        Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";
 
         // 1. Survival Curve
         const survivalCtx = document.getElementById('survivalChart').getContext('2d');

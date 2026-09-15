@@ -21,11 +21,13 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="스트리밍 플랫폼 생태계 분석">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="tailwind.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
+    <script>Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";</script>
 <style>
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
-body { font-family: 'Pretendard', sans-serif; }
+body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; }
 .chart-container {
     position: relative;
     width: 100%;
@@ -60,6 +62,7 @@ body { font-family: 'Pretendard', sans-serif; }
         body { word-break: keep-all; overflow-wrap: break-word; }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -132,7 +135,8 @@ body { font-family: 'Pretendard', sans-serif; }
                     <canvas id="soopRevenueChart" role="img" aria-label="도넛 차트. 항목 후원(별풍선), AI 타겟 광고, 구독, 기타"></canvas>
                 </div>
                 <div class="mt-6 text-sm text-slate-600 bg-slate-50 p-4 rounded-xl">
-                    <strong>분석:</strong> 별풍선 의존도가 여전히 높고, 광고 수익 비중이 늘어나는 흐름입니다.<br>고액 후원자를 대상으로 한 독점 콘텐츠 전략이 유효합니다.
+                    <strong>분석:</strong> 별풍선 의존도가 여전히 높고, <br class="hidden md:block">
+                    광고 수익 비중이 늘어나는 흐름입니다.<br>고액 후원자를 대상으로 한 독점 콘텐츠 전략이 유효합니다.
                 </div>
             </div>
             <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
@@ -279,7 +283,8 @@ body { font-family: 'Pretendard', sans-serif; }
                 <div class="bg-white rounded-xl p-5 border border-indigo-200">
                     <p class="text-xs font-black text-slate-800 mb-2">SOOP · 상한이 없고 변동이 큽니다</p>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                    고액 후원자가 붙으면 수익이 크게 뛰지만, 그 사람이 떠나면 <strong class="text-slate-800">수익의 68%가 흔들립니다.</strong> <br class="hidden md:block">
+                    고액 후원자가 붙으면 수익이 크게 뛰지만, <br class="hidden md:block">
+                    그 사람이 떠나면 <strong class="text-slate-800">수익의 68%가 흔들립니다.</strong> <br class="hidden md:block">
                     다음 달 수입을 예측하기 어렵습니다.
                 </p>
                 </div>
@@ -403,7 +408,7 @@ body { font-family: 'Pretendard', sans-serif; }
                     같은 RPG인 메이플이 28%인 것과 비교하면 <strong class="text-slate-900">17%p 차이</strong>가 납니다. <br class="hidden md:block">
                     카테고리만으로는 설명되지 않는 편차이므로, 이 문서의 다음 과제는 <strong class="text-amber-800">&ldquo;던파에서 무엇이 달랐는가&rdquo;</strong>를 찾는 일입니다.
                 </p>
-            <p class="text-slate-700 leading-relaxed">
+            <p class="text-slate-700 leading-relaxed bal">
                     편차의 원인이 <strong class="text-slate-900">특정 대형 스트리머의 이적</strong>이라면 재현할 수 없는 우연이고, <strong class="text-slate-900">콘텐츠 구조나 플랫폼 협업 방식</strong>이라면 다른 타이틀에도 적용할 수 있는 방법이 됩니다. <br class="hidden md:block">
                     전자와 후자를 가르는 것이 실무에서 가장 중요한 확인 사항입니다. <br class="hidden md:block">
                     평균에서 벗어난 값은 오류가 아니라 <strong class="text-amber-800">가장 정보가 많은 지점</strong>입니다.
@@ -459,15 +464,15 @@ body { font-family: 'Pretendard', sans-serif; }
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                     <li>&bull; <strong class="text-slate-800">방송 시청에서 게임 접속으로 이어진 비율</strong> &mdash; 플랫폼별로 나눠 봅니다. 점유율이 높은 쪽이 전환율도 높은지는 별개 문제입니다</li>
                     <li>&bull; <strong class="text-slate-800">신규 계정 유입 경로</strong> &mdash; 어느 플랫폼 시청 뒤에 가입했는지</li>
-                    <li>&bull; <strong class="text-slate-800">협업 스트리머별 전환 효율</strong> &mdash; 시청자 수가 아니라 유입 수로 평가합니다</li>
-                    <li>&bull; <strong class="text-slate-800">플랫폼 의존도</strong> &mdash; 상위 한 곳이 차지하는 유입 비중. 지나치게 높으면 위험 신호입니다</li>
+                    <li class="bal">&bull; <strong class="text-slate-800">협업 스트리머별 전환 효율</strong> &mdash; 시청자 수가 아니라 유입 수로 평가합니다</li>
+                    <li class="bal">&bull; <strong class="text-slate-800">플랫폼 의존도</strong> &mdash; 상위 한 곳이 차지하는 유입 비중. 지나치게 높으면 위험 신호입니다</li>
                 </ul>
             </div>
             <div class="bg-white border-2 border-slate-200 rounded-2xl p-7">
                 <p class="text-sm font-black text-slate-500 mb-4">이 리포트의 한계</p>
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                     <li>&bull; 점유율은 본문에 밝힌 대로 <strong class="text-slate-800">특정 시점의 동시 시청자를 직접 집계한 추정치</strong>입니다. 시간대와 요일에 따라 크게 달라집니다.</li>
-                    <li>&bull; 수익 배분 비중은 <strong class="text-slate-800">공개 자료 기반</strong>이며 플랫폼 정산 데이터가 아닙니다. 쏠림 계산은 그 값에서 산출한 것이므로 원본의 오차를 함께 물려받습니다.</li>
+                    <li class="bal">&bull; 수익 배분 비중은 <strong class="text-slate-800">공개 자료 기반</strong>이며 플랫폼 정산 데이터가 아닙니다. 쏠림 계산은 그 값에서 산출한 것이므로 원본의 오차를 함께 물려받습니다.</li>
                     <li>&bull; 시청 점유율과 게임 접속의 관계는 <strong class="text-slate-800">측정하지 않았습니다.</strong> 이 문서는 노출 규모까지만 다룹니다.</li>
                     <li>&bull; 클립 유통 속도가 빨라진다는 전망은 <strong class="text-slate-800">방향에 대한 예측</strong>이며 배수는 근거가 확인된 값이 아닙니다.</li>
                     <li>&bull; 던파의 편차 원인은 <strong class="text-slate-800">확인하지 못했습니다.</strong> 스트리머 개인 요인과 구조적 요인을 가르지 못한 상태입니다.</li>

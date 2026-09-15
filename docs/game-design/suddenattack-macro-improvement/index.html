@@ -25,7 +25,7 @@
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
         body { 
-            font-family: 'Pretendard', sans-serif; 
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; 
             background-color: #f8fafc; 
             color: #334155; 
             margin: 0;
@@ -68,7 +68,7 @@
             overflow: hidden;
             border: 1px solid #1e293b;
             color: white;
-            font-family: 'Pretendard', sans-serif;
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
         }
 
         .chat-line {
@@ -90,6 +90,7 @@
         }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -157,10 +158,10 @@
                                 <span class="text-sky-500">#</span> 기능 개요 및 도입 배경
                             </h3>
                             <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm">
-                                <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                <p class="text-sm text-slate-600 leading-relaxed mb-4 bal">
                     <strong>[도입 배경]</strong> 잦은 보이스톡 장애로 인한 소통 단절 문제를 해결하고, 랭크전에서 팀원 간 안정적이고 빠른 사후 브리핑 수단이 필요하여 도입되었습니다.
                 </p>
-                                <p class="text-sm text-slate-600 leading-relaxed">
+                                <p class="text-sm text-slate-600 leading-relaxed bal">
                     <strong>[핵심 기능]</strong> 사망한 유저가 단축키(Alt+숫자)를 통해 적의 위치나 HP 등의 핵심 정보를 생존한 팀원들에게 텍스트로 즉시 브리핑할 수 있는 기능입니다.
                 </p>
                             </div>
@@ -590,7 +591,7 @@
                         <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">검증 지표</p>
                         <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                             <li>&bull; <strong class="text-slate-800">밸런스 영향 측정:</strong> 브리핑이 전송된 라운드와 전송되지 않은 라운드의 <strong>승률 차</strong> &mdash; 유의하게 벌어지면 정보 우위가 실재한다는 증거입니다</li>
-                            <li>&bull; <strong class="text-slate-800">지연 튜닝:</strong> 지연 시간별 승률 차 추이 &mdash; 차이가 사라지는 구간을 적정값으로 채택</li>
+                            <li class="bal">&bull; <strong class="text-slate-800">지연 튜닝:</strong> 지연 시간별 승률 차 추이 &mdash; 차이가 사라지는 구간을 적정값으로 채택</li>
                             <li>&bull; <strong class="text-slate-800">도배&middot;낚시:</strong> 매크로 관련 신고 건수, 라운드당 평균 전송 횟수</li>
                             <li>&bull; <strong class="text-slate-800">편의성:</strong> 단축키 변경 기능 사용률, 브리핑 시도 후 실제 전송 성공률</li>
                         </ul>
@@ -598,10 +599,11 @@
                     <div class="bg-white rounded-[24px] border-2 border-slate-200 p-6 md:p-7">
                         <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">이 검토의 한계</p>
                         <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                            <li>&bull; 유저 반응은 <strong class="text-slate-800">공개 커뮤니티 관찰과 직접 플레이</strong>에 기반하며, 발생 빈도를 실측한 것이 아닙니다.</li>
+                            <li>&bull; 유저 반응은 <strong class="text-slate-800">공개 커뮤니티 관찰과 직접 플레이</strong>에 기반하며, <br class="hidden md:block">
+                    발생 빈도를 실측한 것이 아닙니다.</li>
                             <li>&bull; 정보 우위가 승률에 미치는 영향은 <strong class="text-slate-800">구조적으로 예상되는 방향</strong>이며, 검증 지표는 확인 방법으로 제시한 것입니다.</li>
-                            <li>&bull; 관전 시점 제한은 <strong class="text-slate-800">현재 관전 구현 방식</strong>에 따라 작업 규모가 크게 달라집니다.</li>
-                            <li>&bull; AI 추천의 비용과 지연은 모델&middot;인프라 구성에 좌우되어 <strong class="text-slate-800">수치로 추정하지 않았습니다.</strong></li>
+                            <li class="bal">&bull; 관전 시점 제한은 <strong class="text-slate-800">현재 관전 구현 방식</strong>에 따라 작업 규모가 크게 달라집니다.</li>
+                            <li class="bal">&bull; AI 추천의 비용과 지연은 모델&middot;인프라 구성에 좌우되어 <strong class="text-slate-800">수치로 추정하지 않았습니다.</strong></li>
                         </ul>
                     </div>
                 </div>

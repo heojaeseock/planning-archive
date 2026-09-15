@@ -21,8 +21,10 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="오프라인 UX 리서치 운영 설계">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
+    <script>Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";</script>
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
         
@@ -34,7 +36,7 @@
         }
 
         body {
-            font-family: 'Pretendard', -apple-system, sans-serif;
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             word-break: keep-all; 
@@ -99,6 +101,7 @@
         }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -127,7 +130,8 @@
                 리서치 결과가 자산으로 <span class="text-brand-blue">남는 구조를 만들다</span>
             </h1>
             <p class="text-[1.1rem] text-[#4e5968] max-w-2xl mx-auto leading-relaxed">
-                    대형 라이브 게임 운영 담당자로서, 대규모 유저 데이터 속에서 수작업을 자동화하고 오지급을 차단했던 경험을 바탕으로 오프라인 결제 서비스의 리서치 운영 기반을 <strong>시스템 관점</strong>에서 재설계한 내용을 정리했습니다.
+                    대형 라이브 게임 운영 담당자로서, <br class="hidden md:block">
+                    대규모 유저 데이터 속에서 수작업을 자동화하고 오지급을 차단했던 경험을 바탕으로 오프라인 결제 서비스의 리서치 운영 기반을 <strong>시스템 관점</strong>에서 재설계한 내용을 정리했습니다.
                 </p>
         </header>
 
@@ -296,14 +300,14 @@
                     <div id="content-2" class="accordion-content bg-white">
                         <div class="px-8 pb-8 pt-2">
                             <div class="w-full h-px bg-gray-100 mb-6"></div>
-                            <p class="text-[#4e5968] mb-6 leading-relaxed text-[16px]">
+                            <p class="text-[#4e5968] mb-6 leading-relaxed text-[16px] bal">
                     전문 리서처가 아니어도 일관된 퀄리티의 리서치를 수행할 수 있도록 허들을 낮춥니다. <br class="hidden md:block">
                     긴급 상황에서도 구성원 누구나 대처 가능하게 했던 <strong>매뉴얼 설계 노하우</strong>로 PO와 디자이너의 가설 검증 능력을 높입니다.
                 </p>
                             <ul class="space-y-4">
                                 <li class="flex items-start gap-3 bg-[#f9fafb] p-4 rounded-xl border border-gray-100">
                                     <div class="text-xl mt-0.5 shrink-0">📝</div>
-                                    <div>
+                                    <div class="bal">
                                         <strong class="text-[#191f28] block mb-1 text-[15px]">중립적 질문 작성 템플릿</strong>
                                         <span class="text-sm text-[#4e5968] leading-relaxed block">응답의 편향을 피하는 질문법과 오프라인 결제 서비스 여정에 맞춘 표준 설문 가이드를 배포합니다.</span>
                                     </div>
@@ -335,7 +339,7 @@
                     <div id="content-3" class="accordion-content bg-white">
                         <div class="px-8 pb-8 pt-2">
                             <div class="w-full h-px bg-gray-100 mb-6"></div>
-                            <p class="text-[#4e5968] mb-6 leading-relaxed text-[16px]">
+                            <p class="text-[#4e5968] mb-6 leading-relaxed text-[16px] bal">
                     현장에서 발굴한 정성적 결과를 제품 개선의 직접적인 재료로 만듭니다. <br class="hidden md:block">
                     유저의 모호한 불만을 개발팀이 작업 가능한 언어(Jira)로 번역했던 경험을 살려, <strong>조직 전체가 검색 가능한 지식 저장소</strong>를 구축합니다.
                 </p>
@@ -435,7 +439,8 @@
                         <p class="text-xs font-bold text-amber-800 mb-3">자동화로 줄지 않는 부분</p>
                         <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
                             <li>&bull; <strong class="text-slate-800">일정 재조정</strong> &mdash; 가맹점주는 영업 중이라 당일 변경이 잦습니다. 알림은 자동이지만 <strong>재협의는 사람이 합니다</strong></li>
-                            <li>&bull; <strong class="text-slate-800">섭외 승낙 확보</strong> &mdash; 자동화가 다루는 것은 누구에게 연락할지이고, 병목은 <strong>연락해서 승낙받는 단계</strong>입니다</li>
+                            <li>&bull; <strong class="text-slate-800">섭외 승낙 확보</strong> &mdash; 자동화가 다루는 것은 누구에게 연락할지이고, <br class="hidden md:block">
+                    병목은 <strong>연락해서 승낙받는 단계</strong>입니다</li>
                             <li>&bull; <strong class="text-slate-800">사례비 예외 처리</strong> &mdash; 계좌 오류나 중도 이탈 건은 개별 판단이 필요합니다</li>
                         </ul>
                     </div>
@@ -489,9 +494,10 @@
                     태깅과 아카이빙은 정확한 처방이지만, 저장소는 <strong class="text-slate-900">검색되지 않으면 자산이 아니라 창고</strong>가 됩니다.
                 </p>
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed mb-6">
-                    <li>&bull; <strong class="text-slate-800">태그 체계의 주인</strong> &mdash; 누가 태그를 정하고 승인하는지 정해두지 않으면 같은 개념에 여러 태그가 생겨 검색이 깨집니다. 태그 목록을 고정하고 신규 추가는 승인제로 두는 편이 안전합니다</li>
-                    <li>&bull; <strong class="text-slate-800">검색 진입 경로</strong> &mdash; 조직원이 저장소가 있다는 사실을 알아도 찾아가지 않습니다. 기획 문서 템플릿에 <strong>관련 인사이트 링크 항목</strong>을 넣어 참조를 절차로 만드는 방법이 있습니다</li>
-                    <li>&bull; <strong class="text-slate-800">백로그 연결 경로</strong> &mdash; 인사이트가 백로그로 직결된다는 주장이 성립하려면, 인사이트 하나가 티켓으로 전환되는 <strong>구체적 동선</strong>이 있어야 합니다. 태그만으로는 이어지지 않습니다</li>
+                    <li class="bal">&bull; <strong class="text-slate-800">태그 체계의 주인</strong> &mdash; 누가 태그를 정하고 승인하는지 정해두지 않으면 같은 개념에 여러 태그가 생겨 검색이 깨집니다. 태그 목록을 고정하고 신규 추가는 승인제로 두는 편이 안전합니다</li>
+                    <li class="bal">&bull; <strong class="text-slate-800">검색 진입 경로</strong> &mdash; 조직원이 저장소가 있다는 사실을 알아도 찾아가지 않습니다. 기획 문서 템플릿에 <strong>관련 인사이트 링크 항목</strong>을 넣어 참조를 절차로 만드는 방법이 있습니다</li>
+                    <li>&bull; <strong class="text-slate-800">백로그 연결 경로</strong> &mdash; 인사이트가 백로그로 직결된다는 주장이 성립하려면, <br class="hidden md:block">
+                    인사이트 하나가 티켓으로 전환되는 <strong>구체적 동선</strong>이 있어야 합니다. 태그만으로는 이어지지 않습니다</li>
                 </ul>
                 <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
                     <p class="text-xs text-slate-600 leading-relaxed">
@@ -505,8 +511,8 @@
                 <div class="bg-white rounded-3xl border-2 border-emerald-200 p-7">
                     <p class="text-sm font-bold text-emerald-700 mb-4">측정할 지표</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li>&bull; <strong class="text-slate-800">Admin 시간 비중</strong> &mdash; 정형과 비정형을 나눠 기록합니다. 목표 10은 정형 기준입니다</li>
-                        <li>&bull; <strong class="text-slate-800">섭외 승낙률</strong> &mdash; 연락 대비 인터뷰 성사 비율. 자동화가 다루지 못하는 병목의 크기입니다</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">Admin 시간 비중</strong> &mdash; 정형과 비정형을 나눠 기록합니다. 목표 10은 정형 기준입니다</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">섭외 승낙률</strong> &mdash; 연락 대비 인터뷰 성사 비율. 자동화가 다루지 못하는 병목의 크기입니다</li>
                         <li>&bull; <strong class="text-slate-800">일정 변경 발생률</strong> &mdash; 확정 후 재조정된 비율. 비정형 Admin의 실제 부담입니다</li>
                         <li>&bull; <strong class="text-slate-800">보상 오지급 건수</strong> &mdash; 파이프라인 도입 전후 비교</li>
                         <li>&bull; <strong class="text-slate-800">인사이트 인용 횟수</strong> &mdash; 기획 문서와 백로그 티켓에서 저장소를 참조한 건수</li>
@@ -518,7 +524,8 @@
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                         <li>&bull; 도입 전후 비중은 <strong class="text-slate-800">현행 추정과 도입 후 목표</strong>로 표기된 값이며 실측치가 아닙니다. 본문에도 그렇게 명시되어 있습니다.</li>
                         <li>&bull; 세 항목의 합이 100이 되도록 구성한 <strong class="text-slate-800">상대 비중</strong>이므로 절대 시간으로 환산할 수 없습니다. 총 업무량이 늘면 비중이 같아도 실제 시간은 다릅니다.</li>
-                        <li>&bull; 자동화 도구는 <strong class="text-slate-800">엑셀과 슬랙, Jira를 전제</strong>합니다. 사용 도구와 연동 권한에 따라 구현 범위가 달라집니다.</li>
+                        <li>&bull; 자동화 도구는 <strong class="text-slate-800">엑셀과 슬랙, <br class="hidden md:block">
+                    Jira를 전제</strong>합니다. 사용 도구와 연동 권한에 따라 구현 범위가 달라집니다.</li>
                         <li>&bull; 패널 데이터 활용은 <strong class="text-slate-800">가맹점 정보의 이용 동의 범위</strong>에 종속됩니다. 결제액 조건으로 필터링하려면 그 데이터를 리서치 목적으로 쓸 수 있어야 합니다.</li>
                         <li>&bull; 현장 관찰 시 <strong class="text-slate-800">고객 촬영에 대한 동의 절차</strong>는 다루지 않았습니다. 매장에는 가맹점주 외에 소비자가 있습니다.</li>
                     </ul>

@@ -26,7 +26,7 @@
     <style>
         
         body { 
-            font-family: 'Pretendard', sans-serif; 
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; 
             background-color: #f8fafc; 
             color: #1e293b; 
             word-break: keep-all; 
@@ -36,6 +36,7 @@
         }
 
         p, li, td, th, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         h1 { text-wrap: balance; }
         
         .chart-container { 
@@ -122,7 +123,7 @@
             <span class="gradient-text">AI 프로덕트의 신뢰</span>를 구축합니다.
         </h1>
         
-        <p class="text-lg md:text-xl text-slate-600 max-w-3xl leading-relaxed font-medium mb-12 mx-auto text-center">
+        <p class="text-lg md:text-xl text-slate-600 max-w-3xl leading-relaxed font-medium mb-12 mx-auto text-center bal">
                      한 번의 장애가 바로 지표로 드러나는 게임 운영 현장에서 수만 건의 데이터를 다뤄온 집요함으로, AI 학습 데이터를 검수하고 배포 후의 문제를 빈틈없이 추적해 비즈니스 가치로 번역합니다.
                 </p>
         
@@ -200,7 +201,7 @@
                             <span class="text-xs font-bold text-rose-500 bg-rose-50 px-2 py-1 rounded-full border border-rose-100 animate-pulse hidden" id="click-badge-0">👆 눌러 보기</span>
                         </div>
                         <div class="text-lg font-bold text-slate-800">눈으로 찾는 수작업 데이터 검수</div>
-                        <p class="mt-2 text-slate-600 text-sm hidden lg:block">방대한 게임 로그 속 결측치와 이상치. 막대한 리소스가 낭비되던 시기였습니다.</p>
+                        <p class="mt-2 text-slate-600 text-sm hidden lg:block bal">방대한 게임 로그 속 결측치와 이상치. 막대한 리소스가 낭비되던 시기였습니다.</p>
                     </button>
                     
                     <button onclick="updateQA(1)" id="btn-step1" class="step-btn clickable-card text-left p-5 rounded-xl border-2 border-slate-200 bg-white relative group">
@@ -209,7 +210,7 @@
                             <span class="text-xs font-bold text-rose-500 bg-rose-50 px-2 py-1 rounded-full border border-rose-100 animate-pulse block group-hover:hidden" id="click-badge-1">👆 눌러 보기</span>
                         </div>
                         <div class="text-lg font-bold text-slate-800">함수를 활용한 정제 파이프라인 구축</div>
-                        <p class="mt-2 text-slate-600 text-sm hidden lg:block">엑셀 복합 함수를 엮어 자동화 구조를 만들어 검수 시간을 대폭 단축했습니다.</p>
+                        <p class="mt-2 text-slate-600 text-sm hidden lg:block bal">엑셀 복합 함수를 엮어 자동화 구조를 만들어 검수 시간을 대폭 단축했습니다.</p>
                     </button>
 
                     <button onclick="updateQA(2)" id="btn-step2" class="step-btn clickable-card text-left p-5 rounded-xl border-2 border-slate-200 bg-white relative group">
@@ -218,7 +219,7 @@
                             <span class="text-xs font-bold text-emerald-500 bg-emerald-50 px-2 py-1 rounded-full border border-emerald-100 animate-pulse block group-hover:hidden" id="click-badge-2">👆 눌러 보기</span>
                         </div>
                         <div class="text-lg font-bold text-slate-800">엔지니어를 위한 정제된 데이터 제공</div>
-                        <p class="mt-2 text-slate-600 text-sm hidden lg:block">이 경험을 살려, AI 엔지니어가 모델링에만 집중할 수 있도록 사전에 노이즈를 필터링합니다.</p>
+                        <p class="mt-2 text-slate-600 text-sm hidden lg:block bal">이 경험을 살려, AI 엔지니어가 모델링에만 집중할 수 있도록 사전에 노이즈를 필터링합니다.</p>
                     </button>
                 </div>
                 
@@ -230,7 +231,7 @@
                     <div class="chart-container w-full h-56">
                         <canvas id="qaDynamicChart" role="img" aria-label="막대 차트. 항목 데이터 검수 소요 시간. 계열 수작업, 자동화"></canvas>
                     </div>
-                    <p class="text-xs text-slate-400 mt-6 text-right border-t border-slate-100 pt-2">
+                    <p class="text-xs text-slate-400 mt-6 text-right border-t border-slate-100 pt-2 bal">
                     * 지표 출처: 담당 중인 MMORPG 라이브 서비스에서 수작업 검수를 함수 기반으로 바꿔 본 경험을 대입한 추정치이며 측정값이 아닙니다
                 </p>
                 </div>
@@ -355,7 +356,7 @@
                     <div class="bg-emerald-50 rounded-2xl p-6 border-2 border-emerald-200">
                         <p class="text-xs font-bold text-emerald-700 mb-2">오염된 데이터 유입</p>
                         <p class="text-sm font-bold text-slate-900 mb-3">전략 1이 직접 대응합니다</p>
-                        <p class="text-xs text-slate-600 leading-relaxed">
+                        <p class="text-xs text-slate-600 leading-relaxed bal">
                     오타와 중복, 악성 리뷰는 <strong class="text-slate-800">규칙과 필터로 걸러낼 수 있습니다.</strong> <br class="hidden md:block">
                     학습 전 단계에서 처리하므로 파이프라인 구축이 정확한 처방입니다.
                 </p>
@@ -363,7 +364,7 @@
                     <div class="bg-rose-50 rounded-2xl p-6 border-2 border-rose-300">
                         <p class="text-xs font-bold text-rose-700 mb-2">AI의 환각 현상</p>
                         <p class="text-sm font-bold text-slate-900 mb-3">데이터 정제로는 막히지 않습니다</p>
-                        <p class="text-xs text-slate-600 leading-relaxed">
+                        <p class="text-xs text-slate-600 leading-relaxed bal">
                     환각은 학습 데이터의 오염 때문이 아니라 <strong class="text-slate-800">생성 모델 자체의 성질</strong>입니다. <br class="hidden md:block">
                     깨끗한 데이터로 학습해도 존재하지 않는 상품 특성을 지어낼 수 있습니다.
                 </p>
@@ -489,7 +490,7 @@
                     3단계에서 수작업이 0이 되면 검수 결과를 대조할 사람이 없어집니다. <br class="hidden md:block">
                     앞에서 정리한 출력 검증은 <strong class="text-slate-900">AI가 만든 요약</strong>을 대상으로 했고, 이것은 <strong class="text-rose-700">학습에 들어가기 전 데이터</strong>를 거르는 단계라 성격이 다릅니다.
                 </p>
-                    <p class="text-slate-600 leading-relaxed mb-5">
+                    <p class="text-slate-600 leading-relaxed mb-5 bal">
                     문제는 시점입니다. <br class="hidden md:block">
                     자동 검수가 오염 데이터를 놓치면 그 영향은 <strong class="text-slate-900">모델이 학습을 마치고 배포된 뒤에야</strong> 이상한 요약으로 나타납니다. <br class="hidden md:block">
                     3번의 예외 케이스 곡선에 잡히는 오류 중 일부가 여기서 올 수 있는데, <strong class="text-rose-700">배포 후에 발견되면 원인을 데이터로 거슬러 올라가기 어렵습니다.</strong>
@@ -601,21 +602,21 @@
                 <div class="bg-white rounded-3xl border-2 border-emerald-200 p-7 shadow-sm">
                     <p class="text-sm font-bold text-emerald-700 mb-4">측정할 지표</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li>&bull; <strong class="text-slate-800">사용 건수 대비 오류율</strong> &mdash; 절대 건수와 함께 봅니다. 위 해석 A와 B를 가르는 기준입니다</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">사용 건수 대비 오류율</strong> &mdash; 절대 건수와 함께 봅니다. 위 해석 A와 B를 가르는 기준입니다</li>
                         <li>&bull; <strong class="text-slate-800">환각 발생률</strong> &mdash; 생성 결과 표본에서 원문에 없는 내용이 포함된 비율. 입력 검수로는 잡히지 않는 지표입니다</li>
-                        <li>&bull; <strong class="text-slate-800">감지까지의 시간</strong> &mdash; 첫 오류 발생에서 리포팅까지. 일 단위면 이 값이 하루를 넘습니다</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">감지까지의 시간</strong> &mdash; 첫 오류 발생에서 리포팅까지. 일 단위면 이 값이 하루를 넘습니다</li>
                         <li>&bull; <strong class="text-slate-800">요약 기능 이탈률</strong> &mdash; AI 요약을 본 뒤 원문 리뷰로 이동하는 비율. 높으면 요약을 신뢰하지 않는 것입니다</li>
-                        <li>&bull; <strong class="text-slate-800">번역된 요건의 반영률</strong> &mdash; 전달한 프롬프트 요건이 실제 수정으로 이어진 비율</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">번역된 요건의 반영률</strong> &mdash; 전달한 프롬프트 요건이 실제 수정으로 이어진 비율</li>
                     </ul>
                 </div>
                 <div class="bg-white rounded-3xl border-2 border-slate-200 p-7 shadow-sm">
                     <p class="text-sm font-bold text-slate-500 mb-4">이 기록의 한계</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li>&bull; 검수 시간 절감은 본문에 밝힌 대로 <strong class="text-slate-800">MMORPG 운영 로그 정제 성과</strong>입니다. 커머스 리뷰 데이터에서 같은 폭이 재현된다는 근거는 아닙니다.</li>
+                        <li class="bal">&bull; 검수 시간 절감은 본문에 밝힌 대로 <strong class="text-slate-800">MMORPG 운영 로그 정제 성과</strong>입니다. 커머스 리뷰 데이터에서 같은 폭이 재현된다는 근거는 아닙니다.</li>
                         <li>&bull; 예외 케이스 곡선은 <strong class="text-slate-800">모니터링 구조를 보여주기 위한 시연 값</strong>이며 실제 배포 지표가 아닙니다.</li>
-                        <li>&bull; 환각 대응 방안은 <strong class="text-slate-800">방향만 제시</strong>했고 구현 비용과 응답 속도 영향은 계산하지 않았습니다. 근거 인용을 붙이면 출력 길이가 늘어납니다.</li>
+                        <li class="bal">&bull; 환각 대응 방안은 <strong class="text-slate-800">방향만 제시</strong>했고 구현 비용과 응답 속도 영향은 계산하지 않았습니다. 근거 인용을 붙이면 출력 길이가 늘어납니다.</li>
                         <li>&bull; 모델 선택과 비용, 응답 지연은 <strong class="text-slate-800">다루지 않았습니다.</strong> AI PM 업무에서 실제로는 큰 비중을 차지하는 항목입니다.</li>
-                        <li>&bull; 리뷰 데이터의 <strong class="text-slate-800">개인정보 처리와 이용 동의 범위</strong>는 검토 범위 밖입니다.</li>
+                        <li class="bal">&bull; 리뷰 데이터의 <strong class="text-slate-800">개인정보 처리와 이용 동의 범위</strong>는 검토 범위 밖입니다.</li>
                     </ul>
                 </div>
             </div>
@@ -630,7 +631,7 @@
 
     <script>
         // Chart 연산 최적화
-        Chart.defaults.font.family = "'Pretendard', sans-serif";
+        Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";
         Chart.defaults.color = '#64748b';
         Chart.defaults.animation.duration = 400; // 차트 애니메이션 속도 상향으로 렌더링 부하 감소
 

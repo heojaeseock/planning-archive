@@ -84,6 +84,7 @@
         body { word-break: keep-all; overflow-wrap: break-word; }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -146,7 +147,7 @@
             <div class="space-y-6">
                 <div class="bg-white p-10 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-cfred relative">
                     <h3 class="text-xl font-bold text-slate-900 mb-4 tracking-tight">성취감의 근원: 학습 가능한 반동</h3>
-                    <p class="text-slate-600 leading-relaxed text-sm">
+                    <p class="text-slate-600 leading-relaxed text-sm bal">
                     FPS에서 무기는 신체의 연장선입니다. <br class="hidden md:block">
                     단순히 데미지가 강력한 무기는 쉽게 질리지만, <strong>반동 패턴</strong>을 학습하고 이를 근육 기억으로 통제하는 과정은 유저에게 끊임없는 도파민을 제공합니다. <br class="hidden md:block">
                     이는 게임을 단순한 '슈팅'에서 '숙련의 영역'으로 격상시킵니다.
@@ -280,7 +281,7 @@
             <div class="space-y-6">
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
                     <h3 class="text-xl font-bold text-slate-900 mb-4">컨셉: 모드 전환형 DMR/AR 하이브리드</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">
+                    <p class="text-sm text-slate-600 leading-relaxed bal">
                     하나의 총기에 두 가지 조작감을 부여합니다. <br class="hidden md:block">
                     <strong>모드 A (저지지력 연사):</strong> M4의 안정성을 가졌지만 연사력이 낮아, 중거리 적을 압박하는 데 적합합니다. <br class="hidden md:block">
                     <strong>모드 B (고반동 점사):</strong> AK 이상의 반동을 가졌지만 3점사 정확도가 높아, 숙련자가 정교한 샷으로 변수를 만들기에 적합합니다.
@@ -329,7 +330,8 @@
                     <p class="text-sm text-slate-600 leading-relaxed">
                     이 문서 첫 장은 M4A1의 낮은 반동이 <strong>초보자 적응을 돕는다</strong>고 정리했습니다. <br class="hidden md:block">
                     그런데 Variable Barrel은 <strong class="text-slate-900">두 반동 패턴과 전환 타이밍까지</strong> 익혀야 합니다. <br class="hidden md:block">
-                    숙련자용 무기이지, 신규 유입에는 불리합니다.
+                    숙련자용 무기이지, <br class="hidden md:block">
+                    신규 유입에는 불리합니다.
                 </p>
                 </div>
                 <div class="bg-white border-2 border-cfred/30 rounded-xl p-6">
@@ -349,12 +351,13 @@
                         <p class="font-black text-white mb-3 text-sm">1. 전환을 &lsquo;재장전급&rsquo; 행동으로 취급</p>
                         <p class="text-sm text-slate-300 leading-relaxed">
                     전환 중 <strong class="text-white">사격 불가 &middot; 이동 속도 감소</strong>를 부여합니다. <br class="hidden md:block">
-                    교전 중 전환은 사실상 불가능해지고, 유저는 <strong class="text-cfred">교전 진입 전에 모드를 결정</strong>해야 합니다. 이렇게 하면 &lsquo;전술적 조작&rsquo;이 반응 속도 경쟁이 아니라 판단의 문제가 됩니다.
+                    교전 중 전환은 사실상 불가능해지고, <br class="hidden md:block">
+                    유저는 <strong class="text-cfred">교전 진입 전에 모드를 결정</strong>해야 합니다. 이렇게 하면 &lsquo;전술적 조작&rsquo;이 반응 속도 경쟁이 아니라 판단의 문제가 됩니다.
                 </p>
                     </div>
                     <div>
                         <p class="font-black text-white mb-3 text-sm">2. 각 모드에 명확한 결손을 남긴다</p>
-                        <p class="text-sm text-slate-300 leading-relaxed">
+                        <p class="text-sm text-slate-300 leading-relaxed bal">
                     모드 A는 연사력을 낮추는 것에서 그치지 않고 <strong class="text-white">거리별 감쇄를 크게</strong> 두고, 모드 B는 <strong class="text-white">장탄수와 기동성</strong>을 깎습니다. <br class="hidden md:block">
                     어느 모드로도 M4A1과 AK-47의 강점을 온전히 갖지 못하게 해야 두 총기가 살아남습니다.
                 </p>
@@ -384,7 +387,7 @@
             <div class="grid md:grid-cols-2 gap-5">
                 <div class="bg-white rounded-lg p-5 border border-slate-200">
                     <p class="text-xs font-black text-slate-900 mb-2">반동을 낮춰서 팔면</p>
-                    <p class="text-sm text-slate-600 leading-relaxed">
+                    <p class="text-sm text-slate-600 leading-relaxed bal">
                     숙련 장벽을 결제로 우회하게 되어 <strong class="text-slate-800">돈으로 이긴다는 P2W 논란</strong>이 발생합니다. <br class="hidden md:block">
                     무료 유저가 연습으로 쌓은 숙련도의 가치가 훼손됩니다.
                 </p>
@@ -430,8 +433,8 @@
                 <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4 italic">검증 방법</p>
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                     <li>&bull; <strong class="text-slate-800">모드별 픽률과 승률:</strong> 한쪽으로 8:2 이상 쏠리면 전환 비용 재조정</li>
-                    <li>&bull; <strong class="text-slate-800">기존 총기 픽률 변화:</strong> M4A1&middot;AK-47 사용률이 급감하면 상위 호환 신호</li>
-                    <li>&bull; <strong class="text-slate-800">숙련도 구간별 성과:</strong> 신규 유저 구간에서 성적이 오히려 낮으면 진입 장벽 가설 확인</li>
+                    <li class="bal">&bull; <strong class="text-slate-800">기존 총기 픽률 변화:</strong> M4A1&middot;AK-47 사용률이 급감하면 상위 호환 신호</li>
+                    <li class="bal">&bull; <strong class="text-slate-800">숙련도 구간별 성과:</strong> 신규 유저 구간에서 성적이 오히려 낮으면 진입 장벽 가설 확인</li>
                     <li>&bull; <strong class="text-slate-800">전환 실행 시점 분포:</strong> 교전 중 전환이 다수면 페널티가 약한 것</li>
                 </ul>
             </div>
@@ -439,7 +442,8 @@
                 <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4 italic">이 분석의 한계</p>
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                     <li>&bull; 잔존율 지표와 레이더 수치는 <strong class="text-slate-800">직접 플레이를 근거로 구성한 가설 모델</strong>이며 실측치가 아닙니다.</li>
-                    <li>&bull; &lsquo;조작감이 좋으면 잔존율이 높다&rsquo;는 관계는 단조롭게 그렸지만, 실제로는 <strong class="text-slate-800">숙련 장벽이 초기 이탈을 함께 늘립니다.</strong> 신규 구간과 잔존 구간을 나눠 봐야 합니다.</li>
+                    <li class="bal">&bull; &lsquo;조작감이 좋으면 잔존율이 높다&rsquo;는 관계는 단조롭게 그렸지만, <br class="hidden md:block">
+                    실제로는 <strong class="text-slate-800">숙련 장벽이 초기 이탈을 함께 늘립니다.</strong> 신규 구간과 잔존 구간을 나눠 봐야 합니다.</li>
                     <li>&bull; 반동 제어를 실력으로 보는 전제는 <strong class="text-slate-800">마우스 입력 환경</strong>을 가정합니다. 패드나 모바일에서는 성립하지 않습니다.</li>
                     <li>&bull; 매출 영향은 방향만 제시했습니다. <strong class="text-slate-800">무기별 판매 데이터 없이 규모는 추정하지 않았습니다.</strong></li>
                 </ul>
@@ -454,7 +458,8 @@
                 <h2 class="text-3xl font-black text-slate-900 mb-4 tracking-tight italic">07. 탄착 좌표가 학습 가능성을 어디까지 뒷받침하는가</h2>
                 <p class="text-slate-500 text-sm leading-relaxed max-w-3xl">
                     이 문서의 전제는 <strong class="text-slate-800">반동이 학습 가능해야 성취감이 생긴다</strong>는 것이었습니다. <br class="hidden md:block">
-                    앞의 구간별 탄착 시뮬레이션에는 발마다 좌표가 들어 있으므로, 그 좌표를 <strong class="text-slate-800">좌우 산포와 수직 상승으로 나눠</strong> 전제가 성립하는 범위를 확인할 수 있습니다.
+                    앞의 구간별 탄착 시뮬레이션에는 발마다 좌표가 들어 있으므로, <br class="hidden md:block">
+                    그 좌표를 <strong class="text-slate-800">좌우 산포와 수직 상승으로 나눠</strong> 전제가 성립하는 범위를 확인할 수 있습니다.
                 </p>
             </div>
 
@@ -659,7 +664,7 @@
             <div class="grid md:grid-cols-2 gap-5 mb-5">
                 <div class="bg-slate-50 rounded-lg p-5 border border-slate-200">
                     <p class="text-xs font-black text-slate-700 mb-2">백분율이라면</p>
-                    <p class="text-xs text-slate-600 leading-relaxed">96% 주간 잔존은 <strong class="text-slate-800">거의 이탈이 없다는 뜻</strong>이라 현실적인 값이 아닙니다.</p>
+                    <p class="text-xs text-slate-600 leading-relaxed bal">96% 주간 잔존은 <strong class="text-slate-800">거의 이탈이 없다는 뜻</strong>이라 현실적인 값이 아닙니다.</p>
                 </div>
                 <div class="bg-slate-50 rounded-lg p-5 border border-slate-200">
                     <p class="text-xs font-black text-slate-700 mb-2">상대 지수라면</p>
@@ -677,10 +682,11 @@
         <div class="border border-slate-200 rounded-xl p-6 bg-slate-50">
             <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4 italic">이 절의 한계</p>
             <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                <li>&bull; 탄착 좌표는 <strong class="text-slate-800">구간별 산포 성격을 보여주기 위한 시연 값</strong>입니다. 좌우 순서가 고정된 것도 시연을 위한 구성일 수 있으므로, 실제 게임의 반동 패턴이 같다고 단정할 수는 없습니다.</li>
+                <li>&bull; 탄착 좌표는 <strong class="text-slate-800">구간별 산포 성격을 보여주기 위한 시연 값</strong>입니다. 좌우 순서가 고정된 것도 시연을 위한 구성일 수 있으므로, <br class="hidden md:block">
+                    실제 게임의 반동 패턴이 같다고 단정할 수는 없습니다.</li>
                 <li>&bull; 좌우 보정이 수직 보정보다 어렵다는 판단은 <strong class="text-slate-800">마우스 입력을 전제</strong>합니다. 조작감 상품화를 다룬 장의 한계 항목에 적힌 전제와 같습니다.</li>
-                <li>&bull; 다섯 축의 합계 비교는 <strong class="text-slate-800">축의 가중치가 모두 같다고 가정</strong>한 값입니다. 실제 전투에서 데미지와 유효사거리의 무게가 같지 않으므로, 합계는 방향을 보는 용도로만 씁니다.</li>
-                <li>&bull; 축 방향을 맞추면 면적이 우열을 뜻하게 되지만, 그것으로 <strong class="text-slate-800">어느 총기가 더 강한지가 정해지는 것은 아닙니다.</strong> 두 총기는 쓰이는 상황이 다르고, 그 차이가 앞에서 말한 밸런스 축입니다.</li>
+                <li class="bal">&bull; 다섯 축의 합계 비교는 <strong class="text-slate-800">축의 가중치가 모두 같다고 가정</strong>한 값입니다. 실제 전투에서 데미지와 유효사거리의 무게가 같지 않으므로, 합계는 방향을 보는 용도로만 씁니다.</li>
+                <li class="bal">&bull; 축 방향을 맞추면 면적이 우열을 뜻하게 되지만, 그것으로 <strong class="text-slate-800">어느 총기가 더 강한지가 정해지는 것은 아닙니다.</strong> 두 총기는 쓰이는 상황이 다르고, 그 차이가 앞에서 말한 밸런스 축입니다.</li>
             </ul>
         </div>
     </section>
@@ -746,7 +752,7 @@
 
     <script>
         // Global Chart.js Settings
-        Chart.defaults.font.family = 'Pretendard, sans-serif';
+        Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";
         Chart.defaults.color = '#94a3b8';
 
         // 1. Retention Bar Chart

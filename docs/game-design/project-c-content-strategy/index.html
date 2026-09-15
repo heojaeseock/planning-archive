@@ -23,8 +23,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
+    <script>Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";</script>
     <style>
-        body { font-family: 'Pretendard', sans-serif; background-color: #f1f5f9; color: #334155; }
+        body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; background-color: #f1f5f9; color: #334155; }
         
         /* 차트 컨테이너 스타일링 */
         .chart-container {
@@ -75,6 +76,7 @@
         body { word-break: keep-all; overflow-wrap: break-word; }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 
@@ -123,7 +125,7 @@
                 <div class="space-y-6">
                     <div class="point-box bg-white p-5 rounded-r-xl shadow-sm">
                         <h3 class="font-bold text-slate-800 mb-2">● 완벽함 속의 결핍 (Gap-Moe)</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed">
+                        <p class="text-sm text-slate-600 leading-relaxed bal">
                     최근 유저들은 완벽한 캐릭터보다 보호가 필요한 약점을 가진 캐릭터에게 더 높은 지불 용의(WTP)를 보입니다. <br class="hidden md:block">
                     이는 유저의 개입 명분이 되어 잔존율을 높이는 강력한 기제가 됩니다.
                 </p>
@@ -183,7 +185,7 @@
                                     <div class="flex justify-between text-xs font-bold mb-2"><span>스트레스(Stress) 저항도</span> <span>최저 (E)</span></div>
                                     <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden"><div class="bg-red-500 h-full" style="width: 85%"></div></div>
                                 </div>
-                                <div class="bg-white p-4 rounded-xl text-xs text-slate-600 leading-relaxed shadow-sm">
+                                <div class="bg-white p-4 rounded-xl text-xs text-slate-600 leading-relaxed shadow-sm bal">
                                     효율이 좋은 대신 스트레스 임계점이 매우 낮음. 유저는 주기적으로 '특수 대화'나 '전용 아이템'을 사용하여 배드엔딩을 방어해야 함.
                                 </div>
                             </div>
@@ -222,7 +224,7 @@
                                     <div class="flex justify-between text-xs font-bold mb-2"><span>호감도 비례 성장 가속</span> <span>무한 (EX)</span></div>
                                     <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden"><div class="bg-violet-500 h-full" style="width: 100%"></div></div>
                                 </div>
-                                <div class="bg-white p-4 rounded-xl text-xs text-slate-600 leading-relaxed shadow-sm">
+                                <div class="bg-white p-4 rounded-xl text-xs text-slate-600 leading-relaxed shadow-sm bal">
                                     유저가 칭찬 아이템이나 이벤트를 수행할 때마다 능력치 상한선이 해금됨. '버려진 아이를 최강으로 키워냈다'는 성취감 제공.
                                 </div>
                             </div>
@@ -308,7 +310,8 @@
                     </div>
                     <p class="text-sm text-slate-600 leading-relaxed mb-5">
                     스트레스 저항이 최저(E)라 유저가 <strong class="text-slate-900">주기적으로 개입해 배드엔딩을 방어</strong>해야 합니다. <br class="hidden md:block">
-                    개입 명분을 만드는 설계로는 의도가 분명하지만, 두 가지가 따라옵니다.
+                    개입 명분을 만드는 설계로는 의도가 분명하지만, <br class="hidden md:block">
+                    두 가지가 따라옵니다.
                 </p>
                     <div class="space-y-3 mb-5">
                         <div class="bg-rose-50 rounded-xl p-4 border border-rose-200">
@@ -341,21 +344,21 @@
                         <span class="bg-amber-500 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">검토</span>
                         <span class="font-black text-slate-900">루나 &middot; 매출을 잠식할 수 있습니다</span>
                     </div>
-                    <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                    <p class="text-sm text-slate-600 leading-relaxed mb-5 bal">
                     호감도에 비례해 능력치 상한이 <strong class="text-slate-900">무한(EX)으로 해금</strong>됩니다. <br class="hidden md:block">
                     &lsquo;버려진 아이를 최강으로&rsquo;라는 성취는 강력하지만, 경제 관점에서 문제가 생깁니다.
                 </p>
                     <div class="space-y-3 mb-5">
                         <div class="bg-amber-50 rounded-xl p-4 border border-amber-200">
                             <p class="text-xs font-black text-amber-700 mb-1">시간만으로 최강에 도달합니다</p>
-                            <p class="text-xs text-slate-600 leading-relaxed">
+                            <p class="text-xs text-slate-600 leading-relaxed bal">
                     상한이 없으면 무과금도 충분한 시간으로 최상위 스펙을 만듭니다. <br class="hidden md:block">
                     그러면 <strong class="text-slate-800">다른 캐릭터를 뽑을 이유가 줄어듭니다.</strong>
                 </p>
                         </div>
                         <div class="bg-amber-50 rounded-xl p-4 border border-amber-200">
                             <p class="text-xs font-black text-amber-700 mb-1">유료화하면 서사가 훼손됩니다</p>
-                            <p class="text-xs text-slate-600 leading-relaxed">
+                            <p class="text-xs text-slate-600 leading-relaxed bal">
                     반대로 호감도 재화를 유료로 팔면 <strong class="text-slate-800">&lsquo;격려&rsquo;가 결제가 됩니다.</strong> <br class="hidden md:block">
                     1번에서 내세운 상호 구원 서사의 진정성이 약해집니다.
                 </p>
@@ -382,14 +385,14 @@
                 <div class="grid md:grid-cols-2 gap-5 mb-5">
                     <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
                         <p class="text-sm font-bold text-amber-300 mb-2">단기 문제 &middot; 일회성 소비</p>
-                        <p class="text-xs text-slate-300 leading-relaxed">
+                        <p class="text-xs text-slate-300 leading-relaxed bal">
                     결핍 해소 서사를 다 본 유저는 그 캐릭터를 <strong class="text-white">더 이상 돌볼 이유가 없습니다.</strong> <br class="hidden md:block">
                     유저를 붙잡아 두는 힘이 콘텐츠 소비와 함께 소진됩니다.
                 </p>
                     </div>
                     <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
                         <p class="text-sm font-bold text-amber-300 mb-2">장기 문제 &middot; 패턴 반복</p>
-                        <p class="text-xs text-slate-300 leading-relaxed">
+                        <p class="text-xs text-slate-300 leading-relaxed bal">
                     캐릭터가 수십 종으로 늘면 결핍 유형이 겹칩니다. <br class="hidden md:block">
                     <strong class="text-white">모두가 상처를 가지면 개별성이 사라지고</strong> 서사가 공식처럼 읽힙니다.
                 </p>
@@ -411,7 +414,7 @@
                 <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
                     <li>&bull; <strong class="text-slate-800">표현 수위:</strong> 배드엔딩이 구체적으로 무엇을 묘사하는지 사전에 정의하고, 자체 표현 가이드를 문서화합니다.</li>
                     <li>&bull; <strong class="text-slate-800">등급 심의:</strong> 정신 건강 관련 묘사는 연령 등급 판정에 영향을 줄 수 있어 기획 단계에서 확인이 필요합니다.</li>
-                    <li>&bull; <strong class="text-slate-800">지역별 감수성:</strong> 글로벌 서비스를 전제한다면 같은 소재가 지역에 따라 다르게 받아들여질 수 있어, 현지화 검수 범위에 포함해야 합니다.</li>
+                    <li class="bal">&bull; <strong class="text-slate-800">지역별 감수성:</strong> 글로벌 서비스를 전제한다면 같은 소재가 지역에 따라 다르게 받아들여질 수 있어, 현지화 검수 범위에 포함해야 합니다.</li>
                 </ul>
             </div>
 
@@ -419,7 +422,7 @@
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-white rounded-3xl border border-slate-200 p-7 shadow-sm">
                     <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">가설을 검증할 지표</p>
-                    <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4 bal">
                     1번의 가설은 <strong class="text-slate-700">&ldquo;결핍이 개입을 부르고 개입이 잔존을 높인다&rdquo;</strong>입니다. <br class="hidden md:block">
                     이것은 측정 가능한 형태로 쪼갤 수 있습니다.
                 </p>
@@ -435,7 +438,7 @@
                     <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">이 기획안의 한계</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                         <li>&bull; 시장 동향의 레이더 차트는 <strong class="text-slate-800">지향점을 표현한 개념도</strong>이며 경쟁 타이틀을 실측 비교한 값이 아닙니다.</li>
-                        <li>&bull; &lsquo;결핍 있는 캐릭터에 지불 용의가 높다&rsquo;는 전제는 <strong class="text-slate-800">장르 관찰에 기반한 가설</strong>입니다. 결제 데이터로 검증되지 않았습니다.</li>
+                        <li class="bal">&bull; &lsquo;결핍 있는 캐릭터에 지불 용의가 높다&rsquo;는 전제는 <strong class="text-slate-800">장르 관찰에 기반한 가설</strong>입니다. 결제 데이터로 검증되지 않았습니다.</li>
                         <li>&bull; 육성 파라미터의 등급(S &middot; E &middot; EX)은 <strong class="text-slate-800">방향만 표기</strong>했고 실제 수치 밸런싱은 하지 않았습니다.</li>
                         <li>&bull; 프로젝트 C는 <strong class="text-slate-800">가칭이며 학원 배경 서브컬처를 전제</strong>했습니다. 세계관이 달라지면 결핍 유형과 에너미 설정을 다시 짜야 합니다.</li>
                         <li>&bull; 캐릭터 2종과 에너미 3종은 <strong class="text-slate-800">샘플</strong>입니다. 라이브 서비스 규모의 확장 시 발생하는 패턴 중복은 검토 범위 밖입니다.</li>
@@ -495,7 +498,7 @@
 
             <div class="bg-rose-50 border-2 border-rose-300 rounded-3xl p-8 mb-8">
                 <p class="text-[10px] font-black tracking-wide text-rose-600 mb-5">최저가 최하보다 길게 그려져 있습니다</p>
-                <p class="text-slate-700 leading-relaxed mb-5">
+                <p class="text-slate-700 leading-relaxed mb-5 bal">
                     막대 길이로 줄을 세우면 <strong class="text-slate-900">최저 등급인 스트레스 저항도가 85%</strong>로 세 번째이고, <strong class="text-slate-900">최하 등급인 초기 훈련 효율이 35%</strong>로 가장 짧습니다. <br class="hidden md:block">
                     다른 세 항목은 등급이 높을수록 막대가 깁니다. <br class="hidden md:block">
                     <strong class="text-rose-700">스트레스 저항도 하나만 반대 방향</strong>으로 그려져 있습니다.
@@ -524,7 +527,7 @@
                 </p>
                 <div class="bg-amber-50 rounded-2xl p-6 border border-amber-200">
                     <p class="text-xs font-black text-amber-800 mb-3">등급 체계를 먼저 한 줄로 정의하면 됩니다</p>
-                    <p class="text-xs text-slate-600 leading-relaxed">
+                    <p class="text-xs text-slate-600 leading-relaxed bal">
                     EX와 S부터 E까지 몇 단계인지, 각 단계가 어떤 뜻인지 문서 앞쪽에 적어두면 이후 캐릭터를 추가할 때마다 표기가 흔들리지 않습니다. <br class="hidden md:block">
                     4번의 한계 항목이 <strong class="text-slate-800">등급은 방향만 표기했다</strong>고 밝혀두었으므로 실제 수치가 미정인 것은 문제가 아닙니다. <br class="hidden md:block">
                     다만 <strong class="text-amber-800">단계의 개수와 이름</strong>은 수치와 별개로 지금 정할 수 있는 항목입니다. <br class="hidden md:block">
@@ -644,7 +647,7 @@
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div class="bg-rose-50 rounded-2xl p-6 border border-rose-200">
                         <p class="text-xs font-black text-rose-700 mb-2">역전이 너무 이르면</p>
-                        <p class="text-xs text-slate-600 leading-relaxed">
+                        <p class="text-xs text-slate-600 leading-relaxed bal">
                     클로에를 키울 이유가 사라집니다. <br class="hidden md:block">
                     초기 효율이 높다는 강점이 <strong class="text-slate-800">짧게 쓰고 버리는 특성</strong>이 됩니다.
                 </p>
@@ -668,8 +671,8 @@
             <div class="bg-slate-50 border border-slate-200 rounded-3xl p-7">
                 <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">이 절의 한계</p>
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                    <li>&bull; 막대 길이는 <strong class="text-slate-800">화면 표현용 값</strong>이며 실제 밸런스 수치가 아닙니다. 여기서 지적한 것은 수치의 옳고 그름이 아니라 <strong class="text-slate-800">세 가지 표기가 서로 다른 방향을 가리킨다</strong>는 점입니다.</li>
-                    <li>&bull; 레이더 차트는 문서가 밝힌 대로 <strong class="text-slate-800">지향점을 표현한 개념도</strong>입니다. 축별 점수를 실제 경쟁작 평가로 읽으면 안 됩니다. 위 계산도 개념도 안에서의 비교입니다.</li>
+                    <li class="bal">&bull; 막대 길이는 <strong class="text-slate-800">화면 표현용 값</strong>이며 실제 밸런스 수치가 아닙니다. 여기서 지적한 것은 수치의 옳고 그름이 아니라 <strong class="text-slate-800">세 가지 표기가 서로 다른 방향을 가리킨다</strong>는 점입니다.</li>
+                    <li class="bal">&bull; 레이더 차트는 문서가 밝힌 대로 <strong class="text-slate-800">지향점을 표현한 개념도</strong>입니다. 축별 점수를 실제 경쟁작 평가로 읽으면 안 됩니다. 위 계산도 개념도 안에서의 비교입니다.</li>
                     <li>&bull; 역전 시점은 <strong class="text-slate-800">성장 계수가 정해져야 계산됩니다.</strong> 여기서는 계산하지 않고 정해야 할 항목으로만 남겼습니다.</li>
                     <li>&bull; 다섯 축의 가중치가 <strong class="text-slate-800">모두 같다고 가정</strong>했습니다. 실제로는 축마다 사업 영향이 다르므로 합계 40%는 방향을 보는 값입니다.</li>
                 </ul>
@@ -681,7 +684,7 @@
             <h3 class="text-xl md:text-2xl font-bold mb-4 italic leading-relaxed">
                 "캐릭터에 대한 책임감이 결제 동기로 이어지는 구조를 설계했습니다."
             </h3>
-            <p class="text-slate-400 max-w-2xl mx-auto text-sm leading-relaxed">
+            <p class="text-slate-400 max-w-2xl mx-auto text-sm leading-relaxed bal">
                     유저가 왜 내가 이 아이를 도와야 하는가에 대한 서사적 당위성을 제공함으로써 장기적 LTV를 보장하는 프로젝트 C만의 차별화 전략입니다.
                 </p>
         </section>

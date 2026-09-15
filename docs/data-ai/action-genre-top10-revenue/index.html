@@ -25,7 +25,7 @@
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
         body { 
-            font-family: 'Pretendard', sans-serif; 
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; 
             background-color: #f8fafc; 
             color: #334155; 
             margin: 0;
@@ -86,6 +86,7 @@
         .custom-table tr:hover { background-color: #fcfcfd; }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -245,9 +246,9 @@
                                     <h4 class="font-black text-slate-800 text-sm">수익화 모델(BM) 트렌드</h4>
                                 </div>
                                 <ul class="space-y-2 text-xs text-slate-600">
-                                    <li class="flex items-start gap-2"><span class="text-indigo-500 mt-1">•</span> <span><strong>구독형 서비스:</strong> 월정액 및 배틀패스를 통한 고정 매출(Floor) 확보</span></li>
-                                    <li class="flex items-start gap-2"><span class="text-indigo-500 mt-1">•</span> <span><strong>타겟형 가챠:</strong> 수집욕을 자극하는 스킨 및 희귀 영웅 뽑기 시스템</span></li>
-                                    <li class="flex items-start gap-2"><span class="text-indigo-500 mt-1">•</span> <span><strong>성장 넛지:</strong> 무과금 진행의 한계를 설정하고 시간 단축형 패키지 적극 배치</span></li>
+                                    <li class="flex items-start gap-2 bal"><span class="text-indigo-500 mt-1">•</span> <span><strong>구독형 서비스:</strong> 월정액 및 배틀패스를 통한 고정 매출(Floor) 확보</span></li>
+                                    <li class="flex items-start gap-2 bal"><span class="text-indigo-500 mt-1">•</span> <span><strong>타겟형 가챠:</strong> 수집욕을 자극하는 스킨 및 희귀 영웅 뽑기 시스템</span></li>
+                                    <li class="flex items-start gap-2 bal"><span class="text-indigo-500 mt-1">•</span> <span><strong>성장 넛지:</strong> 무과금 진행의 한계를 설정하고 시간 단축형 패키지 적극 배치</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -260,7 +261,8 @@
                     <div class="relative z-10 max-w-3xl">
                         <h4 class="text-indigo-400 font-black text-xs tracking-wide mb-4">핵심 판단</h4>
                         <p class="text-lg md:text-xl font-bold leading-relaxed mb-6">
-                    "액션 장르 시장은 <span class="text-indigo-400 underline underline-offset-4">중국 개발사의 높은 점유율</span> 하에 있으며, 12~15세 이상의 코어층을 타겟으로 <span class="text-sky-400">지속적인 유저 접속을 유도하는 구독 모델(패스제)</span>이 결합된 고도화된 BM이 승률을 결정합니다."
+                    "액션 장르 시장은 <span class="text-indigo-400 underline underline-offset-4">중국 개발사의 높은 점유율</span> 하에 있으며, <br class="hidden md:block">
+                    12~15세 이상의 코어층을 타겟으로 <span class="text-sky-400">지속적인 유저 접속을 유도하는 구독 모델(패스제)</span>이 결합된 고도화된 BM이 승률을 결정합니다."
                 </p>
                     </div>
                 </div>
@@ -824,11 +826,13 @@
                         <p class="text-sm font-black text-amber-800 mb-4">벤치마킹할 때 같이 봐야 하는 조건</p>
                         <p class="text-slate-700 leading-relaxed mb-4">
                     상위권 게임의 운영 방식을 참고할 때, 그 게임이 <strong class="text-slate-900">경쟁형인지 단독 플레이형인지</strong>를 함께 봐야 합니다. <br class="hidden md:block">
-                    경쟁형에서 효과가 컸던 제재 강화나 신고 체계는 단독 플레이형에 적용할 대상이 없고, 단독형에서 유효했던 난이도 완화는 경쟁형에서는 밸런스 논란으로 번집니다.
+                    경쟁형에서 효과가 컸던 제재 강화나 신고 체계는 단독 플레이형에 적용할 대상이 없고, <br class="hidden md:block">
+                    단독형에서 유효했던 난이도 완화는 경쟁형에서는 밸런스 논란으로 번집니다.
                 </p>
                         <p class="text-xs text-slate-600 leading-relaxed">
                     다만 단독 플레이형은 이 표본에 두 종뿐입니다. <br class="hidden md:block">
-                    <strong class="text-slate-800">두 종이 모두 난이도를 지적받았다는 것은 표본이 작아 우연일 수 있으므로</strong>, 같은 구조의 게임을 더 모아 확인해야 패턴이라고 말할 수 있습니다.
+                    <strong class="text-slate-800">두 종이 모두 난이도를 지적받았다는 것은 표본이 작아 우연일 수 있으므로</strong>, <br class="hidden md:block">
+                    같은 구조의 게임을 더 모아 확인해야 패턴이라고 말할 수 있습니다.
                 </p>
                     </div>
                 </div>
@@ -858,9 +862,10 @@
                         <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
                             <p class="text-xs font-black text-slate-800 mb-3">이 조합에서 따라오는 과제</p>
                             <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
-                                <li>&bull; <strong class="text-slate-800">미성년 결제 관리:</strong> 법정대리인 동의와 결제 한도, 환불 처리 절차가 운영 부담으로 들어옵니다. 국내 서비스라면 확률 정보 표시도 함께 적용됩니다.</li>
-                                <li>&bull; <strong class="text-slate-800">정기 결제의 해지 동선:</strong> 구독형은 해지가 어렵다는 인식이 생기면 브랜드 신뢰를 깎습니다. 연령이 낮을수록 민원이 보호자를 통해 들어옵니다.</li>
-                                <li>&bull; <strong class="text-slate-800">벤치마킹 시 확인할 것:</strong> 상위작의 과금 구조를 참고할 때 <strong>그 게임의 서비스 국가와 연령 등급</strong>을 함께 봐야 합니다. 등급이 다르면 같은 구조를 쓸 수 없습니다.</li>
+                                <li>&bull; <strong class="text-slate-800">미성년 결제 관리:</strong> 법정대리인 동의와 결제 한도, <br class="hidden md:block">
+                    환불 처리 절차가 운영 부담으로 들어옵니다. 국내 서비스라면 확률 정보 표시도 함께 적용됩니다.</li>
+                                <li class="bal">&bull; <strong class="text-slate-800">정기 결제의 해지 동선:</strong> 구독형은 해지가 어렵다는 인식이 생기면 브랜드 신뢰를 깎습니다. 연령이 낮을수록 민원이 보호자를 통해 들어옵니다.</li>
+                                <li class="bal">&bull; <strong class="text-slate-800">벤치마킹 시 확인할 것:</strong> 상위작의 과금 구조를 참고할 때 <strong>그 게임의 서비스 국가와 연령 등급</strong>을 함께 봐야 합니다. 등급이 다르면 같은 구조를 쓸 수 없습니다.</li>
                             </ul>
                         </div>
                     </div>
@@ -873,7 +878,7 @@
                             <p class="text-sm font-black text-slate-700 mb-4">숫자를 읽을 때 주의할 점</p>
                             <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                                 <li>&bull; <strong class="text-slate-800">종수 비중이지 매출 비중이 아닙니다.</strong> 중국 50%는 10종 중 5종이라는 뜻이며, 매출액의 절반을 뜻하지 않습니다. 본문 괄호에 밝혀져 있지만 혼동되기 쉬운 지점입니다.</li>
-                                <li>&bull; <strong class="text-slate-800">표본이 10종이라 해상도가 낮습니다.</strong> 한 종이 10%p이므로 순위가 하나 바뀌면 비중이 크게 흔들립니다. 추세를 보려면 여러 시점을 누적해야 합니다.</li>
+                                <li class="bal">&bull; <strong class="text-slate-800">표본이 10종이라 해상도가 낮습니다.</strong> 한 종이 10%p이므로 순위가 하나 바뀌면 비중이 크게 흔들립니다. 추세를 보려면 여러 시점을 누적해야 합니다.</li>
                                 <li>&bull; <strong class="text-slate-800">기준일이 하루입니다.</strong> 2024년 1월 특정 시점 순위이므로, 대형 업데이트나 신작 출시 직후라면 평시와 다를 수 있습니다.</li>
                             </ul>
                         </div>
@@ -881,9 +886,10 @@
                             <p class="text-sm font-black text-slate-700 mb-4">다루지 못한 범위</p>
                             <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                                 <li>&bull; 강점과 약점은 <strong class="text-slate-800">직접 플레이로 도출한 정성 평가</strong>입니다. 리뷰 데이터나 이탈 지표로 검증한 것이 아닙니다.</li>
-                                <li>&bull; <strong class="text-slate-800">iOS와 원스토어는 제외</strong>했습니다. 플랫폼별 순위 구성은 다를 수 있습니다.</li>
-                                <li>&bull; 개발 국가는 <strong class="text-slate-800">개발사 소재 기준</strong>이며 자본 구조나 퍼블리셔 국적과는 다릅니다.</li>
-                                <li>&bull; 과금 모델은 <strong class="text-slate-800">상품 구성만</strong> 확인했고, 실제 매출 기여 비율은 알 수 없습니다.</li>
+                                <li class="bal">&bull; <strong class="text-slate-800">iOS와 원스토어는 제외</strong>했습니다. 플랫폼별 순위 구성은 다를 수 있습니다.</li>
+                                <li class="bal">&bull; 개발 국가는 <strong class="text-slate-800">개발사 소재 기준</strong>이며 자본 구조나 퍼블리셔 국적과는 다릅니다.</li>
+                                <li>&bull; 과금 모델은 <strong class="text-slate-800">상품 구성만</strong> 확인했고, <br class="hidden md:block">
+                    실제 매출 기여 비율은 알 수 없습니다.</li>
                             </ul>
                         </div>
                     </div>

@@ -23,13 +23,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="tailwind.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";</script>
 <style>
-  body { font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
          background-color: #f8fafc; color: #0f172a;
          word-break: keep-all; overflow-wrap: break-word; }
   h1,h2,h3,h4 { text-wrap: balance; }
   p, li, td, th, div, span, dd, figcaption { text-wrap: pretty; }
+  .bal { text-wrap: balance; }
   .card { background:#fff; border:1px solid #e2e8f0; border-radius:20px; }
   .chip { display:inline-block; padding:5px 12px; border-radius:999px;
           font-size:12px; font-weight:700; letter-spacing:-.01em; }
@@ -224,8 +225,8 @@
       <div class="card p-8">
         <p class="chip bg-emerald-50 text-emerald-700 mb-4">수익화 구조</p>
         <ul class="space-y-4 text-sm text-slate-600 leading-relaxed">
-          <li><b class="block text-slate-900 mb-1">보상형 광고의 배치</b>반복 사냥이 지루해질 시점에 용량 즉시 비우기를 제공합니다.<br>광고 시청이 강제가 아니라 혜택으로 읽히게 만드는 배치입니다.</li>
-          <li><b class="block text-slate-900 mb-1">결제 유도 구간</b>잦은 전면 광고로 광고 제거 상품 구매를 유도합니다.<br>상위 지역의 난이도 상승이 핵심 재화 결제로 이어집니다.</li>
+          <li class="bal"><b class="block text-slate-900 mb-1">보상형 광고의 배치</b>반복 사냥이 지루해질 시점에 용량 즉시 비우기를 제공합니다.<br>광고 시청이 강제가 아니라 혜택으로 읽히게 만드는 배치입니다.</li>
+          <li class="bal"><b class="block text-slate-900 mb-1">결제 유도 구간</b>잦은 전면 광고로 광고 제거 상품 구매를 유도합니다.<br>상위 지역의 난이도 상승이 핵심 재화 결제로 이어집니다.</li>
         </ul>
       </div>
     </div>
@@ -427,7 +428,7 @@
       <div class="card p-7 border-l-4 border-l-rose-500">
         <p class="text-[10px] font-black tracking-wide text-rose-500 mb-3">상충 01</p>
         <p class="font-black text-slate-900 mb-3">광고 수익 &harr; 잔존율</p>
-        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+        <p class="text-sm text-slate-600 leading-relaxed mb-4 bal">
                     일 광고 수익을 올리는 가장 빠른 방법은 노출 빈도를 늘리는 것입니다. <br class="hidden md:block">
                     그런데 전면 광고가 잦아지면 <strong class="text-slate-900">초기 이탈이 늘어 잔존 기간이 짧아집니다.</strong> <br class="hidden md:block">
                     같은 식의 두 항이 반대로 움직여, 단기 일매출은 오르지만 LTV는 떨어질 수 있습니다.
@@ -443,7 +444,7 @@
       <div class="card p-7 border-l-4 border-l-rose-500">
         <p class="text-[10px] font-black tracking-wide text-rose-500 mb-3">상충 02</p>
         <p class="font-black text-slate-900 mb-3">광고 제거 상품 &harr; 광고 수익</p>
-        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+        <p class="text-sm text-slate-600 leading-relaxed mb-4 bal">
                     5번에서 첫 결제 상품으로 <strong>광고 제거 패키지</strong>를 제안했습니다. <br class="hidden md:block">
                     이 상품은 팔릴 때마다 <strong class="text-slate-900">그 유저에게서 나올 광고 수익을 스스로 없앱니다.</strong> <br class="hidden md:block">
                     즉 결제 항을 올리는 대신 광고 항을 0으로 만드는 거래입니다.
@@ -494,14 +495,15 @@
         <p class="text-[10px] font-black tracking-wide text-rose-500 mb-3">지금 설계의 문제</p>
         <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
           <li>&bull; <strong class="text-slate-800">변수가 두 개입니다.</strong> A는 광고 제거만, B는 광고 제거+보석인데 가격까지 다르면 <strong>구성 때문인지 가격 때문인지</strong> 구분할 수 없습니다</li>
-          <li>&bull; <strong class="text-slate-800">판정 지표가 둘입니다.</strong> &lsquo;결제 비율과 총수익&rsquo;을 함께 보면, 결제율은 A가 높고 총수익은 B가 높은 경우 결론이 나오지 않습니다</li>
+          <li class="bal">&bull; <strong class="text-slate-800">판정 지표가 둘입니다.</strong> &lsquo;결제 비율과 총수익&rsquo;을 함께 보면, 결제율은 A가 높고 총수익은 B가 높은 경우 결론이 나오지 않습니다</li>
           <li>&bull; <strong class="text-slate-800">기간과 표본이 없습니다.</strong> 며칠, 몇 명을 모아야 차이를 신뢰할 수 있는지 정해지지 않았습니다</li>
         </ul>
       </div>
       <div class="card p-7 border-2 border-emerald-200">
         <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-3">보완한 설계</p>
         <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-          <li>&bull; <strong class="text-slate-800">변수를 하나로:</strong> 1차는 <strong>같은 가격</strong>에서 구성만 비교(광고 제거 vs 광고 제거+보석), 2차에서 승자를 놓고 가격만 비교합니다</li>
+          <li>&bull; <strong class="text-slate-800">변수를 하나로:</strong> 1차는 <strong>같은 가격</strong>에서 구성만 비교(광고 제거 vs 광고 제거+보석), <br class="hidden md:block">
+                    2차에서 승자를 놓고 가격만 비교합니다</li>
           <li>&bull; <strong class="text-slate-800">1차 판정 지표를 하나로:</strong> <strong>유저당 기대 수익(ARPU)</strong>을 주 지표로 두고, 결제율은 참고 지표로 둡니다. 상충 02 때문에 총수익만 봐도 안 됩니다 &mdash; <strong>광고 수익 손실을 차감한 순액</strong>으로 계산합니다</li>
           <li>&bull; <strong class="text-slate-800">사전 고정:</strong> 테스트 기간, 그룹당 최소 인원, 그리고 <strong>어느 정도 차이면 채택할지</strong>를 시작 전에 문서로 남깁니다. 결과를 보고 기준을 정하면 원하는 결론이 나옵니다</li>
         </ul>
@@ -535,9 +537,9 @@
       <div class="card p-7">
         <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">데이터의 성격</p>
         <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-          <li>&bull; 장르별 수익 구성 차트는 <strong class="text-slate-800">비교 항목의 서술을 도식화한 값</strong>이며 정산 데이터가 아닙니다. 본문에 이미 명시된 대로 추세 비교용입니다.</li>
-          <li>&bull; 인용한 잔존율 수치는 <strong class="text-slate-800">작성 시점의 공개 자료와 직접 플레이</strong>를 근거로 정리했습니다. 시장 지표는 시기에 따라 변동됩니다.</li>
-          <li>&bull; 장르 구조 분석은 <strong class="text-slate-800">직접 플레이한 소수 타이틀</strong>을 기준으로 했습니다. 장르 전체를 대표하는 표본은 아닙니다.</li>
+          <li class="bal">&bull; 장르별 수익 구성 차트는 <strong class="text-slate-800">비교 항목의 서술을 도식화한 값</strong>이며 정산 데이터가 아닙니다. 본문에 이미 명시된 대로 추세 비교용입니다.</li>
+          <li class="bal">&bull; 인용한 잔존율 수치는 <strong class="text-slate-800">작성 시점의 공개 자료와 직접 플레이</strong>를 근거로 정리했습니다. 시장 지표는 시기에 따라 변동됩니다.</li>
+          <li class="bal">&bull; 장르 구조 분석은 <strong class="text-slate-800">직접 플레이한 소수 타이틀</strong>을 기준으로 했습니다. 장르 전체를 대표하는 표본은 아닙니다.</li>
         </ul>
       </div>
       <div class="card p-7">

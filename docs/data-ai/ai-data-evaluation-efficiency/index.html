@@ -27,7 +27,7 @@
         
         /* 줄바꿈 전문가의 핵심 설정 */
         body { 
-            font-family: 'Pretendard', sans-serif; 
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; 
             background-color: #f8fafc; 
             color: #0f172a; 
             word-break: keep-all; 
@@ -77,6 +77,7 @@
         .animate-bounce-strong { animation: bounce-strong 1.5s infinite; }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
@@ -137,7 +138,7 @@
                         <span class="phrase">평가자가 온종일 검수에 매달리면</span> <span class="phrase">결국 집중력이 떨어지고,</span> <span class="phrase">이는 AI 모델의 성능 하락으로 직결됩니다.</span>
                     </p>
                     <div class="space-y-4 bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                        <div class="flex items-start gap-3">
+                        <div class="flex items-start gap-3 bal">
                             <span class="bg-red-100 text-red-600 rounded-full w-6 h-6 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">1</span>
                             <span class="text-slate-700 text-sm md:text-base">
                                 <span class="phrase">단순 오타나 무의미한 특수문자 등</span> <span class="phrase">기계적으로 걸러낼 수 있는 불량 데이터에</span> <span class="phrase">평가 시간이 소모됩니다.</span>
@@ -199,7 +200,7 @@
                                 <span class="text-sm font-bold text-slate-400">10,000건</span>
                             </div>
                             <div class="funnel-content">
-                                <p class="text-sm text-slate-300 leading-relaxed text-balance">
+                                <p class="text-sm text-slate-300 leading-relaxed text-balance bal">
                     평가 시스템에 최초 인입된 정제되지 않은 날것의 데이터 무더기입니다. <br class="hidden md:block">
                     모든 데이터를 사람이 직접 확인하면 처리 효율이 크게 떨어집니다.
                 </p>
@@ -232,7 +233,7 @@
                                 <span class="text-xs font-bold text-indigo-300 bg-indigo-900/50 px-2 py-1 rounded">-1,500건 제거</span>
                             </div>
                             <div class="funnel-content">
-                                <p class="text-sm text-slate-300 leading-relaxed text-balance">
+                                <p class="text-sm text-slate-300 leading-relaxed text-balance bal">
                     명백한 금칙어, 욕설 리스트와 자동 대조하여 반려 처리합니다. <br class="hidden md:block">
                     이 단계까지 사람의 감정 소모나 집중력은 전혀 필요하지 않습니다.
                 </p>
@@ -342,7 +343,7 @@
                             </div>
                             <div class="flex-1 bg-slate-50 p-4 rounded-lg border border-slate-100">
                                 <p class="font-bold text-emerald-600 mb-2 text-sm">💡 실무 상황 예시</p>
-                                <p class="text-sm text-slate-600 text-balance">"특정 정치인 집 주소 알려줘" → 개인정보 정책 위반이므로 의도를 파악할 필요 없이 바로 반려 처리합니다.</p>
+                                <p class="text-sm text-slate-600 text-balance bal">"특정 정치인 집 주소 알려줘" → 개인정보 정책 위반이므로 의도를 파악할 필요 없이 바로 반려 처리합니다.</p>
                             </div>
                         </div>
                     </div>
@@ -380,7 +381,7 @@
                             <span class="px-3 py-1.5 text-sm font-bold text-white bg-emerald-500 rounded-lg shadow-sm">3단계</span>
                             <h3 class="text-xl md:text-2xl font-bold text-slate-800">상위 보고 체계를 통한 사례 축적</h3>
                         </div>
-                        <p class="text-slate-600 mb-6 text-balance">
+                        <p class="text-slate-600 mb-6 text-balance bal">
                     <span class="phrase">1, 2단계를 거치고도 판단이 서지 않는 극단적인 상황은</span> <span class="phrase">개인의 감으로 넘겨짚지 않고 공식적인 보고 채널을 이용합니다.</span>
                 </p>
                         <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col sm:flex-row gap-6">
@@ -395,7 +396,8 @@
                             <div class="flex-1 bg-slate-50 p-4 rounded-lg border border-slate-100">
                                 <p class="font-bold text-emerald-600 mb-2 text-sm">💡 시스템의 성장</p>
                                 <p class="text-sm text-slate-600 text-balance">
-                    이렇게 기록된 예외 상황 매뉴얼이 쌓일수록, 다음 번 비슷한 상황이 발생했을 때 조직 전체의 처리 속도가 크게 빨라집니다.
+                    이렇게 기록된 예외 상황 매뉴얼이 쌓일수록, <br class="hidden md:block">
+                    다음 번 비슷한 상황이 발생했을 때 조직 전체의 처리 속도가 크게 빨라집니다.
                 </p>
                             </div>
                         </div>
@@ -536,7 +538,7 @@
                     </div>
                     <div class="bg-white rounded-xl p-5 border border-rose-200">
                         <p class="text-xs font-black text-rose-700 mb-2">자음 반복 규칙</p>
-                        <p class="text-xs text-slate-600 leading-relaxed">
+                        <p class="text-xs text-slate-600 leading-relaxed bal">
                     감정 표현이나 구어체를 다루는 데이터에서는 <strong class="text-slate-800">&lsquo;ㅋㅋㅋ&rsquo;가 유효한 입력</strong>입니다. <br class="hidden md:block">
                     대화형 모델 학습에서는 오히려 필요한 표본입니다.
                 </p>
@@ -635,7 +637,7 @@
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                         <li>&bull; <strong class="text-slate-800">오제거율:</strong> 필터에 걸린 데이터 표본 중 실제 정상 데이터의 비율 &mdash; 4번 보완의 핵심 지표</li>
                         <li>&bull; <strong class="text-slate-800">평가자 간 일치도:</strong> 같은 데이터를 두 명 이상이 평가했을 때 판정이 같은 비율 &mdash; 전략 2의 실효를 보는 유일한 방법</li>
-                        <li>&bull; <strong class="text-slate-800">시간대별 정확도 실측:</strong> 2번의 곡선은 예상 추이이므로, 정답이 확인된 표본을 시간대별로 배치해 실제 하락 여부를 측정합니다</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">시간대별 정확도 실측:</strong> 2번의 곡선은 예상 추이이므로, 정답이 확인된 표본을 시간대별로 배치해 실제 하락 여부를 측정합니다</li>
                         <li>&bull; <strong class="text-slate-800">건당 처리 시간:</strong> 필터 도입 전후, 그리고 시간대별 변화</li>
                         <li>&bull; <strong class="text-slate-800">예외 사례 축적 속도:</strong> 가이드라인에 새로 등재된 사례 수와, 등재 이후 같은 유형의 재문의 감소</li>
                     </ul>
@@ -644,9 +646,9 @@
                     <p class="text-[11px] font-black tracking-wide text-slate-400 mb-4">이 제안의 한계</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                         <li>&bull; 시간대별 정확도 곡선은 <strong class="text-slate-800">예상 추이</strong>로 명시된 값이며 실측이 아닙니다. 하락의 방향은 일반적으로 관찰되지만 기울기는 업무 구성과 개인차에 좌우됩니다.</li>
-                        <li>&bull; 10,000건과 제거 건수는 <strong class="text-slate-800">파이프라인 구조를 보여주기 위한 예시값</strong>입니다. 실제 비율은 원본 데이터의 상태에 따라 크게 달라집니다.</li>
+                        <li class="bal">&bull; 10,000건과 제거 건수는 <strong class="text-slate-800">파이프라인 구조를 보여주기 위한 예시값</strong>입니다. 실제 비율은 원본 데이터의 상태에 따라 크게 달라집니다.</li>
                         <li>&bull; 40시간 &rarr; 10시간은 <strong class="text-slate-800">단순 반복 작업 구간의 추정값</strong>이며 전체 평가 시간이 아닙니다.</li>
-                        <li>&bull; 필터 규칙의 실제 정확도는 <strong class="text-slate-800">해당 도메인의 데이터로 검증해야</strong> 알 수 있습니다. 이 문서는 검증 방법까지만 제시했습니다.</li>
+                        <li class="bal">&bull; 필터 규칙의 실제 정확도는 <strong class="text-slate-800">해당 도메인의 데이터로 검증해야</strong> 알 수 있습니다. 이 문서는 검증 방법까지만 제시했습니다.</li>
                         <li>&bull; 평가 도구와 데이터 접근 권한은 조직마다 달라, <strong class="text-slate-800">오피스 툴 기반 필터링이 가능한 환경인지</strong>가 선행 조건입니다.</li>
                     </ul>
                 </div>
@@ -706,7 +708,7 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             
-            Chart.defaults.font.family = "'Pretendard', sans-serif";
+            Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";
             Chart.defaults.color = '#64748b';
 
             // 1. Bottleneck Line Chart

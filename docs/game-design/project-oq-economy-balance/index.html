@@ -23,9 +23,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
+    <script>Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";</script>
     <style>
         
-        body { font-family: 'Pretendard', sans-serif; }
+        body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; }
 
         .chart-container { 
             position: relative; 
@@ -65,6 +66,7 @@
         body { word-break: keep-all; overflow-wrap: break-word; }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
@@ -245,7 +247,7 @@
                 <div class="bg-white border border-slate-200 rounded-2xl p-6">
                     <p class="text-[10px] font-black tracking-wide text-slate-400 mb-3">격차를 없애는 조건 &mdash; 가격 쪽</p>
                     <p class="text-2xl font-black text-slate-900 mb-2">패키지 825,600원</p>
-                    <p class="text-xs text-slate-600 leading-relaxed">
+                    <p class="text-xs text-slate-600 leading-relaxed bal">
                     현재 가격보다 <strong>37.6% 인상</strong>해야 시간과 비용의 가치가 같아집니다. <br class="hidden md:block">
                     매출 관점에서 채택하기 어려운 방향입니다.
                 </p>
@@ -253,7 +255,7 @@
                 <div class="bg-white border-2 border-emerald-300 rounded-2xl p-6">
                     <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-3">격차를 없애는 조건 &mdash; 시간 쪽</p>
                     <p class="text-2xl font-black text-slate-900 mb-2">소요 58.1시간</p>
-                    <p class="text-xs text-slate-600 leading-relaxed">
+                    <p class="text-xs text-slate-600 leading-relaxed bal">
                     80시간에서 <strong class="text-emerald-700">27% 단축</strong>하면 됩니다. <br class="hidden md:block">
                     약 7.3일이 손익분기점이며, <strong>기획으로 조정 가능한 쪽은 이쪽</strong>입니다.
                 </p>
@@ -337,7 +339,7 @@
                 <div class="bg-white p-10 rounded-2xl shadow-sm border border-slate-200 flex flex-col items-center text-center">
                     <div class="w-20 h-20 bg-emerald-100 rounded-2xl flex items-center justify-center text-4xl mb-6 shadow-inner">🛡️</div>
                     <h3 class="font-bold text-xl mb-4">마일리지형 천장 시스템</h3>
-                    <p class="text-slate-600 leading-relaxed text-sm">
+                    <p class="text-slate-600 leading-relaxed text-sm bal">
                     확률형 성장에서 발생하는 실패 스트레스를 제거합니다. <br class="hidden md:block">
                     실패 시마다 누적되는 부산물을 통해 결국 목표 아이템에 도달할 수 있는 '확정 성장 경로'를 제공하여 시간의 가치를 보존합니다.
                 </p>
@@ -372,7 +374,7 @@
                     <div class="grid md:grid-cols-2 gap-5 mb-5">
                         <div class="bg-emerald-50 rounded-xl p-5 border border-emerald-200">
                             <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-2">얻는 것</p>
-                            <p class="text-sm text-slate-600 leading-relaxed">
+                            <p class="text-sm text-slate-600 leading-relaxed bal">
                     확률 실패로 인한 손실이 사라지므로 <strong class="text-slate-800">투입 시간이 반드시 결과로 환산</strong>됩니다. <br class="hidden md:block">
                     위 계산에서 시간 가치의 하한이 보장됩니다.
                 </p>
@@ -443,14 +445,14 @@
                     </div>
                     <div class="bg-white/5 rounded-xl p-5 border border-white/10">
                         <p class="text-sm font-bold text-amber-300 mb-2">입력값의 성격</p>
-                        <p class="text-xs text-slate-300 leading-relaxed">
+                        <p class="text-xs text-slate-300 leading-relaxed bal">
                     10일 &middot; 8시간 &middot; 600,000원은 <strong class="text-white">시뮬레이션 전제값</strong>입니다. <br class="hidden md:block">
                     실제 소요 시간은 확률 분포에 따라 유저마다 크게 흩어지므로, 평균값 하나로 대표하면 편차가 가려집니다.
                 </p>
                     </div>
                     <div class="bg-white/5 rounded-xl p-5 border border-white/10">
                         <p class="text-sm font-bold text-amber-300 mb-2">매출 영향의 규모</p>
-                        <p class="text-xs text-slate-300 leading-relaxed">
+                        <p class="text-xs text-slate-300 leading-relaxed bal">
                     천장과 거래소가 매출에 미치는 영향은 <strong class="text-white">방향만 제시했습니다.</strong> <br class="hidden md:block">
                     규모는 결제 분포 데이터 없이 추정할 수 없습니다.
                 </p>
@@ -496,8 +498,9 @@
                     </div>
                 </div>
                 <p class="text-sm md:text-base text-slate-700 leading-relaxed">
-                    같은 7,500원입니다. <br class="hidden md:block">
-                    시뮬레이터는 <strong class="text-slate-900">무과금 유저가 시간을 자본으로 바꿀 동기가 충분하다</strong>고 말하고, 바로 아래 3번은 <strong class="text-slate-900">같은 구간에서 과금이 합리적 선택이 된다</strong>고 말합니다. <br class="hidden md:block">
+                    위 세 칸이 가리키는 값은 모두 같은 7,500원입니다. <br class="hidden md:block">
+                    시뮬레이터는 <strong class="text-slate-900">무과금 유저가 시간을 자본으로 바꿀 동기가 충분하다</strong>고 말하고, <br class="hidden md:block">
+                    바로 아래 3번은 <strong class="text-slate-900">같은 구간에서 과금이 합리적 선택이 된다</strong>고 말합니다. <br class="hidden md:block">
                     문서를 처음 열면 초록색 안정 판정이 먼저 보이므로, <strong class="text-rose-700">문제 제기 문서인데 첫 화면이 문제가 없다고 알립니다.</strong>
                 </p>
             </div>

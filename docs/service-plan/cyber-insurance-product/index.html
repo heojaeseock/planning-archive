@@ -23,6 +23,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
+    <script>Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";</script>
     
     <style>
         /* Base & Scrollbar */
@@ -51,6 +52,7 @@
         .fade-in { opacity: 1; transform: translateY(0); position: relative; visibility: visible; }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
@@ -205,7 +207,7 @@
                 <!-- Action Side -->
                 <div class="space-y-8">
                     <div class="bg-gray-50 p-6 rounded-2xl border-l-4 border-gray-300">
-                        <p class="text-gray-700 font-medium leading-relaxed break-keep">
+                        <p class="text-gray-700 font-medium leading-relaxed break-keep bal">
                     복잡한 보안 질문지와 로우 데이터의 결측치 및 논리적 오류를 엑셀 복합 함수를 활용해 <strong>자동으로 필터링</strong>합니다.
                 </p>
                         <p class="text-gray-900 font-bold mt-4 leading-relaxed break-keep">
@@ -308,7 +310,7 @@
                         <!-- Biz Text -->
                         <div id="card2-biz" class="fade-transition fade-out w-full bg-brand-lightOrange p-6 rounded-2xl border border-orange-200">
                             <div class="text-xs font-bold text-brand-orange mb-3 tracking-wide">TO-BE : 경영진 보고용 (컨설팅)</div>
-                            <p class="text-gray-900 text-base md:text-lg font-bold leading-relaxed break-keep">
+                            <p class="text-gray-900 text-base md:text-lg font-bold leading-relaxed break-keep bal">
                     "직원 계정의 비밀번호가 유출될 경우 사내 핵심 시스템이 <span class="bg-brand-orange text-white px-2 py-0.5 rounded shadow-sm">즉시 탈취</span>될 위험이 높습니다. <br class="hidden md:block">
                     대형 보안 사고 예방을 위해 2차 인증(MFA) 도입이 시급합니다."
                 </p>
@@ -334,14 +336,16 @@
                     <p class="text-xs font-bold text-slate-500 mb-3">현재 문서에서의 위치</p>
                     <p class="text-sm text-slate-700 leading-relaxed">
                     플레이북은 <strong class="text-slate-900">사전 부가 서비스</strong>로 제공됩니다. <br class="hidden md:block">
-                    가입 기업의 초기 대응을 돕는 것이 목적이고, 이는 <strong>사고 이후</strong>의 이야기입니다.
+                    가입 기업의 초기 대응을 돕는 것이 목적이고, <br class="hidden md:block">
+                    이는 <strong>사고 이후</strong>의 이야기입니다.
                 </p>
                 </div>
                 <div class="bg-blue-50 border-2 border-blue-300 rounded-2xl p-7">
                     <p class="text-xs font-bold text-blue-700 mb-3">심사와 이어지는 위치</p>
                     <p class="text-sm text-slate-700 leading-relaxed">
                     플레이북 수용 여부를 <strong class="text-slate-900">인수 조건과 보험료에 반영</strong>합니다. <br class="hidden md:block">
-                    그러면 부가 서비스가 <strong>심사 항목</strong>이 되고, 언더라이팅 업무의 일부가 됩니다.
+                    그러면 부가 서비스가 <strong>심사 항목</strong>이 되고, <br class="hidden md:block">
+                    언더라이팅 업무의 일부가 됩니다.
                 </p>
                 </div>
             </div>
@@ -353,7 +357,7 @@
                     <strong class="text-white">위험이 큰 기업을 인수하지 않는 것</strong>과 <strong class="text-blue-300">인수한 기업의 위험을 낮추는 것</strong>입니다. <br class="hidden md:block">
                     플레이북은 후자에 해당합니다.
                 </p>
-                <p class="leading-relaxed mb-5">
+                <p class="leading-relaxed mb-5 bal">
                     사고 발생 자체는 막지 못하지만 <strong class="text-white">초기 대응이 빨라지면 피해 규모가 줄어듭니다.</strong> <br class="hidden md:block">
                     피해 규모가 줄면 지급 보험금이 줄고, 그것이 곧 손해율 개선입니다. <br class="hidden md:block">
                     따라서 <strong class="text-blue-300">플레이북을 도입한 기업에 보험료를 낮게 책정하는 것</strong>은 할인이 아니라 실제 위험이 낮아진 것을 반영하는 계산입니다.
@@ -362,7 +366,8 @@
                     <p class="text-xs font-bold text-blue-300 mb-3">이렇게 쓰면 제안의 성격이 바뀝니다</p>
                     <p class="text-sm text-slate-300 leading-relaxed">
                     플레이북이 <strong class="text-white">고객 서비스에서 인수 심사 도구로</strong> 이동합니다. <br class="hidden md:block">
-                    심사 질문지에 &lsquo;사고 대응 절차 보유 여부&rsquo;와 &lsquo;담당자 지정 여부&rsquo;를 항목으로 넣고, 답변에 따라 요율을 차등하면 심사 업무와 직접 연결됩니다. <br class="hidden md:block">
+                    심사 질문지에 &lsquo;사고 대응 절차 보유 여부&rsquo;와 &lsquo;담당자 지정 여부&rsquo;를 항목으로 넣고, <br class="hidden md:block">
+                    답변에 따라 요율을 차등하면 심사 업무와 직접 연결됩니다. <br class="hidden md:block">
                     <strong class="text-blue-300">보안 솔루션 도입 여부만 묻는 기존 심사</strong>에 <strong class="text-white">대응 체계라는 축을 더하는 것</strong>이 이 제안의 실제 기여입니다.
                 </p>
                 </div>
@@ -406,7 +411,7 @@
                     </div>
                     <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
                         <p class="text-xs font-bold text-slate-700 mb-2">지키지 못했을 때</p>
-                        <p class="text-xs text-slate-600 leading-relaxed">
+                        <p class="text-xs text-slate-600 leading-relaxed bal">
                     신고 지연이 <strong class="text-slate-800">보험금 감액 사유</strong>로 작동하면 분쟁이 됩니다. <br class="hidden md:block">
                     가입 기업은 사고와 보험금 문제를 동시에 겪습니다.
                 </p>
@@ -447,9 +452,9 @@
                 <div class="bg-white border-2 border-emerald-200 rounded-2xl p-7">
                     <p class="text-sm font-bold text-emerald-700 mb-4">측정할 지표</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li>&bull; <strong class="text-slate-800">플레이북 수용률</strong> &mdash; 가입 기업 중 절차와 담당자를 실제로 지정한 비율</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">플레이북 수용률</strong> &mdash; 가입 기업 중 절차와 담당자를 실제로 지정한 비율</li>
                         <li>&bull; <strong class="text-slate-800">수용 기업의 손해율</strong> &mdash; 미수용 기업과 비교합니다. 요율 차등의 근거가 되는 핵심 지표입니다</li>
-                        <li>&bull; <strong class="text-slate-800">인지에서 신고까지의 시간</strong> &mdash; 1시간 기준이 현실적인지 확인합니다</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">인지에서 신고까지의 시간</strong> &mdash; 1시간 기준이 현실적인지 확인합니다</li>
                         <li>&bull; <strong class="text-slate-800">원인 규명 성공률</strong> &mdash; 1단계 지침 보완 전후 비교. 증거가 보존됐는지의 결과입니다</li>
                         <li>&bull; <strong class="text-slate-800">무응답 문항 비율</strong> &mdash; 자동 제외가 아니라 담당자에게 올라간 건수와 그 처리 결과</li>
                     </ul>
@@ -457,10 +462,10 @@
                 <div class="bg-white border-2 border-slate-200 rounded-2xl p-7">
                     <p class="text-sm font-bold text-slate-500 mb-4">이 분석의 한계</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li>&bull; 데이터 정제 지표는 본문에 밝힌 대로 <strong class="text-slate-800">게임 운영부서의 성과</strong>이며 보험 심사 데이터에서 같은 폭이 재현된다는 근거는 아닙니다.</li>
+                        <li class="bal">&bull; 데이터 정제 지표는 본문에 밝힌 대로 <strong class="text-slate-800">게임 운영부서의 성과</strong>이며 보험 심사 데이터에서 같은 폭이 재현된다는 근거는 아닙니다.</li>
                         <li>&bull; 플레이북은 <strong class="text-slate-800">라이브 운영 매뉴얼을 재구성한 것</strong>으로 본문에 표기되어 있습니다. 침해사고 대응 표준과의 정합성은 별도 검토가 필요합니다.</li>
                         <li>&bull; 요율 차등의 <strong class="text-slate-800">실제 할인폭</strong>은 계산하지 않았습니다. 손해율 데이터와 계리 검토가 있어야 산출됩니다.</li>
-                        <li>&bull; 약관 문구와 <strong class="text-slate-800">보험업 관련 규제</strong>는 검토 범위 밖입니다. 의무 사항을 약관에 넣는 것은 법무와 감독 기준 확인이 선행됩니다.</li>
+                        <li class="bal">&bull; 약관 문구와 <strong class="text-slate-800">보험업 관련 규제</strong>는 검토 범위 밖입니다. 의무 사항을 약관에 넣는 것은 법무와 감독 기준 확인이 선행됩니다.</li>
                         <li>&bull; 사이버보험의 <strong class="text-slate-800">담보 범위와 보상 한도 설계</strong>는 다루지 않았습니다. 상품 기획의 핵심 영역이지만 이 문서는 심사와 대응 절차에 한정했습니다.</li>
                     </ul>
                 </div>

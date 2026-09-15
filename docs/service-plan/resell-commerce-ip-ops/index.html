@@ -31,7 +31,7 @@
 
     <style>
         body { 
-            font-family: 'Pretendard', sans-serif; 
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; 
             background-color: #f4f5f7; 
             color: #111; 
             word-break: keep-all; 
@@ -65,6 +65,7 @@
         .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -153,9 +154,9 @@
                         <h4 class="font-bold text-gray-900 text-xl mb-4">리셀 커머스 플랫폼 한정판 드랍 & 팝업</h4>
                         <ul class="text-base text-gray-600 space-y-3 list-disc pl-5 text-body">
                             <li>드랍 및 티켓팅 시점의 기형적 트래픽 집중 현상</li>
-                            <li>다양한 IP 파트너사의 비표준화된 상품 데이터 온보딩</li>
-                            <li>팝업 대기열 지연 및 QR 인증 서버 오류 등 현장 변수</li>
-                            <li>결제 오류나 품절 이슈가 곧바로 바이럴 리스크로 확산</li>
+                            <li class="bal">다양한 IP 파트너사의 비표준화된 상품 데이터 온보딩</li>
+                            <li class="bal">팝업 대기열 지연 및 QR 인증 서버 오류 등 현장 변수</li>
+                            <li class="bal">결제 오류나 품절 이슈가 곧바로 바이럴 리스크로 확산</li>
                         </ul>
                     </div>
                 </div>
@@ -241,7 +242,7 @@
                 <h2 class="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight leading-[1.3] text-gray-900">
                     병목 없는 현장을 위한 '분산형 액션 플레이북'
                 </h2>
-                <p class="text-gray-600 text-lg md:text-xl text-body font-medium">
+                <p class="text-gray-600 text-lg md:text-xl text-body font-medium bal">
                     현장의 단기 스태프들이 중앙 지휘부의 지시를 기다리느라 발생하는 <b>초동 대응의 골든타임 누수</b>를 사전에 방어합니다.
                 </p>
             </div>
@@ -325,7 +326,7 @@
                     <div class="pl-4 space-y-3">
                         <p class="text-gray-300"><span class="text-blue-300">1. 개발 및 인프라팀:</span> 대기열 서버 진입 기준 상향 조정 및 트래픽 분산 요청 요망</p>
                         <p class="text-gray-300"><span class="text-yellow-300">2. 운영팀:</span> 결제 지연 공지 초안 도출 완료 (아래 텍스트를 즉시 공지사항에 등록하세요)</p>
-                        <div class="bg-gray-800 p-4 rounded text-gray-200 text-sm mt-2 border border-gray-700 cursor-pointer hover:border-gray-500 transition">
+                        <div class="bg-gray-800 p-4 rounded text-gray-200 text-sm mt-2 border border-gray-700 cursor-pointer hover:border-gray-500 transition bal">
                             "안녕하세요 리셀 커머스 플랫폼입니다. 현재 접속량 급증으로 결제가 일시 지연되고 있습니다. 고객님의 결제 내역은 안전하게 보관 중이며..." <span class="text-gray-500 text-xs ml-2">(클릭하여 복사)</span>
                         </div>
                     </div>
@@ -510,7 +511,8 @@
                 <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
                     <p class="text-sm text-gray-600 leading-relaxed">
                     범위를 그은 문서는 <strong class="text-gray-900">그 안의 주장을 더 믿을 수 있게</strong> 만듭니다. <br class="hidden md:block">
-                    모든 영역을 다룰 수 있다고 쓰면 어느 항목도 검증되지 않은 상태가 되지만, 세 영역으로 한정하면 <strong class="text-gray-900">그 세 개는 실제 경험</strong>이라는 뜻이 됩니다. <br class="hidden md:block">
+                    모든 영역을 다룰 수 있다고 쓰면 어느 항목도 검증되지 않은 상태가 되지만, <br class="hidden md:block">
+                    세 영역으로 한정하면 <strong class="text-gray-900">그 세 개는 실제 경험</strong>이라는 뜻이 됩니다. <br class="hidden md:block">
                     읽는 사람이 확인해야 할 범위도 좁아집니다. <br class="hidden md:block">
                     이 서술은 유지하는 편이 낫고, 오히려 <strong class="text-gray-900">학습 계획</strong>을 한 줄 붙이면 범위 밖 영역에 대한 준비까지 보여줄 수 있습니다.
                 </p>
@@ -522,10 +524,10 @@
                     <p class="text-sm font-black text-green-700 mb-4">측정할 지표</p>
                     <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
                         <li>&bull; <strong class="text-gray-800">템플릿 사용률</strong> &mdash; 전체 온보딩 건 중 표준 템플릿으로 접수된 비율. 낮으면 유효성 검사가 작동하지 않습니다</li>
-                        <li>&bull; <strong class="text-gray-800">오류 유형별 발생 건수</strong> &mdash; 필수값 누락 45%가 실제로 줄어드는지</li>
-                        <li>&bull; <strong class="text-gray-800">온보딩 소요 시간</strong> &mdash; 파트너사 데이터 접수부터 시스템 등록까지</li>
-                        <li>&bull; <strong class="text-gray-800">드랍 시점 결제 실패율</strong> &mdash; 오픈 후 10분 구간에 한정해 측정합니다</li>
-                        <li>&bull; <strong class="text-gray-800">첫 안내 송출까지의 시간</strong> &mdash; 이상 인지에서 공지까지. 10분 안에 들어와야 합니다</li>
+                        <li class="bal">&bull; <strong class="text-gray-800">오류 유형별 발생 건수</strong> &mdash; 필수값 누락 45%가 실제로 줄어드는지</li>
+                        <li class="bal">&bull; <strong class="text-gray-800">온보딩 소요 시간</strong> &mdash; 파트너사 데이터 접수부터 시스템 등록까지</li>
+                        <li class="bal">&bull; <strong class="text-gray-800">드랍 시점 결제 실패율</strong> &mdash; 오픈 후 10분 구간에 한정해 측정합니다</li>
+                        <li class="bal">&bull; <strong class="text-gray-800">첫 안내 송출까지의 시간</strong> &mdash; 이상 인지에서 공지까지. 10분 안에 들어와야 합니다</li>
                     </ul>
                 </div>
                 <div class="bg-white border-2 border-gray-200 rounded-2xl p-7">
@@ -533,9 +535,9 @@
                     <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
                         <li>&bull; 오류 유형 분포와 트래픽 곡선은 <strong class="text-gray-800">운영 경험에 기반한 모델값</strong>이며 해당 플랫폼의 실측 데이터가 아닙니다.</li>
                         <li>&bull; 트래픽 단위가 정의되지 않은 <strong class="text-gray-800">상대 지수</strong>이므로 실제 동시접속 규모나 서버 용량과 대조할 수 없습니다.</li>
-                        <li>&bull; 오류 유형과 3단계 대응의 연결은 <strong class="text-gray-800">항목 성격에 따른 추정</strong>입니다. 실제로는 한 오류가 여러 단계에 걸칠 수 있습니다.</li>
-                        <li>&bull; 엑셀 기반 파이프라인은 <strong class="text-gray-800">담당자 의존과 파일 관리 문제</strong>를 안고 있습니다. 규모가 커지면 전용 온보딩 도구로의 이관이 필요합니다.</li>
-                        <li>&bull; 물류와 정산, 이용자 간 거래 분쟁 처리는 <strong class="text-gray-800">본문에 밝힌 대로 다루지 않았습니다.</strong></li>
+                        <li class="bal">&bull; 오류 유형과 3단계 대응의 연결은 <strong class="text-gray-800">항목 성격에 따른 추정</strong>입니다. 실제로는 한 오류가 여러 단계에 걸칠 수 있습니다.</li>
+                        <li class="bal">&bull; 엑셀 기반 파이프라인은 <strong class="text-gray-800">담당자 의존과 파일 관리 문제</strong>를 안고 있습니다. 규모가 커지면 전용 온보딩 도구로의 이관이 필요합니다.</li>
+                        <li class="bal">&bull; 물류와 정산, 이용자 간 거래 분쟁 처리는 <strong class="text-gray-800">본문에 밝힌 대로 다루지 않았습니다.</strong></li>
                     </ul>
                 </div>
             </div>
@@ -545,7 +547,7 @@
     <script>
         // Register ChartDataLabels plugin
         Chart.register(ChartDataLabels);
-        Chart.defaults.font.family = "'Pretendard', sans-serif";
+        Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";
 
         // Tab Navigation Logic with Smooth Scroll to Top
         const navItems = document.querySelectorAll('.nav-item');

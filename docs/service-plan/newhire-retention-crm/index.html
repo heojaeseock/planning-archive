@@ -23,9 +23,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
+    <script>Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";</script>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
-        body { font-family: 'Pretendard', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; background-color: #f8fafc; color: #1e293b; }
         .brand-blue { color: #2b5dff; }
         .bg-brand-blue { background-color: #2b5dff; }
         .tab-content { display: none; }
@@ -60,6 +61,7 @@
         body { word-break: keep-all; overflow-wrap: break-word; }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 
@@ -172,7 +174,8 @@
                     신규 유저가 복잡한 기능을 한 번에 배우지 않도록, 레벨에 맞춰 정보를 하나씩 해금하듯 시기별 필수 정보를 자동으로 전달합니다.
                 </p>
                     <div class="bg-white/10 p-5 rounded-2xl border border-white/20 text-xs">
-                        <span class="text-brand-blue font-bold">적용:</span> 입사 3일, 7일 차 등 시기에 맞는 적응 팁(회의 문화, 협업 툴 등)을 발송합니다.
+                        <span class="text-brand-blue font-bold">적용:</span> 입사 3일, 7일 차 등 시기에 맞는 적응 팁(회의 문화, <br class="hidden md:block">
+                    협업 툴 등)을 발송합니다.
                     </div>
                 </div>
                 <div class="bg-gray-900 text-white p-10 rounded-3xl relative overflow-hidden group border-2 border-transparent hover:border-yellow-400 transition-all">
@@ -281,13 +284,13 @@
                     <div class="action-item-card p-5 bg-gray-50 rounded-2xl border border-transparent">
                         <div class="flex items-center gap-4">
                             <span class="step-num w-8 h-8 bg-brand-blue text-white text-[10px] font-black rounded-full flex items-center justify-center shrink-0 transition-colors">1</span>
-                            <p class="text-sm font-bold text-gray-800 transition-colors">데이터 연동: 합격자 '출근일' 기준 트리거 자동화 (개발팀)</p>
+                            <p class="text-sm font-bold text-gray-800 transition-colors bal">데이터 연동: 합격자 '출근일' 기준 트리거 자동화 (개발팀)</p>
                         </div>
                     </div>
                     <div class="action-item-card p-5 bg-gray-50 rounded-2xl border border-transparent">
                         <div class="flex items-center gap-4">
                             <span class="step-num w-8 h-8 bg-brand-blue text-white text-[10px] font-black rounded-full flex items-center justify-center shrink-0 transition-colors">2</span>
-                            <p class="text-sm font-bold text-gray-800 transition-colors">CRM 세팅: 알림톡 템플릿 및 시나리오 구축 (마케팅팀)</p>
+                            <p class="text-sm font-bold text-gray-800 transition-colors bal">CRM 세팅: 알림톡 템플릿 및 시나리오 구축 (마케팅팀)</p>
                         </div>
                     </div>
                     <div class="action-item-card p-5 bg-gray-50 rounded-2xl border border-transparent">
@@ -299,7 +302,7 @@
                     <div class="action-item-card p-5 bg-gray-50 rounded-2xl border border-transparent">
                         <div class="flex items-center gap-4">
                             <span class="step-num w-8 h-8 bg-brand-blue text-white text-[10px] font-black rounded-full flex items-center justify-center shrink-0 transition-colors">4</span>
-                            <p class="text-sm font-bold text-gray-800 transition-colors">지표 모니터링: 메시지 오픈율 및 3개월 근속 코호트 분석</p>
+                            <p class="text-sm font-bold text-gray-800 transition-colors bal">지표 모니터링: 메시지 오픈율 및 3개월 근속 코호트 분석</p>
                         </div>
                     </div>
                 </div>
@@ -402,7 +405,7 @@
 
             <div class="bg-gray-900 text-white p-10 rounded-3xl space-y-6">
                 <p class="text-sm font-bold text-brand-blue">매출이 확정되는 시점에 개입이 없습니다</p>
-                <p class="text-gray-300 leading-relaxed">
+                <p class="text-gray-300 leading-relaxed bal">
                     문서는 차트 아래에 <strong class="text-white">3개월 차를 결단기</strong>로 적었고, 도입부에서는 <strong class="text-white">3개월 근속 여부가 매출 확정과 직결된다</strong>고 했습니다. <br class="hidden md:block">
                     두 진술을 합치면 D+90이 이 기획에서 가장 중요한 시점입니다. <br class="hidden md:block">
                     그런데 곡선상 D+60에서 D+90 사이는 <strong class="text-red-400">위험도가 50 오르고 안정감이 30 내려가는</strong> 유일한 구간인데도 운영안의 개입은 D+30에서 멈춥니다.
@@ -417,7 +420,8 @@
                 <div class="bg-white/10 p-6 rounded-2xl border border-white/20">
                     <p class="text-xs text-gray-300 leading-relaxed">
                     같은 이유로 <strong class="text-white">지금 배치로는 효과를 증명하기도 어렵습니다.</strong> <br class="hidden md:block">
-                    D+5와 D+30 개입은 모두 곡선이 자연히 올라오는 구간 앞에 놓여 있어서, 근속률이 올라가도 개입의 결과인지 원래의 적응 흐름인지 구분되지 않습니다. <br class="hidden md:block">
+                    D+5와 D+30 개입은 모두 곡선이 자연히 올라오는 구간 앞에 놓여 있어서, <br class="hidden md:block">
+                    근속률이 올라가도 개입의 결과인지 원래의 적응 흐름인지 구분되지 않습니다. <br class="hidden md:block">
                     효과를 주장하려면 개입을 받지 않는 집단을 함께 두고 비교해야 합니다.
                 </p>
                 </div>
@@ -482,7 +486,7 @@
                 <p class="text-gray-700 leading-relaxed">
                     차트의 심리적 안정감은 <strong class="text-gray-900">플랫폼이 관측할 수 없는 값</strong>입니다. <br class="hidden md:block">
                     합격자가 지금 흔들리는지를 알 방법이 없으므로 개인별로 시점을 조절할 수 없습니다. <br class="hidden md:block">
-                    문서가 개인화 대신 <strong class="text-brand-blue">시점 기준 일괄 자동 발송</strong>을 택한 것은 가진 데이터로 가능한 유일한 방식이고, 운영 공수도 최소가 됩니다. <br class="hidden md:block">
+                    문서가 개인화 대신 <strong class="text-brand-blue">시점 기준 일괄 발송</strong>을 택한 것은 가진 데이터로 가능한 유일한 방식이고, 운영 공수도 최소가 됩니다. <br class="hidden md:block">
                     게임의 단계별 튜토리얼을 가져온 이유가 여기서 설명됩니다. <br class="hidden md:block">
                     다만 같은 이유로 <strong class="text-gray-900">개입이 필요한 사람에게만 갈 수는 없어서</strong>, 잘 적응한 합격자에게도 같은 메시지가 갑니다. <br class="hidden md:block">
                     다음 장의 부작용이 여기서 나옵니다.
@@ -537,7 +541,7 @@
                     실행 과제는 개발팀, 마케팅팀, 운영팀 <strong class="text-white">세 조직의 공수</strong>를 요구합니다. <br class="hidden md:block">
                     비용이 없는 것이 아니라 예산 항목으로 잡히지 않는 형태의 비용입니다.
                 </p>
-                <p class="text-gray-300 leading-relaxed">
+                <p class="text-gray-300 leading-relaxed bal">
                     제안서에서는 이 점을 감추기보다 <strong class="text-yellow-400">환불되는 수수료 규모와 비교하면 작다</strong>는 방식으로 적는 편이 설득력이 있습니다. <br class="hidden md:block">
                     조기 퇴사 한 건의 환불액과 합격자 한 명에게 드는 알림 비용을 나란히 놓으면 이 운영안이 왜 예산 심의 대상이 아닌지가 수치로 설명됩니다.
                 </p>
@@ -697,7 +701,7 @@
                     <li class="flex gap-2"><span class="text-gray-400">·</span><span>심리적 안정감과 이탈 위험도의 수치는 이 문서가 <strong class="text-gray-800">위기 구간을 설명하기 위해 제시한 곡선</strong>입니다. 위의 구간별 변화량은 그 곡선을 그대로 계산한 값이며, 실제 관측 데이터가 아닙니다.</span></li>
                     <li class="flex gap-2"><span class="text-gray-400">·</span><span>조기 퇴사의 세 가지 원인은 문서가 정리한 항목입니다. 각 원인이 실제로 차지하는 비중은 제시되어 있지 않으므로, <strong class="text-gray-800">어느 원인에 먼저 대응해야 효과가 큰지는 이 자료로 판단할 수 없습니다.</strong></span></li>
                     <li class="flex gap-2"><span class="text-gray-400">·</span><span>수수료 환불 비율과 알림 발송 단가는 문서에 없는 값입니다. 비용 비교를 제안했지만 <strong class="text-gray-800">실제 금액은 확인되지 않았습니다.</strong></span></li>
-                    <li class="flex gap-2"><span class="text-gray-400">·</span><span>패스권의 기능 구성과 뱃지의 노출 방식은 서비스 정책에 따라 달라집니다. 여기서는 <strong class="text-gray-800">두 경우 모두를 가정해 확인할 항목으로 남겼습니다.</strong></span></li>
+                    <li class="flex gap-2 bal"><span class="text-gray-400">·</span><span>패스권의 기능 구성과 뱃지의 노출 방식은 서비스 정책에 따라 달라집니다. 여기서는 <strong class="text-gray-800">두 경우 모두를 가정해 확인할 항목으로 남겼습니다.</strong></span></li>
                 </ul>
             </div>
         </section>

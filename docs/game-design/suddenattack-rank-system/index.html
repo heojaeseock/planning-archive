@@ -25,7 +25,7 @@
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
         body { 
-            font-family: 'Pretendard', sans-serif; 
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; 
             background-color: #f8fafc; /* 밝은 배경 */
             color: #334155; 
             margin: 0;
@@ -96,6 +96,7 @@
         .animate-pulse-soft { animation: pulse-soft 2s infinite; }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -179,7 +180,7 @@
                             </div>
                             <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
                                 <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">⚔️ 빠른 템포의 경쟁력 활용</h4>
-                                <p class="text-sm text-slate-500 leading-relaxed">
+                                <p class="text-sm text-slate-500 leading-relaxed bal">
                     서든어택의 강점인 <strong>짧은 플레이 타임과 직관성</strong>을 보조할 수 있는 시스템이 필요합니다. <br class="hidden md:block">
                     불필요한 마찰을 줄이고 게임 몰입도를 높이는 방향이 핵심입니다.
                 </p>
@@ -187,7 +188,8 @@
                             <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
                                 <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">🎁 지속적 동기 부여 장치 부재</h4>
                                 <p class="text-sm text-slate-500 leading-relaxed">
-                    랭크전 전용 <strong>희소성 있는 보상 체계</strong>가 부족하여, 상위 티어 달성 후 유저들이 플레이를 지속해야 할 명분이 부족한 상태입니다.
+                    랭크전 전용 <strong>희소성 있는 보상 체계</strong>가 부족하여, <br class="hidden md:block">
+                    상위 티어 달성 후 유저들이 플레이를 지속해야 할 명분이 부족한 상태입니다.
                 </p>
                             </div>
                         </div>
@@ -201,7 +203,7 @@
                         <div class="content-panel p-8 space-y-8 shadow-sm">
                             <div>
                                 <p class="text-xs font-bold text-slate-400 mb-4 tracking-wide">랭크전 주요 불만 유형 분포 (Total 100%)</p>
-                                <p class="text-[11px] text-slate-400 mb-4">
+                                <p class="text-[11px] text-slate-400 mb-4 bal">
                     * 공식 통계가 아니라, 커뮤니티·인게임 신고 게시글의 불만 유형을 직접 분류해 비율로 환산한 자체 취합 값입니다.
                 </p>
                                 <div class="space-y-5">
@@ -244,7 +246,8 @@
                     <strong>[기획 사유]</strong> 핵 사용자에 대한 증거 수집이 어렵고, 본인의 플레이를 복기하여 실력을 향상시킬 수 있는 내재된 도구가 부재합니다.
                 </p>
                             <p class="text-sm text-slate-500 leading-relaxed">
-                    <strong>[세부 내용]</strong> 최근 5경기의 데이터를 자동 저장하며, 의심 유저의 시점으로 즉시 전환하여 클립을 추출하고 신고할 수 있는 기능을 제공합니다.
+                    <strong>[세부 내용]</strong> 최근 5경기의 데이터를 자동 저장하며, <br class="hidden md:block">
+                    의심 유저의 시점으로 즉시 전환하여 클립을 추출하고 신고할 수 있는 기능을 제공합니다.
                 </p>
                         </div>
                     </div>
@@ -582,7 +585,7 @@
                             <div class="grid md:grid-cols-2 gap-4 mb-4">
                                 <div class="bg-white rounded-2xl p-5 border border-amber-200">
                                     <p class="text-xs font-black text-rose-600 mb-2">매출 잠식</p>
-                                    <p class="text-xs text-slate-600 leading-relaxed">
+                                    <p class="text-xs text-slate-600 leading-relaxed bal">
                     상위 티어 유저는 원래 결제력이 높은 층입니다. <br class="hidden md:block">
                     이들에게 캐시를 지급하면 <strong class="text-slate-800">그만큼의 결제가 사라집니다.</strong>
                 </p>
@@ -595,7 +598,7 @@
                 </p>
                                 </div>
                             </div>
-                            <p class="text-sm text-slate-700 leading-relaxed">
+                            <p class="text-sm text-slate-700 leading-relaxed bal">
                     <strong class="text-slate-900">대안:</strong> 동기 부여의 핵심은 금액이 아니라 <strong class="text-amber-800">희소성과 가시성</strong>입니다. <br class="hidden md:block">
                     시즌 한정 칭호 &middot; 무기 스킨 &middot; 프로필 배경처럼 <strong>거래도 환금도 되지 않는 외형 보상</strong>이 같은 명예욕을 자극하면서 매출 잠식과 어뷰징 유인을 만들지 않습니다. <br class="hidden md:block">
                     제안 2(POTG)와 결합해 &lsquo;보이는 성취&rsquo;로 묶으면 효과가 더 커집니다.
@@ -646,8 +649,9 @@
                     <div class="content-panel p-6 md:p-7">
                         <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">검증 지표</p>
                         <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                            <li>&bull; <strong class="text-slate-800">재접속:</strong> 비정상 종료 중 복귀 성공률, 탈주 페널티 부과 건수 변화</li>
-                            <li>&bull; <strong class="text-slate-800">분리 판정:</strong> 페널티 이의 제기 CS 인입 건수 (감소가 목표)</li>
+                            <li>&bull; <strong class="text-slate-800">재접속:</strong> 비정상 종료 중 복귀 성공률, <br class="hidden md:block">
+                    탈주 페널티 부과 건수 변화</li>
+                            <li class="bal">&bull; <strong class="text-slate-800">분리 판정:</strong> 페널티 이의 제기 CS 인입 건수 (감소가 목표)</li>
                             <li>&bull; <strong class="text-slate-800">입장 복구:</strong> 입장 실패로 성립된 경기 비율</li>
                             <li>&bull; <strong class="text-slate-800">리플레이:</strong> 신고 처리율과 제재 확정률</li>
                             <li>&bull; <strong class="text-slate-800">맵 밴:</strong> 평균 매칭 대기 시간, 맵별 선택 편중도</li>

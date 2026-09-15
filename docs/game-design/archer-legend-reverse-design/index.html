@@ -25,7 +25,7 @@
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
         body { 
-            font-family: 'Pretendard', sans-serif; 
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; 
             background-color: #f8fafc; 
             color: #334155; 
             margin: 0;
@@ -81,6 +81,7 @@
         }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
@@ -120,7 +121,8 @@
                 <p class="text-slate-600 leading-relaxed mb-6">
                     역기획은 출시된 게임의 시스템을 분해해 기획서 형태로 재구성하는 작업입니다. <br class="hidden md:block">
                     궁수의 전설은 동일 등급 장비 3개를 융합해 한 단계 승급하는 구조이고, 상자 뽑기는 부위를 지정할 수 없습니다. <br class="hidden md:block">
-                    이 두 조건을 <strong class="text-slate-900">수치로 환산해 정체의 크기를 특정</strong>하고, 거래소 &middot; 선택형 상자 &middot; 프리셋 세 제안을 그 기준으로 <strong class="text-slate-900">재평가해 실행 순서를 다시 정했습니다.</strong>
+                    이 두 조건을 <strong class="text-slate-900">수치로 환산해 정체의 크기를 특정</strong>하고, <br class="hidden md:block">
+                    거래소 &middot; 선택형 상자 &middot; 프리셋 세 제안을 그 기준으로 <strong class="text-slate-900">재평가해 실행 순서를 다시 정했습니다.</strong>
                 </p>
                 <div class="grid md:grid-cols-3 gap-4">
                     <div class="bg-rose-50 border-2 border-rose-200 rounded-2xl p-5">
@@ -239,7 +241,8 @@
                             <div>
                                 <h4 class="font-bold text-slate-800 mb-1">과도한 무작위성으로 인한 피로도</h4>
                                 <p class="text-sm text-slate-600 leading-relaxed">
-                    상위 등급 융합을 위해 동일 장비가 3배수씩 지속적으로 필요하나, 상점 뽑기가 '완전 무작위' 방식이라 목표 달성 난이도가 지나치게 높고 과금 전환율 저하를 유발합니다.
+                    상위 등급 융합을 위해 동일 장비가 3배수씩 지속적으로 필요하나, <br class="hidden md:block">
+                    상점 뽑기가 '완전 무작위' 방식이라 목표 달성 난이도가 지나치게 높고 과금 전환율 저하를 유발합니다.
                 </p>
                             </div>
                         </div>
@@ -247,7 +250,7 @@
                             <span class="bg-red-100 text-red-500 rounded-lg p-2 mt-1 shrink-0">💎</span>
                             <div>
                                 <h4 class="font-bold text-slate-800 mb-1">유료 재화 소모처 부족</h4>
-                                <p class="text-sm text-slate-600 leading-relaxed">
+                                <p class="text-sm text-slate-600 leading-relaxed bal">
                     하드 유저 및 과금 유저의 경우, 캐시 재화인 '보석'의 사용처가 매우 한정적이어서잉여 재화가 쌓이고 추가적인 매출 창출에 한계가 있습니다.
                 </p>
                             </div>
@@ -257,7 +260,8 @@
                             <div>
                                 <h4 class="font-bold text-slate-800 mb-1">사용자 편의성 결여</h4>
                                 <p class="text-sm text-slate-600 leading-relaxed">
-                    게임 모드(일반, 이벤트 등)별로 요구되는 장비 세팅이 다르나, 세팅을 저장하는 사전 설정(프리셋) 기능이 없어 매번 수동으로 교체해야 하는 불편함이 큽니다.
+                    게임 모드(일반, 이벤트 등)별로 요구되는 장비 세팅이 다르나, <br class="hidden md:block">
+                    세팅을 저장하는 사전 설정(프리셋) 기능이 없어 매번 수동으로 교체해야 하는 불편함이 큽니다.
                 </p>
                             </div>
                         </div>
@@ -327,7 +331,7 @@
                                 <div class="bg-slate-900 rounded-2xl p-5 text-white">
                                     <p class="text-[10px] font-black tracking-wide text-amber-400 mb-2">장착 슬롯 9종 전부</p>
                                     <p class="text-3xl font-black text-white mb-1">일반 729개</p>
-                                    <p class="text-xs text-slate-300 leading-relaxed">81 &times; 9. 이것이 이 게임의 최종 성장 목표가 요구하는 재료 총량입니다.</p>
+                                    <p class="text-xs text-slate-300 leading-relaxed bal">81 &times; 9. 이것이 이 게임의 최종 성장 목표가 요구하는 재료 총량입니다.</p>
                                 </div>
                             </div>
                         </div>
@@ -398,7 +402,7 @@
                                 <h4 class="text-amber-600 font-bold mb-2 text-sm">기대 효과</h4>
                                 <!-- 불릿 간격 최적화 (Flex 적용) -->
                                 <ul class="text-sm text-slate-600 leading-relaxed space-y-1.5">
-                                    <li class="flex items-start">
+                                    <li class="flex items-start bal">
                                         <span class="text-amber-500 mr-2 text-[10px] mt-1 shrink-0">●</span>
                                         <span><strong>파밍 피로도 완화:</strong> 무소과금 유저는 장비를 팔아 보석을 얻고,<br class="hidden xl:block"> 과금 유저는 보석을 써서 필요한 장비를 빠르게 구하는 선순환을 만듭니다.</span>
                                     </li>
@@ -780,9 +784,9 @@
                         <div class="bg-white rounded-2xl p-5 border border-rose-200">
                             <p class="text-[10px] font-black tracking-wide text-slate-400 mb-3">추가로 검토해야 할 리스크</p>
                             <ul class="space-y-2 text-sm text-slate-600 leading-relaxed">
-                                <li>&bull; <strong class="text-slate-800">작업장 유입:</strong> 장비가 보석으로 환산되면 자동 계정을 대량 운용할 동기가 생깁니다. 계정당 거래 한도와 탐지 체계가 함께 필요합니다.</li>
+                                <li class="bal">&bull; <strong class="text-slate-800">작업장 유입:</strong> 장비가 보석으로 환산되면 자동 계정을 대량 운용할 동기가 생깁니다. 계정당 거래 한도와 탐지 체계가 함께 필요합니다.</li>
                                 <li>&bull; <strong class="text-slate-800">현금 거래(RMT):</strong> 유저 간 거래는 외부 현금 거래의 통로가 되기 쉬워, 계정 도용과 사기 관련 CS가 함께 증가합니다.</li>
-                                <li>&bull; <strong class="text-slate-800">유료 재화 기준 거래:</strong> 유료 재화를 매개로 한 유저 간 거래는 환금성 문제를 낳을 수 있어 법무 검토가 선행되어야 합니다.</li>
+                                <li class="bal">&bull; <strong class="text-slate-800">유료 재화 기준 거래:</strong> 유료 재화를 매개로 한 유저 간 거래는 환금성 문제를 낳을 수 있어 법무 검토가 선행되어야 합니다.</li>
                             </ul>
                         </div>
                     </div>
@@ -798,14 +802,14 @@
                         <div class="grid md:grid-cols-2 gap-5">
                             <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-5">
                                 <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-2">선택형 상자 &middot; 등급 상한</p>
-                                <p class="text-sm text-slate-600 leading-relaxed">
+                                <p class="text-sm text-slate-600 leading-relaxed bal">
                     선택형 상자의 지급 범위를 <strong class="text-slate-900">일반~에픽으로 제한</strong>하고 전설을 제외한 설계는, 기존 무작위 상자의 <strong>최상위 수요를 지켜내는 장치</strong>입니다. <br class="hidden md:block">
                     신규 상품이 기존 상품을 잡아먹는 문제를 미리 막았습니다.
                 </p>
                             </div>
                             <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-5">
                                 <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-2">프리셋 &middot; 1슬롯 무료</p>
-                                <p class="text-sm text-slate-600 leading-relaxed">
+                                <p class="text-sm text-slate-600 leading-relaxed bal">
                     1번 슬롯을 무료로 열어 불만을 먼저 해소하고 <strong class="text-slate-900">2&middot;3번 슬롯만 유료화</strong>한 구조는, 편의 기능 유료화에서 나오는 반발을 피하는 표준적인 형태입니다. <br class="hidden md:block">
                     무료 구간이 없으면 &lsquo;불편을 팔았다&rsquo;는 반응이 나옵니다.
                 </p>

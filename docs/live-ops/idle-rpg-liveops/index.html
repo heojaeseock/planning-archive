@@ -25,12 +25,11 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     
     
     <style>
         body {
-            font-family: 'Noto Sans KR', sans-serif;
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
             background-color: #f1f5f9; 
             color: #334155;
             word-break: keep-all; 
@@ -104,6 +103,7 @@
         }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
+        .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
 
@@ -135,7 +135,8 @@
                 파이프라인 및 개선 기획서
             </h1>
             <p class="text-slate-600 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-                     데이터 교차 검증을 통한 휴먼 에러 방지부터, 고객 의견(VOC) 기반의 편의성 개선, 그리고 위기 상황의 정제된 커뮤니티 관리까지. 성공적인 라이브 서비스를 위한 3단계 전략을 제안합니다.
+                     데이터 교차 검증을 통한 휴먼 에러 방지부터, <br class="hidden md:block">
+                    고객 의견(VOC) 기반의 편의성 개선, 그리고 위기 상황의 정제된 커뮤니티 관리까지. 성공적인 라이브 서비스를 위한 3단계 전략을 제안합니다.
                 </p>
             <a href="#qol" class="inline-flex items-center justify-center px-8 py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-full transition-transform hover:scale-105 shadow-lg shadow-brand-500/30">
                 기획서 검토 시작하기 &#8595;
@@ -200,7 +201,8 @@
                         <ul class="space-y-5 text-slate-600 text-sm">
                             <li><strong class="text-slate-800 block mb-1">문제 인식:</strong> 매일 5~10종의 요일 던전과 재화 던전을 반복적으로 입장해야 하는 숙제 피로도가 극심합니다.</li>
                             <li><strong class="text-slate-800 block mb-1">작동 방식:</strong> 최고 기록을 달성한 던전에 한해, 메인 UI에서 <span class="bg-slate-100 px-2 py-0.5 rounded text-brand-600 border border-slate-200 font-bold">[전체 소탕]</span> 버튼을 1회 클릭하면 보유한 입장권을 일괄 소모하여 보상을 즉시 획득합니다.</li>
-                            <li><strong class="text-slate-800 block mb-1">기대 효과:</strong> 일일 숙제에 소요되는 시간을 단축하여, 유저가 경쟁이나 성장 등 게임의 핵심 콘텐츠에 더 집중할 수 있는 환경을 조성합니다.</li>
+                            <li><strong class="text-slate-800 block mb-1">기대 효과:</strong> 일일 숙제에 소요되는 시간을 단축하여, <br class="hidden md:block">
+                    유저가 경쟁이나 성장 등 게임의 핵심 콘텐츠에 더 집중할 수 있는 환경을 조성합니다.</li>
                         </ul>
                     </div>
 
@@ -211,8 +213,10 @@
                             <h4 class="text-xl font-bold text-slate-800">원터치 프리셋</h4>
                         </div>
                         <ul class="space-y-5 text-slate-600 text-sm">
-                            <li><strong class="text-slate-800 block mb-1">문제 인식:</strong> 보스전, 방치 파밍, 골드 던전 등 상황별로 장비나 스킬을 매번 교체해야 하는 조작의 번거로움이 큽니다.</li>
-                            <li><strong class="text-slate-800 block mb-1">작동 방식:</strong> 장비, 스킬, 동료 세팅을 미리 저장해 두고, 전투 진입 전 팝업의 메뉴를 통해 상황에 맞는 세팅으로 즉시 교체합니다.</li>
+                            <li><strong class="text-slate-800 block mb-1">문제 인식:</strong> 보스전, 방치 파밍, <br class="hidden md:block">
+                    골드 던전 등 상황별로 장비나 스킬을 매번 교체해야 하는 조작의 번거로움이 큽니다.</li>
+                            <li><strong class="text-slate-800 block mb-1">작동 방식:</strong> 장비, 스킬, <br class="hidden md:block">
+                    동료 세팅을 미리 저장해 두고, 전투 진입 전 팝업의 메뉴를 통해 상황에 맞는 세팅으로 즉시 교체합니다.</li>
                             <li><strong class="text-slate-800 block mb-1">기대 효과:</strong> UI 조작 단계를 크게 줄이고, 세팅 변경으로 인한 스트레스를 완화하여 전투 몰입도를 높입니다.</li>
                         </ul>
                     </div>
@@ -255,7 +259,8 @@
                     <div class="qa-step content-card p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5 transition-all hover:border-brand-300">
                         <div>
                             <h3 class="font-bold text-slate-900 text-lg mb-1"><span class="text-brand-500 mr-2">1단계.</span>데이터 정합성 검증</h3>
-                            <p class="text-sm text-slate-500">아이템 및 재화 지급량의 자리수 확인, 확률형 아이템 테이블 총합(100%) 점검, 스토어 결제 ID 교차 확인</p>
+                            <p class="text-sm text-slate-500">아이템 및 재화 지급량의 자리수 확인, <br class="hidden md:block">
+                    확률형 아이템 테이블 총합(100%) 점검, 스토어 결제 ID 교차 확인</p>
                         </div>
                         <button onclick="completeQaStep(this, 1)" class="whitespace-nowrap px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-lg border border-slate-200 transition-colors">
                             &#9744; 검증 대기
@@ -265,7 +270,8 @@
                     <div class="qa-step content-card p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5 transition-all opacity-50 grayscale" id="qa-item-2">
                         <div>
                             <h3 class="font-bold text-slate-900 text-lg mb-1"><span class="text-brand-500 mr-2">2단계.</span>리소스 및 텍스트 검증</h3>
-                            <p class="text-sm text-slate-500">스킬 및 아이템 툴팁 오탈자 확인, 누락으로 인한 더미 이미지 노출 방지, 팝업 및 타격 사운드 정상 출력 확인</p>
+                            <p class="text-sm text-slate-500">스킬 및 아이템 툴팁 오탈자 확인, 누락으로 인한 더미 이미지 노출 방지, <br class="hidden md:block">
+                    팝업 및 타격 사운드 정상 출력 확인</p>
                         </div>
                         <button onclick="completeQaStep(this, 2)" disabled class="whitespace-nowrap px-6 py-2.5 bg-slate-50 text-slate-400 font-bold rounded-lg border border-slate-100 cursor-not-allowed transition-colors">
                             &#9744; 검증 대기
@@ -286,7 +292,8 @@
                         <div>
                             <h3 class="font-bold text-slate-900 text-lg mb-1"><span class="text-brand-500 mr-2">4단계.</span>악용 케이스 검증</h3>
                             <p class="text-sm text-slate-500">
-                    재화 소모 시 음수 전환 및 보유 한도 초과 테스트, 상품 결제 진행 중 네트워크 강제 단절 방어, 다중 터치 오작동 방지
+                    재화 소모 시 음수 전환 및 보유 한도 초과 테스트, <br class="hidden md:block">
+                    상품 결제 진행 중 네트워크 강제 단절 방어, 다중 터치 오작동 방지
                 </p>
                         </div>
                         <button onclick="completeQaStep(this, 4)" disabled class="whitespace-nowrap px-6 py-2.5 bg-slate-50 text-slate-400 font-bold rounded-lg border border-slate-100 cursor-not-allowed transition-colors">
@@ -298,7 +305,8 @@
                         <div>
                             <h3 class="font-bold text-slate-900 text-lg mb-1"><span class="text-brand-500 mr-2">5단계.</span>라이브 환경 시뮬레이션</h3>
                             <p class="text-sm text-brand-600 font-medium">
-                    최종 관문: 실제 유저와 동일한 일반 계정 권한으로 테스트 서버에 접속하여, 업데이트 직후 유저의 진입 동선을 그대로 재현.
+                    최종 관문: 실제 유저와 동일한 일반 계정 권한으로 테스트 서버에 접속하여, <br class="hidden md:block">
+                    업데이트 직후 유저의 진입 동선을 그대로 재현.
                 </p>
                         </div>
                         <button onclick="completeQaStep(this, 5)" disabled class="whitespace-nowrap px-6 py-2.5 bg-slate-50 text-slate-400 font-bold rounded-lg border border-slate-100 cursor-not-allowed transition-colors">
@@ -396,13 +404,13 @@
                 </p>
                             
                             <p class="font-bold text-brand-600 mt-6 mb-2">&#9632; 1. 발생 현상 및 원인 안내</p>
-                            <p class="mb-5 text-slate-600 pl-4">
+                            <p class="mb-5 text-slate-600 pl-4 bal">
                     신규 보스 처치 시, 간헐적으로 클리어 보상이 우편함으로 정상 지급되지 않거나 수량이 누락되는 현상이 확인되었습니다. <br class="hidden md:block">
                     이는 새롭게 추가된 <strong>보상 시스템이 기존 서버 데이터와 연동되는 과정에서 발생한 일시적인 통신 및 저장 오류</strong>로 파악되었습니다.
                 </p>
                             
                             <p class="font-bold text-brand-600 mt-4 mb-2">&#9632; 2. 조치 내역 및 누락 보상 지급</p>
-                            <p class="mb-5 text-slate-600 pl-4">
+                            <p class="mb-5 text-slate-600 pl-4 bal">
                     문제 인지 직후 긴급 점검을 통해 해당 연동 시스템을 안정화하는 작업을 적용하였습니다. <br class="hidden md:block">
                     오류 발생 기간 동안 누락된 모든 재화 내역은 로그 전수 조사를 통해 금일 18:00에 개별 우편함으로 소급 지급을 완료하였습니다.
                 </p>
@@ -413,7 +421,7 @@
                     향후 업데이트 진행 시에는 내부 테스트 환경에서 대규모 보상 지급 시뮬레이션을 필수로 거치도록 검증 프로세스를 강화하겠습니다.
                 </p>
                             
-                            <p class="mt-8 text-slate-700 text-center font-bold">
+                            <p class="mt-8 text-slate-700 text-center font-bold bal">
                     다시 한번 게임 이용에 불편을 드려 대단히 죄송합니다. <br class="hidden md:block">
                     더욱 쾌적하고 안정적인 서비스를 제공하는 게임 개발사가 되겠습니다.
                 </p>
@@ -487,7 +495,7 @@
                     <div class="bg-slate-50 rounded-2xl p-7 border-2 border-slate-200">
                         <p class="text-sm font-bold text-slate-500 mb-3">앞 구간</p>
                         <p class="text-3xl font-black text-slate-700 mb-2">D+1 · +4.4%</p>
-                        <p class="text-sm text-slate-600 leading-relaxed">
+                        <p class="text-sm text-slate-600 leading-relaxed bal">
                     거의 변화가 없습니다. <br class="hidden md:block">
                     편의성 개선은 <strong class="text-slate-900">설치 첫날의 이탈에는 영향을 주지 않습니다.</strong> <br class="hidden md:block">
                     첫날 이탈은 게임 자체가 취향에 맞는지의 문제입니다.
@@ -496,7 +504,7 @@
                     <div class="bg-emerald-50 rounded-2xl p-7 border-2 border-emerald-300">
                         <p class="text-sm font-bold text-emerald-700 mb-3">뒤 구간</p>
                         <p class="text-3xl font-black text-emerald-700 mb-2">D+30 · +200%</p>
-                        <p class="text-sm text-slate-600 leading-relaxed">
+                        <p class="text-sm text-slate-600 leading-relaxed bal">
                     잔존율이 3배가 됩니다. <br class="hidden md:block">
                     <strong class="text-slate-900">숙제 피로는 누적되는 성질</strong>이라 시간이 지날수록 효과가 커집니다.
                 </p>
@@ -596,7 +604,7 @@
         <section id="qa-ops" class="py-24 border-b border-slate-200">
             <div class="max-w-5xl mx-auto px-4">
                 <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">체크리스트가 프로세스가 되려면</h2>
-                <p class="text-slate-600 leading-relaxed mb-10 max-w-3xl">
+                <p class="text-slate-600 leading-relaxed mb-10 max-w-3xl bal">
                     5단계 검증 항목은 실무에서 실제로 사고가 나는 지점을 정확히 짚고 있습니다. <br class="hidden md:block">
                     특히 마지막 단계에서 <strong class="text-slate-900">일반 계정 권한으로 유저 동선을 재현</strong>하는 항목은 관리자 계정 테스트만으로는 잡히지 않는 문제를 걸러냅니다. <br class="hidden md:block">
                     이 체크리스트가 문서에서 규칙으로 넘어가려면 세 가지가 더 필요합니다.
@@ -624,14 +632,15 @@
                         <p class="text-sm text-slate-600 leading-relaxed">
                     가장 중요한데 가장 자주 빠지는 항목입니다. <br class="hidden md:block">
                     <strong class="text-rose-700">어떤 항목이 걸리면 배포를 미루는지</strong>를 미리 정해두지 않으면, 일정 압박이 있는 상황에서 매번 그 자리에서 협의하게 됩니다. <br class="hidden md:block">
-                    결제 관련과 재화 지급량은 <strong class="text-slate-900">통과하지 못하면 배포 보류</strong>로 두고, 오탈자나 UI 잘림은 <strong class="text-slate-900">배포 후 수정 허용</strong>으로 나누는 식의 등급이 필요합니다.
+                    결제 관련과 재화 지급량은 <strong class="text-slate-900">통과하지 못하면 배포 보류</strong>로 두고, <br class="hidden md:block">
+                    오탈자나 UI 잘림은 <strong class="text-slate-900">배포 후 수정 허용</strong>으로 나누는 식의 등급이 필요합니다.
                 </p>
                     </div>
                 </div>
 
                 <div class="bg-teal-50 rounded-2xl border-2 border-teal-200 p-8">
                     <p class="text-sm font-bold text-teal-700 mb-4">사후 공지에서 이 프로세스와 이어지는 부분</p>
-                    <p class="text-slate-700 leading-relaxed">
+                    <p class="text-slate-700 leading-relaxed bal">
                     3번 위기 대응의 공지 초안은 재발 방지 대책으로 <strong class="text-slate-900">&ldquo;대규모 보상 지급 시뮬레이션을 필수로 거치도록 검증 프로세스를 강화&rdquo;</strong>를 약속합니다. <br class="hidden md:block">
                     이 약속이 2번의 체크리스트 1단계에 해당하므로, 두 섹션이 실제로 연결됩니다. <br class="hidden md:block">
                     다만 공지에 약속한 내용은 <strong class="text-slate-900">체크리스트에 항목으로 추가되어야</strong> 지켜집니다. <br class="hidden md:block">
@@ -649,18 +658,18 @@
                     <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
                         <p class="text-sm font-bold text-slate-700 mb-4">수치의 성격</p>
                         <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                            <li>&bull; VOC 이탈 원인 비중은 <strong class="text-slate-800">3개월간의 문의를 유형별로 분류한 값</strong>입니다. 표본이 불만을 표출한 유저에 편중되므로, 조용히 이탈한 유저의 사유는 포함되지 않습니다.</li>
+                            <li class="bal">&bull; VOC 이탈 원인 비중은 <strong class="text-slate-800">3개월간의 문의를 유형별로 분류한 값</strong>입니다. 표본이 불만을 표출한 유저에 편중되므로, 조용히 이탈한 유저의 사유는 포함되지 않습니다.</li>
                             <li>&bull; 잔존율 시뮬레이션의 목표 수치는 <strong class="text-slate-800">패치 후 기대 수준</strong>이며 측정된 결과가 아닙니다. 기존 지표와 달리 검증되지 않은 값입니다.</li>
-                            <li>&bull; 개선폭을 어떤 근거로 산정했는지는 <strong class="text-slate-800">문서에 남아 있지 않습니다.</strong> 유사 패치 사례가 있다면 함께 적어두는 편이 설득에 유리합니다.</li>
+                            <li class="bal">&bull; 개선폭을 어떤 근거로 산정했는지는 <strong class="text-slate-800">문서에 남아 있지 않습니다.</strong> 유사 패치 사례가 있다면 함께 적어두는 편이 설득에 유리합니다.</li>
                         </ul>
                     </div>
                     <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
                         <p class="text-sm font-bold text-slate-700 mb-4">다루지 않은 범위</p>
                         <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                            <li>&bull; 두 기획안의 <strong class="text-slate-800">개발 공수</strong>는 산정하지 않았습니다. 프리셋은 저장 구조 변경이 필요할 수 있어 소탕보다 클 가능성이 있습니다.</li>
+                            <li class="bal">&bull; 두 기획안의 <strong class="text-slate-800">개발 공수</strong>는 산정하지 않았습니다. 프리셋은 저장 구조 변경이 필요할 수 있어 소탕보다 클 가능성이 있습니다.</li>
                             <li>&bull; 프리셋 슬롯의 <strong class="text-slate-800">유료화 여부</strong>는 다루지 않았습니다. 편의 기능의 과금 범위는 사업 협의 사항입니다.</li>
-                            <li>&bull; 소탕 적용으로 인한 <strong class="text-slate-800">서버 부하 변화</strong>는 검토 대상에 넣지 않았습니다. 일괄 처리가 특정 시간대에 몰릴 수 있습니다.</li>
-                            <li>&bull; 위기 대응 매뉴얼의 단계별 소요 시간은 <strong class="text-slate-800">조직의 온콜 체계</strong>에 종속됩니다.</li>
+                            <li class="bal">&bull; 소탕 적용으로 인한 <strong class="text-slate-800">서버 부하 변화</strong>는 검토 대상에 넣지 않았습니다. 일괄 처리가 특정 시간대에 몰릴 수 있습니다.</li>
+                            <li class="bal">&bull; 위기 대응 매뉴얼의 단계별 소요 시간은 <strong class="text-slate-800">조직의 온콜 체계</strong>에 종속됩니다.</li>
                         </ul>
                     </div>
                 </div>
@@ -684,7 +693,7 @@
     <script>
         // Global Chart Defaults
         Chart.defaults.color = '#64748b'; // text-slate-500
-        Chart.defaults.font.family = "'Noto Sans KR', sans-serif";
+        Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";
 
         // --- 1. QoL Interactive Toggle ---
         function toggleSolution(type) {
@@ -793,7 +802,7 @@
                             angleLines: { color: 'rgba(0, 0, 0, 0.05)' },
                             grid: { color: 'rgba(0, 0, 0, 0.05)' },
                             pointLabels: {
-                                font: { size: 12, weight: 'bold', family: "'Noto Sans KR', sans-serif" },
+                                font: { size: 12, weight: 'bold', family: "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif" },
                                 color: '#475569'
                             },
                             ticks: { display: false, min: 0, max: 100 }
@@ -864,7 +873,7 @@
                     plugins: {
                         legend: { 
                             position: 'top', 
-                            labels: { color: '#475569', usePointStyle: true, boxWidth: 8, font: { family: "'Noto Sans KR', sans-serif"} } 
+                            labels: { color: '#475569', usePointStyle: true, boxWidth: 8, font: { family: "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif"} } 
                         },
                         tooltip: {
                             backgroundColor: 'rgba(255, 255, 255, 0.95)',
