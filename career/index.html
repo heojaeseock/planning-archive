@@ -16,11 +16,11 @@
 <meta property="og:description" content="게임 라이브 운영·프로젝트 관리 담당. 경력과 실무 경험, 직접 만든 사내 도구를 정리한 경력기술서">
 <link rel="canonical" href="https://heojaeseock.github.io/planning-archive/career/">
 <meta property="og:url" content="https://heojaeseock.github.io/planning-archive/career/">
-<meta property="og:image" content="https://heojaeseock.github.io/planning-archive/img/profile.jpg">
-<meta property="og:image:width" content="314">
-<meta property="og:image:height" content="404">
-<meta property="og:image:alt" content="허재석 프로필 사진">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://heojaeseock.github.io/planning-archive/career/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="허재석 | 경력기술서">
+<meta name="twitter:card" content="summary_large_image">
 
 <style>
   :root{
@@ -139,11 +139,13 @@
   .cta-go{margin-left:auto;font-size:19px;font-weight:800;color:var(--accent);transition:transform .16s}
   .cta:hover .cta-go{transform:translateX(4px)}
 
-  .contact{font-size:15px}
+  .contact{margin:12px 0 0;font-size:16px;font-weight:700}
+  /* 연락처는 마지막 구역이라 아래 여백을 줄여 저작권 줄과 붙인다 */
+  .contact-sec{padding-bottom:26px}
   .contact a{color:var(--accent);font-weight:700;text-decoration:none}
   .contact a:hover{text-decoration:underline}
 
-  footer{padding:26px 0 130px;font-size:13px;color:var(--faint)}
+  footer{padding:20px 0 130px;font-size:13px;color:var(--faint)}
   @media (max-width:620px){
     header{padding:26px 0 32px} section{padding:34px 0}
     .job{padding:20px 18px}
@@ -404,7 +406,7 @@
   <!-- AI 활용 개인 프로젝트 -->
   <section>
     <h2>AI 활용 개인 프로젝트</h2>
-    <p class="sub">업무하며 겪은 불편을 AI를 활용해 직접 도구로 만들어 해결하고, 사내에서 성과를 인정받은 사례입니다.</p>
+    <p class="sub">업무하며 겪은 불편을 AI를 활용해 직접 도구로 만들어 해결하고, 사내에서 성과를 인정받은 사례입니다. 회사 자료를 지키기 위해 내부 명칭과 수치는 일반화해 적었습니다.</p>
 
     <div class="job">
       <div class="job-head">
@@ -420,19 +422,19 @@
       </div>
       <div class="shots2">
         <a class="banner" href="img/notice-tool-1.webp" target="_blank" rel="noopener" title="새 탭에서 원본 크기로 보기">
-          <img src="img/notice-tool-1.webp" alt="상품 공지 자동 생성기 화면 1. 기획서 CSV 업로드와 상점·판매 기간·서버 설정" loading="lazy" decoding="async" width="1160" height="667">
+          <img src="img/notice-tool-1.webp" alt="상품 공지 자동 생성기 화면 1. 기획서를 올리고 조건을 설정하는 단계" loading="lazy" decoding="async" width="1160" height="667">
         </a>
         <a class="banner" href="img/notice-tool-2.webp" target="_blank" rel="noopener" title="새 탭에서 원본 크기로 보기">
-          <img src="img/notice-tool-2.webp" alt="상품 공지 자동 생성기 화면 2. 상품 선택, 회수 아이템 설정, 공지 소스 생성" loading="lazy" decoding="async" width="1162" height="668">
+          <img src="img/notice-tool-2.webp" alt="상품 공지 자동 생성기 화면 2. 항목을 고르고 공지 소스를 만드는 단계" loading="lazy" decoding="async" width="1162" height="668">
         </a>
       </div>
       <p class="shotcap">이미지를 누르면 원본 크기로 열립니다.</p>
       <div class="blk">
         <h4>프로젝트 요약</h4>
         <ul>
-          <li>기획서(CSV)를 포럼 공지사항용 HTML 소스로 자동 변환하는 사내망 웹 도구를 단독 기획·제작</li>
+          <li>기획서(CSV)를 포럼 공지사항용 HTML 소스로 자동 변환하는 사내용 웹 도구를 단독 기획·제작</li>
           <li>상점 이름, 판매 기간, 대상 서버를 설정하면 원클릭으로 소스가 나오고, 게시 전 점검과 회수 아이템 자동 감지까지 한 화면에서 처리</li>
-          <li>미공개 데이터가 새지 않도록 기획서 파일은 브라우저 안에서만 읽고, AI 호출은 상품명·가격·날짜를 가린 값으로만 사내 AI에 전송</li>
+          <li>자료가 밖으로 나가지 않도록 파일은 브라우저 안에서만 읽고, AI 호출은 주요 항목을 가린 값으로만 전송</li>
           <li>Gemini로 초안을 만든 뒤 Claude Code로 구조와 예외 처리를 다시 잡아 고도화</li>
         </ul>
       </div>
@@ -440,8 +442,8 @@
         <h4>🏆 핵심 성과</h4>
         <ul>
           <li>표로 하나씩 옮기던 수동 작업을 원클릭 생성으로 대체하고, 무료·1원·판매 중지 항목은 자동으로 걸러 오타와 누락을 차단</li>
-          <li>사내 정보보호정책팀·AI지원팀 보안 검토를 통과하고 실제 운영툴로 승인받아 도입</li>
-          <li>영어·중국어 번체·태국어·일본어 4개 권역까지 확장하고 게임 선택 방식으로 분리해 전사로 확산, 현재 다른 프로젝트에서도 실제 운영에 사용 중</li>
+          <li>사내 보안 검토를 거쳐 실제 운영 도구로 승인받아 도입</li>
+          <li>다국어 권역까지 확장하고 서비스를 골라 쓰는 방식으로 분리해, 담당 서비스 밖에서도 실제 운영에 사용 중</li>
         </ul>
       </div>
     </div>
@@ -453,29 +455,29 @@
       </div>
       <div class="shots2">
         <a class="banner" href="img/event-tool-1.webp" target="_blank" rel="noopener" title="새 탭에서 원본 크기로 보기">
-          <img src="img/event-tool-1.webp" alt="포럼 이벤트 도구 분석기 화면. 종료 공지에서 추출한 항목과 누적 데이터 표" loading="lazy" decoding="async" width="1650" height="847">
+          <img src="img/event-tool-1.webp" alt="포럼 이벤트 도구 분석기 화면. 지난 공지에서 뽑아낸 항목과 누적 표" loading="lazy" decoding="async" width="1650" height="847">
         </a>
         <a class="banner" href="img/event-tool-2.webp" target="_blank" rel="noopener" title="새 탭에서 원본 크기로 보기">
-          <img src="img/event-tool-2.webp" alt="포럼 이벤트 도구 기획기 화면. 주제 한 줄로 생성된 AI 기획 항목과 공지 미리보기" loading="lazy" decoding="async" width="1650" height="847">
+          <img src="img/event-tool-2.webp" alt="포럼 이벤트 도구 기획기 화면. 주제 한 줄로 만들어진 초안과 미리보기" loading="lazy" decoding="async" width="1650" height="847">
         </a>
       </div>
       <p class="shotcap">이미지를 누르면 원본 크기로 열립니다. 화면에 보이는 이벤트 내용은 예시입니다.</p>
       <div class="blk">
         <h4>프로젝트 요약</h4>
         <ul>
-          <li>이벤트 공지를 붙여넣으면 참여수·참여율·보상 등 6개 항목을 자동 추출하고, 주제 한 줄로 공지 9개 항목이 채워지는 사내망 웹 도구를 단독 제작</li>
-          <li>사내 AI를 직접 연동해 복사·붙여넣기 4단계를 없애고, 쌓인 과거 이벤트를 함께 실어 운영 톤에 맞는 초안이 나오도록 설계</li>
+          <li>이벤트 공지를 붙여넣으면 참여수·참여율·보상 등 6개 항목을 자동 추출하고, 주제 한 줄로 공지 9개 항목이 채워지는 사내용 웹 도구를 단독 제작</li>
+          <li>AI를 직접 연동해 복사·붙여넣기 4단계를 없애고, 쌓인 과거 이벤트를 함께 실어 운영 톤에 맞는 초안이 나오도록 설계</li>
           <li>게시 전 자동 검사 10종(요일·날짜 순서 대조, 미승인 보상 교정, 빈칸·오타·중복 검출)을 붙여 공지 사고를 차단</li>
           <li>색상·배너·말머리·조판을 공지 소스에서 직접 읽는 구조로 만들어, 코드를 고치지 않고 다른 게임을 추가할 수 있게 설계</li>
-          <li>Claude로 HTML 시제품을 만들어 쓸 만한지 먼저 확인한 뒤, 사내 스타터킷 위에서 웹앱으로 고도화</li>
+          <li>HTML 시제품으로 쓸 만한지 먼저 확인한 뒤 웹앱으로 고도화</li>
         </ul>
       </div>
       <div class="blk win">
         <h4>🏆 핵심 성과</h4>
         <ul>
           <li>담당자가 직접 측정한 기준으로 공지 1건 작성 시간을 30~40분에서 약 10분으로 단축(약 70%), 월 2~3시간과 연 24~36시간을 확보</li>
-          <li>배포 전 자동 검증 457건(31개 영역)과 외부 입력 3중 차단을 넣고, 사내 AI지원팀 보안 검토와 정보보호 검토를 통과</li>
-          <li>담당 서비스 전용이던 도구를 코드 수정 없이 3개 게임에서 운용하며, 기존 공지 3~5건만 등록하면 약 10분 만에 적용</li>
+          <li>배포 전 자동 검증과 외부 입력 차단을 촘촘히 넣고, 사내 보안 검토를 통과</li>
+          <li>담당 서비스 전용이던 도구를 코드 수정 없이 여러 서비스에서 운용하며, 기존 공지 몇 건만 등록하면 약 10분 만에 적용</li>
           <li>흩어져 있던 종료 이벤트 성과를 누적 데이터로 남겨, 담당자 기억에 의존하던 기획 근거를 지표로 대체</li>
         </ul>
       </div>
@@ -498,9 +500,8 @@
   </section>
 
   <!-- Contact -->
-  <section>
+  <section class="contact-sec">
     <h2>연락처</h2>
-    <p class="sub">연락은 이메일로 부탁드립니다.</p>
     <p class="contact">✉️ <a href="mailto:wotjr423@naver.com">wotjr423@naver.com</a></p>
   </section>
 
