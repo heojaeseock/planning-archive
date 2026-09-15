@@ -604,13 +604,9 @@
                 </div>
                 <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
                     <p class="text-xs font-bold text-slate-700 mb-3">센터 코드도 확인이 필요합니다</p>
-                    <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">
-                    요청은 <strong class="text-slate-800">서울 센터</strong>라고 했고 쿼리는 센터 코드를 특정 문자열로 고정했습니다. <br class="hidden md:block">
-                    그 코드가 실제로 존재하는지는 스키마에 나와 있지 않으므로 <strong class="text-slate-800">추측한 값</strong>입니다. <br class="hidden md:block">
-                    센터 테이블에는 지역 열이 함께 제공되어 있는데 쓰이지 않았습니다. <br class="hidden md:block">
-                    서울에 센터가 둘 이상이면 코드 하나로는 일부만 나옵니다. <br class="hidden md:block">
-                    <strong class="text-slate-800">지역 열로 거르는 편</strong>이 요청 문장에 더 가깝고, 센터가 늘어나도 그대로 작동합니다.
-                </p>
+                    <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">요청은 서울 센터인데 쿼리는 센터 코드를 특정 문자열로 고정했습니다. 스키마에 없는 값이라 추측입니다. <br class="hidden md:block">
+센터 테이블에 지역 열이 있는데 쓰지 않았습니다. 서울에 센터가 둘 이상이면 코드 하나로는 일부만 나옵니다. <br class="hidden md:block">
+<strong>지역 열로 거르면</strong> 요청 문장에 더 가깝고, 센터가 늘어나도 그대로 작동합니다.</p>
                 </div>
             </div>
 
@@ -622,14 +618,8 @@
                     빠진 조건은 <strong class="text-amber-300">요구사항과 결과를 한 줄씩 맞춰볼 때만</strong> 드러납니다. <br class="hidden md:block">
                     그리고 그 대조를 하려면 수식과 쿼리를 읽을 줄 알아야 합니다.
                 </p>
-                <p class="text-sm md:text-base text-slate-300 leading-relaxed max-w-[46em]">
-                    도전 2의 제목은 <strong class="text-white">개발자 없이 데이터 추출</strong>입니다. <br class="hidden md:block">
-                    쿼리를 받는 것은 개발자 없이 가능합니다. <br class="hidden md:block">
-                    다만 받은 쿼리가 요청과 맞는지 판단하는 데는 <strong class="text-amber-300">읽을 수 있는 만큼의 지식</strong>이 필요합니다. <br class="hidden md:block">
-                    제목을 <strong class="text-white">개발자를 기다리지 않고</strong> 정도로 적으면 실제로 한 일에 더 가깝고, <br class="hidden md:block">
-                    검증 단계를 생략했다는 인상도 주지 않습니다. <br class="hidden md:block">
-                    이 문서가 스스로 검증 과정을 적어둔 것이 그 지식을 갖췄다는 증거이기도 합니다.
-                </p>
+                <p class="text-sm md:text-base text-slate-300 leading-relaxed max-w-[46em]">쿼리를 받는 것은 개발자 없이 됩니다. 다만 받은 쿼리가 요청과 맞는지 판단하려면 읽을 줄은 알아야 합니다. <br class="hidden md:block">
+그래서 이 일의 성격은 <strong>개발자 없이</strong>보다 <strong>개발자를 기다리지 않고</strong>에 가깝습니다.</p>
             </div>
 
             <div class="mb-10">
@@ -679,12 +669,8 @@
                     45와 3, 60과 4, 30과 2로 나누어떨어지는 정수이기도 합니다. <br class="hidden md:block">
                     측정한 값이 이렇게 맞아떨어지기는 어렵습니다.
                 </p>
-                    <p class="text-slate-600 leading-relaxed max-w-[46em]">
-                    한계 항목에 <strong class="text-slate-900">수동 작업 시간은 추정</strong>이라고 이미 밝혀두었으므로 표기 자체는 정직합니다. <br class="hidden md:block">
-                    다만 차트는 막대 길이로 보여주기 때문에 <strong class="text-amber-800">측정값처럼 읽힙니다.</strong> <br class="hidden md:block">
-                    발표에서는 <strong class="text-slate-900">같은 배수를 일괄 적용한 값</strong>이라고 먼저 말하고, 총 절감 시간 대신 <strong class="text-slate-900">작업 하나를 실제로 재본 기록</strong>을 하나만 제시하는 편이 설득력이 큽니다. <br class="hidden md:block">
-                    하나라도 실측이면 나머지 추정의 근거가 생깁니다.
-                </p>
+                    <p class="text-slate-600 leading-relaxed max-w-[46em]">수동 작업 시간이 추정이라는 것은 한계 항목에 밝혀 뒀습니다. 다만 차트는 막대 길이라 잰 값처럼 읽힙니다. <br class="hidden md:block">
+<strong>작업 하나라도 실제로 재 두면</strong> 나머지 추정의 근거가 생깁니다. 총 절감 시간보다 그 기록 하나가 셉니다.</p>
                 </div>
 
                 <div class="bg-white rounded-2xl border-2 border-slate-300 p-8 shadow-sm">
@@ -714,12 +700,9 @@
                     </div>
                     <div class="bg-blue-50 rounded-xl p-6 border-2 border-blue-200">
                         <p class="text-xs font-black text-blue-700 mb-3">그래서 이 도구의 값어치는 반복이 아니라 처음에 있습니다</p>
-                        <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                    매번 같은 일을 한다면 수식이나 쿼리를 저장하는 것으로 충분합니다. <br class="hidden md:block">
-                    도구가 크게 이기는 구간은 <strong class="text-slate-800">처음 만나는 조건, 저장해 둔 것이 안 맞는 상황</strong>입니다. <br class="hidden md:block">
-                    세 사례가 모두 그런 성격이므로 제안의 방향은 맞습니다. <br class="hidden md:block">
-                    발표에서 <strong class="text-blue-700">반복 업무 자동화가 아니라 비정형 요청 대응</strong>으로 성격을 적으면 되묻기 어려운 주장이 됩니다. 반복 업무라면 도구보다 표준 양식을 만드는 것이 먼저라는 반론이 늘 따라옵니다.
-                </p>
+                        <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">매번 같은 일이라면 수식이나 쿼리를 저장해 두는 것으로 충분합니다. <br class="hidden md:block">
+도구가 크게 이기는 구간은 <strong>처음 만나는 조건</strong>, 저장해 둔 것이 안 맞는 상황입니다. 세 사례가 모두 그쪽입니다. <br class="hidden md:block">
+그래서 이 제안의 성격은 반복 업무 자동화가 아니라 비정형 요청 대응입니다.</p>
                     </div>
                 </div>
             </div>
