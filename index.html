@@ -146,19 +146,6 @@
   .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}
   .tag{font-size:11px;font-weight:700;padding:3px 7px;border-radius:5px}
 
-  .picks{margin:20px 0 0;padding:15px 17px;border:1px solid var(--border);
-    border-radius:11px;background:var(--surface-2)}
-  .picks-head{margin:0 0 9px;font-size:13px;font-weight:700;color:var(--muted)}
-  .picks-list{margin:0;padding:0;list-style:none;display:grid;gap:7px}
-  .picks-list li{counter-increment:pick}
-  .picks-list a{display:flex;gap:9px;align-items:baseline;text-decoration:none;color:inherit}
-  .picks-list a:hover b{color:var(--accent)}
-  .picks-list b{font-size:14px;font-weight:700;color:var(--text);white-space:nowrap}
-  .picks-list span{font-size:12.5px;color:var(--faint)}
-  @media (max-width:640px){
-    .picks-list a{flex-direction:column;gap:2px}
-    .picks-list b{white-space:normal}
-  }
   .t-gd{color:var(--gd);background:var(--gd-bg)}
   .t-gm{color:var(--gm);background:var(--gm-bg)}
   .t-pm{color:var(--pm);background:var(--pm-bg)}
@@ -225,15 +212,6 @@
       <span class="cta-go" aria-hidden="true">→</span>
     </a>
 
-
-    <div class="picks">
-      <p class="picks-head">시간이 없으시면 이 3건만 보셔도 됩니다.</p>
-      <ol class="picks-list">
-        <li><a href="docs/game-design/suddenattack-rank-system/index.html"><b>서든어택 랭크전 시스템 기획</b><span>이탈 원인을 짚고 시스템 5종까지 설계한 기획서</span></a></li>
-        <li><a href="docs/live-ops/dnf-mobile-cn-ops/index.html"><b>던파 모바일 중국 운영 전략 리포트</b><span>외부 지표만으로 성과를 모델링한 운영 제언</span></a></li>
-        <li><a href="docs/game-design/crossfire-weapon-gunplay/index.html"><b>크로스파이어 무기 조작감 분석</b><span>반동·명중률을 수치로 분해한 밸런스 분석</span></a></li>
-      </ol>
-    </div>
 
     <p class="guide"><span class="guide-line"></span>아래는 작업 기록 46건입니다. <b>직무 버튼</b>으로 원하는 직무 문서만 골라 보실 수 있습니다.</p>
   </header>
