@@ -173,16 +173,16 @@
                       <p class="text-[11px] font-black tracking-[0.12em] text-slate-400 mb-4">그래서 무엇을 했는가</p>
                       <div class="grid md:grid-cols-3 gap-3">
                         <div class="rounded-xl border border-slate-200 p-4">
-                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">제안 다섯 건을 불만 분포 위에 올려 봤습니다</p>
+                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">제안 다섯 건을 냈습니다</p>
                           <p class="text-xs text-slate-500 leading-relaxed bal">리플레이, 명장면 저장, 사후 채팅, 맵 밴, 티어 보상</p>
                         </div>
                         <div class="rounded-xl border border-slate-200 p-4">
-                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">가장 큰 칸만 비어 있었습니다</p>
-                          <p class="text-xs text-slate-500 leading-relaxed bal">제안은 핵(13%)과 보이스톡(15%) 쪽에 몰려 있었습니다</p>
+                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">41%에 기획으로 답했습니다</p>
+                          <p class="text-xs text-slate-500 leading-relaxed bal">튕김과 탈주를 가르는 기준, 복귀 경로, 재접속 처리로 제안 셋을 더했습니다</p>
                         </div>
                         <div class="rounded-xl border border-slate-200 p-4">
-                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">기획 영역에 남은 몫을 찾았습니다</p>
-                          <p class="text-xs text-slate-500 leading-relaxed bal">서버 안정성은 개발의 몫이지만, 튕김과 탈주를 가르는 기준은 기획이 정합니다</p>
+                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">부작용 둘은 대안으로 바꿨습니다</p>
+                          <p class="text-xs text-slate-500 leading-relaxed bal">사후 채팅의 관전 정보 유출과 유료 캐시 보상의 어뷰징을 미리 걸렀습니다</p>
                         </div>
                       </div>
                     </div>
@@ -201,7 +201,7 @@
             <div class="flex border-b border-slate-200 bg-slate-50/50 sticky top-0 z-20 backdrop-blur-md">
                 <button onclick="openTab(event, 'analysis')" class="tab-btn active flex-1 py-5 text-sm font-bold text-slate-500 border-transparent" id="defaultOpen">📊 1. 랭크전 현황 분석</button>
                 <button onclick="openTab(event, 'proposal')" class="tab-btn flex-1 py-5 text-sm font-bold text-slate-500 border-transparent">💡 2. 신규 시스템 기획</button>
-                <button onclick="openTab(event, 'gap')" class="tab-btn flex-1 py-5 text-sm font-bold text-slate-500 border-transparent">🔎 3. 정합성 점검 및 우선순위</button>
+                <button onclick="openTab(event, 'gap')" class="tab-btn flex-1 py-5 text-sm font-bold text-slate-500 border-transparent">🔎 3. 보완 설계와 우선순위</button>
             </div>
 
             <!-- 탭 1: 현황 및 문제점 -->
@@ -473,76 +473,18 @@
             <!-- 탭 3: 정합성 점검 및 우선순위 -->
             <div id="gap" class="tab-content p-6 md:p-10 space-y-14">
                 <div class="text-center max-w-2xl mx-auto">
-                    <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4 tracking-tight">정합성 점검 및 우선순위</h2>
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4 tracking-tight">보완 설계와 실행 우선순위</h2>
                     <p class="text-slate-500 text-sm leading-relaxed text-left max-w-[42em] mx-auto">
-                    제안을 나열한 뒤에는 <strong class="text-slate-700">&ldquo;내가 정의한 문제를 실제로 덮고 있는가&rdquo;</strong>를 되짚어야 합니다. <br class="hidden md:block">
-                    불만 분포와 제안 다섯 건을 같은 표에 놓고 하나씩 맞대어 봤습니다. <br class="hidden md:block">
-                    덮이지 않은 구간을 찾아 제안을 더하고, 부작용이 따라오는 두 건은 대안으로 바꿨습니다.
+                    가장 큰 불만인 <strong class="text-slate-700">서버 튕김 41%</strong>에 기획으로 답할 수 있는 몫을 찾아 제안 셋을 더했습니다. <br class="hidden md:block">
+                    부작용이 따라오는 두 건은 처음부터 대안으로 바꿔 넣었습니다.
                 </p>
-                </div>
-
-                <!-- 1. 커버리지 매트릭스 -->
-                <div>
-                    <div class="flex items-center gap-3 mb-5">
-                        <span class="text-rose-500 font-black text-2xl">#</span>
-                        <h3 class="text-xl font-bold text-slate-900">1. 문제 &times; 제안 커버리지</h3>
-                    </div>
-                    <div class="content-panel p-6 md:p-8">
-                        <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-6">
-                            <table class="w-full min-w-[600px] border-collapse text-sm">
-                                <thead>
-                                    <tr class="bg-slate-800 text-white">
-                                        <th scope="col" class="p-3 text-left text-xs font-black">불만 유형</th>
-                                        <th scope="col" class="p-3 text-center text-xs font-black">비중</th>
-                                        <th scope="col" class="p-3 text-left text-xs font-black">대응 제안</th>
-                                        <th scope="col" class="p-3 text-center text-xs font-black">커버</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="bg-rose-50 border-b-2 border-rose-200">
-                                        <td class="p-3 font-black text-rose-800">서버/입장 렉 (탈주 처리)</td>
-                                        <td class="p-3 text-center font-black text-rose-700 text-base">41%</td>
-                                        <td class="p-3 text-rose-700 font-bold text-xs">없음</td>
-                                        <td class="p-3 text-center text-xl font-black text-rose-600">✕</td>
-                                    </tr>
-                                    <tr class="border-b border-slate-200">
-                                        <td class="p-3 font-bold text-slate-800">기타 (UX 불편 및 오류)</td>
-                                        <td class="p-3 text-center font-bold text-slate-600">31%</td>
-                                        <td class="p-3 text-slate-600 text-xs">04 맵 밴 (부분)</td>
-                                        <td class="p-3 text-center text-lg font-black text-amber-500">△</td>
-                                    </tr>
-                                    <tr class="border-b border-slate-200 bg-slate-50">
-                                        <td class="p-3 font-bold text-slate-800">보이스톡 시스템 오류</td>
-                                        <td class="p-3 text-center font-bold text-slate-600">15%</td>
-                                        <td class="p-3 text-slate-600 text-xs">03 사후 채팅</td>
-                                        <td class="p-3 text-center text-lg font-black text-amber-500">△</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="p-3 font-bold text-slate-800">불법 프로그램 의심</td>
-                                        <td class="p-3 text-center font-bold text-slate-600">13%</td>
-                                        <td class="p-3 text-slate-600 text-xs">01 리플레이</td>
-                                        <td class="p-3 text-center text-lg font-black text-emerald-600">○</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="bg-slate-50 border-2 border-slate-200 rounded-2xl p-6">
-                            <p class="text-[10px] font-black tracking-wide text-slate-400 mb-3">표를 채워 보니</p>
-                            <p class="text-sm md:text-base text-slate-700 leading-relaxed max-w-[46em]">
-                    비중 1위인 <strong class="text-slate-900">서버 튕김 41%</strong> 구간이 비어 있습니다. <br class="hidden md:block">
-                    제안 다섯 건은 핵(13%)과 보이스톡(15%), 그리고 성취 동기 쪽에 놓여 있습니다. <br class="hidden md:block">
-                    서버 성능은 기획서가 약속할 수 있는 영역이 아니어서 비켜 간 자리입니다. <br class="hidden md:block">
-                    다만 <strong class="text-slate-900">41%가 화가 난 이유를 보면</strong> 기획이 할 수 있는 몫이 남아, 아래에서 제안 셋을 더했습니다.
-                </p>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- 2. 41%에 대한 대응 -->
                 <div>
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-blue-600 font-black text-2xl">#</span>
-                        <h3 class="text-xl font-bold text-slate-900">2. 빈 칸을 메우는 제안 &mdash; 기획으로 할 수 있는 것</h3>
+                        <h3 class="text-xl font-bold text-slate-900">1. 서버 튕김 41%에 기획으로 답한 제안 셋</h3>
                     </div>
                     <div class="content-panel p-6 md:p-8">
                         <p class="text-slate-600 leading-relaxed mb-6">
@@ -594,12 +536,12 @@
                 <div>
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-amber-500 font-black text-2xl">#</span>
-                        <h3 class="text-xl font-bold text-slate-900">3. 기존 제안에서 다시 봐야 할 두 건</h3>
+                        <h3 class="text-xl font-bold text-slate-900">2. 부작용이 따라오는 두 건은 대안으로 넣었습니다</h3>
                     </div>
                     <div class="space-y-5">
                         <div class="bg-amber-50 border-2 border-amber-300 rounded-[24px] p-6 md:p-7">
                             <div class="flex flex-wrap items-center gap-3 mb-4">
-                                <span class="bg-amber-500 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">재검토</span>
+                                <span class="bg-amber-500 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">보완</span>
                                 <span class="font-black text-slate-900">제안 3 &middot; 사후 채팅</span>
                             </div>
                             <p class="text-sm text-slate-700 leading-relaxed mb-4">
@@ -607,7 +549,7 @@
                     사망자는 관전 시점에서 <strong class="text-slate-900">생존자가 볼 수 없는 적 위치를 볼 수 있기 때문</strong>입니다.
                 </p>
                             <div class="bg-white rounded-2xl p-5 border border-amber-200 mb-4">
-                                <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">원안의 제한이 충분하지 않은 이유</p>
+                                <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">제한의 방향을 바로잡습니다</p>
                                 <p class="text-xs text-slate-600 leading-relaxed">
                     원안은 &lsquo;생존자는 팀원의 사후 채팅만 수신&rsquo;으로 악용을 막으려 했습니다. <br class="hidden md:block">
                     그런데 막아야 하는 것은 <strong>적 팀의 열람</strong>이 아니라 <strong class="text-slate-800">사망자가 관전으로 얻은 정보가 생존자에게 흐르는 것</strong>입니다. <br class="hidden md:block">
@@ -622,7 +564,7 @@
 
                         <div class="bg-amber-50 border-2 border-amber-300 rounded-[24px] p-6 md:p-7">
                             <div class="flex flex-wrap items-center gap-3 mb-4">
-                                <span class="bg-amber-500 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">재검토</span>
+                                <span class="bg-amber-500 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">보완</span>
                                 <span class="font-black text-slate-900">제안 5 &middot; 티어 보상에 유료 캐시 포함</span>
                             </div>
                             <p class="text-sm text-slate-700 leading-relaxed mb-4">
@@ -657,7 +599,7 @@
                 <div>
                     <div class="flex items-center gap-3 mb-5">
                         <span class="text-slate-800 font-black text-2xl">#</span>
-                        <h3 class="text-xl font-bold text-slate-900">4. 실행 우선순위</h3>
+                        <h3 class="text-xl font-bold text-slate-900">3. 실행 우선순위</h3>
                     </div>
                     <div class="content-panel p-6 md:p-8">
                         <div class="space-y-3">
@@ -712,8 +654,8 @@
                     <div class="relative z-10 max-w-4xl mx-auto">
                         <p class="text-blue-400 font-black text-[10px] tracking-wide mb-5 text-center">정리</p>
                         <p class="text-base md:text-lg font-bold leading-relaxed text-center mb-8 text-left max-w-[42em] mx-auto">
-                    제안을 늘리는 것보다 <strong class="text-blue-300">정의한 문제를 실제로 덮었는지 확인하는 일</strong>이 먼저입니다. <br class="hidden md:block">
-                    그 확인으로 41% 구간에 제안 셋을 더했고, 부작용이 따라오는 두 건은 대안으로 바꿨습니다.
+                    제안을 늘리는 것보다 <strong class="text-blue-300">가장 큰 불만에 닿는 것</strong>이 먼저입니다. <br class="hidden md:block">
+                    41% 구간에 제안 셋을 더했고, 부작용이 따라오는 두 건은 대안으로 바꿔 넣었습니다.
                 </p>
                         <div class="grid md:grid-cols-3 gap-4 text-left">
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
