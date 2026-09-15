@@ -433,11 +433,13 @@
             <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-8 mb-10">
                 <p class="text-sm font-black text-emerald-700 mb-5">시뮬레이션 값이 문제 정의와 정확히 맞습니다</p>
                 <p class="text-slate-700 leading-relaxed mb-5">
-                    문서는 이상 상황을 <strong class="text-slate-900">클릭은 증가했으나 전환율이 하락한 상태</strong>로 정의했습니다. 추가된 값이 클릭률 <strong class="text-emerald-700">+41.7%</strong>, 전환율 <strong class="text-emerald-700">-79.3%</strong>이므로 정의한 상황을 그대로 재현합니다. <br class="hidden md:block">
+                    문서는 이상 상황을 <strong class="text-slate-900">클릭은 증가했으나 전환율이 하락한 상태</strong>로 정의했습니다. <br class="hidden md:block">
+                    추가된 값이 클릭률 <strong class="text-emerald-700">+41.7%</strong>, 전환율 <strong class="text-emerald-700">-79.3%</strong>이므로 정의한 상황을 그대로 재현합니다. <br class="hidden md:block">
                     시연용 수치가 서술과 어긋나지 않는 경우는 드물고, 이 문서는 맞춰져 있습니다.
                 </p>
                 <p class="text-slate-700 leading-relaxed">
-                    대응 매뉴얼의 순서도 이 하락 폭에 맞습니다. <strong class="text-slate-900">1번이 재고와 상세페이지 링크 점검</strong>인데, 79% 급락은 가격 경쟁력 문제로는 설명되지 않는 크기이므로 <strong class="text-emerald-700">기술적 원인을 먼저 보는 것이 맞습니다.</strong> <br class="hidden md:block">
+                    대응 매뉴얼의 순서도 이 하락 폭에 맞습니다. <br class="hidden md:block">
+                    <strong class="text-slate-900">1번이 재고와 상세페이지 링크 점검</strong>인데, 79% 급락은 가격 경쟁력 문제로는 설명되지 않는 크기이므로 <strong class="text-emerald-700">기술적 원인을 먼저 보는 것이 맞습니다.</strong> <br class="hidden md:block">
                     가격 문제라면 점진적으로 빠지고, 링크나 결제가 막히면 이렇게 급락합니다.
                 </p>
             </div>
@@ -499,14 +501,16 @@
                     <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
                         <p class="text-xs font-black text-slate-800 mb-2">예비 상품은 미리 검수를 통과해야 합니다</p>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                    교체가 즉시 되려면 서브 딜 상품도 <strong class="text-slate-800">가격과 재고 검수를 마친 상태</strong>여야 합니다. 급하게 올린 예비 상품에 가격 오류가 있으면 같은 문제가 반복됩니다. <br class="hidden md:block">
+                    교체가 즉시 되려면 서브 딜 상품도 <strong class="text-slate-800">가격과 재고 검수를 마친 상태</strong>여야 합니다. <br class="hidden md:block">
+                    급하게 올린 예비 상품에 가격 오류가 있으면 같은 문제가 반복됩니다. <br class="hidden md:block">
                     자동 검수 대상에 <strong class="text-slate-800">예비 상품을 포함</strong>시켜야 하고, 그만큼 검수 물량이 늘어나므로 절감한 시간의 일부는 여기로 갑니다.
                 </p>
                     </div>
                     <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
                         <p class="text-xs font-black text-slate-800 mb-2">가격 조정은 혼자 결정할 수 없습니다</p>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                    매뉴얼 2번의 <strong class="text-slate-800">가격 경쟁력 재검증 및 조정</strong>은 MD와 판매자 합의가 필요합니다. 캠페인 진행 중 몇 분 안에 합의가 끝나기 어렵습니다. <br class="hidden md:block">
+                    매뉴얼 2번의 <strong class="text-slate-800">가격 경쟁력 재검증 및 조정</strong>은 MD와 판매자 합의가 필요합니다. <br class="hidden md:block">
+                    캠페인 진행 중 몇 분 안에 합의가 끝나기 어렵습니다. <br class="hidden md:block">
                     <strong class="text-slate-800">캠페인 시작 전에 조정 가능 범위를 미리 합의</strong>해 두면 그 범위 안에서는 즉시 집행할 수 있습니다. <br class="hidden md:block">
                     대응 속도는 매뉴얼보다 <strong class="text-slate-800">사전 합의된 권한</strong>에서 나옵니다.
                 </p>
@@ -607,12 +611,13 @@
             <div class="bg-rose-50 border-2 border-rose-300 rounded-2xl p-8 mb-10">
                 <p class="text-sm font-black text-rose-700 mb-5">방향만으로는 이상을 가려낼 수 없습니다</p>
                 <p class="text-slate-700 leading-relaxed mb-5">
-                    문서는 이상 상황을 <strong class="text-slate-900">클릭은 늘고 전환은 줄어든 상태</strong>로 정의했습니다. 상황 설명으로는 정확합니다. <br class="hidden md:block">
-                    그런데 이 정의를 그대로 경보 규칙으로 쓰면, 정상 구간 다섯 번 중 <strong class="text-rose-700">네 번이 이상으로 잡힙니다.</strong> <br class="hidden md:block">
+                    문서는 이상 상황을 <strong class="text-slate-900">클릭은 늘고 전환은 줄어든 상태</strong>로 정의했습니다. <br class="hidden md:block">
+                    상황 설명으로는 정확합니다. 그런데 이 정의를 그대로 경보 규칙으로 쓰면, 정상 구간 다섯 번 중 <strong class="text-rose-700">네 번이 이상으로 잡힙니다.</strong> <br class="hidden md:block">
                     두 지표가 반대로 움직이는 일이 평소에도 계속 일어나기 때문입니다.
                 </p>
                 <p class="text-slate-700 leading-relaxed">
-                    10시 15분에서 20분 구간을 보면 클릭이 0.4 오르고 전환이 0.1 내렸습니다. 방향은 이상 시점과 같습니다. 다른 것은 <strong class="text-slate-900">크기</strong>뿐입니다. <br class="hidden md:block">
+                    10시 15분에서 20분 구간을 보면 클릭이 0.4 오르고 전환이 0.1 내렸습니다. <br class="hidden md:block">
+                    방향은 이상 시점과 같습니다. 다른 것은 <strong class="text-slate-900">크기</strong>뿐입니다. <br class="hidden md:block">
                     따라서 경보 조건은 &lsquo;클릭 상승과 전환 하락&rsquo;이 아니라 <strong class="text-rose-700">하락 폭이 평소 범위를 얼마나 벗어났는지</strong>로 적어야 합니다.
                 </p>
             </div>
@@ -638,17 +643,20 @@
             <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-8 mb-10">
                 <p class="text-sm font-black text-emerald-700 mb-5">앞 절의 50% 기준은 이 데이터에서 정확합니다</p>
                 <p class="text-slate-700 leading-relaxed mb-5">
-                    정상 구간의 전환 대 클릭 비율은 평균 <strong class="text-slate-900">59.2%</strong>, 가장 낮았을 때가 <strong class="text-slate-900">55.1%</strong>입니다. 흩어진 정도를 감안해 평균에서 세 배만큼 아래로 내려 잡으면 <strong class="text-emerald-700">50.8%</strong>가 나옵니다. <br class="hidden md:block">
+                    정상 구간의 전환 대 클릭 비율은 평균 <strong class="text-slate-900">59.2%</strong>, 가장 낮았을 때가 <strong class="text-slate-900">55.1%</strong>입니다. <br class="hidden md:block">
+                    흩어진 정도를 감안해 평균에서 세 배만큼 아래로 내려 잡으면 <strong class="text-emerald-700">50.8%</strong>가 나옵니다. <br class="hidden md:block">
                     정상 최저값 55.1%보다 낮으므로 <strong class="text-slate-900">평상시에는 걸리지 않습니다.</strong>
                 </p>
                 <p class="text-slate-700 leading-relaxed mb-5">
-                    반면 이상 시점의 8.8%는 이 경보선보다 한참 아래입니다. 평균에서 흩어진 정도의 <strong class="text-emerald-700">열여덟 배</strong>만큼 떨어진 값이라 놓칠 여지가 없습니다. <br class="hidden md:block">
+                    반면 이상 시점의 8.8%는 이 경보선보다 한참 아래입니다. <br class="hidden md:block">
+                    평균에서 흩어진 정도의 <strong class="text-emerald-700">열여덟 배</strong>만큼 떨어진 값이라 놓칠 여지가 없습니다. <br class="hidden md:block">
                     즉 경보선을 50% 부근에 두면 이 데이터에서는 <strong class="text-slate-900">잘못 울리는 일도 없고 놓치는 일도 없습니다.</strong>
                 </p>
                 <div class="bg-white rounded-2xl p-6 border border-emerald-200">
                     <p class="text-xs font-black text-emerald-800 mb-2">기술 경보 기준을 절반으로 잡은 것은 근거가 있습니다</p>
                     <p class="text-xs text-slate-600 leading-relaxed">
-                    앞 절에서 <strong class="text-slate-800">직전 30분 평균 대비 50% 이하</strong>를 기술 점검 경보로 제안했습니다. 정상 변동 폭을 계산해 보면 그 값이 통계적으로도 안전한 위치에 있습니다. <br class="hidden md:block">
+                    앞 절에서 <strong class="text-slate-800">직전 30분 평균 대비 50% 이하</strong>를 기술 점검 경보로 제안했습니다. <br class="hidden md:block">
+                    정상 변동 폭을 계산해 보면 그 값이 통계적으로도 안전한 위치에 있습니다. <br class="hidden md:block">
                     경험으로 잡은 숫자와 데이터로 도출한 숫자가 맞아떨어지는 경우이므로, <strong class="text-slate-800">발표에서는 둘을 함께 제시</strong>하면 기준값을 방어하기 쉬워집니다.
                 </p>
                 </div>
@@ -657,7 +665,8 @@
             <div class="bg-white border-2 border-amber-300 rounded-2xl p-8 mb-10">
                 <p class="text-sm font-black text-amber-700 mb-5">가격 경보의 20% 기준은 여유가 좁습니다</p>
                 <p class="text-slate-600 leading-relaxed mb-6">
-                    같은 절에서 가격 검증 경보를 <strong class="text-slate-900">20% 내외 하락이 두 구간 이상 이어질 때</strong>로 제안했습니다. 그런데 정상 구간에서도 비율이 한 번에 <strong class="text-slate-900">11.4%</strong>까지 움직입니다. <br class="hidden md:block">
+                    같은 절에서 가격 검증 경보를 <strong class="text-slate-900">20% 내외 하락이 두 구간 이상 이어질 때</strong>로 제안했습니다. <br class="hidden md:block">
+                    그런데 정상 구간에서도 비율이 한 번에 <strong class="text-slate-900">11.4%</strong>까지 움직입니다. <br class="hidden md:block">
                     20%는 그 <strong class="text-amber-700">1.75배</strong>에 불과합니다.
                 </p>
                 <div class="grid md:grid-cols-2 gap-6 mb-6">

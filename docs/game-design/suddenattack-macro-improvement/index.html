@@ -508,12 +508,14 @@
                                 <span class="font-black text-slate-900">전달 지연 &mdash; 정보를 과거로 만든다</span>
                             </div>
                             <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                    사망 후 일정 시간이 지난 뒤에만 브리핑이 전송되도록 합니다. 교전 템포가 빠른 게임에서 <strong class="text-slate-900">몇 초 지난 위치 정보는 실시간 우위가 되지 않습니다.</strong> <br class="hidden md:block">
+                    사망 후 일정 시간이 지난 뒤에만 브리핑이 전송되도록 합니다. <br class="hidden md:block">
+                    교전 템포가 빠른 게임에서 <strong class="text-slate-900">몇 초 지난 위치 정보는 실시간 우위가 되지 않습니다.</strong> <br class="hidden md:block">
                     &lsquo;방금 어디서 죽었다&rsquo;는 맥락은 전달되지만, 지금 벽 뒤에 누가 있는지는 전달되지 않습니다.
                 </p>
                             <div class="bg-white rounded-xl p-4 border border-blue-200">
                                 <p class="text-xs text-slate-600 leading-relaxed">
-                    <strong class="text-slate-800">장점:</strong> 기능을 없애지 않고 밸런스 영향만 줄입니다. 구현이 단순하고 수치(지연 시간) 조정으로 세기를 조절할 수 있습니다. <br class="hidden md:block">
+                    <strong class="text-slate-800">장점:</strong> 기능을 없애지 않고 밸런스 영향만 줄입니다. <br class="hidden md:block">
+                    구현이 단순하고 수치(지연 시간) 조정으로 세기를 조절할 수 있습니다. <br class="hidden md:block">
                     <strong class="text-slate-800">대가:</strong> 즉시성이 줄어 &lsquo;소통 대체&rsquo; 목적의 체감이 약해집니다. <br class="hidden md:block">
                     지연 시간이 밸런스와 효용의 교환 지점입니다.
                 </p>
@@ -539,7 +541,8 @@
                         </div>
                     </div>
                     <p class="text-xs text-slate-500 leading-relaxed mt-5 p-5 bg-slate-50 rounded-2xl border border-slate-200">
-                    <strong class="text-slate-700">해법 B를 적용하면 제안 2의 성격이 바뀝니다.</strong> 관전 정보가 차단된 상태에서 AI가 추천할 수 있는 것은 <strong>사망자 본인이 겪은 상황</strong>뿐이므로, 밸런스를 훼손하지 않으면서 문구 작성 편의만 제공하는 기능이 됩니다. <br class="hidden md:block">
+                    <strong class="text-slate-700">해법 B를 적용하면 제안 2의 성격이 바뀝니다.</strong> <br class="hidden md:block">
+                    관전 정보가 차단된 상태에서 AI가 추천할 수 있는 것은 <strong>사망자 본인이 겪은 상황</strong>뿐이므로, 밸런스를 훼손하지 않으면서 문구 작성 편의만 제공하는 기능이 됩니다. <br class="hidden md:block">
                     같은 제안이 선행 조건에 따라 위험한 기능과 안전한 기능으로 갈립니다.
                 </p>
                 </div>
@@ -613,7 +616,10 @@
                         <div class="grid md:grid-cols-3 gap-4 text-left">
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
                                 <p class="text-sky-300 font-black text-sm mb-2">제안 간 모순을 찾았습니다</p>
-                                <p class="text-slate-300 leading-relaxed text-sm">01은 정보량을 줄이고 02는 정확도를 올립니다. <strong class="text-white">밸런스를 흔드는 것은 정확도</strong>이므로 두 제안은 반대로 작동합니다.</p>
+                                <p class="text-slate-300 leading-relaxed text-sm">
+                    01은 정보량을 줄이고 02는 정확도를 올립니다. <br class="hidden md:block">
+                    <strong class="text-white">밸런스를 흔드는 것은 정확도</strong>이므로 두 제안은 반대로 작동합니다.
+                </p>
                             </div>
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
                                 <p class="text-sky-300 font-black text-sm mb-2">순서가 안전성을 결정합니다</p>
@@ -624,7 +630,10 @@
                             </div>
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
                                 <p class="text-sky-300 font-black text-sm mb-2">측정 방법을 함께 정했습니다</p>
-                                <p class="text-slate-300 leading-relaxed text-sm">브리핑 전송 라운드와 미전송 라운드의 <strong class="text-white">승률 차</strong>로 정보 우위를 실증할 수 있습니다. 지연 시간 튜닝의 기준도 여기서 나옵니다.</p>
+                                <p class="text-slate-300 leading-relaxed text-sm">
+                    브리핑 전송 라운드와 미전송 라운드의 <strong class="text-white">승률 차</strong>로 정보 우위를 실증할 수 있습니다. <br class="hidden md:block">
+                    지연 시간 튜닝의 기준도 여기서 나옵니다.
+                </p>
                             </div>
                         </div>
                     </div>
