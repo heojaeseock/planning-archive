@@ -127,6 +127,9 @@
   /* 두 캡처를 같은 비율(1160x667 / 1162x668)로 맞춰 두어 폭·높이가 모두 같습니다 */
   .shots2{display:grid;gap:14px;grid-template-columns:1fr 1fr;align-items:start;margin:0 0 10px}
   .shots2 .banner{margin:0}
+  /* 화면이 한 장뿐인 구역 */
+  .shots1{margin:0 0 10px}
+  .shots1 .banner{margin:0}
   @media (max-width:700px){.shots2{grid-template-columns:1fr}}
   .shotcap{margin:-10px 0 18px;font-size:12.5px;color:var(--faint)}
   .cta{display:flex;align-items:center;gap:16px;padding:20px 24px;text-decoration:none;
@@ -453,15 +456,12 @@
         <h3>📊 포럼 이벤트 분석·기획 도구</h3>
         <span class="role">단독 기획·제작</span>
       </div>
-      <div class="shots2">
+      <div class="shots1">
         <a class="banner" href="img/event-tool-1.webp" target="_blank" rel="noopener" title="새 탭에서 원본 크기로 보기">
           <img src="img/event-tool-1.webp" alt="포럼 이벤트 도구 분석기 화면. 지난 공지에서 뽑아낸 항목과 누적 표" loading="lazy" decoding="async" width="1650" height="847">
         </a>
-        <a class="banner" href="img/event-tool-2.webp" target="_blank" rel="noopener" title="새 탭에서 원본 크기로 보기">
-          <img src="img/event-tool-2.webp" alt="포럼 이벤트 도구 기획기 화면. 주제 한 줄로 만들어진 초안과 미리보기" loading="lazy" decoding="async" width="1650" height="847">
-        </a>
       </div>
-      <p class="shotcap">이미지를 누르면 원본 크기로 열립니다. 화면에 보이는 이벤트 내용은 예시입니다.</p>
+      <p class="shotcap">이미지를 누르면 원본 크기로 열립니다. 화면에 보이는 내용은 예시입니다.</p>
       <div class="blk">
         <h4>프로젝트 요약</h4>
         <ul>
