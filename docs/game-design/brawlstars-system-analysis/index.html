@@ -527,148 +527,75 @@
                         🔍 커브 해석 &mdash; 두 재화는 정반대 방향으로 설계되었습니다
                     </h3>
                     <div class="content-panel p-6 md:p-8">
-                        <p class="text-slate-600 leading-relaxed mb-6">
-                    위 표의 요구량을 구간별 증가율로 환산하면, 파워 포인트와 코인이 <strong class="text-slate-900">서로 반대로 움직인다</strong>는 사실이 드러납니다. <br class="hidden md:block">
-                    파워 포인트는 후반으로 갈수록 <strong class="text-rose-600">증가율이 올라가고(가속)</strong>, 코인은 <strong class="text-emerald-600">증가율이 내려갑니다(감속)</strong>.
-                </p>
+                        <p class="text-slate-600 leading-relaxed mb-6 max-w-[42em]">요구량을 구간별 증가율로 바꾸니 <strong class="text-slate-900">파워 포인트는 가속하고 코인은 감속</strong>합니다. 정확히 반대로 움직입니다.</p>
 
-                        <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-6">
-                            <table class="bs-table w-full min-w-[560px] border-collapse">
+                        <div class="overflow-x-auto rounded-xl border border-slate-200 mb-6">
+                            <table class="w-full min-w-[440px] border-collapse text-sm bg-white">
                                 <thead>
-                                    <tr class="bg-slate-700">
-                                        <th scope="col">레벨 구간</th>
-                                        <th scope="col" class="bg-rose-500">파워 포인트<br><span class="font-medium opacity-80">전 구간 대비</span></th>
-                                        <th scope="col" class="bg-emerald-600">코인<br><span class="font-medium opacity-80">전 구간 대비</span></th>
-                                        <th scope="col">파워 포인트 = 앞 두 구간의 합</th>
+                                    <tr class="bg-slate-800 text-white">
+                                        <th scope="col" class="p-3 text-left text-xs font-black">레벨 구간</th>
+                                        <th scope="col" class="p-3 text-center text-xs font-black">파워 포인트</th>
+                                        <th scope="col" class="p-3 text-center text-xs font-black">코인</th>
+                                        <th scope="col" class="p-3 text-left text-xs font-black">앞 두 구간의 합</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="font-black text-slate-700">2→3</td>
-                                        <td class="text-slate-500 font-black">1.500×</td>
-                                        <td class="text-slate-500 font-black">1.750×</td>
-                                        <td class="text-[11px] text-slate-500 font-medium">— <span class="text-emerald-600 font-black"></span></td>
+                                    <tr class="border-b border-slate-200">
+                                        <td class="p-3 font-bold text-slate-800">3→4</td>
+                                        <td class="p-3 text-center text-slate-600">1.667×</td>
+                                        <td class="p-3 text-center text-slate-600">2.143×</td>
+                                        <td class="p-3 text-xs text-slate-500">20 + 30 = 50</td>
                                     </tr>
-                                    <tr>
-                                        <td class="font-black text-slate-700">3→4</td>
-                                        <td class="text-rose-600 font-black">1.667×</td>
-                                        <td class="text-slate-500 font-black">2.143×</td>
-                                        <td class="text-[11px] text-slate-500 font-medium">20 + 30 = 50 <span class="text-emerald-600 font-black">✓</span></td>
+                                    <tr class="border-b border-slate-200">
+                                        <td class="p-3 font-bold text-slate-800">6→7</td>
+                                        <td class="p-3 text-center text-slate-600">1.615×</td>
+                                        <td class="p-3 text-center text-slate-600">1.655×</td>
+                                        <td class="p-3 text-xs text-slate-500">80 + 130 = 210</td>
                                     </tr>
-                                    <tr>
-                                        <td class="font-black text-slate-700">4→5</td>
-                                        <td class="text-rose-600 font-black">1.600×</td>
-                                        <td class="text-slate-500 font-black">1.867×</td>
-                                        <td class="text-[11px] text-slate-500 font-medium">30 + 50 = 80 <span class="text-emerald-600 font-black">✓</span></td>
+                                    <tr class="border-b border-slate-200">
+                                        <td class="p-3 font-bold text-slate-800">8→9</td>
+                                        <td class="p-3 text-center text-slate-600">1.618×</td>
+                                        <td class="p-3 text-center text-slate-600">1.562×</td>
+                                        <td class="p-3 text-xs text-slate-500">210 + 340 = 550</td>
                                     </tr>
-                                    <tr>
-                                        <td class="font-black text-slate-700">5→6</td>
-                                        <td class="text-rose-600 font-black">1.625×</td>
-                                        <td class="text-slate-500 font-black">2.071×</td>
-                                        <td class="text-[11px] text-slate-500 font-medium">50 + 80 = 130 <span class="text-emerald-600 font-black">✓</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-black text-slate-700">6→7</td>
-                                        <td class="text-rose-600 font-black">1.615×</td>
-                                        <td class="text-slate-500 font-black">1.655×</td>
-                                        <td class="text-[11px] text-slate-500 font-medium">80 + 130 = 210 <span class="text-emerald-600 font-black">✓</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-black text-slate-700">7→8</td>
-                                        <td class="text-rose-600 font-black">1.619×</td>
-                                        <td class="text-slate-500 font-black">1.667×</td>
-                                        <td class="text-[11px] text-slate-500 font-medium">130 + 210 = 340 <span class="text-emerald-600 font-black">✓</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-black text-slate-700">8→9</td>
-                                        <td class="text-rose-600 font-black">1.618×</td>
-                                        <td class="text-emerald-600 font-black">1.562×</td>
-                                        <td class="text-[11px] text-slate-500 font-medium">210 + 340 = 550 <span class="text-emerald-600 font-black">✓</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-black text-slate-700">9→10</td>
-                                        <td class="text-rose-600 font-black">1.618×</td>
-                                        <td class="text-emerald-600 font-black">1.500×</td>
-                                        <td class="text-[11px] text-slate-500 font-medium">340 + 550 = 890 <span class="text-emerald-600 font-black">✓</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-black text-slate-700">10→11</td>
-                                        <td class="text-rose-600 font-black">1.618×</td>
-                                        <td class="text-emerald-600 font-black">1.493×</td>
-                                        <td class="text-[11px] text-slate-500 font-medium">550 + 890 = 1440 <span class="text-emerald-600 font-black">✓</span></td>
+                                    <tr class="bg-amber-50">
+                                        <td class="p-3 font-bold text-slate-800">10→11</td>
+                                        <td class="p-3 text-center font-black text-amber-700">1.618×</td>
+                                        <td class="p-3 text-center font-black text-slate-700">1.493×</td>
+                                        <td class="p-3 text-xs text-slate-500">550 + 890 = 1440</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
 
                         <div class="grid md:grid-cols-2 gap-5 mb-6">
-                            <div class="bg-rose-50 border-2 border-rose-200 rounded-2xl p-5">
-                                <p class="text-[10px] font-black tracking-wide text-rose-500 mb-2">발견 1 &middot; 파워 포인트</p>
-                                <p class="font-black text-slate-900 mb-3">피보나치 수열입니다</p>
-                                <p class="text-sm text-slate-600 leading-relaxed mb-3 bal">
-                    3&rarr;4 구간부터 <strong>모든 구간의 요구량이 앞 두 구간의 합과 정확히 일치</strong>합니다. <br class="hidden md:block">
-                    (50+80=130, 130+210=340, <br class="hidden md:block">
-                    550+890=1440 &mdash; 전 구간 예외 없음)
-                </p>
-                                <p class="text-sm text-slate-600 leading-relaxed bal">
-                    그 결과 증가율이 <strong class="text-rose-600">황금비 1.618로 수렴</strong>합니다. <br class="hidden md:block">
-                    임의로 정한 숫자가 아니라 <strong>수열로 생성된 값</strong>이라는 의미입니다.
-                </p>
+                            <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5">
+                                <p class="text-[10px] font-black tracking-wide text-amber-600 mb-2">파워 포인트</p>
+                                <p class="font-black text-slate-900 mb-2 bal">피보나치 수열입니다</p>
+                                <p class="text-sm text-slate-600 leading-relaxed bal">3→4 구간부터 요구량이 <strong class="text-slate-900">앞 두 구간의 합과 전 구간 예외 없이 일치</strong>합니다. 그래서 증가율이 황금비 1.618로 수렴합니다. 임의로 정한 숫자가 아니라 수열로 만든 값입니다.</p>
                             </div>
-                            <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-5">
-                                <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-2">발견 2 &middot; 코인</p>
-                                <p class="font-black text-slate-900 mb-3">거꾸로 완만해집니다</p>
-                                <p class="text-sm text-slate-600 leading-relaxed mb-3">
-                    초반 <strong>2.14배</strong>까지 튀었다가 후반에는 <strong class="text-emerald-600">1.49배</strong>까지 내려옵니다. <br class="hidden md:block">
-                    파워 포인트와 정확히 반대 방향입니다.
-                </p>
-                                <p class="text-sm text-slate-600 leading-relaxed bal">
-                    초반에 코인을 급하게 조여 <strong>체감 난이도를 빠르게 올리고</strong>, 후반에는 코인 부담을 낮춰 병목을 파워 포인트 쪽으로 넘깁니다.
-                </p>
+                            <div class="bg-slate-50 border-2 border-slate-200 rounded-2xl p-5">
+                                <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">코인</p>
+                                <p class="font-black text-slate-900 mb-2 bal">거꾸로 완만해집니다</p>
+                                <p class="text-sm text-slate-600 leading-relaxed bal">초반 2.14배까지 튀었다가 후반에 1.49배로 내려옵니다. <strong class="text-slate-900">초반에 조여 체감 난이도를 올리고, 후반에는 병목을 파워 포인트 쪽으로 넘깁니다.</strong></p>
                             </div>
                         </div>
 
-                        <div class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-6 mb-6">
-                            <p class="text-[10px] font-black tracking-wide text-blue-500 mb-3">왜 병목을 파워 포인트로 넘기는가</p>
-                            <p class="text-sm md:text-base text-slate-700 leading-relaxed">파워 포인트는 여러 경로로 넓게 풀리지만 특정 브롤러에 몰아주기 어렵고, 코인은 어디든 쓰지만 나오는 곳이 좁습니다. <br class="hidden md:block">
-후반 병목이 파워 포인트로 옮겨간다는 것은 유저의 과제가 <strong>모으는 일에서 누구에게 몰아줄지 정하는 일</strong>로 바뀐다는 뜻입니다. <br class="hidden md:block">
-후반 콘텐츠의 성격이 수집에서 선택으로 넘어갑니다.</p>
+                        <div class="bg-slate-50 border-l-[6px] border-slate-400 rounded-r-xl p-5 mb-6">
+                            <p class="text-sm text-slate-700 leading-relaxed max-w-[46em]">파워 포인트는 여러 경로로 넓게 풀리지만 특정 브롤러에 몰아주기 어렵고, 코인은 어디든 쓰지만 나오는 곳이 좁습니다. 후반 병목이 파워 포인트로 옮겨간다는 것은 유저의 과제가 <strong class="text-slate-900">모으는 일에서 누구에게 몰아줄지 정하는 일</strong>로 바뀐다는 뜻입니다.</p>
                         </div>
 
-                        <div class="bg-slate-900 rounded-2xl p-6 md:p-8 text-white">
-                            <p class="text-yellow-400 font-black text-[10px] tracking-wide mb-4">발견 3 &middot; 11레벨은 끝이 아니라 시작입니다</p>
-                            <div class="grid md:grid-cols-3 gap-4 mb-5 text-center">
-                                <div class="bg-white/10 rounded-xl p-4">
-                                    <p class="text-[10px] text-slate-300 font-bold mb-1">11레벨 도달 (레벨업만)</p>
-                                    <p class="text-2xl font-black text-white">7,765</p>
-                                    <p class="text-[10px] text-slate-400 mt-1">코인</p>
-                                </div>
-                                <div class="bg-yellow-400/20 rounded-xl p-4 border border-yellow-400/40">
-                                    <p class="text-[10px] text-yellow-200 font-bold mb-1">장비 전체 구매 추가분</p>
-                                    <p class="text-2xl font-black text-yellow-300">+15,000</p>
-                                    <p class="text-[10px] text-yellow-200/70 mt-1">가젯2 + 스타파워2 + 기어2 + 하이퍼차지</p>
-                                </div>
-                                <div class="bg-white/10 rounded-xl p-4">
-                                    <p class="text-[10px] text-slate-300 font-bold mb-1">완전 풀업</p>
-                                    <p class="text-2xl font-black text-white">22,765</p>
-                                    <p class="text-[10px] text-slate-400 mt-1">코인 (레벨업의 2.9배)</p>
-                                </div>
+                        <div class="bg-slate-900 rounded-2xl p-6 text-white">
+                            <p class="text-[10px] font-black tracking-wide text-yellow-400 mb-4">11레벨은 끝이 아니라 시작입니다</p>
+                            <div class="grid grid-cols-3 gap-4 mb-5">
+                                <div><p class="text-xs text-slate-400 mb-1">11레벨 도달</p><p class="text-2xl font-black">7,765</p></div>
+                                <div><p class="text-xs text-slate-400 mb-1">장비 전체 구매</p><p class="text-2xl font-black">+15,000</p></div>
+                                <div><p class="text-xs text-slate-400 mb-1">완전 풀업</p><p class="text-2xl font-black text-yellow-300">22,765</p></div>
                             </div>
-                            <p class="text-sm md:text-base leading-relaxed font-medium">
-                    레벨업에 드는 코인보다 <strong class="text-yellow-300">장비에 드는 코인이 약 1.9배 더 큽니다.</strong> <br class="hidden md:block">
-                    유저 체감상 &ldquo;11레벨 달성&rdquo;이 목표처럼 보이지만, 실제 재화 소모의 <strong>3분의 2가 그 이후</strong>에 있습니다. <br class="hidden md:block">
-                    성장 목표를 눈에 보이는 레벨 숫자로 제시하고, 실제 지출은 그 뒤에 배치한 구조입니다.
-                </p>
+                            <p class="text-sm leading-relaxed max-w-[46em]">레벨업보다 <strong class="text-yellow-300">장비에 드는 코인이 약 1.9배 큽니다.</strong> 11레벨 달성이 목표처럼 보이지만 실제 소모의 3분의 2가 그 뒤에 있습니다. 눈에 보이는 목표는 앞에, 실제 지출은 뒤에 둔 구조입니다.</p>
                         </div>
 
-                        <div class="mt-6 pt-6 border-t border-slate-200">
-                            <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">산출 근거</p>
-                            <p class="text-xs text-slate-500 leading-relaxed">
-                    증가율 &middot; 누적치 &middot; 피보나치 정합성은 <strong>본 문서 상단의 요구 재화 표를 기준으로 직접 계산한 값</strong>입니다. <br class="hidden md:block">
-                    원본 요구량은 브롤스타즈 인게임에 공개된 수치를 사용했습니다. <br class="hidden md:block">
-                    레벨업 요구량 체계는 출시 이후 유지되어 온 구조이며, 아래 <strong>&lsquo;시점 의존성&rsquo;</strong> 항목에 변동 가능 범위를 함께 적었습니다.
-                </p>
-                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed mt-6 pt-6 border-t border-slate-200 max-w-[46em]">증가율과 피보나치 정합성은 이 문서 상단의 요구 재화 표를 기준으로 직접 계산한 값입니다. 원본 요구량은 인게임에 공개된 수치를 썼습니다.</p>
                     </div>
                 </div>
             </div>
@@ -773,8 +700,7 @@
                 <div class="text-center max-w-2xl mx-auto mb-8">
                     <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-3 tracking-tight">시사점</h2>
                     <p class="text-slate-500 text-sm leading-relaxed">
-                     앞의 세 축에서 확인한 구조를 <strong>다른 타이틀에 적용할 수 있는 형태</strong>로 정리하고, <br class="hidden md:block">
-                    이 분석이 다루지 못한 범위를 함께 명시했습니다.
+                     앞의 세 축에서 확인한 구조를 <strong>다른 타이틀에 옮길 수 있는 형태</strong>로 정리했습니다.
                 </p>
                 </div>
 
@@ -791,11 +717,10 @@
                                     <p class="font-black text-slate-900 text-base mb-2">매출원과 전투력을 다른 재화에 태운다</p>
                                     <p class="text-sm text-slate-600 leading-relaxed mb-3">
                     보석&middot;블링(치장)과 파워포인트&middot;코인(성장)이 완전히 분리되어 있어, <br class="hidden md:block">
-                    성장 재화를 후하게 풀어도 매출이 줄지 않고 치장을 비싸게 팔아도 P2W 비판이 발생하지 않습니다.
+                    성장 재화를 후하게 풀어도 매출이 줄지 않고, 치장을 비싸게 팔아도 P2W 소리를 듣지 않습니다.
                 </p>
                                     <p class="text-xs text-slate-500 leading-relaxed bg-slate-50 rounded-lg p-3">
-                    <strong class="text-slate-700">적용 조건:</strong> 외형이 유저에게 실제로 욕망의 대상이 되는 게임이어야 성립합니다. <br class="hidden md:block">
-                    캐릭터가 화면에서 작게 보이거나 외형 노출 기회가 적은 게임에서는 치장 축이 매출을 받쳐주지 못합니다.
+                    <strong class="text-slate-700">옮기려면:</strong>                     외형이 욕심나는 게임이어야 성립합니다. 캐릭터가 작게 보이면 치장 축이 매출을 못 받칩니다.
                 </p>
                                 </div>
                             </div>
@@ -810,8 +735,7 @@
                     후반 병목을 &ldquo;재화 총량 부족&rdquo;에서 &ldquo;어느 캐릭터에 집중할지의 선택&rdquo;으로 전환시킵니다.
                 </p>
                                     <p class="text-xs text-slate-500 leading-relaxed bg-slate-50 rounded-lg p-3">
-                    <strong class="text-slate-700">적용 조건:</strong> 육성 대상이 여러 개(브롤스타즈는 브롤러 다수)여야 &ldquo;선택&rdquo;이 성립합니다. <br class="hidden md:block">
-                    단일 캐릭터를 키우는 구조에서는 선택지가 없어 그대로 병목으로만 체감됩니다.
+                    <strong class="text-slate-700">옮기려면:</strong>                     키울 대상이 여럿이어야 선택이 생깁니다. 하나뿐이면 그냥 병목으로만 느껴집니다.
                 </p>
                                 </div>
                             </div>
@@ -825,8 +749,7 @@
                     &ldquo;11레벨&rdquo;이라는 명확한 숫자 목표를 제시하지만 코인 소모의 약 3분의 2(15,000 / 22,765)는 레벨 도달 이후의 장비 구간에 배치되어 있습니다.
                 </p>
                                     <p class="text-xs text-slate-500 leading-relaxed bg-slate-50 rounded-lg p-3">
-                    <strong class="text-slate-700">적용 조건:</strong> 레벨 이후 구간의 보상 체감이 충분해야 합니다. <br class="hidden md:block">
-                    그렇지 않으면 목표 달성 직후 이탈이 발생해 오히려 잔존율을 해칩니다.
+                    <strong class="text-slate-700">옮기려면:</strong>                     레벨 뒤 구간의 보상이 충분해야 합니다. 아니면 목표를 찍자마자 떠납니다.
                 </p>
                                 </div>
                             </div>
@@ -837,12 +760,11 @@
                 <!-- 2. 다른 장르 이식 시 제약 -->
                 <div>
                     <h3 class="text-lg font-black text-blue-600 flex items-center gap-2 mb-4">
-                        ⚠️ 2. 이 구조를 그대로 쓸 수 없는 경우
+                        ⚠️ 2. 이 구조를 옮길 때 걸리는 것
                     </h3>
                     <div class="content-panel p-6 md:p-8">
                         <p class="text-slate-600 leading-relaxed mb-6">
-                    브롤스타즈의 구조는 <strong class="text-slate-900">3분 내 단발 세션 &middot; 3v3 대전 &middot; 짧은 성장 상한(11레벨)</strong>이라는 전제 위에서 작동합니다. <br class="hidden md:block">
-                    이 전제가 다른 장르에서는 대부분 성립하지 않습니다.
+                    이 구조는 <strong class="text-slate-900">3분 단발 세션 · 3v3 · 11레벨이라는 유한한 상한</strong> 위에서 돕니다. 다른 장르에서는 대부분 성립하지 않는 전제입니다.
                 </p>
                         <div class="overflow-x-auto rounded-2xl border-2 border-slate-200">
                             <table class="bs-table w-full min-w-[620px] border-collapse">
@@ -886,38 +808,6 @@
                     <strong class="text-slate-800">결론:</strong> 이식 가능한 것은 수익 모델 형태(패스제)가 아니라 <strong class="text-blue-700">&ldquo;재화의 역할을 분리한다&rdquo;는 원칙</strong>입니다. <br class="hidden md:block">
                     성장 축 과금을 유지해야 하는 장르라면, 성장 재화 안에서 다시 <strong>필수 성장분(플레이로 도달 가능)</strong>과 <strong>가속분(과금)</strong>을 분리하는 형태로 변형해 적용하는 것이 현실적입니다.
                 </p>
-                    </div>
-                </div>
-
-                <!-- 3. 분석의 한계 -->
-                <div>
-                    <h3 class="text-lg font-black text-slate-800 flex items-center gap-2 mb-4">
-                        📏 3. 이 분석이 다루지 못한 범위
-                    </h3>
-                    <div class="content-panel p-6 md:p-8">
-                        <div class="grid md:grid-cols-3 gap-4">
-                            <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
-                                <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">데이터 범위</p>
-                                <p class="text-sm text-slate-600 leading-relaxed">
-                    인게임에서 확인 가능한 <strong>공개 스펙</strong>만 사용했습니다. <br class="hidden md:block">
-                    실제 매출 구성비, 패스 구매율, 구간별 이탈률 등 내부 지표는 확인할 수 없어 설계 의도는 <strong class="text-slate-800">구조로부터의 추론</strong>입니다.
-                </p>
-                            </div>
-                            <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
-                                <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">시점 의존성</p>
-                                <p class="text-sm text-slate-600 leading-relaxed">
-                    브롤러 종수와 장비 가격은 <strong>업데이트에 따라 변동</strong>되는 값입니다. <br class="hidden md:block">
-                    따라서 본 분석은 개별 수치의 절대값이 아니라 <strong class="text-slate-800">구간 간의 증가 비율과 재화 배분 구조</strong>에 근거를 두었습니다. <br class="hidden md:block">
-                    종수가 늘어도 커브의 성질은 유지됩니다.
-                </p>
-                            </div>
-                            <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
-                                <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">미검증 영역</p>
-                                <p class="text-sm text-slate-600 leading-relaxed">
-                    매칭 알고리즘, 지역별 가격 정책, 클럽 리그의 잔존율 기여도는 외부에서 관측이 어려워 <strong>분석 대상에서 제외</strong>했습니다.
-                </p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
