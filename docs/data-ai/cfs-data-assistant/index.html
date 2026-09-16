@@ -432,37 +432,37 @@
         <section class="reveal space-y-6">
             <div>
                 <h3 class="text-2xl font-bold mb-3">받은 답을 검증하는 단계</h3>
-                <p class="text-slate-500 leading-relaxed max-w-[42em]">앞의 세 사례는 AI가 답을 만드는 과정입니다. 실무가 되려면 <strong class="text-slate-700">받은 답이 요구사항과 맞는지 대조하는 단계</strong>가 붙어야 합니다. 두 사례에서 실제로 조건이 빠져 있었습니다.</p>
+                <p class="text-slate-500 leading-relaxed max-w-[42em]">받은 답이 요구와 맞는지 대조하는 단계가 붙어야 실무가 됩니다. <strong>두 사례에서 실제로 조건이 빠져 있었습니다.</strong></p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-5">
                 <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-rose-200">
                     <p class="text-[10px] font-black tracking-wide text-rose-500 mb-2">사례 1 · 엑셀 수식</p>
                     <p class="font-black text-slate-900 mb-3 bal">일별 추이가 빠졌습니다</p>
-                    <p class="text-sm text-slate-600 leading-relaxed bal mb-3">요구사항은 <strong class="text-slate-900">일별 불량률 추이</strong>인데, 나온 수식은 전체 기간 총 건수를 셉니다. 날짜로 나누는 부분이 없습니다.</p>
+                    <p class="text-sm text-slate-600 leading-relaxed bal mb-3">요구는 일별 추이인데 나온 수식은 전체 기간 총 건수를 셉니다.</p>
                     <div class="bg-slate-50 rounded-xl p-4 font-mono text-[11px] text-slate-600 leading-relaxed">=COUNTIFS($D:$D,"에러",$C:$C,"",<span class="text-rose-600 font-bold">$A:$A,기준일</span>)</div>
                     <p class="text-xs text-slate-500 leading-relaxed bal mt-3">입고일이 있는 A열을 조건에 넣어야 추이가 나옵니다. 건수가 많으면 피벗 테이블이 빠릅니다.</p>
                 </div>
                 <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-rose-200">
                     <p class="text-[10px] font-black tracking-wide text-rose-500 mb-2">사례 2 · SQL 쿼리</p>
                     <p class="font-black text-slate-900 mb-3 bal">이번 주가 빠졌습니다</p>
-                    <p class="text-sm text-slate-600 leading-relaxed bal mb-3">기간 조건 없이 전체 기간의 지연 건이 모두 나옵니다. 그런데 원인이 다릅니다. <strong class="text-slate-900">제공한 스키마에 날짜 열이 아예 없습니다.</strong></p>
-                    <p class="text-xs text-slate-500 leading-relaxed bal">사례 1은 AI가 조건을 놓친 것이고 사례 2는 내가 정보를 덜 준 것입니다. 결과는 같습니다. 조건이 빠진 채로 아무 경고 없이 돌아옵니다.</p>
+                    <p class="text-sm text-slate-600 leading-relaxed bal mb-3"><strong class="text-slate-900">기간 조건 없이 전체가 나옵니다. 원인은 다릅니다 &mdash; <strong>준 스키마에 날짜 열이 없었습니다.</strong></strong></p>
+                    <p class="text-xs text-slate-500 leading-relaxed bal">하나는 AI가 놓친 것이고 하나는 내가 덜 준 것인데, 결과는 같습니다. <strong>조건이 빠진 채 아무 경고 없이 돌아옵니다.</strong></p>
                 </div>
             </div>
 
             <div class="bg-slate-900 rounded-2xl p-6 md:p-8 text-white">
                 <p class="text-[10px] font-black tracking-wide text-blue-400 mb-4">여기서 실력이 갈립니다</p>
-                <p class="text-base md:text-lg leading-relaxed max-w-[46em] mb-5">두 결과 모두 <strong class="text-blue-300">겉으로는 정상입니다.</strong> 수식은 숫자를 내놓고 쿼리는 행을 반환합니다. 빠진 조건은 요구사항과 결과를 한 줄씩 맞춰볼 때만 드러나고, 그 대조를 하려면 수식과 쿼리를 읽을 줄 알아야 합니다.</p>
-                <p class="text-sm text-slate-300 leading-relaxed max-w-[46em]">그래서 이 일의 성격은 <strong class="text-white">개발자 없이</strong>보다 <strong class="text-white">개발자를 기다리지 않고</strong>에 가깝습니다. 도구를 쓰는 능력과 도구의 답을 검수하는 능력은 별개이고, 신뢰를 만드는 것은 뒤쪽입니다.</p>
+                <p class="text-base md:text-lg leading-relaxed max-w-[46em] mb-5">둘 다 겉으로는 정상입니다. 수식은 숫자를 내고 쿼리는 행을 돌려줍니다. 빠진 조건은 <strong>한 줄씩 맞춰볼 때만</strong> 드러나고, 그러려면 수식과 쿼리를 읽을 줄 알아야 합니다.</p>
+                <p class="text-sm text-slate-300 leading-relaxed max-w-[46em]">그래서 <strong>개발자 없이</strong>가 아니라 <strong>개발자를 기다리지 않고</strong>입니다. 도구를 쓰는 능력과 답을 검수하는 능력은 별개입니다.</p>
             </div>
 
             <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
                 <p class="font-black text-slate-900 mb-4 bal">그 밖에 함께 확인한 것</p>
                 <div class="grid md:grid-cols-2 gap-x-8 gap-y-3 text-sm text-slate-600 leading-relaxed">
-                    <p class="bal">· <strong class="text-slate-800">빈칸의 정의</strong> — 빈 문자열 조건은 아무것도 없는 셀과 수식 결과가 빈 셀을 함께 셉니다. 시스템에서 내려온 파일이면 실제 결측과 달라집니다</p>
+                    <p class="bal">· 빈칸의 정의 &mdash; 빈 문자열 조건은 진짜 빈 셀과 수식 결과가 빈 셀을 함께 셉니다</p>
                     <p class="bal">· <strong class="text-slate-800">불량률의 분모</strong> — 일별로 보려면 분모도 일별 입고 건수여야 합니다. 전체 52,140건을 쓰면 추이가 눌립니다</p>
-                    <p class="bal">· <strong class="text-slate-800">센터 코드</strong> — 요청은 서울 센터인데 쿼리는 코드를 추측해 고정했습니다. 센터 테이블의 지역 열로 걸러야 센터가 늘어도 작동합니다</p>
+                    <p class="bal">· 센터 코드 &mdash; 쿼리가 코드를 추측해 박았습니다. 지역 열로 걸러야 센터가 늘어도 돕니다</p>
                     <p class="bal">· <strong class="text-slate-800">이번 주의 기준</strong> — 월요일 시작인지 최근 7일인지에 따라 결과가 달라집니다. 날짜로 되물어 확정합니다</p>
                 </div>
             </div>
@@ -472,14 +472,14 @@
         <section class="reveal space-y-6">
             <div>
                 <h3 class="text-2xl font-bold mb-3">사례마다 무엇을 보는지 정해 두었습니다</h3>
-                <p class="text-slate-500 leading-relaxed max-w-[42em]">세 사례는 위험의 종류가 다릅니다. 실행 전에 볼 것을 정해두면 같은 방식을 반복해 쓸 수 있습니다.</p>
+                <p class="text-slate-500 leading-relaxed max-w-[42em]">세 사례는 위험의 종류가 다릅니다. 실행 전에 볼 것을 미리 정해 뒀습니다.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-5">
                 <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
                     <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">SQL 추출</p>
                     <p class="font-black text-slate-900 mb-3 bal">틀려도 결과가 나옵니다</p>
-                    <p class="text-sm text-slate-600 leading-relaxed bal mb-4">쿼리가 잘못돼도 오류 없이 그럴듯한 리스트가 나옵니다. 그대로 보고하면 잘못된 데이터가 의사결정에 들어갑니다.</p>
+                    <p class="text-sm text-slate-600 leading-relaxed bal mb-4">쿼리가 틀려도 오류 없이 그럴듯한 목록이 나옵니다. 그대로 올리면 판단에 들어갑니다.</p>
                     <ul class="space-y-2 text-sm text-slate-600 leading-relaxed">
                         <li class="bal">· <strong class="text-slate-800">건수 대조</strong> — 이미 아는 값과 맞춥니다. JOIN이 잘못되면 행이 부풀어 여기서 잡힙니다</li>
                         <li class="bal">· <strong class="text-slate-800">조회 부하와 권한</strong> — 운영 DB 대량 스캔은 서비스에 영향을 줍니다. 조회 전용 환경을 씁니다</li>
@@ -488,7 +488,7 @@
                 <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
                     <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">영문 보고</p>
                     <p class="font-black text-slate-900 mb-3 bal">숫자와 이름이 바뀌면 사고가 됩니다</p>
-                    <p class="text-sm text-slate-600 leading-relaxed bal mb-4">새벽에 임원에게 바로 전달되는 보고라 검토자가 없는 시간대입니다. 오류가 그대로 나갑니다.</p>
+                    <p class="text-sm text-slate-600 leading-relaxed bal mb-4">새벽에 임원에게 바로 가는 보고라 <strong>검토할 사람이 없습니다.</strong></p>
                     <ul class="space-y-2 text-sm text-slate-600 leading-relaxed">
                         <li class="bal">· <strong class="text-slate-800">숫자 대조</strong> — 단말 50대, 지연 45분, 복구 목표 7시. 셋만 맞춰도 대부분 막힙니다</li>
                         <li class="bal">· <strong class="text-slate-800">확정과 예정의 구분</strong> — 커버 가능은 예상이고 정상화는 완료입니다. 영문에서 섞이면 사실이 달라집니다</li>
@@ -559,30 +559,21 @@
                 <div class="bg-white rounded-2xl border-2 border-amber-300 p-8 shadow-sm mb-6">
                     <p class="text-sm font-bold text-amber-700 mb-5">성격이 다른 세 작업이 똑같이 15배입니다</p>
                     <p class="text-slate-600 leading-relaxed mb-5 max-w-[46em]">
-                    엑셀 수식 작성, 쿼리 작성, 외국어 보고서 작성은 <strong class="text-slate-900">필요한 기술도 걸리는 이유도 다릅니다.</strong> <br class="hidden md:block">
-                    그런데 세 작업의 절감 배수가 모두 정확히 15배로 같습니다. <br class="hidden md:block">
-                    45와 3, 60과 4, 30과 2로 나누어떨어지는 정수이기도 합니다. <br class="hidden md:block">
-                    측정한 값이 이렇게 맞아떨어지기는 어렵습니다.
+                    필요한 기술도 걸리는 이유도 다른 세 작업인데 <strong>절감 배수가 모두 정확히 15배</strong>입니다. 45와 3, 60과 4, 30과 2로 떨어지는 정수이기도 합니다. 실제로 잰 값이 이렇게 맞기는 어렵습니다.
                 </p>
-                    <p class="text-slate-600 leading-relaxed max-w-[46em]">수동 작업 시간이 추정이라는 것은 한계 항목에 밝혀 뒀습니다. 다만 차트는 막대 길이라 잰 값처럼 읽힙니다. <br class="hidden md:block">
-<strong>작업 하나라도 실제로 재 두면</strong> 나머지 추정의 근거가 생깁니다. 총 절감 시간보다 그 기록 하나가 셉니다.</p>
+                    <p class="text-slate-600 leading-relaxed max-w-[46em]">수동 시간은 추정값입니다. <strong>작업 하나라도 실제로 재 두면</strong> 나머지 추정에 근거가 생깁니다. 총 절감 시간보다 그 기록 하나가 셉니다.</p>
                 </div>
 
                 <div class="bg-white rounded-2xl border-2 border-slate-300 p-8 shadow-sm">
                     <p class="text-sm font-bold text-slate-800 mb-5">저장해서 다시 쓰면 배수가 크게 떨어집니다</p>
                     <p class="text-slate-600 leading-relaxed mb-6 max-w-[46em]">
-                    세 작업 중 <strong class="text-slate-900">엑셀 수식과 쿼리는 한 번 만들면 저장해 두고 재사용</strong>할 수 있습니다. <br class="hidden md:block">
-                    보고서는 내용이 매번 달라 재사용이 어렵습니다. <br class="hidden md:block">
-                    같은 작업을 열 번 한다고 놓고 비교하면 이렇게 갈립니다.
+                    수식과 쿼리는 한 번 만들면 저장해 두고 다시 씁니다. 같은 작업을 열 번 한다고 놓으면 이렇게 갈립니다.
                 </p>
                     <div class="grid md:grid-cols-2 gap-5 mb-6">
                         <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
                             <p class="text-xs font-black text-slate-700 mb-3">엑셀 수식 열 번</p>
                             <p class="text-xs text-slate-600 leading-relaxed">
-                    매번 새로 만들면 450분, <br class="hidden md:block">
-                    저장해 두고 조건만 바꾸면 90분입니다. <br class="hidden md:block">
-                    도구를 쓰면 30분입니다. <br class="hidden md:block">
-                    <strong class="text-slate-800">저장 습관이 있는 사람에게는 15배가 아니라 3배</strong>입니다.
+                    매번 새로 만들면 450분, 저장해 두고 조건만 바꾸면 90분, 도구를 쓰면 30분입니다. <strong>저장 습관이 있는 사람에게는 3배</strong>입니다.
                 </p>
                         </div>
                         <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
@@ -595,9 +586,7 @@
                     </div>
                     <div class="bg-blue-50 rounded-xl p-6 border-2 border-blue-200">
                         <p class="text-xs font-black text-blue-700 mb-3">그래서 이 도구의 값어치는 반복이 아니라 처음에 있습니다</p>
-                        <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">매번 같은 일이라면 수식이나 쿼리를 저장해 두는 것으로 충분합니다. <br class="hidden md:block">
-도구가 크게 이기는 구간은 <strong>처음 만나는 조건</strong>, 저장해 둔 것이 안 맞는 상황입니다. 세 사례가 모두 그쪽입니다. <br class="hidden md:block">
-그래서 이 제안의 성격은 반복 업무 자동화가 아니라 비정형 요청 대응입니다.</p>
+                        <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">매번 같은 일이면 저장해 두는 것으로 충분합니다. 도구가 크게 이기는 구간은 <strong>처음 만나는 조건</strong>입니다. 반복 업무 자동화가 아니라 비정형 요청 대응입니다.</p>
                     </div>
                 </div>
             </div>
