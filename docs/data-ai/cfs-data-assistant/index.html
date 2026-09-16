@@ -429,199 +429,94 @@
         </section>
 
         <!-- 보강: AI 결과 검증 -->
-        <section class="reveal">
-            <div class="mb-10">
-                <h2 class="text-2xl md:text-3xl font-bold mb-3">받은 답을 검증하는 단계</h2>
-                <p class="text-slate-500 text-base leading-relaxed max-w-[46em]">
-                    앞의 세 사례는 AI가 결과를 만들어내는 과정입니다. <br class="hidden md:block">
-                    실무에서 이 흐름이 완성되려면 <strong class="text-slate-800">받은 답이 요구사항과 맞는지 확인하는 단계</strong>가 붙어야 합니다. <br class="hidden md:block">
-                    실제로 첫 번째 사례에서 확인이 필요한 지점이 있습니다.
-                </p>
+        <section class="reveal space-y-6">
+            <div>
+                <h3 class="text-2xl font-bold mb-3">받은 답을 검증하는 단계</h3>
+                <p class="text-slate-500 leading-relaxed max-w-[42em]">앞의 세 사례는 AI가 답을 만드는 과정입니다. 실무가 되려면 <strong class="text-slate-700">받은 답이 요구사항과 맞는지 대조하는 단계</strong>가 붙어야 합니다. 두 사례에서 실제로 조건이 빠져 있었습니다.</p>
             </div>
 
-            <div class="bg-white rounded-2xl border-2 border-amber-300 p-8 shadow-sm mb-6">
-                <p class="text-sm font-bold text-amber-700 mb-5">도전 1의 수식은 요구사항의 일부만 충족합니다</p>
-                <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
-                        <p class="text-xs font-bold text-slate-500 mb-3">요구사항</p>
-                        <p class="text-sm text-slate-700 leading-relaxed">
-                            검수상태가 에러이고 유통기한이 빈칸인 항목을 필터링해
-                            <strong class="text-slate-900">일별 불량률 추이</strong>를 보고할 것
-                        </p>
-                    </div>
-                    <div class="bg-amber-50 rounded-xl p-6 border border-amber-300">
-                        <p class="text-xs font-bold text-amber-800 mb-3">도출된 수식</p>
-                        <p class="text-sm font-mono text-slate-800 mb-3">=COUNTIFS(D:D, "에러", C:C, "")</p>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                    두 조건을 만족하는 <strong class="text-amber-800">전체 기간 총 건수</strong>를 셉니다. <br class="hidden md:block">
-                    날짜별로 나누는 부분이 없습니다.
-                </p>
-                    </div>
+            <div class="grid md:grid-cols-2 gap-5">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-rose-200">
+                    <p class="text-[10px] font-black tracking-wide text-rose-500 mb-2">사례 1 · 엑셀 수식</p>
+                    <p class="font-black text-slate-900 mb-3 bal">일별 추이가 빠졌습니다</p>
+                    <p class="text-sm text-slate-600 leading-relaxed bal mb-3">요구사항은 <strong class="text-slate-900">일별 불량률 추이</strong>인데, 나온 수식은 전체 기간 총 건수를 셉니다. 날짜로 나누는 부분이 없습니다.</p>
+                    <div class="bg-slate-50 rounded-xl p-4 font-mono text-[11px] text-slate-600 leading-relaxed">=COUNTIFS($D:$D,"에러",$C:$C,"",<span class="text-rose-600 font-bold">$A:$A,기준일</span>)</div>
+                    <p class="text-xs text-slate-500 leading-relaxed bal mt-3">입고일이 있는 A열을 조건에 넣어야 추이가 나옵니다. 건수가 많으면 피벗 테이블이 빠릅니다.</p>
                 </div>
-                <div class="bg-slate-900 rounded-xl p-6 text-white mb-6">
-                    <p class="text-xs font-bold text-amber-300 mb-3">추이를 얻으려면 날짜 조건이 필요합니다</p>
-                    <p class="text-sm text-slate-300 leading-relaxed mb-4">
-                        입고일이 있는 A열을 조건에 넣어 날짜별로 계산해야 합니다.
-                    </p>
-                    <p class="text-sm font-mono text-slate-100 bg-white/10 rounded-lg p-4 mb-4">=COUNTIFS($D:$D,"에러",$C:$C,"",$A:$A,기준일)</p>
-                    <p class="text-sm text-slate-300 leading-relaxed max-w-[46em]">
-                    날짜 목록을 한 열에 두고 이 수식을 아래로 채우면 추이가 나옵니다. <br class="hidden md:block">
-                    건수가 많다면 <strong class="text-white">피벗 테이블</strong>로 입고일을 행에 두고 조건을 필터로 걸는 편이 빠릅니다.
-                </p>
-                </div>
-                <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
-                    <p class="text-xs font-bold text-slate-700 mb-3">함께 확인할 두 가지</p>
-                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li class="max-w-[46em] leading-[1.8] bal">&bull; <strong class="text-slate-800">빈칸의 정의</strong> &mdash; 조건에 쓴 빈 문자열은 아무것도 입력되지 않은 셀과, <br class="hidden md:block">
-                    수식 결과가 빈 문자열인 셀을 함께 셉니다. 원본이 시스템에서 내려온 파일이라면 후자가 섞여 있을 수 있어 실제 결측과 다르게 집계됩니다.</li>
-                        <li class="bal max-w-[46em] leading-[1.8]">&bull; <strong class="text-slate-800">불량률의 분모</strong> &mdash; 일별 추이를 보려면 분모도 일별 입고 건수여야 합니다. 전체 52,140건을 분모로 쓰면 날짜별 값이 모두 작게 나와 추이가 눌립니다.</li>
-                    </ul>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border-2 border-rose-200">
+                    <p class="text-[10px] font-black tracking-wide text-rose-500 mb-2">사례 2 · SQL 쿼리</p>
+                    <p class="font-black text-slate-900 mb-3 bal">이번 주가 빠졌습니다</p>
+                    <p class="text-sm text-slate-600 leading-relaxed bal mb-3">기간 조건 없이 전체 기간의 지연 건이 모두 나옵니다. 그런데 원인이 다릅니다. <strong class="text-slate-900">제공한 스키마에 날짜 열이 아예 없습니다.</strong></p>
+                    <p class="text-xs text-slate-500 leading-relaxed bal">사례 1은 AI가 조건을 놓친 것이고 사례 2는 내가 정보를 덜 준 것입니다. 결과는 같습니다. 조건이 빠진 채로 아무 경고 없이 돌아옵니다.</p>
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl border-2 border-slate-200 p-8 shadow-sm">
-                <p class="text-sm font-bold text-slate-700 mb-4">이 지점이 문서의 강점을 오히려 분명하게 합니다</p>
-                <p class="text-slate-600 leading-relaxed max-w-[46em]">
-                    AI는 요청받은 조건을 수식으로 옮기는 일은 정확히 했습니다. <br class="hidden md:block">
-                    빠진 것은 <strong class="text-slate-900">요구사항에 있던 &lsquo;일별 추이&rsquo;라는 단어</strong>입니다. <br class="hidden md:block">
-                    이런 누락은 결과만 보면 드러나지 않고, <strong class="text-slate-900">요구사항과 결과를 하나씩 대조할 때만</strong> 잡힙니다. <br class="hidden md:block">
-                    도구를 쓰는 능력과 도구의 답을 검수하는 능력은 별개이고, 실무에서 신뢰를 만드는 것은 후자입니다.
-                </p>
+            <div class="bg-slate-900 rounded-2xl p-6 md:p-8 text-white">
+                <p class="text-[10px] font-black tracking-wide text-blue-400 mb-4">여기서 실력이 갈립니다</p>
+                <p class="text-base md:text-lg leading-relaxed max-w-[46em] mb-5">두 결과 모두 <strong class="text-blue-300">겉으로는 정상입니다.</strong> 수식은 숫자를 내놓고 쿼리는 행을 반환합니다. 빠진 조건은 요구사항과 결과를 한 줄씩 맞춰볼 때만 드러나고, 그 대조를 하려면 수식과 쿼리를 읽을 줄 알아야 합니다.</p>
+                <p class="text-sm text-slate-300 leading-relaxed max-w-[46em]">그래서 이 일의 성격은 <strong class="text-white">개발자 없이</strong>보다 <strong class="text-white">개발자를 기다리지 않고</strong>에 가깝습니다. 도구를 쓰는 능력과 도구의 답을 검수하는 능력은 별개이고, 신뢰를 만드는 것은 뒤쪽입니다.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                <p class="font-black text-slate-900 mb-4 bal">그 밖에 함께 확인한 것</p>
+                <div class="grid md:grid-cols-2 gap-x-8 gap-y-3 text-sm text-slate-600 leading-relaxed">
+                    <p class="bal">· <strong class="text-slate-800">빈칸의 정의</strong> — 빈 문자열 조건은 아무것도 없는 셀과 수식 결과가 빈 셀을 함께 셉니다. 시스템에서 내려온 파일이면 실제 결측과 달라집니다</p>
+                    <p class="bal">· <strong class="text-slate-800">불량률의 분모</strong> — 일별로 보려면 분모도 일별 입고 건수여야 합니다. 전체 52,140건을 쓰면 추이가 눌립니다</p>
+                    <p class="bal">· <strong class="text-slate-800">센터 코드</strong> — 요청은 서울 센터인데 쿼리는 코드를 추측해 고정했습니다. 센터 테이블의 지역 열로 걸러야 센터가 늘어도 작동합니다</p>
+                    <p class="bal">· <strong class="text-slate-800">이번 주의 기준</strong> — 월요일 시작인지 최근 7일인지에 따라 결과가 달라집니다. 날짜로 되물어 확정합니다</p>
+                </div>
             </div>
         </section>
 
         <!-- 보강: 사례별 확인 항목 -->
-        <section class="reveal">
-            <div class="mb-10">
-                <h2 class="text-2xl md:text-3xl font-bold mb-3">사례별로 확인해야 할 것</h2>
-                <p class="text-slate-500 text-base leading-relaxed">
-                    세 사례는 각각 다른 종류의 위험을 가집니다. <br class="hidden md:block">
-                    실행 전에 무엇을 보는지 정해두면 같은 방식을 반복해서 쓸 수 있습니다.
-                </p>
+        <section class="reveal space-y-6">
+            <div>
+                <h3 class="text-2xl font-bold mb-3">사례마다 무엇을 보는지 정해 두었습니다</h3>
+                <p class="text-slate-500 leading-relaxed max-w-[42em]">세 사례는 위험의 종류가 다릅니다. 실행 전에 볼 것을 정해두면 같은 방식을 반복해 쓸 수 있습니다.</p>
             </div>
 
-            <div class="space-y-6">
-                <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
-                    <p class="text-sm font-bold text-slate-800 mb-4">SQL 추출 &mdash; 틀려도 결과가 나옵니다</p>
-                    <p class="text-slate-600 leading-relaxed mb-5 max-w-[46em]">
-                    쿼리가 잘못돼도 오류 없이 실행되어 <strong class="text-slate-900">그럴듯한 리스트가 나옵니다.</strong> <br class="hidden md:block">
-                    그대로 보고하면 잘못된 데이터가 의사결정에 들어갑니다.
-                </p>
-                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li class="max-w-[46em] leading-[1.8]">&bull; <strong class="text-slate-800">건수 대조</strong> &mdash; 이미 아는 값과 맞춰봅니다. 서울 센터 전체 출고 건수를 알고 있다면, 지연 건이 그보다 클 수 없습니다. JOIN 조건이 잘못되면 행이 중복되어 건수가 부풀어 오르므로 여기서 잡힙니다.</li>
-                        <li class="max-w-[46em] leading-[1.8] bal">&bull; <strong class="text-slate-800">이번 주의 기준</strong> &mdash; 월요일 시작인지 최근 7일인지에 따라 결과가 달라집니다. 요청자가 말한 기간을 날짜로 되물어 확정합니다.</li>
-                        <li class="bal max-w-[46em] leading-[1.8]">&bull; <strong class="text-slate-800">조회 부하와 권한</strong> &mdash; 운영 DB에 직접 조회하면 대량 스캔이 서비스에 영향을 줄 수 있습니다. 조회 전용 환경과 허용된 범위를 사전에 확인해 둡니다.</li>
+            <div class="grid md:grid-cols-2 gap-5">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">SQL 추출</p>
+                    <p class="font-black text-slate-900 mb-3 bal">틀려도 결과가 나옵니다</p>
+                    <p class="text-sm text-slate-600 leading-relaxed bal mb-4">쿼리가 잘못돼도 오류 없이 그럴듯한 리스트가 나옵니다. 그대로 보고하면 잘못된 데이터가 의사결정에 들어갑니다.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 leading-relaxed">
+                        <li class="bal">· <strong class="text-slate-800">건수 대조</strong> — 이미 아는 값과 맞춥니다. JOIN이 잘못되면 행이 부풀어 여기서 잡힙니다</li>
+                        <li class="bal">· <strong class="text-slate-800">조회 부하와 권한</strong> — 운영 DB 대량 스캔은 서비스에 영향을 줍니다. 조회 전용 환경을 씁니다</li>
                     </ul>
                 </div>
-
-                <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm">
-                    <p class="text-sm font-bold text-slate-800 mb-4">영문 보고 &mdash; 숫자와 이름이 바뀌면 사고가 됩니다</p>
-                    <p class="text-slate-600 leading-relaxed mb-5 max-w-[46em]">
-                    번역과 구조화는 AI가 잘하는 일이지만, 이 보고는 <strong class="text-slate-900">새벽에 임원에게 바로 전달</strong>됩니다. <br class="hidden md:block">
-                    검토자가 없는 시간대라 오류가 그대로 나갑니다.
-                </p>
-                    <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li>&bull; <strong class="text-slate-800">숫자 대조</strong> &mdash; 단말 50대, 지연 45분, 복구 목표 7시. 이 세 값이 원문과 같은지만 확인하면 대부분의 사고를 막습니다.</li>
-                        <li class="bal max-w-[46em] leading-[1.8]">&bull; <strong class="text-slate-800">확정과 예정의 구분</strong> &mdash; 원문의 <strong>커버 가능</strong>은 예상이고 <strong>정상화</strong>는 완료입니다. 영문에서 둘 다 완료로 표현되면 보고 내용이 사실과 달라집니다.</li>
-                        <li class="bal max-w-[46em] leading-[1.8]">&bull; <strong class="text-slate-800">책임 서술 확인</strong> &mdash; 원인을 단정하는 문장이 들어가지 않았는지 봅니다. 원인 규명 전 단계에서는 현상과 조치만 적는 편이 안전합니다.</li>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                    <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">영문 보고</p>
+                    <p class="font-black text-slate-900 mb-3 bal">숫자와 이름이 바뀌면 사고가 됩니다</p>
+                    <p class="text-sm text-slate-600 leading-relaxed bal mb-4">새벽에 임원에게 바로 전달되는 보고라 검토자가 없는 시간대입니다. 오류가 그대로 나갑니다.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 leading-relaxed">
+                        <li class="bal">· <strong class="text-slate-800">숫자 대조</strong> — 단말 50대, 지연 45분, 복구 목표 7시. 셋만 맞춰도 대부분 막힙니다</li>
+                        <li class="bal">· <strong class="text-slate-800">확정과 예정의 구분</strong> — 커버 가능은 예상이고 정상화는 완료입니다. 영문에서 섞이면 사실이 달라집니다</li>
+                        <li class="bal">· <strong class="text-slate-800">책임 서술</strong> — 원인 규명 전에는 현상과 조치만 적습니다</li>
                     </ul>
                 </div>
+            </div>
 
-                <div class="bg-slate-900 rounded-2xl p-8 text-white">
-                    <p class="text-sm font-bold text-blue-300 mb-4">세 사례에서 실제로 실력이 드러난 지점</p>
-                    <p class="text-slate-300 leading-relaxed mb-5">
-                    AI를 쓴 것 자체는 누구나 할 수 있습니다. <br class="hidden md:block">
-                    이 기록에서 성과를 만든 것은 <strong class="text-white">AI에게 무엇을 주었는지</strong>입니다.
-                </p>
-                    <div class="grid md:grid-cols-3 gap-5">
-                        <div class="bg-white/10 rounded-xl p-5">
-                            <p class="text-xs font-bold text-blue-300 mb-2">조건으로 분해했습니다</p>
-                            <p class="text-xs text-slate-300 leading-relaxed">
-                    막연한 요청을 열과 값 기준의 조건으로 바꿔 전달했습니다. <br class="hidden md:block">
-                    이 분해가 없으면 AI도 수식을 만들 수 없습니다.
-                </p>
-                        </div>
-                        <div class="bg-white/10 rounded-xl p-5">
-                            <p class="text-xs font-bold text-blue-300 mb-2">스키마를 정리해 주었습니다</p>
-                            <p class="text-xs text-slate-300 leading-relaxed">
-                    테이블과 컬럼 구조를 먼저 제시했습니다. <br class="hidden md:block">
-                    스키마 없이 요청하면 존재하지 않는 컬럼을 쓴 쿼리가 나옵니다.
-                </p>
-                        </div>
-                        <div class="bg-white/10 rounded-xl p-5">
-                            <p class="text-xs font-bold text-blue-300 mb-2">보고 대상을 지정했습니다</p>
-                            <p class="text-xs text-slate-300 leading-relaxed">
-                    외국인 임원 대상이라는 조건을 주어 문체와 구조가 정해졌습니다. <br class="hidden md:block">
-                    대상 없이 번역만 요청하면 형식이 맞지 않습니다.
-                </p>
-                        </div>
+            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-2 border-blue-200">
+                <p class="font-black text-slate-900 mb-4 text-lg bal">AI에게 무엇을 주었는가가 결과를 갈랐습니다</p>
+                <div class="grid md:grid-cols-3 gap-5">
+                    <div>
+                        <p class="text-sm font-bold text-blue-700 mb-1.5">조건으로 분해</p>
+                        <p class="text-xs text-slate-500 leading-relaxed bal">막연한 요청을 열과 값 기준 조건으로 바꿔 전달했습니다. 이 분해 없이는 수식이 나오지 않습니다</p>
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold text-blue-700 mb-1.5">스키마 제시</p>
+                        <p class="text-xs text-slate-500 leading-relaxed bal">테이블과 컬럼 구조를 먼저 줬습니다. 없으면 존재하지 않는 컬럼을 쓴 쿼리가 나옵니다</p>
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold text-blue-700 mb-1.5">보고 대상 지정</p>
+                        <p class="text-xs text-slate-500 leading-relaxed bal">외국인 임원 대상이라는 조건으로 문체와 구조가 정해졌습니다</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 보강: 두 번째 사례 검증과 차트 수치 -->
         <section class="reveal">
-            <div class="mb-10">
-                <h2 class="text-2xl md:text-3xl font-bold mb-3">두 번째 사례에서도 같은 것이 빠졌습니다</h2>
-                <p class="text-slate-500 text-base leading-relaxed max-w-[46em]">
-                    앞에서 도전 1의 수식이 <strong class="text-slate-800">일별 추이</strong>를 빠뜨렸다는 것을 확인했습니다. <br class="hidden md:block">
-                    같은 방식으로 도전 2의 쿼리를 요구사항과 대조하면 <strong class="text-slate-800">같은 유형의 누락</strong>이 한 번 더 나옵니다.
-                </p>
-            </div>
-
-            <div class="bg-white rounded-2xl border-2 border-amber-300 p-8 shadow-sm mb-6">
-                <p class="text-sm font-bold text-amber-700 mb-5">요청에 있던 이번 주가 쿼리에 없습니다</p>
-                <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
-                        <p class="text-xs font-bold text-slate-500 mb-3">요청</p>
-                        <p class="text-sm text-slate-700 leading-relaxed">
-                            <strong class="text-slate-900">이번 주</strong> 출고 지연된 건 중에서 서울 센터 물량만
-                            센터명과 상품 아이디를 포함해서 뽑아 줄 것
-                        </p>
-                    </div>
-                    <div class="bg-amber-50 rounded-xl p-6 border border-amber-300">
-                        <p class="text-xs font-bold text-amber-800 mb-3">도출된 쿼리의 조건</p>
-                        <p class="text-sm text-slate-700 leading-relaxed bal">
-                    상태가 지연인 것, 센터 코드가 특정 값인 것. <strong class="text-amber-800">기간 조건이 없습니다.</strong> <br class="hidden md:block">
-                    전체 기간의 지연 건이 모두 나옵니다.
-                </p>
-                    </div>
-                </div>
-                <div class="bg-slate-900 rounded-xl p-6 text-white mb-6">
-                    <p class="text-xs font-bold text-amber-300 mb-3">그런데 이번에는 원인이 다릅니다</p>
-                    <p class="text-sm text-slate-300 leading-relaxed mb-4 max-w-[46em]">
-                    제공한 스키마를 보면 주문 테이블의 열이 <strong class="text-white">아이디, 상품 아이디, 센터 코드, 상태</strong> 넷뿐입니다. <br class="hidden md:block">
-                    <strong class="text-amber-300">날짜 열이 아예 없습니다.</strong> <br class="hidden md:block">
-                    기간으로 거르고 싶어도 걸 수 있는 열이 없습니다.
-                </p>
-                    <p class="text-sm text-slate-300 leading-relaxed max-w-[46em]">
-                    도전 1은 AI가 조건 하나를 놓친 경우였고, 도전 2는 <strong class="text-white">요청자가 필요한 정보를 주지 않은 경우</strong>입니다. <br class="hidden md:block">
-                    그런데 결과는 같습니다. <br class="hidden md:block">
-                    조건이 빠진 쿼리가 아무 경고 없이 돌아옵니다. <br class="hidden md:block">
-                    <strong class="text-amber-300">필요한 열이 스키마에 있는지 먼저 확인하는 것</strong>이 요청을 잘 쓰는 것만큼 중요합니다.
-                </p>
-                </div>
-                <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
-                    <p class="text-xs font-bold text-slate-700 mb-3">센터 코드도 확인이 필요합니다</p>
-                    <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">요청은 서울 센터인데 쿼리는 센터 코드를 특정 문자열로 고정했습니다. 스키마에 없는 값이라 추측입니다. <br class="hidden md:block">
-센터 테이블에 지역 열이 있는데 쓰지 않았습니다. 서울에 센터가 둘 이상이면 코드 하나로는 일부만 나옵니다. <br class="hidden md:block">
-<strong>지역 열로 거르면</strong> 요청 문장에 더 가깝고, 센터가 늘어나도 그대로 작동합니다.</p>
-                </div>
-            </div>
-
-            <div class="bg-slate-900 rounded-2xl p-8 md:p-10 text-white mb-10">
-                <p class="text-amber-300 font-black text-[10px] tracking-wide mb-5">검증하려면 그 일을 할 줄 알아야 합니다</p>
-                <p class="text-sm md:text-base text-slate-300 leading-relaxed mb-5 max-w-[46em]">
-                    두 사례 모두 <strong class="text-white">결과만 보면 정상으로 보입니다.</strong> <br class="hidden md:block">
-                    수식은 숫자를 내놓고 쿼리는 행을 반환합니다. <br class="hidden md:block">
-                    빠진 조건은 <strong class="text-amber-300">요구사항과 결과를 한 줄씩 맞춰볼 때만</strong> 드러납니다. <br class="hidden md:block">
-                    그리고 그 대조를 하려면 수식과 쿼리를 읽을 줄 알아야 합니다.
-                </p>
-                <p class="text-sm md:text-base text-slate-300 leading-relaxed max-w-[46em]">쿼리를 받는 것은 개발자 없이 됩니다. 다만 받은 쿼리가 요청과 맞는지 판단하려면 읽을 줄은 알아야 합니다. <br class="hidden md:block">
-그래서 이 일의 성격은 <strong>개발자 없이</strong>보다 <strong>개발자를 기다리지 않고</strong>에 가깝습니다.</p>
-            </div>
-
             <div class="mb-10">
                 <h3 class="text-xl font-bold mb-4">절감 배수가 세 작업 모두 같습니다</h3>
                 <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-6">
