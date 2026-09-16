@@ -135,8 +135,7 @@
                 파이프라인 및 개선 기획서
             </h1>
             <p class="text-slate-600 text-lg max-w-2xl mx-auto mb-10 leading-relaxed text-left">
-                     데이터 교차 검증을 통한 휴먼 에러 방지부터, <br class="hidden md:block">
-                    고객 의견(VOC) 기반의 편의성 개선, 그리고 위기 상황의 정제된 커뮤니티 관리까지. 성공적인 라이브 서비스를 위한 3단계 전략을 제안합니다.
+                     배포 전 교차 검증, 문의에서 뽑은 편의성 개선, 사고가 난 뒤의 소통까지 세 단계로 묶었습니다.
                 </p>
             <a href="#qol" class="inline-flex items-center justify-center px-8 py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-full transition-transform hover:scale-105 shadow-lg shadow-brand-500/30">
                 기획서 검토 시작하기 &#8595;
@@ -181,9 +180,7 @@
         <section id="overview" class="py-24 border-b border-slate-200">
             <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-6">장르 특성</h2>
             <p class="text-slate-600 leading-relaxed mb-4 max-w-[46em]">
-                    방치형 RPG는 자동 성장을 전제하는 대신 일일 반복 콘텐츠가 누적됩니다. <br class="hidden md:block">
-                    유저는 이를 숙제라 부르며, 항목이 늘어나면 접속 동기가 의무로 바뀝니다. <br class="hidden md:block">
-                    편의성 기획, 업데이트 검증 프로세스, 사고 대응 순서로 정리했습니다.
+                    편의성 기획, 업데이트 검증 절차, 사고 대응 순서로 정리했습니다. 세 가지 모두 <strong>수치를 건드리지 않고</strong> 잔존율을 지키는 쪽입니다.
                 </p>
         </section>
 
@@ -192,14 +189,14 @@
                 <span class="text-brand-500 font-black text-4xl mb-3 block">&#9881;</span>
                 <h2 class="text-3xl font-bold text-slate-900 mb-4">지표 개선을 위한 UX 기획</h2>
                 <p class="text-slate-600 max-w-3xl mx-auto leading-relaxed text-left">
-                    복잡한 수치 밸런스를 변경하는 리스크 없이, 유저가 매일 느끼는 반복 피로도를 대폭 줄여 잔존율을 방어하는 직관적인 편의성 시스템을 기획했습니다.
+                    수치 밸런스를 건드리지 않고 매일 쌓이는 반복 피로만 덜어내는 기획입니다.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 items-start">
                 <!-- Chart Area -->
                 <div class="content-card p-6">
-                    <h3 class="text-lg font-bold text-slate-800 mb-4 text-center">최근 3개월 VOC 분석 (이탈 원인)</h3>
+                    <h3 class="text-lg font-bold text-slate-800 mb-4 text-center">최근 3개월 문의 분석 &mdash; 이탈 원인</h3>
                     <div class="chart-container">
                         <canvas id="vocChart" role="img" aria-label="방사형 차트. 항목 반복 숙제 피로도, UI 조작 불편, 과금 부담, 콘텐츠 부족, 밸런스 불만. 계열 이탈 원인 비중 (%)"></canvas>
                     </div>
@@ -267,7 +264,7 @@
                 <span class="text-brand-500 font-black text-4xl mb-3 block">&#128269;</span>
                 <h2 class="text-3xl font-bold text-slate-900 mb-4">QA 교차 검증 체크리스트</h2>
                 <p class="text-slate-600 max-w-3xl mx-auto leading-relaxed text-left">
-                     기획된 내용이 라이브 서버에 적용되기 전, 중대한 휴먼 에러를 차단하기 위한 5단계 교차 검증 프로세스입니다. <strong class="text-brand-600 mt-2 block">우측의 '검증' 버튼을 차례대로 클릭하여 검증 파이프라인을 직접 체험해 보세요.</strong>
+                     <strong class="text-brand-600 mt-2 block">라이브 서버에 올라가기 전 사람 실수를 거르는 5단계 교차 검증입니다. 오른쪽 버튼을 차례로 눌러 보세요.</strong>
                 </p>
             </div>
 
@@ -359,8 +356,7 @@
                 <span class="text-brand-500 font-black text-4xl mb-3 block">&#128680;</span>
                 <h2 class="text-3xl font-bold text-slate-900 mb-4">업데이트 리스크 및 커뮤니티 관리</h2>
                 <p class="text-slate-600 max-w-3xl mx-auto leading-relaxed text-left">
-                    예기치 못한 이슈가 발생했을 때 가장 중요한 것은 투명하고 빠른 소통입니다. <br class="hidden md:block">
-                    유저 커뮤니티의 여론 악화를 방지하고 신뢰를 회복하기 위한 단계별 대응 매뉴얼입니다.
+                    사고가 났을 때는 무엇을 언제 말하느냐로 여론이 갈립니다. 그 순서를 단계별로 적어 둔 매뉴얼입니다.
                 </p>
             </div>
 
@@ -598,13 +594,13 @@
                     <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
                         <p class="text-xs font-bold text-slate-700 mb-2">성립 조건</p>
                         <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                    핵심 콘텐츠에 집중한다는 기대가 서려면 <strong class="text-slate-900">숙제 이후에 할 것이 실제로 있어야 합니다.</strong> 콘텐츠 부족 불만이 30으로 이미 있으므로, 소탕과 콘텐츠 추가는 함께 내보냅니다.
+                    숙제를 줄여 준 다음에 <strong>할 것이 실제로 있어야</strong> 합니다. 콘텐츠 부족 불만이 30으로 이미 있으니 소탕과 콘텐츠 추가는 같이 내보냅니다.
                 </p>
                     </div>
                 </div>
 
                 <div class="bg-white rounded-2xl border-2 border-slate-200 p-8 shadow-sm">
-                    <p class="text-sm font-bold text-slate-700 mb-4">VOC 대응 범위를 명시해 두는 편이 낫습니다</p>
+                    <p class="text-sm font-bold text-slate-700 mb-4">문의 대응 범위를 적어 두는 편이 낫습니다</p>
                     <p class="text-slate-600 leading-relaxed mb-5 max-w-[46em] bal">
                     불만 다섯 항목의 합은 265이고, 두 기획안이 겨냥한 숙제 피로도와 UI 불편이 150으로 <strong class="text-slate-900">전체의 56.6%</strong>입니다. 나머지는 과금 45, 밸런스 40, 콘텐츠 30입니다.
                 </p>
@@ -620,7 +616,7 @@
             <div class="max-w-5xl mx-auto px-4">
                 <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">체크리스트가 프로세스가 되려면</h2>
                 <p class="text-slate-600 leading-relaxed mb-10 max-w-3xl bal">
-                    마지막 단계의 <strong class="text-slate-900">일반 계정으로 유저 동선 재현</strong>은 관리자 계정 테스트로는 안 잡히는 문제를 걸러냅니다. 이 목록이 문서에서 규칙으로 넘어가려면 셋이 더 필요합니다.
+                    마지막의 일반 계정 동선 재현은 관리자 계정으로는 안 잡히는 문제를 거릅니다. 이 목록이 규칙이 되려면 셋이 더 필요합니다.
                 </p>
 
                 <div class="space-y-5 mb-10">
@@ -639,15 +635,14 @@
                     <div class="bg-white rounded-2xl border-l-4 border-l-rose-500 border border-slate-200 p-7 shadow-sm">
                         <p class="font-bold text-slate-900 mb-3">실패하면 어떻게 되는지</p>
                         <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">
-                    가장 중요한데 가장 자주 빠집니다. 미리 정해두지 않으면 일정에 쫓길 때마다 그 자리에서 협의하게 됩니다. <strong class="text-slate-900">결제와 재화 지급량은 배포 보류, 오탈자와 UI 잘림은 배포 후 수정</strong>으로 등급을 나눕니다.
+                    미리 정해두지 않으면 일정에 쫓길 때마다 그 자리에서 협의하게 됩니다. <strong>결제와 재화 지급량은 배포 보류, 오탈자와 UI 잘림은 배포 후 수정</strong>으로 나눠 둡니다.
                 </p>
                     </div>
                 </div>
 
                 <div class="bg-teal-50 rounded-2xl border-2 border-teal-200 p-8">
                     <p class="text-sm font-bold text-teal-700 mb-4">사후 공지에서 이 프로세스와 이어지는 부분</p>
-                    <p class="text-slate-700 leading-relaxed bal max-w-[46em]">위기 대응 공지는 재발 방지책으로 <strong>대규모 보상 지급 시뮬레이션 필수화</strong>를 약속합니다. 2번 체크리스트의 1단계가 바로 그것이라 두 대목이 이어집니다. <br class="hidden md:block">
-다만 공지에서 약속한 것은 <strong>체크리스트에 항목으로 들어가야</strong> 지켜집니다. 사고 뒤 약속을 검증 목록에 반영하는 절차가 필요합니다.</p>
+                    <p class="text-slate-700 leading-relaxed bal max-w-[46em]">공지에서 약속한 재발 방지책은 <strong>체크리스트에 항목으로 들어가야</strong> 지켜집니다. 사고 뒤 약속을 검증 목록에 옮기는 절차까지 정해 둡니다.</p>
                 </div>
             </div>
         </section>

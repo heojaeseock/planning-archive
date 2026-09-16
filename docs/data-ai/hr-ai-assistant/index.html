@@ -355,9 +355,7 @@
         <section id="security-scope" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
             <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-2">보안 구조가 막는 것과 막지 못하는 것</h2>
             <p class="text-slate-500 text-sm mb-6 leading-relaxed max-w-[46em]">
-                    기능 2의 핵심은 <strong class="text-slate-700">민감 정보를 외부 AI로 보내지 않는다</strong>는 것입니다. <br class="hidden md:block">
-                    이 설계는 유효하지만, 보안 검토를 통과하려면 <strong class="text-slate-700">이 구조가 담당하는 범위를 명확히 그어야</strong> 합니다. <br class="hidden md:block">
-                    범위를 넓게 주장하면 실제 위험이 가려집니다.
+                    민감 정보를 외부 AI로 보내지 않는 것이 핵심입니다. 다만 <strong>이 구조가 덮는 범위를 정확히 그어야</strong> 남은 위험이 보입니다.
                 </p>
 
             <div class="grid md:grid-cols-2 gap-5 mb-6">
@@ -372,8 +370,8 @@
                 <div class="bg-rose-50 border-2 border-rose-200 rounded-xl p-5">
                     <p class="text-[11px] font-black tracking-wide text-rose-700 mb-3">이 구조로는 막히지 않는 것</p>
                     <ul class="space-y-2 text-sm text-slate-700 leading-relaxed">
-                        <li class="bal">&bull; <strong>브라우저에 남는 입력값</strong> &mdash; 임시 저장이 세션 종료 후에도 남으면 공용 단말에서 노출됩니다</li>
-                        <li>&bull; <strong>완성본의 전달 경로</strong> &mdash; 결합된 문서를 메신저나 메일로 보내는 순간 새 유출 경로가 생깁니다</li>
+                        <li class="bal">· 브라우저에 남는 입력값 — 공용 단말에서 그대로 노출됩니다</li>
+                        <li>· 완성본의 전달 경로 — 메신저나 메일로 보내는 순간 새 경로가 생깁니다</li>
                         <li class="bal">&bull; <strong>담당자의 실수</strong> &mdash; 값을 프롬프트 창에 직접 입력하면 구조가 무력화됩니다</li>
                         <li class="bal">&bull; <strong>문서 종류 노출</strong> &mdash; &lsquo;연봉 계약서 양식&rsquo; 같은 요청 자체가 외부에 남습니다</li>
                     </ul>
@@ -386,30 +384,24 @@
                     <div class="bg-white rounded-lg p-4 border border-slate-200">
                         <p class="text-xs font-black text-slate-800 mb-1">입력값 잔존 차단</p>
                         <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                    입력값을 영구 저장소가 아닌 <strong class="text-slate-800">페이지 이탈 시 소멸하는 범위</strong>에만 두고, <br class="hidden md:block">
-                    생성 완료 즉시 입력 필드를 비웁니다. <br class="hidden md:block">
-                    공용 단말 사용을 전제로 설계해야 합니다.
+                    페이지를 벗어나면 사라지는 범위에만 두고, 생성이 끝나면 즉시 비웁니다. <strong>공용 단말을 전제로</strong> 설계합니다.
                 </p>
                     </div>
                     <div class="bg-white rounded-lg p-4 border border-slate-200">
                         <p class="text-xs font-black text-slate-800 mb-1">실수 방지 검증</p>
                         <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                    양식 요청 프롬프트에 <strong class="text-slate-800">숫자나 인명으로 보이는 문자열이 포함되면 전송을 차단</strong>하고 경고를 띄웁니다. <br class="hidden md:block">
-                    사람의 주의에 의존하는 보안은 반드시 뚫립니다.
+                    숫자나 인명으로 보이는 문자열이 섞이면 전송을 막고 경고합니다. <strong>주의에 기대는 보안은 반드시 뚫립니다.</strong>
                 </p>
                     </div>
                     <div class="bg-white rounded-lg p-4 border border-slate-200">
                         <p class="text-xs font-black text-slate-800 mb-1">전달 경로 지정</p>
                         <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                    완성본은 <strong class="text-slate-800">사내 문서 시스템으로만 저장</strong>되도록 동선을 고정하고, <br class="hidden md:block">
-                    개인 단말 다운로드와 외부 전송은 기본 차단합니다. <br class="hidden md:block">
-                    생성 단계만 안전해도 전달 단계에서 새면 의미가 없습니다.
+                    완성본은 사내 문서 시스템에만 저장되게 동선을 고정합니다. <strong>생성이 안전해도 전달에서 새면 소용없습니다.</strong>
                 </p>
                     </div>
                 </div>
                 <p class="text-xs text-slate-500 leading-relaxed mt-4 max-w-[46em] bal">
-                    이 세 가지를 함께 제시하면 <strong class="text-slate-700">&ldquo;AI에 안 보낸다&rdquo;에서 &ldquo;문서 생애 전 구간을 통제한다&rdquo;</strong>로 주장의 범위가 정확해집니다. <br class="hidden md:block">
-                    보안 부서 검토에서 실제로 묻는 것은 후자입니다.
+                    보안 검토에서 실제로 묻는 것은 <strong>AI에 안 보내는가</strong>가 아니라 <strong>문서가 만들어져 사라질 때까지를 통제하는가</strong>입니다.
                 </p>
             </div>
         </section>
@@ -418,24 +410,20 @@
         <section id="answer-risk" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
             <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-2">AI 답변의 오답 리스크와 운영 규칙</h2>
             <p class="text-slate-500 text-sm mb-6 leading-relaxed max-w-[46em] bal">
-                    HR 규정 안내는 근태 &middot; 급여 &middot; 계약과 직결되므로, <strong class="text-slate-700">잘못된 안내가 분쟁으로 이어질 수 있습니다.</strong> <br class="hidden md:block">
-                    프롬프트에 &ldquo;규정에 없는 내용은 지어내지 마세요&rdquo;를 넣은 것은 맞는 방향이지만, 그것만으로는 부족합니다.
+                    근태 · 급여 · 계약과 바로 닿는 안내라, 틀린 답 하나가 분쟁이 됩니다. <strong>지어내지 말라는 프롬프트 한 줄로는 막히지 않습니다.</strong>
                 </p>
 
             <div class="space-y-4 mb-6">
                 <div class="border-l-4 border-l-rose-500 bg-rose-50 rounded-r-xl p-5">
                     <p class="text-sm font-black text-slate-900 mb-2">위험 1 &middot; 규정이 바뀌면 AI는 옛 내용을 자신 있게 말합니다</p>
                     <p class="text-xs text-slate-600 leading-relaxed max-w-[46em] bal">
-                    AI는 노션 DB에 있는 내용만 답하도록 설계됐으므로, <strong class="text-slate-800">DB가 개정을 따라가지 못하면 오답이 확정적으로 발생</strong>합니다. <br class="hidden md:block">
-                    더 나쁜 것은 근거가 있는 형식으로 답하기 때문에 구성원이 의심하지 않는다는 점입니다.
+                    DB에 있는 것만 답하므로 DB가 개정을 못 따라가면 오답이 확정입니다. 게다가 <strong>근거를 단 형식으로 답해서 아무도 의심하지 않습니다.</strong>
                 </p>
                 </div>
                 <div class="border-l-4 border-l-rose-500 bg-rose-50 rounded-r-xl p-5">
                     <p class="text-sm font-black text-slate-900 mb-2">위험 2 &middot; 요약 과정에서 조건이 탈락합니다</p>
                     <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                    프롬프트는 &lsquo;핵심 내용만 정확하게 요약&rsquo;을 지시합니다. <br class="hidden md:block">
-                    그런데 규정에서 중요한 것은 대개 <strong class="text-slate-800">예외 조건과 단서</strong>입니다. <br class="hidden md:block">
-                    요약은 그 단서를 떨어뜨리기 쉬워, 문장은 맞지만 <strong class="text-slate-800">개별 사례에는 틀린 답</strong>이 나올 수 있습니다.
+                    규정에서 중요한 것은 대개 <strong>예외 조건과 단서</strong>인데, 요약은 그것부터 떨어뜨립니다. 문장은 맞지만 내 경우에는 틀린 답이 나옵니다.
                 </p>
                 </div>
             </div>
@@ -446,35 +434,30 @@
                     <div class="bg-white/10 rounded-lg p-4">
                         <p class="text-xs font-black text-amber-300 mb-1">답변 고지 문구</p>
                         <p class="text-xs text-slate-300 leading-relaxed bal">
-                    모든 답변 끝에 <strong class="text-white">&lsquo;참고용 안내이며 정식 기준은 규정 원문&rsquo;</strong>을 붙입니다. <br class="hidden md:block">
-                    상세 링크를 필수 포함하도록 한 기존 지침과 결합하면 자연스럽습니다.
+                    답변 끝에 <strong>참고용이며 정식 기준은 규정 원문</strong>이라고 붙이고 상세 링크를 함께 답니다.
                 </p>
                     </div>
                     <div class="bg-white/10 rounded-lg p-4">
                         <p class="text-xs font-black text-amber-300 mb-1">갱신일 표기</p>
                         <p class="text-xs text-slate-300 leading-relaxed">
-                    노션 항목마다 <strong class="text-white">최종 갱신일</strong>을 두고 답변에 함께 노출합니다. <br class="hidden md:block">
-                    오래된 항목은 AI가 답변 전 담당자 확인을 안내하게 합니다.
+                    항목마다 최종 갱신일을 두고 답변에 같이 띄웁니다. 오래된 항목은 담당자 확인부터 안내합니다.
                 </p>
                     </div>
                     <div class="bg-white/10 rounded-lg p-4">
                         <p class="text-xs font-black text-amber-300 mb-1">에스컬레이션 경로</p>
                         <p class="text-xs text-slate-300 leading-relaxed bal">
-                    규정 범위를 벗어난 문의는 <strong class="text-white">추측하지 않고 담당자에게 연결</strong>합니다. <br class="hidden md:block">
-                    &lsquo;모른다&rsquo;고 답할 수 있게 만드는 것이 정확도의 핵심입니다.
+                    규정 밖 문의는 추측하지 않고 담당자로 넘깁니다. <strong>모른다고 답할 수 있게 만드는 것</strong>이 정확도의 핵심입니다.
                 </p>
                     </div>
                     <div class="bg-white/10 rounded-lg p-4">
                         <p class="text-xs font-black text-amber-300 mb-1">답변 로그 보관</p>
                         <p class="text-xs text-slate-300 leading-relaxed bal">
-                    누구에게 무엇을 안내했는지 남깁니다. <br class="hidden md:block">
-                    <strong class="text-white">분쟁 시 근거</strong>가 되고, 오답 패턴을 찾아 프롬프트를 고치는 재료가 됩니다.
+                    누구에게 무엇을 안내했는지 남깁니다. 분쟁의 근거이자 프롬프트를 고칠 재료입니다.
                 </p>
                     </div>
                 </div>
                 <p class="text-sm text-slate-300 leading-relaxed mt-5 pt-5 border-t border-white/20 max-w-[46em]">
-                    규정 개정 절차에 <strong class="text-amber-300">&lsquo;노션 DB 갱신&rsquo;을 필수 단계로 넣는 것</strong>이 이 시스템의 실제 생명선입니다. <br class="hidden md:block">
-                    도구를 만드는 일보다 <strong class="text-white">갱신 책임자와 주기를 정하는 일</strong>이 어렵고 중요합니다.
+                    규정 개정 절차에 <strong>노션 DB 갱신</strong>을 필수 단계로 넣는 것이 생명선입니다. 도구를 만드는 일보다 갱신 책임자와 주기를 정하는 일이 어렵습니다.
                 </p>
             </div>
         </section>
@@ -489,7 +472,7 @@
                         <li class="bal">&bull; <strong class="text-slate-800">문의 건수 변화:</strong> 메신저로 인입되는 반복 문의 수 &mdash; 도입 전 4주 평균과 비교</li>
                         <li class="bal">&bull; <strong class="text-slate-800">순 절감 시간:</strong> 응대 &middot; 문서 작성 절감분에서 <strong>DB 갱신과 품질 관리 시간을 차감</strong>한 값</li>
                         <li>&bull; <strong class="text-slate-800">AI 답변 정확도:</strong> 주간 표본을 담당자가 검수해 오답률 산출</li>
-                        <li class="leading-[1.8]">&bull; <strong class="text-slate-800">에스컬레이션 비율:</strong> 담당자 연결로 넘어간 비율 &mdash; 너무 높으면 DB 범위가 좁고, 너무 낮으면 무리한 추측을 하고 있을 가능성</li>
+                        <li class="leading-[1.8]">· 에스컬레이션 비율: 너무 높으면 DB 범위가 좁고, 너무 낮으면 무리하게 추측하고 있다는 뜻</li>
                         <li>&bull; <strong class="text-slate-800">DB 신선도:</strong> 최종 갱신일이 기준 기간을 넘긴 항목 수</li>
                         <li>&bull; <strong class="text-slate-800">문서 생성 소요:</strong> 계약서 1건 작성 시간과 검수 반송률</li>
                     </ul>
@@ -500,9 +483,7 @@
             <div class="bg-indigo-50 border-2 border-indigo-200 rounded-xl p-6 mt-6">
                 <p class="text-[11px] font-black tracking-wide text-indigo-600 mb-3">정리</p>
                 <p class="text-sm md:text-base text-slate-700 leading-relaxed max-w-[46em] bal">
-                    이 기획의 강점은 <strong class="text-slate-900">보안 제약을 우회하지 않고 구조로 푼 점</strong>입니다. <br class="hidden md:block">
-                    빈칸 양식만 외부에서 받아 로컬에서 결합하는 방식은 &lsquo;AI를 쓸 수 없다&rsquo;는 제약을 &lsquo;이렇게 쓰면 된다&rsquo;로 바꿉니다. <br class="hidden md:block">
-                    다만 실제 도입을 통과하려면 <strong class="text-slate-900">생성 단계뿐 아니라 저장 &middot; 전달 &middot; 잔존까지</strong>, 그리고 <strong class="text-slate-900">절감 시간에서 새로 생기는 관리 업무를 차감</strong>한 숫자까지 함께 제시해야 합니다.
+                    빈칸 양식만 외부에서 받고 결합은 안에서 하는 방식은, <strong>AI를 쓸 수 없다는 제약을 이렇게 쓰면 된다로</strong> 바꿉니다. 도입까지 가려면 저장 · 전달 · 잔존 구간과, 절감 시간에서 새 관리 업무를 뺀 숫자가 함께 있어야 합니다.
                 </p>
             </div>
         </section>

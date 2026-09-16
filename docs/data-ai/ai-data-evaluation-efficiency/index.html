@@ -159,9 +159,7 @@
             <div class="bg-white rounded-3xl border border-slate-200 p-8 md:p-12">
                 <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-6">제안 배경</h2>
                 <p class="text-slate-600 leading-relaxed mb-4 max-w-[46em]">
-                    AI 학습 데이터 평가는 답변 하나하나에 사람이 적합·부적합 판정을 붙이는 작업입니다. <br class="hidden md:block">
-                    판정 전량이 수작업이라, 오타나 자음 반복처럼 규칙으로 걸러낼 항목까지 평가자가 직접 확인합니다. <br class="hidden md:block">
-                    사전 필터링과 판정 기준 통일로 이 구간을 줄이는 방안을 정리했습니다.
+                    답변 하나하나에 사람이 적합·부적합을 붙이는 작업입니다. 전량이 수작업이라 <strong>오타나 자음 반복처럼 규칙으로 걸러낼 것까지</strong> 사람이 봅니다. 그 구간을 줄이는 방안입니다.
                 </p>
             </div>
         </section>
@@ -248,8 +246,7 @@
                             </div>
                             <div class="funnel-content">
                                 <p class="text-sm text-slate-300 leading-relaxed text-balance bal">
-                    평가 시스템에 최초 인입된 정제되지 않은 날것의 데이터 무더기입니다. <br class="hidden md:block">
-                    모든 데이터를 사람이 직접 확인하면 처리 효율이 크게 떨어집니다.
+                    막 들어온 상태 그대로의 데이터입니다. 전부 사람이 보면 속도가 나지 않습니다.
                 </p>
                             </div>
                         </div>
@@ -298,8 +295,7 @@
                             </div>
                             <div class="funnel-content">
                                 <p class="text-sm text-slate-200 leading-relaxed text-balance font-medium mt-2">
-                    기계적인 쓰레기 데이터가 모두 제거된 상태입니다. <br class="hidden md:block">
-                    <strong class="text-emerald-300">이제 평가자는 오직 사람만이 할 수 있는 문맥적, 윤리적 판단에만 100% 역량을 쏟을 수 있습니다.</strong>
+                    <strong class="text-emerald-300">규칙으로 걸러지는 것이 모두 빠진 상태입니다. 평가자는 <strong>사람만 할 수 있는 판단</strong>에만 시간을 씁니다.</strong>
                 </p>
                             </div>
                         </div>
@@ -515,7 +511,7 @@
             <div class="rounded-2xl border-2 border-rose-200 bg-rose-50 p-6 md:p-8">
                 <p class="text-[10px] font-black tracking-wide text-rose-600 mb-2">가장 위험한 경우</p>
                 <p class="text-lg md:text-xl font-black text-slate-900 mb-4 leading-snug bal max-w-[34em]">금칙어 필터가 안전성 학습 데이터를 지웁니다</p>
-                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">이 표현이 왜 문제가 되나요, 이런 요청은 거절해야 하나요 같은 질문에는 금칙어가 들어갈 수밖에 없습니다. <strong class="text-slate-900">그런데 이런 데이터가 바로 AI에게 무엇을 거절해야 하는지 가르치는 자료입니다.</strong> 자동 대조로 반려하면 가장 학습해야 할 영역이 평가자 눈에 닿기도 전에 사라지고, 제거된 사실은 로그에만 남습니다.</p>
+                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">이 표현이 왜 문제가 되나요 같은 질문에는 금칙어가 들어갈 수밖에 없습니다. 그런데 <strong>바로 그 데이터가 AI에게 무엇을 거절해야 하는지 가르치는 자료</strong>입니다. 자동 반려하면 가장 필요한 몫이 눈에 닿기 전에 사라집니다.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-5">
@@ -546,13 +542,13 @@
                     </div>
                 </div>
                 <div class="bg-slate-900 rounded-xl p-5 text-white">
-                    <p class="text-sm leading-relaxed max-w-[46em]">이렇게 바꾸면 확실한 제거는 형식 검증 2,000건, <strong class="text-indigo-300">35%가 아니라 20%</strong>가 됩니다. 낮춰 보고하는 편이 안전합니다. 나중에 오제거가 드러나면 효율 수치 전체가 신뢰를 잃기 때문입니다.</p>
+                    <p class="text-sm leading-relaxed max-w-[46em]">이렇게 바꾸면 확실한 제거는 형식 검증 2,000건, <strong>35%가 아니라 20%</strong>입니다. 나중에 오제거가 드러나면 수치 전체가 신뢰를 잃으므로 낮춰 잡습니다.</p>
                 </div>
             </div>
 
             <div class="rounded-2xl border-2 border-slate-200 p-6 md:p-8 bg-white">
                 <p class="font-black text-slate-900 mb-4 text-lg bal">1단계가 2단계를 막고 있었습니다</p>
-                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em] mb-5">2단계 <strong class="text-slate-900">질문 의도 파악</strong>은 표현이 아니라 목적을 보라는 지침입니다. 그런데 1단계에서 키워드만 보고 즉시 반려하면 의도를 볼 기회 자체가 없어집니다. 강남역 대박 맛집처럼 표현은 거칠어도 의도가 정상인 경우가 훨씬 넓습니다.</p>
+                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em] mb-5">2단계는 표현이 아니라 목적을 보라는 지침인데, 1단계에서 키워드만 보고 반려하면 <strong>의도를 볼 기회가 없어집니다.</strong> 표현은 거칠어도 의도가 정상인 경우가 훨씬 넓습니다.</p>
                 <div class="grid md:grid-cols-2 gap-4 mb-5">
                     <div class="bg-slate-50 rounded-xl p-5">
                         <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">지금 순서</p>
@@ -568,7 +564,7 @@
 
             <div class="rounded-2xl border-l-[6px] border-emerald-500 bg-emerald-50 p-6">
                 <p class="font-black text-slate-900 mb-3 bal">3단계는 그대로 둡니다</p>
-                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">판단이 서지 않는 사례를 감으로 넘기지 않고 기록으로 쌓는 설계입니다. <strong class="text-slate-900">기준의 일관성은 지침 문서의 완성도가 아니라 예외 사례가 쌓이는 속도로 정해집니다.</strong> 여기에 평가자 간 일치도 측정을 붙여, 기록이 실제로 일관성을 높이는지 확인합니다.</p>
+                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">판단이 서지 않는 사례를 감으로 넘기지 않고 기록으로 쌓습니다. <strong>일관성은 지침 문서의 완성도가 아니라 예외 사례가 쌓이는 속도</strong>로 정해집니다. 평가자 간 일치도를 함께 재 확인합니다.</p>
             </div>
         </section>
 
