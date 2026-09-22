@@ -26,7 +26,7 @@
   :root{
     --bg:#fbfbfc; --surface:#fff; --surface-2:#f4f5f7; --border:#e2e5ea; --border-2:#d3d8e0;
     --text:#111621; --muted:#535c6b; --faint:#6c727d;
-    --accent:#1f4fd8; --accent-weak:#eef2ff;
+    --accent:#1f4fd8; --accent-weak:#eef2ff; --on-accent:#fff;
     --gd:#b3243c;  --gd-bg:#fdecef;
     --gm:#b4530a;  --gm-bg:#fff3e8;
     --pm:#1f4fd8;  --pm-bg:#eef2ff;
@@ -38,7 +38,7 @@
     :root:not([data-theme="light"]){
       --bg:#0d1016; --surface:#151a22; --surface-2:#1b2230; --border:#252d3a; --border-2:#333c4c;
       --text:#e9edf3; --muted:#9ba4b2; --faint:#7a8595;
-      --accent:#7ea3ff; --accent-weak:#18233d;
+      --accent:#7ea3ff; --accent-weak:#18233d; --on-accent:#0d1016;
       --gd:#ff9aab;  --gd-bg:#3a1520;
       --gm:#ffb27a;  --gm-bg:#33220f;
       --pm:#9fb9ff;  --pm-bg:#18233d;
@@ -102,7 +102,7 @@
     padding:7px 13px;border-radius:8px;border:1px solid var(--border);
     background:var(--surface);color:var(--muted);transition:.14s;white-space:nowrap}
   .pill:hover{color:var(--text);border-color:var(--border-2)}
-  .pill[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+  .pill[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
   .pill .c{opacity:.65;font-weight:600;margin-left:4px}
   .search{font:inherit;font-size:13.5px;padding:8px 13px;min-width:230px;flex:1 1 200px;max-width:320px;
     border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text)}

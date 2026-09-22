@@ -27,13 +27,13 @@
   :root{
     --bg:#fbfbfc; --surface:#fff; --border:#e2e5ea;
     --text:#111621; --muted:#535c6b;
-    --accent:#1f4fd8; --accent-weak:#eef2ff;
+    --accent:#1f4fd8; --accent-weak:#eef2ff; --on-accent:#fff;
   }
   @media (prefers-color-scheme:dark){
     :root{
       --bg:#0d1016; --surface:#151a22; --border:#252d3a;
       --text:#e9edf3; --muted:#9ba4b2;
-      --accent:#7ea3ff; --accent-weak:#18233d;
+      --accent:#7ea3ff; --accent-weak:#18233d; --on-accent:#0d1016;
     }
   }
   *{box-sizing:border-box}
@@ -49,7 +49,7 @@
   a.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;
     font-size:14.5px;font-weight:700;text-decoration:none;border:1px solid var(--border);
     background:var(--surface);color:var(--text)}
-  a.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  a.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 </style>
 </head>
 <body>
