@@ -84,7 +84,11 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
-<style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
+<style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
+  /* 손가락으로 누르는 범위를 24px 로 넓힌다 (보이는 모습은 그대로) */
+  .nav-link::before { content:''; position:absolute; left:0; right:0;
+    top:50%; height:24px; transform:translateY(-50%); }
+</style>
 </head>
 <body class="text-slate-900">
 
@@ -604,7 +608,7 @@
                     y: { display: false, beginAtZero: true },
                     x: { 
                         grid: { display: false }, 
-                        ticks: { font: { size: 11, family: 'Pretendard' }, color: '#94a3b8' } 
+                        ticks: { font: { size: 11, family: 'Pretendard' }, color: '#64748b' } 
                     }
                 }
             }
