@@ -51,6 +51,12 @@
             color: #10b981; 
             border-bottom: 4px solid #00df00; 
         }
+        /* 좁은 화면에서 탭 메뉴가 화면 밖으로 밀려나지 않도록 */
+        @media (max-width: 640px) {
+            nav { gap: 1.25rem; overflow-x: auto; }
+            nav::-webkit-scrollbar { display: none; }
+            .nav-link { white-space: nowrap; }
+        }
         
         .card { 
             background: #ffffff; 
@@ -97,6 +103,7 @@
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
         .bal { text-wrap: balance; }
+        @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>

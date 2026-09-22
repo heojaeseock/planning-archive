@@ -37,6 +37,8 @@
 
         p, li, td, th, div, span, dd, figcaption { text-wrap: pretty; }
         .bal { text-wrap: balance; }
+        section[aria-label="이 문서가 하는 말"] .text-base { font-size: 1rem; line-height: 1.5rem; }
+        @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         h1 { text-wrap: balance; }
         
