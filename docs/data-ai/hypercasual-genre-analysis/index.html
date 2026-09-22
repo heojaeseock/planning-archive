@@ -34,7 +34,9 @@
   @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
   section[aria-label="이 문서가 하는 말"] .text-slate-700 { color: rgb(51 65 85); }
   .max-w-\[40em\] { max-width: 40em; }
-  .card { background:#fff; border:1px solid #e2e8f0; border-radius:20px; }
+  .card { border-radius:20px; }
+  .card:not([class*="bg-"]) { background:#fff; }
+  .card:not(.border-none) { border:1px solid #e2e8f0; }
   .chip { display:inline-block; padding:5px 12px; border-radius:999px;
           font-size:12px; font-weight:700; letter-spacing:-.01em; }
   .chart-box { position:relative; width:100%; max-width:760px; height:320px; margin:0 auto; }

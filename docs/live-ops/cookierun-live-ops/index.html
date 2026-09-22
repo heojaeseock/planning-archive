@@ -49,11 +49,13 @@
 
         /* Cookie Run Style UI */
         .cookie-card {
-            background: white;
-            border: 4px solid var(--dark-choco);
+            border-width: 4px;
+            border-style: solid;
             border-radius: 35px;
-            box-shadow: 0 10px 0 #D2B48C;
         }
+        .cookie-card:not([class*="bg-"]) { background: white; }
+        .cookie-card:not([class*="border-["]) { border-color: var(--dark-choco); }
+        .cookie-card:not([class*="shadow-["]) { box-shadow: 0 10px 0 #D2B48C; }
 
         .cookie-btn {
             background: var(--butter-yellow);
@@ -89,14 +91,16 @@
 
         /* Jelly Path Flowchart */
         .jelly-node {
-            background: var(--jelly-green);
-            border: 3px solid #2E7D32;
+            border-width: 3px;
+            border-style: solid;
             border-radius: 25px;
             padding: 20px;
             text-align: center;
             box-shadow: 0 6px 0 #81C784;
             transition: transform 0.2s ease;
         }
+        .jelly-node:not([class*="bg-"]) { background: var(--jelly-green); }
+        .jelly-node:not([class*="border-["]) { border-color: #2E7D32; }
         .jelly-node:hover {
             transform: scale(1.05) rotate(1deg);
         }

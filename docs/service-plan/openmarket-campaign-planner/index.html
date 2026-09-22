@@ -60,13 +60,13 @@
         }
 
         .카드-레이아웃 {
-            background: #ffffff;
             border-radius: 40px;
             padding: 3.5rem 2rem;
             margin-bottom: 5rem;
             box-shadow: 0 10px 40px rgba(0, 100, 255, 0.04);
-            border: 1px solid #E9EEF5;
         }
+        .카드-레이아웃:not([class*="bg-"]) { background: #ffffff; }
+        .카드-레이아웃:not(.border-none) { border: 1px solid #E9EEF5; }
 
         /* 클릭을 유도하는 맥동 애니메이션 버튼 */
         @keyframes pulse-blue {
