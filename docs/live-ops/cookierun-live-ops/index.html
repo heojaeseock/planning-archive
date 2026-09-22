@@ -25,9 +25,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
     <script>Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";</script>
     <style>
-        /* 가독성이 검증된 폰트 조합: 제목(Black Han Sans), 본문(NanumSquareRound) */
-        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
-        
         :root {
             --cookie-brown: #5D4037;
             --dark-choco: #3E2723;
@@ -45,8 +42,9 @@
         }
 
         h1, h2, h3, h4 {
-            font-family: 'Black Han Sans', sans-serif;
-            letter-spacing: -0.01em;
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.02em;
         }
 
         /* Cookie Run Style UI */
@@ -62,7 +60,8 @@
             border: 3px solid var(--dark-choco);
             border-radius: 50px;
             box-shadow: 0 5px 0 #B8860B;
-            font-family: 'Black Han Sans', sans-serif;
+            font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
+            font-weight: 800;
             font-size: 1.4rem;
             transition: all 0.1s ease;
             cursor: pointer;
