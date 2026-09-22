@@ -102,7 +102,9 @@
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
-<style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
+<style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
+  .text-brand-ink { color: #02873d; }   /* 밝은 바탕에서 읽히는 브랜드 초록 */
+</style>
 </head>
 <body class="selection:bg-brand/30">
 
@@ -125,7 +127,7 @@
                 <div class="w-8 h-8 bg-brand rounded-lg flex items-center justify-center text-white font-black text-xs">N</div>
                 <div class="flex flex-col -space-y-0.5">
                     <span class="font-bold text-slate-900 text-sm tracking-tight leading-none">지역 서비스 기획</span>
-                    <span class="text-[9px] text-brand font-bold tracking-wider leading-none">전략 제안</span>
+                    <span class="text-[9px] text-brand-ink font-bold tracking-wider leading-none">전략 제안</span>
                 </div>
             </div>
             <div class="hidden md:flex gap-6">
@@ -144,7 +146,7 @@
         </div>
         <h1 class="text-3xl md:text-4xl font-black leading-tight text-slate-900 mb-8 keep-all tracking-tighter">
             게임 라이브 운영 노하우를 활용한 <br>
-            지역 정보 서비스 <span class="text-brand">데이터 신뢰도 개선</span> 전략
+            지역 정보 서비스 <span class="text-brand-ink">데이터 신뢰도 개선</span> 전략
         </h1>
         <p class="text-sm md:text-[17px] text-slate-500 font-medium keep-all max-w-3xl mx-auto leading-relaxed">
                      흩어진 지역 정보를 한곳으로 모으고, <span class="text-slate-900 font-bold">리뷰 검수를 자동 선별로 넘겨 운영 부담을 줄이는 방안입니다.</span>
@@ -199,7 +201,7 @@
                 <div class="md:w-1/2">
                     <div class="flex items-center gap-2 mb-4">
                         <span class="w-6 h-1 bg-brand rounded-full"></span>
-                        <span class="text-brand font-bold text-[10px] tracking-wide">1부. 문제</span>
+                        <span class="text-brand-ink font-bold text-[10px] tracking-wide">1부. 문제</span>
                     </div>
                     <h2 class="text-xl md:text-2xl font-black text-slate-900 mb-4 leading-snug">
                         운영 리소스 낭비와 <br> 로컬 데이터의 신뢰도 저하
@@ -236,7 +238,7 @@
                 <div class="md:w-1/2">
                     <div class="flex items-center gap-2 mb-4">
                         <span class="w-6 h-1 bg-brand rounded-full"></span>
-                        <span class="text-brand font-bold text-[10px] tracking-wide">2부. 효율</span>
+                        <span class="text-brand-ink font-bold text-[10px] tracking-wide">2부. 효율</span>
                     </div>
                     <h2 class="text-xl md:text-2xl font-black text-slate-900 mb-4 leading-snug">
                         반복 작업을 덜어내는 <br> 시스템 마케팅 자동화
@@ -251,12 +253,12 @@
                 <div class="md:w-1/2 w-full grid grid-cols-2 gap-4">
                     <div class="p-8 bg-white rounded-3xl shadow-sm text-center">
                         <p class="text-[9px] font-black text-slate-500 mb-2">집중화</p>
-                        <p class="text-2xl font-black text-brand leading-none">통합</p>
+                        <p class="text-2xl font-black text-brand-ink leading-none">통합</p>
                         <p class="text-[10px] text-slate-500 mt-2 font-bold">참여 데이터 일원화</p>
                     </div>
                     <div class="p-8 bg-white rounded-3xl shadow-sm text-center">
                         <p class="text-[9px] font-black text-slate-500 mb-2">자동화</p>
-                        <p class="text-2xl font-black text-brand leading-none">대폭</p>
+                        <p class="text-2xl font-black text-brand-ink leading-none">대폭</p>
                         <p class="text-[10px] text-slate-500 mt-2 font-bold">검증 시간 단축</p>
                     </div>
                 </div>
@@ -269,7 +271,7 @@
                 <div class="md:w-1/2">
                     <div class="flex items-center gap-2 mb-4">
                         <span class="w-6 h-1 bg-brand rounded-full"></span>
-                        <span class="text-brand font-bold text-[10px] tracking-wide">3부. 경험</span>
+                        <span class="text-brand-ink font-bold text-[10px] tracking-wide">3부. 경험</span>
                     </div>
                     <h2 class="text-xl md:text-2xl font-black text-slate-900 mb-4 leading-snug">
                         유저 성취감을 자극하는 <br> GM 가이드형 경험 설계
@@ -285,7 +287,7 @@
                     <div class="relative w-[280px] h-[460px] bg-slate-900 rounded-[3rem] border-[10px] border-slate-900 shadow-2xl overflow-hidden">
                         <div class="w-full h-full bg-white p-6 pt-10">
                             <div class="bg-brand-soft p-5 rounded-2xl mb-6">
-                                <h3 class="text-[11px] font-black text-brand mb-1">성수동 퀘스트 시작! 🗺️</h3>
+                                <h3 class="text-[11px] font-black text-brand-ink mb-1">성수동 퀘스트 시작! 🗺️</h3>
                                 <p class="text-[9px] font-bold text-slate-800 leading-tight">랜드마크 인증하고 <br class="hidden md:block"> 로컬 마스터 배지를 받으세요.</p>
                             </div>
                             <div class="space-y-4">

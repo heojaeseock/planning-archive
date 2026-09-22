@@ -124,7 +124,9 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
     </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
-<style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
+<style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
+  .node-title-amber { color: #9A4F00; }   /* 노랑 노드 제목 (다른 노드와 같은 진하기) */
+</style>
 </head>
 <body class="p-4 md:p-10">
 
@@ -333,7 +335,7 @@
             <!-- Node 2 -->
             <div class="jelly-node bg-[#FFF9C4] border-[#FBC02D]">
                 <div class="text-5xl mb-4">🛠️</div>
-                <h4 class="font-extrabold text-[#F57F17] text-2xl mb-2">Jira 티켓팅</h4>
+                <h4 class="font-extrabold node-title-amber text-2xl mb-2">Jira 티켓팅</h4>
                 <p class="text-gray-800 text-sm">장애 등급 분류 및 담당 부서 자동 할당</p>
             </div>
 
