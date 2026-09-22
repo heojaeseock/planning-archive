@@ -97,6 +97,8 @@
   }
 
   .accent-red-ink { color: #d73d3d; }   /* 흰 바탕 위 강조 빨강 */
+
+  .invisible { visibility: hidden; }
 </style>
 </head>
 <body class="antialiased text-slate-800">
@@ -433,7 +435,7 @@
                             <!-- Injected by JS -->
                         </div>
 
-                        <div class="p-3 bg-slate-50 rounded-b-xl border-t border-slate-100 flex justify-end gap-2 opacity-0 transition-opacity duration-500" id="email-actions">
+                        <div class="p-3 bg-slate-50 rounded-b-xl border-t border-slate-100 flex justify-end gap-2 opacity-0 invisible transition-opacity duration-500" id="email-actions">
                             <button onclick="toggleLang()" class="px-4 py-1.5 text-xs font-bold text-slate-600 bg-white border border-slate-200 rounded hover:bg-slate-100 transition-colors shadow-sm">🇰🇷 한국어 번역 보기</button>
                             <button onclick="copyElementText('email-body-text', '보고서가 복사되었습니다!')" class="px-5 py-1.5 text-xs font-bold text-white bg-brand-blue rounded hover:bg-blue-700 shadow flex items-center gap-1 transition-colors">
                                 <span>복사</span> 📝
@@ -899,7 +901,7 @@
             await new Promise(r => setTimeout(r, 1500)); 
             
             emailBody.innerHTML = emailEn; 
-            actions.classList.remove('opacity-0');
+            actions.classList.remove('opacity-0', 'invisible');
             
             btn.innerHTML = '<span>변환 완료!</span> <span>✅</span>';
             btn.classList.replace('bg-slate-600', 'bg-green-600');
