@@ -143,7 +143,7 @@
               <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">업무 프로세스 자동화와 동향 리포팅을 PM 관점에서 설계한 문서입니다.</p>
             </div>
             <div class="px-6 md:px-9 py-6 md:py-7">
-              <p class="text-[11px] font-black tracking-[0.12em] text-slate-400 mb-4">그래서 무엇이 더 필요한가</p>
+              <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">그래서 무엇이 더 필요한가</p>
               <div class="grid md:grid-cols-3 gap-3">
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">입력 쪽은 규칙으로</p>
@@ -191,7 +191,7 @@
                         </div>
                         <div>
                             <h3 class="text-xl font-bold text-slate-800">오염된 데이터 유입</h3>
-                            <p class="text-slate-400 text-sm mt-1">현장의 노이즈가 필터링 없이 학습되는 현상</p>
+                            <p class="text-slate-500 text-sm mt-1">현장의 노이즈가 필터링 없이 학습되는 현상</p>
                         </div>
                     </div>
                     <p class="text-slate-600 leading-relaxed font-medium">
@@ -206,7 +206,7 @@
                         </div>
                         <div>
                             <h3 class="text-xl font-bold text-slate-800">AI의 환각 현상</h3>
-                            <p class="text-slate-400 text-sm mt-1">사실이 아닌 내용을 그럴싸하게 생성하는 현상</p>
+                            <p class="text-slate-500 text-sm mt-1">사실이 아닌 내용을 그럴싸하게 생성하는 현상</p>
                         </div>
                     </div>
                     <p class="text-slate-600 leading-relaxed font-medium">
@@ -227,7 +227,7 @@
                 <div class="flex flex-col justify-center space-y-4">
                     <button onclick="updateQA(0)" id="btn-step0" class="step-btn clickable-card text-left p-5 rounded-xl border-2 border-slate-200 step-active bg-white relative">
                         <div class="flex justify-between items-center mb-2">
-                            <div class="text-sm font-bold text-slate-400">이전 방식</div>
+                            <div class="text-sm font-bold text-slate-600">이전 방식</div>
                             <span class="text-xs font-bold text-rose-500 bg-rose-50 px-2 py-1 rounded-full border border-rose-100 animate-pulse hidden" id="click-badge-0">👆 눌러 보기</span>
                         </div>
                         <div class="text-lg font-bold text-slate-800">눈으로 찾는 수작업 데이터 검수</div>
@@ -255,13 +255,13 @@
                 
                 <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-inner flex flex-col justify-center relative">
                     <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-sm font-bold text-slate-400">데이터 검수 소요 시간 (주당)</h3>
+                        <h3 class="text-sm font-bold text-slate-500">데이터 검수 소요 시간 (주당)</h3>
                         <span id="qa-badge" class="px-2 py-1 bg-slate-100 text-slate-500 text-xs font-bold rounded-md transition-colors duration-300">수작업 단계</span>
                     </div>
                     <div class="chart-container w-full h-56">
                         <canvas id="qaDynamicChart" role="img" aria-label="막대 차트. 항목 데이터 검수 소요 시간. 계열 수작업, 자동화"></canvas>
                     </div>
-                    <p class="text-xs text-slate-400 mt-6 text-right border-t border-slate-100 pt-2 bal">
+                    <p class="text-xs text-slate-500 mt-6 text-right border-t border-slate-100 pt-2 bal">
                     * 지표 출처: 담당 중인 MMORPG 라이브 서비스에서 수작업 검수를 함수 기반으로 바꿔 본 경험을 대입한 추정치이며 측정값이 아닙니다
                 </p>
                 </div>
@@ -327,7 +327,7 @@
                     <div class="flex-1 flex flex-col gap-4">
                         <button onclick="runTranslator(1)" class="clickable-card text-left bg-white border-2 border-slate-200 hover:border-rose-400 hover:bg-rose-50 rounded-xl p-5 group flex flex-col justify-between h-full relative overflow-hidden">
                             <div>
-                                <div class="text-xs font-bold text-slate-400 mb-3 flex items-center">
+                                <div class="text-xs font-bold text-slate-500 mb-3 flex items-center">
                                     사업팀 불만 사항
                                 </div>
                                 <div class="text-slate-800 font-bold text-lg leading-snug mb-4">"옷 리뷰 요약이 너무 엉뚱해요.<br>검수 좀 깐깐하게 해주세요."</div>
@@ -339,7 +339,7 @@
 
                         <button onclick="runTranslator(2)" class="clickable-card text-left bg-white border-2 border-slate-200 hover:border-rose-400 hover:bg-rose-50 rounded-xl p-5 group flex flex-col justify-between h-full relative overflow-hidden">
                             <div>
-                                <div class="text-xs font-bold text-slate-400 mb-3 flex items-center">
+                                <div class="text-xs font-bold text-slate-500 mb-3 flex items-center">
                                     운영팀 CS 접수 내역
                                 </div>
                                 <div class="text-slate-800 font-bold text-lg leading-snug mb-4">"동일 상품이 제대로 안 묶여서<br>고객들이 보기 불편하대요."</div>
