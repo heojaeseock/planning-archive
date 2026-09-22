@@ -93,6 +93,7 @@
             overflow-wrap: break-word;
         }
         h1,h2,h3,h4 { text-wrap: balance; }
+        body { word-break: keep-all; overflow-wrap: break-word; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
         .bal { text-wrap: balance; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
@@ -235,7 +236,7 @@
                         <div class="chart-container !h-[300px]">
                             <canvas id="chart-s2" role="img" aria-label="방사형 차트. 항목 단일 DPS, 생존력, 유틸리티, 시너지, 코스트(역방향)"></canvas>
                         </div>
-                        <p class="text-right text-xs text-gray-400 mt-4">* 참고: 검증 프로세스 시연을 위한 가상 데이터입니다.</p>
+                        <p class="text-right text-xs text-gray-400 mt-4 bal">* 참고: 검증 프로세스 시연을 위한 가상 데이터입니다.</p>
                     </div>
                     <!-- Explanation Box -->
                     <div id="qa-desc" class="md:col-span-3 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 fade-in h-full flex flex-col justify-center">
