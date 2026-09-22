@@ -359,7 +359,7 @@
                         <p class="text-xs font-black text-slate-400 tracking-wide">Kids Air 정보 설계 구조도</p>
                         <p class="text-[10px] text-sky-600 font-bold bg-sky-50 px-3 py-1 rounded-full animate-pulse">이미지를 클릭하면 확대됩니다</p>
                     </div>
-                    <div class="ia-container group overflow-hidden" onclick="openImageModal('kids_air_ia.webp')">
+                    <div class="ia-container group overflow-hidden" onclick="openImageModal('kids_air_ia.webp')" tabindex="0" role="button">
                         <img src="kids_air_ia.webp" alt="정보 설계 구조도" class="w-full h-auto rounded-xl shadow-lg transition-transform duration-500 group-hover:scale-[1.01]" onerror="this.src='';" decoding="async" loading="lazy" width="1977" height="1106">
                     </div>
                 </div>
@@ -458,7 +458,7 @@
                 <h3 class="text-3xl font-black text-slate-900 text-center tracking-tight italic">기획안에서 실제 구현 화면까지</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     
-                    <div class="content-card p-10 space-y-8 cursor-pointer" onclick="openImageModal('kids_air_splash_final.webp')">
+                    <div class="content-card p-10 space-y-8 cursor-pointer" onclick="openImageModal('kids_air_splash_final.webp')" tabindex="0" role="button">
                         <h4 class="text-center font-black text-slate-800">스플래시 화면 과정</h4>
                         <div class="flex gap-6 items-end">
                             <div class="w-1/2 space-y-4 text-center">
@@ -472,7 +472,7 @@
                         </div>
                     </div>
 
-                    <div class="content-card p-10 space-y-8 cursor-pointer" onclick="openImageModal('kids_air_dashboard_final.webp')">
+                    <div class="content-card p-10 space-y-8 cursor-pointer" onclick="openImageModal('kids_air_dashboard_final.webp')" tabindex="0" role="button">
                         <h4 class="text-center font-black text-slate-800">공기질 대시보드 과정</h4>
                         <div class="flex gap-6 items-end">
                             <div class="w-1/2 space-y-4 text-center">
@@ -486,7 +486,7 @@
                         </div>
                     </div>
 
-                    <div class="content-card p-10 space-y-8 cursor-pointer" onclick="openImageModal('kids_air_menu_final.webp')">
+                    <div class="content-card p-10 space-y-8 cursor-pointer" onclick="openImageModal('kids_air_menu_final.webp')" tabindex="0" role="button">
                         <h4 class="text-center font-black text-slate-800">메뉴 및 기능 구성</h4>
                         <div class="flex gap-6 items-end">
                             <div class="w-1/2 space-y-4 text-center">
@@ -500,7 +500,7 @@
                         </div>
                     </div>
 
-                    <div class="content-card p-10 space-y-8 cursor-pointer" onclick="openImageModal('kids_air_search_final.webp')">
+                    <div class="content-card p-10 space-y-8 cursor-pointer" onclick="openImageModal('kids_air_search_final.webp')" tabindex="0" role="button">
                         <h4 class="text-center font-black text-slate-800">검색 인터페이스</h4>
                         <div class="flex flex-col items-center space-y-6 text-center">
                             <p class="text-[10px] text-sky-50 font-black bg-sky-600 rounded px-4 py-1 tracking-wide inline-block">최종 검색 UI</p>
@@ -754,5 +754,16 @@
 <div aria-hidden="true" style="height:104px"></div>
 <a href="../../../index.html" aria-label="문서 목록으로 돌아가기" style="position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:60;display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:999px;background:#1f4fd8;color:#fff;font-size:16.5px;font-weight:800;letter-spacing:-.01em;text-decoration:none;font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;box-shadow:0 10px 30px rgba(31,79,216,.5),0 0 0 4px rgba(255,255,255,.95);white-space:nowrap"><span style="font-size:17px;line-height:1">←</span>문서 목록</a>
 
+<script>
+// 마우스로만 누를 수 있던 항목을 키보드(Enter / Space)로도 누를 수 있게 한다
+document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var t = e.target;
+    if (!t || t.getAttribute('role') !== 'button') return;
+    if (t.tagName === 'BUTTON' || t.tagName === 'A') return;
+    e.preventDefault();
+    t.click();
+});
+</script>
 </body>
 </html>

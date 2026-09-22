@@ -241,7 +241,7 @@
                     
                     <div class="space-y-3">
                         <!-- Funnel Step 1 -->
-                        <div class="funnel-layer active bg-slate-700 p-4 md:p-5 rounded-xl relative group" id="funnel-1" onclick="activateFunnel(1)">
+                        <div class="funnel-layer active bg-slate-700 p-4 md:p-5 rounded-xl relative group" id="funnel-1" onclick="activateFunnel(1)" tabindex="0" role="button">
                             <div class="flex justify-between items-center">
                                 <span class="font-bold text-slate-200 group-hover:text-white flex items-center gap-2">
                                     <span>📥</span> 수집된 전체 원본 데이터
@@ -257,7 +257,7 @@
                         
                         <!-- Funnel Step 2 -->
                         <div class="flex justify-center"><div class="h-4 w-1 bg-slate-600"></div></div>
-                        <div class="funnel-layer bg-slate-700 p-4 md:p-5 rounded-xl w-[95%] sm:w-[90%] mx-auto relative group" id="funnel-2" onclick="activateFunnel(2)">
+                        <div class="funnel-layer bg-slate-700 p-4 md:p-5 rounded-xl w-[95%] sm:w-[90%] mx-auto relative group" id="funnel-2" onclick="activateFunnel(2)" tabindex="0" role="button">
                             <div class="flex justify-between items-center">
                                 <span class="font-bold text-slate-200 group-hover:text-white flex items-center gap-2">
                                     <span>⚙️</span> 기본 형식 및 글자 수 검증
@@ -273,7 +273,7 @@
                         
                         <!-- Funnel Step 3 -->
                         <div class="flex justify-center"><div class="h-4 w-1 bg-slate-600"></div></div>
-                        <div class="funnel-layer bg-slate-700 p-4 md:p-5 rounded-xl w-[90%] sm:w-[80%] mx-auto relative group" id="funnel-3" onclick="activateFunnel(3)">
+                        <div class="funnel-layer bg-slate-700 p-4 md:p-5 rounded-xl w-[90%] sm:w-[80%] mx-auto relative group" id="funnel-3" onclick="activateFunnel(3)" tabindex="0" role="button">
                             <div class="flex justify-between items-center">
                                 <span class="font-bold text-slate-200 group-hover:text-white flex items-center gap-2">
                                     <span>⛔</span> 금칙어 및 욕설 사전 대조
@@ -289,7 +289,7 @@
 
                         <!-- Funnel Step 4 -->
                         <div class="flex justify-center"><div class="h-4 w-1 bg-emerald-500/50"></div></div>
-                        <div class="funnel-layer bg-emerald-900/40 p-5 rounded-xl w-[85%] sm:w-[70%] mx-auto relative border border-emerald-500/30 group" id="funnel-4" onclick="activateFunnel(4)">
+                        <div class="funnel-layer bg-emerald-900/40 p-5 rounded-xl w-[85%] sm:w-[70%] mx-auto relative border border-emerald-500/30 group" id="funnel-4" onclick="activateFunnel(4)" tabindex="0" role="button">
                             <div class="text-center text-sm">
                                 <span class="block font-bold text-emerald-400 mb-1 flex items-center justify-center gap-2">
                                     <span>✨</span> 최종 평가 대상 데이터
@@ -783,5 +783,16 @@
 <div aria-hidden="true" style="height:104px"></div>
 <a href="../../../index.html" aria-label="문서 목록으로 돌아가기" style="position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:60;display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:999px;background:#1f4fd8;color:#fff;font-size:16.5px;font-weight:800;letter-spacing:-.01em;text-decoration:none;font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;box-shadow:0 10px 30px rgba(31,79,216,.5),0 0 0 4px rgba(255,255,255,.95);white-space:nowrap"><span style="font-size:17px;line-height:1">←</span>문서 목록</a>
 
+<script>
+// 마우스로만 누를 수 있던 항목을 키보드(Enter / Space)로도 누를 수 있게 한다
+document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var t = e.target;
+    if (!t || t.getAttribute('role') !== 'button') return;
+    if (t.tagName === 'BUTTON' || t.tagName === 'A') return;
+    e.preventDefault();
+    t.click();
+});
+</script>
 </body>
 </html>

@@ -314,8 +314,8 @@
             <div class="카드-레이아웃 text-center">
                 <p class="text-sm font-bold text-slate-500 mb-6 italic">👇 아래 탭을 클릭하여 상세 내용을 확인해 보세요</p>
                 <div class="탭-메뉴 mb-12 shadow-sm">
-                    <div onclick="탭변경('게임')" id="탭-게임" class="탭-버튼 활성">🕹️ 게임 운영 경험</div>
-                    <div onclick="탭변경('오픈마켓')" id="탭-오픈마켓" class="탭-버튼">🛒 오픈마켓 커머스 적용안</div>
+                    <div onclick="탭변경('게임')" id="탭-게임" class="탭-버튼 활성" tabindex="0" role="button">🕹️ 게임 운영 경험</div>
+                    <div onclick="탭변경('오픈마켓')" id="탭-오픈마켓" class="탭-버튼" tabindex="0" role="button">🛒 오픈마켓 커머스 적용안</div>
                 </div>
 
                 <div id="내용-게임">
@@ -838,5 +838,16 @@
 <div aria-hidden="true" style="height:104px"></div>
 <a href="../../../index.html" aria-label="문서 목록으로 돌아가기" style="position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:60;display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:999px;background:#1f4fd8;color:#fff;font-size:16.5px;font-weight:800;letter-spacing:-.01em;text-decoration:none;font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;box-shadow:0 10px 30px rgba(31,79,216,.5),0 0 0 4px rgba(255,255,255,.95);white-space:nowrap"><span style="font-size:17px;line-height:1">←</span>문서 목록</a>
 
+<script>
+// 마우스로만 누를 수 있던 항목을 키보드(Enter / Space)로도 누를 수 있게 한다
+document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var t = e.target;
+    if (!t || t.getAttribute('role') !== 'button') return;
+    if (t.tagName === 'BUTTON' || t.tagName === 'A') return;
+    e.preventDefault();
+    t.click();
+});
+</script>
 </body>
 </html>

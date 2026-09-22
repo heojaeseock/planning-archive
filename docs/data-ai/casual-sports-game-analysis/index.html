@@ -248,10 +248,10 @@
 
             <div class="bg-white rounded-2xl shadow-sm border border-sand-200 overflow-hidden">
                 <div class="flex border-b border-sand-200 bg-sand-50">
-                    <div id="tab-casual" class="flex-1 py-4 text-center font-medium tab-active transition-colors cursor-pointer" onclick="switchTab('casual')">
+                    <div id="tab-casual" class="flex-1 py-4 text-center font-medium tab-active transition-colors cursor-pointer" onclick="switchTab('casual')" tabindex="0" role="button">
                         캐주얼 스포츠 (아케이드)
                     </div>
-                    <div id="tab-hardcore" class="flex-1 py-4 text-center font-medium text-sand-500 hover:text-sand-800 transition-colors cursor-pointer" onclick="switchTab('hardcore')">
+                    <div id="tab-hardcore" class="flex-1 py-4 text-center font-medium text-sand-500 hover:text-sand-800 transition-colors cursor-pointer" onclick="switchTab('hardcore')" tabindex="0" role="button">
                         하드코어 스포츠 (시뮬레이션)
                     </div>
                 </div>
@@ -286,7 +286,7 @@
 
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Gimmick 1 -->
-                <div class="group bg-white rounded-3xl p-8 border-2 border-transparent hover:border-coral-500 shadow-sm hover:shadow-md transition-all cursor-pointer relative overflow-hidden" onclick="toggleGimmick('gimmick1')">
+                <div class="group bg-white rounded-3xl p-8 border-2 border-transparent hover:border-coral-500 shadow-sm hover:shadow-md transition-all cursor-pointer relative overflow-hidden" onclick="toggleGimmick('gimmick1')" tabindex="0" role="button">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity text-7xl">💥</div>
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-3">
                         <h3 class="text-2xl font-bold text-sand-900">핀볼 범퍼</h3>
@@ -310,7 +310,7 @@
                 </div>
 
                 <!-- Gimmick 2 -->
-                <div class="group bg-white rounded-3xl p-8 border-2 border-transparent hover:border-ocean-500 shadow-sm hover:shadow-md transition-all cursor-pointer relative overflow-hidden" onclick="toggleGimmick('gimmick2')">
+                <div class="group bg-white rounded-3xl p-8 border-2 border-transparent hover:border-ocean-500 shadow-sm hover:shadow-md transition-all cursor-pointer relative overflow-hidden" onclick="toggleGimmick('gimmick2')" tabindex="0" role="button">
                     <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity text-7xl">🌌</div>
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-3">
                         <h3 class="text-2xl font-bold text-sand-900">중력 이상 구역</h3>
@@ -621,5 +621,16 @@
 <div aria-hidden="true" style="height:104px"></div>
 <a href="../../../index.html" aria-label="문서 목록으로 돌아가기" style="position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:60;display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:999px;background:#1f4fd8;color:#fff;font-size:16.5px;font-weight:800;letter-spacing:-.01em;text-decoration:none;font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;box-shadow:0 10px 30px rgba(31,79,216,.5),0 0 0 4px rgba(255,255,255,.95);white-space:nowrap"><span style="font-size:17px;line-height:1">←</span>문서 목록</a>
 
+<script>
+// 마우스로만 누를 수 있던 항목을 키보드(Enter / Space)로도 누를 수 있게 한다
+document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var t = e.target;
+    if (!t || t.getAttribute('role') !== 'button') return;
+    if (t.tagName === 'BUTTON' || t.tagName === 'A') return;
+    e.preventDefault();
+    t.click();
+});
+</script>
 </body>
 </html>

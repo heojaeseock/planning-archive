@@ -335,28 +335,28 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-8 pt-4">
-                    <div onclick="showWorkflowDetail(1)" class="cursor-pointer group bg-slate-50 hover:bg-indigo-50 rounded-xl p-5 border border-slate-200 hover:border-indigo-300 text-center relative transition-all shadow-sm hover:shadow-md">
+                    <div onclick="showWorkflowDetail(1)" class="cursor-pointer group bg-slate-50 hover:bg-indigo-50 rounded-xl p-5 border border-slate-200 hover:border-indigo-300 text-center relative transition-all shadow-sm hover:shadow-md" tabindex="0" role="button">
                         <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md click-indicator whitespace-nowrap">👆 클릭</div>
                         <div class="text-3xl mb-3 group-hover:scale-110 transition-transform mt-2">🚨</div>
                         <h3 class="font-black text-slate-800 group-hover:text-indigo-900 text-sm mb-2">1. 유출 및 침해 탐지</h3>
                         <p class="text-slate-500 text-sm">미발매 음원 사전 유출 및 불법 복제 콘텐츠 발견</p>
                         <div class="hidden md:block absolute top-1/2 -right-3 text-slate-500 transform -translate-y-1/2 text-xl z-10">▶</div>
                     </div>
-                    <div onclick="showWorkflowDetail(2)" class="cursor-pointer group bg-slate-50 hover:bg-indigo-50 rounded-xl p-5 border border-slate-200 hover:border-indigo-300 text-center relative transition-all shadow-sm hover:shadow-md">
+                    <div onclick="showWorkflowDetail(2)" class="cursor-pointer group bg-slate-50 hover:bg-indigo-50 rounded-xl p-5 border border-slate-200 hover:border-indigo-300 text-center relative transition-all shadow-sm hover:shadow-md" tabindex="0" role="button">
                         <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md click-indicator whitespace-nowrap hidden md:block">👆 클릭</div>
                         <div class="text-3xl mb-3 group-hover:scale-110 transition-transform mt-2">🎫</div>
                         <h3 class="font-black text-slate-800 group-hover:text-indigo-900 text-sm mb-2">2. Jira 티켓팅</h3>
                         <p class="text-slate-500 text-sm">증빙 캡처 및 ISRC 등 사전 규격화 템플릿 등록</p>
                         <div class="hidden md:block absolute top-1/2 -right-3 text-slate-500 transform -translate-y-1/2 text-xl z-10">▶</div>
                     </div>
-                    <div onclick="showWorkflowDetail(3)" class="cursor-pointer group bg-slate-50 hover:bg-indigo-50 rounded-xl p-5 border border-slate-200 hover:border-indigo-300 text-center relative transition-all shadow-sm hover:shadow-md">
+                    <div onclick="showWorkflowDetail(3)" class="cursor-pointer group bg-slate-50 hover:bg-indigo-50 rounded-xl p-5 border border-slate-200 hover:border-indigo-300 text-center relative transition-all shadow-sm hover:shadow-md" tabindex="0" role="button">
                         <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md click-indicator whitespace-nowrap hidden md:block">👆 클릭</div>
                         <div class="text-3xl mb-3 group-hover:scale-110 transition-transform mt-2">⚖️</div>
                         <h3 class="font-black text-slate-800 group-hover:text-indigo-900 text-sm mb-2">3. 유관부서 할당</h3>
                         <p class="text-slate-500 text-sm">긴급도(SLA) 설정 후 법무 및 사업팀 즉시 알림</p>
                         <div class="hidden md:block absolute top-1/2 -right-3 text-slate-500 transform -translate-y-1/2 text-xl z-10">▶</div>
                     </div>
-                    <div onclick="showWorkflowDetail(4)" class="cursor-pointer group bg-slate-50 hover:bg-indigo-50 rounded-xl p-5 border border-slate-200 hover:border-indigo-300 text-center relative transition-all shadow-sm hover:shadow-md">
+                    <div onclick="showWorkflowDetail(4)" class="cursor-pointer group bg-slate-50 hover:bg-indigo-50 rounded-xl p-5 border border-slate-200 hover:border-indigo-300 text-center relative transition-all shadow-sm hover:shadow-md" tabindex="0" role="button">
                         <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md click-indicator whitespace-nowrap hidden md:block">👆 클릭</div>
                         <div class="text-3xl mb-3 group-hover:scale-110 transition-transform mt-2">🛡️</div>
                         <h3 class="font-black text-slate-800 group-hover:text-indigo-900 text-sm mb-2">4. 조치 및 락인</h3>
@@ -863,5 +863,16 @@
 <div aria-hidden="true" style="height:104px"></div>
 <a href="../../../index.html" aria-label="문서 목록으로 돌아가기" style="position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:60;display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:999px;background:#1f4fd8;color:#fff;font-size:16.5px;font-weight:800;letter-spacing:-.01em;text-decoration:none;font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;box-shadow:0 10px 30px rgba(31,79,216,.5),0 0 0 4px rgba(255,255,255,.95);white-space:nowrap"><span style="font-size:17px;line-height:1">←</span>문서 목록</a>
 
+<script>
+// 마우스로만 누를 수 있던 항목을 키보드(Enter / Space)로도 누를 수 있게 한다
+document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var t = e.target;
+    if (!t || t.getAttribute('role') !== 'button') return;
+    if (t.tagName === 'BUTTON' || t.tagName === 'A') return;
+    e.preventDefault();
+    t.click();
+});
+</script>
 </body>
 </html>
