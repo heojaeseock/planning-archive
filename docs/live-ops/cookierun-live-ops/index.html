@@ -110,6 +110,10 @@
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
         .bal { text-wrap: balance; }
+        /* 정의가 빠져 있던 클래스 보충 */
+        .animate-in { animation: tw-fade-in 0.35s ease-out both; }
+        .fade-in { }
+        @keyframes tw-fade-in { from { opacity: 0; } to { opacity: 1; } }
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         section[aria-label="이 문서가 하는 말"] .text-slate-700 { color: rgb(51 65 85); }
         .max-w-\[40em\] { max-width: 40em; }

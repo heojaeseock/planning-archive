@@ -58,6 +58,10 @@
         body { word-break: keep-all; overflow-wrap: break-word; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
         .bal { text-wrap: balance; }
+        /* 정의가 빠져 있던 클래스 보충 */
+        .shadow-\[0_8px_30px_rgb\(0\,0\,0\,0\.04\)\] { box-shadow: 0 8px 30px rgb(0,0,0,0.04); }
+        .shadow-\[0_4px_20px_rgb\(0\,0\,0\,0\.03\)\] { box-shadow: 0 4px 20px rgb(0,0,0,0.03); }
+        .hover\:shadow-\[0_20px_50px_rgba\(37\,99\,235\,0\.3\)\]:hover { box-shadow: 0 20px 50px rgba(37,99,235,0.3); }
         section[aria-label="이 문서가 하는 말"] .text-base { font-size: 1rem; line-height: 1.5rem; }
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
