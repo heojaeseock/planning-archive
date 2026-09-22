@@ -246,9 +246,9 @@
                 </div>
                 
                 <!-- 상호작용 토글 버튼 -->
-                <button id="toggleDataBtn" class="btn-hover bg-slate-800 text-white px-6 py-2.5 rounded-full font-bold text-sm flex items-center shadow-md">
-                    <span>수치 산출 근거 확인하기</span>
-                    <span id="toggleArrow" class="ml-2 transition-transform duration-300">▼</span>
+                <button id="toggleDataBtn" type="button" aria-expanded="false" aria-controls="dataRationale" class="btn-hover bg-slate-800 text-white px-6 py-2.5 rounded-full font-bold text-sm flex items-center shadow-md">
+                    <span id="toggleLabel">수치 산출 근거 확인하기</span>
+                    <span id="toggleArrow" aria-hidden="true" class="ml-2 transition-transform duration-300">▼</span>
                 </button>
 
                 <!-- 숨겨진 데이터 근거 영역 -->
@@ -638,16 +638,14 @@
             const toggleBtn = document.getElementById('toggleDataBtn');
             const dataDiv = document.getElementById('dataRationale');
             const arrow = document.getElementById('toggleArrow');
+            const toggleLabel = document.getElementById('toggleLabel');
 
             toggleBtn.addEventListener('click', () => {
                 dataDiv.classList.toggle('open');
-                if(dataDiv.classList.contains('open')) {
-                    arrow.style.transform = 'rotate(180deg)';
-                    toggleBtn.innerHTML = `<span>접어두기</span><span id="toggleArrow" class="ml-2 transition-transform duration-300" style="transform: rotate(180deg);">▼</span>`;
-                } else {
-                    arrow.style.transform = 'rotate(0deg)';
-                    toggleBtn.innerHTML = `<span>수치 산출 근거 확인하기</span><span id="toggleArrow" class="ml-2 transition-transform duration-300">▼</span>`;
-                }
+                const opened = dataDiv.classList.contains('open');
+                arrow.style.transform = opened ? 'rotate(180deg)' : 'rotate(0deg)';
+                toggleLabel.textContent = opened ? '접어두기' : '수치 산출 근거 확인하기';
+                toggleBtn.setAttribute('aria-expanded', opened ? 'true' : 'false');
             });
 
             // 3. 위기 대응 탭 UI 로직
