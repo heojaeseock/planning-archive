@@ -130,10 +130,11 @@
             padding: 3rem;
             margin-top: 2rem;
             opacity: 0;
+            visibility: hidden;   /* 나타나기 전에는 탭 순서에서도 빠진다 */
             transform: translateY(20px);
             transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
         }
-        .알림-레이어.표시 { opacity: 1; transform: translateY(0); }
+        .알림-레이어.표시 { opacity: 1; visibility: visible; transform: translateY(0); }
 
         /* 매뉴얼 확인 버튼 */
         .매뉴얼-버튼 {
