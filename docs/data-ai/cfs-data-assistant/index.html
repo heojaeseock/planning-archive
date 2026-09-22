@@ -420,7 +420,7 @@
 
                         <div class="p-3 bg-slate-50 rounded-b-xl border-t border-slate-100 flex justify-end gap-2 opacity-0 transition-opacity duration-500" id="email-actions">
                             <button onclick="toggleLang()" class="px-4 py-1.5 text-xs font-bold text-slate-600 bg-white border border-slate-200 rounded hover:bg-slate-100 transition-colors shadow-sm">🇰🇷 한국어 번역 보기</button>
-                            <button onclick="copyTextDirect('email-body-text', '보고서가 복사되었습니다!')" class="px-5 py-1.5 text-xs font-bold text-white bg-brand-blue rounded hover:bg-blue-700 shadow flex items-center gap-1 transition-colors">
+                            <button onclick="copyElementText('email-body-text', '보고서가 복사되었습니다!')" class="px-5 py-1.5 text-xs font-bold text-white bg-brand-blue rounded hover:bg-blue-700 shadow flex items-center gap-1 transition-colors">
                                 <span>복사</span> 📝
                             </button>
                         </div>
@@ -684,9 +684,30 @@
 
         // Direct Text Copy (For Contact Info and Buttons)
         function copyTextDirect(text, msg) {
-            navigator.clipboard.writeText(text).then(() => {
-                showToast(msg);
-            });
+            const done = () => showToast(msg);
+            const fallback = () => {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                ta.style.position = 'fixed';
+                ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.select();
+                try { document.execCommand('copy'); } catch (e) {}
+                document.body.removeChild(ta);
+                done();
+            };
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(done).catch(fallback);
+            } else {
+                fallback();
+            }
+        }
+
+        // 요소 안의 글을 복사한다 (id 를 넘기면 그 요소의 본문을 집는다)
+        function copyElementText(id, msg) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            copyTextDirect((el.innerText || el.textContent || '').trim(), msg);
         }
 
         // --- Scenario 1 (Excel Data) ---
