@@ -104,6 +104,9 @@
       scroll-behavior: auto !important;
     }
   }
+
+/* 섹션 사이 간격을 다른 문서와 같은 96px 로 맞춘다 */
+.space-y-24 > :not([hidden]) ~ :not([hidden]) { margin-top: 6rem; margin-bottom: 0; }
 </style>
 </head>
 <body class="antialiased scroll-smooth">
@@ -131,7 +134,7 @@
         <div class="inline-block px-5 py-2 rounded-full bg-rose-50 text-rose-600 font-semibold text-sm mb-8 border border-rose-100 shadow-sm animate-pulse">
             다룬 주제 : 커머스 AI 프로덕트 기획·운영
         </div>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.3] mb-8">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-[1.3] mb-8">
             들어가는 데이터와 나오는 결과 양쪽에 사람이 보는 지점을 남깁니다.
         </h1>
         
@@ -144,7 +147,7 @@
         </a>
     </header>
 
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-32 space-y-32">
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-32 space-y-24">
         <!-- 이 문서가 하는 말 -->
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">

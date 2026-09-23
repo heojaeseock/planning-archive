@@ -64,7 +64,7 @@
             box-shadow: 0 5px 0 #B8860B;
             font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
             font-weight: 800;
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             transition: all 0.1s ease;
             cursor: pointer;
             color: var(--dark-choco);
@@ -138,6 +138,9 @@
   }
 
   .num-orange-ink { color: #cf4800; }   /* 흰 바탕 표의 증감 수치 */
+
+/* 히어로 제목 크기를 다른 문서와 같은 48px 로 맞춘다 */
+@media (min-width:768px){.md\:text-5xl{font-size:3rem;line-height:1.1}}
 </style>
 </head>
 <body class="p-4 md:p-10">
@@ -149,7 +152,7 @@
         <div class="inline-block bg-[#8B4513] text-[#FFD700] px-10 py-3 rounded-full text-2xl font-bold mb-6 shadow-xl border-4 border-white transform -rotate-1">
             달려라 라이브 운영! 🍪
         </div>
-        <h1 class="text-5xl md:text-7xl text-[#3E2723] mb-8 leading-tight">
+        <h1 class="text-3xl md:text-5xl text-[#3E2723] mb-8 leading-tight">
             국내 vs 글로벌 <br> <span class="text-[#FF4D6D]">투트랙 위기관리</span> 전략
         </h1>
         <div class="bg-white border-4 border-[#3E2723] inline-block px-10 py-4 rounded-3xl shadow-lg">
@@ -221,17 +224,17 @@
     <section class="cookie-card p-10 md:p-14 mb-16 bg-[#FFFBEB]">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-                <h2 class="text-4xl text-[#8B4513] mb-10 flex items-center gap-3">
+                <h2 class="text-3xl text-[#8B4513] mb-10 flex items-center gap-3">
                     <span class="bg-[#FFD700] p-2 rounded-lg border-2 border-[#8B4513]">🔍</span> 유저 성향 분석
                 </h2>
                 <div class="space-y-6">
                     <div class="bg-white p-6 rounded-3xl border-4 border-[#8B4513] shadow-[6px_6px_0_#8B4513]">
                         <h3 class="text-2xl font-bold text-[#8B4513] mb-2">🇰🇷 한국: 장기 유저 중심</h3>
-                        <p class="text-xl text-gray-700 font-bold">과거 향수, 경쟁 우위, 효율적 파밍 메타에 매우 민감합니다.</p>
+                        <p class="text-base text-gray-700 font-bold">과거 향수, 경쟁 우위, 효율적 파밍 메타에 매우 민감합니다.</p>
                     </div>
                     <div class="bg-white p-6 rounded-3xl border-4 border-[#FF4D6D] shadow-[6px_6px_0_#FF4D6D]">
                         <h3 class="text-2xl font-bold text-[#FF4D6D] mb-2">🌍 글로벌: 신규 유입 중심</h3>
-                        <p class="text-xl text-gray-700 font-bold">런게임 본연의 재미, 비주얼(스킨), <br class="hidden md:block">
+                        <p class="text-base text-gray-700 font-bold">런게임 본연의 재미, 비주얼(스킨), <br class="hidden md:block">
                     직관적 소통을 선호합니다.</p>
                     </div>
                 </div>
@@ -249,7 +252,7 @@
     <!-- Section 2: Strategy Stage (Interactive Tabs) -->
     <section class="mb-20">
         <div class="text-center mb-10">
-            <h2 class="text-4xl text-[#3E2723] mb-4">🔥 운영 스테이지: 권역별 전략</h2>
+            <h2 class="text-3xl text-[#3E2723] mb-4">🔥 운영 스테이지: 권역별 전략</h2>
             <p class="text-2xl text-[#5D4037] font-bold">각 권역의 버튼을 눌러 상세 전략을 확인할 수 있습니다.</p>
         </div>
 
@@ -266,7 +269,7 @@
     <!-- Section 3: Risk Management Jelly Path -->
     <!-- Section 2-b: 공지 템플릿 뱅크 구성안 -->
     <section class="cookie-card p-10 md:p-14 mb-16">
-        <h2 class="text-4xl text-[#8B4513] mb-4 flex items-center gap-3">
+        <h2 class="text-3xl text-[#8B4513] mb-4 flex items-center gap-3">
             <span class="bg-[#FFD700] p-2 rounded-lg border-2 border-[#8B4513]">📝</span> 공지 템플릿 뱅크 구성안
         </h2>
         <p class="text-[#6B4423] leading-relaxed mb-10 max-w-[46em]">
@@ -332,7 +335,7 @@
     </section>
 
     <section class="cookie-card p-10 md:p-14 bg-[#E8F5E9] border-[#2E7D32] shadow-[#C8E6C9]">
-        <h2 class="text-4xl text-[#1B5E20] mb-12 text-center">🛡️ 위기 대응 시스템 경로 (Notion/Jira)</h2>
+        <h2 class="text-3xl text-[#1B5E20] mb-12 text-center">🛡️ 위기 대응 시스템 경로 (Notion/Jira)</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
             <!-- Node 1 -->
@@ -703,13 +706,13 @@
             display.style.borderColor = data.accent;
             display.innerHTML = `
                 <div class="animate-in fade-in duration-500">
-                    <h3 class="text-4xl mb-12 text-center" style="color: ${data.accent}">${data.title}</h3>
+                    <h3 class="text-3xl mb-12 text-center" style="color: ${data.accent}">${data.title}</h3>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         ${data.cards.map(c => `
                             <div class="bg-[#FFF9E6] p-8 rounded-3xl border-4 border-dashed" style="border-color: ${data.accent}">
                                 <div class="text-6xl mb-6">${c.icon}</div>
                                 <h4 class="text-2xl font-black mb-4" style="color: ${data.accent}">${c.title}</h4>
-                                <p class="text-xl text-gray-800 leading-relaxed font-bold">${c.text}</p>
+                                <p class="text-base text-gray-800 leading-relaxed font-bold">${c.text}</p>
                             </div>
                         `).join('')}
                     </div>

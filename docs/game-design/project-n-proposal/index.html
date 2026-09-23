@@ -115,6 +115,9 @@
   }
 
   .text-brand-ink { color: #d52e16; }   /* 밝은 바탕에서 읽히는 브랜드 빨강 */
+
+/* 섹션 사이 간격을 다른 문서와 같은 96px 로 맞춘다 */
+.space-y-24 > :not([hidden]) ~ :not([hidden]) { margin-top: 6rem; margin-bottom: 0; }
 </style>
 </head>
 <body class="antialiased scroll-smooth font-sans selection:bg-brand-500 selection:text-white keep-all">
@@ -151,7 +154,7 @@
                 </p>
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 pb-24 space-y-28">
+    <main class="max-w-5xl mx-auto px-4 pb-24 space-y-24">
         <!-- 이 문서가 하는 말 -->
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">

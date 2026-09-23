@@ -98,6 +98,9 @@
       scroll-behavior: auto !important;
     }
   }
+
+/* 섹션 사이 간격을 다른 문서와 같은 96px 로 맞춘다 */
+.space-y-24 > :not([hidden]) ~ :not([hidden]) { margin-top: 6rem; margin-bottom: 0; }
 </style>
 </head>
 <body class="text-slate-900">
@@ -130,7 +133,7 @@
     </nav>
 
     <!-- 메인 본문 -->
-    <main class="max-w-4xl mx-auto px-6 py-16 space-y-32">
+    <main class="max-w-4xl mx-auto px-6 py-16 space-y-24">
         <!-- 이 문서가 하는 말 -->
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">

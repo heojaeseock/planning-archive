@@ -97,6 +97,9 @@
   .badge-cfred-ink { color: #cc3844; }   /* 연한 빨강 바탕 위 배지 글자 */
 
   .bg-cfred-deep { background-color: #d63a47; }   /* 흰 글자를 올리는 빨강 카드 */
+
+/* 히어로 제목 크기를 다른 문서와 같은 48px 로 맞춘다 */
+@media (min-width:768px){.md\:text-5xl{font-size:3rem;line-height:1.1}}
 </style>
 </head>
 <body class="antialiased selection:bg-cfred selection:text-white">
@@ -124,7 +127,7 @@
         <div class="mb-6 inline-block px-3 py-1 bg-red-50 text-[10px] font-bold badge-cfred-ink tracking-widest uppercase rounded border border-cfred/20">
             Archive Research Case: Precision_Gunplay_Architecture
         </div>
-        <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-8 leading-tight tracking-tight">
+        <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight tracking-tight">
             데미지가 전부가 아니다:<br>
             유저의 실력을 나누는 <span class="text-cfred underline decoration-4 underline-offset-8">조작감(Gunplay)</span> 분석
         </h1>

@@ -70,6 +70,9 @@
       scroll-behavior: auto !important;
     }
   }
+
+/* 섹션 사이 간격을 다른 문서와 같은 96px 로 맞춘다 */
+.space-y-24 > :not([hidden]) ~ :not([hidden]) { margin-top: 6rem; margin-bottom: 0; }
 </style>
 </head>
 <body class="text-gray-800 font-sans break-keep">
@@ -90,7 +93,27 @@
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto p-4 md:p-8 space-y-28 my-12">
+    <main class="max-w-5xl mx-auto p-4 md:p-8 space-y-24 my-12">
+        
+
+
+        <!-- HERO -->
+        <section class="text-center space-y-8 pt-6 pb-10">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-brand-lightOrange text-brand-orange-ink text-sm font-bold tracking-wide border border-brand-orange/30">
+                라이브 서비스 운영 최전선
+            </div>
+            <!-- 줄 간격(leading-[1.5])과 밑줄 오프셋(underline-offset) 최적화 -->
+            <h2 class="text-4xl md:text-5xl font-extrabold leading-[1.4] md:leading-[1.5] text-gray-900 break-keep">
+                위기를 <span class="text-brand-orange-ink underline decoration-[4px] underline-offset-4 md:underline-offset-8">시스템</span>으로 제어하는<br class="hidden md:block">
+                사이버보험 인수심사 분석
+            </h2>
+            <div class="flex flex-wrap justify-center gap-4 pt-6">
+                <div class="bg-white px-6 py-3 rounded-xl shadow-sm border border-gray-200 font-semibold text-gray-700">🎯 위기대응 매뉴얼 내재화</div>
+                <div class="bg-white px-6 py-3 rounded-xl shadow-sm border border-gray-200 font-semibold text-gray-700">⚡ 데이터 정제 시간 대폭 단축</div>
+                <div class="bg-white px-6 py-3 rounded-xl shadow-sm border border-gray-200 font-semibold text-gray-700">🗣️ 기술/비즈니스 통역</div>
+            </div>
+        </section>
+
         <!-- 이 문서가 하는 말 -->
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
@@ -119,24 +142,6 @@
               <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">언더라이팅은 보험을 받아 줄지와 보험료를 얼마로 할지를 정하는 심사 업무입니다.</p>
             </div>
           </div>
-        </section>
-
-
-        <!-- HERO -->
-        <section class="text-center space-y-8 pt-6 pb-10">
-            <div class="inline-block px-4 py-1.5 rounded-full bg-brand-lightOrange text-brand-orange-ink text-sm font-bold tracking-wide border border-brand-orange/30">
-                라이브 서비스 운영 최전선
-            </div>
-            <!-- 줄 간격(leading-[1.5])과 밑줄 오프셋(underline-offset) 최적화 -->
-            <h2 class="text-4xl md:text-5xl font-extrabold leading-[1.4] md:leading-[1.5] text-gray-900 break-keep">
-                위기를 <span class="text-brand-orange-ink underline decoration-[4px] underline-offset-4 md:underline-offset-8">시스템</span>으로 제어하는<br class="hidden md:block">
-                사이버보험 인수심사 분석
-            </h2>
-            <div class="flex flex-wrap justify-center gap-4 pt-6">
-                <div class="bg-white px-6 py-3 rounded-xl shadow-sm border border-gray-200 font-semibold text-gray-700">🎯 위기대응 매뉴얼 내재화</div>
-                <div class="bg-white px-6 py-3 rounded-xl shadow-sm border border-gray-200 font-semibold text-gray-700">⚡ 데이터 정제 시간 대폭 단축</div>
-                <div class="bg-white px-6 py-3 rounded-xl shadow-sm border border-gray-200 font-semibold text-gray-700">🗣️ 기술/비즈니스 통역</div>
-            </div>
         </section>
 
         <!-- 1. PROBLEM: Static Comparison Layout -->

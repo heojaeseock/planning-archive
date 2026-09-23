@@ -120,6 +120,9 @@
   }
 
   .footer-ink { color: #6c727d; }   /* 흰 바탕 각주 */
+
+/* 히어로 제목 크기를 다른 문서와 같은 48px 로 맞춘다 */
+@media (min-width:768px){.md\:text-5xl{font-size:3rem;line-height:1.1}}
 </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -141,6 +144,21 @@
     </header>
 
     <main class="flex-grow max-w-5xl mx-auto px-6 py-12 w-full">
+        <!-- 문서 제목 -->
+        <header class="text-center mb-12">
+            <div class="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 text-sm font-bold rounded-full border border-blue-200 mb-6">
+                서비스 기획 · 앱 개선 제안
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-[#191F28] leading-tight mb-6">
+                상담 흐름이 끊기지 않는<br class="hidden md:block">
+                <span class="text-[#3182F6]">보험 파트너 앱 고도화 기획</span>
+            </h1>
+            <p class="text-gray-500 leading-relaxed text-base max-w-2xl mx-auto">
+                설계사가 고객 앞에서 앱을 닫고 보험사 전산에 따로 접속하던 단절을 없앱니다. <br class="hidden md:block">
+                업무 시간의 75%를 차지하는 두 구간을 앱 안으로 들여오는 개선 우선순위를 정리했습니다.
+            </p>
+        </header>
+
         <!-- 이 문서가 하는 말 -->
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
@@ -204,10 +222,10 @@
         <section id="page1" class="content-section active space-y-10">
             <div class="bg-white p-12 rounded-[32px] shadow-sm border border-gray-100">
                 <span class="inline-block bg-gray-100 text-gray-600 text-xs font-bold px-4 py-1.5 rounded-full mb-6">문제 정의</span>
-                <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight text-[#333D4B]">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-tight text-[#333D4B]">
                     기존 보험 파트너 앱의 훌륭한 분석 기능,<br>
                     <span class="text-[#3182F6]">그러나 여전히 남은 '최종 설계 단계'의 비효율</span>
-                </h1>
+                </h2>
                 <p class="text-gray-500 leading-relaxed font-medium text-sm max-w-[46em]">
                     보험 파트너 앱을 통해 고객의 가입 내역을 조회하는 것은 매우 편해졌습니다. <br class="hidden md:block">
                     하지만 <span class="font-bold text-gray-700">최종 가입 설계와 정확한 보험료 계산</span>을 위해서는 여전히 각 보험사의 전산망에 개별 접속해야 하는 불편함이 존재합니다.

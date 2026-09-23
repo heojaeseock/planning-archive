@@ -120,6 +120,9 @@
       scroll-behavior: auto !important;
     }
   }
+
+/* 히어로 제목 크기를 다른 문서와 같은 48px 로 맞춘다 */
+@media (min-width:768px){.md\:text-5xl{font-size:3rem;line-height:1.1}}
 </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col relative break-keep">
@@ -134,6 +137,23 @@
     </nav>
 
     <main class="flex-grow pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-24 w-full">
+        
+
+
+        <!-- Hero Section -->
+        <header class="text-center pt-10 pb-8">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 text-indigo-700 font-bold text-sm mb-6 border border-indigo-100 shadow-sm">
+                🚀 플랫폼 파트너십 기획 - 허재석
+            </div>
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+                게임 라이브 관제 노하우를 <br>
+                <span class="gradient-text">B2B 음악 유통에 적용하다</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-500 font-medium max-w-2xl mx-auto">
+                    데이터 표준화, 실시간 관제, 구조화된 협업 역량으로 음악 플랫폼의 공급 및 정산 무결성 확보 방안을 정리했습니다.
+                </p>
+        </header>
+
         <!-- 이 문서가 하는 말 -->
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
@@ -180,21 +200,6 @@
             </div>
           </div>
         </section>
-
-
-        <!-- Hero Section -->
-        <header class="text-center pt-10 pb-8">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 text-indigo-700 font-bold text-sm mb-6 border border-indigo-100 shadow-sm">
-                🚀 플랫폼 파트너십 기획 - 허재석
-            </div>
-            <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight mb-6">
-                게임 라이브 관제 노하우를 <br>
-                <span class="gradient-text">B2B 음악 유통에 적용하다</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-500 font-medium max-w-2xl mx-auto">
-                    데이터 표준화, 실시간 관제, 구조화된 협업 역량으로 음악 플랫폼의 공급 및 정산 무결성 확보 방안을 정리했습니다.
-                </p>
-        </header>
 
         <!-- 1. Problem Definition -->
         <!-- 0. 문서 개요 -->
