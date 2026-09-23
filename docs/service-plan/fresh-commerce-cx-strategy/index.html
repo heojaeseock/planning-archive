@@ -34,8 +34,9 @@
             word-break: keep-all;
         }
         .hero-title { line-height: 1.3; }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; animation: fadeIn 0.4s ease-out; }
+        /* 탭으로 나뉘어 있던 구역을 세로로 이어 보여 준다 */
+        .tab-content { display: block; scroll-margin-top: 96px; }
+        .tab-content + .tab-content { margin-top: 5rem; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .nav-active { background-color: #5F0080; color: white; box-shadow: 0 10px 15px -3px rgba(95, 0, 128, 0.3); }
         .strategy-text { line-height: 1.6; }
@@ -144,25 +145,25 @@
         
         <!-- 네비게이션 탭 -->
         <div class="bg-white/90 backdrop-blur-md p-1.5 rounded-2xl shadow-xl flex flex-wrap gap-1 justify-center mb-12 border border-white">
-            <button onclick="switchTab('problem')" id="tab-problem" class="nav-btn flex items-center gap-2 px-6 py-4 rounded-xl text-xs font-bold tracking-tight transition-all duration-300 nav-active">
+            <a href="#content-problem" class="nav-btn flex items-center gap-2 px-6 py-4 rounded-xl text-xs font-bold tracking-tight transition-all duration-300 nav-active">
                 <i data-lucide="search" class="w-4 h-4"></i> 리서치 및 문제 정의
-            </button>
-            <button onclick="switchTab('strategy1')" id="tab-strategy1" class="nav-btn flex items-center gap-2 px-6 py-4 rounded-xl text-xs font-bold tracking-tight transition-all duration-300 text-slate-500 hover:bg-slate-50 hover:text-slate-900">
+            </a>
+            <a href="#content-strategy1" class="nav-btn flex items-center gap-2 px-6 py-4 rounded-xl text-xs font-bold tracking-tight transition-all duration-300 text-slate-500 hover:bg-slate-50 hover:text-slate-900">
                 <i data-lucide="bar-chart-3" class="w-4 h-4"></i> 데이터 자동화 전략
-            </button>
-            <button onclick="switchTab('strategy2')" id="tab-strategy2" class="nav-btn flex items-center gap-2 px-6 py-4 rounded-xl text-xs font-bold tracking-tight transition-all duration-300 text-slate-500 hover:bg-slate-50 hover:text-slate-900">
+            </a>
+            <a href="#content-strategy2" class="nav-btn flex items-center gap-2 px-6 py-4 rounded-xl text-xs font-bold tracking-tight transition-all duration-300 text-slate-500 hover:bg-slate-50 hover:text-slate-900">
                 <i data-lucide="zap" class="w-4 h-4"></i> 위기 대응 플레이북
-            </button>
-            <button onclick="switchTab('strategy3')" id="tab-strategy3" class="nav-btn flex items-center gap-2 px-6 py-4 rounded-xl text-xs font-bold tracking-tight transition-all duration-300 text-slate-500 hover:bg-slate-50 hover:text-slate-900">
+            </a>
+            <a href="#content-strategy3" class="nav-btn flex items-center gap-2 px-6 py-4 rounded-xl text-xs font-bold tracking-tight transition-all duration-300 text-slate-500 hover:bg-slate-50 hover:text-slate-900">
                 <i data-lucide="users" class="w-4 h-4"></i> 부서 간 협업 체계
-            </button>
+            </a>
         </div>
 
         <!-- 탭 콘텐츠 박스 -->
         <div class="bg-white rounded-[40px] p-8 md:p-14 shadow-sm border border-slate-100 min-h-[600px]">
             
             <!-- 00. 리서치 및 문제 정의 -->
-            <div id="content-problem" class="tab-content active">
+            <div id="content-problem" class="tab-content">
                 <div class="flex items-center gap-3 mb-10">
                     <div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center text-[#5F0080]">
                         <i data-lucide="search" class="w-5 h-5"></i>
@@ -715,18 +716,28 @@
         if (window.lucide) lucide.createIcons();
 
         // 탭 전환 함수
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            document.querySelectorAll('.nav-btn').forEach(b => {
-                b.classList.remove('nav-active');
-                b.classList.add('text-slate-400', 'hover:bg-slate-50', 'hover:text-slate-900');
-            });
-
-            document.getElementById('content-' + tabId).classList.add('active');
-            const activeBtn = document.getElementById('tab-' + tabId);
-            activeBtn.classList.add('nav-active');
-            activeBtn.classList.remove('text-slate-400', 'hover:bg-slate-50', 'hover:text-slate-900');
-        }
+        // 위쪽 목차는 지금 읽고 있는 구역을 표시한다
+        (function () {
+            var links = document.querySelectorAll('.nav-btn');
+            var dim = ['text-slate-400', 'hover:bg-slate-50', 'hover:text-slate-900'];
+            var ids = [];
+            links.forEach(function (l) { ids.push(l.getAttribute('href').slice(1)); });
+            function updateActiveTab() {
+                var offset = window.innerHeight * 0.3;
+                var current = ids[0];
+                ids.forEach(function (id) {
+                    var el = document.getElementById(id);
+                    if (el && window.scrollY >= el.offsetTop - offset) current = id;
+                });
+                links.forEach(function (l) {
+                    var on = l.getAttribute('href') === '#' + current;
+                    l.classList.toggle('nav-active', on);
+                    dim.forEach(function (d) { l.classList.toggle(d, !on); });
+                });
+            }
+            window.addEventListener('scroll', updateActiveTab);
+            window.addEventListener('load', updateActiveTab);
+        })();
 
         // 차트 설정 및 초기화
         const ctx1 = document.getElementById('crisisChart').getContext('2d');

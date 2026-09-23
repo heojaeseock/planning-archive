@@ -81,6 +81,10 @@ body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui
 
 /* 히어로 제목 크기를 다른 문서와 같은 48px 로 맞춘다 */
 @media (min-width:768px){.md\:text-5xl{font-size:3rem;line-height:1.15}}
+
+/* 탭으로 나뉘어 있던 구역을 세로로 이어 보여 준다 */
+.doc-part { scroll-margin-top: 96px; }
+.doc-part + .doc-part { margin-top: 5rem; }
 </style>
 </head>
 <body class="bg-[#F8F9FA] text-slate-900 selection:bg-slate-200">
@@ -160,14 +164,14 @@ body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui
 
     <!-- Main Navigation Tabs -->
     <nav class="flex space-x-2 md:space-x-8 border-b border-slate-200 mb-10 overflow-x-auto no-scrollbar">
-        <button onclick="switchTab('viewers')" id="tab-btn-viewers" class="tab-active whitespace-nowrap py-4 px-2 text-sm md:text-base focus:outline-none transition-all">카테고리 및 시청 패턴</button>
-        <button onclick="switchTab('revenue')" id="tab-btn-revenue" class="tab-inactive whitespace-nowrap py-4 px-2 text-sm md:text-base focus:outline-none transition-all">수익 모델 분석</button>
-        <button onclick="switchTab('nexon')" id="tab-btn-nexon" class="tab-inactive whitespace-nowrap py-4 px-2 text-sm md:text-base focus:outline-none transition-all">대형 IP 크리에이터 동향</button>
-        <button onclick="switchTab('summary')" id="tab-btn-summary" class="tab-inactive whitespace-nowrap py-4 px-2 text-sm md:text-base focus:outline-none transition-all">종합 요약 및 예측</button>
+        <a href="#section-viewers" class="tab-btn tab-active whitespace-nowrap py-4 px-2 text-sm md:text-base focus:outline-none transition-all">카테고리 및 시청 패턴</a>
+        <a href="#section-revenue" class="tab-btn tab-inactive whitespace-nowrap py-4 px-2 text-sm md:text-base focus:outline-none transition-all">수익 모델 분석</a>
+        <a href="#section-nexon" class="tab-btn tab-inactive whitespace-nowrap py-4 px-2 text-sm md:text-base focus:outline-none transition-all">대형 IP 크리에이터 동향</a>
+        <a href="#section-summary" class="tab-btn tab-inactive whitespace-nowrap py-4 px-2 text-sm md:text-base focus:outline-none transition-all">종합 요약 및 예측</a>
     </nav>
 
     <!-- Tab 1: Categories & Viewers -->
-    <div id="section-viewers" class="fade-in block">
+    <div id="section-viewers" class="fade-in doc-part">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
             <div class="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
                 <h3 class="text-lg font-bold mb-6 flex items-center"><span class="mr-2">📊</span> 플랫폼별 주요 카테고리 시청 점유율 (동시 시청자 수 기준 추정)</h3>
@@ -195,7 +199,7 @@ body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui
     </div>
 
     <!-- Tab 2: Revenue Models -->
-    <div id="section-revenue" class="fade-in hidden">
+    <div id="section-revenue" class="fade-in doc-part">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
                 <h3 class="text-lg font-bold mb-6 text-center text-indigo-900">SOOP 수익 배분 모델</h3>
@@ -220,7 +224,7 @@ body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui
     </div>
 
     <!-- Tab 3: Nexon Titles -->
-    <div id="section-nexon" class="fade-in hidden">
+    <div id="section-nexon" class="fade-in doc-part">
         <div class="mb-8">
             <h2 class="text-2xl font-bold mb-2 text-slate-900">대형 게임 IP별 크리에이터 분포</h2>
             <p class="text-slate-500">각 게임 타이틀의 특성에 따라 크리에이터들이 선호하는 플랫폼이 다르게 나타납니다.</p>
@@ -263,7 +267,7 @@ body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui
     </div>
 
     <!-- Tab 4: Summary & Forecast -->
-    <div id="section-summary" class="fade-in hidden">
+    <div id="section-summary" class="fade-in doc-part">
         <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden mb-10">
             <div class="overflow-x-auto">
               <table class="w-full text-left border-collapse">
@@ -624,17 +628,27 @@ function updateNexonDetail(gameId) {
     charts.nexon.update();
 }
 
-function switchTab(tabId) {
-    document.querySelectorAll('[id^="section-"]').forEach(el => el.classList.add('hidden'));
-    document.getElementById(`section-${tabId}`).classList.remove('hidden');
-
-    document.querySelectorAll('[id^="tab-btn-"]').forEach(el => {
-        el.classList.remove('tab-active');
-        el.classList.add('tab-inactive');
-    });
-    document.getElementById(`tab-btn-${tabId}`).classList.add('tab-active');
-    document.getElementById(`tab-btn-${tabId}`).classList.remove('tab-inactive');
-}
+// 위쪽 목차는 지금 읽고 있는 구역을 표시한다
+(function () {
+    var links = document.querySelectorAll('.tab-btn');
+    var ids = [];
+    links.forEach(function (l) { ids.push(l.getAttribute('href').slice(1)); });
+    function updateActiveTab() {
+        var offset = window.innerHeight * 0.3;
+        var current = ids[0];
+        ids.forEach(function (id) {
+            var el = document.getElementById(id);
+            if (el && window.scrollY >= el.offsetTop - offset) current = id;
+        });
+        links.forEach(function (l) {
+            var on = l.getAttribute('href') === '#' + current;
+            l.classList.toggle('tab-active', on);
+            l.classList.toggle('tab-inactive', !on);
+        });
+    }
+    window.addEventListener('scroll', updateActiveTab);
+    window.addEventListener('load', updateActiveTab);
+})();
 
 window.onload = () => {
     initCharts();

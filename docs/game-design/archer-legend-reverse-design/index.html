@@ -52,8 +52,9 @@
             100% { transform: translateY(0); opacity: 1; }
         }
 
-        .tab-content { display: none; opacity: 0; transition: opacity 0.3s ease; }
-        .tab-content.active { display: block; opacity: 1; animation: fadeIn 0.4s ease; }
+        /* 탭으로 나뉘어 있던 구역을 세로로 이어 보여 준다 */
+        .tab-content { display: block; scroll-margin-top: 96px; }
+        .tab-content + .tab-content { border-top: 1px solid rgba(100,116,139,.25); }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
         .tab-btn {
@@ -205,13 +206,13 @@
 
             <!-- 네비게이션 탭 -->
             <div class="flex border-b border-slate-200 bg-slate-50 sticky top-0 z-20">
-                <button onclick="openTab(event, 'analysis')" class="tab-btn active flex-1 py-4 text-sm font-bold text-slate-500 border-transparent" id="defaultOpen">📊 1. 역기획 및&nbsp;한계점 분석</button>
-                <button onclick="openTab(event, 'proposal')" class="tab-btn flex-1 py-4 text-sm font-bold text-slate-500 border-transparent">💡 2. 신규 시스템 제안</button>
-                <button onclick="openTab(event, 'review')" class="tab-btn flex-1 py-4 text-sm font-bold text-slate-500 border-transparent">⚖️ 3. 제안 검토 및 우선순위</button>
+                <a href="#analysis" class="tab-btn active flex-1 py-4 text-sm font-bold text-slate-500 border-transparent">📊 1. 역기획 및&nbsp;한계점 분석</a>
+                <a href="#proposal" class="tab-btn flex-1 py-4 text-sm font-bold text-slate-500 border-transparent">💡 2. 신규 시스템 제안</a>
+                <a href="#review" class="tab-btn flex-1 py-4 text-sm font-bold text-slate-500 border-transparent">⚖️ 3. 제안 검토 및 우선순위</a>
             </div>
 
             <!-- 탭 1: 역기획 분석 -->
-            <div id="analysis" class="tab-content active p-6 md:p-10 space-y-12">
+            <div id="analysis" class="tab-content p-6 md:p-10 space-y-12">
                 
                 <!-- 구조도 -->
                 <div class="space-y-6">
@@ -945,22 +946,25 @@
     </div>
 
     <script>
-        function openTab(evt, tabName) {
-            evt.preventDefault();
-            
-            var tabcontent = document.getElementsByClassName("tab-content");
-            for (var i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].classList.remove("active");
+        // 위쪽 목차는 지금 읽고 있는 구역을 표시한다
+        (function () {
+            var links = document.querySelectorAll('.tab-btn');
+            var ids = [];
+            links.forEach(function (l) { ids.push(l.getAttribute('href').slice(1)); });
+            function updateActiveTab() {
+                var offset = window.innerHeight * 0.3;
+                var current = ids[0];
+                ids.forEach(function (id) {
+                    var el = document.getElementById(id);
+                    if (el && window.scrollY >= el.offsetTop - offset) current = id;
+                });
+                links.forEach(function (l) {
+                    l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+                });
             }
-            
-            var tablinks = document.getElementsByClassName("tab-btn");
-            for (var i = 0; i < tablinks.length; i++) {
-                tablinks[i].classList.remove("active");
-            }
-            
-            document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
-        }
+            window.addEventListener('scroll', updateActiveTab);
+            window.addEventListener('load', updateActiveTab);
+        })();
     </script>
 <div aria-hidden="true" style="height:104px"></div>
 <a href="../../../index.html" aria-label="문서 목록으로 돌아가기" style="position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:60;display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:999px;background:#1f4fd8;color:#fff;font-size:16.5px;font-weight:800;letter-spacing:-.01em;text-decoration:none;font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;box-shadow:0 10px 30px rgba(31,79,216,.5),0 0 0 4px rgba(255,255,255,.95);white-space:nowrap"><span style="font-size:17px;line-height:1">←</span>문서 목록</a>

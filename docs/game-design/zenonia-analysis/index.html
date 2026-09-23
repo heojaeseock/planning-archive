@@ -63,8 +63,9 @@
             background-color: #f8fafc;
         }
 
-        .tab-content { display: none; opacity: 0; transition: opacity 0.3s ease; }
-        .tab-content.active { display: block; opacity: 1; animation: fadeIn 0.4s ease; }
+        /* 탭으로 나뉘어 있던 구역을 세로로 이어 보여 준다 */
+        .tab-content { display: block; scroll-margin-top: 96px; }
+        .tab-content + .tab-content { border-top: 1px solid rgba(100,116,139,.25); }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* 가상 UI 패널 스타일 */
@@ -191,13 +192,13 @@
 
             <!-- 네비게이션 탭 -->
             <div class="flex border-b border-slate-200 bg-slate-50 sticky top-0 z-20 backdrop-blur-md">
-                <button onclick="openTab(event, 'analysis')" class="tab-btn active flex-1 py-5 text-sm font-bold text-slate-500 border-transparent" id="defaultOpen">📊 1. 핵심 재미 요소 분석</button>
-                <button onclick="openTab(event, 'improvement')" class="tab-btn flex-1 py-5 text-sm font-bold text-slate-500 border-transparent">💡 2. 편의성 개선안 5건</button>
-                <button onclick="openTab(event, 'priority')" class="tab-btn flex-1 py-5 text-sm font-bold text-slate-500 border-transparent">🎯 3. 우선순위 및 검증</button>
+                <a href="#analysis" class="tab-btn active flex-1 py-5 text-sm font-bold text-slate-500 border-transparent">📊 1. 핵심 재미 요소 분석</a>
+                <a href="#improvement" class="tab-btn flex-1 py-5 text-sm font-bold text-slate-500 border-transparent">💡 2. 편의성 개선안 5건</a>
+                <a href="#priority" class="tab-btn flex-1 py-5 text-sm font-bold text-slate-500 border-transparent">🎯 3. 우선순위 및 검증</a>
             </div>
 
             <!-- 탭 1: 핵심 재미 요소 분석 -->
-            <div id="analysis" class="tab-content active p-6 md:p-10 space-y-12">
+            <div id="analysis" class="tab-content p-6 md:p-10 space-y-12">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <!-- 재미 요소 텍스트 영역 -->
                     <div class="space-y-8">
@@ -773,15 +774,25 @@
     </div>
 
     <script>
-        function openTab(evt, tabName) {
-            evt.preventDefault();
-            var tabcontent = document.getElementsByClassName("tab-content");
-            for (var i = 0; i < tabcontent.length; i++) { tabcontent[i].classList.remove("active"); }
-            var tablinks = document.getElementsByClassName("tab-btn");
-            for (var i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
-            document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
-        }
+        // 위쪽 목차는 지금 읽고 있는 구역을 표시한다
+        (function () {
+            var links = document.querySelectorAll('.tab-btn');
+            var ids = [];
+            links.forEach(function (l) { ids.push(l.getAttribute('href').slice(1)); });
+            function updateActiveTab() {
+                var offset = window.innerHeight * 0.3;
+                var current = ids[0];
+                ids.forEach(function (id) {
+                    var el = document.getElementById(id);
+                    if (el && window.scrollY >= el.offsetTop - offset) current = id;
+                });
+                links.forEach(function (l) {
+                    l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+                });
+            }
+            window.addEventListener('scroll', updateActiveTab);
+            window.addEventListener('load', updateActiveTab);
+        })();
 
         function simulatePopup() {
             const modal = document.getElementById('simModal');

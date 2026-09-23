@@ -62,8 +62,9 @@
             background-color: #f8fafc;
         }
 
-        .tab-content { display: none; opacity: 0; transition: opacity 0.3s ease; }
-        .tab-content.active { display: block; opacity: 1; animation: fadeIn 0.4s ease; }
+        /* 탭으로 나뉘어 있던 구역을 세로로 이어 보여 준다 */
+        .tab-content { display: block; scroll-margin-top: 96px; }
+        .tab-content + .tab-content { border-top: 1px solid rgba(100,116,139,.25); }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* 가상 UI 전용 스타일 */
@@ -196,14 +197,14 @@
 
             <!-- 네비게이션 탭 -->
             <div class="flex border-b border-slate-200 bg-slate-50/80 sticky top-0 z-20 backdrop-blur-md shadow-sm">
-                <button onclick="openTab(event, 'bm')" class="tab-btn active flex-1 py-4 text-sm font-black text-slate-500" id="defaultOpen">💰 1. 재화 및&nbsp;과금 분석</button>
-                <button onclick="openTab(event, 'growth')" class="tab-btn flex-1 py-4 text-sm font-black text-slate-500">📈 2. 육성 및&nbsp;밸런스 체계</button>
-                <button onclick="openTab(event, 'mode')" class="tab-btn flex-1 py-4 text-sm font-black text-slate-500">🎮 3. 모드 및&nbsp;커뮤니티</button>
-                <button onclick="openTab(event, 'insight')" class="tab-btn flex-1 py-4 text-sm font-black text-slate-500">🧭 4. 시사점과 이식 조건</button>
+                <a href="#bm" class="tab-btn active flex-1 py-4 text-sm font-black text-slate-500">💰 1. 재화 및&nbsp;과금 분석</a>
+                <a href="#growth" class="tab-btn flex-1 py-4 text-sm font-black text-slate-500">📈 2. 육성 및&nbsp;밸런스 체계</a>
+                <a href="#mode" class="tab-btn flex-1 py-4 text-sm font-black text-slate-500">🎮 3. 모드 및&nbsp;커뮤니티</a>
+                <a href="#insight" class="tab-btn flex-1 py-4 text-sm font-black text-slate-500">🧭 4. 시사점과 이식 조건</a>
             </div>
 
             <!-- 탭 1: 핵심 재화 및 과금 모델 -->
-            <div id="bm" class="tab-content active p-6 md:p-10 space-y-12">
+            <div id="bm" class="tab-content p-6 md:p-10 space-y-12">
                 <div class="text-center max-w-2xl mx-auto mb-8">
                     <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-3 tracking-tight">핵심 재화 및&nbsp;과금 모델 분석</h2>
                     <p class="text-slate-500 text-sm font-medium">단순 뽑기를 벗어나 플레이어의 확정적 보상과 치장품 중심의 경제를 구축한 수익화 구조입니다.</p>
@@ -804,21 +805,25 @@
     </div>
 
     <script>
-        function openTab(evt, tabName) {
-            evt.preventDefault();
-            var tabcontent = document.getElementsByClassName("tab-content");
-            for (var i = 0; i < tabcontent.length; i++) { tabcontent[i].classList.remove("active"); }
-            var tablinks = document.getElementsByClassName("tab-btn");
-            for (var i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
-            document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
-            // 탭 줄은 화면에 붙어 있으므로 맨 위로 올릴 이유가 없다.
-            // 새 내용의 첫머리가 탭 줄 바로 아래에 오도록만 맞춘다.
-            var bar = evt.currentTarget.parentElement;
-            var panel = document.getElementById(tabName);
-            var y = panel.getBoundingClientRect().top + window.pageYOffset - bar.offsetHeight;
-            if (window.pageYOffset > y) { window.scrollTo({ top: y, behavior: 'smooth' }); }
-        }
+        // 위쪽 목차는 지금 읽고 있는 구역을 표시한다
+        (function () {
+            var links = document.querySelectorAll('.tab-btn');
+            var ids = [];
+            links.forEach(function (l) { ids.push(l.getAttribute('href').slice(1)); });
+            function updateActiveTab() {
+                var offset = window.innerHeight * 0.3;
+                var current = ids[0];
+                ids.forEach(function (id) {
+                    var el = document.getElementById(id);
+                    if (el && window.scrollY >= el.offsetTop - offset) current = id;
+                });
+                links.forEach(function (l) {
+                    l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+                });
+            }
+            window.addEventListener('scroll', updateActiveTab);
+            window.addEventListener('load', updateActiveTab);
+        })();
     </script>
 <div aria-hidden="true" style="height:104px"></div>
 <a href="../../../index.html" aria-label="문서 목록으로 돌아가기" style="position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:60;display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:999px;background:#1f4fd8;color:#fff;font-size:16.5px;font-weight:800;letter-spacing:-.01em;text-decoration:none;font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;box-shadow:0 10px 30px rgba(31,79,216,.5),0 0 0 4px rgba(255,255,255,.95);white-space:nowrap"><span style="font-size:17px;line-height:1">←</span>문서 목록</a>

@@ -69,8 +69,9 @@
             background-color: #fef3c7;
         }
 
-        .tab-content { display: none; opacity: 0; transition: opacity 0.3s ease; }
-        .tab-content.active { display: block; opacity: 1; animation: fadeIn 0.4s ease; }
+        /* 탭으로 나뉘어 있던 구역을 세로로 이어 보여 준다 */
+        .tab-content { display: block; scroll-margin-top: 96px; }
+        .tab-content + .tab-content { border-top: 1px solid rgba(100,116,139,.25); }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* 가상 모바일 기기 스타일 */
@@ -201,13 +202,13 @@
 
             <!-- 네비게이션 탭 -->
             <div class="flex border-b border-amber-100 bg-amber-50/30 sticky top-0 z-20 backdrop-blur-md">
-                <button onclick="openTab(event, 'overview')" class="tab-btn active flex-1 py-5 text-sm font-bold text-amber-800 border-transparent" id="defaultOpen">📋 1. 개요 및 설정</button>
-                <button onclick="openTab(event, 'assets')" class="tab-btn flex-1 py-5 text-sm font-bold text-amber-800 border-transparent">🎁 2. 오브젝트 및 보상</button>
-                <button onclick="openTab(event, 'flow')" class="tab-btn flex-1 py-5 text-sm font-bold text-amber-800 border-transparent">🔄 3. 시스템 플로우 & UI</button>
+                <a href="#overview" class="tab-btn active flex-1 py-5 text-sm font-bold text-amber-800 border-transparent">📋 1. 개요 및 설정</a>
+                <a href="#assets" class="tab-btn flex-1 py-5 text-sm font-bold text-amber-800 border-transparent">🎁 2. 오브젝트 및 보상</a>
+                <a href="#flow" class="tab-btn flex-1 py-5 text-sm font-bold text-amber-800 border-transparent">🔄 3. 시스템 플로우 & UI</a>
             </div>
 
             <!-- 탭 1: 이벤트 개요 -->
-            <div id="overview" class="tab-content active p-6 md:p-10 space-y-10">
+            <div id="overview" class="tab-content p-6 md:p-10 space-y-10">
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- 기본 정보 -->
@@ -673,19 +674,25 @@
     </div>
 
     <script>
-        function openTab(evt, tabName) {
-            evt.preventDefault();
-            var tabcontent = document.getElementsByClassName("tab-content");
-            for (var i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].classList.remove("active");
+        // 위쪽 목차는 지금 읽고 있는 구역을 표시한다
+        (function () {
+            var links = document.querySelectorAll('.tab-btn');
+            var ids = [];
+            links.forEach(function (l) { ids.push(l.getAttribute('href').slice(1)); });
+            function updateActiveTab() {
+                var offset = window.innerHeight * 0.3;
+                var current = ids[0];
+                ids.forEach(function (id) {
+                    var el = document.getElementById(id);
+                    if (el && window.scrollY >= el.offsetTop - offset) current = id;
+                });
+                links.forEach(function (l) {
+                    l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+                });
             }
-            var tablinks = document.getElementsByClassName("tab-btn");
-            for (var i = 0; i < tablinks.length; i++) {
-                tablinks[i].classList.remove("active");
-            }
-            document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
-        }
+            window.addEventListener('scroll', updateActiveTab);
+            window.addEventListener('load', updateActiveTab);
+        })();
 
         function updateUI(status) {
             const counter = document.getElementById('mockupCounter');
