@@ -90,7 +90,9 @@
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   .label-dim { color: rgba(255,255,255,.7); }   /* 어두운 바탕의 흐린 라벨 */
 
@@ -425,7 +427,7 @@
 
             <div id="economy" class="scroll-mt-20">
                 <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-3 tracking-tight italic">06. 조작감이 상품일 때</h2>
-                <p class="text-slate-700 text-base leading-relaxed max-w-[42em] mb-6">전제는 <strong>반동 제어가 실력</strong>이라는 것이었습니다. 그렇다면 저반동 무기를 파는 일은 실력 격차를 돈으로 메워주는 것이 됩니다.</p>
+                <p class="text-slate-700 text-base leading-relaxed max-w-[42em] mb-6 bal-m">전제는 <strong>반동 제어가 실력</strong>이라는 것이었습니다. 그렇다면 저반동 무기를 파는 일은 실력 격차를 돈으로 메워주는 것이 됩니다.</p>
 
                 <div class="grid md:grid-cols-2 gap-4 mb-6">
                     <div class="bg-white border-2 border-slate-200 rounded-xl p-5">

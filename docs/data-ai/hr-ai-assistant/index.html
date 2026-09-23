@@ -49,7 +49,9 @@
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -172,7 +174,7 @@
                         </li>
                         <li class="flex items-start">
                             <span class="mr-2 mt-1 text-slate-500">▪️</span> 
-                            <div><strong>사내 보안 가이드를 준수하는 안전한 AI 활용:</strong><br>민감한 인사 데이터&#8288;(이름, 연봉 등)&#8288;를 다룰 때, 기업의 엄격한 보안 지침을 준수하면서도 최신 AI의 작업 속도와 편의성을 그대로 활용할 수 있는 환경 구축이 필요합니다.</div>
+                            <div class="bal-m"><strong>사내 보안 가이드를 준수하는 안전한 AI 활용:</strong><br>민감한 인사 데이터&#8288;(이름, 연봉 등)&#8288;를 다룰 때, 기업의 엄격한 보안 지침을 준수하면서도 최신 AI의 작업 속도와 편의성을 그대로 활용할 수 있는 환경 구축이 필요합니다.</div>
                         </li>
                     </ul>
                 </div>
@@ -262,7 +264,7 @@
                 <span class="bg-teal-100 text-teal-800 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm flex-shrink-0">3</span>
                 기능 2: 외부 유출 없는 '로컬 기반' HR 문서 자동 생성기
             </h2>
-            <p class="text-slate-600 mb-8 max-w-[46em] leading-[1.8]">
+            <p class="text-slate-600 mb-8 max-w-[46em] leading-[1.8] bal-m">
                     AI 문서 자동 생성기를 기획하며 다뤘던 문제를 이어받은 보안 기능입니다. <br class="hidden md:block">
                     연봉 계약서처럼 민감한 문서를 작성할 때, <strong>외부 AI 서버로는 개인정보&#8288;(이름, <br class="hidden md:block">
                     연봉 등)&#8288;가 전송되지 않으며,</strong> 담당자의 브라우저 내부에서만 데이터가 안전하게 결합되는 과정을 체험해 보세요.
@@ -388,7 +390,7 @@
                     <p class="text-[11px] font-black tracking-wide text-emerald-700 mb-3">이&nbsp;구조가 막는 것</p>
                     <ul class="space-y-2 text-sm text-slate-700 leading-relaxed">
                         <li>&bull; 이름 &middot; 연봉 <strong>값 자체가 외부 API로 전송</strong>되는 것</li>
-                        <li>&bull; 외부 서비스 로그나 학습 데이터에 인사 정보가 남는 것</li>
+                        <li class="bal-m">&bull; 외부 서비스 로그나 학습 데이터에 인사 정보가 남는 것</li>
                         <li>&bull; 프롬프트 이력에 개인 식별 정보가 축적되는 것</li>
                     </ul>
                 </div>
@@ -498,10 +500,10 @@
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                         <li class="bal">&bull; <strong class="text-slate-800">문의 건수 변화:</strong> 메신저로 인입되는 반복 문의 수 &mdash; 도입 전 4주 평균과 비교</li>
                         <li class="bal">&bull; <strong class="text-slate-800">순 절감 시간:</strong> 응대 &middot; 문서 작성 절감분에서 <strong>DB 갱신과 품질 관리 시간을 차감</strong>한&nbsp;값</li>
-                        <li>&bull; <strong class="text-slate-800">AI 답변 정확도:</strong> 주간 표본을 담당자가 검수해 오답률 산출</li>
+                        <li class="bal-m">&bull; <strong class="text-slate-800">AI 답변 정확도:</strong> 주간 표본을 담당자가 검수해 오답률 산출</li>
                         <li class="leading-[1.8]">&bull; 에스컬레이션 비율: 너무 높으면 DB 범위가 좁고, 너무 낮으면 무리하게 추측하고 있다는 뜻</li>
-                        <li>&bull; <strong class="text-slate-800">DB 신선도:</strong> 최종 갱신일이 기준 기간을 넘긴 항목 수</li>
-                        <li>&bull; <strong class="text-slate-800">문서 생성 소요:</strong> 계약서 1건 작성 시간과 검수 반송률</li>
+                        <li class="bal-m">&bull; <strong class="text-slate-800">DB 신선도:</strong> 최종 갱신일이 기준 기간을 넘긴 항목 수</li>
+                        <li class="bal-m">&bull; <strong class="text-slate-800">문서 생성 소요:</strong> 계약서 1건 작성 시간과 검수 반송률</li>
                     </ul>
                 </div>
                 

@@ -112,7 +112,9 @@
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
 
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
@@ -358,7 +360,7 @@
                     <div class="qa-step content-card p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5 transition-all opacity-50 grayscale" id="qa-item-5">
                         <div>
                             <h3 class="font-bold text-slate-900 text-lg mb-1"><span class="text-brand-500 mr-2">5단계.</span>라이브 환경 시뮬레이션</h3>
-                            <p class="text-sm text-brand-600 font-medium leading-[1.8]">
+                            <p class="text-sm text-brand-600 font-medium leading-[1.8] bal-m">
                     최종 관문: 실제 유저와 동일한 일반 계정 권한으로 테스트 서버에 접속하여, <br class="hidden md:block">
                     업데이트 직후 유저의 진입 동선을 그대로 재현.
                 </p>
@@ -663,7 +665,7 @@
                     </div>
                     <div class="bg-white rounded-2xl border-l-4 border-l-rose-500 border border-slate-200 p-7 shadow-sm">
                         <p class="font-bold text-slate-900 mb-3">실패하면 어떻게 되는지</p>
-                        <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">
+                        <p class="text-sm text-slate-600 leading-relaxed max-w-[46em] bal-m">
                     미리 정해두지 않으면 일정에 쫓길 때마다 그&nbsp;자리에서 협의하게 됩니다. <strong>결제와 재화 지급량은 배포 보류, 오탈자와 UI 잘림은 배포 후 수정</strong>으로 나눠 둡니다.
                 </p>
                     </div>

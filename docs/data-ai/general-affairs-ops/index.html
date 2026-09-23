@@ -106,6 +106,8 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
             /* <br> 로 나뉜 문장마다 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
+        /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -664,7 +666,7 @@
                         <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
                             <li class="bal">&bull; <strong class="text-gray-800">순 절감 시간:</strong> 자산 대장 절감분에서 <strong>대장 유지&#8288;·챗봇 지식 갱신 시간을 차감</strong>한&nbsp;값</li>
                             <li class="bal">&bull; <strong class="text-gray-800">라이선스 비용 절감:</strong> 미사용 라이선스 수 &times; 단가 &times; 방치 기간 &mdash; 만료 알림 도입 전후 비교</li>
-                            <li>&bull; <strong class="text-gray-800">자산 대장 정확도:</strong> 실물 재고 조사와 대장의 불일치 건수</li>
+                            <li class="bal-m">&bull; <strong class="text-gray-800">자산 대장 정확도:</strong> 실물 재고 조사와 대장의 불일치 건수</li>
                             <li>&bull; <strong class="text-gray-800">챗봇 해결률과 지연:</strong> 1차 해결 비율, <br class="hidden md:block">
                     그리고 <strong>에스컬레이션 건의 총&nbsp;소요 시간</strong></li>
                             <li>&bull; <strong class="text-gray-800">오탐률:</strong> 위기 대응 발동 중 실제 장애가 아닌 비율</li>

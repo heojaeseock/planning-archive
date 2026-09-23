@@ -68,6 +68,8 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
             /* <br> 로 나뉜 문장마다 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
+        /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -338,7 +340,7 @@
                 <div class="p-8 md:p-10">
                     <!-- 상황 1 -->
                     <div id="tab1" class="tab-content active">
-                        <h5 class="text-xl font-bold text-slate-800 mb-6">예상치 못한 인파로 입장이 극심하게 지연될 때</h5>
+                        <h5 class="text-xl font-bold text-slate-800 mb-6 bal-m">예상치 못한 인파로 입장이 극심하게 지연될 때</h5>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div class="bg-slate-50 p-6 rounded-2xl">
                                 <span class="inline-flex items-center text-xs font-bold text-white bg-blue-500 px-3 py-1 rounded-full mb-3">현장 조치</span>

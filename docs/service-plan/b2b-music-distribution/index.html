@@ -109,7 +109,9 @@
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
   @media (prefers-reduced-motion: reduce) {
@@ -306,7 +308,7 @@
                     <div class="relative z-10 pl-[85px] pb-10 min-h-[56px] flex flex-col justify-center">
                         <div class="absolute left-6 top-0 w-14 h-14 rounded-full bg-white border-4 border-indigo-500 flex items-center justify-center font-black text-indigo-600 text-sm shadow-sm">0H</div>
                         <h3 class="font-black text-lg text-slate-800">메타데이터 전수 검사</h3>
-                        <p class="text-slate-500 text-sm mt-1">20개 플랫폼 가사 및&nbsp;크레딧 정상 노출 즉각 확인</p>
+                        <p class="text-slate-500 text-sm mt-1 bal-m">20개 플랫폼 가사 및&nbsp;크레딧 정상 노출 즉각 확인</p>
                     </div>
                     
                     <div class="relative z-10 pl-[85px] pb-10 min-h-[56px] flex flex-col justify-center">
@@ -318,7 +320,7 @@
                     <div class="relative z-10 pl-[85px] min-h-[56px] flex flex-col justify-center">
                         <div class="absolute left-6 top-0 w-14 h-14 rounded-full bg-white border-4 border-slate-300 flex items-center justify-center font-black text-slate-500 text-sm shadow-sm">48H</div>
                         <h3 class="font-black text-lg text-slate-800">이슈 즉각 개입 (Fix/Takedown)</h3>
-                        <p class="text-slate-500 text-sm mt-1">누락 발견 시 플랫폼 담당자 핫라인 즉시 가동</p>
+                        <p class="text-slate-500 text-sm mt-1 bal-m">누락 발견 시 플랫폼 담당자 핫라인 즉시 가동</p>
                     </div>
                 </div>
 
@@ -532,7 +534,7 @@
                     </div>
                     <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
                         <p class="text-xs font-bold text-slate-700 mb-2">누적 비교 2.31배</p>
-                        <p class="text-xs text-slate-600 leading-relaxed">
+                        <p class="text-xs text-slate-600 leading-relaxed bal-m">
                     48시간 동안 실제로 난 재생 총량에 가깝고, 정산 수익과 바로 닿습니다.
                 </p>
                     </div>
@@ -701,7 +703,7 @@
                     </div>
                     <div class="bg-amber-50 rounded-2xl p-6 border-2 border-amber-200">
                         <p class="text-xs font-black text-amber-700 mb-2">다음날 자정 개입</p>
-                        <p class="text-xs text-slate-600 leading-relaxed">
+                        <p class="text-xs text-slate-600 leading-relaxed bal-m">
                     국내 플랫폼은 받을 사람이 없는 시각인데, 상승 폭은 여기가 가장 큽니다.
                 </p>
                     </div>

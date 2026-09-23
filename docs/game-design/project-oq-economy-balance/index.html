@@ -70,7 +70,9 @@
         .bal { text-wrap: balance; }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -124,7 +126,7 @@
                         <p class="text-[11px] text-slate-500 mt-1">10일 · 하루 8시간</p>
                     </div>
                     <div class="px-3 py-5 md:py-6 text-center">
-                        <p class="text-[11px] font-bold text-slate-500 mb-2">그&nbsp;시간의 최저임금 환산</p>
+                        <p class="text-[11px] font-bold text-slate-500 mb-2 bal-m">그&nbsp;시간의 최저임금 환산</p>
                         <p class="text-lg md:text-3xl font-black text-rose-700 tracking-tight">825,600원</p>
                         <p class="text-[11px] text-slate-500 mt-1">시간당 10,320원</p>
                     </div>
@@ -436,7 +438,7 @@
                         <span class="text-2xl">🔄</span>
                         <span class="font-black text-slate-900 text-lg">거래소 기반 재화 선순환</span>
                     </div>
-                    <p class="text-sm md:text-base text-slate-700 leading-relaxed mb-5 max-w-[46em]">
+                    <p class="text-sm md:text-base text-slate-700 leading-relaxed mb-5 max-w-[46em] bal-m">
                     제안의 핵심은 <strong>&ldquo;무과금의 노력이 유료 재화로 변환된다&rdquo;</strong>&#8288;는 것입니다. <br class="hidden md:block">
                     이&nbsp;문장을 재화 흐름으로 다시 쓰면, <strong class="text-slate-900">유료 재화의 무료 획득 경로를 신설한다</strong>는 뜻이 됩니다.
                 </p>

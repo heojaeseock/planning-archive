@@ -96,7 +96,9 @@
         .bg-\[radial-gradient\(circle_at_top_right\,\#10b981_0\%\,transparent_50\%\)\] { background-image: radial-gradient(circle at top right,#10b981 0%,transparent 50%); }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
   @media (prefers-reduced-motion: reduce) {
@@ -232,7 +234,7 @@
                                     <h4 class="font-bold text-emerald-800 mb-2 flex items-center gap-2">👍 이&nbsp;기능이 잘하고 있는 것</h4>
                                     <ul class="text-sm text-slate-600 leading-relaxed space-y-1">
                                         <li>• 보이스톡 미사용 유저도 쉽게 전략을 전달하는 대안</li>
-                                        <li>• 적 위치, HP 상태 등을 실시간 공유하여 팀 플레이 효율 향상</li>
+                                        <li class="bal-m">• 적 위치, HP 상태 등을 실시간 공유하여 팀 플레이 효율 향상</li>
                                     </ul>
                                 </div>
                                 <div class="bg-red-50 p-5 rounded-2xl border border-red-100 shadow-sm">
@@ -632,7 +634,7 @@
                         <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                             <li class="leading-[1.8]">&bull; <strong class="text-slate-800">밸런스 영향 측정:</strong> 브리핑이 전송된 라운드와 전송되지 않은 라운드의 <strong>승률 차</strong> &mdash; 유의하게 벌어지면 정보 우위가 실재한다는 증거입니다</li>
                             <li class="bal">&bull; <strong class="text-slate-800">지연 튜닝:</strong> 지연 시간별 승률 차 추이 &mdash; 차이가 사라지는 구간을 적정값으로 채택</li>
-                            <li>&bull; <strong class="text-slate-800">도배&#8288;&middot;낚시:</strong> 매크로 관련 신고 건수, 라운드당 평균 전송 횟수</li>
+                            <li class="bal-m">&bull; <strong class="text-slate-800">도배&#8288;&middot;낚시:</strong> 매크로 관련 신고 건수, 라운드당 평균 전송 횟수</li>
                             <li>&bull; <strong class="text-slate-800">편의성:</strong> 단축키 변경 기능 사용률, 브리핑 시도 후 실제 전송 성공률</li>
                         </ul>
                     </div>

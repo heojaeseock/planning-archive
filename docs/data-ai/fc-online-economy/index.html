@@ -106,7 +106,9 @@
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
     
     <!-- Application Structure: - Wide layout 1200px for desktop-first professional look. - 3-column analysis section with semantic line-breaks. - Dual chart section with specific data logic descriptions. - Strategy section emphasizing operational stability. - Final pitch section linking experience to business goals. -->
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
@@ -347,7 +349,7 @@
                         <p class="text-gray-600 text-[16px] leading-relaxed">
                     실시간으로 하한가 적체량이 임계치를 넘는 특정 시즌을 분석하여, 해당 매물을 에이전트 필수 재료로 설정하고 진행 시 일정량의 BP 수수료를 함께 소모시킵니다.
                 </p>
-                        <p class="text-gray-600 text-[16px] leading-relaxed">
+                        <p class="text-gray-600 text-[16px] leading-relaxed bal-m">
                     귀속 매물을 회수하면서 남는 통화를 함께 태워,<br>
 BP 가치가 떨어지는 것도 함께 막습니다.
                 </p>
@@ -518,7 +520,7 @@ BP 가치가 떨어지는 것도 함께 막습니다.
                             <li class="bal">&bull; <strong class="text-gray-800">소각/유입 비율:</strong> 주간 BP 소각량 &divide; 신규 유입량 &mdash; 인플레 방어 주장의 근거</li>
                             <li class="bal">&bull; <strong class="text-gray-800">무소과금 스쿼드 교체율:</strong> 성장 사다리가 실제로 다시 작동하는지</li>
                             <li class="bal">&bull; <strong class="text-gray-800">패키지 매출 변화:</strong> 스왑 이벤트 기간과 그&nbsp;직후 &mdash; 잠식 여부 확인</li>
-                            <li>&bull; <strong class="text-gray-800">사재기 징후:</strong> 재료 지정 발표 전후의 해당 매물 거래량 급변</li>
+                            <li class="bal-m">&bull; <strong class="text-gray-800">사재기 징후:</strong> 재료 지정 발표 전후의 해당 매물 거래량 급변</li>
                         </ul>
                     </div>
                     

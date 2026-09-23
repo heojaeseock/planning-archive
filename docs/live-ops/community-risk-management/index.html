@@ -109,7 +109,9 @@
         section[aria-label="이 문서가 하는 말"] .text-slate-700 { color: rgb(51 65 85); }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   .badge-brand-ink { color: #B35825; }   /* 연한 주황 바탕에서 읽히는 브랜드색 */
 
@@ -524,9 +526,9 @@
                 <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200 mb-5">
                     <p class="text-xs font-black text-gray-700 mb-3">나눔 횟수보다 나눔의 형태를 봐야 합니다</p>
                     <ul class="space-y-2 text-xs text-gray-600 leading-relaxed">
-                        <li>&bull; <strong class="text-gray-800">상대의 다양성</strong> &mdash; 소수의 동일 계정과 반복 거래했는지. 자기 계정끼리 거래해 점수를 만드는 경우가 여기서 잡힙니다</li>
-                        <li>&bull; <strong class="text-gray-800">기간 집중도</strong> &mdash; 며칠 안에 몰려 있는지, 오랜 기간에 걸쳐 있는지</li>
-                        <li>&bull; <strong class="text-gray-800">거래 완결성</strong> &mdash; 실제로 만나 물건이 전달됐는지 확인할 흔적이 있는지</li>
+                        <li class="bal-m">&bull; <strong class="text-gray-800">상대의 다양성</strong> &mdash; 소수의 동일 계정과 반복 거래했는지. 자기 계정끼리 거래해 점수를 만드는 경우가 여기서 잡힙니다</li>
+                        <li class="bal-m">&bull; <strong class="text-gray-800">기간 집중도</strong> &mdash; 며칠 안에 몰려 있는지, 오랜 기간에 걸쳐 있는지</li>
+                        <li class="bal-m">&bull; <strong class="text-gray-800">거래 완결성</strong> &mdash; 실제로 만나 물건이 전달됐는지 확인할 흔적이 있는지</li>
                         <li>&bull; <strong class="text-gray-800">계정 연령</strong> &mdash; 가입 직후 나눔이 집중되는 패턴인지</li>
                     </ul>
                 </div>
@@ -592,7 +594,7 @@
                         <li>&bull; <strong class="text-gray-800">오탐률</strong> &mdash; 계정 보호 조치 중 정상 이용자로 확인된 비율</li>
                         <li>&bull; <strong class="text-gray-800">보호 해제 소요 시간</strong> &mdash; 오탐 유저가 다시 거래할 수 있게 되기까지. 오탐의 실제 피해 크기를 결정합니다</li>
                         <li>&bull; <strong class="text-gray-800">쿨다운 이탈률</strong> &mdash; 3초 지연 후 송금을 포기한 비율. 마찰의 효과 크기입니다</li>
-                        <li>&bull; <strong class="text-gray-800">사기 접수 건수와 피해액</strong> &mdash; 최종 목표 지표. 검수 효율이 올라도 이&nbsp;값이 그대로면 정책이 작동하지 않는 것입니다</li>
+                        <li class="bal-m">&bull; <strong class="text-gray-800">사기 접수 건수와 피해액</strong> &mdash; 최종 목표 지표. 검수 효율이 올라도 이&nbsp;값이 그대로면 정책이 작동하지 않는 것입니다</li>
                     </ul>
                 </div>
                 

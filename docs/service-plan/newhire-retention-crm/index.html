@@ -73,7 +73,9 @@
         section[aria-label="이 문서가 하는 말"] .text-slate-700 { color: rgb(51 65 85); }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
 
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   .text-brand-blue-soft { color: #4699ff; }   /* 어두운 카드 위에서 읽히는 브랜드 파랑 */
@@ -432,9 +434,9 @@
 
             <div class="bg-white rounded-3xl border-2 border-gray-200 p-6 md:p-8">
                 <p class="text-lg md:text-xl font-black text-gray-900 mb-4 leading-snug bal max-w-[34em]">회복이 없는 구간은 <span class="text-brand-blue">D+60에서 D+90</span> 하나뿐입니다</p>
-                <p class="text-sm text-gray-600 leading-relaxed max-w-[46em] mb-5">D+7의 55는 D+14에 75로, D+30의 45는 D+60에 60으로 <strong>스스로</strong> 올라옵니다. 그런데 개입 두&nbsp;번이 모두 그&nbsp;회복 구간 앞에 있고, 회복이 없는 마지막 구간은 비어 있습니다.</p>
+                <p class="text-sm text-gray-600 leading-relaxed max-w-[46em] mb-5 bal-m">D+7의 55는 D+14에 75로, D+30의 45는 D+60에 60으로 <strong>스스로</strong> 올라옵니다. 그런데 개입 두&nbsp;번이 모두 그&nbsp;회복 구간 앞에 있고, 회복이 없는 마지막 구간은 비어 있습니다.</p>
                 <div class="bg-blue-50 border-l-[6px] border-brand-blue rounded-r-2xl p-5">
-                    <p class="text-sm text-gray-700 leading-relaxed max-w-[42em]"><strong class="text-gray-900">D+75 전후에 한&nbsp;번을 더&nbsp;넣습니다.</strong> 자연 회복이 없는 구간이라 효과를 확인하기도 가장 쉽습니다. 지금 배치대로면 근속률이 올라가도 개입의 결과인지 원래의 적응 흐름인지 가릴 수 없습니다.</p>
+                    <p class="text-sm text-gray-700 leading-relaxed max-w-[42em] bal-m"><strong class="text-gray-900">D+75 전후에 한&nbsp;번을 더&nbsp;넣습니다.</strong> 자연 회복이 없는 구간이라 효과를 확인하기도 가장 쉽습니다. 지금 배치대로면 근속률이 올라가도 개입의 결과인지 원래의 적응 흐름인지 가릴 수 없습니다.</p>
                 </div>
             </div>
         </section>

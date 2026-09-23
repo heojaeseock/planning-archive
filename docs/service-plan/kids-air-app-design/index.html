@@ -189,7 +189,9 @@
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
   @media (prefers-reduced-motion: reduce) {
@@ -604,7 +606,7 @@
                     어느 쪽을 만들 것인지 정하면 필요한 자원과 사업 구조가 달라집니다.
                 </p>
                     </div>
-                    <p class="text-xs text-slate-500 leading-relaxed mt-5">
+                    <p class="text-xs text-slate-500 leading-relaxed mt-5 bal-m">
                     이&nbsp;구분이 서 있어야 <strong>데이터를 어디서 받을 것인가</strong>에 답할 수 있습니다.
                 </p>
                 </div>
@@ -693,7 +695,7 @@
                         <li class="bal">&bull; <strong class="text-slate-800">기준의 출처</strong> &mdash; 좋음과 나쁨을 가르는 수치가 <strong>환경부 실내공기질 기준</strong>인지 자체 기준인지 표시합니다. 공식 기준을 쓰면 표시 자체가 근거를 갖습니다</li>
                         <li class="bal">&bull; <strong class="text-slate-800">영유아 기준의 별도 적용</strong> &mdash; 성인 기준과 영유아 권장 수준이 다를 수 있습니다. 대상이 어린이집이므로 더&nbsp;엄격한 기준을 쓴다면 그&nbsp;사실을 밝히는 편이 신뢰에 유리합니다</li>
                         <li class="bal">&bull; <strong class="text-slate-800">측정 시각 표기</strong> &mdash; 색상만 보여주면 언제 측정한 값인지 알 수 없습니다. <strong>몇&nbsp;분 전 데이터인지</strong>를 함께 표시해야 실시간이라는 주장이 확인됩니다</li>
-                        <li>&bull; <strong class="text-slate-800">데이터 없음 상태</strong> &mdash; 센서 오류나 미설치 시설은 회색 같은 별도 상태로 구분합니다. 좋음으로 표시되면 잘못된 안심을 줍니다</li>
+                        <li class="bal-m">&bull; <strong class="text-slate-800">데이터 없음 상태</strong> &mdash; 센서 오류나 미설치 시설은 회색 같은 별도 상태로 구분합니다. 좋음으로 표시되면 잘못된 안심을 줍니다</li>
                     </ul>
                 </div>
             </section>

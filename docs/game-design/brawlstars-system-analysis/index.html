@@ -97,7 +97,9 @@
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   .text-yellow-800 { color: rgb(133 77 14); }
 
@@ -516,7 +518,7 @@
                             </table>
                         </div>
                     </div>
-                    <p class="text-[10px] font-bold text-slate-500 mt-2 text-right">* 풀업&#8288;(11레벨+모든 장비 장착) 달성 시 코인 소모량이 급격히 증가하여 전략적 과금을 유도하는 구조</p>
+                    <p class="text-[10px] font-bold text-slate-500 mt-2 text-right bal-m">* 풀업&#8288;(11레벨+모든 장비 장착) 달성 시 코인 소모량이 급격히 증가하여 전략적 과금을 유도하는 구조</p>
                 </div>
 
                 <!-- [보강] 요구 재화 커브 해석 -->
@@ -742,7 +744,7 @@
                             <div class="flex items-start gap-4">
                                 <span class="w-8 h-8 shrink-0 rounded-lg bg-yellow-700 text-white font-black text-sm flex items-center justify-center">03</span>
                                 <div>
-                                    <p class="font-black text-slate-900 text-base mb-2">눈에 보이는 목표는 앞에, 실제 지출은 뒤에 둔다</p>
+                                    <p class="font-black text-slate-900 text-base mb-2 bal-m">눈에 보이는 목표는 앞에, 실제 지출은 뒤에 둔다</p>
                                     <p class="text-sm text-slate-600 leading-relaxed mb-3 bal">
                     &ldquo;11레벨&rdquo;&#8288;이라는 명확한 숫자 목표를 제시하지만 코인 소모의 약&nbsp;3분의 2&#8288;(15,000 / 22,765)&#8288;는 레벨 도달 이후의 장비 구간에 배치되어 있습니다.
                 </p>

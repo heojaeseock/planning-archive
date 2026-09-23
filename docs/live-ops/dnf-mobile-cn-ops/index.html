@@ -60,6 +60,8 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
             /* <br> 로 나뉜 문장마다 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
+        /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
 </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
@@ -190,7 +192,7 @@
                             <li>• <strong>실적:</strong> 텐센트 IR 분기별 실적 및&nbsp;게임 부문 가이드라인 분석</li>
                             <li>• <strong>스토어 데이터:</strong> Qimai,<br>
 Sensor Tower 기반 중국 iOS 매출 순위 가중치 산출</li>
-                            <li>• <strong>소셜 지표:</strong> NGA, Bilibili 내 핵심 키워드 언급량 및&nbsp;긍정 반응률 트래킹</li>
+                            <li class="bal-m">• <strong>소셜 지표:</strong> NGA, Bilibili 내 핵심 키워드 언급량 및&nbsp;긍정 반응률 트래킹</li>
                             <li class="pt-2 border-t border-red-200 italic">* 정확한 매출액은 비공개이므로 <strong>성능 지표</strong>를 활용해 상대 가치로 트렌드를 시각화했습니다.</li>
                         </ul>
                     </div>

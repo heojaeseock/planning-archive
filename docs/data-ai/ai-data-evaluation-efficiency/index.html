@@ -84,7 +84,9 @@
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -562,7 +564,7 @@
                     </div>
                 </div>
                 <div class="bg-slate-900 rounded-xl p-5 text-white">
-                    <p class="text-sm leading-relaxed max-w-[46em]">이렇게 바꾸면 확실한 제거는 형식 검증 2,000건, <strong>35%&#8288;가 아니라 20%</strong>&#8288;입니다. 나중에 오제거가 드러나면 수치 전체가 신뢰를 잃으므로 낮춰 잡습니다.</p>
+                    <p class="text-sm leading-relaxed max-w-[46em] bal-m">이렇게 바꾸면 확실한 제거는 형식 검증 2,000건, <strong>35%&#8288;가 아니라 20%</strong>&#8288;입니다. 나중에 오제거가 드러나면 수치 전체가 신뢰를 잃으므로 낮춰 잡습니다.</p>
                 </div>
             </div>
 

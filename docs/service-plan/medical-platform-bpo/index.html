@@ -108,7 +108,9 @@
         section[aria-label="이 문서가 하는 말"] .text-slate-700 { color: rgb(51 65 85); }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
   @media (prefers-reduced-motion: reduce) {
@@ -322,7 +324,7 @@
                         <div class="w-8 h-8 rounded-full bg-gray-600 font-bold flex items-center justify-center shrink-0">3</div>
                         <div>
                             <h4 class="font-bold">외주사&#8288;(BPO) 심층 타겟 검수</h4>
-                            <p class="text-xs text-gray-300 mt-1">위험군&#8288;(20%)&#8288;만 타겟팅하여 이미지 조작 등 고난도 검수에 집중</p>
+                            <p class="text-xs text-gray-300 mt-1 bal-m">위험군&#8288;(20%)&#8288;만 타겟팅하여 이미지 조작 등 고난도 검수에 집중</p>
                         </div>
                     </div>
                 </div>

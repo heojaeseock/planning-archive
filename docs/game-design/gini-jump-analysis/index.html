@@ -129,7 +129,9 @@
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
   @media (prefers-reduced-motion: reduce) {
@@ -264,7 +266,7 @@
                         </h3>
                         <ul class="space-y-4 text-sm text-gray-700 leading-relaxed list-none pl-0">
                             <li class="flex items-start gap-3"><span class="text-blue-500 mt-1">•</span> <span><strong>콘셉트 도출:</strong> 코로나19로 단절된 해외여행에 대한 대리 만족을 주고자 '세계 랜드마크 여행'을 메인 테마로 선정</span></li>
-                            <li class="flex items-start gap-3"><span class="text-blue-500 mt-1">•</span> <span><strong>핵심 기획:</strong> 기기 기울기&#8288;(자이로센서)&#8288;를 활용한 직관적인 조작법 채택 및&nbsp;무작위 발판, 움직이는 장애물 생성 로직 설계</span></li>
+                            <li class="flex items-start gap-3"><span class="text-blue-500 mt-1">•</span> <span class="bal-m"><strong>핵심 기획:</strong> 기기 기울기&#8288;(자이로센서)&#8288;를 활용한 직관적인 조작법 채택 및&nbsp;무작위 발판, 움직이는 장애물 생성 로직 설계</span></li>
                         </ul>
                     </div>
                     
@@ -372,7 +374,7 @@
                     <div class="content-panel p-8 space-y-3 shadow-sm border-gray-100 hover:border-blue-200 transition-colors">
                         <div class="text-3xl">🎨</div>
                         <h4 class="font-black text-gray-900 text-sm">UI/UX 및&nbsp;배경 구현</h4>
-                        <p class="text-xs text-gray-600 leading-relaxed">메인&#8288;·테마 선택&#8288;·랭킹&#8288;·옵션&#8288;·일시정지&#8288;·게임 오버 UI 에셋 제작, 배경 스크롤 로직 구현</p>
+                        <p class="text-xs text-gray-600 leading-relaxed bal-m">메인&#8288;·테마 선택&#8288;·랭킹&#8288;·옵션&#8288;·일시정지&#8288;·게임 오버 UI 에셋 제작, 배경 스크롤 로직 구현</p>
                     </div>
                     <div class="content-panel p-8 space-y-3 shadow-sm border-gray-100 hover:border-blue-200 transition-colors">
                         <div class="text-3xl">🩺</div>

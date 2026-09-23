@@ -67,6 +67,8 @@ body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
+        /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -495,7 +497,7 @@ body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui
 
         <div class="bg-white border-2 border-slate-200 rounded-2xl p-7">
             <p class="text-sm font-black text-slate-800 mb-3">한&nbsp;가지 더 · 서든어택과 FC 온라인의 쏠림</p>
-            <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">
+            <p class="text-sm text-slate-600 leading-relaxed max-w-[46em] bal-m">
                     두&nbsp;타이틀은 SOOP 점유가 82%&#8288;와 88%&#8288;로 매우 높습니다. <br class="hidden md:block">
                     마케팅 효율만 보면 SOOP 집중이 맞지만, 그만큼 <strong class="text-slate-900">한&nbsp;플랫폼에 의존한다는 뜻</strong>입니다. <br class="hidden md:block">
                     플랫폼 정책이 바뀌거나 주요 스트리머가 이적하면 노출 경로가 함께 끊깁니다. <br class="hidden md:block">

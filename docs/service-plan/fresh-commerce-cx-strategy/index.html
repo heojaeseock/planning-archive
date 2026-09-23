@@ -47,7 +47,9 @@
         .bal { text-wrap: balance; }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
   @media (prefers-reduced-motion: reduce) {
@@ -324,7 +326,7 @@
                     <div class="p-8 rounded-[32px] bg-[#5F0080] text-white shadow-lg">
                         <div class="w-8 h-8 rounded-full bg-white text-[#5F0080] flex items-center justify-center font-bold mb-4 mx-auto text-xs">2</div>
                         <h4 class="font-bold mb-2">실시간 에스컬레이션</h4>
-                        <p class="text-purple-100 leading-relaxed text-sm">특정 이슈 10건 초과 시 물류 관리자 대시보드에 즉각 알림</p>
+                        <p class="text-purple-100 leading-relaxed text-sm bal-m">특정 이슈 10건 초과 시 물류 관리자 대시보드에 즉각 알림</p>
                     </div>
                     <div class="p-8 rounded-[32px] bg-slate-50 border border-slate-100">
                         <div class="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold mb-4 mx-auto text-xs">3</div>
