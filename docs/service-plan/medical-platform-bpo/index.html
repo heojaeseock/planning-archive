@@ -122,6 +122,8 @@
 
 /* 구역 위아래 여백을 다른 문서와 같게 맞춘다 */
 .py-12{padding-top:3rem;padding-bottom:3rem}
+        /* 구역 제목을 다른 문서와 같은 30px 로 (이 문서의 tailwind.css 에 없는 클래스) */
+        @media (min-width:768px){.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}}
 </style>
 </head>
 <body class="antialiased font-sans scroll-smooth">
@@ -228,7 +230,7 @@
     <!-- 0. 문서 개요 -->
     <section id="overview" class="py-12 bg-gray-50 border-t border-gray-100 fade-in-section">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl sm:text-3xl font-black text-gray-900 mb-6 leading-snug">서비스 구조와 리스크</h2>
+            <h2 class="text-2xl md:text-3xl font-black text-gray-900 mb-6 leading-snug">서비스 구조와 리스크</h2>
             <p class="text-gray-600 leading-relaxed mb-4 max-w-[46em]">
                     후기를 보고 병원을 고르는 서비스라 <strong class="text-slate-900">대가성 허위 후기</strong>가 가장&nbsp;큰 위험입니다. 지금은 외주사 인력이 후기를 하나씩 눈으로 확인합니다.
                 </p>
@@ -239,7 +241,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10 text-center md:text-left">
                 <span class="text-brand-600 font-bold tracking-wider text-sm mb-2 block">01. 문제 정의</span>
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">외주사 수작업 검수의 병목 현상</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">외주사 수작업 검수의 병목 현상</h2>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -248,7 +250,7 @@
                         <h3 class="font-bold text-gray-900 flex items-center gap-2 mb-2">
                             <span class="text-xl">📈</span> 리뷰 데이터 폭증
                         </h3>
-                        <p class="text-gray-600 text-sm ml-7">글로벌 진출로 인해 검수해야 할 데이터가 기하급수적으로 늘어납니다.</p>
+                        <p class="text-gray-600 text-base ml-7">글로벌 진출로 인해 검수해야 할 데이터가 기하급수적으로 늘어납니다.</p>
                     </div>
                     <div class="p-5 bg-red-50 rounded-xl border border-red-100">
                         <h3 class="font-bold text-red-800 flex items-center gap-2 mb-2">
@@ -274,7 +276,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10 text-center md:text-left">
                 <span class="text-brand-600 font-bold tracking-wider text-sm mb-2 block">02. 해결 전략 1</span>
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">검수 효율화를 위한 '1차 자동 필터링'</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">검수 효율화를 위한 '1차 자동 필터링'</h2>
                 <p class="text-gray-600">모든 리뷰를 눈으로 보기 전, <mark class="point">자동 분류 로직</mark>을 통해 업무량을 줄입니다.</p>
             </div>
 
@@ -332,7 +334,7 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-12 text-center">
                 <span class="text-brand-600 font-bold tracking-wider text-sm mb-2 block">03. 해결 전략 2</span>
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">현장의 목소리를 데이터로 번역합니다</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">현장의 목소리를 데이터로 번역합니다</h2>
                 <p class="text-gray-600">
                     운영 현장이나 커뮤니티에서 발견된 정성적인 이슈를, <br class="hidden md:block">
                     기획·개발팀이 즉시 구현 가능한 <mark class="point">시스템 스펙</mark>으로 변환하는 과정을 경험해 보세요.
@@ -423,7 +425,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10 text-center md:text-left">
                 <span class="text-brand-600 font-bold tracking-wider text-sm mb-2 block">04. 수치 재계산</span>
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">위험군 20%도 결국 한계선을 넘습니다</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">위험군 20%도 결국 한계선을 넘습니다</h2>
                 <p class="text-gray-600">문제 정의 차트의 두 선과 해결 전략의 <mark class="point">위험군 20%</mark>를 같은 표에 놓고 분기별로 비교했습니다.</p>
             </div>
 
@@ -526,7 +528,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10 text-center md:text-left">
                 <span class="text-brand-600 font-bold tracking-wider text-sm mb-2 block">05. 이미 맞게 잡힌 부분</span>
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">30시간이 줄어든 것이 어디서 나온 값인지</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">30시간이 줄어든 것이 어디서 나온 값인지</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -538,7 +540,7 @@
                 <div class="card p-6 border-brand-300 bg-brand-50">
                     <p class="text-xs font-bold text-brand-600 mb-2">자동 필터 도입 후</p>
                     <p class="text-2xl font-black text-brand-900 mb-2">건당 54초</p>
-                    <p class="text-sm text-gray-700">위험군 2,000건을 30시간에 보는 기준으로, <br class="hidden md:block">
+                    <p class="text-base text-gray-700">위험군 2,000건을 30시간에 보는 기준으로, <br class="hidden md:block">
                     오히려 1.25배 길어집니다.</p>
                 </div>
             </div>
@@ -559,7 +561,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10 text-center md:text-left">
                 <span class="text-brand-600 font-bold tracking-wider text-sm mb-2 block">06. 적용 조건</span>
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">규칙 넷에 각각 조건을 붙였습니다</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">규칙 넷에 각각 조건을 붙였습니다</h2>
                 <p class="text-gray-600 max-w-[42em]">필터가 작동하려면 규칙마다 서로 다른 전제가 필요합니다. 그대로 두면 정상 후기가 걸립니다.</p>
             </div>
 
@@ -592,7 +594,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10 text-center md:text-left">
                 <span class="text-brand-600 font-bold tracking-wider text-sm mb-2 block">07. 제안이 치르는 대가</span>
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">75% 절감은 80%를 자동 통과시킨다는 말이기도 합니다</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">75% 절감은 80%를 자동 통과시킨다는 말이기도 합니다</h2>
             </div>
 
             <div class="grid md:grid-cols-2 gap-5 mb-8">
@@ -610,7 +612,7 @@
 
             <div class="card p-6 md:p-8 mb-5">
                 <p class="font-black text-gray-900 mb-3 text-lg bal">누락이 사라지는 게 아니라 자리를 옮깁니다</p>
-                <p class="text-sm text-gray-600 leading-relaxed max-w-[46em]">필터를 넣으면 누락의 원인이 <strong>사람의 피로도에서 규칙의 빈틈으로</strong> 옮겨갑니다. 수작업 누락은 담당자마다 흩어지지만, 필터는 빈틈 있는 유형만 일관되게 통과시킵니다. 한 번 뚫은 방법을 계속 쓸 수 있어 총량이 같아도 더 위험합니다.</p>
+                <p class="text-base text-gray-600 leading-relaxed max-w-[46em]">필터를 넣으면 누락의 원인이 <strong>사람의 피로도에서 규칙의 빈틈으로</strong> 옮겨갑니다. 수작업 누락은 담당자마다 흩어지지만, 필터는 빈틈 있는 유형만 일관되게 통과시킵니다. 한 번 뚫은 방법을 계속 쓸 수 있어 총량이 같아도 더 위험합니다.</p>
             </div>
 
             <div class="card p-6 md:p-8 bg-gray-50">
@@ -624,7 +626,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10 text-center md:text-left">
                 <span class="text-brand-600 font-bold tracking-wider text-sm mb-2 block">08. 성과 지표</span>
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">시간만 재면 방향이 반대로 잡힙니다</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">시간만 재면 방향이 반대로 잡힙니다</h2>
             </div>
 
             <div class="grid md:grid-cols-2 gap-5 mb-8">
@@ -641,7 +643,7 @@
             </div>
 
             <div class="card p-6 md:p-8">
-                <p class="text-sm text-gray-600 leading-relaxed max-w-[46em] mb-5"><strong class="text-gray-900">필터를 느슨하게 할수록 성과 지표는 좋아지고 놓치는 건수는 늘어납니다.</strong> 처리 시간만 재면 기준을 풀어서 나온 값인지 필터가 좋아져서 나온 값인지 가릴 수 없습니다.</p>
+                <p class="text-base text-gray-600 leading-relaxed max-w-[46em] mb-5"><strong class="text-gray-900">필터를 느슨하게 할수록 성과 지표는 좋아지고 놓치는 건수는 늘어납니다.</strong> 처리 시간만 재면 기준을 풀어서 나온 값인지 필터가 좋아져서 나온 값인지 가릴 수 없습니다.</p>
                 <div class="bg-brand-50 border-l-[6px] border-brand-600 rounded-r-2xl p-5">
                     <p class="text-sm text-gray-700 leading-relaxed max-w-[42em]">그래서 이 제안이 쓰는 지표는 절감률이 아니라 <strong class="text-gray-900">자동 통과분에서 나중에 발견된 허위 후기의 비율</strong>입니다. 도입과 함께 표본 검수를 설계해 이 값을 만들어 둡니다.</p>
                 </div>
@@ -653,7 +655,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10 text-center md:text-left">
                 <span class="text-brand-600 font-bold tracking-wider text-sm mb-2 block">09. 실행 순서와 검증</span>
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">무엇을 먼저 하고 무엇으로 확인할 것인가</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">무엇을 먼저 하고 무엇으로 확인할 것인가</h2>
             </div>
 
             <div class="space-y-4 mb-10">
@@ -661,7 +663,7 @@
                     <div class="w-8 h-8 rounded-full bg-brand-500 text-slate-900 font-bold flex items-center justify-center shrink-0">1</div>
                     <div>
                         <p class="font-bold text-gray-900 mb-1">자동 통과분의 표본 재검수를 먼저 붙입니다</p>
-                        <p class="text-sm text-gray-600 leading-relaxed max-w-[46em]">
+                        <p class="text-base text-gray-600 leading-relaxed max-w-[46em]">
                     통과된 8,000건 중 일부를 무작위로 뽑아 사람이 다시 봅니다. 이&nbsp;값이 없으면 <strong>이후의 모든 판단이 근거를 잃습니다.</strong> 여기 드는 시간은 절감분 안에서 뺍니다.
                 </p>
                     </div>

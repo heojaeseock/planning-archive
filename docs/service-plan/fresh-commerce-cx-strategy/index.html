@@ -58,6 +58,8 @@
       scroll-behavior: auto !important;
     }
   }
+        /* 구역 제목을 다른 문서와 같은 30px 로 (이 문서의 tailwind.css 에 없는 클래스) */
+        @media (min-width:768px){.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}}
 </style>
 </head>
 <body class="bg-[#F8FAFC] text-[#1F2937] antialiased">
@@ -135,7 +137,7 @@
         <!-- 0. 문서 개요 -->
         <section id="overview" class="mb-10">
             <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 md:p-10">
-                <h2 class="text-2xl font-black text-slate-900 mb-6">지연이 만드는 손실</h2>
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-6">지연이 만드는 손실</h2>
                 <p class="text-slate-600 leading-relaxed mb-4 max-w-[46em]">
                     하루만 밀려도 상품이 폐기됩니다. 물류 이슈 한 건에 같은 유형 문의가 한꺼번에 몰리는데, <strong>사람이 차례로 분류해서는 초기 대응 시간이 남지 않습니다.</strong>
                 </p>
@@ -168,13 +170,13 @@
                     <div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center text-[#5F0080]">
                         <i data-lucide="search" class="w-5 h-5"></i>
                     </div>
-                    <h2 class="text-2xl font-black text-slate-900">현장 응대 병목 현상의 근본적 원인</h2>
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900">현장 응대 병목 현상의 근본적 원인</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
                     <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 border-l-4 border-l-[#5F0080]">
                         <h3 class="text-[11px] font-black text-[#5F0080] mb-4 tracking-wide">리스크 분석</h3>
-                        <p class="text-lg font-bold text-slate-700 leading-[1.8]">
+                        <p class="text-base font-bold text-slate-700 leading-[1.8]">
                     신선식품 커머스의 비즈니스 모델은 기상 악화나 물류 센터 이슈 발생 시 고객 문의가 폭발적으로 증가하는 특성을 가집니다.
                 </p>
                     </div>
@@ -209,13 +211,13 @@
                     <div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center text-[#5F0080]">
                         <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
                     </div>
-                    <h2 class="text-2xl font-black text-slate-900">전략 1. 실시간 고객 문의 자동 태깅 보드</h2>
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900">전략 1. 실시간 고객 문의 자동 태깅 보드</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
                     <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 border-l-4 border-l-[#5F0080]">
                         <h3 class="text-[11px] font-black text-[#5F0080] mb-4 tracking-wide font-bold text-xs">운영 방식 적용</h3>
-                        <p class="text-lg font-bold text-slate-700 leading-snug">
+                        <p class="text-base font-bold text-slate-700 leading-snug">
                     문의를 유형별로 자동 분류해, 무슨 일이 벌어지는지 아는 시점을 앞당깁니다.
                 </p>
                     </div>
@@ -242,7 +244,7 @@
                     <div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center text-[#5F0080]">
                         <i data-lucide="zap" class="w-5 h-5"></i>
                     </div>
-                    <h2 class="text-2xl font-black text-slate-900">전략 2. 위기 대응 애자일 플레이북 기획</h2>
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900">전략 2. 위기 대응 애자일 플레이북 기획</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -301,14 +303,14 @@
                     <div class="w-10 h-10 bg-purple-50 rounded-xl flex items-center justify-center text-[#5F0080]">
                         <i data-lucide="users" class="w-5 h-5"></i>
                     </div>
-                    <h2 class="text-2xl font-black text-slate-900">전략 3. 부서 간 핫라인 프로세스 구축</h2>
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900">전략 3. 부서 간 핫라인 프로세스 구축</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 text-center">
                     <div class="p-8 rounded-[32px] bg-slate-50 border border-slate-100">
                         <div class="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center font-bold mb-4 mx-auto text-xs">1</div>
                         <h3 class="font-bold text-slate-900 mb-2">이슈 구조화</h3>
-                        <p class="text-slate-500 leading-relaxed text-sm">감정적 불만을 상품코드, 출고지 등 물류팀용 데이터로 규격화</p>
+                        <p class="text-slate-500 leading-relaxed text-base">감정적 불만을 상품코드, 출고지 등 물류팀용 데이터로 규격화</p>
                     </div>
                     <div class="p-8 rounded-[32px] bg-[#5F0080] text-white shadow-lg">
                         <div class="w-8 h-8 rounded-full bg-white text-[#5F0080] flex items-center justify-center font-bold mb-4 mx-auto text-xs">2</div>
@@ -340,7 +342,7 @@
         <section class="mt-16 space-y-8">
             <div class="bg-white rounded-[40px] p-8 md:p-14 shadow-sm border border-slate-100 space-y-10">
                 <div>
-                    <h2 class="text-2xl font-black text-slate-900 mb-4">차트를 배수로 바꿔보면 병목이 어디인지 나옵니다</h2>
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">차트를 배수로 바꿔보면 병목이 어디인지 나옵니다</h2>
                     <p class="text-slate-600 leading-relaxed max-w-[46em]">
                     위기 상황 차트의 두 곡선을 이슈 전 값 기준 배수로 환산하고, 구간별 증가폭을 함께 놓았습니다. <br class="hidden md:block">
                     문의량과 지연 시간이 같은 속도로 움직이지 않습니다.
@@ -459,7 +461,7 @@
         <section class="mt-8 space-y-8">
             <div class="bg-white rounded-[40px] p-8 md:p-14 shadow-sm border border-slate-100 space-y-10">
                 <div>
-                    <h2 class="text-2xl font-black text-slate-900 mb-4">자동화 시간이 골든 타임과 정확히 맞물립니다</h2>
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">자동화 시간이 골든 타임과 정확히 맞물립니다</h2>
                     <p class="text-slate-600 leading-relaxed">
                         효율 차트의 1만 건당 240분과 15분을 위기 상황의 실제 문의량에 대입했습니다.
                     </p>
@@ -513,7 +515,7 @@
         <section class="mt-8 space-y-8">
             <div class="bg-white rounded-[40px] p-8 md:p-14 shadow-sm border border-slate-100 space-y-10">
                 <div>
-                    <h2 class="text-2xl font-black text-slate-900 mb-4">새벽이라는 조건이 세 전략의 전제입니다</h2>
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">새벽이라는 조건이 세 전략의 전제입니다</h2>
                     <p class="text-slate-600 leading-relaxed max-w-[46em]">
                     배송이 새벽이라 물류 이슈도 새벽에 납니다. <strong class="text-slate-900">차트의 1시간 후가 새벽 몇 시인지가 대응 가능성을 가릅니다.</strong>
                 </p>
@@ -543,7 +545,7 @@
         <section class="mt-8 space-y-8">
             <div class="bg-white rounded-[40px] p-8 md:p-14 shadow-sm border border-slate-100 space-y-10">
                 <div>
-                    <h2 class="text-2xl font-black text-slate-900 mb-4">권한 위임이 치르는 대가</h2>
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">권한 위임이 치르는 대가</h2>
                     <p class="text-slate-600 leading-relaxed max-w-[46em]">
                     선발송과 증빙 생략 재배송, 두 권한을 현장에 넘깁니다. 빠른 대응의 조건이지만 넘기는 순간 새&nbsp;비용이 생깁니다.
                 </p>
@@ -585,13 +587,13 @@
         <section class="mt-8 space-y-8">
             <div class="bg-white rounded-[40px] p-8 md:p-14 shadow-sm border border-slate-100 space-y-10">
                 <div>
-                    <h2 class="text-2xl font-black text-slate-900 mb-4">문의가 줄었다는 것이 좋아졌다는 뜻은 아닙니다</h2>
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">문의가 줄었다는 것이 좋아졌다는 뜻은 아닙니다</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100">
                         <p class="text-[11px] font-black text-slate-500 mb-3">응대 조직이 보는 것</p>
-                        <p class="text-sm text-slate-600 leading-relaxed">
+                        <p class="text-base text-slate-600 leading-relaxed">
                     응대 지연 시간과 사후 문의 감소율입니다. <br class="hidden md:block">
                     <strong class="text-slate-900">짧을수록, 적을수록 좋은 값</strong>입니다.
                 </p>
@@ -618,7 +620,7 @@
         <section class="mt-8 space-y-8">
             <div class="bg-white rounded-[40px] p-8 md:p-14 shadow-sm border border-slate-100 space-y-10">
                 <div>
-                    <h2 class="text-2xl font-black text-slate-900 mb-4">실행 순서와 검증</h2>
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">실행 순서와 검증</h2>
                 </div>
 
                 <div class="space-y-4">
@@ -626,7 +628,7 @@
                         <span class="w-8 h-8 bg-[#5F0080] text-white text-xs font-black rounded-full flex items-center justify-center shrink-0">1</span>
                         <div>
                             <p class="font-bold text-slate-900 mb-1">새벽 시간대의 근무와 알림 수신 체계를 먼저 확인합니다</p>
-                            <p class="text-xs text-slate-500 leading-relaxed max-w-[46em]">
+                            <p class="text-base text-slate-500 leading-relaxed max-w-[46em]">
                     이슈가 새벽에 발생하므로, 그 시각에 알림을 받고 권한을&nbsp;쓸 사람이 있어야 세 전략이 모두 성립합니다. <br class="hidden md:block">
                     없다면 자동 응답 시나리오의 범위를 먼저 넓히는 것이 순서입니다.
                 </p>

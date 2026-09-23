@@ -86,6 +86,8 @@
       scroll-behavior: auto !important;
     }
   }
+        /* 구역 제목을 다른 문서와 같은 30px 로 (이 문서의 tailwind.css 에 없는 클래스) */
+        @media (min-width:768px){.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}}
 </style>
 </head>
 <body class="text-slate-800 antialiased selection:bg-blue-200">
@@ -169,7 +171,7 @@
         <!-- Strategy 1: Data Integrity (Interactive) -->
         <!-- 0. 문서 개요 -->
     <section id="overview" class="mb-20 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">
-        <h2 class="text-2xl font-black text-slate-900 mb-6">서비스 특성</h2>
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-6">서비스 특성</h2>
         <p class="text-slate-600 leading-relaxed mb-4 max-w-[46em]">
                     인터넷 강의와 교재를 판매하는 앱은 트래픽이 연중 특정 일자에 집중됩니다. <br class="hidden md:block">
                     대표적으로 수능 종료 직후인 17시에 가채점 기능으로 동시 접속이 몰립니다. <br class="hidden md:block">
@@ -181,7 +183,7 @@
     <section id="s1" class="mb-20 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">
             <div class="mb-8 flex flex-col md:flex-row md:justify-between md:items-end gap-6 border-b border-slate-100 pb-6">
                 <div>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2">💡 전략 1. 수작업 데이터 검수 자동화</h2>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-2">💡 전략 1. 수작업 데이터 검수 자동화</h2>
                     <p class="text-slate-500 font-medium">수만 개의 인강·교재 메타데이터 검수를 엑셀 함수 기반 파이프라인으로 처리해 소요 시간을 줄입니다.</p>
                 </div>
                 <!-- Interactive Button -->
@@ -226,7 +228,7 @@
             
             <div class="mb-8 flex flex-col md:flex-row md:justify-between md:items-end gap-6 relative z-10 border-b border-slate-800 pb-6">
                 <div>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">💡 전략 2. 수능 당일 골든타임 트래픽 방어</h2>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-2">💡 전략 2. 수능 당일 골든타임 트래픽 방어</h2>
                     <p class="text-slate-400 font-medium">시험 종료(17:00) 후 가채점 서비스에 몰리는 동시접속 트래픽. 서버 장애를 어떻게 막을까요?</p>
                 </div>
                 <!-- Interactive Actions -->
@@ -273,7 +275,7 @@
         <!-- Strategy 3: VOC Translator (Interactive) -->
         <section id="s3" class="mb-12 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">
             <div class="mb-8 text-center border-b border-slate-100 pb-6">
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2">💡 전략 3. 고객 VOC를 개발 요건(Jira)으로 번역</h2>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-2">💡 전략 3. 고객 VOC를 개발 요건(Jira)으로 번역</h2>
                 <p class="text-slate-500 font-medium">학생들의 감정적인 불편사항을 개발팀이 즉각 이해할 수 있는 '재현 스텝'으로 번역합니다.</p>
             </div>
 
@@ -361,7 +363,7 @@
 
     <!-- 보강: 완화 곡선과 티켓 분류 -->
     <section id="s5b" class="mb-20 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-4">완화 곡선에서 70이 어디로 갔는지</h2>
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">완화 곡선에서 70이 어디로 갔는지</h2>
         <p class="text-slate-600 leading-relaxed mb-8 max-w-[46em]">
                     앞에서 용량 초과분을 봤습니다. <br class="hidden md:block">
                     이번에는 <strong class="text-slate-900">곡선 아래 총량</strong>과 시간대별 감소율을 보면 완화안이 무엇을 한 것인지가 더 분명해집니다.
@@ -584,7 +586,7 @@
 
     <!-- 보강: 검증 지표와 한계 -->
     <section id="s6" class="mb-12 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-8">측정할 지표</h2>
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-8">측정할 지표</h2>
         <div>
             <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-7">
                 <p class="text-sm font-black text-emerald-700 mb-4">측정할 지표</p>

@@ -90,6 +90,8 @@
 
 /* 읽기 힘들던 글자색을 같은 계열의 진한 값으로 바꾼다 */
 .text-orange-700{color:#c2410c}
+        /* 구역 제목을 다른 문서와 같은 30px 로 (이 문서의 tailwind.css 에 없는 클래스) */
+        @media (min-width:768px){.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}}
 </style>
 </head>
 <body class="antialiased">
@@ -163,7 +165,7 @@
         <!-- 0. 문서 개요 -->
         <section id="overview" class="scroll-mt-24">
             <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
-                <h2 class="text-2xl font-bold italic text-gray-800 mb-6">수익 구조와 근속</h2>
+                <h2 class="text-2xl md:text-3xl font-bold italic text-gray-800 mb-6">수익 구조와 근속</h2>
                 <p class="text-gray-600 leading-relaxed mb-4 max-w-[46em]">
                     합격자의 <strong>3개월 근속 여부가 곧 매출 확정</strong>입니다. 게임에서 신규 유저를 붙잡던 설계를 그대로 이&nbsp;구간에 옮긴 운영안입니다.
                 </p>
@@ -174,14 +176,14 @@
         <section id="analysis" class="scroll-mt-24">
             <div class="flex items-center gap-3 mb-10">
                 <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
-                <h2 class="text-2xl font-bold italic text-gray-800">1. 초기 퇴사 원인 및 감정 변화 흐름</h2>
+                <h2 class="text-2xl md:text-3xl font-bold italic text-gray-800">1. 초기 퇴사 원인 및 감정 변화 흐름</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
                     <div class="text-3xl mb-4">📋</div>
                     <h3 class="font-bold mb-2">직무 기대치 불일치</h3>
-                    <p class="text-gray-500 leading-relaxed text-sm">면접에서 들은 업무와 실제 배정된 업무가 다르면, 입사 첫 주부터 이탈을 고민하게 됩니다.</p>
+                    <p class="text-gray-500 leading-relaxed text-base">면접에서 들은 업무와 실제 배정된 업무가 다르면, 입사 첫 주부터 이탈을 고민하게 됩니다.</p>
                 </div>
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
                     <div class="text-3xl mb-4">🧊</div>
@@ -218,14 +220,14 @@
         <section id="gaming" class="scroll-mt-24 space-y-10">
             <div class="flex items-center gap-3">
                 <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
-                <h2 class="text-2xl font-bold italic text-gray-800">2. 게임 라이브 운영 기법 벤치마킹</h2>
+                <h2 class="text-2xl md:text-3xl font-bold italic text-gray-800">2. 게임 라이브 운영 기법 벤치마킹</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-gray-900 text-white p-10 rounded-3xl relative overflow-hidden group border-2 border-transparent hover:border-brand-blue transition-all">
                     <div class="text-4xl mb-6">🔔</div>
                     <h3 class="text-xl font-bold mb-4">단계별 튜토리얼 넛지</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-8">
+                    <p class="text-base text-gray-400 leading-relaxed mb-8">
                     신규 유저가 복잡한 기능을 한 번에 배우지 않도록, 레벨에 맞춰 정보를 하나씩 해금하듯 시기별 필수 정보를 자동으로 전달합니다.
                 </p>
                     <div class="bg-white/10 p-5 rounded-2xl border border-white/20 text-xs">
@@ -250,7 +252,7 @@
         <section id="roadmap" class="scroll-mt-24 space-y-10">
             <div class="flex items-center gap-3">
                 <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
-                <h2 class="text-2xl font-bold italic text-gray-800">3. 채용 플랫폼 맞춤형 자동화 CRM 운영 로드맵</h2>
+                <h2 class="text-2xl md:text-3xl font-bold italic text-gray-800">3. 채용 플랫폼 맞춤형 자동화 CRM 운영 로드맵</h2>
             </div>
 
             <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
@@ -264,7 +266,7 @@
                     <div class="flex flex-col md:flex-row gap-16 items-center">
                         <div class="flex-1 space-y-6">
                             <h3 class="text-2xl font-bold text-gray-900">"첫 주 완주 응원 및 아티클 제안"</h3>
-                            <p class="text-gray-600 text-sm leading-relaxed bal">
+                            <p class="text-gray-600 text-base leading-relaxed bal">
                     가장 불안한 시기인 금요일 오후, 따뜻한 격려 메시지와 함께 채용 플랫폼만의 고퀄리티 직무 아티클을 자동으로 발송합니다.
                 </p>
                             <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100">
@@ -367,7 +369,7 @@
         <section id="recalc" class="scroll-mt-24 space-y-8">
             <div class="flex items-center gap-3">
                 <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
-                <h2 class="text-2xl font-bold text-gray-800">4. 개입 시점을 위기 구간에 맞춥니다</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">4. 개입 시점을 위기 구간에 맞춥니다</h2>
             </div>
 
             <p class="text-gray-600 leading-relaxed max-w-[42em]">위기 구간 차트를 구간별 변화량으로 바꾸고 개입 시점을 같은 줄에 놓았습니다.</p>
@@ -429,7 +431,7 @@
         <section class="scroll-mt-24 space-y-8">
             <div class="flex items-center gap-3">
                 <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
-                <h2 class="text-2xl font-bold text-gray-800">5. 원인 셋을 어디까지 다루는가</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">5. 원인 셋을 어디까지 다루는가</h2>
             </div>
             <p class="text-gray-600 leading-relaxed max-w-[42em]">1장의 퇴사 원인 셋에 운영안이 어디까지 닿는지, 닿지 않는 곳은 왜인지 정했습니다.</p>
 
@@ -459,7 +461,7 @@
         <section class="scroll-mt-24 space-y-8">
             <div class="flex items-center gap-3">
                 <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
-                <h2 class="text-2xl font-bold text-gray-800">6. 개입 수단 셋이 치르는 대가</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">6. 개입 수단 셋이 치르는 대가</h2>
             </div>
             <p class="text-gray-600 leading-relaxed max-w-[42em]">알림, 패스권, 뱃지 모두 <strong class="text-gray-900">발신자가 채용 플랫폼</strong>이라는 이유로 의도와 반대로 읽힐 수 있습니다. 셋 다 조건을 붙여 막았습니다.</p>
 
@@ -496,13 +498,13 @@
         <section class="scroll-mt-24 space-y-10">
             <div class="flex items-center gap-3">
                 <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
-                <h2 class="text-2xl font-bold text-gray-800">7. 성과 지표가 누구의 이익을 재는가</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">7. 성과 지표가 누구의 이익을 재는가</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
                     <p class="text-xs font-bold text-gray-500 mb-3">플랫폼이 원하는 것</p>
-                    <p class="text-sm text-gray-600 leading-relaxed">
+                    <p class="text-base text-gray-600 leading-relaxed">
                     <strong class="text-gray-900">3개월 근속</strong>입니다. <br class="hidden md:block">
                     이 선을 넘기면 수수료가 확정됩니다.
                 </p>
@@ -528,7 +530,7 @@
         <section class="scroll-mt-24 space-y-10">
             <div class="flex items-center gap-3">
                 <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
-                <h2 class="text-2xl font-bold text-gray-800">8. 실행 순서와 검증</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">8. 실행 순서와 검증</h2>
             </div>
 
             <div class="space-y-3">
@@ -536,7 +538,7 @@
                     <span class="w-8 h-8 bg-brand-blue text-white text-xs font-black rounded-full flex items-center justify-center shrink-0">1</span>
                     <div>
                         <p class="font-bold text-gray-800 mb-1">실제 출근일을 확보할 수 있는지 먼저 확인합니다</p>
-                        <p class="text-xs text-gray-500 leading-relaxed max-w-[46em]">
+                        <p class="text-base text-gray-500 leading-relaxed max-w-[46em]">
                     모든 발송이 <strong>출근일</strong>을 기준으로 돕니다. 그런데 입사일 확정과 연기, 포기는 고객사와 합격자 사이에서 정해집니다. 플랫폼이 그 날짜를 언제 어떤 경로로 받는지가 정해지지 않으면 첫 발송부터 시작되지 않습니다.
                 </p>
                     </div>

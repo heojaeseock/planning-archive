@@ -140,6 +140,8 @@
       scroll-behavior: auto !important;
     }
   }
+        /* 구역 제목을 다른 문서와 같은 30px 로 (이 문서의 tailwind.css 에 없는 클래스) */
+        @media (min-width:768px){.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}}
 </style>
 </head>
 <body class="antialiased">
@@ -226,7 +228,7 @@
                     </div>
                   </div>
                 </section>
-                <h2 class="text-2xl font-bold text-slate-900 mb-5">프로젝트 개요</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-5">프로젝트 개요</h2>
                 <p class="text-slate-600 leading-relaxed mb-4">
                     분석 문서가 아니라, 대학 재학 중 4인 팀으로 개발해 실제 출시까지 완료한 모바일 게임입니다. <br class="hidden md:block">
                     자이로센서로 기기를 기울여 점프 궤도를 제어하며, 각국 랜드마크를 픽셀 아트 배경으로 구현했습니다. <br class="hidden md:block">

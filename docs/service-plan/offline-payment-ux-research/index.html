@@ -120,6 +120,8 @@
 
 /* 히어로 제목 크기를 다른 문서와 같은 48px 로 맞춘다 */
 @media (min-width:768px){.md\:text-5xl{font-size:3rem;line-height:1.15}}
+        /* 구역 제목을 다른 문서와 같은 30px 로 (이 문서의 tailwind.css 에 없는 클래스) */
+        @media (min-width:768px){.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}}
 </style>
 </head>
 <body class="antialiased selection:bg-blue-100 selection:text-blue-900">
@@ -186,7 +188,7 @@
         <!-- 0. 문서 개요 -->
         <section id="overview" class="mb-20">
             <div class="bg-white rounded-2xl border border-gray-200 p-8 sm:p-10">
-                <h2 class="text-2xl font-bold text-[#191f28] mb-6">서비스와 직무 정의</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-[#191f28] mb-6">서비스와 직무 정의</h2>
                 <p class="text-gray-600 leading-relaxed mb-4 max-w-[46em]">
                     사용자가 <strong>가맹점주와 소비자</strong> 둘로 나뉘는 서비스입니다. 조사 자체가 아니라 섭외 · 일정 조율 · 사례비 지급 · 결과 정리 같은 운영 기반이 리서처의 시간을 먹습니다.
                 </p>
@@ -196,8 +198,8 @@
         <!-- Section 1: Problem Definition -->
         <section class="mb-20">
             <div class="mb-6 pl-2 text-center">
-                <h2 class="text-2xl font-bold text-[#191f28]">왜 지금 '리서치 옵스'가 필요한가?</h2>
-                <p class="text-[#4e5968] mt-2 text-lg">소프트웨어와 하드웨어가 결합된 오프라인 결제 서비스만의 리서치 특수성</p>
+                <h2 class="text-2xl md:text-3xl font-bold text-[#191f28]">왜 지금 '리서치 옵스'가 필요한가?</h2>
+                <p class="text-[#4e5968] mt-2 text-base">소프트웨어와 하드웨어가 결합된 오프라인 결제 서비스만의 리서치 특수성</p>
             </div>
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-white rounded-3xl p-8 smooth-shadow hover-lift border border-gray-100">
@@ -221,10 +223,10 @@
         <section class="mb-24">
             <div class="bg-white rounded-[2rem] p-8 md:p-12 smooth-shadow border border-gray-100 relative overflow-hidden">
                 <div class="text-center mb-10">
-                    <h2 class="text-3xl font-bold text-[#191f28] mb-3">
+                    <h2 class="text-2xl md:text-3xl font-bold text-[#191f28] mb-3">
                         도입 임팩트 시뮬레이션
                     </h2>
-                    <p class="text-[#4e5968] text-lg">
+                    <p class="text-[#4e5968] text-base">
                         아래 버튼을 눌러 시스템 <strong>도입 전/후 리소스 변화</strong>를 확인해보세요.
                     </p>
                 </div>
@@ -286,7 +288,7 @@
         <!-- Section 3: Interactive Strategies -->
         <section class="mb-20">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-[#191f28] mb-3">문제를 해결할 3대 핵심 전략</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-[#191f28] mb-3">문제를 해결할 3대 핵심 전략</h2>
                 <p class="text-[#4e5968] text-lg">
                     각 카드를 <strong class="text-brand-blue cursor-pointer py-1" onclick="document.getElementById('acc-btn-1').click()" tabindex="0" role="button">클릭</strong>하면 상세 액션 플랜이 펼쳐집니다.
                 </p>
@@ -407,7 +409,7 @@
 
         <section id="review" class="mb-20">
             <div class="mb-10">
-                <h2 class="text-3xl font-black text-slate-900 mb-3">리소스 재배분을 숫자로 보면</h2>
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-3">리소스 재배분을 숫자로 보면</h2>
                 <p class="text-slate-600 leading-relaxed">
                     도입 전후 시뮬레이션의 세 항목을 변화량으로 환산하면
                     <strong class="text-slate-900">무엇이 줄고 무엇이 새로 생기는지</strong>가 분명해집니다.
