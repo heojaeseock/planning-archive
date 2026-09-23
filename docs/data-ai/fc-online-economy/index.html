@@ -120,6 +120,23 @@
       scroll-behavior: auto !important;
     }
   }
+
+/* 탭으로 나뉘어 있던 구역을 세로로 이어 보여 준다 */
+.doc-sections > .doc-section { scroll-margin-top: 112px; }
+.doc-sections > .doc-section + .doc-section { margin-top: 6rem; }
+.nav-link { display: inline-block; }
+
+/* 문서 제목 영역 — 다른 문서와 같은 형태로 맞춘다 */
+.doc-hero { text-align: center; margin-bottom: 3rem; }
+.doc-hero-badge { display: inline-block; padding: 6px 16px; margin-bottom: 24px; border-radius: 999px;
+  background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; font-size: 14px; font-weight: 700; }
+.doc-hero-title { font-size: 30px; line-height: 1.25; font-weight: 800; letter-spacing: -.025em;
+  color: #0f172a; margin-bottom: 24px; }
+@media (min-width: 768px) { .doc-hero-title { font-size: 48px; } }
+.doc-hero-accent { color: #047857; }
+.doc-hero-sub { max-width: 42em; margin: 0 auto; color: #64748b; font-size: 16px; line-height: 1.7; }
+.doc-hero-br { display: none; }
+@media (min-width: 768px) { .doc-hero-br { display: inline; } }
 </style>
 </head>
 <body class="bg-gray-50/50">
@@ -132,21 +149,30 @@
                     <span class="text-white font-black italic text-base">FC</span>
                 </div>
                 <div>
-                    <h1 class="text-2xl font-black tracking-tighter">경제 지표 분석 대시보드</h1>
+                    <p class="text-2xl font-black tracking-tighter">경제 지표 분석 대시보드</p>
                     <p class="text-[11px] text-gray-500 font-bold tracking-wide">운영 기획 분석</p>
                 </div>
             </div>
-            <nav class="flex gap-12 text-[15px]">
-                <span onclick="switchTab('flow')" class="nav-link active" id="tab-flow" tabindex="0" role="button">경제 흐름 분석</span>
-                <span onclick="switchTab('data')" class="nav-link" id="tab-data" tabindex="0" role="button">데이터 지표&nbsp;시각화</span>
-                <span onclick="switchTab('strategy')" class="nav-link" id="tab-strategy" tabindex="0" role="button">시장 안정화 전략</span>
-                <span onclick="switchTab('review')" class="nav-link" id="tab-review" tabindex="0" role="button">전략 검토</span>
-                <span onclick="switchTab('pitch')" class="nav-link" id="tab-pitch" tabindex="0" role="button">핵심 역량 피치</span>
+            <nav class="flex gap-12 text-[15px]" aria-label="문서 안 이동">
+                <a href="#section-flow" class="nav-link active">경제 흐름 분석</a>
+                <a href="#section-data" class="nav-link">데이터 지표&nbsp;시각화</a>
+                <a href="#section-strategy" class="nav-link">시장 안정화 전략</a>
+                <a href="#section-review" class="nav-link">전략 검토</a>
+                <a href="#section-pitch" class="nav-link">핵심 역량 피치</a>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-wide mx-auto px-10 py-16">
+    <main class="max-w-wide mx-auto px-10 py-16 doc-sections">
+        <!-- 문서 제목 -->
+        <header class="doc-hero">
+            <div class="doc-hero-badge">데이터 분석 · 경제 진단</div>
+            <h1 class="doc-hero-title">FC 온라인<br class="doc-hero-br">
+                <span class="doc-hero-accent">이적시장 경제 지표 분석</span></h1>
+            <p class="doc-hero-sub">이적시장의 거래량과 가격 변동으로 <br class="doc-hero-br">게임 경제의 건강도를 진단한 문서입니다.</p>
+        </header>
+
+
         <!-- 이 문서가 하는 말 -->
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
@@ -195,7 +221,7 @@
         </section>
 
 
-        <!-- 0. 문서 개요 (첫 번째 탭에서만 노출) -->
+        <!-- 0. 문서 개요 -->
         <div id="overview" class="mb-16">
             <div class="bg-white rounded-2xl border border-slate-200 p-8 md:p-10">
                 <h2 class="text-2xl font-bold text-slate-900 mb-6">이적시장 구조</h2>
@@ -207,7 +233,7 @@
         </div>
 
         <!-- 섹션 1: 경제 흐름 분석 -->
-        <section id="section-flow" class="tab-content block">
+        <section id="section-flow" class="doc-section">
             <div class="mb-14">
                 <h2 class="text-4xl font-black mb-6 tracking-tight">대장급 시즌 출시와 경제 사이클</h2>
                 <p class="text-gray-500 text-xl">
@@ -261,7 +287,7 @@
         </section>
 
         <!-- 섹션 2: 데이터 지표 시각화 -->
-        <section id="section-data" class="tab-content hidden">
+        <section id="section-data" class="doc-section">
             <div class="mb-14">
                 <h2 class="text-3xl font-black mb-4 tracking-tight">이적시장 핵심 지표 시뮬레이션</h2>
                 <p class="text-gray-500 text-lg">24TOTY 출시 전후의 데이터를 기반으로 한 경제 변화 지표입니다.</p>
@@ -298,7 +324,7 @@
         </section>
 
         <!-- 섹션 3: 시장 안정화 전략 -->
-        <section id="section-strategy" class="tab-content hidden">
+        <section id="section-strategy" class="doc-section">
             <div class="mb-14">
                 <h2 class="text-3xl font-black mb-4 tracking-tight">운영 안정성을 고려한 PM 전략 제안</h2>
                 <p class="text-gray-500 text-lg">인게임 BP 소모처 확보와 시장 유동성 공급을 위한 두 가지 핵심 전략입니다.</p>
@@ -340,7 +366,7 @@
         </section>
 
         <!-- [보강] 섹션: 전략 검토 -->
-        <section id="section-review" class="tab-content hidden">
+        <section id="section-review" class="doc-section">
             <div class="max-w-5xl mx-auto">
 
                 <!-- 1. 전달 경로 -->
@@ -489,7 +515,7 @@
         </section>
 
         <!-- 섹션 4: 핵심 역량 피치 -->
-        <section id="section-pitch" class="tab-content hidden py-24">
+        <section id="section-pitch" class="doc-section py-12">
             <div class="max-w-5xl mx-auto text-center">
                 <h2 class="text-5xl font-black leading-tight mb-20 tracking-tighter">
                     FC 온라인의 재화 흐름을 대장 시즌 단위로 따라가 <strong>개입 지점</strong>을 짚었습니다
@@ -524,23 +550,21 @@
     </footer>
 
     <script>
-        function switchTab(id) {
-            document.querySelectorAll('.tab-content').forEach(s => s.classList.add('hidden'));
-            document.getElementById('section-' + id).classList.remove('hidden');
-            
-            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-            document.getElementById('tab-' + id).classList.add('active');
-
-            // 개요는 첫 번째 탭에서만 보여준다
-            const overview = document.getElementById('overview');
-            if (overview) {
-                overview.classList.toggle('hidden', id !== 'flow');
-            }
-
-            if(id === 'data') {
-                setTimeout(initCharts, 100);
-            }
+        // 상단 메뉴는 지금 읽고 있는 구역을 표시한다
+        function updateActiveNav() {
+            const ids = ['section-flow', 'section-data', 'section-strategy', 'section-review', 'section-pitch'];
+            const offset = window.innerHeight * 0.3;
+            let current = ids[0];
+            ids.forEach(id => {
+                const el = document.getElementById(id);
+                if (el && window.scrollY >= el.offsetTop - offset) current = id;
+            });
+            document.querySelectorAll('.nav-link').forEach(l => {
+                l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+            });
         }
+        window.addEventListener('scroll', updateActiveNav);
+        window.addEventListener('load', function () { initCharts(); updateActiveNav(); });
 
         let chartVol, chartReten;
         function initCharts() {

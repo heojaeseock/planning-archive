@@ -98,6 +98,18 @@
       scroll-behavior: auto !important;
     }
   }
+
+/* 문서 제목 영역 — 다른 문서와 같은 형태로 맞춘다 */
+.doc-hero { text-align: center; margin-bottom: 3rem; }
+.doc-hero-badge { display: inline-block; padding: 6px 16px; margin-bottom: 24px; border-radius: 999px;
+  background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; font-size: 14px; font-weight: 700; }
+.doc-hero-title { font-size: 30px; line-height: 1.25; font-weight: 800; letter-spacing: -.025em;
+  color: #0f172a; margin-bottom: 24px; }
+@media (min-width: 768px) { .doc-hero-title { font-size: 48px; } }
+.doc-hero-accent { color: #dc2626; }
+.doc-hero-sub { max-width: 42em; margin: 0 auto; color: #64748b; font-size: 16px; line-height: 1.7; }
+.doc-hero-br { display: none; }
+@media (min-width: 768px) { .doc-hero-br { display: inline; } }
 </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col">
@@ -110,15 +122,24 @@
                 <span class="inline-block px-3 py-1 bg-red-50 text-red-600 border border-red-200 text-xs font-bold rounded-full mb-2">
                     보상 콘텐츠 기획 분석
                 </span>
-                <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight mb-1 text-slate-900">
+                <p class="text-2xl md:text-3xl font-extrabold tracking-tight mb-1 text-slate-900">
                     카발 RED: 파밍 구조 및 가치 방어 기획안
-                </h1>
+                </p>
             </div>
         </div>
     </header>
 
     <!-- 메인 콘텐츠 영역 -->
     <main class="flex-grow max-w-5xl mx-auto px-4 py-8 w-full space-y-12">
+        <!-- 문서 제목 -->
+        <header class="doc-hero">
+            <div class="doc-hero-badge">게임 시스템 기획</div>
+            <h1 class="doc-hero-title">잉여 장비가 가치를 잃지 않는<br class="doc-hero-br">
+                <span class="doc-hero-accent">카발 RED 보상 순환 설계</span></h1>
+            <p class="doc-hero-sub">파밍으로 쌓인 장비의 값이 떨어지면 파밍할 이유도 함께 사라집니다. <br class="doc-hero-br">남는 장비에 소모처를 만들어 가치를 지키는 구조를 정리했습니다.</p>
+        </header>
+
+
         <!-- 이 문서가 하는 말 -->
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">

@@ -46,7 +46,10 @@
   table.cmp tbody th { background:#f1f5f9; font-weight:700; white-space:nowrap; text-align:left; }
 </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
-<style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}</style>
+<style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
+/* 히어로 제목 크기를 다른 문서와 같은 48px 로 맞춘다 */
+@media (min-width:768px){.md\:text-5xl{font-size:3rem;line-height:1.15}}
+</style>
 </head>
 <body class="antialiased">
 
@@ -55,7 +58,7 @@
   <!-- Hero -->
   <header class="mb-14">
     <p class="text-xs font-black tracking-[.18em] text-indigo-600 uppercase mb-4">장르와 수익 모델 분석</p>
-    <h1 class="text-3xl md:text-[42px] font-black leading-[1.25] tracking-tight mb-5">
+    <h1 class="text-3xl md:text-5xl font-black leading-[1.25] tracking-tight mb-5">
       하이퍼캐주얼에서 하이브리드 캐주얼로<br class="hidden md:block">
       장르 전환 분석과 운영 제언
     </h1>

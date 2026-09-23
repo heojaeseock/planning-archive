@@ -96,6 +96,18 @@
       scroll-behavior: auto !important;
     }
   }
+
+/* 문서 제목 영역 — 다른 문서와 같은 형태로 맞춘다 */
+.doc-hero { text-align: center; margin-bottom: 3rem; }
+.doc-hero-badge { display: inline-block; padding: 6px 16px; margin-bottom: 24px; border-radius: 999px;
+  background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; font-size: 14px; font-weight: 700; }
+.doc-hero-title { font-size: 30px; line-height: 1.25; font-weight: 800; letter-spacing: -.025em;
+  color: #0f172a; margin-bottom: 24px; }
+@media (min-width: 768px) { .doc-hero-title { font-size: 48px; } }
+.doc-hero-accent { color: #2563eb; }
+.doc-hero-sub { max-width: 42em; margin: 0 auto; color: #64748b; font-size: 16px; line-height: 1.7; }
+.doc-hero-br { display: none; }
+@media (min-width: 768px) { .doc-hero-br { display: inline; } }
 </style>
 </head>
 <body class="antialiased">
@@ -105,12 +117,21 @@
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center">
             <div class="flex items-center space-x-2">
                 <span class="text-2xl">🔮</span>
-                <h1 class="font-bold text-xl tracking-tight text-slate-800">프로젝트 C <span class="text-blue-600">콘텐츠 전략</span></h1>
+                <p class="font-bold text-xl tracking-tight text-slate-800">프로젝트 C <span class="text-blue-600">콘텐츠 전략</span></p>
             </div>
         </div>
     </header>
 
     <main class="max-w-5xl mx-auto px-6 py-12 space-y-20">
+        <!-- 문서 제목 -->
+        <header class="doc-hero">
+            <div class="doc-hero-badge">콘텐츠 기획</div>
+            <h1 class="doc-hero-title">서브컬처 타겟 유저 분석과<br class="doc-hero-br">
+                <span class="doc-hero-accent">캐릭터 기획</span></h1>
+            <p class="doc-hero-sub">유저 페르소나를 정의하고 육성 파라미터까지 연결해 <br class="doc-hero-br">캐릭터를 설계한 기록입니다.</p>
+        </header>
+
+
         <!-- 이 문서가 하는 말 -->
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">

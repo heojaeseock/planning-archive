@@ -122,6 +122,18 @@
       scroll-behavior: auto !important;
     }
   }
+
+/* 문서 제목 영역 — 다른 문서와 같은 형태로 맞춘다 */
+.doc-hero { text-align: center; margin-bottom: 3rem; }
+.doc-hero-badge { display: inline-block; padding: 6px 16px; margin-bottom: 24px; border-radius: 999px;
+  background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; font-size: 14px; font-weight: 700; }
+.doc-hero-title { font-size: 30px; line-height: 1.25; font-weight: 800; letter-spacing: -.025em;
+  color: #0f172a; margin-bottom: 24px; }
+@media (min-width: 768px) { .doc-hero-title { font-size: 48px; } }
+.doc-hero-accent { color: #2563eb; }
+.doc-hero-sub { max-width: 42em; margin: 0 auto; color: #64748b; font-size: 16px; line-height: 1.7; }
+.doc-hero-br { display: none; }
+@media (min-width: 768px) { .doc-hero-br { display: inline; } }
 </style>
 </head>
 <body class="bg-[#F9FAFB]">
@@ -131,7 +143,7 @@
         <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <div class="w-8 h-8 flex items-center justify-center bg-brand rounded-lg text-white font-bold text-lg">🛡️</div>
-                <h1 class="font-bold text-lg tracking-tight">리스크 운영 매니저 작업 기록</h1>
+                <p class="font-bold text-lg tracking-tight">리스크 운영 매니저 작업 기록</p>
             </div>
             <div class="text-xs font-bold text-gray-500 bg-gray-50 px-3 py-1 rounded-full">
                 라이브 서비스 운영 경험 기반
@@ -140,6 +152,15 @@
     </header>
 
     <main class="max-w-5xl mx-auto px-6 py-12 space-y-16">
+        <!-- 문서 제목 -->
+        <header class="doc-hero">
+            <div class="doc-hero-badge">라이브 운영 · 리스크 관리</div>
+            <h1 class="doc-hero-title">중고거래 플랫폼<br class="doc-hero-br">
+                <span class="doc-hero-accent">리스크 관리 기획</span></h1>
+            <p class="doc-hero-sub">계정 탈취와 거래 사기를 미리 탐지해 차단하는 <br class="doc-hero-br">운영 체계를 정리한 문서입니다.</p>
+        </header>
+
+
         <!-- 이 문서가 하는 말 -->
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
