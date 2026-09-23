@@ -49,6 +49,8 @@
             margin: 0 auto;
             padding: 0 1.5rem;
         }
+        /* 위 margin 이 제목 영역의 mb-32 를 덮어써 소개 카드가 제목에 붙던 것을 막는다 */
+        header.컨테이너 { margin-bottom: 3.5rem; }
 
         .메인-타이틀 {
             font-size: clamp(2rem, 5vw, 3rem);
@@ -219,6 +221,8 @@
       scroll-behavior: auto !important;
     }
   }
+        /* 이 문서의 tailwind.css 에 없어 효과가 없던 클래스 — 같은 값으로 직접 정의 */
+        .mt-16{margin-top:4rem}
 </style>
 </head>
 <body class="py-24">

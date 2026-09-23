@@ -45,6 +45,8 @@
             height: 380px; 
         }
         @media (max-width: 768px) { .chart-container { height: 280px; } }
+        /* 위 margin 이 mb-8 을 덮어써 그래프 아래가 붙던 것을 막는다 */
+        .chart-container.mb-8 { margin-bottom: 2rem; }
         
         /* Navigation Styles */
         .nav-item { transition: color 0.2s ease; color: #64748b; padding: 6px 0; border-bottom: 3px solid transparent; }
@@ -86,6 +88,16 @@
 
 /* 구역 제목을 다른 문서와 같은 30px 로 */
 @media (min-width:768px){.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}}
+        /* 이 문서의 tailwind.css 에 없어 효과가 없던 클래스 — 같은 값으로 직접 정의 */
+        .bg-white\/95{background-color:rgb(255 255 255 / .95)}
+        .leading-tight{line-height:1.25}
+        .max-w-2xl{max-width:42rem}
+        @media (min-width:768px){.md\:items-center{align-items:center}}
+        @media (min-width:768px){.md\:justify-between{justify-content:space-between}}
+        .py-0\.5{padding-top:.125rem;padding-bottom:.125rem}
+        .py-12{padding-top:3rem;padding-bottom:3rem}
+        .whitespace-nowrap{white-space:nowrap}
+        .z-50{z-index:50}
 </style>
 </head>
 <body class="selection:bg-black selection:text-white">

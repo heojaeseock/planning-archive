@@ -107,6 +107,9 @@
 
 /* 섹션 사이 간격을 다른 문서와 같은 96px 로 맞춘다 */
 .space-y-24 > :not([hidden]) ~ :not([hidden]) { margin-top: 6rem; margin-bottom: 0; }
+        /* 이 문서의 tailwind.css 에 없어 효과가 없던 클래스 — 같은 값으로 직접 정의 */
+        .pb-12{padding-bottom:3rem}
+        .pt-28{padding-top:7rem}
 </style>
 </head>
 <body class="antialiased scroll-smooth">
@@ -130,7 +133,7 @@
     </nav>
 
     <!-- 메인 타이틀 (Hero) -->
-    <header class="pt-16 pb-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+    <header class="pt-28 pb-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
         <div class="inline-block px-5 py-2 rounded-full bg-rose-50 text-rose-600 font-semibold text-sm mb-6 border border-rose-100 shadow-sm">
             다룬 주제 : 커머스 AI 프로덕트 기획·운영
         </div>
