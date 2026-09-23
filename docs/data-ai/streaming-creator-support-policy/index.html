@@ -615,7 +615,7 @@
                     var on = l.getAttribute('href') === '#' + current;
                     if (on) l.setAttribute('aria-current', 'true'); else l.removeAttribute('aria-current');
                     l.classList.toggle('active', on);
-                    l.classList.toggle('text-slate-400', !on);
+                    l.classList.toggle('text-slate-500', !on);
                 });
             }
             window.addEventListener('scroll', updateActiveTab);
