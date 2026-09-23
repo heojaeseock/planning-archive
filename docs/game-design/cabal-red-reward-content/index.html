@@ -85,7 +85,9 @@
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 문장마다 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        .seg-bal { display: block; text-wrap: balance; }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   .text-green-700 { color: rgb(21 128 61); }
 
@@ -215,7 +217,7 @@
                     </p>
                     
                     <div class="mt-4 bg-slate-50 p-4 rounded-lg border border-slate-200 text-sm">
-                        <span class="font-bold text-red-500">인사이트:</span> 유저는 단순한 확률의 체감보다 공급 과잉에 따른 <strong>'내 노력(시간)의 가치 하락'</strong>에서 큰 박탈감을 느끼며 이탈로 이어지는 경향을 보입니다.
+                        <span class="font-bold text-red-500">인사이트:</span> 유저는 단순한 확률의 체감보다 공급 과잉에 따른 <strong>'내&nbsp;노력&#8288;(시간)&#8288;의 가치 하락'</strong>에서 큰 박탈감을 느끼며 이탈로 이어지는&nbsp;경향을 보입니다.
                     </div>
                 </div>
 
@@ -433,7 +435,7 @@
                             <span id="m-icon1" class="text-slate-500 transition-transform duration-300 flex-shrink-0 ml-2 rotate-180">▲</span>
                         </button>
                         <div id="manual1" class="p-4 bg-slate-50 text-sm text-slate-600 border-t border-slate-200 leading-relaxed">
-                            오지급 및 버그 의심 알람 확인 즉시 운영팀과 공조합니다. 문제 파악 전까지 <strong>해당 사냥터의 임시 접근 제한 또는 획득률 조정 핫픽스(Kill-Switch)</strong>를 검토하여 시장 교란 확산을 사전에 차단합니다.
+                            <span class="seg-bal">오지급 및 버그 의심 알람 확인 즉시 운영팀과 공조합니다.</span> <span class="seg-bal">문제 파악 전까지 <strong>해당 사냥터의 임시 접근 제한 또는 획득률 조정 핫픽스&#8288;(Kill-Switch)</strong>&#8288;를 검토하여 시장 교란 확산을 사전에 차단합니다.</span>
                         </div>
                     </div>
 
