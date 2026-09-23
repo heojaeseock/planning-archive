@@ -64,6 +64,9 @@
         input[type=range]::-webkit-slider-thumb { height: 28px; width: 28px; border-radius: 50%; background: #3182F6; cursor: pointer; -webkit-appearance: none; margin-top: -10px; box-shadow: 0 4px 12px rgba(49, 130, 246, 0.3); border: 4px solid white; transition: transform 0.1s; }
         input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.1); }
 
+        /* 목업 버튼을 눌렀을 때 결과를 알리는 줄 (브라우저 경고창 대신) */
+        .action-result { min-height: 1.25rem; font-size: 13px; font-weight: 700; color: #1B64DA; text-align: center; }
+
         /* 잘림 현상 없는 안내 문구 */
         .inline-guide {
             color: #60A5FA;
@@ -351,8 +354,9 @@
                         <div class="flex flex-col justify-between">
                             <div class="space-y-3">
                                 <h4 class="font-bold text-[#333D4B] mb-4">고객 상담 연계 작업</h4>
-                                <button class="w-full py-4 bg-[#3182F6] text-white rounded-xl font-bold btn-bounce text-sm shadow-md shadow-blue-200" onclick="alert('선택하신 조건으로 비교 견적서가 생성되었습니다.')">현재 조건으로 3사 비교 견적 만들기</button>
-                                <button class="w-full py-4 bg-[#F2F4F6] text-[#4E5968] rounded-xl font-bold btn-bounce text-sm" onclick="alert('고객님의 카카오톡으로 실시간 링크가 전송되었습니다.')">고객 화면 공유 링크 전송하기</button>
+                                <button class="w-full py-4 bg-[#3182F6] text-white rounded-xl font-bold btn-bounce text-sm shadow-md shadow-blue-200" onclick="showActionResult('선택하신 조건으로 비교 견적서가 생성되었습니다.')">현재 조건으로 3사 비교 견적 만들기</button>
+                                <button class="w-full py-4 bg-[#F2F4F6] text-[#4E5968] rounded-xl font-bold btn-bounce text-sm" onclick="showActionResult('고객님의 카카오톡으로 실시간 링크가 전송되었습니다.')">고객 화면 공유 링크 전송하기</button>
+                                <p id="action-result" class="action-result" role="status" aria-live="polite"></p>
                             </div>
                             
                             <div class="bg-gray-50 p-6 rounded-xl mt-8 border border-gray-100">
@@ -664,6 +668,14 @@
             document.getElementById('insuranceSlider').addEventListener('input', updateSimulator);
         });
 
+        // 목업 버튼 결과 안내
+        function showActionResult(msg) {
+            const box = document.getElementById('action-result');
+            if (!box) return;
+            box.textContent = '';
+            setTimeout(() => { box.textContent = msg; }, 50);
+        }
+
         // 검색 처리
         function handleSearch() {
             const input = document.getElementById('customerInput').value.trim();
@@ -677,8 +689,11 @@
                 // 입력 없을 시 데모용 토글
                 currentActive = currentActive === "김민수" ? "이보험" : "김민수";
                 updateUI();
-            } else {
-                alert("현재 체험 버전에서는 '김민수' 또는 '이보험'만 검색 가능합니다.");
+            } else if (guide) {
+                // 브라우저 경고창 대신 입력칸 아래 안내로 알린다
+                guide.style.display = 'flex';
+                guide.setAttribute('role', 'status');
+                guide.lastChild.textContent = ' 체험용이라 "김민수" 또는 "이보험"만 조회됩니다.';
             }
         }
 
