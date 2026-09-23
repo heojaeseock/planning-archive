@@ -103,6 +103,16 @@
 
 /* 구역 배너 제목을 다른 문서와 같은 30px 로 */
 @media (min-width:768px){.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}}
+
+  /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 1ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 </style>
 </head>
 <body class="antialiased selection:bg-cfred selection:text-white">
