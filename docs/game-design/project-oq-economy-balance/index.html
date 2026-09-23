@@ -82,6 +82,15 @@
       scroll-behavior: auto !important;
     }
   }
+        /* 휴대폰 안쪽 여백 줄임 */
+        /* 카드 안의 카드가 겹겹이 여백을 먹어 휴대폰에서 글 폭이 150~220px 까지 좁아지던 것을 푼다 (640px 이하에서만) */
+        @media (max-width: 640px) {
+            .p-14, .p-12, .p-10 { padding: 1.5rem !important; }
+            .p-9, .p-8 { padding: 1.25rem !important; }
+            .p-7, .p-6 { padding: 1rem !important; }
+            .px-12, .px-10 { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+            .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
+        }
 </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased leading-relaxed pb-20">
@@ -111,17 +120,17 @@
                 <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
                     <div class="px-3 py-5 md:py-6 text-center">
                         <p class="text-[11px] font-bold text-slate-500 mb-2">무과금이 쓰는 시간</p>
-                        <p class="text-xl md:text-3xl font-black text-slate-900 tracking-tight">80시간</p>
+                        <p class="text-lg md:text-3xl font-black text-slate-900 tracking-tight">80시간</p>
                         <p class="text-[11px] text-slate-500 mt-1">10일 · 하루 8시간</p>
                     </div>
                     <div class="px-3 py-5 md:py-6 text-center">
                         <p class="text-[11px] font-bold text-slate-500 mb-2">그&nbsp;시간의 최저임금 환산</p>
-                        <p class="text-xl md:text-3xl font-black text-rose-700 tracking-tight">825,600원</p>
+                        <p class="text-lg md:text-3xl font-black text-rose-700 tracking-tight">825,600원</p>
                         <p class="text-[11px] text-slate-500 mt-1">시간당 10,320원</p>
                     </div>
                     <div class="px-3 py-5 md:py-6 text-center">
                         <p class="text-[11px] font-bold text-slate-500 mb-2">과금이 내는 돈</p>
-                        <p class="text-xl md:text-3xl font-black text-slate-900 tracking-tight">600,000원</p>
+                        <p class="text-lg md:text-3xl font-black text-slate-900 tracking-tight">600,000원</p>
                         <p class="text-[11px] text-slate-500 mt-1">패키지 즉시 완성</p>
                     </div>
                 </div>

@@ -138,6 +138,15 @@
 .tap-tall:focus { outline: 2px solid #93c5fd; outline-offset: 2px; border-radius: 4px; }
         /* 이 문서의 tailwind.css 에 없어 효과가 없던 클래스 — 같은 값으로 직접 정의 */
         .border-blue-200{border-color:#bfdbfe}
+        /* 휴대폰 안쪽 여백 줄임 */
+        /* 카드 안의 카드가 겹겹이 여백을 먹어 휴대폰에서 글 폭이 150~220px 까지 좁아지던 것을 푼다 (640px 이하에서만) */
+        @media (max-width: 640px) {
+            .p-14, .p-12, .p-10 { padding: 1.5rem !important; }
+            .p-9, .p-8 { padding: 1.25rem !important; }
+            .p-7, .p-6 { padding: 1rem !important; }
+            .px-12, .px-10 { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+            .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
+        }
 </style>
 </head>
 <body class="flex flex-col min-h-screen">

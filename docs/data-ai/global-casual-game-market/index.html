@@ -104,6 +104,15 @@
         .mt-6{margin-top:1.5rem}
         /* 구역 제목을 다른 문서와 같은 30px 로 (이 문서의 tailwind.css 에 없는 클래스) */
         @media (min-width:768px){.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}}
+        /* 휴대폰 안쪽 여백 줄임 */
+        /* 카드 안의 카드가 겹겹이 여백을 먹어 휴대폰에서 글 폭이 150~220px 까지 좁아지던 것을 푼다 (640px 이하에서만) */
+        @media (max-width: 640px) {
+            .p-14, .p-12, .p-10 { padding: 1.5rem !important; }
+            .p-9, .p-8 { padding: 1.25rem !important; }
+            .p-7, .p-6 { padding: 1rem !important; }
+            .px-12, .px-10 { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+            .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
+        }
 </style>
 </head>
 <body class="bg-slate-50/50">
@@ -137,7 +146,7 @@
         <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
           <div class="px-3 py-5 md:py-6 text-center">
             <p class="text-[11px] font-bold text-slate-500 mb-2 bal">차트에 남는 것</p>
-            <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">복합 성장형&nbsp;45%</p>
+            <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">복합 성장형 45%</p>
             <p class="text-[11px] text-slate-500 mt-1 bal">단순 조작형은 20%&#8288;에 머뭅니다</p>
           </div>
           <div class="px-3 py-5 md:py-6 text-center">
@@ -366,7 +375,7 @@
         <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4 tracking-tight">두&nbsp;지표의 1위가 서로 다릅니다</h2>
         <p class="text-slate-600 leading-relaxed mb-10 max-w-3xl">
                     1번의 차트 두&nbsp;개는 각각 다른 것을 1위로 보여줍니다. <br class="hidden md:block">
-                    <strong class="text-slate-900">점유율 1위는 복합 성장형&nbsp;45%</strong>&#8288;이고, <strong class="text-slate-900">유입 효율 1위는 시각적 정렬 소재 72</strong>입니다. <br class="hidden md:block">
+                    <strong class="text-slate-900">점유율 1위는 복합 성장형 45%</strong>&#8288;이고, <strong class="text-slate-900">유입 효율 1위는 시각적 정렬 소재 72</strong>입니다. <br class="hidden md:block">
                     이&nbsp;둘을 나란히 놓으면 전략의 근거가 수치로 잡힙니다.
                 </p>
 

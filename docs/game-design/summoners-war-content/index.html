@@ -121,7 +121,9 @@
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서 이 카드의 글 폭이 145px 까지 좁아져 줄이 자주 끊기던 것을 넓힌다 */
+        @media (max-width:767px){ .synergy-card { padding: 1.5rem; } .synergy-card p.text-lg { font-size: 1rem; line-height: 1.75rem; } }
+</style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -133,6 +135,17 @@
       scroll-behavior: auto !important;
     }
   }
+        /* 휴대폰 안쪽 여백 줄임 */
+        /* 카드 안의 카드가 겹겹이 여백을 먹어 휴대폰에서 글 폭이 150~220px 까지 좁아지던 것을 푼다 (640px 이하에서만) */
+        @media (max-width: 640px) {
+            .p-14, .p-12, .p-10 { padding: 1.5rem !important; }
+            .p-9, .p-8 { padding: 1.25rem !important; }
+            .p-7, .p-6 { padding: 1rem !important; }
+            .px-12, .px-10 { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+            .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
+        }
+        /* 이 문서 전용 카드도 휴대폰에서 여백을 줄인다 */
+        @media (max-width: 640px) { .section-card { padding: 1.25rem !important; } }
 </style>
 </head>
 <body class="p-6 md:p-12 lg:p-20">
@@ -271,7 +284,7 @@
             </div>
         </div>
 
-        <div class="p-10 bg-white rounded-2xl border border-blue-50">
+        <div class="p-10 bg-white rounded-2xl border border-blue-50 synergy-card">
             <h3 class="text-blue-600 font-black mb-4">몬스터 시너지 조합 예시</h3>
             <p class="text-slate-600 leading-relaxed text-lg bal max-w-[46em]">
                     단일 딜러로는 세&nbsp;조건을 다 채울 수 없습니다. 불 실프&#8288;(지속 피해), 물 미스틱위치&#8288;(강화 방해), 빛&nbsp;이누가미&#8288;(방깎)&#8288;처럼 역할이 뚜렷한 유닛을 붙여야 하고, 그래서&nbsp;<strong>창고에 넣어둔 몬스터를 다시 꺼낼 이유</strong>가 생깁니다.
@@ -320,7 +333,7 @@
                     <div class="reward-tag">
                         <div class="text-3xl mb-2">🪙</div>
                         <div class="text-[11px] text-slate-600 font-bold mb-1">마나 환급</div>
-                        <div class="text-sm font-black text-emerald-600">30%~50% 부분&nbsp;환급</div>
+                        <div class="text-sm font-black text-emerald-600">30%~<wbr>50% 부분&nbsp;환급</div>
                     </div>
                     <div class="reward-tag">
                         <div class="text-3xl mb-2">📜</div>
