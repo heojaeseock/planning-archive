@@ -560,7 +560,9 @@
                 if (el && window.scrollY >= el.offsetTop - offset) current = id;
             });
             document.querySelectorAll('.nav-link').forEach(l => {
-                l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+                var on = l.getAttribute('href') === '#' + current;
+                    l.classList.toggle('active', on);
+                    if (on) l.setAttribute('aria-current', 'true'); else l.removeAttribute('aria-current');
             });
         }
         window.addEventListener('scroll', updateActiveNav);

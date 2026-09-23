@@ -131,6 +131,8 @@
 
 /* 이름 입력칸을 손가락으로 누르기 쉬운 높이로 (보이는 상자는 그대로) */
 .tap-tall { padding-top: 8px; padding-bottom: 8px; margin-top: -8px; margin-bottom: -8px; }
+/* 키보드로 옮겨 왔을 때 지금 위치가 보이게 */
+.tap-tall:focus { outline: 2px solid #93c5fd; outline-offset: 2px; border-radius: 4px; }
 </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -649,7 +651,11 @@
                     const el = document.getElementById(id);
                     if (el && window.scrollY >= el.offsetTop - offset) current = id;
                 });
-                tabs.forEach(t => t.classList.toggle('active', t.getAttribute('href') === '#' + current));
+                tabs.forEach(function (t) {
+                    var on = t.getAttribute('href') === '#' + current;
+                    t.classList.toggle('active', on);
+                    if (on) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current');
+                });
             }
             window.addEventListener('scroll', updateActiveNav);
             updateActiveNav();

@@ -790,7 +790,9 @@
                     if (el && window.scrollY >= el.offsetTop - offset) current = id;
                 });
                 links.forEach(function (l) {
-                    l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+                    var on = l.getAttribute('href') === '#' + current;
+                    l.classList.toggle('active', on);
+                    if (on) l.setAttribute('aria-current', 'true'); else l.removeAttribute('aria-current');
                 });
             }
             window.addEventListener('scroll', updateActiveTab);

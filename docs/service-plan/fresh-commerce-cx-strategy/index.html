@@ -731,6 +731,7 @@
                 });
                 links.forEach(function (l) {
                     var on = l.getAttribute('href') === '#' + current;
+                    if (on) l.setAttribute('aria-current', 'true'); else l.removeAttribute('aria-current');
                     l.classList.toggle('nav-active', on);
                     dim.forEach(function (d) { l.classList.toggle(d, !on); });
                 });

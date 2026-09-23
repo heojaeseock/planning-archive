@@ -686,6 +686,7 @@
                 });
                 links.forEach(function (l) {
                     var act = l.getAttribute('href') === '#' + current;
+                    if (act) l.setAttribute('aria-current', 'true'); else l.removeAttribute('aria-current');
                     l.classList.toggle('active', act);
                     on.forEach(function (x) { l.classList.toggle(x, act); });
                     off.forEach(function (x) { l.classList.toggle(x, !act); });

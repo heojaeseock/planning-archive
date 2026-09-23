@@ -642,6 +642,7 @@ function updateNexonDetail(gameId) {
         });
         links.forEach(function (l) {
             var on = l.getAttribute('href') === '#' + current;
+            if (on) l.setAttribute('aria-current', 'true'); else l.removeAttribute('aria-current');
             l.classList.toggle('tab-active', on);
             l.classList.toggle('tab-inactive', !on);
         });
