@@ -58,7 +58,8 @@
         .btn-bounce:active { transform: scale(0.96); }
         
         /* 커스텀 슬라이더 (핀테크 플랫폼 스타일) */
-        input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
+        input[type=range] { -webkit-appearance: none; width: 100%; background: transparent;
+            height: 28px;   /* 손가락으로 잡는 범위 (보이는 띠는 8px 그대로) */ }
         input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 8px; cursor: pointer; background: #E5E8EB; border-radius: 4px; }
         input[type=range]::-webkit-slider-thumb { height: 28px; width: 28px; border-radius: 50%; background: #3182F6; cursor: pointer; -webkit-appearance: none; margin-top: -10px; box-shadow: 0 4px 12px rgba(49, 130, 246, 0.3); border: 4px solid white; transition: transform 0.1s; }
         input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.1); }
@@ -127,6 +128,9 @@
 /* 파란 바탕 위 강조 — 연한 파랑은 읽기 힘들어 흰 글자 + 밑줄로 */
 .accent-on-blue { color:#fff; text-decoration: underline; text-decoration-color:#bfdbfe;
   text-decoration-thickness:3px; text-underline-offset:6px; }
+
+/* 이름 입력칸을 손가락으로 누르기 쉬운 높이로 (보이는 상자는 그대로) */
+.tap-tall { padding-top: 8px; padding-bottom: 8px; margin-top: -8px; margin-bottom: -8px; }
 </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -287,7 +291,7 @@
                         <span class="text-white font-bold text-xs opacity-70 mb-2 block">상담 고객 연동 테스트</span>
                         <div class="bg-[#4E5968] rounded-xl px-4 py-3 flex items-center gap-3 w-full md:w-[350px]">
                             <span class="text-gray-400 text-sm">&#128269;</span>
-                            <input type="text" id="customerInput" aria-label="상담 고객 이름 입력" placeholder="이름 입력 (예: 김민수, 이보험)" class="bg-transparent outline-none text-white text-sm w-full placeholder-gray-400">
+                            <input type="text" id="customerInput" aria-label="상담 고객 이름 입력" placeholder="이름 입력 (예: 김민수, 이보험)" class="tap-tall bg-transparent outline-none text-white text-sm w-full placeholder-gray-400">
                             <button onclick="handleSearch()" class="bg-[#3182F6] text-white text-xs px-4 py-1.5 rounded-lg font-bold btn-bounce shrink-0">적용</button>
                         </div>
                         <!-- 안내 텍스트 -->
