@@ -69,7 +69,6 @@
 
         /* 가상 UI 전용 스타일 */
         .mockup-ui {
-            background: #0f172a; 
             border-radius: 16px;
             overflow: hidden;
             border: 1px solid #1e293b;
@@ -77,6 +76,8 @@
             font-size: 12px;
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
+        /* 배경을 따로 지정한 경우에는 비켜선다 */
+        .mockup-ui:not([class*="bg-"]) { background: #0f172a; }
 
         .gradient-text {
             background: linear-gradient(to right, #f59e0b, #ef4444);
@@ -103,6 +104,10 @@
       scroll-behavior: auto !important;
     }
   }
+
+/* 읽기 힘들던 글자색을 같은 계열의 진한 값으로 바꾼다 */
+.bg-emerald-700{background-color:#047857}
+.text-sky-700{color:#0369a1}
 </style>
 </head>
 <body class="antialiased">
@@ -399,7 +404,7 @@
                                 <span class="text-5xl mb-2 animate-bounce">🎁</span>
                                 <h4 class="font-black text-xl text-slate-900 mb-1">지금 접속하면 3000뽑기 무료!</h4>
                                 <p class="text-xs text-rose-600 font-bold mb-4">#슬픈개구리_콜라보 #무한성장</p>
-                                <button  class="bg-emerald-500 text-white font-bold py-2 px-8 rounded-full text-sm shadow-lg transition-transform" tabindex="-1" style="cursor:default">지금 다운로드</button>
+                                <button  class="bg-emerald-700 text-white font-bold py-2 px-8 rounded-full text-sm shadow-lg transition-transform" tabindex="-1" style="cursor:default">지금 다운로드</button>
                             </div>
                         </div>
                     </div>
@@ -450,7 +455,7 @@
 
                     <div class="grid md:grid-cols-3 gap-5 mb-8">
                         <div class="content-panel p-6 border-t-[6px] border-t-sky-500">
-                            <p class="text-[10px] font-black tracking-wide text-sky-500 mb-2">1단계 &middot; 유입</p>
+                            <p class="text-[10px] font-black tracking-wide text-sky-700 mb-2">1단계 &middot; 유입</p>
                             <p class="font-black text-slate-900 mb-3 text-sm">요인 04 &middot; 01</p>
                             <p class="text-xs text-slate-600 leading-relaxed">
                     밈 기반 대량 광고와 친숙한 IP가 <strong class="text-slate-800">진입 장벽을 낮춥니다.</strong> <br class="hidden md:block">
@@ -591,7 +596,7 @@
                 <!-- 3. 감시 지표 · 한계 -->
                 <div>
                     <div class="content-panel p-6 md:p-7">
-                        <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">이 모델에서 감시해야 할 지표</p>
+                        <p class="text-[10px] font-black tracking-wide text-slate-500 mb-4">이 모델에서 감시해야 할 지표</p>
                         <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                             <li class="bal">&bull; <strong class="text-slate-800">유입 대비 잔존:</strong> 광고 유입 유저의 D7 &middot; D30 잔존율 &mdash; 퍼널 앞단과 뒷단의 괴리 크기</li>
                             <li>&bull; <strong class="text-slate-800">매출의 마케팅 종속도:</strong> 광고 집행액 대비 매출 탄력성 (집행을 줄였을 때 매출이 함께 떨어지는 정도)</li>

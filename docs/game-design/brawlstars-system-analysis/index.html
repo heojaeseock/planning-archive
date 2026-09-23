@@ -69,12 +69,13 @@
 
         /* 가상 UI 전용 스타일 */
         .mockup-ui {
-            background: #ffffff; 
             border-radius: 20px;
             overflow: hidden;
             border: 2px solid #e2e8f0;
             box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.08);
         }
+        /* 배경을 따로 지정한 경우에는 비켜선다 */
+        .mockup-ui:not([class*="bg-"]) { background: #ffffff; }
 
         /* 브롤스타즈풍 테이블 커스텀 */
         .bs-table th { color: #ffffff; font-size: 13px; font-weight: 800; padding: 12px; text-align: center; border: 1px solid #cbd5e1; }
@@ -82,10 +83,14 @@
         .bs-table tr:nth-child(even) { background-color: #f8fafc; }
         .bs-table tr:hover { background-color: #f1f5f9; }
         
-        .row-gadget { background-color: #16a34a !important; color: white !important; font-weight: 900 !important; }
-        .row-gear { background-color: #0ea5e9 !important; color: white !important; font-weight: 900 !important; }
-        .row-starpower { background-color: #eab308 !important; color: white !important; font-weight: 900 !important; }
-        .row-hypercharge { background-color: #a855f7 !important; color: white !important; font-weight: 900 !important; }
+        /* 색이 뜻을 갖는 줄이라 색조는 유지하고, 글자가 읽히는 진하기로 맞춘다 */
+        .row-gadget { background-color: #15803d !important; color: white !important; font-weight: 900 !important; }
+        .row-gear { background-color: #0369a1 !important; color: white !important; font-weight: 900 !important; }
+        .row-starpower { background-color: #a16207 !important; color: white !important; font-weight: 900 !important; }
+        .row-hypercharge { background-color: #7e22ce !important; color: white !important; font-weight: 900 !important; }
+        /* 색을 따로 지정하지 않은 칸은 줄 색 위에서 흰 글자로 */
+        .row-gadget td:not([class*="bg-"]), .row-gear td:not([class*="bg-"]),
+        .row-starpower td:not([class*="bg-"]), .row-hypercharge td:not([class*="bg-"]) { color: #fff; }
         h1,h2,h3,h4 { text-wrap: balance; }
         p, li, td, div, span, dd, figcaption { text-wrap: pretty; }
         .bal { text-wrap: balance; }
@@ -105,6 +110,9 @@
       scroll-behavior: auto !important;
     }
   }
+
+/* 읽기 힘들던 글자색을 같은 계열의 진한 값으로 바꾼다 */
+.bg-yellow-700{background-color:#a16207}
 </style>
 </head>
 <body class="antialiased">
@@ -371,7 +379,7 @@
                         <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
                             <h4 class="font-bold text-blue-600 text-sm mb-3 border-b border-slate-100 pb-2">7단계 희귀도 시스템</h4>
                             <p class="text-slate-600 leading-relaxed font-medium text-sm">
-                    기본 ➔ <span class="text-green-500 font-bold">희귀</span> ➔ <span class="text-blue-500 font-bold">초희귀</span> ➔ <span class="text-purple-500 font-bold">영웅</span> ➔ <span class="text-red-500 font-bold">신화</span> ➔ <span class="text-yellow-500 font-bold">전설</span> ➔ 크로마틱 <span class="text-[10px] text-slate-400 mt-1 block">* 등급이 오를수록 획득 난이도와 스킬 메커니즘의 복잡도가 올라갑니다.</span>
+                    기본 ➔ <span class="text-green-700 font-bold">희귀</span> ➔ <span class="text-blue-500 font-bold">초희귀</span> ➔ <span class="text-purple-500 font-bold">영웅</span> ➔ <span class="text-red-500 font-bold">신화</span> ➔ <span class="text-yellow-700 font-bold">전설</span> ➔ 크로마틱 <span class="text-[10px] text-slate-500 mt-1 block">* 등급이 오를수록 획득 난이도와 스킬 메커니즘의 복잡도가 올라갑니다.</span>
                 </p>
                         </div>
                         <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
@@ -425,7 +433,7 @@
                             <div class="text-center mb-3">
                                 <span class="bg-slate-100 text-slate-500 text-[10px] font-black px-3 py-1 rounded-full uppercase">Level 9</span>
                             </div>
-                            <h4 class="font-black text-yellow-500 text-center text-base mb-3">스타 파워</h4>
+                            <h4 class="font-black text-yellow-700 text-center text-base mb-3">스타 파워</h4>
                             <p class="text-[11px] text-slate-600 font-medium text-center leading-relaxed mb-auto">
                                 브롤러에게 강력한 <strong class="text-slate-800">핵심 패시브 능력</strong>을 부여하거나 기존 능력을 진화시키는 시스템.
                             </p>
@@ -499,7 +507,7 @@
                             </table>
                         </div>
                     </div>
-                    <p class="text-[10px] font-bold text-slate-400 mt-2 text-right">* 풀업(11레벨+모든 장비 장착) 달성 시 코인 소모량이 급격히 증가하여 전략적 과금을 유도하는 구조</p>
+                    <p class="text-[10px] font-bold text-slate-500 mt-2 text-right">* 풀업(11레벨+모든 장비 장착) 달성 시 코인 소모량이 급격히 증가하여 전략적 과금을 유도하는 구조</p>
                 </div>
 
                 <!-- [보강] 요구 재화 커브 해석 -->
@@ -556,7 +564,7 @@
                                 <p class="text-sm text-slate-600 leading-relaxed bal">3→4 구간부터 요구량이 <strong class="text-slate-900">앞 두 구간의 합과 전 구간 예외 없이 일치</strong>합니다. 그래서 증가율이 황금비 1.618로 수렴합니다. 임의로 정한 숫자가 아니라 수열로 만든 값입니다.</p>
                             </div>
                             <div class="bg-slate-50 border-2 border-slate-200 rounded-2xl p-5">
-                                <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">코인</p>
+                                <p class="text-[10px] font-black tracking-wide text-slate-500 mb-2">코인</p>
                                 <p class="font-black text-slate-900 mb-2 bal">거꾸로 완만해집니다</p>
                                 <p class="text-sm text-slate-600 leading-relaxed bal">초반 2.14배까지 튀었다가 후반에 1.49배로 내려옵니다. <strong class="text-slate-900">초반에 조여 체감 난이도를 올리고, 후반에는 병목을 파워 포인트 쪽으로 넘깁니다.</strong></p>
                             </div>
@@ -723,7 +731,7 @@
                         </div>
                         <div class="content-panel p-6 md:p-7 border-l-[6px] border-l-yellow-500">
                             <div class="flex items-start gap-4">
-                                <span class="w-8 h-8 shrink-0 rounded-lg bg-yellow-500 text-white font-black text-sm flex items-center justify-center">03</span>
+                                <span class="w-8 h-8 shrink-0 rounded-lg bg-yellow-700 text-white font-black text-sm flex items-center justify-center">03</span>
                                 <div>
                                     <p class="font-black text-slate-900 text-base mb-2">눈에 보이는 목표는 앞에, 실제 지출은 뒤에 둔다</p>
                                     <p class="text-sm text-slate-600 leading-relaxed mb-3 bal">

@@ -56,6 +56,13 @@
 
 /* 히어로 제목 크기를 다른 문서와 같은 48px 로 맞춘다 */
 @media (min-width:768px){.md\:text-5xl{font-size:3rem;line-height:1.15}}
+
+/* 읽기 힘들던 글자색을 같은 계열의 진한 값으로 바꾼다 */
+.bg-amber-200{background-color:#fde68a}
+.bg-amber-700{background-color:#b45309}
+
+/* 배지 글자를 진하게 해 읽히게 한다 */
+.text-amber-800{color:#92400e}
 </style>
 </head>
 <body class="antialiased bg-slate-50">
@@ -320,7 +327,7 @@
                         <div class="md:w-3/5 space-y-8">
                             <div>
                                 <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                                    <span class="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center text-sm">02</span>
+                                    <span class="w-8 h-8 rounded-lg bg-amber-700 text-white flex items-center justify-center text-sm">02</span>
                                     게이미피케이션 리워드 (성장 패스)
                                 </h3>
                                 <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">
@@ -330,21 +337,21 @@
                             </div>
                             <div class="grid grid-cols-1 gap-3">
                                 <div class="flex items-center gap-4 p-4 border border-slate-100 rounded-2xl hover:bg-amber-50/30 transition-colors">
-                                    <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center font-bold text-amber-600 text-xs">Lv.1</div>
+                                    <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center font-bold text-amber-800 text-xs">Lv.1</div>
                                     <div class="flex-1">
                                         <h4 class="font-bold text-xs text-slate-800">50시간 방송 달성</h4>
                                         <p class="text-[10px] text-slate-500">보상: 메인 리스트 1시간 상단 고정 노출권</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-4 p-4 border border-slate-100 rounded-2xl hover:bg-amber-50/30 transition-colors">
-                                    <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center font-bold text-amber-600 text-xs">Lv.2</div>
+                                    <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center font-bold text-amber-800 text-xs">Lv.2</div>
                                     <div class="flex-1">
                                         <h4 class="font-bold text-xs text-slate-800">즐겨찾기 300명 달성</h4>
                                         <p class="text-[10px] text-slate-500">보상: 전용 시그니처 이모티콘 1종 무료 등록권</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-4 p-4 border border-slate-100 rounded-2xl hover:bg-amber-50/30 transition-colors">
-                                    <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center font-bold text-amber-600 text-xs">Lv.3</div>
+                                    <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center font-bold text-amber-800 text-xs">Lv.3</div>
                                     <div class="flex-1">
                                         <h4 class="font-bold text-xs text-slate-800">첫 정산 성공 (10만원 이상)</h4>
                                         <p class="text-[10px] text-slate-500">보상: 수수료 1개월간 5% 인하 및 송출 장비 우선 지원</p>
@@ -356,7 +363,7 @@
                             <div class="bg-amber-50/50 p-8 rounded-3xl border border-amber-100 text-center space-y-6">
                                 <h5 class="font-bold text-amber-900 text-sm">신입 성장 패스 UI 예시</h5>
                                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-amber-200">
-                                    <p class="text-[10px] text-slate-400 font-bold mb-2">현재 퀘스트 달성률</p>
+                                    <p class="text-[10px] text-slate-500 font-bold mb-2">현재 퀘스트 달성률</p>
                                     <p class="text-3xl font-black text-amber-600">65%</p>
                                     <div class="w-full bg-slate-100 h-2 mt-4 rounded-full overflow-hidden">
                                         <div class="bg-amber-500 h-full" style="width: 65%;"></div>

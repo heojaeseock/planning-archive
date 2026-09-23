@@ -168,6 +168,7 @@
             table-layout: fixed; 
         }
         .mock-table th {
+            color: #475569;   /* 표 머리글이 흐려 읽기 힘들던 것을 고침 */
             text-align: center;
             vertical-align: middle;
             line-height: 1;
@@ -302,7 +303,7 @@
         </nav>
 
         <!-- 섹션 1: 시장 분석 -->
-        <div id="analysis" class="max-w-5xl w-full tab-content active space-y-12">
+        <div id="analysis" class="max-w-5xl w-full tab-content space-y-12">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <div class="content-card p-10 space-y-8">
                     <div class="space-y-2">
@@ -370,7 +371,7 @@
                 
                 <div class="space-y-4">
                     <div class="flex justify-between items-end px-2">
-                        <p class="text-xs font-black text-slate-400 tracking-wide">Kids Air 정보 설계 구조도</p>
+                        <p class="text-xs font-black text-slate-500 tracking-wide">Kids Air 정보 설계 구조도</p>
                         <p class="text-[10px] text-sky-600 font-bold bg-sky-50 px-3 py-1 rounded-full animate-pulse">이미지를 클릭하면 확대됩니다</p>
                     </div>
                     <div class="ia-container group overflow-hidden" onclick="openImageModal('kids_air_ia.webp')" tabindex="0" role="button">
@@ -424,16 +425,16 @@
 
                     <!-- 가상 UI 체험 위젯 -->
                     <div class="w-80 h-[540px] bg-white p-8 flex flex-col relative overflow-hidden rounded-[32px] border-4 border-slate-200 shadow-2xl">
-                        <p class="text-[10px] font-black text-slate-400 mb-8 text-center tracking-wide">가상 UI 체험</p>
+                        <p class="text-[10px] font-black text-slate-500 mb-8 text-center tracking-wide">가상 UI 체험</p>
                         
                         <div id="statusBall" class="w-44 h-44 mx-auto rounded-full bg-sky-50 flex flex-col items-center justify-center mb-10 transition-all duration-700 border border-sky-100">
                             <span id="statusEmoji" class="text-6xl mb-3 text-center">😊</span>
-                            <span id="statusLabel" class="text-sm font-black text-sky-500 tracking-tight text-center">매우 좋음</span>
+                            <span id="statusLabel" class="text-sm font-black text-sky-700 tracking-tight text-center">매우 좋음</span>
                         </div>
 
                         <div class="space-y-4">
                             <div class="px-1 border-b border-slate-100 pb-2">
-                                <p class="text-[10px] font-black text-slate-400">시간별 기록</p>
+                                <p class="text-[10px] font-black text-slate-500">시간별 기록</p>
                             </div>
                             <div style="overflow-x:auto">
                               <table class="mock-table">
@@ -452,9 +453,9 @@
                                     </tr>
                                 </thead>
                                 <tbody id="tableBody">
-                                    <tr><td>09:00</td><td>21</td><td class="text-sky-500">12</td><td class="text-sky-500">8</td></tr>
-                                    <tr><td>10:00</td><td>22</td><td class="text-sky-500">15</td><td class="text-sky-500">10</td></tr>
-                                    <tr><td>11:00</td><td>21</td><td class="text-sky-500">14</td><td class="text-sky-500">9</td></tr>
+                                    <tr><td>09:00</td><td>21</td><td class="text-sky-700">12</td><td class="text-sky-500">8</td></tr>
+                                    <tr><td>10:00</td><td>22</td><td class="text-sky-700">15</td><td class="text-sky-700">10</td></tr>
+                                    <tr><td>11:00</td><td>21</td><td class="text-sky-700">14</td><td class="text-sky-500">9</td></tr>
                                 </tbody>
                             </table>
                             </div>
@@ -476,7 +477,7 @@
                         <h4 class="text-center font-black text-slate-800">스플래시 화면 과정</h4>
                         <div class="flex gap-6 items-end">
                             <div class="w-1/2 space-y-4 text-center">
-                                <p class="text-center text-[10px] text-slate-400 font-black tracking-wide">와이어프레임</p>
+                                <p class="text-center text-[10px] text-slate-500 font-black tracking-wide">와이어프레임</p>
                                 <img alt="스플래시 화면 와이어프레임" src="kids_air_splash_wf.webp" class="img-box" onerror="this.src='';" decoding="async" loading="lazy" width="331" height="596">
                             </div>
                             <div class="w-1/2 space-y-4 text-center">
@@ -490,7 +491,7 @@
                         <h4 class="text-center font-black text-slate-800">공기질 대시보드 과정</h4>
                         <div class="flex gap-6 items-end">
                             <div class="w-1/2 space-y-4 text-center">
-                                <p class="text-center text-[10px] text-slate-400 font-black tracking-wide">와이어프레임</p>
+                                <p class="text-center text-[10px] text-slate-500 font-black tracking-wide">와이어프레임</p>
                                 <img alt="공기질 대시보드 와이어프레임" src="kids_air_dashboard_wf.webp" class="img-box" onerror="this.src='';" decoding="async" loading="lazy" width="331" height="596">
                             </div>
                             <div class="w-1/2 space-y-4 text-center">
@@ -504,7 +505,7 @@
                         <h4 class="text-center font-black text-slate-800">메뉴 및 기능 구성</h4>
                         <div class="flex gap-6 items-end">
                             <div class="w-1/2 space-y-4 text-center">
-                                <p class="text-center text-[10px] text-slate-400 font-black tracking-wide">와이어프레임</p>
+                                <p class="text-center text-[10px] text-slate-500 font-black tracking-wide">와이어프레임</p>
                                 <img alt="메뉴 및 기능 구성 와이어프레임" src="kids_air_menu_wf.webp" class="img-box" onerror="this.src='';" decoding="async" loading="lazy" width="330" height="596">
                             </div>
                             <div class="w-1/2 space-y-4 text-center">

@@ -69,13 +69,14 @@
 
         /* 가상 UI 전용 스타일 */
         .mockup-ui {
-            background: #0f172a; /* UI 내부는 어두운 테마 유지 (게임 감성) */
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid #1e293b;
             color: white;
             font-size: 11px;
         }
+        /* 배경을 따로 지정한 경우에는 비켜선다 */
+        .mockup-ui:not([class*="bg-"]) { background: #0f172a; }
 
         .status-bar {
             height: 6px;
@@ -113,6 +114,9 @@
       scroll-behavior: auto !important;
     }
   }
+
+/* 읽기 힘들던 글자색을 같은 계열의 진한 값으로 바꾼다 */
+.bg-amber-700{background-color:#b45309}
 </style>
 </head>
 <body class="antialiased">
@@ -549,14 +553,14 @@
                     <div class="space-y-5">
                         <div class="bg-amber-50 border-2 border-amber-300 rounded-[24px] p-6 md:p-7">
                             <div class="flex flex-wrap items-center gap-3 mb-4">
-                                <span class="bg-amber-500 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">보완</span>
+                                <span class="bg-amber-700 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">보완</span>
                                 <span class="font-black text-slate-900">제안 3 &middot; 사후 채팅</span>
                             </div>
                             <p class="text-sm text-slate-700 leading-relaxed mb-4">
                     사망자가 아군에게 브리핑을 보내는 구조는 경쟁 FPS가 금지하는 <strong>관전 정보 전달</strong>입니다. 사망자는 생존자가 못 보는 적 위치를 봅니다.
                 </p>
                             <div class="bg-white rounded-2xl p-5 border border-amber-200 mb-4">
-                                <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">제한의 방향을 바로잡습니다</p>
+                                <p class="text-[10px] font-black tracking-wide text-slate-500 mb-2">제한의 방향을 바로잡습니다</p>
                                 <p class="text-xs text-slate-600 leading-relaxed">
                     생존자가 팀원 것만 받게 막아도 소용이 없습니다. 막아야 하는 것은 적 팀의 열람이 아니라 <strong>사망자가 관전으로 얻은 정보가 생존자에게 흐르는 것</strong>입니다.
                 </p>
@@ -568,7 +572,7 @@
 
                         <div class="bg-amber-50 border-2 border-amber-300 rounded-[24px] p-6 md:p-7">
                             <div class="flex flex-wrap items-center gap-3 mb-4">
-                                <span class="bg-amber-500 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">보완</span>
+                                <span class="bg-amber-700 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">보완</span>
                                 <span class="font-black text-slate-900">제안 5 &middot; 티어 보상에 유료 캐시 포함</span>
                             </div>
                             <p class="text-sm text-slate-700 leading-relaxed mb-4">
@@ -626,7 +630,7 @@
                                 <span class="ml-auto text-[10px] font-bold text-slate-500">매칭 시간 증가 &middot; 맵 편중 심화 감시 필요</span>
                             </div>
                             <div class="flex flex-wrap items-center gap-3 p-4 bg-amber-50 rounded-xl border border-amber-300">
-                                <span class="bg-amber-500 text-white text-xs font-black px-3 py-1 rounded-full shrink-0">보류</span>
+                                <span class="bg-amber-700 text-white text-xs font-black px-3 py-1 rounded-full shrink-0">보류</span>
                                 <span class="font-black text-slate-900 text-sm">제안 3 사후 채팅</span>
                                 <span class="ml-auto text-[10px] font-bold text-slate-500">고스팅 검토 후 대안(핑&middot;라디오)으로 대체</span>
                             </div>
@@ -637,7 +641,7 @@
                 <!-- 5. 검증 지표 · 한계 -->
                 <div>
                     <div class="content-panel p-6 md:p-7">
-                        <p class="text-[10px] font-black tracking-wide text-slate-400 mb-4">검증 지표</p>
+                        <p class="text-[10px] font-black tracking-wide text-slate-500 mb-4">검증 지표</p>
                         <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                             <li>&bull; <strong class="text-slate-800">재접속:</strong> 비정상 종료 중 복귀 성공률, <br class="hidden md:block">
                     탈주 페널티 부과 건수 변화</li>

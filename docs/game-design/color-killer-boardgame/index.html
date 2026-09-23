@@ -183,6 +183,13 @@
 
 /* 히어로 제목 크기를 다른 문서와 같은 48px 로 맞춘다 */
 @media (min-width:768px){.md\:text-5xl{font-size:3rem;line-height:1.1}}
+
+/* 읽기 힘들던 글자색을 같은 계열의 진한 값으로 바꾼다 */
+.bg-amber-700{background-color:#b45309}
+.bg-emerald-700{background-color:#047857}
+
+/* 흰 글자가 묻히던 배지 색을 진하게 */
+.bg-orange-700{background-color:#c2410c}
 </style>
 </head>
 <body class="antialiased">
@@ -304,7 +311,7 @@
         </nav>
 
         <!-- 섹션 1: 개요 및 핵심 룰 -->
-        <div id="overview" class="max-w-5xl w-full tab-content active space-y-10">
+        <div id="overview" class="max-w-5xl w-full tab-content space-y-10">
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-center">
                 <div class="bg-white p-6 rounded-[2rem] border border-slate-200 shadow-sm flex flex-col items-center justify-center">
@@ -509,7 +516,7 @@
                 </p>
                                 </div>
                                 <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                                    <p class="text-sm text-slate-700 font-bold mb-1 flex items-center gap-2"><span class="text-emerald-500">💡 해결 방안</span></p>
+                                    <p class="text-sm text-slate-700 font-bold mb-1 flex items-center gap-2"><span class="text-emerald-700">💡 해결 방안</span></p>
                                     <p class="text-sm text-slate-600 leading-relaxed">
                     얇은 종이는 비치는 문제가 있어 두꺼운 전용 용지로 다시 찍었습니다.
                 </p>
@@ -531,7 +538,7 @@
                 </p>
                                 </div>
                                 <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                                    <p class="text-sm text-slate-700 font-bold mb-1 flex items-center gap-2"><span class="text-emerald-500">💡 해결 방안</span></p>
+                                    <p class="text-sm text-slate-700 font-bold mb-1 flex items-center gap-2"><span class="text-emerald-700">💡 해결 방안</span></p>
                                     <p class="text-sm text-slate-600 leading-relaxed">
                      장고로 흐름이 늘어지던 투시 능력을 빼고, 한 번에 뒤집을 수 있는 약탈 능력으로 바꿨습니다.
                 </p>
@@ -560,7 +567,7 @@
                     
                     <div class="relative z-10">
                         <div class="text-6xl mb-8 animate-bounce">🎬</div>
-                        <a href="https://youtu.be/y3QBjCFaT4M" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-orange-500 text-white font-bold py-4 px-10 rounded-full shadow-xl hover:bg-orange-600 hover:-translate-y-1 transition-all text-lg md:text-xl">
+                        <a href="https://youtu.be/y3QBjCFaT4M" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-orange-700 text-white font-bold py-4 px-10 rounded-full shadow-xl hover:bg-orange-600 hover:-translate-y-1 transition-all text-lg md:text-xl">
                             <span class="text-3xl">📺</span> 유튜브에서 플레이 영상 보기
                         </a>
                         <div class="mt-8 bg-white/60 backdrop-blur p-6 rounded-2xl inline-block max-w-xl border border-orange-200">
@@ -585,12 +592,12 @@
 
                 <div class="grid md:grid-cols-4 gap-4 mb-8">
                     <div class="bg-white rounded-2xl border-2 border-slate-200 p-5 text-center">
-                        <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">특수 카드 비율</p>
+                        <p class="text-[10px] font-black tracking-wide text-slate-500 mb-2">특수 카드 비율</p>
                         <p class="text-3xl font-black text-slate-900">28.6%</p>
                         <p class="text-[11px] text-slate-500 mt-1">35장 중 10장</p>
                     </div>
                     <div class="bg-white rounded-2xl border-2 border-slate-200 p-5 text-center">
-                        <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">1인 초기 패</p>
+                        <p class="text-[10px] font-black tracking-wide text-slate-500 mb-2">1인 초기 패</p>
                         <p class="text-3xl font-black text-slate-900">8.75<span class="text-base">장</span></p>
                         <p class="text-[11px] text-slate-500 mt-1">4인 균등 분배</p>
                     </div>
@@ -600,7 +607,7 @@
                         <p class="text-[11px] text-slate-500 mt-1">기대값</p>
                     </div>
                     <div class="bg-white rounded-2xl border-2 border-slate-200 p-5 text-center">
-                        <p class="text-[10px] font-black tracking-wide text-slate-400 mb-2">종당 특수 카드</p>
+                        <p class="text-[10px] font-black tracking-wide text-slate-500 mb-2">종당 특수 카드</p>
                         <p class="text-3xl font-black text-slate-900">2.5<span class="text-base">장</span></p>
                         <p class="text-[11px] text-slate-500 mt-1">4종 &divide; 10장</p>
                     </div>
@@ -645,7 +652,7 @@
                     <!-- 블랙 -->
                     <div class="bg-white rounded-2xl border-2 border-amber-300 p-6 md:p-7">
                         <div class="flex flex-wrap items-center gap-3 mb-4">
-                            <span class="bg-amber-500 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">좌석 편향</span>
+                            <span class="bg-amber-700 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">좌석 편향</span>
                             <span class="font-black text-slate-900 text-lg">블랙 카드</span>
                             <span class="ml-auto text-[11px] font-bold text-slate-500">다음 턴 사람이 카드를 낼 수 없음</span>
                         </div>
@@ -662,7 +669,7 @@
                     <!-- 약탈 -->
                     <div class="bg-white rounded-2xl border-2 border-amber-300 p-6 md:p-7">
                         <div class="flex flex-wrap items-center gap-3 mb-4">
-                            <span class="bg-amber-500 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">견제 집중</span>
+                            <span class="bg-amber-700 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">견제 집중</span>
                             <span class="font-black text-slate-900 text-lg">약탈 카드</span>
                             <span class="ml-auto text-[11px] font-bold text-slate-500">더미 고갈 시 타인의 패를 획득</span>
                         </div>
@@ -679,7 +686,7 @@
                     <!-- 흰색 -->
                     <div class="bg-white rounded-2xl border-2 border-emerald-300 p-6 md:p-7">
                         <div class="flex flex-wrap items-center gap-3 mb-4">
-                            <span class="bg-emerald-500 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">문제 없음</span>
+                            <span class="bg-emerald-700 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">문제 없음</span>
                             <span class="font-black text-slate-900 text-lg">흰색 카드</span>
                             <span class="ml-auto text-[11px] font-bold text-slate-500">한 번 더 카드를 낼 수 있음</span>
                         </div>
@@ -721,7 +728,7 @@
                 </div>
 
                 <div class="bg-white rounded-2xl border-2 border-slate-200 p-6 md:p-7">
-                    <p class="text-[10px] font-black tracking-wide text-slate-400 mb-3">예상되는 결과와 보완</p>
+                    <p class="text-[10px] font-black tracking-wide text-slate-500 mb-3">예상되는 결과와 보완</p>
                     <p class="text-sm text-slate-600 leading-relaxed mb-4">
                     페널티가 무거우면 플레이어는 <strong class="text-slate-900">확신이 들 때까지 종을 치지 않습니다.</strong> <br class="hidden md:block">
                     투시 카드를 삭제해 얻은 템포 개선을 페널티가 다시 상쇄할 수 있습니다.
