@@ -65,7 +65,9 @@
         }
         @media (min-width: 768px) {
             .nav-button-container {
-                grid-template-columns: repeat(4, 1fr);
+                /* 목차 5개가 한 줄에 들어가도록 */
+                grid-template-columns: repeat(5, 1fr);
+                gap: 0.75rem;
             }
         }
 
