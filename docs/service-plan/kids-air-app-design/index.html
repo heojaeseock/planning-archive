@@ -52,8 +52,9 @@
             border: 1px solid #e2e8f0;
         }
         
-        .tab-content { display: none; opacity: 0; }
-        .tab-content.active { display: block; opacity: 1; animation: slideUp 0.5s ease forwards; }
+        /* 탭으로 나뉘어 있던 구역을 세로로 이어 보여 준다 */
+        .tab-content { display: block; opacity: 1; scroll-margin-top: 96px; }
+        .tab-content + .tab-content { margin-top: 4rem; border-top: 1px solid rgba(100,116,139,.25); }
         @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
         /* 버튼형 내비게이션 */
@@ -282,21 +283,21 @@
         <!-- 내비게이션 버튼 바 -->
         <nav class="max-w-5xl w-full mb-14">
             <div class="nav-button-container">
-                <button onclick="showProjectTab(event, 'analysis')" class="modern-nav-btn active" id="initTab">
+                <a href="#analysis" class="modern-nav-btn active">
                     <span class="text-2xl">📊</span> 시장 및 전략 분석
-                </button>
-                <button onclick="showProjectTab(event, 'architecture')" class="modern-nav-btn">
+                </a>
+                <a href="#architecture" class="modern-nav-btn">
                     <span class="text-2xl">🗺️</span> 전체 정보 설계
-                </button>
-                <button onclick="showProjectTab(event, 'design-guide')" class="modern-nav-btn">
+                </a>
+                <a href="#design-guide" class="modern-nav-btn">
                     <span class="text-2xl">🎨</span> 주요 화면 및 UX
-                </button>
-                <button onclick="showProjectTab(event, 'impact')" class="modern-nav-btn">
+                </a>
+                <a href="#impact" class="modern-nav-btn">
                     <span class="text-2xl">🚀</span> 프로젝트 기대 효과
-                </button>
-                <button onclick="showProjectTab(event, 'premise')" class="modern-nav-btn">
+                </a>
+                <a href="#premise" class="modern-nav-btn">
                     <span class="text-2xl">🔎</span> 전제 조건 검토
-                </button>
+                </a>
             </div>
         </nav>
 
@@ -708,15 +709,25 @@
 
     <script>
         // 탭 전환 로직
-        function showProjectTab(evt, tabId) {
-            evt.preventDefault();
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(c => c.classList.remove('active'));
-            const links = document.querySelectorAll('.modern-nav-btn');
-            links.forEach(l => l.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-            evt.currentTarget.classList.add('active');
-        }
+        // 위쪽 목차는 지금 읽고 있는 구역을 표시한다
+        (function () {
+            var links = document.querySelectorAll('.modern-nav-btn');
+            var ids = [];
+            links.forEach(function (l) { ids.push(l.getAttribute('href').slice(1)); });
+            function updateActiveTab() {
+                var offset = window.innerHeight * 0.3;
+                var current = ids[0];
+                ids.forEach(function (id) {
+                    var el = document.getElementById(id);
+                    if (el && window.scrollY >= el.offsetTop - offset) current = id;
+                });
+                links.forEach(function (l) {
+                    l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+                });
+            }
+            window.addEventListener('scroll', updateActiveTab);
+            window.addEventListener('load', updateActiveTab);
+        })();
 
         // 이미지 모달 열기
         function openImageModal(src) {

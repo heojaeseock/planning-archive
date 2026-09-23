@@ -43,8 +43,9 @@
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
         }
 
-        .tab-content { display: none; opacity: 0; transition: opacity 0.3s ease; }
-        .tab-content.active { display: block; opacity: 1; animation: fadeIn 0.4s ease; }
+        /* 탭으로 나뉘어 있던 구역을 세로로 이어 보여 준다 */
+        .tab-content { display: block; opacity: 1; scroll-margin-top: 96px; }
+        .tab-content + .tab-content { margin-top: 4rem; border-top: 1px solid rgba(100,116,139,.25); }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
         /* 버튼형 내비게이션 (캐주얼 보드게임 플랫 타일 테마 - 오렌지 톤) */
@@ -284,21 +285,21 @@
 
         <nav class="max-w-5xl w-full mb-14">
             <div class="nav-button-container">
-                <button onclick="showProjectTab(event, 'overview')" class="modern-nav-btn active" id="initTab">
+                <a href="#overview" class="modern-nav-btn active">
                     <span class="text-2xl">📝</span> 개요 및 핵심 룰
-                </button>
-                <button onclick="showProjectTab(event, 'special-cards')" class="modern-nav-btn">
+                </a>
+                <a href="#special-cards" class="modern-nav-btn">
                     <span class="text-2xl">🃏</span> 차별화: 특수 카드
-                </button>
-                <button onclick="showProjectTab(event, 'improvements')" class="modern-nav-btn">
+                </a>
+                <a href="#improvements" class="modern-nav-btn">
                     <span class="text-2xl">🛠️</span> 테스트 및 개선안
-                </button>
-                <button onclick="showProjectTab(event, 'video')" class="modern-nav-btn">
+                </a>
+                <a href="#video" class="modern-nav-btn">
                     <span class="text-2xl">🎬</span> 게임 플레이 영상
-                </button>
-                <button onclick="showProjectTab(event, 'balance')" class="modern-nav-btn">
+                </a>
+                <a href="#balance" class="modern-nav-btn">
                     <span class="text-2xl">⚖️</span> 밸런스 검토
-                </button>
+                </a>
             </div>
         </nav>
 
@@ -797,15 +798,25 @@
 
     <script>
         // 탭 전환 로직
-        function showProjectTab(evt, tabId) {
-            evt.preventDefault();
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(c => c.classList.remove('active'));
-            const links = document.querySelectorAll('.modern-nav-btn');
-            links.forEach(l => l.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-            evt.currentTarget.classList.add('active');
-        }
+        // 위쪽 목차는 지금 읽고 있는 구역을 표시한다
+        (function () {
+            var links = document.querySelectorAll('.modern-nav-btn');
+            var ids = [];
+            links.forEach(function (l) { ids.push(l.getAttribute('href').slice(1)); });
+            function updateActiveTab() {
+                var offset = window.innerHeight * 0.3;
+                var current = ids[0];
+                ids.forEach(function (id) {
+                    var el = document.getElementById(id);
+                    if (el && window.scrollY >= el.offsetTop - offset) current = id;
+                });
+                links.forEach(function (l) {
+                    l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+                });
+            }
+            window.addEventListener('scroll', updateActiveTab);
+            window.addEventListener('load', updateActiveTab);
+        })();
 
         // 이미지 모달 열기
         function openImageModal(src) {

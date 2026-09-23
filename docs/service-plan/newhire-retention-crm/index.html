@@ -29,8 +29,9 @@
         body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; background-color: #f8fafc; color: #1e293b; }
         .brand-blue { color: #2b5dff; }
         .bg-brand-blue { background-color: #2b5dff; }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
+        /* 탭으로 나뉘어 있던 구역을 세로로 이어 보여 준다 */
+        .tab-content { display: block; scroll-margin-top: 96px; }
+        .tab-content + .tab-content { border-top: 1px solid rgba(100,116,139,.25); }
         .chart-container { position: relative; width: 100%; height: 350px; }
         
         /* 실행 과제 카드 스타일 개선 */
@@ -251,12 +252,12 @@
 
             <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
                 <div class="flex border-b border-gray-100 bg-gray-50/50">
-                    <button onclick="changeTab('tab1')" id="btn-tab1" class="tab-btn flex-1 py-6 text-sm font-bold border-b-2 border-brand-blue brand-blue bg-white transition-all">Phase 1: 입사 1주 차 (불안 해소)</button>
-                    <button onclick="changeTab('tab2')" id="btn-tab2" class="tab-btn flex-1 py-6 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:bg-gray-100 transition-all">Phase 2: 입사 1개월 차 (위기 관리)</button>
+                    <a href="#tab1" class="tab-btn flex-1 py-6 text-sm font-bold border-b-2 border-brand-blue brand-blue bg-white transition-all">Phase 1: 입사 1주 차 (불안 해소)</a>
+                    <a href="#tab2" class="tab-btn flex-1 py-6 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:bg-gray-100 transition-all">Phase 2: 입사 1개월 차 (위기 관리)</a>
                 </div>
 
                 <!-- 단계 1 -->
-                <div id="tab1" class="tab-content active p-12 animate-fadeIn">
+                <div id="tab1" class="tab-content p-12">
                     <div class="flex flex-col md:flex-row gap-16 items-center">
                         <div class="flex-1 space-y-6">
                             <h3 class="text-2xl font-bold text-gray-900">"첫 주 완주 응원 및 아티클 제안"</h3>
@@ -276,7 +277,7 @@
                 </div>
 
                 <!-- 단계 2 -->
-                <div id="tab2" class="tab-content p-12 animate-fadeIn">
+                <div id="tab2" class="tab-content p-12">
                     <div class="flex flex-col md:flex-row gap-16 items-center">
                         <div class="flex-1 space-y-6">
                             <h3 class="text-2xl font-bold text-gray-900">"회의감 극복을 위한 무료 교육권"</h3>
@@ -666,18 +667,30 @@
         });
 
         // 2. 탭 전환 로직
-        function changeTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active', 'brand-blue', 'border-brand-blue', 'bg-white');
-                btn.classList.add('text-gray-400', 'border-transparent');
-            });
-
-            document.getElementById(tabId).classList.add('active');
-            const btn = document.getElementById('btn-' + tabId);
-            btn.classList.add('active', 'brand-blue', 'border-brand-blue', 'bg-white');
-            btn.classList.remove('text-gray-400', 'border-transparent');
-        }
+        // 위쪽 목차는 지금 읽고 있는 구역을 표시한다
+        (function () {
+            var links = document.querySelectorAll('.tab-btn');
+            var on = ['brand-blue', 'border-brand-blue', 'bg-white'];
+            var off = ['text-gray-400', 'border-transparent'];
+            var ids = [];
+            links.forEach(function (l) { ids.push(l.getAttribute('href').slice(1)); });
+            function updateActiveTab() {
+                var offset = window.innerHeight * 0.3;
+                var current = ids[0];
+                ids.forEach(function (id) {
+                    var el = document.getElementById(id);
+                    if (el && window.scrollY >= el.offsetTop - offset) current = id;
+                });
+                links.forEach(function (l) {
+                    var act = l.getAttribute('href') === '#' + current;
+                    l.classList.toggle('active', act);
+                    on.forEach(function (x) { l.classList.toggle(x, act); });
+                    off.forEach(function (x) { l.classList.toggle(x, !act); });
+                });
+            }
+            window.addEventListener('scroll', updateActiveTab);
+            window.addEventListener('load', updateActiveTab);
+        })();
     </script>
 <p style="margin:0;padding:26px 16px 40px;text-align:center;font-size:12.5px;line-height:1.6;color:#64748b">© 허재석</p>
 <div aria-hidden="true" style="height:104px"></div>
