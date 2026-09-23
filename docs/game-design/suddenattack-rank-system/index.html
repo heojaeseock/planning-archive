@@ -103,7 +103,9 @@
         .bg-\[radial-gradient\(circle_at_center\,rgba\(14\,165\,233\,0\.15\)_0\%\,transparent_70\%\)\] { background-image: radial-gradient(circle at center,rgba(14,165,233,0.15) 0%,transparent 70%); }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* <br> 로 나뉜 문장마다 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
   @media (prefers-reduced-motion: reduce) {
@@ -259,10 +261,7 @@
                         <div class="content-panel p-8 space-y-8 shadow-sm">
                             <div>
                                 <p class="text-xs font-bold text-slate-500 mb-4 tracking-wide">랭크전 주요 불만 유형 분포 (Total 100%)</p>
-                                <p class="text-[11px] text-slate-500 mb-4">
-                    * 공식 통계가 아니라, <br class="hidden md:block">
-                    커뮤니티·인게임 신고 게시글의 불만 유형을 직접 분류해 비율로 환산한 자체 취합 값입니다.
-                </p>
+                                <p class="text-[11px] text-slate-500 mb-4"><span class="seg-bal-md">* 공식 통계가 아니라,</span> <span class="seg-bal-md">커뮤니티·인게임 신고 게시글의 불만 유형을 직접 분류해 비율로 환산한 자체 취합 값입니다.</span></p>
                                 <div class="space-y-5">
                                     <div>
                                         <div class="flex justify-between text-xs font-bold mb-2"><span>서버/입장 렉 (탈주)</span><span class="text-sky-600">41%</span></div>
@@ -378,7 +377,7 @@
                             <p class="text-sm text-slate-500 leading-relaxed">
                                 <strong>[기획 사유]</strong> 보이스톡의 기술적 오류가 발생할 경우 팀원 간 브리핑이 완전히 단절되는 문제를 보완해야 합니다.
                             </p>
-                            <p class="text-sm text-slate-500 leading-relaxed">
+                            <p class="text-sm text-slate-500 leading-relaxed bal">
                     <strong>[세부 내용]</strong> 사망한 유저가 아군에게만 텍스트 브리핑을 전달할 수 있는 전용 채널을 신설합니다. <br class="hidden md:block">
                     악용 방지를 위해 생존자는 팀원의 사후 채팅만 수신하도록 제한합니다.
                 </p>
@@ -415,10 +414,10 @@
                         <h4 class="text-2xl font-bold text-slate-900 leading-tight">랭크전 맵 밴 기능</h4>
                         <div class="space-y-4">
                             <p class="text-sm text-slate-500 leading-relaxed">
-                                <strong>[기획 사유]</strong> 특정 맵 편중이나 비선호 맵 매칭 시 발생하는 매칭 이탈(닷지) 및 유저 불만을 최소화해야 합니다.
+                                <strong>[기획 사유]</strong> 특정 맵 편중이나 비선호 맵 매칭 시 발생하는 매칭 이탈(닷지) 및&nbsp;유저 불만을 최소화해야 합니다.
                             </p>
                             <p class="text-sm text-slate-500 leading-relaxed">
-                    <strong>[세부 내용]</strong> 매칭 성공 시 무작위 3개 맵 중 각 팀 투표를 통해 1개를 밴 처리합니다. <br class="hidden md:block">
+                    <strong>[세부 내용]</strong> 매칭 성공 시 무작위 3개 맵 중 각 팀 투표를 통해 1개를&nbsp;밴 처리합니다. <br class="hidden md:block">
                     전략적 선택의 재미를 사전 단계부터 제공합니다.
                 </p>
                         </div>

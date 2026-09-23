@@ -42,7 +42,9 @@
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* <br> 로 나뉜 문장마다 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
   @media (prefers-reduced-motion: reduce) {
@@ -156,11 +158,7 @@
             </div>
             <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
                 <h3 class="font-bold text-lg mb-4 text-indigo-600">기획자 관점의 시사점</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">
-                    신입 스트리머 확보는 단순히 채널 수를 늘리는 일이 아닙니다. <br class="hidden md:block">
-                    대형 크리에이터 한 명에 대한 의존도를 낮추고, 광고·후원 모델의 저변을 넓히는 일입니다. <br class="hidden md:block">
-                    <strong>'플랫폼 리스크 분산'</strong>과 <strong>'LTV(고객 생애 가치) 향상'</strong>을 위한 핵심 전략입니다.
-                </p>
+                <p class="text-sm text-slate-600 leading-relaxed"><span class="seg-bal-md">신입 스트리머 확보는 단순히 채널 수를 늘리는 일이 아닙니다.</span> <span class="seg-bal-md">대형 크리에이터 한 명에 대한 의존도를 낮추고, 광고·후원 모델의 저변을 넓히는 일입니다.</span> <span class="seg-bal-md"><strong>'플랫폼 리스크 분산'</strong>과 <strong>'LTV(고객&nbsp;생애&nbsp;가치)&nbsp;향상'</strong>을 위한 핵심 전략입니다.</span></p>
             </div>
         </div>
     </section>
@@ -436,11 +434,12 @@
         <div class="grid md:grid-cols-2 gap-6 mb-8">
             <div class="bg-red-50 border-2 border-red-300 rounded-2xl p-7">
                 <p class="text-[11px] font-black tracking-wide text-red-600 mb-3">발견 1</p>
-                <p class="font-black text-slate-900 mb-3">고비는 2개월 차입니다</p>
+                <p class="font-black text-slate-900 mb-3">고비는 2개월&nbsp;차입니다</p>
                 <p class="text-sm text-slate-600 leading-relaxed">
                     남아 있던 사람 중 <strong class="text-red-700">52.9%가 1&rarr;2개월 구간에서 빠집니다.</strong> <br class="hidden md:block">
                     첫&nbsp;달 이탈률(32.0%)보다 훨씬 높습니다. <br class="hidden md:block">
-                    &lsquo;1~3개월&rsquo;로 묶으면 이 봉우리가 평탄해져 보이지만, 실제로는 한 구간에 몰려 있습니다.
+                    &lsquo;1~3개월&rsquo;로 묶으면 이 봉우리가 평탄해져 보이지만,<br>
+실제로는 한 구간에 몰려 있습니다.
                 </p>
             </div>
             <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-7">
@@ -463,8 +462,8 @@
             <div class="grid md:grid-cols-2 gap-5">
                 <div class="bg-white/10 rounded-2xl p-5">
                     <p class="text-sm font-black text-indigo-300 mb-2">앞으로 당길 것</p>
-                    <p class="text-xs text-slate-300 leading-relaxed">
-                    &lsquo;즐겨찾기 300명&rsquo;처럼 도달이 늦은 목표는 <strong class="text-white">2개월 차 이전에 닿을 수 있는 중간 단계</strong>로 쪼갭니다. <br class="hidden md:block">
+                    <p class="text-xs text-slate-300 leading-relaxed bal">
+                    &lsquo;즐겨찾기 300명&rsquo;처럼 도달이 늦은 목표는 <strong class="text-white">2개월&nbsp;차 이전에 닿을 수 있는 중간 단계</strong>로 쪼갭니다. <br class="hidden md:block">
                     고비를 넘기기 전에 성취가 한&nbsp;번은 발생해야 합니다.
                 </p>
                 </div>

@@ -122,7 +122,9 @@
         section[aria-label="이 문서가 하는 말"] .text-slate-700 { color: rgb(51 65 85); }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* <br> 로 나뉜 문장마다 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
+</style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   .node-title-amber { color: #9A4F00; }   /* 노랑 노드 제목 (다른 노드와 같은 진하기) */
@@ -288,10 +290,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div class="bg-white p-6 rounded-3xl border-4 border-[#8B4513] shadow-[6px_6px_0_#8B4513]">
                 <h3 class="text-2xl font-bold text-[#8B4513] mb-3">🇰🇷 국내 문안 기준</h3>
-                <p class="text-lg text-gray-700 font-bold leading-relaxed">
-                    원인과 재발 방지 조치를 함께 적습니다. <br class="hidden md:block">
-                    커뮤니티 후속 답변도 같은 문안을 사용해 설명이 어긋나지 않게 합니다.
-                </p>
+                <p class="text-lg text-gray-700 font-bold leading-relaxed"><span class="seg-bal-md">원인과 재발 방지 조치를 함께 적습니다.</span> <span class="seg-bal-md">커뮤니티 후속 답변도 같은 문안을 사용해 설명이 어긋나지 않게 합니다.</span></p>
             </div>
             <div class="bg-white p-6 rounded-3xl border-4 border-[#FF4D6D] shadow-[6px_6px_0_#FF4D6D]">
                 <h3 class="text-2xl font-bold text-[#FF4D6D] mb-3">🌍 글로벌 문안 기준</h3>
@@ -360,7 +359,7 @@
             <div class="jelly-node bg-[#FFCCBC] border-[#E64A19]">
                 <div class="text-5xl mb-4">📝</div>
                 <h4 class="font-extrabold text-[#BF360C] text-2xl mb-2">템플릿 호출</h4>
-                <p class="text-gray-800 text-sm">다국어 공지 및 보상 Notion 뱅크 활용</p>
+                <p class="text-gray-800 text-sm bal">다국어 공지 및 보상 Notion 뱅크 활용</p>
             </div>
 
             <div class="text-center arrow-text md:rotate-0 rotate-90">➔</div>
@@ -545,10 +544,12 @@
         <div class="bg-white rounded-2xl p-8 border-2 border-[#A5D6A7] mb-8">
             <p class="text-sm font-black text-[#2E7D32] mb-5">격차 10짜리 두 축은 실제로 차이가 없습니다</p>
             <p class="text-[#5D4037] leading-relaxed mb-6 max-w-[46em]">
-                    원래 값으로는 과금 의지와 커뮤니티가 한국이 10씩 높습니다. 비중으로 바꾸면 <strong>20.2&nbsp;대 20.3, 21.4 대 21.6</strong> &mdash; 사실상 같습니다.
+                    원래 값으로는 과금 의지와 커뮤니티가 한국이 10씩 높습니다.<br>
+비중으로 바꾸면 <strong>20.2&nbsp;대 20.3, 21.4 대 21.6</strong> &mdash; 사실상 같습니다.
                 </p>
             <p class="text-[#5D4037] leading-relaxed max-w-[46em]">
-                    10의 차이는 <strong>총점이 50 높아서</strong> 생긴 것이지 성향 차이가 아닙니다. 총점이 다른 두 그림을 겹치면 모든 축에서 한쪽이 조금씩 커 보입니다.
+                    10의 차이는 <strong>총점이 50 높아서</strong> 생긴 것이지 성향 차이가 아닙니다.<br>
+총점이 다른 두 그림을 겹치면 모든 축에서 한쪽이 조금씩 커 보입니다.
                 </p>
         </div>
 
@@ -577,7 +578,7 @@
         <div class="bg-[#E8F5E9] rounded-2xl p-8 border-2 border-[#A5D6A7]">
             <p class="text-sm font-black text-[#2E7D32] mb-5">공통 항목을 따로 둔 판단이 수치로 뒷받침됩니다</p>
             <p class="text-[#5D4037] leading-relaxed mb-6 max-w-[46em]">
-                    비중으로 보면 과금 의지와 커뮤니티는 두&nbsp;권역이 같습니다. <strong>보상 지급과 커뮤니티 대응은 권역별로 나눌 이유가 없습니다.</strong>
+                    비중으로 보면 과금 의지와 커뮤니티는 두&nbsp;권역이 같습니다.<br><strong>보상 지급과 커뮤니티 대응은 권역별로 나눌 이유가 없습니다.</strong>
                 </p>
             <p class="text-[#5D4037] leading-relaxed max-w-[46em]">
                     콘텐츠와 이벤트는 세 축에서 갈리므로 나누는 것이 맞습니다. <strong>비중 격차가 5를 넘는 축만 나눈다</strong>고 선을 그으면 관리 부담과 문안 어긋남이 함께 줄어듭니다.

@@ -93,7 +93,9 @@
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* <br> 로 나뉜 문장마다 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
   @media (prefers-reduced-motion: reduce) {
@@ -324,10 +326,7 @@
                     <div class="absolute left-0 bottom-0 opacity-10 text-9xl -mb-12 -ml-8">💡</div>
                     <div class="relative z-10 max-w-3xl">
                         <h4 class="text-indigo-400 font-black text-xs tracking-wide mb-4">핵심 판단</h4>
-                        <p class="text-lg md:text-xl font-bold leading-relaxed mb-6">
-                    "액션 장르 시장은 <span class="text-indigo-400 underline underline-offset-4">중국 개발사의 높은 점유율</span> 하에 있으며, <br class="hidden md:block">
-                    12~15세 이상 코어층을 겨냥해 <span class="text-sky-400">접속을 매일로 묶는 구독 모델(패스제)</span>을 얹은 BM이 승률을 가릅니다."
-                </p>
+                        <p class="text-lg md:text-xl font-bold leading-relaxed mb-6"><span class="seg-bal-md">"액션 장르 시장은 <span class="text-indigo-400 underline underline-offset-4">중국 개발사의 높은 점유율</span> 하에 있으며,</span> <span class="seg-bal-md">12~15세 이상 코어층을 겨냥해 <span class="text-sky-400">접속을 매일로 묶는 구독 모델(패스제)</span>을 얹은 BM이 승률을 가릅니다."</span></p>
                     </div>
                 </div>
             </div>
@@ -376,7 +375,8 @@
                             <span class="text-[10px] font-bold text-slate-500">일본 / 수집형 액션</span>
                         </div>
                         <h3 class="font-black text-slate-800 text-lg mb-3">드래곤볼 Z: 폭렬격전</h3>
-                        <p class="text-xs text-slate-500 mb-6 flex-1 leading-relaxed">유명 IP 기반 스토리 전개와 속성 상성, 캐릭터 각성에 중점을 둔 퍼즐 액션.</p>
+                        <p class="text-xs text-slate-500 mb-6 flex-1 leading-relaxed">유명 IP 기반 스토리 전개와 속성 상성,<br>
+캐릭터 각성에 중점을 둔 퍼즐 액션.</p>
                         <div class="space-y-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
                             <p class="text-[10px] font-bold text-orange-700 flex gap-2"><span>✅</span> 원작 향수 자극 및 우수한 편의성</p>
                             <p class="text-[10px] font-bold text-rose-500 flex gap-2"><span>⚠️</span> 특정 캐릭터 오버스펙(밸런스 붕괴)</p>
@@ -390,7 +390,7 @@
                             <span class="text-[10px] font-bold text-slate-500">핀란드 / 난투 액션</span>
                         </div>
                         <h3 class="font-black text-slate-800 text-lg mb-3">브롤스타즈</h3>
-                        <p class="text-xs text-slate-500 mb-6 flex-1 leading-relaxed">직관적인 조작과 다양한 브롤러를 활용하는 멀티플레이 난투 액션.</p>
+                        <p class="text-xs text-slate-500 mb-6 flex-1 leading-relaxed bal">직관적인 조작과 다양한 브롤러를 활용하는 멀티플레이 난투 액션.</p>
                         <div class="space-y-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
                             <p class="text-[10px] font-bold text-emerald-700 flex gap-2"><span>✅</span> 쉬운 조작 및 지속적 업데이트(잔존율)</p>
                             <p class="text-[10px] font-bold text-rose-500 flex gap-2"><span>⚠️</span> 일부 브롤러 간의 능력치 밸런스</p>
@@ -418,7 +418,7 @@
                             <span class="text-[10px] font-bold text-slate-500">중국 / 러닝 액션</span>
                         </div>
                         <h3 class="font-black text-slate-800 text-lg mb-3">닌자 머스트 다이</h3>
-                        <p class="text-xs text-slate-500 mb-6 flex-1 leading-relaxed">장애물 회피와 스킬 전투를 결합한 수묵화 스타일의 현대적 러닝 액션.</p>
+                        <p class="text-xs text-slate-500 mb-6 flex-1 leading-relaxed bal">장애물 회피와 스킬 전투를 결합한 수묵화 스타일의 현대적 러닝 액션.</p>
                         <div class="space-y-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
                             <p class="text-[10px] font-bold text-slate-700 flex gap-2"><span>✅</span> 신선한 게임성 및 풍부한 보상 제공</p>
                             <p class="text-[10px] font-bold text-rose-500 flex gap-2"><span>⚠️</span> 초보자에게 가혹한 스테이지 난이도</p>
@@ -432,7 +432,7 @@
                             <span class="text-[10px] font-bold text-slate-500">러시아 / 해상 액션</span>
                         </div>
                         <h3 class="font-black text-slate-800 text-lg mb-3">모던 워쉽</h3>
-                        <p class="text-xs text-slate-500 mb-6 flex-1 leading-relaxed">실제 모델을 기반으로 한 현대적 전함과 항공기를 조종하는 전략 해상 전투.</p>
+                        <p class="text-xs text-slate-500 mb-6 flex-1 leading-relaxed bal">실제 모델을 기반으로 한 현대적 전함과 항공기를 조종하는 전략 해상 전투.</p>
                         <div class="space-y-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
                             <p class="text-[10px] font-bold text-slate-700 flex gap-2"><span>✅</span> 밀리터리 디테일 및 훌륭한 최적화</p>
                             <p class="text-[10px] font-bold text-rose-500 flex gap-2"><span>⚠️</span> 한정적 콘텐츠 및 한국어 음성 미지원</p>
@@ -460,7 +460,7 @@
                             <span class="text-[10px] font-bold text-slate-500">중국 / FPS</span>
                         </div>
                         <h3 class="font-black text-slate-800 text-lg mb-3">콜 오브 듀티 모바일</h3>
-                        <p class="text-xs text-slate-500 mb-6 flex-1 leading-relaxed">원작 FPS의 조작감을 모바일 인터페이스에 맞춰 옮긴 슈팅 게임.</p>
+                        <p class="text-xs text-slate-500 mb-6 flex-1 leading-relaxed bal">원작 FPS의 조작감을 모바일 인터페이스에 맞춰 옮긴 슈팅 게임.</p>
                         <div class="space-y-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
                             <p class="text-[10px] font-bold text-stone-700 flex gap-2"><span>✅</span> 풍부한 콘텐츠 및 훌륭한 조작감</p>
                             <p class="text-[10px] font-bold text-rose-500 flex gap-2"><span>⚠️</span> 불법 프로그램 및 랭크 매치 대기 지연</p>
@@ -474,7 +474,7 @@
                             <span class="text-[10px] font-bold text-slate-500">싱가포르 / 로그라이크</span>
                         </div>
                         <h3 class="font-black text-slate-800 text-lg mb-3">궁수의 전설</h3>
-                        <p class="text-xs text-slate-500 mb-6 flex-1 leading-relaxed">무작위 스킬 조합과 원터치 조작으로 스테이지를 돌파하는 슈팅 액션.</p>
+                        <p class="text-xs text-slate-500 mb-6 flex-1 leading-relaxed bal">무작위 스킬 조합과 원터치 조작으로 스테이지를 돌파하는 슈팅 액션.</p>
                         <div class="space-y-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
                             <p class="text-[10px] font-bold text-amber-700 flex gap-2"><span>✅</span> 단순 조작 및 스킬 조합의 중독성</p>
                             <p class="text-[10px] font-bold text-rose-500 flex gap-2"><span>⚠️</span> 급격한 난이도 상승과 투사체 시인성</p>
@@ -738,7 +738,8 @@
                     <div class="bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-6 md:p-8">
                         <p class="text-sm font-black text-indigo-700 mb-4">전수로 세도 결론은 같고 근거는 더 두꺼워집니다</p>
                         <p class="text-slate-700 leading-relaxed">
-                    기획과 운영을 합치면 <strong>열다섯 건 중 열한 건, 73.3%</strong>입니다. 개발과 인프라는 세 건뿐입니다. 돈과 기술로 푸는 쪽이 아니라 설계와 운영 판단으로 푸는 쪽에 몰려 있다는 뜻입니다.
+                    기획과 운영을 합치면 <strong>열다섯 건 중 열한 건, 73.3%</strong>입니다. 개발과 인프라는 세 건뿐입니다.<br>
+돈과 기술로 푸는 쪽이 아니라 설계와 운영 판단으로 푸는 쪽에 몰려 있다는 뜻입니다.
                 </p>
                     </div>
                 </div>

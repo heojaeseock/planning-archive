@@ -104,7 +104,9 @@
         section[aria-label="이 문서가 하는 말"] .text-slate-700 { color: rgb(51 65 85); }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* <br> 로 나뉜 문장마다 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
   @media (prefers-reduced-motion: reduce) {
@@ -262,10 +264,7 @@
                     <div class="bg-gray-50 border border-gray-100 p-7 rounded-2xl">
                         <div class="text-3xl mb-4">🗣️</div>
                         <h4 class="font-bold mb-3 text-lg text-gray-900">IT 문의 대응의 비효율성</h4>
-                        <p class="text-sm text-gray-600 leading-relaxed">
-                    "프로그램 권한이 없다고 뜹니다", "복지 신청은 어디서 하나요?"와 같은 단순 반복 문의가 쏟아집니다. <br class="hidden md:block">
-                    담당자가 일일이 응대하는 것은 핵심 기획 업무의 몰입을 방해하는 가장 큰 요인입니다.
-                </p>
+                        <p class="text-sm text-gray-600 leading-relaxed"><span class="seg-bal-md">"프로그램 권한이 없다고 뜹니다", "복지 신청은 어디서 하나요?"와 같은 단순 반복 문의가 쏟아집니다.</span> <span class="seg-bal-md">담당자가 일일이 응대하는 것은 핵심 기획 업무의 몰입을 방해하는 가장 큰 요인입니다.</span></p>
                     </div>
                 </div>
             </section>
@@ -455,7 +454,7 @@
             <!-- [보강] 5. 부하 증가 구조 분석 -->
             <section id="section5" class="mb-20 scroll-mt-24">
                 <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3">[분석] 인원보다 부하가 빠르게 늘어납니다</h2>
-                <p class="text-gray-500 font-medium leading-relaxed mb-8 max-w-[46em]">
+                <p class="text-gray-500 font-medium leading-relaxed mb-8 max-w-[46em] bal">
                     임직원 수와 업무 부하를 나눠 보면 <strong class="text-gray-900">사람이 늘어 힘든 것이 아니라 증원으로는 따라잡을 수 없는 구조</strong>라는 점이 드러납니다.
                 </p>
 
