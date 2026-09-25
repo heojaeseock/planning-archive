@@ -98,7 +98,9 @@
         section[aria-label="이 문서가 하는 말"] .text-slate-700 { color: rgb(51 65 85); }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* <br> 로 나뉜 문장마다 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   .text-brand-ink { color: #897000; }   /* 밝은 바탕에서 읽히는 브랜드 노랑 */
 
@@ -193,11 +195,11 @@
       <div class="grid md:grid-cols-3 gap-3">
         <div class="rounded-xl border border-slate-200 p-4">
           <p class="text-sm font-black text-slate-900 mb-1.5 bal">사내에서만 도는 AI로 매칭</p>
-          <p class="text-xs text-slate-500 leading-relaxed bal">출시 전 게임 정보는 게임사의 1급 기밀이라 밖으로 보낼 수 없습니다</p>
+          <p class="text-xs text-slate-500 leading-relaxed bal">출시 전 게임 정보는 게임사의 1급 기밀이라 밖으로 보낼&nbsp;수 없습니다</p>
         </div>
         <div class="rounded-xl border border-slate-200 p-4">
           <p class="text-sm font-black text-slate-900 mb-1.5 bal">생방송 돌발 상황 지침</p>
-          <p class="text-xs text-slate-500 leading-relaxed bal">광고비가 이미 나간 방송 중에 서버가 죽으면 무엇을 할지 미리 정해 둡니다</p>
+          <p class="text-xs text-slate-500 leading-relaxed bal">광고비가 이미 나간 방송&nbsp;중에 서버가 죽으면 무엇을 할지 미리 정해 둡니다</p>
         </div>
         <div class="rounded-xl border border-slate-200 p-4">
           <p class="text-sm font-black text-slate-900 mb-1.5 bal">다만 계약에 근거가 있어야</p>
@@ -218,7 +220,7 @@
         <div class="max-w-4xl mx-auto px-6">
             <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-6">사업 구조</h2>
             <p class="text-slate-600 leading-relaxed mb-4 max-w-[46em]">
-                    게임사 광고를 소속 크리에이터 방송으로 집행하는 사업입니다. 부담은 두&nbsp;군데 &mdash; <strong>매 건 새로 쓰는 제안 준비</strong>와 <strong>광고비가 이미 나간 생방송 중의 돌발 상황</strong>입니다.
+                    게임사 광고를 소속 크리에이터 방송으로 집행하는 사업입니다. 부담은 두&nbsp;군데 &mdash; <strong>매&nbsp;건 새로 쓰는 제안 준비</strong>와 <strong>광고비가 이미 나간 생방송&nbsp;중의 돌발 상황</strong>입니다.
                 </p>
         </div>
     </section>
@@ -241,16 +243,13 @@
                     <div class="hover-card p-8 rounded-2xl">
                         <div class="text-3xl mb-4">💼</div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">대행사의 고충: 부족한 영업 시간</h3>
-                        <p class="text-slate-600 bal">
-                     매번 신규 게임을 분석하고 크리에이터를 매칭하는 제안서 작성 업무에 치여, <br class="hidden md:block">
-                    정작 중요한 신규 게임사 발굴과 밀착 영업에 쓸&nbsp;시간이 부족합니다.
-                </p>
+                        <p class="text-slate-600 bal"><span class="seg-bal-md">매번 신규 게임을 분석하고 크리에이터를 매칭하는 제안서 작성 업무에 치여,</span> <span class="seg-bal-md">정작 중요한 신규 게임사 발굴과 밀착 영업에 쓸&nbsp;시간이 부족합니다.</span></p>
                     </div>
                     <div class="hover-card p-8 rounded-2xl">
                         <div class="text-3xl mb-4">🏢</div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">게임사의 불안: 생방송 리스크</h3>
                         <p class="text-slate-600 bal">
-                     돈이 이미 나간 방송에서 서버가 내려가거나 말실수가 나오면 브랜드가 먼저 다칩니다. 통제할 수 없다는 점이 가장 두렵습니다.
+                     돈이 이미 나간 방송에서 서버가 내려가거나 말실수가 나오면 브랜드가 먼저 다칩니다. 통제할&nbsp;수 없다는&nbsp;점이 가장 두렵습니다.
                 </p>
                     </div>
                 </div>
@@ -315,7 +314,7 @@
                     <div class="bg-slate-50 p-6 rounded-xl w-full md:w-1/3 text-center border border-slate-200">
                         <p class="font-bold text-slate-900 mb-2">도구: 노션</p>
                         <p class="text-slate-500 text-sm leading-relaxed">
-                            담당자가 게임사 미팅 후, 신작 게임의 핵심 키워드를 정해진 템플릿에 체크합니다.
+                            담당자가 게임사 미팅&nbsp;후, 신작 게임의 핵심 키워드를 정해진 템플릿에 체크합니다.
                         </p>
                     </div>
                     <div class="w-full md:w-2/3">
@@ -323,7 +322,7 @@
                         <ul class="space-y-4 text-slate-600">
                             <li class="flex items-start"><span class="text-brand-ink font-bold mr-3">✔</span> <span><strong>장르 및&nbsp;타겟:</strong> 서브컬처, 2030 직장인 남성</span></li>
                             <li class="flex items-start"><span class="text-brand-ink font-bold mr-3">✔</span> <span><strong>게임 특징:</strong> 화려한 궁극기 연출, 방치형 자동 사냥 시스템</span></li>
-                            <li class="flex items-start"><span class="text-brand-ink font-bold mr-3">✔</span> <span><strong>마케팅 목표:</strong> 출시 전 사전 예약자 10만 명 확보</span></li>
+                            <li class="flex items-start"><span class="text-brand-ink font-bold mr-3">✔</span> <span><strong>마케팅 목표:</strong> 출시 전 사전 예약자 10만&nbsp;명 확보</span></li>
                         </ul>
                     </div>
                 </div>
@@ -358,7 +357,7 @@
             <!-- 매뉴얼 내용 대시보드 -->
             <div id="risk-content" class="bg-slate-900 rounded-2xl shadow-xl p-8 md:p-10">
                 <h3 class="text-2xl font-bold text-white mb-8 border-b border-slate-700 pb-5" id="risk-title">
-                    🚨 상황 1. 생방송 중 갑작스러운 게임 서버 다운/접속 불가
+                    🚨 상황 1. 생방송&nbsp;중 갑작스러운 게임 서버 다운/접속 불가
                 </h3>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -370,7 +369,7 @@
                         <ul class="text-sm text-slate-300 space-y-4" id="risk-target-1">
                             <li class="bal">당황하지 않도록 즉각 인이어 및&nbsp;메신저로 상황 인지 안내</li>
                             <li>사전 준비된 '서버 점검/대기' 송출 화면으로 즉각 전환 요청</li>
-                            <li>접속 불가 시간 동안 시간 끌기가 가능한 예비 콘텐츠&#8288;(Q&A 등) 진행 유도</li>
+                            <li>접속 불가 시간 동안 시간 끌기가 가능한 예비 콘텐츠&#8288;(Q&A&nbsp;등) 진행 유도</li>
                         </ul>
                     </div>
                     <!-- 대상 2 -->
@@ -404,7 +403,7 @@
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16 max-w-2xl mx-auto">
                 <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">도입에 따른 기대 효과</h2>
-                <p class="text-slate-500">본 기획안이 MCN Gaming AD 팀에 가져올 실질적인 비즈니스 시너지입니다.</p>
+                <p class="text-slate-500">본 기획안이 MCN Gaming AD&nbsp;팀에 가져올 실질적인 비즈니스 시너지입니다.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
@@ -420,7 +419,7 @@
                     <div class="text-slate-900 font-extrabold text-5xl mb-6">신뢰도 <span class="text-brand-ink">확보</span></div>
                     <h3 class="text-2xl font-bold text-slate-900 mb-4">독보적인 파트너십 구축</h3>
                     <p class="text-slate-600 text-left max-w-[42em] mx-auto">
-                     유출 경로가 없다는 것과 돌발 상황에 답이 있다는 것이, 단발 계약을 장기 계약으로 바꾸는 근거가 됩니다.
+                     유출 경로가 없다는&nbsp;것과 돌발 상황에 답이 있다는&nbsp;것이, 단발 계약을 장기 계약으로 바꾸는 근거가 됩니다.
                 </p>
                 </div>
             </div>
@@ -444,7 +443,7 @@
                             <tr class="bg-slate-800 text-white">
                                 <th scope="col" class="p-3 text-left text-xs font-black">항목</th>
                                 <th scope="col" class="p-3 text-center text-xs font-black">도입 전</th>
-                                <th scope="col" class="p-3 text-center text-xs font-black">도입 후</th>
+                                <th scope="col" class="p-3 text-center text-xs font-black">도입&nbsp;후</th>
                                 <th scope="col" class="p-3 text-center text-xs font-black">변화</th>
                             </tr>
                         </thead>
@@ -470,7 +469,7 @@
                 <div class="bg-white rounded-2xl p-6 border border-slate-200">
                     <p class="text-xs font-black text-slate-800 mb-2">다만 10p의 성격을 정해두면 더&nbsp;정확합니다</p>
                     <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                    AI 초안을 그대로 보내지는 않으므로 남는 10p는 검수와 손질입니다. <strong>사라진 것은 초안 작성이고 판단과 마무리는 남습니다.</strong> 실제 값이 15~20이 나와도 설계 범위 안입니다.
+                    AI 초안을 그대로 보내지는 않으므로 남는 10p는 검수와 손질입니다. <strong>사라진&nbsp;것은 초안 작성이고 판단과 마무리는 남습니다.</strong> 실제 값이 15~20이 나와도 설계 범위 안입니다.
                 </p>
                 </div>
             </div>
@@ -515,9 +514,9 @@
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed mb-6">
                     <li class="max-w-[46em] leading-[1.8] bal">&bull; <strong class="text-slate-800">경쟁사 광고 이력</strong> &mdash; 직전에 같은 장르 경쟁 게임 광고를 했다면 부적합합니다. 시청자가 진정성을 의심하고, <br class="hidden md:block">
                     클라이언트도 꺼립니다. 매칭에서 <strong>먼저 걸러내야 하는 조건</strong>입니다</li>
-                    <li>&bull; <strong class="text-slate-800">과거 유사 게임 성과</strong> &mdash; 같은 장르 방송의 시청자 수와 반응. 성향이 맞아도 성과가 없었다면 다시 확인할 필요가 있습니다</li>
+                    <li>&bull; <strong class="text-slate-800">과거 유사 게임 성과</strong> &mdash; 같은 장르 방송의 시청자&nbsp;수와 반응. 성향이 맞아도 성과가 없었다면 다시 확인할 필요가 있습니다</li>
                     <li>&bull; <strong class="text-slate-800">스케줄 가용성</strong> &mdash; 매칭이 맞아도 일정이 안&nbsp;되면 제안이 무의미합니다. 이&nbsp;정보는 사내에 있으므로 자동 확인이 가능합니다</li>
-                    <li class="bal max-w-[46em] leading-[1.8]">&bull; <strong class="text-slate-800">과거 논란 이력</strong> &mdash; 브랜드 안전 관점에서 확인이 필요합니다. 2번 솔루션이 방송 중 리스크를 다루는데, 매칭 단계에서 걸러내는 것이 더&nbsp;앞선 방어입니다</li>
+                    <li class="bal max-w-[46em] leading-[1.8]">&bull; <strong class="text-slate-800">과거 논란 이력</strong> &mdash; 브랜드 안전 관점에서 확인이 필요합니다. 2번 솔루션이 방송&nbsp;중 리스크를 다루는데, 매칭 단계에서 걸러내는&nbsp;것이 더&nbsp;앞선 방어입니다</li>
                 </ul>
                 <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
                     <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
@@ -530,14 +529,14 @@
                 <h3 class="text-xl font-black text-slate-900 mb-5">대응 매뉴얼은 계약에 근거가 있어야 작동합니다</h3>
                 <p class="text-slate-600 leading-relaxed mb-6 max-w-[46em]">
                     서버 다운 상황의 대응에 <strong class="text-slate-900">시청자 대상 보상 쿠폰 발급 긴급 승인 요청</strong>과 <strong class="text-slate-900">방송 시간 유연 연장</strong>이&nbsp;들어 있습니다. <br class="hidden md:block">
-                    두&nbsp;조치 모두 <strong class="text-rose-700">MCN이 결정할 수 없는 사항</strong>입니다.
+                    두&nbsp;조치 모두 <strong class="text-rose-700">MCN이 결정할&nbsp;수 없는 사항</strong>입니다.
                 </p>
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div class="bg-rose-50 rounded-2xl p-6 border border-rose-200">
                         <p class="text-xs font-black text-rose-700 mb-2">쿠폰 발급</p>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                    게임사의 재화가 나가는 일이라 <strong class="text-slate-800">게임사 내부 승인</strong>이&nbsp;필요합니다. <br class="hidden md:block">
-                    생방송 중 몇&nbsp;분 안에 결재가 끝나기 어렵습니다.
+                    게임사의 재화가 나가는&nbsp;일이라 <strong class="text-slate-800">게임사 내부 승인</strong>이&nbsp;필요합니다. <br class="hidden md:block">
+                    생방송&nbsp;중 몇&nbsp;분 안에 결재가 끝나기 어렵습니다.
                 </p>
                     </div>
                     <div class="bg-rose-50 rounded-2xl p-6 border border-rose-200">
@@ -551,7 +550,7 @@
                 <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
                     <p class="text-xs font-black text-slate-800 mb-3">계약 단계로 옮기면 즉시 집행이 됩니다</p>
                     <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                    광고 계약서에 비상 조항을 미리 넣습니다. 보상 한도와 연장 가능 시간, 추가 정산 기준을 앞서 합의해 두면 <strong>방송 중에는 협의가 아니라 통보</strong>가 됩니다. 대응 속도는 매뉴얼이 아니라 계약 문구에서 나옵니다.
+                    광고 계약서에 비상 조항을 미리 넣습니다. 보상 한도와 연장 가능 시간, 추가 정산 기준을 앞서 합의해 두면 <strong>방송&nbsp;중에는 협의가 아니라 통보</strong>가 됩니다. 대응 속도는 매뉴얼이 아니라 계약 문구에서 나옵니다.
                 </p>
                 </div>
                 <p class="text-sm text-slate-600 leading-relaxed mt-6 max-w-[46em]">
@@ -567,7 +566,7 @@
                         <li>&bull; <strong class="text-slate-800">제안 수락률</strong> &mdash; 자동화 도입 전후 비교. 시간이 줄어도 수락률이 떨어지면 초안 품질 문제입니다</li>
                         <li>&bull; <strong class="text-slate-800">매칭 반송률</strong> &mdash; AI가 제안한 크리에이터가 담당자 검토에서 제외된 비율. 높으면 기준에 빠진 항목이 있습니다</li>
                         <li class="bal">&bull; <strong class="text-slate-800">신규 게임사 접촉 건수</strong> &mdash; 확보한 60p가 실제로 영업으로 갔는지 보여주는 값입니다</li>
-                        <li>&bull; <strong class="text-slate-800">방송 중 사고 발생률과 대응 소요 시간</strong> &mdash; 계약 조항 도입 전후 비교</li>
+                        <li>&bull; <strong class="text-slate-800">방송&nbsp;중 사고 발생률과 대응 소요 시간</strong> &mdash; 계약 조항 도입 전후 비교</li>
                     </ul>
                 </div>
                 
