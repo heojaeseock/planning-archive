@@ -107,7 +107,9 @@
         section[aria-label="이 문서가 하는 말"] .text-slate-700 { color: rgb(51 65 85); }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* <br> 로 나뉜 문장마다 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
   @media (prefers-reduced-motion: reduce) {
@@ -250,10 +252,7 @@
                     기존 보험 파트너 앱의 훌륭한 분석 기능,<br>
                     <span class="text-[#3182F6]">그러나 여전히 남은 '최종 설계 단계'의 비효율</span>
                 </h2>
-                <p class="text-gray-500 leading-relaxed font-medium text-base max-w-[46em]">
-                    보험 파트너 앱을 통해 고객의 가입 내역을 조회하는&nbsp;것은 매우 편해졌습니다. <br class="hidden md:block">
-                    하지만 <span class="font-bold text-gray-700">최종 가입 설계와 정확한 보험료 계산</span>을 위해서는 여전히 각&nbsp;보험사의 전산망에 개별 접속해야 하는 불편함이 존재합니다.
-                </p>
+                <p class="text-gray-500 leading-relaxed font-medium text-base max-w-[46em]"><span class="seg-bal-md">보험 파트너 앱을 통해 고객의 가입 내역을 조회하는&nbsp;것은 매우 편해졌습니다.</span> <span class="seg-bal-md">하지만 <span class="font-bold text-gray-700">최종 가입 설계와 정확한 보험료 계산</span>을 위해서는 여전히 각&nbsp;보험사의 전산망에 개별 접속해야 하는 불편이 남아 있습니다.</span></p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -342,7 +341,7 @@
                         <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
                             <div class="flex justify-between items-center mb-6">
                                 <span class="text-sm font-bold text-[#333D4B]">주요 보장 금액 설정 (암 진단비 기준)</span>
-                                <span id="benefitValue" class="text-2xl font-black text-[#3182F6]">3,000만원</span>
+                                <span id="benefitValue" class="text-2xl font-black text-[#3182F6]">3,000만&nbsp;원</span>
                             </div>
                             <input type="range" id="insuranceSlider" aria-label="주요 보장 금액 설정 (암 진단비 기준)" min="10" max="100" value="30" step="5" class="w-full">
                             <div class="flex justify-between text-xs text-[#8B95A1] mt-4 font-semibold px-1">
@@ -492,7 +491,7 @@
                 </p>
                 <p class="leading-relaxed max-w-[46em]">
                     남는 <strong class="text-blue-300">고객 안내 10분</strong>은 사람이 해야 하는 일이므로 줄일 대상이 아닙니다. <br class="hidden md:block">
-                    따라서 시뮬레이터가 완벽히 작동해도 <strong class="text-white">20분 안팎이 하한</strong>이고, 그&nbsp;이상을 목표로 잡으면 상담 품질을 깎게 됩니다. <strong class="text-blue-300">줄일&nbsp;것과 남길&nbsp;것을 갈라 두면 목표가 과하지 않다는 근거가 섭니다.</strong>
+                    따라서 시뮬레이터가 완벽히 작동해도 <strong class="text-white">20분 안팎이 하한</strong>이고, 그보다 더&nbsp;줄이려 하면 상담 품질을 깎게 됩니다. <strong class="text-blue-300">줄일&nbsp;것과 남길&nbsp;것을 갈라 두면 목표가 과하지 않다는 근거가 섭니다.</strong>
                 </p>
             </div>
 
@@ -521,7 +520,7 @@
                 <div class="bg-gray-900 rounded-2xl p-6 text-white">
                     <p class="text-xs font-bold text-blue-300 mb-3">같은 수치를 다르게 설명하면&nbsp;둘&nbsp;다&nbsp;성립합니다</p>
                     <p class="text-sm text-gray-300 leading-relaxed max-w-[46em]">
-                    이용 시간이 두&nbsp;배가 된&nbsp;것은 업무가 늘어난&nbsp;것이 아니라 <strong class="text-white">보험사 전산에서 하던 45분이 앱으로 옮겨왔기 때문</strong>입니다. 총&nbsp;업무 시간은 줄고 그중 앱 비중이 커진 것이므로, <strong class="text-blue-300">총&nbsp;상담 시간 감소를 함께 제시</strong>하면 설계사에게도 매력이 생깁니다. <br class="hidden md:block">
+                    이용 시간이 두&nbsp;배가 된&nbsp;것은 업무가 늘어난&nbsp;것이 아니라 <strong class="text-white">앱 밖에서 하던 45분이 앱으로 옮겨왔기 때문</strong>입니다. 총&nbsp;업무 시간은 줄고 그중 앱 비중이 커진 것이므로, <strong class="text-blue-300">총&nbsp;상담 시간 감소를 함께 제시</strong>하면 설계사에게도 매력이 생깁니다. <br class="hidden md:block">
                     지금처럼 이용 시간 증가만 적으면 <strong class="text-white">쓰는 사람에게는 이득이 안&nbsp;보입니다.</strong>
                 </p>
                 </div>
@@ -544,7 +543,7 @@
                     전체 보험사 연동을 전제로 두면 <strong class="text-gray-800">한&nbsp;곳이 빠져도 서비스가 성립하지 않습니다.</strong> <br class="hidden md:block">
                     연동된 보험사만 시뮬레이션하고 나머지는 기존 방식으로 안내하는 <strong class="text-gray-800">혼합 운영</strong>을 기본으로 두면, <br class="hidden md:block">
                     협의가 진행되는 만큼 서비스가 확장됩니다. <br class="hidden md:block">
-                    이&nbsp;구조라면 <strong>전 보험사 협의가 안&nbsp;되면 못&nbsp;한다</strong>는 반론이 성립하지 않습니다.
+                    이&nbsp;구조라면 <strong>전&nbsp;보험사 협의가 안&nbsp;되면 못&nbsp;한다</strong>는 반론이 성립하지 않습니다.
                 </p>
                 </div>
             </div>
