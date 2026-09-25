@@ -109,7 +109,9 @@
         section[aria-label="이 문서가 하는 말"] .text-slate-700 { color: rgb(51 65 85); }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
   @media (prefers-reduced-motion: reduce) {
@@ -637,7 +639,7 @@
                     <div class="bg-amber-50 rounded-xl p-6 border border-amber-200">
                         <p class="text-xs font-black text-amber-900 mb-2">이것은 선택 사항이 아닙니다</p>
                         <p class="text-xs text-amber-800 leading-relaxed">확률로 결과가 갈리는 유료 아이템은 <strong>확률 표시가 법으로 의무</strong>입니다.<br>
-선물상자는 이벤트로 얻지만 유상 재화 장비와 같은 등급 체계를 쓰므로, 기획 단계에서 등급별 확률을 채워 둡니다.</p>
+선물상자는 이벤트로 얻지만 유상 재화 장비와 같은 등급 체계를 쓰므로, 기획 단계에서 등급별 확률을 채워&nbsp;둡니다.</p>
                     </div>
                 </div>
 
@@ -682,7 +684,7 @@
             </div>
 
             <!-- 푸터 -->
-            <div class="p-6 bg-amber-50 border-t border-amber-100 text-center text-amber-800 text-xs font-bold">
+            <div class="p-6 bg-amber-50 border-t border-amber-100 text-center text-amber-800 text-xs font-bold bal-m">
                 Cookie Run: Tower of Adventures Event Proposal &copy; 허재석
             </div>
         </div>

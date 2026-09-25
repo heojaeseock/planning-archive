@@ -100,6 +100,8 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
             /* <br> 로 나뉜 문장마다 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
+        /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   .text-brand-ink { color: #897000; }   /* 밝은 바탕에서 읽히는 브랜드 노랑 */
@@ -369,7 +371,7 @@
                         <ul class="text-sm text-slate-300 space-y-4" id="risk-target-1">
                             <li class="bal">당황하지 않도록 즉각 인이어 및&nbsp;메신저로 상황 인지 안내</li>
                             <li>사전 준비된 '서버 점검/대기' 송출 화면으로 즉각 전환 요청</li>
-                            <li>접속 불가 시간 동안 시간 끌기가 가능한 예비 콘텐츠&#8288;(Q&A&nbsp;등) 진행 유도</li>
+                            <li class="bal-m">접속 불가 시간 동안 시간 끌기가 가능한 예비 콘텐츠&#8288;(Q&A&nbsp;등) 진행 유도</li>
                         </ul>
                     </div>
                     <!-- 대상 2 -->
@@ -378,7 +380,7 @@
                             <span class="w-3 h-3 rounded-full bg-green-400 mr-3"></span> To. 클라이언트
                         </h4>
                         <ul class="text-sm text-slate-300 space-y-4" id="risk-target-2">
-                            <li>핫라인을 통해 상황 즉시 브리핑 및&nbsp;서버 복구 예상 시간&#8288;(ETA) 확인 요청</li>
+                            <li class="bal-m">핫라인을 통해 상황 즉시 브리핑 및&nbsp;서버 복구 예상 시간&#8288;(ETA) 확인 요청</li>
                             <li>광고주의 불안감 사전 차단을 위해 방송 시간 유연 연장안 1차 제시</li>
                             <li>시청자 이탈을 막기 위한 시청자 대상 깜짝 보상 쿠폰 발급 긴급 승인 요청</li>
                         </ul>
@@ -554,7 +556,7 @@
                 </p>
                 </div>
                 <p class="text-sm text-slate-600 leading-relaxed mt-6 max-w-[46em]">
-                    <strong class="text-slate-800">크리에이터 오안내도 같습니다. 방송 전 금지 표현과 필수 고지를 목록으로 주고 확인 서명을 받으면 사고율도 줄고 책임 구분도 분명해집니다. <strong>사후 매뉴얼보다 사전 체크리스트가 앞선 방어</strong>입니다.</strong>
+                    <strong class="text-slate-800">크리에이터 오안내도 같습니다. 방송&nbsp;전 금지 표현과 필수 고지를 목록으로 주고 확인 서명을 받으면 사고율도 줄고 책임 구분도 분명해집니다. <strong>사후 매뉴얼보다 사전 체크리스트가 앞선 방어</strong>입니다.</strong>
                 </p>
             </div>
 

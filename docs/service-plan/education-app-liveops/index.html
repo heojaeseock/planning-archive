@@ -75,7 +75,9 @@
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
   @media (prefers-reduced-motion: reduce) {
@@ -170,7 +172,7 @@
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">불만을 재현 순서로 옮긴다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">'렉 걸려요'를 개발팀이 바로 따라 해 볼&nbsp;수 있는 단계로 바꿔 적습니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">'렉&nbsp;걸려요'를 개발팀이 바로 따라 해 볼&nbsp;수 있는 단계로 바꿔 적습니다</p>
                 </div>
               </div>
             </div>
@@ -303,7 +305,7 @@
                             <span class="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-medium">아이패드</span>
                         </div>
                         <p class="text-[15px] text-slate-800 font-medium leading-snug">
-                    "1.5배속 누르면 갑자기 멈추고 렉 걸려요. ㅠㅠ"
+                    "1.5배속 누르면 갑자기 멈추고 렉&nbsp;걸려요. ㅠㅠ"
                 </p>
                     </div>
 
@@ -601,7 +603,7 @@
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                     <li>&bull; <strong class="text-slate-800">피크 시점 최대 동시접속과 응답 시간</strong> &mdash; 완화 전환&nbsp;후에도 용량 대비 여유가 유지되는지</li>
                     <li class="bal">&bull; <strong class="text-slate-800">전환 시점과 복귀 시점</strong> &mdash; 사전 전환이 실제로 피크를 낮추는지 확인합니다</li>
-                    <li>&bull; <strong class="text-slate-800">검수 오류 유출 건수</strong> &mdash; 자동화 통과&nbsp;후 운영&nbsp;중 발견된 데이터 오류. 절감 시간과 함께 봅니다</li>
+                    <li class="bal-m">&bull; <strong class="text-slate-800">검수 오류 유출 건수</strong> &mdash; 자동화 통과&nbsp;후 운영&nbsp;중 발견된 데이터 오류. 절감 시간과 함께 봅니다</li>
                     <li>&bull; <strong class="text-slate-800">증상별 리뷰 건수</strong> &mdash; 같은 문제의 반복 규모. VOC 처리 우선순위의 근거입니다</li>
                     <li class="bal">&bull; <strong class="text-slate-800">재현 성공률</strong> &mdash; 작성한 재현 스텝으로 개발팀이 실제 재현한 비율</li>
                 </ul>

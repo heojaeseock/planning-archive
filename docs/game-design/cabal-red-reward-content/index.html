@@ -87,6 +87,8 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
             /* 문장마다 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         .seg-bal { display: block; text-wrap: balance; }
+        /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   .text-green-700 { color: rgb(21 128 61); }
@@ -490,7 +492,7 @@
                 <div class="bg-white rounded-2xl border-2 border-blue-200 p-6">
                     <p class="text-[10px] font-black tracking-wide text-blue-500 mb-4">1차 지표 &middot; 균형 감시</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed break-keep">
-                        <li>&bull; <strong class="text-slate-800">공급 대비 소모 비율:</strong> 일간 하위 장비 생성량 &divide; 시스템 소모량. 1을 넘는 상태가 이어지면 재고 누적 경보</li>
+                        <li class="bal-m">&bull; <strong class="text-slate-800">공급 대비 소모 비율:</strong> 일간 하위 장비 생성량 &divide; 시스템 소모량. 1을 넘는 상태가 이어지면 재고 누적 경보</li>
                         <li class="bal">&bull; <strong class="text-slate-800">거래소 하위 장비 시세:</strong> 기축 통화 대비 추이. 설정한 하한선 이탈&nbsp;시 알림</li>
                         <li class="bal">&bull; <strong class="text-slate-800">미판매 재고 회전일:</strong> 등록된 매물이 소진되는&nbsp;데 걸리는 평균 일수</li>
                     </ul>

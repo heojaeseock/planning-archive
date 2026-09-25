@@ -84,7 +84,9 @@
         .bal { text-wrap: balance; }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
   @media (prefers-reduced-motion: reduce) {
@@ -912,7 +914,7 @@
                     <div class="content-panel p-6 md:p-7">
                         <p class="text-[10px] font-black tracking-wide text-slate-500 mb-4">적용&nbsp;후 검증 지표</p>
                         <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                            <li>&bull; <strong class="text-slate-800">선택형 상자:</strong> 등급별 승급 도달 일수, 기존 무작위 상자 판매량 변화&#8288;(잠식 감시), 상자 매출 합계</li>
+                            <li class="bal-m">&bull; <strong class="text-slate-800">선택형 상자:</strong> 등급별 승급 도달 일수, 기존 무작위 상자 판매량 변화&#8288;(잠식 감시), 상자 매출 합계</li>
                             <li>&bull; <strong class="text-slate-800">프리셋:</strong> 2&#8288;&middot;3번 슬롯 해금률, 장비 교체 1회당 소요 시간, 관련 CS 인입 건수</li>
                             <li>&bull; <strong class="text-slate-800">공통:</strong> 승급 정체 구간&#8288;(에픽&rarr;전설) 이탈률</li>
                         </ul>

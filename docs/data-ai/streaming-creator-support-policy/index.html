@@ -44,6 +44,8 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
             /* <br> 로 나뉜 문장마다 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
+        /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -361,7 +363,7 @@
                                     <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center font-bold text-amber-800 text-xs">Lv.3</div>
                                     <div class="flex-1">
                                         <h4 class="font-bold text-xs text-slate-800">첫&nbsp;정산 성공 (10만&nbsp;원 이상)</h4>
-                                        <p class="text-[10px] text-slate-500">보상: 수수료 1개월간 5% 인하 및&nbsp;송출 장비 우선 지원</p>
+                                        <p class="text-[10px] text-slate-500 bal-m">보상: 수수료 1개월간 5% 인하 및&nbsp;송출 장비 우선 지원</p>
                                     </div>
                                 </div>
                             </div>
@@ -480,7 +482,7 @@
                     <p class="text-sm font-black text-indigo-300 mb-2">줄여도 되는&nbsp;것</p>
                     <p class="text-xs text-slate-300 leading-relaxed">
                     3개월 이후 지원은 <strong class="text-white">비용 대비 효과가 낮습니다.</strong> <br class="hidden md:block">
-                    이미 안정권에 든&nbsp;대상이므로, 그&nbsp;예산을 앞 구간으로 옮기는&nbsp;것이 합리적입니다.
+                    이미 안정권에 든&nbsp;대상이므로, 그&nbsp;예산을 앞&nbsp;구간으로 옮기는&nbsp;것이 합리적입니다.
                 </p>
                 </div>
             </div>
@@ -572,8 +574,8 @@
                     <li>&bull; <strong class="text-slate-800">합방&nbsp;후 팔로우 전환율:</strong> 합방 유입 시청자&nbsp;중 신입 채널을 팔로우하고 <strong>다음 방송에 재방문</strong>한&nbsp;비율 &mdash; 전략 01의 핵심 판정</li>
                     <li class="bal">&bull; <strong class="text-slate-800">구간별 잔존율:</strong> 특히 <strong>1&rarr;2개월 상대 이탈률 52.9%</strong>&#8288;가 내려가는지</li>
                     <li class="bal">&bull; <strong class="text-slate-800">고정 시청자&nbsp;수:</strong> 합방 없는 일반 방송의 평균 동시 시청자 추이</li>
-                    <li>&bull; <strong class="text-slate-800">멘토 참여율과 재참여율:</strong> 낮으면 인센티브 설계 문제</li>
-                    <li>&bull; <strong class="text-slate-800">기성 BJ 노출 지표:</strong> 슬롯 배정으로 인한 잠식 여부</li>
+                    <li class="bal-m">&bull; <strong class="text-slate-800">멘토 참여율과 재참여율:</strong> 낮으면 인센티브 설계 문제</li>
+                    <li class="bal-m">&bull; <strong class="text-slate-800">기성 BJ 노출 지표:</strong> 슬롯 배정으로 인한 잠식 여부</li>
                     <li class="bal">&bull; <strong class="text-slate-800">패스 단계별 도달률:</strong> 특정 퀘스트에서 급락하면 그&nbsp;목표가 과도한&nbsp;것</li>
                 </ul>
             </div>

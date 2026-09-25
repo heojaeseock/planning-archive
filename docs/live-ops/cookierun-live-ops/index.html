@@ -124,6 +124,8 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
             /* <br> 로 나뉜 문장마다 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
+        /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
 </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
@@ -466,7 +468,7 @@
                 <div class="bg-[#FFFBEB] rounded-2xl p-6 border border-[#FFE082]">
                     <p class="text-xs font-black num-orange-ink mb-3">한국 · 효율과 순위</p>
                     <ul class="space-y-2 text-xs text-[#5D4037] leading-relaxed">
-                        <li>&bull; 파밍 시간을 줄여주는 <strong class="text-[#4E342E]">효율 상품</strong>과 시즌 패스</li>
+                        <li class="bal-m">&bull; 파밍 시간을 줄여주는 <strong class="text-[#4E342E]">효율 상품</strong>과 시즌 패스</li>
                         <li>&bull; 순위 경쟁에 직결되는 <strong class="text-[#4E342E]">성장 재화 묶음</strong></li>
                         <li class="bal">&bull; 외형은 성능이나 칭호와 함께 묶어야 구매 동기가 생깁니다</li>
                     </ul>

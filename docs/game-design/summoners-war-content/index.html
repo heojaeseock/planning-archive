@@ -125,6 +125,8 @@
         @media (max-width:767px){ .synergy-card { padding: 1.5rem; } .synergy-card p.text-lg { font-size: 1rem; line-height: 1.75rem; } }
         /* <br> 로 나뉜 문장마다 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         .seg-bal { display: block; text-wrap: balance; }
+        /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
 </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
@@ -411,7 +413,7 @@
                     <li class="leading-[1.8]">&bull; <strong class="text-slate-800">사용 집중도:</strong> 상위 10종 몬스터의 편성 점유율 &mdash; 이&nbsp;수치가 내려가야 목표 달성입니다.<br>
 던전 내부만이 아니라 <strong>전체 콘텐츠 기준</strong>으로 봐야 실효를 확인할&nbsp;수 있습니다</li>
                     <li class="bal">&bull; <strong class="text-slate-800">신규 육성 유닛&nbsp;수:</strong> 던전 출시&nbsp;후 새로 육성이 시작된 몬스터 종수</li>
-                    <li>&bull; <strong class="text-slate-800">편성 다양성:</strong> 클리어 편성의 고유 조합&nbsp;수 &mdash; 특정 3인 조합의 점유율이 과반을 넘으면 수렴 신호</li>
+                    <li class="bal-m">&bull; <strong class="text-slate-800">편성 다양성:</strong> 클리어 편성의 고유 조합&nbsp;수 &mdash; 특정 3인 조합의 점유율이 과반을 넘으면 수렴 신호</li>
                     <li class="bal">&bull; <strong class="text-slate-800">참여율:</strong> 전체 유저&nbsp;중 던전 입장 비율 &mdash; 낮으면 진입 장벽 가설이 확인된&nbsp;것</li>
                 </ul>
             </div>

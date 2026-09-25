@@ -101,7 +101,9 @@
         .bal { text-wrap: balance; }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
   @media (prefers-reduced-motion: reduce) {
@@ -623,7 +625,7 @@
                                 </div>
                                 <p class="text-sm text-slate-600 leading-relaxed">
                     유저 만족도 측면에서는 명확한 개선이지만, <strong class="text-rose-700">코스튬 매출의 근거를 직접 훼손</strong>할&nbsp;수 있습니다. <br class="hidden md:block">
-                    사업 협의와 매출 시뮬레이션 없이 기획 혼자 밀 항목이 아닙니다.
+                    사업 협의와 매출 시뮬레이션 없이 기획 혼자 밀&nbsp;항목이 아닙니다.
                 </p>
                             </div>
                         </div>
@@ -705,7 +707,7 @@
                                 <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
                                     <li>&bull; 컬렉션 화면 <strong>1회 체류 시간</strong> (감소가 목표)</li>
                                     <li>&bull; 등록 <strong>중도 이탈률</strong></li>
-                                    <li>&bull; 상위 등급 컬렉션 <strong>완성 도달 시점</strong> (과속 여부 감시)</li>
+                                    <li class="bal-m">&bull; 상위 등급 컬렉션 <strong>완성 도달 시점</strong> (과속 여부 감시)</li>
                                 </ul>
                             </div>
                             <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
