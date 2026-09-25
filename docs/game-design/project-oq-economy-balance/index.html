@@ -72,6 +72,8 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
             /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+        /* 휴대폰: 문서 소개 숫자 칸에서 단위(원)만 다음 줄로 떨어지지 않게 */
+        @media (max-width: 640px) { section[aria-label="이 문서가 하는 말"] .grid-cols-3 > div { padding-left: .5rem !important; padding-right: .5rem !important; } section[aria-label="이 문서가 하는 말"] .grid-cols-3 p.text-lg { font-size: 1rem !important; letter-spacing: -0.02em; } }
 </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
