@@ -111,6 +111,8 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
             /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+        /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -548,7 +550,7 @@
             <!-- 보강: 기대값의 흩어짐 -->
             <div class="p-8 md:p-12 border-t-4 border-amber-200">
                 <h2 class="text-2xl md:text-3xl font-black text-amber-900 mb-4">기대값 20회&nbsp;뒤에 숨은 흩어짐</h2>
-                <p class="text-amber-800 leading-relaxed mb-8">
+                <p class="text-amber-800 leading-relaxed mb-8 bal-t">
                     앞의 시행 횟수는 <strong>평균</strong>입니다. 확률로 얻는&nbsp;것은 사람마다 흩어지므로, 운이 나쁜 쪽이 몇&nbsp;회까지 도는지를 함께 봐야 합니다.
                 </p>
 
@@ -645,7 +647,7 @@
 
                 <div class="bg-amber-50/60 border-2 border-amber-200 rounded-2xl p-8 mb-8">
                     <p class="text-sm font-black text-amber-800 mb-4">신규 리소스는 한&nbsp;종뿐이고 그것이 핵심 경로입니다</p>
-                    <p class="text-amber-900 leading-relaxed mb-5">
+                    <p class="text-amber-900 leading-relaxed mb-5 bal-t">
                     세&nbsp;종&nbsp;중 새로 만드는&nbsp;것은 토끼 하나입니다. <strong>비용이 드는 한&nbsp;종에 가장 높은 확률 50%</strong>&#8288;를 뒀으니 만든&nbsp;것이 가장 많이 쓰입니다.
                 </p>
                     <div class="bg-white rounded-xl p-6 border border-amber-200">

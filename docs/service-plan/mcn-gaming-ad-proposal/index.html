@@ -102,6 +102,8 @@
         @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
         /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+        /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   .text-brand-ink { color: #897000; }   /* 밝은 바탕에서 읽히는 브랜드 노랑 */
@@ -511,14 +513,14 @@
 
             <div class="bg-white rounded-3xl border-2 border-slate-200 p-8 mb-12">
                 <h3 class="text-xl font-black text-slate-900 mb-5">매칭 기준에 빠진 항목</h3>
-                <p class="text-slate-600 leading-relaxed mb-6 max-w-[46em]">
+                <p class="text-slate-600 leading-relaxed mb-6 max-w-[46em] bal-t">
                     장르와 타깃, 게임 특징, 마케팅 목표로 매칭하면 성향의 일치는 확인됩니다. 실무에서는 몇&nbsp;개를 더&nbsp;봅니다.
                 </p>
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed mb-6">
                     <li class="max-w-[46em] leading-[1.8] bal">&bull; <strong class="text-slate-800">경쟁사 광고 이력</strong> &mdash; 직전에 같은 장르 경쟁 게임 광고를 했다면 부적합합니다. 시청자가 진정성을 의심하고, <br class="hidden md:block">
                     클라이언트도 꺼립니다. 매칭에서 <strong>먼저 걸러내야 하는 조건</strong>입니다</li>
-                    <li>&bull; <strong class="text-slate-800">과거 유사 게임 성과</strong> &mdash; 같은 장르 방송의 시청자&nbsp;수와 반응. 성향이 맞아도 성과가 없었다면 다시 확인할 필요가 있습니다</li>
-                    <li>&bull; <strong class="text-slate-800">스케줄 가용성</strong> &mdash; 매칭이 맞아도 일정이 안&nbsp;되면 제안이 무의미합니다. 이&nbsp;정보는 사내에 있으므로 자동 확인이 가능합니다</li>
+                    <li class="bal-t">&bull; <strong class="text-slate-800">과거 유사 게임 성과</strong> &mdash; 같은 장르 방송의 시청자&nbsp;수와 반응. 성향이 맞아도 성과가 없었다면 다시 확인할 필요가 있습니다</li>
+                    <li class="bal-t">&bull; <strong class="text-slate-800">스케줄 가용성</strong> &mdash; 매칭이 맞아도 일정이 안&nbsp;되면 제안이 무의미합니다. 이&nbsp;정보는 사내에 있으므로 자동 확인이 가능합니다</li>
                     <li class="bal max-w-[46em] leading-[1.8]">&bull; <strong class="text-slate-800">과거 논란 이력</strong> &mdash; 설계의 안전성 검증은 타사 게임 방송&nbsp;중 논란만 봅니다. 방송 밖 논란까지 브랜드 안전 관점에서 확인이 필요합니다. 2번 솔루션이 방송&nbsp;중 리스크를 다루는데, 매칭 단계에서 걸러내는&nbsp;것이 더&nbsp;앞선 방어입니다</li>
                 </ul>
                 <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">

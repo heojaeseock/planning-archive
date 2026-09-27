@@ -126,6 +126,8 @@
         @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
         /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+        /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
 </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
@@ -225,7 +227,7 @@
     <!-- Section 0: 문서 개요 -->
     <section class="cookie-card p-10 md:p-14 mb-16">
         <h2 class="text-2xl md:text-3xl font-black text-[#8B4513] mb-6 flex items-center gap-3">전략 배경</h2>
-        <p class="text-[#6B4423] leading-relaxed mb-4 max-w-[46em]">
+        <p class="text-[#6B4423] leading-relaxed mb-4 max-w-[46em] bal-t">
                     같은 게임이라도 권역마다 기대하는 지점이 다릅니다. 하나의 방침으로 밀면 한쪽에 불만이 쌓입니다. 운영 메시지를 권역별로 가르고, <strong>사고&nbsp;때 바로 내보낼 다국어 문안</strong>을 미리 만들어 뒀습니다.
                 </p>
     </section>
@@ -465,7 +467,7 @@
                 <div class="bg-[#FFFBEB] rounded-2xl p-6 border border-[#FFE082]">
                     <p class="text-xs font-black num-orange-ink mb-3">한국 · 효율과 순위</p>
                     <ul class="space-y-2 text-xs text-[#5D4037] leading-relaxed">
-                        <li class="bal-m">&bull; 파밍 시간을 줄여주는 <strong class="text-[#4E342E]">효율 상품</strong>과 시즌 패스</li>
+                        <li class="bal-m bal-t">&bull; 파밍 시간을 줄여주는 <strong class="text-[#4E342E]">효율 상품</strong>과 시즌 패스</li>
                         <li>&bull; 순위 경쟁에 직결되는 <strong class="text-[#4E342E]">성장 재화 묶음</strong></li>
                         <li class="bal">&bull; 외형은 성능이나 칭호와 함께 묶어야 구매 동기가 생깁니다</li>
                     </ul>
@@ -488,7 +490,7 @@
     <!-- 보강: 성향 차트 정규화 -->
     <section class="cookie-card p-10 md:p-14 mb-16 bg-[#FFFDF5]">
         <h2 class="text-2xl md:text-3xl font-black text-[#4E342E] mb-4">두&nbsp;권역의 총점이 다르면 격차를 그대로 읽을&nbsp;수 없습니다</h2>
-        <p class="text-[#5D4037] leading-relaxed mb-10 max-w-[46em]">
+        <p class="text-[#5D4037] leading-relaxed mb-10 max-w-[46em] bal-t">
                     다섯&nbsp;축을 더하면 한국 420, 글로벌 370이고 넷에서 한국이 높습니다. 그런데 이&nbsp;차트가 재는&nbsp;것은 <strong>무엇을 더&nbsp;좋아하는가</strong>이지 누가 더&nbsp;열심히 하는가가 아닙니다. 총점을 맞추고 다시 봤습니다.
                 </p>
 
@@ -599,7 +601,7 @@
     <!-- 보강: 투트랙의 비용 -->
     <section class="cookie-card p-10 md:p-14 mb-16 bg-[#FFFBEB]">
         <h2 class="text-2xl md:text-3xl font-black text-[#4E342E] mb-4">투트랙이 요구하는 대가</h2>
-        <p class="text-[#5D4037] leading-relaxed mb-10 max-w-[46em]">
+        <p class="text-[#5D4037] leading-relaxed mb-10 max-w-[46em] bal-t">
                     권역별로 문안을 나누면 효과는 분명하지만, 관리 부담이 두&nbsp;배로 늘어나는&nbsp;것에 그치지 않습니다. <br class="hidden md:block">
                     <strong class="text-[#4E342E]">두&nbsp;문안이 서로 어긋날 위험</strong>이&nbsp;새로 생깁니다.
                 </p>
@@ -624,7 +626,7 @@
 
         <div class="bg-white rounded-2xl p-8 border-2 border-[#D7CCC8]">
             <p class="text-sm font-black text-[#4E342E] mb-4">템플릿 뱅크도 관리 대상입니다</p>
-            <p class="text-[#5D4037] leading-relaxed max-w-[46em]">미리 만든 문안은 낡습니다. 재화 이름이나 수령 경로가 바뀌면 <strong>급할&nbsp;때 꺼낸 템플릿이 틀린 안내</strong>가 됩니다. 시스템이 바뀌는 업데이트마다 관련 템플릿을 점검하는 절차가 있어야 합니다.</p>
+            <p class="text-[#5D4037] leading-relaxed max-w-[46em] bal-t">미리 만든 문안은 낡습니다. 재화 이름이나 수령 경로가 바뀌면 <strong>급할&nbsp;때 꺼낸 템플릿이 틀린 안내</strong>가 됩니다. 시스템이 바뀌는 업데이트마다 관련 템플릿을 점검하는 절차가 있어야 합니다.</p>
         </div>
     </section>
 
@@ -651,7 +653,7 @@
             </div>
             <div class="bg-white rounded-2xl border-l-4 border-l-[#C62828] border border-[#D7CCC8] p-7">
                 <p class="font-black text-[#4E342E] mb-3">권역 시차와 심야 대응</p>
-                <p class="text-sm text-[#5D4037] leading-relaxed max-w-[46em]">즉시 공지는 담당자가 깨어 있을&nbsp;때만 됩니다. 글로벌의 활동 시간대는 한국 기준 심야입니다. <strong>미리 승인해 둔&nbsp;최소 문안</strong>을 두어 담당자가 아니어도 내보낼&nbsp;수 있게 하거나, 당직을 함께 짜야 합니다.</p>
+                <p class="text-sm text-[#5D4037] leading-relaxed max-w-[46em] bal-t">즉시 공지는 담당자가 깨어 있을&nbsp;때만 됩니다. 글로벌의 활동 시간대는 한국 기준 심야입니다. <strong>미리 승인해 둔&nbsp;최소 문안</strong>을 두어 담당자가 아니어도 내보낼&nbsp;수 있게 하거나, 당직을 함께 짜야 합니다.</p>
             </div>
         </div>
 

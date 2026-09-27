@@ -191,6 +191,8 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
             /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+        /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -335,7 +337,7 @@
                         </div>
                         <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
                             <p class="text-sm text-slate-700 leading-relaxed font-bold mb-2 italic">사용자 니즈 파악</p>
-                            <p class="text-sm text-slate-600 leading-relaxed">
+                            <p class="text-sm text-slate-600 leading-relaxed bal-t">
                     학부모들은 미세먼지가 심한 날, 자녀가 있는 공간의 환기 상태나 공기청정기 가동 여부를 직접 확인하고 싶어 했습니다.
                 </p>
                         </div>
@@ -675,11 +677,11 @@
                 </p>
                     <div class="bg-emerald-50 rounded-xl p-6 border border-emerald-200 mb-5">
                         <p class="text-xs font-black text-emerald-800 mb-2">위젯을 넣은&nbsp;것은 이&nbsp;문제에 대한 정확한 대응입니다</p>
-                        <p class="text-xs text-slate-600 leading-relaxed">
+                        <p class="text-xs text-slate-600 leading-relaxed bal-t">
                     앱을 열지 않고 배경화면에서 보는 위젯은 <strong>낮은 사용 빈도를 비켜 가는</strong> 방법입니다. 여는 행동이 필요 없으면 빈도가 낮아도 서비스가 남습니다.
                 </p>
                     </div>
-                    <p class="text-sm text-slate-600 leading-relaxed">
+                    <p class="text-sm text-slate-600 leading-relaxed bal-t">
                     <strong class="text-slate-800">다만 알림장 앱도 위젯을 만들&nbsp;수 있습니다. 구조적인 답은 <strong>경쟁하지 않고 들어가는&nbsp;것</strong>입니다. 알림장 앱에 데이터를 공급하면 위협이 유통 경로로 바뀝니다.</strong>
                 </p>
                 </div>

@@ -76,6 +76,8 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
             /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+        /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -229,7 +231,7 @@
                         <ul class="text-base text-gray-600 space-y-3 list-disc pl-5 text-body">
                             <li>특정 시간대 대규모 서버 패치 및&nbsp;접속 폭주</li>
                             <li>퍼블리셔와 개발사&nbsp;간의 복잡한 데이터 동기화</li>
-                            <li class="bal-m">e스포츠 오프라인 대회&nbsp;시 예측 불허의 현장 변수</li>
+                            <li class="bal-m bal-t">e스포츠 오프라인 대회&nbsp;시 예측 불허의 현장 변수</li>
                             <li>1분의 서버 다운도 곧바로 고객 불만으로 이어짐</li>
                         </ul>
                     </div>
@@ -238,7 +240,7 @@
                         <div class="text-4xl mb-5">👟</div>
                         <h4 class="font-bold text-gray-900 text-xl mb-4">리셀 커머스&nbsp;플랫폼 한정판 드랍 & 팝업</h4>
                         <ul class="text-base text-gray-600 space-y-3 list-disc pl-5 text-body">
-                            <li class="bal-m">드랍 및&nbsp;티켓팅 시점의 기형적 트래픽 집중 현상</li>
+                            <li class="bal-m bal-t">드랍 및&nbsp;티켓팅 시점의 기형적 트래픽 집중 현상</li>
                             <li class="bal">다양한 IP 파트너사의 비표준화된 상품 데이터 온보딩</li>
                             <li class="bal">팝업 대기열 지연 및&nbsp;QR 인증 서버 오류&nbsp;등 현장 변수</li>
                             <li class="bal">결제 오류나 품절 이슈가 곧바로 바이럴 리스크로 확산</li>
@@ -272,7 +274,7 @@
 
             <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-200 mb-8">
                 <h3 class="text-2xl font-bold mb-5 text-gray-900">온보딩 오류를 걸러내는 세&nbsp;단계</h3>
-                <p class="text-lg text-gray-600 mb-10 text-body max-w-[46em] leading-[1.8]">
+                <p class="text-lg text-gray-600 mb-10 text-body max-w-[46em] leading-[1.8] bal-t">
                     파트너사마다 다른 양식으로 오는 상품 코드와 가격을 손으로 모으면 반드시 사고가 납니다. 세&nbsp;단계로 나눠 막습니다.
                 </p>
                 
@@ -396,11 +398,11 @@
                         <span class="text-xs bg-red-600 text-white px-3 py-1 rounded-full font-bold animate-pulse">긴급</span>
                     </div>
                     <p class="mb-2">> [발생 시간] 14:03:22 (드랍 오픈 3분 경과)</p>
-                    <p class="mb-5 bal-m">> [이상 감지] 결제 API <span class="text-red-400 font-bold">'Timeout_Error_504'</span> 45건으로 급증 (오픈 직후 5건)</p>
+                    <p class="mb-5 bal-m bal-t">> [이상 감지] 결제 API <span class="text-red-400 font-bold">'Timeout_Error_504'</span> 45건으로 급증 (오픈 직후 5건)</p>
                     
                     <p class="mb-3 font-bold text-white bg-gray-800 inline-block px-2 py-1 rounded">> [AI 분석 기반 즉각 조치 권고안]</p>
                     <div class="pl-4 space-y-3">
-                        <p class="text-gray-300"><span class="text-blue-300">1. 개발 및&nbsp;인프라팀:</span> 대기열 서버 진입 기준 상향 조정 및&nbsp;트래픽 분산 요청</p>
+                        <p class="text-gray-300 bal-t"><span class="text-blue-300">1. 개발 및&nbsp;인프라팀:</span> 대기열 서버 진입 기준 상향 조정 및&nbsp;트래픽 분산 요청</p>
                         <p class="text-gray-300"><span class="text-yellow-300">2. 운영팀:</span> 결제 지연 공지 초안 도출 완료 (아래 텍스트를 즉시 공지사항에 등록하세요)</p>
                         <div class="bg-gray-800 p-4 rounded text-gray-200 text-sm mt-2 border border-gray-700 bal">
                             "안녕하세요 리셀 커머스&nbsp;플랫폼입니다. 현재 접속량 급증으로 결제가 일시 지연되고 있습니다. 고객님의 결제 내역은 안전하게 보관&nbsp;중이며..."

@@ -74,6 +74,8 @@
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
         /* 휴대폰: 문서 소개 숫자 칸에서 단위(원)만 다음 줄로 떨어지지 않게 */
         @media (max-width: 640px) { section[aria-label="이 문서가 하는 말"] .grid-cols-3 > div { padding-left: .5rem !important; padding-right: .5rem !important; } section[aria-label="이 문서가 하는 말"] .grid-cols-3 p.text-lg { font-size: 1rem !important; letter-spacing: -0.02em; } }
+        /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
 </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
@@ -198,9 +200,9 @@
                             <div class="bg-emerald-50 p-5 rounded-xl border border-emerald-100">
                                 <h4 class="font-bold text-emerald-800 text-lg mb-2">🏃 무과금 (F2P)</h4>
                                 <ul class="text-sm text-emerald-700 space-y-2 list-disc list-inside">
-                                    <li>던전 반복을 통한 재료 수급</li>
-                                    <li>강화 실패&nbsp;시 복구 재료 파밍</li>
-                                    <li>시간 투자를 통한 확률적 성장</li>
+                                    <li class="bal-t">던전 반복을 통한 재료 수급</li>
+                                    <li class="bal-t">강화 실패&nbsp;시 복구 재료 파밍</li>
+                                    <li class="bal-t">시간 투자를 통한 확률적 성장</li>
                                 </ul>
                             </div>
                             <div class="bg-blue-50 p-5 rounded-xl border border-blue-100">
@@ -208,7 +210,7 @@
                                 <ul class="text-sm text-blue-700 space-y-2 list-disc list-inside">
                                     <li>상점 패키지 즉시 구매</li>
                                     <li>강화 보조 아이템으로 리스크 제어</li>
-                                    <li>재화 투자를 통한 즉시 성장</li>
+                                    <li class="bal-t">재화 투자를 통한 즉시 성장</li>
                                 </ul>
                             </div>
                         </div>

@@ -82,7 +82,9 @@
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
+</style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 손가락으로 누르는 범위를 24px 로 넓힌다 (보이는 모습은 그대로) */
@@ -522,7 +524,7 @@
                 <div class="bg-white rounded-xl p-6 border border-amber-200">
                     <p class="text-xs font-black text-slate-800 mb-3">기준표를 실행 가능하게 만드는 항목</p>
                     <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
-                        <li class="leading-[1.8]">&bull; <strong class="text-slate-800">사전 승인 한도</strong> &mdash; 총&nbsp;환급액이 일정 금액 이하면 실무 즉시 집행, 초과하면 경영 판단으로 넘김. 대부분의 사고는 한도 안에서 끝나므로 속도가 확보됩니다</li>
+                        <li class="leading-[1.8] bal-t">&bull; <strong class="text-slate-800">사전 승인 한도</strong> &mdash; 총&nbsp;환급액이 일정 금액 이하면 실무 즉시 집행, 초과하면 경영 판단으로 넘김. 대부분의 사고는 한도 안에서 끝나므로 속도가 확보됩니다</li>
                         <li class="bal leading-[1.8]">&bull; <strong class="text-slate-800">아이템 회수 여부</strong> &mdash; 재화만 환급할지 아이템도 회수할지 미리 정합니다. 회수하지 않으면 유저 만족은 크지만 경제에 영향이 남습니다</li>
                         <li class="leading-[1.8]">&bull; <strong class="text-slate-800">중대와 일반의 판정 기준</strong> &mdash; 유료 상품 여부만으로 가를지, <br class="hidden md:block">
                     영향 유저&nbsp;수도 볼지. 판정이 모호하면 기준표가 있어도 회의가 열립니다</li>

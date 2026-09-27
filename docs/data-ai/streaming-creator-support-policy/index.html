@@ -46,6 +46,8 @@
         @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
         /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+        /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -298,11 +300,11 @@
                                 </div>
                                 <div class="p-4 bg-slate-50 rounded-2xl">
                                     <h4 class="font-bold text-sm mb-1 text-slate-800">지원 혜택: 공식 합방 제작비</h4>
-                                    <p class="text-xs text-slate-500">매칭된&nbsp;팀의 합동 방송&nbsp;시 메인 최상단 노출 및&nbsp;방송 제작비 명목의 별풍선 지원.</p>
+                                    <p class="text-xs text-slate-500 bal-t">매칭된&nbsp;팀의 합동 방송&nbsp;시 메인 최상단 노출 및&nbsp;방송 제작비 명목의 별풍선 지원.</p>
                                 </div>
                                 <div class="p-4 bg-slate-50 rounded-2xl">
                                     <h4 class="font-bold text-sm mb-1 text-slate-800">보상 체계: 멘토 리워드</h4>
-                                    <p class="text-xs text-slate-500">멘티가 베스트 BJ로 승급&nbsp;시 멘토 BJ에게 플랫폼 수수료 우대권 및&nbsp;전용 굿즈 지급.</p>
+                                    <p class="text-xs text-slate-500 bal-t">멘티가 베스트 BJ로 승급&nbsp;시 멘토 BJ에게 플랫폼 수수료 우대권 및&nbsp;전용 굿즈 지급.</p>
                                 </div>
                             </div>
                         </div>
@@ -318,7 +320,7 @@
                                         <div class="bg-indigo-600 h-full" style="width: 85%;"></div>
                                     </div>
                                     <div class="flex justify-between items-end">
-                                        <span class="text-[11px] text-indigo-700">3개월&nbsp;차 생존율 상승</span>
+                                        <span class="text-[11px] text-indigo-700 bal-t">3개월&nbsp;차 생존율 상승</span>
                                         <span class="text-lg font-black text-emerald-600">18.5% → 45%</span>
                                     </div>
                                     <div class="w-full bg-indigo-200 h-1.5 rounded-full overflow-hidden">
@@ -456,7 +458,7 @@
             <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-7">
                 <p class="text-[11px] font-black tracking-wide text-emerald-700 mb-3">발견 2</p>
                 <p class="font-black text-slate-900 mb-3">3개월을 넘기면 안정권입니다</p>
-                <p class="text-sm text-slate-600 leading-relaxed">
+                <p class="text-sm text-slate-600 leading-relaxed bal-t">
                     상대 이탈률이 <strong class="text-emerald-700">42.2% &rarr; 24.3% &rarr; 14.3%</strong>&#8288;로 급격히 낮아집니다. <br class="hidden md:block">
                     3개월 생존자는 이미 자기 시청자를 확보한 상태로 볼&nbsp;수 있습니다.
                 </p>

@@ -107,6 +107,8 @@
         @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
         /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+        /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -310,7 +312,7 @@
                         <span class="px-3 py-1 bg-sky-100 text-sky-700 text-[10px] font-black rounded-full">제안 1</span>
                         <h4 class="text-2xl font-bold text-slate-900 leading-tight">리플레이 시스템 도입</h4>
                         <div class="space-y-4">
-                            <p class="text-base text-slate-500 leading-relaxed">
+                            <p class="text-base text-slate-500 leading-relaxed bal-t">
                     <strong>[기획 사유]</strong> 핵 사용자에 대한 증거 수집이 어렵고, 본인의 플레이를 복기하여 실력을 향상시킬&nbsp;수 있는 도구가 게임 안에 없습니다.
                 </p>
                             <p class="text-sm text-slate-500 leading-relaxed">
@@ -566,7 +568,7 @@
                                 <span class="bg-amber-700 text-white text-[10px] font-black px-3 py-1 rounded-full tracking-wide">보완</span>
                                 <span class="font-black text-slate-900">제안 3 &middot; 사후 채팅</span>
                             </div>
-                            <p class="text-sm text-slate-700 leading-relaxed mb-4">
+                            <p class="text-sm text-slate-700 leading-relaxed mb-4 bal-t">
                     사망자가 아군에게 브리핑을 보내는 구조는 경쟁 FPS가 금지하는 <strong>관전 정보 전달</strong>입니다. 사망자는 생존자가 못&nbsp;보는 적 위치를 봅니다.
                 </p>
                             <div class="bg-white rounded-2xl p-5 border border-amber-200 mb-4">

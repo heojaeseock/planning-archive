@@ -101,7 +101,9 @@
         @media (min-width:768px){ section[aria-label="이 문서가 하는 말"] .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; } }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   .text-brand-ink { color: #02873d; }   /* 밝은 바탕에서 읽히는 브랜드 초록 */
 
@@ -361,7 +363,7 @@
 
             <div class="bg-slate-900 rounded-2xl p-8 md:p-10 text-white mb-10">
                 <p class="text-sm font-bold text-emerald-400 mb-5">보상 시점을 옮기면 충돌이 사라집니다</p>
-                <p class="leading-relaxed mb-5 max-w-[46em]">
+                <p class="leading-relaxed mb-5 max-w-[46em] bal-t">
                     지금은 쓰면 보상이고 그&nbsp;뒤에 걸러냅니다. 작성자는 보상만 노리고 운영자는 걸러내는&nbsp;데 시간을 씁니다.
                 </p>
                 <p class="leading-relaxed mb-5 max-w-[46em]">

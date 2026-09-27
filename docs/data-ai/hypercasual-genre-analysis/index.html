@@ -46,6 +46,8 @@
   table.cmp tbody th { background:#f1f5f9; font-weight:700; white-space:nowrap; text-align:left; }
         /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+        /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
 </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
@@ -266,7 +268,7 @@
   <!-- 요약 -->
   <section class="card p-8 md:p-10 mb-14 border-l-4 border-l-indigo-600">
     <h3 class="text-lg font-black mb-4">요약: 같은 대중성, 다른 회수 방식</h3>
-    <p class="text-slate-600 leading-relaxed max-w-[46em]">
+    <p class="text-slate-600 leading-relaxed max-w-[46em] bal-t">
                     셋 다&nbsp;문턱을 낮춰 넓게 부르는&nbsp;것은 같습니다. 다만&nbsp;깊어질수록 수익의 중심이 <strong>광고에서 결제로</strong> 옮겨 갑니다.
                 </p>
   </section>

@@ -103,7 +103,9 @@
         section[aria-label="이 문서가 하는 말"] .text-slate-700 { color: rgb(51 65 85); }
         .max-w-\[40em\] { max-width: 40em; }
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
-    </style>
+            /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
+</style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
   @media (prefers-reduced-motion: reduce) {
@@ -233,7 +235,7 @@
                         </div>
                         <div class="p-5 bg-sand-50 rounded-xl border border-sand-100 hover:border-coral-200 transition-colors">
                             <h3 class="text-lg font-bold text-sand-900 mb-2">2. 관대한 충돌 판정</h3>
-                            <p class="text-sand-800 leading-relaxed text-sm">
+                            <p class="text-sand-800 leading-relaxed text-sm bal-t">
                     캐릭터보다 15~20% 큰&nbsp;보이지 않는 히트박스를 통해, 세밀하지 않은 조작으로도 타격의 쾌감을 느낄&nbsp;수 있도록 설계합니다.
                 </p>
                         </div>

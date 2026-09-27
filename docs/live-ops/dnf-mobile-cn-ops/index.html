@@ -62,6 +62,8 @@
         @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
         /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+        /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
 </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
@@ -364,7 +366,7 @@ Sensor Tower 기반 중국 iOS 매출 순위 가중치 산출</li>
         <!-- 보강: 이벤트 의존도 -->
         <section id="section-dependency" class="bg-white rounded-3xl shadow-sm border border-stone-200 p-8 md:p-12">
             <h2 class="text-2xl md:text-3xl font-black text-stone-900 mb-4">04. 지수를 이벤트 시점과 사이 구간으로 나눠보면</h2>
-            <p class="text-stone-600 leading-relaxed mb-10">
+            <p class="text-stone-600 leading-relaxed mb-10 bal-t">
                     성과 지수를 이벤트가 있던 달과 없던 달로 갈라 평균을 내면 이&nbsp;서비스의 매출 구조가 무엇에 기대고 있는지 드러납니다.
                 </p>
 

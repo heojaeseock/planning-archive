@@ -97,6 +97,8 @@
         @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
         /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+        /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -362,7 +364,7 @@
                             <span class="text-[10px] font-bold text-slate-500">중국 / 액션 RPG</span>
                         </div>
                         <h3 class="font-black text-slate-800 text-lg mb-3">붕괴 3rd</h3>
-                        <p class="text-xs text-slate-500 mb-6 flex-1 leading-relaxed">깊이 있는 SF 스토리와 애니메이션 렌더링 기반의 캐릭터 수집형 액션 RPG.</p>
+                        <p class="text-xs text-slate-500 mb-6 flex-1 leading-relaxed bal-t">깊이 있는 SF 스토리와 애니메이션 렌더링 기반의 캐릭터 수집형 액션 RPG.</p>
                         <div class="space-y-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
                             <p class="text-[10px] font-bold text-indigo-700 flex gap-2"><span>✅</span> 고퀄리티 그래픽 및&nbsp;스토리 몰입감</p>
                             <p class="text-[10px] font-bold text-rose-500 flex gap-2"><span>⚠️</span> 높은 디바이스 사양 및&nbsp;긴 다운로드</p>
@@ -461,7 +463,7 @@
                             <span class="text-[10px] font-bold text-slate-500">한&#8288;·일 / 수집형 RPG</span>
                         </div>
                         <h3 class="font-black text-slate-800 text-lg mb-3">KOF 올스타</h3>
-                        <p class="text-xs text-slate-500 mb-6 flex-1 leading-relaxed">원작 KOF 시리즈의 캐릭터를 수집하고&nbsp;팀을 편성하여 전투하는 액션 RPG.</p>
+                        <p class="text-xs text-slate-500 mb-6 flex-1 leading-relaxed bal-t">원작 KOF 시리즈의 캐릭터를 수집하고&nbsp;팀을 편성하여 전투하는 액션 RPG.</p>
                         <div class="space-y-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
                             <p class="text-[10px] font-bold text-purple-700 flex gap-2"><span>✅</span> 화려한 스킬 모션 및&nbsp;훌륭한 타격감</p>
                             <p class="text-[10px] font-bold text-rose-500 flex gap-2"><span>⚠️</span> 과도한 반복 파밍 피로도, 조작 버그</p>

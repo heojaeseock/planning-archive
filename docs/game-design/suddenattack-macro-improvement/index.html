@@ -98,6 +98,8 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
             /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+        /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -234,15 +236,15 @@
                                     <h4 class="font-bold text-emerald-800 mb-2 flex items-center gap-2">👍 이&nbsp;기능이 잘하고 있는&nbsp;것</h4>
                                     <ul class="text-sm text-slate-600 leading-relaxed space-y-1">
                                         <li>• 보이스톡 미사용 유저도 쉽게 전략을 전달하는 대안</li>
-                                        <li class="bal-m">• 적 위치, HP 상태&nbsp;등을 실시간 공유하여&nbsp;팀 플레이 효율 향상</li>
+                                        <li class="bal-m bal-t">• 적 위치, HP 상태&nbsp;등을 실시간 공유하여&nbsp;팀 플레이 효율 향상</li>
                                     </ul>
                                 </div>
                                 <div class="bg-red-50 p-5 rounded-2xl border border-red-100 shadow-sm">
                                     <h4 class="font-bold text-red-800 mb-2 flex items-center gap-2">👎 개선이 필요한 지점</h4>
                                     <ul class="text-sm text-slate-600 leading-relaxed space-y-2">
-                                        <li><strong>정보 신뢰성 하락:</strong> 사망 유저의 허위 정보&#8288;(낚시)&#8288;나 악의적 도배로 혼란 초래</li>
-                                        <li><strong>문구 제한성:</strong> 사전 설정된 문구만 사용 가능하여 세밀한 브리핑 불가</li>
-                                        <li><strong>조작 불편함:</strong> 교전&nbsp;중 고정된 단축키&#8288;(Alt+숫자) 조작의 물리적 한계</li>
+                                        <li class="bal-t"><strong>정보 신뢰성 하락:</strong> 사망 유저의 허위 정보&#8288;(낚시)&#8288;나 악의적 도배로 혼란 초래</li>
+                                        <li class="bal-t"><strong>문구 제한성:</strong> 사전 설정된 문구만 사용 가능하여 세밀한 브리핑 불가</li>
+                                        <li class="bal-t"><strong>조작 불편함:</strong> 교전&nbsp;중 고정된 단축키&#8288;(Alt+숫자) 조작의 물리적 한계</li>
                                     </ul>
                                 </div>
                             </div>
@@ -339,7 +341,7 @@
 
                         <div class="bg-blue-50 border-l-[6px] border-blue-500 rounded-r-2xl p-6">
                             <p class="text-[10px] font-black tracking-wide text-blue-500 mb-3">그래서 개선의 기준이 달라집니다</p>
-                            <p class="text-sm md:text-base text-slate-700 leading-relaxed max-w-[46em]">
+                            <p class="text-sm md:text-base text-slate-700 leading-relaxed max-w-[46em] bal-t">
                     도배 억제나 문구 확장으로 잡으면 증상만 다루게 됩니다. 원래 목적이 <strong>보이스톡 장애&nbsp;때의 소통 대체</strong>였으므로, 필요한&nbsp;것은 정보량이 아니라 <strong>정보 우위를 없앤 상태에서 소통만 남기는 설계</strong>입니다.
                 </p>
                         </div>
@@ -428,7 +430,7 @@
                         <span class="px-4 py-1.5 bg-sky-50 text-sky-700 text-[10px] font-black rounded-full tracking-wide border border-sky-100">제안 3</span>
                         <h3 class="text-2xl font-bold text-slate-900 leading-tight">매크로 단축키 커스터마이징</h3>
                         <div class="space-y-4">
-                            <p class="text-sm text-slate-600 leading-relaxed">
+                            <p class="text-sm text-slate-600 leading-relaxed bal-t">
                     <strong>[기획 내용]</strong> 고정된 'Alt+숫자' 방식 대신, 게임&nbsp;내 설정에서 유저가 원하는 <strong>개별 키&#8288;(F2, 마우스 측면 버튼&nbsp;등)</strong>&#8288;로 변경할&nbsp;수 있도록 사용자화 기능을 지원합니다.
                 </p>
                             <p class="text-sm text-slate-600 leading-relaxed">
@@ -545,7 +547,7 @@
                             <ul class="space-y-2 text-sm text-slate-600 leading-relaxed">
                                 <li class="max-w-[46em] leading-[1.8] bal">&bull; <strong class="text-slate-800">체력 수치 노출:</strong> &lsquo;피 37&rsquo;&#8288;처럼 정확한 체력값은 생존자가 얻을&nbsp;수 없는 정보입니다. 노출 여부 자체가 밸런스 결정 사항입니다.</li>
                                 <li>&bull; <strong class="text-slate-800">응답 지연:</strong> 5초 주기 추천은 급박한 교전 템포에서 이미 지난 상황을 알려줄&nbsp;수 있습니다.</li>
-                                <li>&bull; <strong class="text-slate-800">운영 부담:</strong> 실시간 추론을 상시 가동하려면 비용과 안정성 확보가 선행됩니다. 장애&nbsp;시 기능 전체가 멈춥니다.</li>
+                                <li class="bal-t">&bull; <strong class="text-slate-800">운영 부담:</strong> 실시간 추론을 상시 가동하려면 비용과 안정성 확보가 선행됩니다. 장애&nbsp;시 기능 전체가 멈춥니다.</li>
                             </ul>
                         </div>
                     </div>

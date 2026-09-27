@@ -86,6 +86,8 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
             /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+        /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -282,7 +284,7 @@
                         <div class="content-panel p-5">
                             <div class="text-2xl mb-2">🛡️</div>
                             <h4 class="font-bold text-slate-800 mb-2">장착 슬롯 (총&nbsp;9칸)</h4>
-                            <p class="text-sm text-slate-600">무기, 방어구, 반지&#8288;(2), 펫&#8288;(2), 팔찌, 목걸이, 마도서로 구성된 방대한 장비 체계&#8288;(부위 종류는 7종, 반지·펫이 2칸씩)</p>
+                            <p class="text-sm text-slate-600 bal-t">무기, 방어구, 반지&#8288;(2), 펫&#8288;(2), 팔찌, 목걸이, 마도서로 구성된 방대한 장비 체계&#8288;(부위 종류는 7종, 반지·펫이 2칸씩)</p>
                         </div>
                         <div class="content-panel p-5">
                             <div class="text-2xl mb-2">⬆️</div>
@@ -308,7 +310,7 @@
                             <span class="bg-red-100 text-red-500 rounded-lg p-2 mt-1 shrink-0">🎲</span>
                             <div>
                                 <h4 class="font-bold text-slate-800 mb-1">과도한 무작위성으로 인한 피로도</h4>
-                                <p class="text-sm text-slate-600 leading-relaxed">
+                                <p class="text-sm text-slate-600 leading-relaxed bal-t">
                     승급마다 같은 장비가 3배씩 필요한데 뽑기는 <strong>부위를 고를&nbsp;수 없습니다.</strong> 목표가 너무 멀어 결제로도 이어지지 않습니다.
                 </p>
                             </div>

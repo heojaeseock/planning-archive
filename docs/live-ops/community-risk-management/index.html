@@ -111,6 +111,8 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
             /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+        /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   .badge-brand-ink { color: #B35825; }   /* 연한 주황 바탕에서 읽히는 브랜드색 */
@@ -342,7 +344,7 @@
                                 <div>
                                     <span class="inline-block px-2 py-1 bg-orange-100 text-orange-600 rounded-lg text-[10px] font-bold mb-2">1단계. 행동 마찰 부여</span>
                                     <p class="font-bold text-base">송금 전 쿨다운 팝업</p>
-                                    <p class="text-xs text-gray-500 mt-1 bal-m">계좌 복사&nbsp;시 3초 지연시켜 충동적 입금 방지</p>
+                                    <p class="text-xs text-gray-500 mt-1 bal-m bal-t">계좌 복사&nbsp;시 3초 지연시켜 충동적 입금 방지</p>
                                 </div>
                                 <span class="text-2xl group-hover:scale-110 transition-transform">⏳</span>
                             </button>

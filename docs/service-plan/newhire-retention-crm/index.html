@@ -75,6 +75,8 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
             /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+        /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
 </style>
 
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
@@ -552,7 +554,7 @@
                     <span class="w-8 h-8 bg-brand-blue text-white text-xs font-black rounded-full flex items-center justify-center shrink-0">1</span>
                     <div>
                         <p class="font-bold text-gray-800 mb-1">실제 출근일을 확보할&nbsp;수 있는지 먼저 확인합니다</p>
-                        <p class="text-base text-gray-500 leading-relaxed max-w-[46em]">
+                        <p class="text-base text-gray-500 leading-relaxed max-w-[46em] bal-t">
                     모든 발송이 <strong>출근일</strong>을 기준으로 돕니다. 그런데 입사일 확정과 연기, 포기는 고객사와 합격자 사이에서 정해집니다. 플랫폼이 그&nbsp;날짜를 언제 어떤 경로로 받는지가 정해지지 않으면 첫&nbsp;발송조차 할&nbsp;수 없습니다.
                 </p>
                     </div>

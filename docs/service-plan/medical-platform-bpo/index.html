@@ -110,6 +110,8 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
             /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+        /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
+        @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -526,7 +528,7 @@
 
             <div class="bg-gray-900 rounded-2xl p-8 text-white">
                 <p class="text-sm font-bold text-brand-500 mb-4">20%&#8288;는 고정값이 될&nbsp;수 없습니다</p>
-                <p class="text-gray-300 leading-relaxed mb-5 max-w-[46em]">
+                <p class="text-gray-300 leading-relaxed mb-5 max-w-[46em] bal-t">
                     위험군을 20%&#8288;로 좁히면 Q4까지는 2,400건 대&nbsp;3,000건으로 여유가 있습니다. 그런데 <strong>Q5에서 5,000건, Q6에서 9,000건</strong>이&nbsp;됩니다. 한계선은 3,000건에 멈춰 있는데 리뷰량만 계속 오르기 때문입니다.
                 </p>
                 <p class="text-gray-300 leading-relaxed max-w-[46em]">
