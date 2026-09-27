@@ -96,7 +96,7 @@
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600">AI 기반 HR 통합 어시스턴트</span> 기획
             </h1>
             <p class="text-lg text-slate-600 leading-relaxed px-4">
-                    노션에 흩어진 인사 규정을 한곳으로 모으고, <strong>사내망에만 두는 AI</strong>로 반복 문의를 1차 응대합니다. <br class="hidden md:block">
+                    노션에 흩어진 인사 규정을 모아 AI로 반복 문의를 먼저 응대하고, <strong>민감 정보는 외부 AI에 보내지 않습니다.</strong> <br class="hidden md:block">
                     인사 조직의 업무 효율과 데이터 보안을 함께 높이는 방안을 제안합니다.
                 </p>
         </header>
@@ -122,7 +122,7 @@
               <div class="px-3 py-5 md:py-6 text-center">
                 <p class="text-[11px] font-bold text-slate-500 mb-2 bal">민감 정보가 나가는&nbsp;곳</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">없음</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">문서 생성은 사내에서만</p>
+                <p class="text-[11px] text-slate-500 mt-1 bal">이름&#8288;·연봉 결합은 브라우저 안에서만</p>
               </div>
             </div>
             <div class="px-6 md:px-9 py-6 md:py-7">
@@ -134,7 +134,7 @@
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">밖으로 안&nbsp;나가는 문서 생성기</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">계약서 초안처럼 이름과 금액이 들어가는 문서는 사내에서만 만듭니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">AI에는 빈칸 양식만 받고, 이름과 금액은 담당자 브라우저에서만 채워 넣습니다</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">막지 못하는&nbsp;것도 밝힘</p>
@@ -530,7 +530,7 @@
         const faqs = {
             '1': { context: '반차 사용 시 의무 근무 시간은 4시간이며, 코어타임(11:00~16:00) 포함 여부와 무관하게 총량만 채우면 됨. (상세 링크: @근태가이드)', question: '"오늘 오후 반차 쓰려고 하는데, 코어타임 겹치면 안 되나요?"' },
             '2': { context: '매월 25일까지 사내 시스템 복지비 청구 메뉴에 영수증 스캔본 첨부하여 상신 필수. (상세 링크: @복지규정)', question: '"이번에 게임 지원금 쓴 거 영수증 언제까지 내야 하죠?"' },
-            '3': { context: '사내 포털 > 인사지원 > 제증명 발급 메뉴에서 국/영문 선택 가능. 신청 즉시 PDF 자동 발급. (상세 링크: @포털메뉴얼)', question: '"외국계 은행 대출 때문에 영문 재직증명서가 필요한데 어떻게 발급받나요?"' }
+            '3': { context: '사내 포털 > 인사지원 > 제증명 발급 메뉴에서 국/영문 선택 가능. 신청 즉시 PDF 자동 발급. (상세 링크: @포털매뉴얼)', question: '"외국계 은행 대출 때문에 영문 재직증명서가 필요한데 어떻게 발급받나요?"' }
         };
 
         dbRows.forEach(row => {
@@ -557,7 +557,7 @@
         const salaryInput = document.getElementById('candidate-salary');
 
         // AI가 제공하는 '빈칸'이 있는 템플릿
-        const aiTemplate = `[근로계약서 초안]\n\n제 1조 (목적) 본 계약은 회사와 [CANDIDATE_NAME] 간의 근로 조건을 명확히 함을 목적으로 한다.\n\n제 2조 (임금) [CANDIDATE_NAME]의 계약 연봉은 [SALARY_AMOUNT]으로 정하며, 제수당을 포함한 포괄임금으로 한다.\n\n제 3조 (성실의무) 근로자는 회사의 제반 규정을 준수하며 부여된 업무를 성실히 수행하여야 한다.`;
+        const aiTemplate = `[근로계약서 초안]\n\n제1조 (목적) 본 계약은 회사와 [CANDIDATE_NAME] 간의 근로 조건을 명확히 함을 목적으로 한다.\n\n제2조 (임금) [CANDIDATE_NAME]의 계약 연봉은 [SALARY_AMOUNT]으로 정하며, 제수당을 포함한 포괄임금으로 한다.\n\n제3조 (성실의무) 근로자는 회사의 제반 규정을 준수하며 부여된 업무를 성실히 수행하여야 한다.`;
 
         generateBtn.addEventListener('click', () => {
             generateBtn.innerHTML = '로컬 브라우저에서 데이터 매핑 중...';

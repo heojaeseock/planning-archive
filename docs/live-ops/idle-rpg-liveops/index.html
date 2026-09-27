@@ -227,7 +227,7 @@
                 <div class="content-card p-6">
                     <h3 class="text-lg font-bold text-slate-800 mb-4 text-center">최근 3개월 문의 분석 &mdash; 이탈 원인</h3>
                     <div class="chart-container">
-                        <canvas id="vocChart" role="img" aria-label="방사형 차트. 항목 반복 숙제 피로도, UI 조작 불편, 과금 부담, 콘텐츠 부족, 밸런스 불만. 계열 이탈 원인 비중 (%)"></canvas>
+                        <canvas id="vocChart" role="img" aria-label="방사형 차트. 항목 반복 숙제 피로도, UI 조작 불편, 과금 부담, 콘텐츠 부족, 밸런스 불만. 계열 이탈 원인 불만 지수"></canvas>
                     </div>
                 </div>
 
@@ -787,7 +787,7 @@
                 data: {
                     labels: ['반복 숙제 피로도', 'UI 조작 불편', '과금 부담', '콘텐츠 부족', '밸런스 불만'],
                     datasets: [{
-                        label: '이탈 원인 비중 (%)',
+                        label: '이탈 원인 불만 지수',
                         data: [85, 65, 45, 30, 40],
                         backgroundColor: 'rgba(59, 130, 246, 0.15)', // Brand 500 with opacity
                         borderColor: '#3b82f6',
@@ -821,7 +821,7 @@
                             borderColor: '#e2e8f0',
                             borderWidth: 1,
                             callbacks: {
-                                label: function(context) { return context.parsed.r + '%'; }
+                                label: function(context) { return '불만 지수 ' + context.parsed.r; }
                             }
                         }
                     }

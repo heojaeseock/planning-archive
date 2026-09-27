@@ -180,7 +180,7 @@
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
                 <p class="text-[11px] font-bold text-slate-500 mb-2 bal">관제가 보장하는&nbsp;것</p>
-                <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">100 유지</p>
+                <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">100까지 복구</p>
                 <p class="text-[11px] text-slate-500 mt-1 bal">빠진 가사&#8288;·크레딧&#8288;·배너를 되돌립니다</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
@@ -501,7 +501,7 @@
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div class="bg-emerald-50 rounded-2xl p-6 border-2 border-emerald-200">
                         <p class="text-xs font-bold text-emerald-700 mb-2">관제로 얻는 부분</p>
-                        <p class="text-sm font-bold text-slate-900 mb-3">누락 복구 · 100 유지</p>
+                        <p class="text-sm font-bold text-slate-900 mb-3">누락 복구 · 100까지</p>
                         <p class="text-xs text-slate-600 leading-relaxed bal">
                     가사 누락, 크레딧 오류, 배너 미노출을 찾아 되돌리는&nbsp;일입니다. 전수 검사와 핫라인으로 해결됩니다.
                 </p>
@@ -812,7 +812,7 @@
                         legend: { position: 'bottom', labels: { usePointStyle: true, boxWidth: 8 } },
                         tooltip: {
                             backgroundColor: '#1e293b',
-                            callbacks: { title: (ctx) => ctx[0].label === '24h' ? '24h : 프로모션 누락 조기 복구' : ctx[0].label }
+                            callbacks: { title: (ctx) => ctx[0].label === '24h' ? '24h : 누락 복구 + 추가 노출 확보' : ctx[0].label }
                         }
                     },
                     scales: { y: { display: false, min: 0, max: 130 }, x: { grid: { display: false } } }
