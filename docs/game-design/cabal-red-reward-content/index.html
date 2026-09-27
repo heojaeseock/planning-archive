@@ -221,7 +221,7 @@
                 <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 flex flex-col h-full">
                     <h3 class="text-md font-bold text-slate-800 mb-4 text-center">MMORPG 파밍 관련 주요 불만 요인</h3>
                     <div class="chart-container flex-grow">
-                        <canvas id="vocChart" role="img" aria-label="도넛 차트. 항목 공급 과잉으로 인한 가치 하락, 무의미한 반복 사냥 피로도, 보상 획득 체감의 격차, 기타 (오류 및 불편사항)"></canvas>
+                        <canvas id="vocChart" role="img" aria-label="도넛 차트. 항목 공급 과잉으로 인한 가치 하락, 무의미한 반복 사냥 피로도, 보상 획득 체감의 격차, 기타 (오류 및 불편 사항)"></canvas>
                     </div>
                     <p class="text-xs text-slate-500 mt-3 text-center">
                         * 출처: 동종 장르&#8288;(리니지 라이크) 주요 커뮤니티 동향과 고객 의견&#8288;(VOC) 기반 자체 취합
@@ -361,7 +361,7 @@
                     그러면 그&nbsp;장비를 얻으려는 파밍 동기도 함께 강해집니다.
                 </p>
                 <p class="text-sm md:text-base leading-relaxed break-keep max-w-[46em]">
-                    <strong class="text-amber-300">아스트랄 도감과 장비 추출은 소모를 늘리면서 <strong>공급도 함께 늘립니다.</strong> 순환이 공급 가속으로 번지지 않도록 일일 처리 한도나 결과물 상한을 같이 겁니다.</strong>
+                    <strong class="text-amber-300">아스트랄 도감과 장비 추출은 소모를 늘리면서 공급도 함께 늘립니다.</strong> 순환이 공급 가속으로 번지지 않도록 일일 처리 한도나 결과물 상한을 같이 겁니다.
                 </p>
             </div>
 
@@ -417,7 +417,7 @@
                         <h3 class="text-md font-bold text-slate-800 break-keep">실시간 아이템 획득 모니터링 시뮬레이션</h3>
                         
                         <button onclick="triggerAnomaly()" id="sim-btn" class="pulse-btn w-full sm:w-auto px-4 py-2 bg-red-50 text-red-600 border border-red-200 hover:bg-red-100 rounded-lg text-sm font-bold transition-all shadow-sm flex items-center justify-center whitespace-nowrap">
-                            <span>이상 로그 발생 시뮬레이션 해보기 👆</span>
+                            <span>이상 로그 발생 시뮬레이션해 보기 👆</span>
                         </button>
                     </div>
                     
@@ -453,7 +453,7 @@
                     <!-- Step 2 -->
                     <div class="border border-slate-200 rounded-lg overflow-hidden bg-white shadow-sm">
                         <button onclick="toggleAccordion('manual2', 'm-icon2')" class="w-full flex justify-between items-center p-4 hover:bg-slate-50 transition-colors text-left">
-                            <span class="font-bold text-blue-600 break-keep">2단계. 로그 기반 타겟 검증</span>
+                            <span class="font-bold text-blue-600 break-keep">2단계. 로그 기반 타깃 검증</span>
                             <span id="m-icon2" class="text-slate-500 transition-transform duration-300 flex-shrink-0 ml-2">▼</span>
                         </button>
                         <div id="manual2" class="hidden p-4 bg-slate-50 text-sm text-slate-600 border-t border-slate-200 leading-relaxed">
@@ -727,7 +727,7 @@
                         '공급 과잉으로 인한 가치 하락', 
                         '무의미한 반복 사냥 피로도', 
                         '보상 획득 체감의 격차', 
-                        '기타 (오류 및 불편사항)'
+                        '기타 (오류 및 불편 사항)'
                     ],
                     datasets: [{
                         data: [45, 30, 15, 10],
@@ -832,7 +832,7 @@
                 alertMsg.classList.add('hidden');
                 alertMsg.classList.remove('flex');
                 
-                btn.innerHTML = '<span>이상 로그 발생 시뮬레이션 해보기 👆</span>';
+                btn.innerHTML = '<span>이상 로그 발생 시뮬레이션해 보기 👆</span>';
                 btn.classList.add('pulse-btn', 'bg-red-50', 'text-red-600', 'border-red-200');
                 btn.classList.remove('bg-slate-100', 'text-slate-600', 'border-slate-300');
             }

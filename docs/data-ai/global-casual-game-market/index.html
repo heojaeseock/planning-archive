@@ -203,7 +203,7 @@
     <section class="mb-28">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
             <div>
-                <h2 class="text-2xl font-bold text-slate-800">1. 마켓 트렌드 지표 분석</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-800">1. 마켓 트렌드 지표 분석</h2>
                 <p class="text-slate-500 mt-2">장르 점유율 및&nbsp;유입 효율 데이터 비교</p>
             </div>
             <div class="flex bg-slate-200/50 p-1.5 rounded-2xl border border-slate-200">
@@ -306,7 +306,7 @@
                 </div>
                 <div class="md:col-span-5 bg-slate-50 rounded-[2rem] p-8 shadow-inner">
                     <p class="text-[10px] font-black text-slate-500 tracking-wide text-center mb-8">동기 지표</p>
-                    <div class="h-56 w-full"><canvas id="radar1" role="img" aria-label="방사형 차트. 빠른 성장을 통한 통제감 유형의 동기 구성. 항목 즉각보상, 장기목표, 정서안정, 낮은피로, 시각효과"></canvas></div>
+                    <div class="h-56 w-full"><canvas id="radar1" role="img" aria-label="방사형 차트. 빠른 성장을 통한 통제감 유형의 동기 구성. 항목 즉각 보상, 장기 목표, 정서 안정, 낮은 피로, 시각 효과"></canvas></div>
                 </div>
             </div>
         </div>
@@ -336,7 +336,7 @@
                 </div>
                 <div class="md:col-span-5 bg-slate-50 rounded-[2rem] p-8 shadow-inner">
                     <p class="text-[10px] font-black text-slate-400 tracking-wide text-center mb-8">동기 지표</p>
-                    <div class="h-56 w-full"><canvas id="radar2" role="img" aria-label="방사형 차트. 정돈과 정렬이 주는 정서적 해소 유형의 동기 구성. 항목 즉각보상, 장기목표, 정서안정, 낮은피로, 시각효과"></canvas></div>
+                    <div class="h-56 w-full"><canvas id="radar2" role="img" aria-label="방사형 차트. 정돈과 정렬이 주는 정서적 해소 유형의 동기 구성. 항목 즉각 보상, 장기 목표, 정서 안정, 낮은 피로, 시각 효과"></canvas></div>
                 </div>
             </div>
         </div>
@@ -366,7 +366,7 @@
                 </div>
                 <div class="md:col-span-5 bg-slate-50 rounded-[2rem] p-8 shadow-inner">
                     <p class="text-[10px] font-black text-slate-400 tracking-wide text-center mb-8">동기 지표</p>
-                    <div class="h-56 w-full"><canvas id="radar3" role="img" aria-label="방사형 차트. 생산과 관리를 통한 전략적 순환 유형의 동기 구성. 항목 즉각보상, 장기목표, 정서안정, 낮은피로, 시각효과"></canvas></div>
+                    <div class="h-56 w-full"><canvas id="radar3" role="img" aria-label="방사형 차트. 생산과 관리를 통한 전략적 순환 유형의 동기 구성. 항목 즉각 보상, 장기 목표, 정서 안정, 낮은 피로, 시각 효과"></canvas></div>
                 </div>
             </div>
         </div>
@@ -376,7 +376,7 @@
     <section class="mb-28">
         <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4 tracking-tight">두&nbsp;지표의 1위가 서로 다릅니다</h2>
         <p class="text-slate-600 leading-relaxed mb-10 max-w-3xl">
-                    1번의 차트 두&nbsp;개는 각각 다른&nbsp;것을 1위로 보여줍니다. <br class="hidden md:block">
+                    1장 차트의 두&nbsp;화면은 각각 다른&nbsp;것을 1위로 보여 줍니다. <br class="hidden md:block">
                     <strong class="text-slate-900">점유율 1위는 복합 성장형 45%</strong>&#8288;이고, <strong class="text-slate-900">유입 효율 1위는 시각적 정렬 소재 72</strong>입니다. <br class="hidden md:block">
                     이&nbsp;둘을 나란히 놓으면 전략의 근거가 수치로 잡힙니다.
                 </p>
@@ -699,7 +699,7 @@
         new Chart(ctx, {
             type: 'radar',
             data: {
-                labels: ['즉각보상', '장기목표', '정서안정', '낮은피로', '시각효과'],
+                labels: ['즉각 보상', '장기 목표', '정서 안정', '낮은 피로', '시각 효과'],
                 datasets: [{
                     data: data,
                     backgroundColor: 'rgba(13, 148, 136, 0.15)',

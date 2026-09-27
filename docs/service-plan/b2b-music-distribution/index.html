@@ -257,7 +257,7 @@
         <section id="sec-data">
             <h2 class="text-2xl md:text-3xl font-black text-slate-800 mb-6 flex items-center gap-2">
                 <span class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center text-sm shadow-sm">2</span> 
-                해결책 1 : 정산 데이터 무결성 검증
+                해결책 1: 정산 데이터 무결성 검증
             </h2>
             
             <div class="bento-card p-8">
@@ -298,7 +298,7 @@
         <section id="sec-live">
             <h2 class="text-2xl md:text-3xl font-black text-slate-800 mb-6 flex items-center gap-2">
                 <span class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center text-sm shadow-sm">3</span> 
-                해결책 2 : 골든타임&#8288;(48h) 라이브 관제
+                해결책 2: 골든타임&#8288;(48h) 라이브 관제
             </h2>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
@@ -319,7 +319,7 @@
                     
                     <div class="relative z-10 pl-[85px] min-h-[56px] flex flex-col justify-center">
                         <div class="absolute left-6 top-0 w-14 h-14 rounded-full bg-white border-4 border-slate-300 flex items-center justify-center font-black text-slate-500 text-sm shadow-sm">48H</div>
-                        <h3 class="font-black text-lg text-slate-800">이슈 즉각 개입 (Fix/Takedown)</h3>
+                        <h3 class="font-black text-lg text-slate-800">이슈 즉각 개입 (수정/게시 중단)</h3>
                         <p class="text-slate-500 text-sm mt-1 bal-m">누락 발견&nbsp;시 플랫폼 담당자 핫라인 즉시 가동</p>
                     </div>
                 </div>
@@ -350,7 +350,7 @@
         <section id="sec-ip">
             <h2 class="text-2xl md:text-3xl font-black text-slate-800 mb-6 flex items-center gap-2">
                 <span class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center text-sm shadow-sm">4</span> 
-                해결책 3 : IP 보호 협업 워크플로우
+                해결책 3: IP 보호 협업 워크플로우
             </h2>
 
             <div class="bento-card p-8">
@@ -732,7 +732,7 @@
     </main>
 
     <footer class="text-center py-10 text-slate-500 text-sm font-medium border-t border-slate-200 mt-10">
-        B2B Music Distribution &amp; Platform Partnership Proposal - &copy; 허재석
+        B2B 음악 유통·플랫폼 파트너십 제안 &copy; 허재석
     </footer>
 
     <script>
@@ -761,7 +761,7 @@
                     maintainAspectRatio: false,
                     plugins: {
                         legend: { display: false },
-                        tooltip: { callbacks: { label: (ctx) => ctx.parsed.x + ' 시간 소요' } }
+                        tooltip: { callbacks: { label: (ctx) => ctx.parsed.x + '시간 소요' } }
                     },
                     scales: {
                         x: { display: false, max: 130 },
@@ -812,7 +812,7 @@
                         legend: { position: 'bottom', labels: { usePointStyle: true, boxWidth: 8 } },
                         tooltip: {
                             backgroundColor: '#1e293b',
-                            callbacks: { title: (ctx) => ctx[0].label === '24h' ? '24h : 누락 복구 + 추가 노출 확보' : ctx[0].label }
+                            callbacks: { title: (ctx) => ctx[0].label === '24h' ? '24h: 누락 복구 + 추가 노출 확보' : ctx[0].label }
                         }
                     },
                     scales: { y: { display: false, min: 0, max: 130 }, x: { grid: { display: false } } }

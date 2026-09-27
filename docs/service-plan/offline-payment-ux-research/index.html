@@ -245,11 +245,11 @@
                     <!-- Chart Side -->
                     <div class="flex flex-col items-center">
                         <div class="chart-wrapper">
-                            <canvas id="impactChart" role="img" aria-label="도넛 차트. 리서치 업무 시간 배분. 항목 운영 반복 업무, 인사이트 발굴 및 전략, 자율 리서치 지원. 도입 전과 후를 버튼으로 전환"></canvas>
+                            <canvas id="impactChart" role="img" aria-label="도넛 차트. 리서치 업무 시간 배분. 항목 운영 반복 업무, 인사이트 발굴 및 전략, 자체 리서치 지원. 도입 전과 후를 버튼으로 전환"></canvas>
                         </div>
                         <div class="mt-8 z-10">
                             <button id="simulateBtn" class="bg-brand-blue text-white font-bold text-[17px] px-8 py-4 rounded-2xl pulse-btn transition-all duration-300 flex items-center gap-2 shadow-lg hover:-translate-y-1">
-                                <span>🚀</span> Ops 시스템 가동하기
+                                <span>🚀</span> 옵스 시스템 가동하기
                             </button>
                         </div>
                     </div>
@@ -327,7 +327,7 @@
                             <div class="grid md:grid-cols-3 gap-4">
                                 <div class="bg-[#f9fafb] p-5 rounded-xl border border-gray-100">
                                     <h4 class="font-bold text-[#191f28] mb-2 text-[15px]">1. 패널 자동 추출</h4>
-                                    <p class="text-[#4e5968] leading-relaxed text-sm">결제액, 업종 조건에 맞는 사장님 타겟 데이터를 엑셀 로직으로 오차 없이 필터링합니다.</p>
+                                    <p class="text-[#4e5968] leading-relaxed text-sm">결제액, 업종 조건에 맞는 사장님 타깃 데이터를 엑셀 로직으로 오차 없이 필터링합니다.</p>
                                 </div>
                                 <div class="bg-[#f9fafb] p-5 rounded-xl border border-gray-100">
                                     <h4 class="font-bold text-[#191f28] mb-2 text-[15px]">2. 커뮤니케이션 자동화</h4>
@@ -372,7 +372,7 @@
                                     <div class="text-xl mt-0.5 shrink-0">🎥</div>
                                     <div>
                                         <strong class="text-[#191f28] block mb-1 text-[15px]">단말기&#8288;(POS) 관찰 매뉴얼</strong>
-                                        <span class="text-sm text-[#4e5968] leading-relaxed block">실제 매장에서 가맹점의 영업을 방해하지 않고, 사장님의 단말기 조작 동선과 고객 결제 씬을 녹화하는 현장 방법론을 정립합니다.</span>
+                                        <span class="text-sm text-[#4e5968] leading-relaxed block">실제 매장에서 가맹점의 영업을 방해하지 않고, 사장님의 단말기 조작 동선과 고객 결제 장면을 녹화하는 현장 방법론을 정립합니다.</span>
                                     </div>
                                 </li>
                             </ul>
@@ -543,9 +543,9 @@
                     현장에서 들은&nbsp;말이 한&nbsp;번 쓰이고 사라지는&nbsp;것이 문제입니다. 태깅과 보관은 맞는 처방이지만, <strong>검색되지 않는 저장소는 자산이 아니라 창고</strong>입니다.
                 </p>
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed mb-6">
-                    <li class="bal max-w-[46em] leading-[1.8]">&bull; 태그 체계의 주인 &mdash; 정하는 사람이 없으면 같은 개념에 태그가 여럿 생겨 검색이 깨집니다. 목록을 고정하고 추가는 승인제로 둡니다</li>
+                    <li class="bal max-w-[46em] leading-[1.8]">&bull; <strong class="text-slate-800">태그 체계의 주인</strong> &mdash; 정하는 사람이 없으면 같은 개념에 태그가 여럿 생겨 검색이 깨집니다. 목록을 고정하고 추가는 승인제로 둡니다</li>
                     <li class="bal max-w-[46em] leading-[1.8]">&bull; <strong class="text-slate-800">검색 진입 경로</strong> &mdash; 조직원이 저장소가 있다는 사실을 알아도 찾아가지 않습니다. 기획 문서 템플릿에 <strong>관련 인사이트 링크 항목</strong>을 넣어 참조를 절차로 만드는 방법이 있습니다</li>
-                    <li class="max-w-[46em] leading-[1.8]">&bull; 백로그 연결 경로 &mdash; 인사이트 하나가 티켓이 되는 동선이 있어야 합니다. 태그만으로는 이어지지 않습니다</li>
+                    <li class="max-w-[46em] leading-[1.8]">&bull; <strong class="text-slate-800">백로그 연결 경로</strong> &mdash; 인사이트 하나가 티켓이 되는 동선이 있어야 합니다. 태그만으로는 이어지지 않습니다</li>
                 </ul>
                 <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
                     <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
@@ -666,7 +666,7 @@
                     // 복구
                     btn.classList.remove('bg-gray-800');
                     btn.classList.add('pulse-btn', 'bg-brand-blue');
-                    btn.innerHTML = '<span>🚀</span> Ops 시스템 가동하기';
+                    btn.innerHTML = '<span>🚀</span> 옵스 시스템 가동하기';
 
                     myChart.data.datasets[0].data = dataBefore;
                     myChart.data.datasets[0].backgroundColor = colorBefore;

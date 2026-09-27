@@ -111,6 +111,10 @@
             .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
         }
 </style>
+<style>
+/* 목차가 7개라 좁은 화면에서는 왼쪽부터 늘어놓고 가로로 넘겨 보게 한다 (가운데 정렬이면 앞 항목이 잘림) */
+@media (max-width: 1023px) { .nav-row { justify-content: flex-start; } .nav-row > * + * { margin-left: 1.5rem !important; } }
+</style>
 </head>
 <body class="text-slate-900">
 
@@ -133,11 +137,14 @@
 
     <!-- 내비게이션 바 -->
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="max-w-4xl mx-auto px-6 flex space-x-10 py-4 overflow-x-auto text-sm font-bold text-slate-500 whitespace-nowrap scrollbar-hide justify-center">
+        <div class="max-w-4xl mx-auto px-6 flex space-x-10 py-4 overflow-x-auto text-sm font-bold text-slate-500 whitespace-nowrap scrollbar-hide justify-center nav-row">
             <a href="#fact" class="nav-link active">1. 이슈 요약</a>
             <a href="#opinion" class="nav-link">2. 유저 반응</a>
             <a href="#why" class="nav-link">3. 성공 이유</a>
             <a href="#idea" class="nav-link">4. 실무 제안</a>
+            <a href="#turning-point" class="nav-link">5. 여론 전환</a>
+            <a href="#conditions" class="nav-link">6. 대응 조건</a>
+            <a href="#notice-condition" class="nav-link">7. 30분 공지</a>
         </div>
     </nav>
 
@@ -448,7 +455,7 @@
             <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-8 mb-8">
                 <p class="text-sm font-black text-emerald-700 mb-5">공지는 시간을 벌고, 보상이 해결합니다</p>
                 <p class="text-slate-700 leading-relaxed mb-5 max-w-[46em]">
-                    1번에서 대처의 첫&nbsp;항목으로 <strong class="text-slate-900">1시간&nbsp;내 빠른 공지</strong>를 들었습니다. <br class="hidden md:block">
+                    1장에서 대처의 첫&nbsp;항목으로 <strong class="text-slate-900">1시간&nbsp;내 빠른 공지</strong>를 들었습니다. <br class="hidden md:block">
                     수치로 보면 공지는 부정 여론을 <strong class="text-slate-900">15p 낮췄고</strong>, 보상 발표는 <strong class="text-emerald-700">55p 낮췄습니다.</strong> <br class="hidden md:block">
                     공지가 무의미한&nbsp;것은 아니지만, <strong class="text-slate-900">공지만으로는 여론이 뒤집히지 않습니다.</strong>
                 </p>

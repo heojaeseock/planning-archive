@@ -135,7 +135,7 @@ body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui
           </div>
         </div>
         <div class="px-6 md:px-9 py-6 md:py-7">
-          <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">두&nbsp;플랫폼은 다른 시청 습관을 담고 있습니다</p>
+          <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">두&nbsp;플랫폼은 다른 시청 행동을 담고 있습니다</p>
           <div class="grid md:grid-cols-3 gap-3">
             <div class="rounded-xl border border-slate-200 p-4">
               <p class="text-sm font-black text-slate-900 mb-1.5 bal">SOOP이 앞서는&nbsp;것</p>
@@ -177,12 +177,13 @@ body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui
     <nav class="flex space-x-2 md:space-x-8 border-b border-slate-200 mb-10 overflow-x-auto no-scrollbar">
         <a href="#section-viewers" class="tab-btn tab-active whitespace-nowrap py-4 px-2 text-sm md:text-base focus:outline-none transition-all">카테고리 및&nbsp;시청 패턴</a>
         <a href="#section-revenue" class="tab-btn tab-inactive whitespace-nowrap py-4 px-2 text-sm md:text-base focus:outline-none transition-all">수익 모델 분석</a>
-        <a href="#section-nexon" class="tab-btn tab-inactive whitespace-nowrap py-4 px-2 text-sm md:text-base focus:outline-none transition-all">대형 IP 크리에이터 동향</a>
+        <a href="#section-nexon" class="tab-btn tab-inactive whitespace-nowrap py-4 px-2 text-sm md:text-base focus:outline-none transition-all">IP별 크리에이터 분포</a>
         <a href="#section-summary" class="tab-btn tab-inactive whitespace-nowrap py-4 px-2 text-sm md:text-base focus:outline-none transition-all">종합 요약 및&nbsp;예측</a>
     </nav>
 
     <!-- Tab 1: Categories & Viewers -->
     <div id="section-viewers" class="fade-in doc-part">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-slate-900">카테고리 및&nbsp;시청 패턴</h2>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
             <div class="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
                 <h3 class="text-lg font-bold mb-6 flex items-center"><span class="mr-2">📊</span> 플랫폼별 주요 카테고리 시청 점유율 (동시 시청자&nbsp;수 기준 추정)</h3>
@@ -211,11 +212,12 @@ body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui
 
     <!-- Tab 2: Revenue Models -->
     <div id="section-revenue" class="fade-in doc-part">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-slate-900">수익 모델 분석</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
                 <h3 class="text-lg font-bold mb-6 text-center text-indigo-900">SOOP 수익 배분 모델</h3>
                 <div class="chart-container" style="height: 250px;">
-                    <canvas id="soopRevenueChart" role="img" aria-label="도넛 차트. 항목 후원(별풍선), AI 타겟 광고, 구독, 기타"></canvas>
+                    <canvas id="soopRevenueChart" role="img" aria-label="도넛 차트. 항목 후원(별풍선), AI 타깃 광고, 구독, 기타"></canvas>
                 </div>
                 <div class="mt-6 text-sm text-slate-600 bg-slate-50 p-4 rounded-xl">
                     <strong>분석:</strong> 별풍선 의존도가 여전히 높고, <br class="hidden md:block">
@@ -279,6 +281,7 @@ body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui
 
     <!-- Tab 4: Summary & Forecast -->
     <div id="section-summary" class="fade-in doc-part">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-slate-900">종합 요약 및&nbsp;예측</h2>
         <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden mb-10">
             <div class="overflow-x-auto">
               <table class="w-full text-left border-collapse">
@@ -552,7 +555,7 @@ function initCharts() {
     charts.soopRev = new Chart(sRevCtx, {
         type: 'doughnut',
         data: {
-            labels: ['후원(별풍선)', 'AI 타겟 광고', '구독', '기타'],
+            labels: ['후원(별풍선)', 'AI 타깃 광고', '구독', '기타'],
             datasets: [{
                 data: [68, 17, 10, 5],
                 backgroundColor: ['#4f46e5', '#818cf8', '#c7d2fe', '#e2e8f0'],
@@ -607,7 +610,7 @@ const nexonData = {
         title: "던전앤파이터 크리에이터 현황",
         data: [55, 45],
         desc: `<p><strong>SOOP (55%):</strong> 하드코어 파밍 및 신규 레이드 퍼스트 클리어 경쟁 방송이 집중되어 있습니다.</p><p class="max-w-[46em] leading-[1.8] bal">
-                    <strong>치지직 (45%):</strong> 액션 게임 매니아들과 종합 게임 스트리머들의 '찍먹' 콘텐츠 유입이 활발하여 점유율이 팽팽하게 맞서고 있습니다.
+                    <strong>치지직 (45%):</strong> 액션 게임 마니아들과 종합 게임 스트리머들의 '찍먹' 콘텐츠 유입이 활발하여 점유율이 팽팽하게 맞서고 있습니다.
                 </p><div class="pt-4 border-t border-slate-700"><span class="text-emerald-400 font-bold">핵심 전략:</span> 캐릭터 밸런스 토론 및 가이드 방송은 치지직 스트리머와 협업하여 유입 장벽 완화.</div>`
     },
     fc: {

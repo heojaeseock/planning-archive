@@ -133,7 +133,7 @@
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <div class="w-8 h-8 bg-cfred font-black text-white text-xs flex items-center justify-center rounded">CF</div>
-                <div class="text-[11px] font-black tracking-widest text-slate-800 uppercase">Weapon_Planner_Researcher_2024</div>
+                <div class="text-[11px] font-black tracking-widest text-slate-800 uppercase">무기 기획 연구 2024</div>
             </div>
             <div class="hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-500">
                 <a href="#philosophy" class="hover:text-cfred transition-colors">설계 철학</a>
@@ -150,7 +150,7 @@
     <!-- Header -->
     <header class="pt-40 pb-24 px-6 max-w-6xl mx-auto text-center" style="padding-bottom:2.5rem">
         <div class="mb-6 inline-block px-3 py-1 bg-red-50 text-[10px] font-bold badge-cfred-ink tracking-widest uppercase rounded border border-cfred/20">
-            Archive Research Case: Precision_Gunplay_Architecture
+            연구 사례: 정밀 사격 구조
         </div>
         <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight tracking-tight">
             데미지가 전부는 아닙니다:<br>
@@ -328,21 +328,21 @@
                 <div class="lg:w-1/2 w-full space-y-4">
                     <button onclick="updateRecoil(0)" id="btn0" class="recoil-btn active w-full p-8 text-left bg-slate-800 text-slate-400 font-bold transition-all rounded-2xl border border-slate-700 flex items-center justify-between group">
                         <div>
-                            <span class="block text-[10px] font-black mb-1">STAGE_01</span>
+                            <span class="block text-[10px] font-black mb-1">구간 1</span>
                             <span class="text-xl italic">초탄/점사 (1~3발)</span>
                             <span class="block text-sm font-normal mt-2 opacity-80 italic">정확도 100%. 유저의 반응 속도와 초동 에임 실력을 검증합니다.</span>
                         </div>
                     </button>
                     <button onclick="updateRecoil(1)" id="btn1" class="recoil-btn w-full p-8 text-left bg-slate-800 text-slate-400 font-bold transition-all hover:bg-slate-700 rounded-2xl border border-slate-700 flex items-center justify-between group">
                         <div>
-                            <span class="block text-[10px] font-black mb-1">STAGE_02</span>
+                            <span class="block text-[10px] font-black mb-1">구간 2</span>
                             <span class="text-xl italic">반동 제어 (4~10발)</span>
                             <span class="block text-sm font-normal mt-2 opacity-80 italic">총구가 상승하는 시점. 마우스를 하강시키는 피지컬 컨트롤이 필수적입니다.</span>
                         </div>
                     </button>
                     <button onclick="updateRecoil(2)" id="btn2" class="recoil-btn w-full p-8 text-left bg-slate-800 text-slate-400 font-bold transition-all hover:bg-slate-700 rounded-2xl border border-slate-700 flex items-center justify-between group">
                         <div>
-                            <span class="block text-[10px] font-black mb-1">STAGE_03</span>
+                            <span class="block text-[10px] font-black mb-1">구간 3</span>
                             <span class="text-xl italic">분산/난사 (11발 이상)</span>
                             <span class="block text-sm font-normal mt-2 opacity-80 italic">무작위 탄퍼짐 심화. 사격을 끊어야 할&nbsp;타이밍을 인지시키는 페널티 구간입니다.</span>
                         </div>
@@ -369,7 +369,7 @@
         <div class="grid md:grid-cols-2 gap-12">
             <div class="space-y-6">
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">컨셉: 모드 전환형 DMR/AR 하이브리드</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">콘셉트: 모드 전환형 DMR/AR 하이브리드</h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
                     하나의 총기에 두&nbsp;가지 조작감을 부여합니다. <br class="hidden md:block">
                     <strong>모드 A (저지력 연사):</strong> M4의 안정성을 가졌지만 연사력이 낮아, 중거리 적을 압박하는&nbsp;데 적합합니다. <br class="hidden md:block">
@@ -377,7 +377,7 @@
                 </p>
                 </div>
                 <div class="bg-cfred-deep p-8 rounded-3xl text-white shadow-xl shadow-cfred/20">
-                    <h4 class="text-lg font-bold mb-2">기획적 기대효과</h4>
+                    <h4 class="text-lg font-bold mb-2">기획적 기대 효과</h4>
                     <p class="text-sm opacity-90 leading-relaxed italic">
                     "상황에 따라 조작 리듬을 유저가 직접 선택하게 함으로써, 단순한 에임 싸움을 넘어선 '전술적 조작'의 즐거움을 제공할&nbsp;수 있습니다."
                 </p>
@@ -453,7 +453,7 @@
 
             <div id="coords" class="scroll-mt-20">
                 <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-3 tracking-tight italic">07. 좌표로 본 반동의 학습 가능성</h2>
-                <p class="text-slate-500 text-base leading-relaxed max-w-[42em] mb-6">구간별 탄착 시뮬레이션의 좌표를 좌우 산포와 수직 상승으로 갈라 봤습니다. 구간마다 대표 탄착점 5&#8288;·6&#8288;·7개를 찍은&nbsp;것으로, 03장의 발 수 구간&#8288;(1~3발 · 4~10발 · 11발 이상)&#8288;과는 개수가 다릅니다.</p>
+                <p class="text-slate-500 text-base leading-relaxed max-w-[42em] mb-6">구간별 탄착 시뮬레이션의 좌표를 좌우 산포와 수직 상승으로 갈라 봤습니다. 구간마다 대표 탄착점 5&#8288;·6&#8288;·7개를 찍은&nbsp;것으로, 03장의 발&nbsp;수 구간&#8288;(1~3발 · 4~10발 · 11발 이상)&#8288;과는 개수가 다릅니다.</p>
 
                 <div class="overflow-x-auto rounded-xl border border-slate-200 mb-6">
                     <table class="w-full min-w-[480px] border-collapse text-sm bg-white">
@@ -537,7 +537,7 @@
                     <div class="bg-white/5 border border-white/10 rounded-xl p-6">
                         <p class="text-cfred font-black text-xs tracking-wide mb-3 italic">확인한&nbsp;것</p>
                         <p class="text-sm text-white font-bold mb-2">반동은 결함이 아니라 밸런스&nbsp;축입니다</p>
-                        <p class="text-slate-400 leading-relaxed text-base">저반동 M4A1과 고반동 AK-47이 공존하는 이유는 &lsquo;안정성&rsquo;&#8288;과 &lsquo;결정력&rsquo;&#8288;을 맞바꾸게 만든 설계에 있습니다.</p>
+                        <p class="text-slate-400 leading-relaxed text-sm">저반동 M4A1과 고반동 AK-47이 공존하는 이유는 &lsquo;안정성&rsquo;&#8288;과 &lsquo;결정력&rsquo;&#8288;을 맞바꾸게 만든 설계에 있습니다.</p>
                     </div>
                     <div class="bg-white/5 border border-white/10 rounded-xl p-6">
                         <p class="text-cfred font-black text-xs tracking-wide mb-3 italic">리스크</p>

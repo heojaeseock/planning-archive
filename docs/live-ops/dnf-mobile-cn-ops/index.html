@@ -93,10 +93,13 @@
                 <div class="flex items-center">
                     <span class="text-xl font-bold text-red-700">&#9733; DNF M <span class="text-stone-800 font-medium text-lg">중국 시장 전략</span></span>
                 </div>
-                <div class="hidden md:flex items-center space-x-10 text-sm font-semibold">
+                <div class="hidden md:flex items-center text-sm font-semibold" style="gap:1.5rem">
                     <a href="#section-performance" class="text-stone-500 hover:text-red-700 transition">성과 분석</a>
                     <a href="#section-comparison" class="text-stone-500 hover:text-red-700 transition">서버 비교</a>
                     <a href="#section-proposals" class="text-stone-500 hover:text-red-700 transition">기획 제언</a>
+                    <a href="#section-dependency" class="text-stone-500 hover:text-red-700 transition">이벤트 의존도</a>
+                    <a href="#section-gap" class="text-stone-500 hover:text-red-700 transition">서버 격차</a>
+                    <a href="#section-review" class="text-stone-500 hover:text-red-700 transition">제안 검토</a>
                 </div>
             </div>
         </div>
@@ -232,7 +235,7 @@ Sensor Tower 기반 중국 iOS 매출 순위 가중치 산출</li>
                 </div>
                 <div id="content-cn" class="space-y-6 flex-1">
                     <div class="p-6 bg-red-50/30 rounded-2xl border border-red-100/50">
-                        <h3 class="font-bold text-red-800 text-lg mb-2">상한선 확장 BM (Whale Strategy)</h3>
+                        <h3 class="font-bold text-red-800 text-lg mb-2">상한선 확장 BM (고과금 유저 전략)</h3>
                         <p class="text-stone-600 text-base leading-relaxed">
                     히든 아바타와 한정 오라에 성능 차이를 두어 상위 과금 구간의 상한을 계속 올리는 방식.
                 </p>
@@ -300,7 +303,7 @@ Sensor Tower 기반 중국 iOS 매출 순위 가중치 산출</li>
                                 </ul>
                             </div>
                             <div class="bg-zinc-900/40 p-8 rounded-3xl border border-zinc-800/50">
-                                <h4 class="text-amber-500 font-black text-lg mb-5 flex items-center gap-2">BM 및&nbsp;기대효과</h4>
+                                <h4 class="text-amber-500 font-black text-lg mb-5 flex items-center gap-2">BM 및&nbsp;기대 효과</h4>
                                 <ul class="text-zinc-400 text-sm space-y-4 leading-relaxed">
                                     <li class="text-sm">• <strong class="text-zinc-200">참전 한정 패키지:</strong> 세력 소속감이 강조된 엠블럼 아바타 및&nbsp;전용 칭호.</li>
                                     <li class="text-sm">• <strong class="text-zinc-200">서버 낙수 보상:</strong> 승리 서버 전체에 경매장 수수료 3% 한정 인하.</li>
@@ -345,7 +348,7 @@ Sensor Tower 기반 중국 iOS 매출 순위 가중치 산출</li>
                                 </ul>
                             </div>
                             <div class="bg-zinc-900/40 p-8 rounded-3xl border border-zinc-800/50">
-                                <h4 class="text-red-500 font-black text-lg mb-5 flex items-center gap-2">BM 및&nbsp;기대효과</h4>
+                                <h4 class="text-red-500 font-black text-lg mb-5 flex items-center gap-2">BM 및&nbsp;기대 효과</h4>
                                 <ul class="text-zinc-400 text-sm space-y-4 leading-relaxed">
                                     <li class="text-sm">• <strong class="text-zinc-200">후원 재화:</strong> 스트리머 후원 전용 코인 BM (전통적인 BJ 후원 시스템 결합).</li>
                                     <li class="text-sm">• <strong class="text-zinc-200">브랜드 노출:</strong> 외부 플랫폼 검색어 순위 상승 및&nbsp;브랜드 화제성 50% 향상.</li>
@@ -661,7 +664,7 @@ Sensor Tower 기반 중국 iOS 매출 순위 가중치 산출</li>
                 anniv: [50, 95, 92, 70, 65]
             };
             performanceChart.data.datasets[0].data = chartData[type];
-            performanceChart.data.labels = type === 'all' ? ['25.01', '춘절', '03', '노동절', '06', '1주년', '08', '국경절', '연말', '26.춘절'] : ['W1', 'W2', 'W3', 'W4', 'W5'];
+            performanceChart.data.labels = type === 'all' ? ['25.01', '춘절', '03', '노동절', '06', '1주년', '08', '국경절', '연말', '26.춘절'] : ['1주차', '2주차', '3주차', '4주차', '5주차'];
             performanceChart.update();
             renderEventInfo(type);
         };

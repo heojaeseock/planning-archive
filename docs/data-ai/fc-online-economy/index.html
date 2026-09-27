@@ -309,7 +309,7 @@
                 <div class="card">
                     <h3 class="font-bold text-xl text-gray-700 mb-8 italic">시장 총&nbsp;거래량 및&nbsp;구&nbsp;시즌 시세 추이</h3>
                     <div class="chart-wrapper">
-                        <canvas id="chartVolume" role="img" aria-label="막대 차트. 항목 11월, 12월, 1월(24TOTY), 2월, 3월. 계열 시장 총 거래량 (조 BP), 구&nbsp;시즌(23TOTY) 시세 Index"></canvas>
+                        <canvas id="chartVolume" role="img" aria-label="막대 차트. 항목 11월, 12월, 1월(24TOTY), 2월, 3월. 계열 시장 총 거래량 (조 BP), 구&nbsp;시즌(23TOTY) 시세 지수"></canvas>
                     </div>
                     <div class="source-box">
                         <p class="font-bold mb-3 text-slate-800 underline decoration-slate-300 decoration-2 underline-offset-4">산출 근거 및&nbsp;데이터 출처</p>
@@ -344,7 +344,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <!-- Strategy 1 -->
                 <div class="card border-l-[10px] border-emerald-400">
-                    <h3 class="font-black text-2xl mb-8 italic">01. 타겟형 에이전트 소모처 고도화</h3>
+                    <h3 class="font-black text-2xl mb-8 italic">01. 타깃형 에이전트 소모처 고도화</h3>
                     <div class="space-y-6">
                         <p class="text-gray-600 text-[16px] leading-relaxed">
                     실시간으로 하한가 적체량이 임계치를 넘는 특정 시즌을 찾아 그&nbsp;매물을 에이전트 필수 재료로 지정합니다. 에이전트를 진행할&nbsp;때는 일정량의 BP 수수료를 함께 소모시킵니다.
@@ -387,8 +387,8 @@ BP 가치가 떨어지는&nbsp;것도 막습니다.
                     <p class="text-xs font-black tracking-[.2em] text-emerald-600 mb-3">전달 경로</p>
                     <h2 class="text-2xl md:text-3xl font-black text-gray-900 mb-5 tracking-tight">세&nbsp;수치를 이으면 개입 지점이 보입니다</h2>
                     <p class="text-gray-600 leading-relaxed mb-10 max-w-[46em]">
-                    데이터 지표 탭의 세&nbsp;수치는 각각 제시되어 있습니다. <br class="hidden md:block">
-                    <strong class="text-gray-900">시세 55% 하락 &middot; 거래량 2.5배 &middot; 잔존율 23%p 하락</strong>를 하나의 사슬로 놓으면 어디를 건드려야 하는지가 정해집니다.
+                    데이터 지표 구역의 세&nbsp;수치는 각각 제시되어 있습니다. <br class="hidden md:block">
+                    <strong class="text-gray-900">시세 55% 하락 &middot; 거래량 2.5배 &middot; 잔존율 23%p 하락</strong>을 하나의 사슬로 놓으면 어디를 건드려야 하는지가 정해집니다.
                 </p>
 
                     <div class="space-y-3 mb-10">
@@ -453,7 +453,7 @@ BP 가치가 떨어지는&nbsp;것도 막습니다.
                         <p class="text-sm text-gray-600 leading-relaxed mt-5 max-w-[46em]">
                     <strong class="text-gray-800">보완:</strong> 특정 시즌을 지정하는 방식 대신 <strong class="text-amber-700">&lsquo;하한가에 N일 이상 등록된 매물&rsquo;&#8288;이라는 조건으로 재료를 정의</strong>합니다. <br class="hidden md:block">
                     대상이 시즌이 아니라 상태가 되므로 사재기 유인이 줄고, <br class="hidden md:block">
-                    1번에서 정한 <strong>기간 통제</strong> 목표와도 직접 연결됩니다.
+                    전달 경로에서 정한 <strong>기간 통제</strong> 목표와도 직접 연결됩니다.
                 </p>
                     </div>
 
@@ -603,7 +603,7 @@ BP 가치가 떨어지는&nbsp;것도 막습니다.
                         borderRadius: 8,
                         yAxisID: 'y'
                     }, {
-                        label: '구 시즌(23TOTY) 시세 Index',
+                        label: '구 시즌(23TOTY) 시세 지수',
                         data: [100, 98, 45, 41, 39],
                         type: 'line',
                         borderColor: '#ef4444',

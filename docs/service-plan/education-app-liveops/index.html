@@ -114,6 +114,7 @@
                 <a href="#s1" class="hover:text-blue-600 transition-colors">데이터 무결성 검수</a>
                 <a href="#s2" class="hover:text-blue-600 transition-colors">트래픽 관제</a>
                 <a href="#s3" class="hover:text-blue-600 transition-colors">VOC 기획화</a>
+                <a href="#s5b" class="hover:text-blue-600 transition-colors">수치 검토</a>
             </div>
         </div>
     </header>
@@ -219,7 +220,7 @@
                         <h3 class="text-sm font-bold text-slate-800 mb-3">자동화 체크리스트</h3>
                         <ul class="text-sm text-slate-600 space-y-2.5 font-medium">
                             <li class="flex items-center gap-2"><span class="text-green-500">✔️</span> VOD - 교재 코드 일치 여부 확인</li>
-                            <li class="flex items-center gap-2"><span class="text-green-500">✔️</span> 수강기간&#8288;(음수) 오류 검출</li>
+                            <li class="flex items-center gap-2"><span class="text-green-500">✔️</span> 수강 기간&#8288;(음수) 오류 검출</li>
                             <li class="flex items-center gap-2"><span class="text-green-500">✔️</span> 결측치 실시간 하이라이팅</li>
                         </ul>
                     </div>
@@ -287,7 +288,7 @@
         <section id="s3" class="mb-12 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">
             <div class="mb-8 text-center border-b border-slate-100 pb-6">
                 <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-2">💡 전략 3. 고객 VOC를 개발 요건&#8288;(Jira)&#8288;으로 번역</h2>
-                <p class="text-slate-500 font-medium">학생들의 감정적인 불편사항을 개발팀이 즉각 이해할&nbsp;수 있는 '재현 스텝'으로 번역합니다.</p>
+                <p class="text-slate-500 font-medium">학생들의 감정적인 불편 사항을 개발팀이 즉각 이해할&nbsp;수 있는 '재현 스텝'으로 번역합니다.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 min-h-[420px]">
@@ -295,7 +296,7 @@
                 <!-- Left: Raw VOC Cards (Interactive) -->
                 <div class="md:col-span-5 space-y-4">
                     <div class="flex items-center justify-between mb-2">
-                        <span class="text-sm font-bold text-slate-700 tracking-wider">🗣️ 유저 리뷰 (Raw VOC)</span>
+                        <span class="text-sm font-bold text-slate-700 tracking-wider">🗣️ 유저 리뷰 (원문)</span>
                         <span class="text-xs text-blue-600 font-bold animate-point-right bg-blue-50 border border-blue-100 px-3 py-1 rounded-full shadow-sm">클릭해보세요! 👉</span>
                     </div>
                     
@@ -335,7 +336,7 @@
                     <!-- Empty State -->
                     <div id="jira-empty" class="text-center text-slate-600 py-16 transition-opacity duration-300">
                         <div class="text-5xl mb-4 opacity-50">📝</div>
-                        <p class="font-medium leading-relaxed text-xs">좌측의 <b>유저 리뷰 카드</b>를 클릭하면 개발팀 언어로 번역된 요건을 확인하실&nbsp;수 있습니다.</p>
+                        <p class="font-medium leading-relaxed text-xs"><b>유저 리뷰 카드</b>를 클릭하면 개발팀 언어로 번역된 요건을 확인하실&nbsp;수 있습니다.</p>
                     </div>
 
                     <!-- Result State (Hidden initially) -->
@@ -661,7 +662,7 @@
                         tooltip: { 
                             padding: 10,
                             bodyFont: { family: 'Pretendard', size: 14 },
-                            callbacks: { label: c => c.raw + ' 시간' } 
+                            callbacks: { label: c => c.raw + '시간' } 
                         } 
                     },
                     scales: { 
@@ -807,7 +808,7 @@
                 chart2.data.datasets[0].pointBackgroundColor = '#10b981';
                 chart2.update();
 
-                statusTraffic.innerHTML = '<span>🟢</span> 안정화됨 (우회중)';
+                statusTraffic.innerHTML = '<span>🟢</span> 안정화됨 (우회 중)';
                 statusTraffic.classList.replace('text-red-500', 'text-green-400');
                 alertBox.classList.add('hidden');
             });
@@ -838,19 +839,19 @@
             ========================================= */
             const vocDB = [
                 {
-                    title: "[Bug] iPad OS 환경 플레이어 배속 터치 시 프리징",
+                    title: "[버그] iPad OS 환경 플레이어 배속 터치 시 프리징",
                     pri: "높음", team: "클라이언트 / iOS",
                     steps: ["1080p 해상도 영상 재생 시작", "배속 컨트롤러 터치하여 1.5x 설정", "배속 버튼 연속 터치 시 화면 멈춤 발생"],
                     sol: "플레이어 컨트롤러 UI 터치 디바운스 처리 적용 및 연속 이벤트 캐싱 최적화"
                 },
                 {
-                    title: "[Bug] 메인 홈 프로모션 배너 클릭 시 빈 화면 노출",
+                    title: "[버그] 메인 홈 프로모션 배너 클릭 시 빈 화면 노출",
                     pri: "보통", team: "웹 앱 개발",
                     steps: ["앱 실행 후 홈 화면 진입", "3번째 프로모션 캐러셀 배너 탭", "로딩 없이 흰색 빈 웹뷰 노출"],
                     sol: "딥링크 파라미터 파싱 오류로 추정. 유효하지 않은 URL 접근 시 '잠시 후 다시 시도' Fallback UI 노출 처리."
                 },
                 {
-                    title: "[UX/UI] 결제 CTA 버튼이 OS 키보드 영역에 가려짐",
+                    title: "[사용성] 결제 CTA 버튼이 OS 키보드 영역에 가려짐",
                     pri: "보통", team: "사용성 · 프론트엔드",
                     steps: ["장바구니 -> 결제 페이지 진입", "배송지 입력 필드 터치하여 가상 키보드 활성화", "하단 '결제하기' 버튼이 키보드 뒤로 숨겨짐"],
                     sol: "결제 폼 영역을 KeyboardAvoidingView로 감싸고, bottom inset 값을 동적 계산하여 버튼 위치 상향 고정."
@@ -876,7 +877,7 @@
                     const data = vocDB[idx];
 
                     // Populate Data
-                    document.getElementById('jira-type').innerText = data.title.indexOf('[UX/UI]') === 0 ? '사용성' : '버그';
+                    document.getElementById('jira-type').innerText = data.title.indexOf('[사용성]') === 0 ? '사용성' : '버그';
                     document.getElementById('jira-title').innerText = data.title;
                     document.getElementById('jira-pri').innerText = data.pri;
                     document.getElementById('jira-team').innerText = data.team;
@@ -903,7 +904,6 @@
 
         });
     </script>
-<p style="margin:0;padding:26px 16px 40px;text-align:center;font-size:12.5px;line-height:1.6;color:#64748b">© 허재석</p>
 <div aria-hidden="true" style="height:104px"></div>
 <a href="../../../index.html" aria-label="문서 목록으로 돌아가기" style="position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:60;display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:999px;background:#1f4fd8;color:#fff;font-size:16.5px;font-weight:800;letter-spacing:-.01em;text-decoration:none;font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;box-shadow:0 10px 30px rgba(31,79,216,.5),0 0 0 4px rgba(255,255,255,.95);white-space:nowrap"><span style="font-size:17px;line-height:1">←</span>문서 목록</a>
 
