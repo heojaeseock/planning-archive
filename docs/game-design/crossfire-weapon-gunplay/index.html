@@ -155,7 +155,7 @@
             연구 사례: 정밀 사격 구조
         </div>
         <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight tracking-tight seg-t"><span class="seg-bal-t">
-            데미지가 전부는 아닙니다:</span><br><span class="seg-bal-t">
+            대미지가 전부는 아닙니다:</span><br><span class="seg-bal-t">
             유저의 실력을 나누는 <span class="text-cfred underline decoration-4 underline-offset-8">조작감&#8288;(Gunplay)</span> 분석
         </span></h1>
         <p class="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">
@@ -216,7 +216,7 @@
     <section id="overview" class="py-12 px-6 max-w-6xl mx-auto border-t border-slate-200">
         <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-6 tracking-tight">조작감의 정의</h2>
         <p class="text-slate-600 leading-relaxed mb-4 max-w-4xl">
-                    FPS의 실력&nbsp;차는 데미지 수치보다, 총구가 상승하는 반동을 제어하는 숙련도에서 발생합니다. <br class="hidden md:block">
+                    FPS의 실력&nbsp;차는 대미지 수치보다, 총구가 상승하는 반동을 제어하는 숙련도에서 발생합니다. <br class="hidden md:block">
                     반동을 결함이 아니라 의도된 숙련 장벽으로 보고, 저반동 M4A1과 고반동 AK-47이 공존하는 밸런스&nbsp;축을 분해했습니다. <br class="hidden md:block">
                     본문 지표는 직접 플레이를 근거로 구성한 가설 모델입니다.
                 </p>
@@ -237,7 +237,7 @@
                     <h3 class="text-xl font-bold text-slate-900 mb-4 tracking-tight">성취감의 근원: 학습 가능한 반동</h3>
                     <p class="text-slate-600 leading-relaxed text-sm">
                     FPS에서 무기는 신체의 연장선입니다. <br class="hidden md:block">
-                    단순히 데미지가 강력한 무기는 쉽게 질리지만, <strong>반동 패턴</strong>을 학습하고 이를 근육 기억으로 통제하는 과정은 유저에게 끊임없는 도파민을 제공합니다. <br class="hidden md:block">
+                    단순히 대미지가 강력한 무기는 쉽게 질리지만, <strong>반동 패턴</strong>을 학습하고 이를 근육 기억으로 통제하는 과정은 유저에게 끊임없는 도파민을 제공합니다. <br class="hidden md:block">
                     이는 게임을 단순한 '슈팅'에서 '숙련의 영역'으로 격상시킵니다.
                 </p>
                     <div class="source-footer bal">
@@ -248,7 +248,7 @@
             <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
                 <h4 class="text-[10px] font-black text-slate-500 tracking-wide mb-6 text-center italic">총기 반응 품질과 주간 잔존율</h4>
                 <div class="chart-container">
-                    <canvas id="retentionChart" role="img" aria-label="막대 차트. 항목 스펙(데미지) 위주, 조작감(피드백) 위주. 계열 주간 평균 잔존 지수"></canvas>
+                    <canvas id="retentionChart" role="img" aria-label="막대 차트. 항목 스펙(대미지) 위주, 조작감(피드백) 위주. 계열 주간 평균 잔존 지수"></canvas>
                 </div>
             </div>
         </div>
@@ -284,7 +284,7 @@
                     <ul class="text-sm text-slate-600 space-y-2">
                         <li>• 로우 리스크 (M4A1)</li>
                         <li>• 하이 리스크 (AK-47)</li>
-                        <li>• 거리별 데미지 감쇄율</li>
+                        <li>• 거리별 대미지 감쇄율</li>
                     </ul>
                 </div>
             </div>
@@ -294,7 +294,7 @@
                     <div class="md:w-1/2">
                         <h4 class="text-[10px] font-black text-slate-500 tracking-wide mb-6 text-center italic">설계 방향 비교</h4>
                         <div class="chart-container">
-                            <canvas id="radarChart" role="img" aria-label="방사형 차트. 항목 데미지, 반동제어, 기동성, 난이도, 유효사거리. 계열 M4A1, AK-47"></canvas>
+                            <canvas id="radarChart" role="img" aria-label="방사형 차트. 항목 대미지, 반동제어, 기동성, 난이도, 유효사거리. 계열 M4A1, AK-47"></canvas>
                         </div>
                     </div>
                     <div class="md:w-1/2 space-y-6">
@@ -387,7 +387,7 @@
                 <div class="text-center">
                     <div class="text-6xl mb-6">🛠️</div>
                     <p class="text-slate-600 font-bold tracking-wide text-xs">신규 메커니즘 구상</p>
-                    <p class="mt-4 text-slate-600 text-sm bal">기동성과 데미지의 반비례 관계를 유저의 '조작 숙련도'로 극복하는 설계</p>
+                    <p class="mt-4 text-slate-600 text-sm bal">기동성과 대미지의 반비례 관계를 유저의 '조작 숙련도'로 극복하는 설계</p>
                 </div>
             </div>
         </div>
@@ -523,7 +523,7 @@
                 
                 <div class="space-y-12">
                     <h2 class="text-2xl md:text-3xl font-black italic leading-[1.6] text-white">
-                        "단순히 데미지를 조정하는 <span class="tech-tag-fixed">스펙</span> 싸움을 넘어,"
+                        "단순히 대미지를 조정하는 <span class="tech-tag-fixed">스펙</span> 싸움을 넘어,"
                     </h2>
                     <h2 class="text-2xl md:text-3xl font-black italic leading-[1.6] text-white">
                         "유저의 전술과 리듬이 총기에 그대로 <span class="tech-bracket tech-tag-fixed">투영</span>되는,"
@@ -585,7 +585,7 @@
         new Chart(retCtx, {
             type: 'bar',
             data: {
-                labels: ['스펙(데미지) 위주', '조작감(피드백) 위주'],
+                labels: ['스펙(대미지) 위주', '조작감(피드백) 위주'],
                 datasets: [{
                     label: '주간 평균 잔존 지수',
                     data: [35, 96],
@@ -611,7 +611,7 @@
         new Chart(radarCtx, {
             type: 'radar',
             data: {
-                labels: ['데미지', '반동제어', '기동성', '난이도', '유효사거리'],
+                labels: ['대미지', '반동제어', '기동성', '난이도', '유효사거리'],
                 datasets: [{
                     label: 'M4A1',
                     data: [65, 95, 85, 30, 75],
