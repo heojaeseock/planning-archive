@@ -51,6 +51,8 @@
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
         /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
+        /* 태블릿 폭에서만 <br> 로 나뉜 문장마다 줄 길이를 고르게 (다른 폭은 전과 같음) */
+        @media (min-width: 641px) and (max-width: 1023px) { .seg-bal-t { display: block; text-wrap: balance; } .seg-t > br { display: none; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -85,10 +87,10 @@
                 신선식품 커머스 고객경험&#8288;(CX) 전략 기획안
             </div>
             
-            <h1 class="text-3xl md:text-5xl font-black mb-8 hero-title max-w-4xl mx-auto">
-                게임 라이브 운영의 실시간 대응력을<br />
+            <h1 class="text-3xl md:text-5xl font-black mb-8 hero-title max-w-4xl mx-auto seg-t"><span class="seg-bal-t">
+                게임 라이브 운영의 실시간 대응력을</span><br /><span class="seg-bal-t">
                 신선식품 커머스의 새벽배송 시스템에 적용하다
-            </h1>
+            </span></h1>
             
             
             <p class="text-base md:text-lg text-purple-100/90 font-medium max-w-3xl mx-auto leading-relaxed text-left">

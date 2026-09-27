@@ -92,6 +92,8 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
             /* 휴대폰에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
+        /* 태블릿 폭에서만 <br> 로 나뉜 문장마다 줄 길이를 고르게 (다른 폭은 전과 같음) */
+        @media (min-width: 641px) and (max-width: 1023px) { .seg-bal-t { display: block; text-wrap: balance; } .seg-t > br { display: none; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   .label-dim { color: rgba(255,255,255,.7); }   /* 어두운 바탕의 흐린 라벨 */
@@ -152,10 +154,10 @@
         <div class="mb-6 inline-block px-3 py-1 bg-red-50 text-[10px] font-bold badge-cfred-ink tracking-widest uppercase rounded border border-cfred/20">
             연구 사례: 정밀 사격 구조
         </div>
-        <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight tracking-tight">
-            데미지가 전부는 아닙니다:<br>
+        <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight tracking-tight seg-t"><span class="seg-bal-t">
+            데미지가 전부는 아닙니다:</span><br><span class="seg-bal-t">
             유저의 실력을 나누는 <span class="text-cfred underline decoration-4 underline-offset-8">조작감&#8288;(Gunplay)</span> 분석
-        </h1>
+        </span></h1>
         <p class="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">
                     게임을 수치로 해석하는 <strong>분석력</strong>과 전장의 흐름을 바꾸는 <strong>제안력</strong>. 크로스파이어의 손맛을 수치로 분해해 본&nbsp;분석 기록입니다.
                 </p>

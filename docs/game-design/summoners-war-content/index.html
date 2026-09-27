@@ -129,6 +129,8 @@
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
         /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
+        /* 태블릿 폭에서만 <br> 로 나뉜 문장마다 줄 길이를 고르게 (다른 폭은 전과 같음) */
+        @media (min-width: 641px) and (max-width: 1023px) { .seg-bal-t { display: block; text-wrap: balance; } .seg-t > br { display: none; } }
 </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
@@ -220,11 +222,11 @@
     <!-- 0. 문서 개요 -->
     <section class="section-card">
         <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-6">문제 정의</h2>
-        <p class="text-slate-600 leading-relaxed mb-4 max-w-[46em] bal-t">
-                    서비스가 길어지면 검증된 소수 조합에 사용률이 몰리고, 새로 뽑은 몬스터는 쓸&nbsp;곳이 없어 보관됩니다. <br class="hidden md:block">
-                    수집형 장르에서는 획득 동기 자체가 약해지는 문제입니다. <br class="hidden md:block">
+        <p class="text-slate-600 leading-relaxed mb-4 max-w-[46em] bal-t seg-t"><span class="seg-bal-t">
+                    서비스가 길어지면 검증된 소수 조합에 사용률이 몰리고, 새로 뽑은 몬스터는 쓸&nbsp;곳이 없어 보관됩니다. </span><br class="hidden md:block"><span class="seg-bal-t">
+                    수집형 장르에서는 획득 동기 자체가 약해지는 문제입니다. </span><br class="hidden md:block"><span class="seg-bal-t">
                     단일 딜러로 공략이 불가능하고 서로 다른 상태 이상 세&nbsp;종을 동시에 요구하는 던전으로 해소했습니다.
-                </p>
+                </span></p>
     </section>
 
     <!-- 1. 기획 의도 섹션 -->
@@ -531,10 +533,10 @@
 
     <section class="section-card border-rose-100">
         <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-2">7. 부여와 유지는 다른 문제입니다</h2>
-        <p class="text-slate-500 text-base mb-8 leading-relaxed max-w-[46em]">
-                    룰셋은 세&nbsp;가지 상태 이상을 <strong class="text-slate-700">동시에</strong> 부여하도록 요구합니다. <br class="hidden md:block">
+        <p class="text-slate-500 text-base mb-8 leading-relaxed max-w-[46em] seg-t"><span class="seg-bal-t">
+                    룰셋은 세&nbsp;가지 상태 이상을 <strong class="text-slate-700">동시에</strong> 부여하도록 요구합니다. </span><br class="hidden md:block"><span class="seg-bal-t">
                     상태 이상에는 지속 시간이 있으므로, 실제 난이도를 만드는&nbsp;것은 부여가 아니라 겹치는 구간입니다.
-                </p>
+                </span></p>
 
         <div class="bg-rose-50 border-2 border-rose-200 rounded-2xl p-6 md:p-8 mb-6">
             <p class="text-[10px] font-black tracking-wide text-rose-500 mb-4">겹치는 구간의 길이가 실제 난이도 변수입니다</p>

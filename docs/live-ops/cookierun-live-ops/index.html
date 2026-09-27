@@ -128,6 +128,8 @@
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
         /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
+        /* 태블릿 폭에서만 <br> 로 나뉜 문장마다 줄 길이를 고르게 (다른 폭은 전과 같음) */
+        @media (min-width: 641px) and (max-width: 1023px) { .seg-bal-t { display: block; text-wrap: balance; } .seg-t > br { display: none; } }
 </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
@@ -291,10 +293,10 @@
 
         <div class="bg-[#FFF9E6] p-8 rounded-3xl border-4 border-dashed border-[#8B4513] mb-10">
             <h3 class="text-2xl font-bold text-[#8B4513] mb-4">공통 필수 항목</h3>
-            <p class="text-lg text-gray-700 font-bold leading-relaxed max-w-[46em]">
-                    일시 · 대상 · 내용 · 보상 · 유의사항 다섯 항목을 고정합니다. <br class="hidden md:block">
+            <p class="text-lg text-gray-700 font-bold leading-relaxed max-w-[46em] seg-t"><span class="seg-bal-t">
+                    일시 · 대상 · 내용 · 보상 · 유의사항 다섯 항목을 고정합니다. </span><br class="hidden md:block"><span class="seg-bal-t">
                     항목을 고정해 두면 번역 과정에서 한&nbsp;줄이 빠지는 사고를 막을&nbsp;수 있습니다.
-                </p>
+                </span></p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -459,10 +461,10 @@
 
         <div class="bg-white border-2 border-[#D7CCC8] rounded-2xl p-8">
             <p class="text-sm font-black text-[#4E342E] mb-4">운영 메시지를 나눴다면 상품 구성도 나눠야 합니다</p>
-            <p class="text-[#5D4037] leading-relaxed mb-6 max-w-[46em]">
-                    공지 문안과 소통 방식을 권역별로 갈랐습니다. <br class="hidden md:block">
+            <p class="text-[#5D4037] leading-relaxed mb-6 max-w-[46em] seg-t"><span class="seg-bal-t">
+                    공지 문안과 소통 방식을 권역별로 갈랐습니다. </span><br class="hidden md:block"><span class="seg-bal-t">
                     같은 성향 차이가 상품에도 적용되므로, 판매 구성 역시 나누는&nbsp;것이 자연스러운 다음 단계입니다.
-                </p>
+                </span></p>
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-[#FFFBEB] rounded-2xl p-6 border border-[#FFE082]">
                     <p class="text-xs font-black num-orange-ink mb-3">한국 · 효율과 순위</p>

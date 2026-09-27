@@ -111,6 +111,8 @@
         @media (min-width:768px){ .seg-bal-md { display: block; text-wrap: balance; } }
         /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
+        /* 태블릿 폭에서만 <br> 로 나뉜 문장마다 줄 길이를 고르게 (다른 폭은 전과 같음) */
+        @media (min-width: 641px) and (max-width: 1023px) { .seg-bal-t { display: block; text-wrap: balance; } .seg-t > br { display: none; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -492,11 +494,11 @@
                     시간을 잡아먹는&nbsp;것은 <strong class="text-blue-300">보험사 전산에서 하는 가입 설계 25분과 비교표 정리 20분</strong>, 합쳐서 전체의 <strong class="text-white">75%</strong>&#8288;입니다. <br class="hidden md:block">
                     조회는 편해졌지만 <strong>최종 설계 단계는 그대로 남습니다.</strong>
                 </p>
-                <p class="leading-relaxed max-w-[46em]">
-                    비교표는 시뮬레이터가 자동으로 만들고, 가입 설계는 앱&nbsp;안에서 25분에서 약&nbsp;5분으로 줄어듭니다&#8288;(-80%). <br class="hidden md:block">
-                    <strong class="text-blue-300">고객 안내 10분</strong>은 사람이 해야 하는 일이므로 줄일 대상이 아닙니다. <br class="hidden md:block">
+                <p class="leading-relaxed max-w-[46em] seg-t"><span class="seg-bal-t">
+                    비교표는 시뮬레이터가 자동으로 만들고, 가입 설계는 앱&nbsp;안에서 25분에서 약&nbsp;5분으로 줄어듭니다&#8288;(-80%). </span><br class="hidden md:block"><span class="seg-bal-t">
+                    <strong class="text-blue-300">고객 안내 10분</strong>은 사람이 해야 하는 일이므로 줄일 대상이 아닙니다. </span><br class="hidden md:block"><span class="seg-bal-t">
                     그래서 보장 파악 5분, 앱&nbsp;설계 5분, 고객 안내 10분이 남는 <strong class="text-white">20분 안팎이 하한</strong>&#8288;(60분 대비 -67%)입니다. 그보다 더&nbsp;줄이려 하면 상담 품질을 깎게 됩니다. <strong class="text-blue-300">줄일&nbsp;것과 남길&nbsp;것을 갈라 두면 목표가 과하지 않다는 근거가 섭니다.</strong>
-                </p>
+                </span></p>
             </div>
 
             <div class="bg-white rounded-3xl border-2 border-amber-300 p-8">

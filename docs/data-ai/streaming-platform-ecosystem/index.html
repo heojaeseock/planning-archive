@@ -71,6 +71,8 @@ body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
         /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
+        /* 태블릿 폭에서만 <br> 로 나뉜 문장마다 줄 길이를 고르게 (다른 폭은 전과 같음) */
+        @media (min-width: 641px) and (max-width: 1023px) { .seg-bal-t { display: block; text-wrap: balance; } .seg-t > br { display: none; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -427,12 +429,12 @@ body { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui
 
         <div class="bg-slate-900 rounded-2xl p-8 text-white">
             <p class="text-sm font-black text-indigo-300 mb-4">그래서 크로스 플랫폼은 중복이 아닙니다</p>
-            <p class="leading-relaxed max-w-[46em]">
-                    같은 게임을 두&nbsp;플랫폼에 뿌리는&nbsp;것은 <strong class="text-white">같은 사람에게 두&nbsp;번 노출하는&nbsp;일이 아닙니다.</strong> <br class="hidden md:block">
-                    한쪽은 경쟁 결과를 보러 온&nbsp;시청자, 다른 쪽은 스트리머를 보러 온&nbsp;시청자입니다. <br class="hidden md:block">
-                    도달하는&nbsp;층이 다르므로 <strong class="text-indigo-300">전달할 메시지도 달라야</strong> 합니다. <br class="hidden md:block">
+            <p class="leading-relaxed max-w-[46em] seg-t"><span class="seg-bal-t">
+                    같은 게임을 두&nbsp;플랫폼에 뿌리는&nbsp;것은 <strong class="text-white">같은 사람에게 두&nbsp;번 노출하는&nbsp;일이 아닙니다.</strong> </span><br class="hidden md:block"><span class="seg-bal-t">
+                    한쪽은 경쟁 결과를 보러 온&nbsp;시청자, 다른 쪽은 스트리머를 보러 온&nbsp;시청자입니다. </span><br class="hidden md:block"><span class="seg-bal-t">
+                    도달하는&nbsp;층이 다르므로 <strong class="text-indigo-300">전달할 메시지도 달라야</strong> 합니다. </span><br class="hidden md:block"><span class="seg-bal-t">
                     경쟁형에는 랭킹과 대회를, 관람형에는 스토리와 신규 콘텐츠 체험을 붙이는 편이 각&nbsp;플랫폼의 시청 동기에 맞습니다.
-                </p>
+                </span></p>
         </div>
     </section>
 

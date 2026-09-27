@@ -113,6 +113,8 @@
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
         /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
+        /* 태블릿 폭에서만 <br> 로 나뉜 문장마다 줄 길이를 고르게 (다른 폭은 전과 같음) */
+        @media (min-width: 641px) and (max-width: 1023px) { .seg-bal-t { display: block; text-wrap: balance; } .seg-t > br { display: none; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -497,10 +499,10 @@
 
                 <div class="bg-rose-50 border-2 border-rose-300 rounded-2xl p-8 mb-8">
                     <p class="text-sm font-black text-rose-700 mb-4">유저는 토끼만 찾습니다</p>
-                    <p class="text-amber-900 leading-relaxed mb-5">
-                    경로&nbsp;간 필요 시행이 <strong class="text-rose-700">20회에서 50회로 2.5배</strong> 차이 납니다. <br class="hidden md:block">
+                    <p class="text-amber-900 leading-relaxed mb-5 seg-t"><span class="seg-bal-t">
+                    경로&nbsp;간 필요 시행이 <strong class="text-rose-700">20회에서 50회로 2.5배</strong> 차이 납니다. </span><br class="hidden md:block"><span class="seg-bal-t">
                     이&nbsp;정도 격차면 유저는 계산하지 않아도 체감으로 알게 되고, <strong class="text-amber-900">확률이 가장 높은 토끼만 노리게 됩니다.</strong>
-                </p>
+                </span></p>
                     <div class="bg-white rounded-xl p-6 border border-rose-200 mb-5">
                         <p class="text-xs font-black text-rose-700 mb-2">그&nbsp;결과 두&nbsp;가지가 생깁니다</p>
                         <ul class="space-y-2 text-xs text-amber-900 leading-relaxed">

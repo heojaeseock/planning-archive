@@ -113,6 +113,8 @@
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
         /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
+        /* 태블릿 폭에서만 <br> 로 나뉜 문장마다 줄 길이를 고르게 (다른 폭은 전과 같음) */
+        @media (min-width: 641px) and (max-width: 1023px) { .seg-bal-t { display: block; text-wrap: balance; } .seg-t > br { display: none; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   .badge-brand-ink { color: #B35825; }   /* 연한 주황 바탕에서 읽히는 브랜드색 */
@@ -407,10 +409,10 @@
                 <div class="bg-emerald-50 border-2 border-emerald-200 rounded-3xl p-8">
                     <p class="text-sm font-black text-emerald-700 mb-3">얻은&nbsp;것</p>
                     <p class="text-4xl font-black text-emerald-700 mb-3">75% 절감</p>
-                    <p class="text-sm text-gray-600 leading-relaxed bal">
-                    전수 조사에서 선별 검수로 바꿔 <strong class="text-gray-900">같은 인력으로 네&nbsp;배의 물량</strong>을 감당할&nbsp;수 있게 됩니다. <br class="hidden md:block">
+                    <p class="text-sm text-gray-600 leading-relaxed bal seg-t"><span class="seg-bal-t">
+                    전수 조사에서 선별 검수로 바꿔 <strong class="text-gray-900">같은 인력으로 네&nbsp;배의 물량</strong>을 감당할&nbsp;수 있게 됩니다. </span><br class="hidden md:block"><span class="seg-bal-t">
                     검수자가 위험도 높은 건에만 집중하므로 판정 품질도 올라갑니다.
-                </p>
+                </span></p>
                 </div>
                 <div class="bg-amber-50 border-2 border-amber-300 rounded-3xl p-8">
                     <p class="text-sm font-black text-amber-700 mb-3">내준&nbsp;것</p>
@@ -478,11 +480,11 @@
                     </div>
                     <div class="bg-white/10 rounded-2xl p-6">
                         <p class="text-sm font-black text-amber-300 mb-2">표본 검수로 보완</p>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                    통과분에서 <strong class="text-white">주기적으로 표본을 뽑아 사람이 확인</strong>합니다. <br class="hidden md:block">
-                    전수 검수로 돌아가지 않으면서 필터의 정확도를 계속 알&nbsp;수 있습니다. <br class="hidden md:block">
+                        <p class="text-xs text-gray-300 leading-relaxed seg-t"><span class="seg-bal-t">
+                    통과분에서 <strong class="text-white">주기적으로 표본을 뽑아 사람이 확인</strong>합니다. </span><br class="hidden md:block"><span class="seg-bal-t">
+                    전수 검수로 돌아가지 않으면서 필터의 정확도를 계속 알&nbsp;수 있습니다. </span><br class="hidden md:block"><span class="seg-bal-t">
                     표본에서 위험이 발견되면 그&nbsp;패턴을 필터 기준에 추가합니다.
-                </p>
+                </span></p>
                     </div>
                 </div>
                 <p class="text-sm text-gray-300 leading-relaxed mt-6 pt-6 border-t border-white/20 max-w-[46em]">

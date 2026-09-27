@@ -95,6 +95,8 @@
         /* text-wrap 은 상속되므로 자바스크립트가 나중에 넣는 글에도 걸린다 */
             /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
+        /* 태블릿 폭에서만 <br> 로 나뉜 문장마다 줄 길이를 고르게 (다른 폭은 전과 같음) */
+        @media (min-width: 641px) and (max-width: 1023px) { .seg-bal-t { display: block; text-wrap: balance; } .seg-t > br { display: none; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -555,10 +557,10 @@
                             <p class="text-sm md:text-base leading-relaxed font-medium mb-4">
                     랭킹이 과금의 주된 목적인데, 통합은 이미 낸&nbsp;돈의 값을 깎습니다. 기존 1위가 중위권으로 밀리면 <strong>산&nbsp;것은 순위였는데 그&nbsp;순위가 사라집니다.</strong>
                 </p>
-                            <p class="text-sm md:text-base leading-relaxed font-medium">
-                    따라서 통합은 <strong class="text-white">최상위 과금층의 이탈 트리거</strong>가 될&nbsp;수 있습니다. <br class="hidden md:block">
+                            <p class="text-sm md:text-base leading-relaxed font-medium seg-t"><span class="seg-bal-t">
+                    따라서 통합은 <strong class="text-white">최상위 과금층의 이탈 트리거</strong>가 될&nbsp;수 있습니다. </span><br class="hidden md:block"><span class="seg-bal-t">
                     실행&nbsp;시 기존 서버 순위에 대한 <strong class="text-rose-300">보상 &middot; 칭호 유지 &middot; 통합 서버&nbsp;내 별도 리그</strong> 같은 완충 장치가 함께 필요합니다.
-                </p>
+                </span></p>
                         </div>
                     </div>
                 </div>

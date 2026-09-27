@@ -193,6 +193,8 @@
         @media (max-width: 640px) { .bal-m { text-wrap: balance; } }
         /* 태블릿 폭에서만 줄 길이를 고르게 (마지막 줄에 한두 단어만 남지 않게) */
         @media (min-width: 641px) and (max-width: 1023px) { .bal-t { text-wrap: balance; } }
+        /* 태블릿 폭에서만 <br> 로 나뉜 문장마다 줄 길이를 고르게 (다른 폭은 전과 같음) */
+        @media (min-width: 641px) and (max-width: 1023px) { .seg-bal-t { display: block; text-wrap: balance; } .seg-t > br { display: none; } }
 </style>
 <style>@media print{a[aria-label="문서 목록으로 돌아가기"],div[aria-hidden="true"][style*="104px"]{display:none !important}body{background:#fff}section,.break-inside-avoid{break-inside:avoid}table{break-inside:auto}tr{break-inside:avoid}@page{margin:12mm}}
   /* 운영체제에서 '움직임 줄이기'를 켠 사람에게는 애니메이션을 멈춘다 */
@@ -589,11 +591,11 @@
                         </div>
                         <div class="bg-amber-50 rounded-xl p-6 border border-amber-300">
                             <p class="text-xs font-black text-amber-800 mb-2">공공데이터로 받기 어려운&nbsp;것</p>
-                            <p class="text-xs text-slate-600 leading-relaxed">
-                    <strong class="text-slate-800">지금 이&nbsp;순간의 수치</strong>입니다. <br class="hidden md:block">
-                    정기 측정은 주기가 길어 <strong>오늘의 환기 상태</strong>를 알려주지 않습니다. <br class="hidden md:block">
+                            <p class="text-xs text-slate-600 leading-relaxed seg-t"><span class="seg-bal-t">
+                    <strong class="text-slate-800">지금 이&nbsp;순간의 수치</strong>입니다. </span><br class="hidden md:block"><span class="seg-bal-t">
+                    정기 측정은 주기가 길어 <strong>오늘의 환기 상태</strong>를 알려주지 않습니다. </span><br class="hidden md:block"><span class="seg-bal-t">
                     시간대별 변화를 보여주려면 각&nbsp;시설에 센서가 설치되어 데이터를 송출해야 합니다.
-                </p>
+                </span></p>
                         </div>
                     </div>
                     <div class="bg-slate-900 rounded-xl p-6 text-white">
