@@ -119,6 +119,9 @@
 /* 목차가 7개라 좁은 화면에서는 왼쪽부터 늘어놓고 가로로 넘겨 보게 한다 (가운데 정렬이면 앞 항목이 잘림) */
 @media (max-width: 1023px) { .nav-row { justify-content: flex-start; } .nav-row > * + * { margin-left: 1.5rem !important; } }
 </style>
+<style>/* 목차 이동 */
+html { scroll-behavior: smooth; }
+</style>
 </head>
 <body class="text-slate-900">
 
