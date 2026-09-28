@@ -8,12 +8,12 @@
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../../favicon.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
-    <meta name="description" content="타사 라이브 이슈 대응 분석. 경쟁 서비스의 장애 대응을 분해해 우리 프로세스로 이식.">
+    <meta name="description" content="타사 라이브 이슈 대응 분석. 경쟁 서비스의 장애 대응을 분해해 블소 운영에 옮길 점을 정리.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="허재석 기획·운영 아카이브">
 <meta property="og:title" content="타사 라이브 이슈 대응 분석">
-<meta property="og:description" content="타사 라이브 이슈 대응 분석. 경쟁 서비스의 장애 대응을 분해해 우리 프로세스로 이식.">
+<meta property="og:description" content="타사 라이브 이슈 대응 분석. 경쟁 서비스의 장애 대응을 분해해 블소 운영에 옮길 점을 정리.">
 <link rel="canonical" href="https://heojaeseock.github.io/planning-archive/docs/live-ops/competitor-live-issue-response/">
 <meta property="og:url" content="https://heojaeseock.github.io/planning-archive/docs/live-ops/competitor-live-issue-response/">
 <meta property="og:image" content="https://heojaeseock.github.io/planning-archive/docs/live-ops/competitor-live-issue-response/og.png">
@@ -166,7 +166,7 @@ html { scroll-behavior: smooth; }
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
               <p class="text-[11px] font-black tracking-[0.12em] text-amber-700 mb-3">문서 소개</p>
-              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">경쟁 서비스의 사고 대응을 분해해 우리 프로세스로 옮긴 문서입니다.</p>
+              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">경쟁 서비스의 사고 대응을 공개 자료로 분해해, 블레이드&amp;소울 레볼루션 운영에 옮길 점을 정리한 개인 분석입니다.</p>
             </div>
             <div class="px-6 md:px-9 py-6 md:py-7">
               <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">우리 서비스에 옮길&nbsp;것</p>
@@ -181,7 +181,7 @@ html { scroll-behavior: smooth; }
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">다만 조건이 있었음</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">그&nbsp;회사는 큰돈이 드는 결정도 하루 이틀 만에 승인되는 구조였습니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">공개된 대응 속도로 보면 그&nbsp;회사는 큰돈이 드는 결정도 하루 이틀 만에 승인된 것으로 보입니다</p>
                 </div>
               </div>
             </div>
@@ -254,7 +254,7 @@ html { scroll-behavior: smooth; }
 
             <div class="bg-white rounded-3xl p-8 md:p-12 card-shadow border border-slate-100">
                 <div class="mb-12 text-center">
-                    <p class="font-bold text-slate-500 mb-6 text-xs tracking-wide italic">대응 전후 유저 마음 변화 추이</p>
+                    <p class="font-bold text-slate-500 mb-6 text-xs tracking-wide italic">대응 전후 유저 마음 변화 추이 &middot; 실측이 아닌 추정 지수</p>
                     <div class="chart-container">
                         <canvas id="sentimentChart" role="img" aria-label="꺾은선 차트. 항목 이슈 발생, 논란 확산, 1차 공지, 보상 발표, 여론 반전, 신뢰 형성. 계열 부정적 여론, 긍정적 여론"></canvas>
                     </div>
@@ -385,6 +385,7 @@ html { scroll-behavior: smooth; }
             <p class="text-slate-600 leading-relaxed mb-10">
                 유저 반응 추이를 단계별 변화량으로 환산하면
                 <strong class="text-slate-900">어느 조치가 얼마나 기여했는지</strong>가 숫자로 드러납니다.
+                <br class="hidden md:block">수치는 공개된 여론 흐름을 지수로 옮긴 추정값이며, 실측 여론 데이터가 아닙니다.
             </p>
 
             <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-10">

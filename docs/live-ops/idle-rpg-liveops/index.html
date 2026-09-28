@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
-    <title>방치형 RPG 라이브 운영 기록</title>
+    <title>방치형 RPG 라이브 운영 설계안</title>
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../../favicon.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
-    <meta name="description" content="방치형 RPG 라이브 운영 기록. 지표와 민심을 함께 보며 사고 대응 공지까지 작성한 운영 기록.">
+    <meta name="description" content="방치형 RPG 라이브 운영 설계안. 지표와 민심을 함께 보며 사고 대응 공지까지 설계한 개인 기획안.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="허재석 기획·운영 아카이브">
-<meta property="og:title" content="방치형 RPG 라이브 운영 기록">
-<meta property="og:description" content="방치형 RPG 라이브 운영 기록. 지표와 민심을 함께 보며 사고 대응 공지까지 작성한 운영 기록.">
+<meta property="og:title" content="방치형 RPG 라이브 운영 설계안">
+<meta property="og:description" content="방치형 RPG 라이브 운영 설계안. 지표와 민심을 함께 보며 사고 대응 공지까지 설계한 개인 기획안.">
 <link rel="canonical" href="https://heojaeseock.github.io/planning-archive/docs/live-ops/idle-rpg-liveops/">
 <meta property="og:url" content="https://heojaeseock.github.io/planning-archive/docs/live-ops/idle-rpg-liveops/">
 <meta property="og:image" content="https://heojaeseock.github.io/planning-archive/docs/live-ops/idle-rpg-liveops/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="방치형 RPG 라이브 운영 기록">
+<meta property="og:image:alt" content="방치형 RPG 라이브 운영 설계안">
 <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="tailwind.css">
     <!-- Chart.js -->
@@ -163,7 +163,7 @@ html { scroll-behavior: smooth; }
     <!-- Header / Hero -->
     <header class="pt-32 pb-20 px-4 border-b border-slate-200 bg-gradient-to-b from-slate-200 to-surface-100">
         <div class="max-w-5xl mx-auto text-center">
-            <p class="text-brand-600 font-bold tracking-wide text-sm mb-4">방치형 RPG 라이브 운영 기록</p>
+            <p class="text-brand-600 font-bold tracking-wide text-sm mb-4">방치형 RPG 라이브 운영 설계안</p>
             <h1 class="text-3xl md:text-5xl font-black text-slate-900 mb-8 leading-tight">
                 방치형 RPG 업데이트 사고 예방 <br class="hidden md:block"/> 
                 파이프라인 및&nbsp;개선 기획서
@@ -183,7 +183,7 @@ html { scroll-behavior: smooth; }
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
               <p class="text-[11px] font-black tracking-[0.12em] text-amber-700 mb-3">문서 소개</p>
-              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">지표와 민심을 함께 보며 사고 대응 공지까지 작성한 운영 기록입니다.</p>
+              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">지표와 민심을 함께 보며 사고 대응 공지까지 설계한 개인 기획안입니다. 블레이드&amp;소울 레볼루션 라이브 운영 경험을 바탕으로 썼고, 잔존율 수치는 목표&#8288;·시뮬레이션 값입니다.</p>
             </div>
             <div class="px-6 md:px-9 py-6 md:py-7">
               <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">없앨&nbsp;것과 줄일&nbsp;것</p>
@@ -231,7 +231,7 @@ html { scroll-behavior: smooth; }
             <div class="grid md:grid-cols-2 gap-8 items-start">
                 <!-- Chart Area -->
                 <div class="content-card p-6">
-                    <h3 class="text-lg font-bold text-slate-800 mb-4 text-center">최근 3개월 문의 분석 &mdash; 이탈 원인</h3>
+                    <h3 class="text-lg font-bold text-slate-800 mb-4 text-center">문의 유형별 분석 &mdash; 이탈 원인 <span class="text-slate-500 font-medium">(가정 지수)</span></h3>
                     <div class="chart-container">
                         <canvas id="vocChart" role="img" aria-label="방사형 차트. 항목 반복 숙제 피로도, UI 조작 불편, 과금 부담, 콘텐츠 부족, 밸런스 불만. 계열 이탈 원인 불만 지수"></canvas>
                     </div>
@@ -284,7 +284,7 @@ html { scroll-behavior: smooth; }
                     </div>
 
                     <div class="content-card bg-slate-50 p-6 mt-2">
-                         <h3 class="text-sm font-bold text-slate-700 mb-4 text-center">편의성 패치 적용&nbsp;후 잔존율 방어 시뮬레이션</h3>
+                         <h3 class="text-sm font-bold text-slate-700 mb-4 text-center">편의성 패치 적용&nbsp;후 잔존율 방어 시뮬레이션 <span class="text-slate-500 font-medium">(목표값)</span></h3>
                          <div class="chart-container" style="height: 180px;">
                              <canvas id="retentionChart" role="img" aria-label="꺾은선 차트. 항목 D+1, D+3, D+7, D+14, D+30. 계열 기존 지표 (개선 전), 목표 지표 (패치 후)"></canvas>
                          </div>
@@ -564,7 +564,7 @@ html { scroll-behavior: smooth; }
                         <p class="text-sm font-bold text-emerald-700 mb-3">뒤 구간</p>
                         <p class="text-3xl font-black text-emerald-700 mb-2">D+30 · +200%</p>
                         <p class="text-sm text-slate-600 leading-relaxed">
-                    잔존율이 3배가 됩니다. <br class="hidden md:block">
+                    목표대로라면 잔존율이 3배가 됩니다. <br class="hidden md:block">
                     <strong class="text-slate-900">숙제 피로는 누적되는 성질</strong>이라 시간이 지날수록 효과가 커집니다.
                 </p>
                     </div>
@@ -692,7 +692,7 @@ html { scroll-behavior: smooth; }
     <footer class="bg-white border-t border-slate-200 py-12">
         <div class="max-w-5xl mx-auto px-4 flex flex-col items-center text-center">
             <h2 class="text-xl font-black text-slate-800 mb-2">방치형 RPG 라이브 운영</h2>
-            <p class="text-base text-slate-500 mb-6">꼼꼼한 검증과 유저 소통으로 라이브 서비스 안정성을 관리한 기록입니다.</p>
+            <p class="text-base text-slate-500 mb-6">꼼꼼한 검증과 유저 소통으로 라이브 서비스 안정성을 관리하는 방법을 정리한 기획안입니다.</p>
             <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="bg-slate-100 hover:bg-slate-200 text-slate-600 px-5 py-2.5 rounded-full text-sm font-bold transition-colors shadow-sm border border-slate-200">
                 &uarr; 맨&nbsp;위로 올라가기
             </button>
