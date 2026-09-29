@@ -70,6 +70,8 @@
   .photo{width:132px;aspect-ratio:314/404;height:auto;border-radius:14px;object-fit:cover;
     flex-shrink:0;border:1px solid var(--border);background:var(--surface-2)}
   .hero-txt{flex:1 1 340px;min-width:0}
+  /* 넓은 화면에서 사진 높이를 옆 소개 글 높이에 맞춘다 */
+  @media (min-width:641px){.photo{width:162px}}
   .hero-txt .lede{margin-top:14px}
   .cta{display:flex;align-items:center;gap:16px;margin:26px 0 0;padding:18px 22px;
     border:1px solid var(--border-2);border-radius:14px;background:var(--surface);
@@ -236,13 +238,13 @@
 
 
     <section class="picks" aria-label="먼저 보면 좋은 문서">
-      <p class="picks-h"><b>처음이라면</b> 이&nbsp;다섯 건부터 보시면 됩니다.</p>
+      <p class="picks-h">각&nbsp;직무별 핵심 역량을 한눈에 파악할&nbsp;수 있는 <b>대표 프로젝트 5건</b>입니다.</p>
       <div class="picks-grid">
         <a class="pick" href="docs/game-design/project-oq-economy-balance/index.html"><span class="tag t-gd">게임 기획</span><b>Project OQ 경제 밸런스 기획</b><span class="why">플레이 시간의 현금 가치를 직접 계산해 성장 경로를 설계</span></a>
         <a class="pick" href="docs/live-ops/competitor-live-issue-response/index.html"><span class="tag t-gm">게임 운영&#8288;·GM</span><b>타사 라이브 이슈 대응 분석</b><span class="why">공개된 사고 대응을 분해해 블소 운영에 옮길 점을 정리</span></a>
-        <a class="pick" href="docs/data-ai/fc-online-economy/index.html"><span class="tag t-data">데이터 분석</span><b>FC 온라인 경제 지표 분석</b><span class="why">거래량&#8288;·시세로 게임 경제의 건강도를 진단</span></a>
-        <a class="pick" href="docs/service-plan/insurance-partner-app-pm/index.html"><span class="tag t-pm">사업&#8288;·서비스 기획</span><b>보험 파트너 앱 고도화 기획</b><span class="why">운영에서 익힌 병목 분석을 다른 산업 앱에 적용</span></a>
-        <a class="pick" href="docs/game-design/gini-jump-analysis/index.html"><span class="tag t-gd">대학 프로젝트</span><b>Gini Jump 게임 기획&#8288;·제작</b><span class="why">4인 팀에서 기획&#8288;·UI&#8288;·QA를 맡아 실제 앱으로 출시</span></a>
+        <a class="pick" href="docs/data-ai/action-genre-top10-revenue/index.html"><span class="tag t-data">데이터 분석</span><b>액션 장르 매출 TOP 10 분석</b><span class="why">매출 상위 10종을 직접 플레이하고 같은 기준으로 비교</span></a>
+        <a class="pick" href="docs/data-ai/hr-ai-assistant/index.html"><span class="tag t-pm">사업&#8288;·서비스 기획</span><b>AI 기반 HR 어시스턴트 기획</b><span class="why">민감 정보를 밖으로 보내지 않고 인사 문의를 자동 응대</span></a>
+        <a class="pick" href="docs/live-ops/randomdice-popup-campaign/index.html"><span class="tag t-mkt">마케팅</span><b>랜덤다이스 오프라인 팝업 캠페인</b><span class="why">현장 운영 시나리오와 돌발 상황 대처까지 담은 IP 캠페인안</span></a>
       </div>
     </section>
 
