@@ -155,6 +155,10 @@
         /* 이 문서 전용 카드도 휴대폰에서 여백을 줄인다 */
         @media (max-width: 640px) { .section-card { padding: 1.25rem !important; } }
 </style>
+<style>/* 휴대폰에서만 게임 이름 뒤에서 줄을 바꾼다 */
+.m-br{display:none}
+@media (max-width:640px){.m-br{display:inline}}
+</style>
 </head>
 <body class="p-6 md:p-12 lg:p-20">
 
@@ -164,7 +168,7 @@
     <header class="mb-20 text-center" style="margin-bottom:2.5rem">
         <div class="inline-block bg-slate-900 text-white text-xs font-bold px-4 py-1.5 rounded-full mb-6 tracking-wide">기획 문서</div>
         <h1 class="text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-8">
-            서머너즈 워 신규 콘텐츠 <br>
+            서머너즈&nbsp;워<br class="m-br"> 신규 콘텐츠 <br>
             <span class="text-blue-600">혼돈의 틈새</span>
         </h1>
         <p class="text-xl text-slate-500 font-medium bal">

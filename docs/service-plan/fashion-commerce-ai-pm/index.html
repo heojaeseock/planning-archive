@@ -123,6 +123,10 @@
 <style>/* 목차 이동 */
 html { scroll-behavior: smooth; }
 </style>
+<style>/* 휴대폰에서 터미널 글자를 조금 줄여 명령 줄이 한 줄에 들어가게 */
+@media (max-width:480px){#terminal-content{font-size:12px}}
+@media (max-width:380px){#terminal-content{font-size:11px}}
+</style>
 </head>
 <body class="antialiased scroll-smooth">
 
@@ -386,8 +390,7 @@ html { scroll-behavior: smooth; }
                         </div>
                         <div id="terminal-content" class="text-slate-400 text-sm h-56 leading-relaxed flex flex-col justify-end pb-4">
                             <div>
-                                <span class="text-emerald-400">service_pm</span>:<span class="text-blue-400">~/foundation_squad</span>$ 대기&nbsp;중...<br>
-                                <span class="animate-pulse">_</span>
+                                <span class="text-emerald-400">service_pm</span>:<span class="text-blue-400">~/foundation_squad</span>$ 대기&nbsp;중...&nbsp;<span class="animate-pulse">_</span>
                             </div>
                         </div>
                         <div id="scan-effect" class="absolute top-0 left-0 w-full h-full bg-rose-500/10 transform -translate-y-full pointer-events-none will-change-transform"></div>
