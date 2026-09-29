@@ -331,7 +331,7 @@ html { scroll-behavior: smooth; }
                         <div class="text-4xl text-gray-200 hidden md:block">➔</div>
                         <div class="transition-all duration-500 flex-1 w-full border-t border-gray-100 pt-8 md:border-t-0 md:pt-0">
                             <div class="text-sm font-bold text-gray-500 mb-3">데이터 오류 발생률</div>
-                            <div class="text-4xl font-black text-gray-800" id="statError">5% 내외</div>
+                            <div class="text-4xl font-black text-gray-800" id="statError">상시 발생</div>
                             <div class="text-sm mt-4 text-red-500 font-bold bg-red-50 py-1.5 px-3 rounded-full inline-block" id="statErrorDesc">오기재 및&nbsp;누락 상시 발생</div>
                         </div>
                     </div>
@@ -780,9 +780,9 @@ html { scroll-behavior: smooth; }
                 timeDesc.classList.replace('text-red-500', 'text-blue-600');
                 timeDesc.classList.replace('bg-red-50', 'bg-blue-50');
                 
-                errorEl.textContent = '0%';
+                errorEl.textContent = '입력 단계 차단';
                 errorEl.classList.replace('text-gray-800', 'text-blue-600');
-                errorDesc.textContent = '오류 차단 완료';
+                errorDesc.textContent = '규칙 대조로 오기재·누락을 걸러냄';
                 errorDesc.classList.replace('text-red-500', 'text-blue-600');
                 errorDesc.classList.replace('bg-red-50', 'bg-blue-50');
                 
@@ -797,7 +797,7 @@ html { scroll-behavior: smooth; }
                 timeDesc.classList.replace('text-blue-600', 'text-red-500');
                 timeDesc.classList.replace('bg-blue-50', 'bg-red-50');
                 
-                errorEl.textContent = '5% 내외';
+                errorEl.textContent = '상시 발생';
                 errorEl.classList.replace('text-blue-600', 'text-gray-800');
                 errorDesc.textContent = '오기재 및 누락 상시 발생';
                 errorDesc.classList.replace('text-blue-600', 'text-red-500');
