@@ -159,6 +159,11 @@
             .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
         }
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .num-orange-ink{color:#b03c00}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
+<style>/* 위기 대응 4단계: 카드 4개와 화살표 3개를 한 줄에 */ @media (min-width:1200px){ .cr-flow{grid-template-columns:1fr auto 1fr auto 1fr auto 1fr !important;gap:1rem} .cr-flow .jelly-node{height:100%} } @media (min-width:768px) and (max-width:1199px){ .cr-flow{grid-template-columns:1fr 1fr !important} .cr-flow .arrow-text{display:none} .cr-flow .jelly-node{height:100%} }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="p-4 md:p-10">
 
@@ -184,40 +189,40 @@
     <section class="mb-12" aria-label="이 문서가 하는 말">
       <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
         <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-          <p class="text-[11px] font-black tracking-[0.12em] text-amber-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
-          <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">국내와 글로벌 유저의 성향 차이에 맞춰 공지와 위기 대응을 나눠 설계한 운영안입니다. 블레이드&amp;소울 레볼루션 라이브 운영 경험을 바탕으로 쿠키런 스타일 게임을 가정해 쓴 개인 제안이며, 아래 격차는 상대 표시값&#8288;(추정)입니다.</p>
+          <p class="text-xs font-black tracking-[0.12em] text-amber-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
+          <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]" style="max-width:44em;text-wrap:wrap">국내와 글로벌 유저의 성향 차이에 맞춰 공지와 위기 대응을 나눠 설계한 운영안입니다. <br class="hidden md:block">블레이드&#8288;&amp;&#8288;소울 레볼루션 라이브 운영 경험을 바탕으로 쿠키런 스타일 게임을 가정해 쓴 개인 제안이며, <br class="hidden md:block">아래 격차는 상대 표시값&#8288;(추정)입니다.</p>
         </div>
         <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
           <div class="px-3 py-5 md:py-6 text-center">
-            <p class="text-[11px] font-bold text-slate-500 mb-2 bal">파밍 효율 격차</p>
+            <p class="text-xs font-bold text-slate-500 mb-2 bal">파밍 효율 격차</p>
             <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">+35</p>
-            <p class="text-[11px] text-slate-500 mt-1 bal">한국 90 대&nbsp;글로벌 55</p>
+            <p class="text-xs text-slate-500 mt-1 bal">한국 90 대&nbsp;글로벌 55</p>
           </div>
           <div class="px-3 py-5 md:py-6 text-center">
-            <p class="text-[11px] font-bold text-slate-500 mb-2 bal">비주얼&#8288;·스킨 격차</p>
+            <p class="text-xs font-bold text-slate-500 mb-2 bal">비주얼&#8288;·스킨 격차</p>
             <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">-35</p>
-            <p class="text-[11px] text-slate-500 mt-1 bal">한국 60 대&nbsp;글로벌 95</p>
+            <p class="text-xs text-slate-500 mt-1 bal">한국 60 대&nbsp;글로벌 95</p>
           </div>
           <div class="px-3 py-5 md:py-6 text-center">
-            <p class="text-[11px] font-bold text-slate-500 mb-2 bal">과금 의지 격차</p>
+            <p class="text-xs font-bold text-slate-500 mb-2 bal">과금 의지 격차</p>
             <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">+10</p>
-            <p class="text-[11px] text-slate-500 mt-1 bal">비중으로 바꾸면 20.2&nbsp;대 20.3</p>
+            <p class="text-xs text-slate-500 mt-1 bal">비중으로 바꾸면 20.2&nbsp;대 20.3</p>
           </div>
         </div>
         <div class="px-6 md:px-9 py-6 md:py-7">
-          <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">나눌&nbsp;것과 합칠&nbsp;것</p>
+          <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">나눌&nbsp;것과 합칠&nbsp;것</p>
           <div class="grid md:grid-cols-3 gap-3">
             <div class="rounded-xl border border-slate-200 p-4">
               <p class="text-sm font-black text-slate-900 mb-1.5 bal">나눌&nbsp;것은 메시지와 상품 구성</p>
-              <p class="text-xs text-slate-500 leading-relaxed bal">파밍과 외형은 크게 갈리므로 공지 문안과 판매 구성을 권역별로 나눕니다</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal">파밍과 외형은 크게 갈리므로 공지 문안과 판매 구성을 권역별로 나눕니다.</p>
             </div>
             <div class="rounded-xl border border-slate-200 p-4">
               <p class="text-sm font-black text-slate-900 mb-1.5 bal">맞출&nbsp;것은 가격당 가치</p>
-              <p class="text-xs text-slate-500 leading-relaxed bal">과금 의지 차이는 착시였으므로 구성은 달리해도 가격당 가치의 총량은 같게 둡니다</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal">과금 의지 차이는 착시였으므로 <br class="hidden md:block">구성은 달리해도 가격당 가치의 총량은 같게 둡니다.</p>
             </div>
             <div class="rounded-xl border border-slate-200 p-4">
-              <p class="text-sm font-black text-slate-900 mb-1.5 bal">공지는 미리 써 둔다</p>
-              <p class="text-xs text-slate-500 leading-relaxed bal">사고가 난&nbsp;뒤 문안을 새로 쓰면 권역별 송출 시점이 벌어집니다</p>
+              <p class="text-sm font-black text-slate-900 mb-1.5 bal">공지는 미리 써 둔다.</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal">사고가 난&nbsp;뒤 문안을 새로 쓰면 권역별 송출 시점이 벌어집니다.</p>
             </div>
           </div>
         </div>
@@ -230,7 +235,7 @@
     <section class="cookie-card p-10 md:p-14 mb-16">
         <h2 class="text-2xl md:text-3xl font-black text-[#8B4513] mb-6 flex items-center gap-3">전략 배경</h2>
         <p class="text-[#6B4423] leading-relaxed mb-4 max-w-[46em] bal-t">
-                    같은 게임이라도 권역마다 기대하는 지점이 다릅니다. 하나의 방침으로 밀면 한쪽에 불만이 쌓입니다. 운영 메시지를 권역별로 가르고, <strong>사고&nbsp;때 바로 내보낼 다국어 문안</strong>을 미리 만들어 두는 안을 제안합니다.
+                    같은 게임이라도 권역마다 기대하는 지점이 다릅니다. <br class="hidden md:block">하나의 방침으로 밀면 한쪽에 불만이 쌓입니다. <br class="hidden md:block">운영 메시지를 권역별로 가르고, <strong>사고&nbsp;때 바로 내보낼 다국어 문안</strong>을 미리 만들어 두는 안을 제안합니다.
                 </p>
     </section>
 
@@ -248,8 +253,7 @@
                     </div>
                     <div class="bg-white p-6 rounded-3xl border-4 border-[#FF4D6D] shadow-[6px_6px_0_#FF4D6D]">
                         <h3 class="text-2xl font-bold text-[#FF4D6D] mb-2">🌍 글로벌: 신규 유입 중심</h3>
-                        <p class="text-base text-gray-700 font-bold">런게임 본연의 재미, 비주얼&#8288;(스킨), <br class="hidden md:block">
-                    직관적 소통을 선호합니다.</p>
+                        <p class="text-base text-gray-700 font-bold">런게임 본연의 재미, 비주얼&#8288;(스킨), 직관적 소통을 선호합니다.</p>
                     </div>
                 </div>
             </div>
@@ -345,10 +349,10 @@
         <p class="text-sm text-gray-500 mt-5 font-bold">* 등급 기준은 유저 영향 범위를 기준으로 직접 정리한 운영 기준안입니다.</p>
     </section>
 
-    <section class="cookie-card p-10 md:p-14 bg-[#E8F5E9] border-[#2E7D32] shadow-[#C8E6C9]">
+    <section class="cookie-card p-10 md:p-14 mb-16 bg-[#E8F5E9] border-[#2E7D32] shadow-[#C8E6C9]">
         <h2 class="text-2xl md:text-3xl text-[#1B5E20] mb-12 text-center">🛡️ 위기 대응 시스템 경로 (Notion/Jira)</h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center cr-flow">
             <!-- Node 1 -->
             <div class="jelly-node border-[#1B5E20]">
                 <div class="text-5xl mb-4">🚨</div>
@@ -429,13 +433,13 @@
                                 <td class="p-3 text-center font-black num-orange-ink">+30</td>
                             </tr>
                             <tr class="bg-[#E8F5E9] border-b border-[#E0E0E0]">
-                                <td class="p-3 font-black text-[#4E342E]">과금 의지 <span class="text-[10px] font-black text-[#2E7D32]">비슷함</span></td>
+                                <td class="p-3 font-black text-[#4E342E]">과금 의지 <span class="text-xs font-black text-[#2E7D32]">비슷함</span></td>
                                 <td class="p-3 text-center font-bold text-[#5D4037]">85</td>
                                 <td class="p-3 text-center font-bold text-[#5D4037]">75</td>
                                 <td class="p-3 text-center font-black text-[#2E7D32]">+10</td>
                             </tr>
                             <tr class="bg-[#E8F5E9] border-b border-[#E0E0E0]">
-                                <td class="p-3 font-black text-[#4E342E]">커뮤니티 <span class="text-[10px] font-black text-[#2E7D32]">비슷함</span></td>
+                                <td class="p-3 font-black text-[#4E342E]">커뮤니티 <span class="text-xs font-black text-[#2E7D32]">비슷함</span></td>
                                 <td class="p-3 text-center font-bold text-[#5D4037]">90</td>
                                 <td class="p-3 text-center font-bold text-[#5D4037]">80</td>
                                 <td class="p-3 text-center font-black text-[#2E7D32]">+10</td>
@@ -445,14 +449,14 @@
         </div>
 
         <div class="bg-[#FFF3E0] border-2 border-[#FFB74D] rounded-2xl p-8 mb-8">
-            <p class="text-sm font-black num-orange-ink mb-4">과금 의지는 비슷합니다</p>
+            <p class="text-sm font-black num-orange-ink mb-4">과금 의지는 비슷합니다.</p>
             <p class="text-[#5D4037] leading-relaxed mb-5 max-w-[46em]">
                     다섯 항목&nbsp;중 가장 작은 격차는 <strong class="text-[#4E342E]">과금 의지와 커뮤니티의 +10</strong>입니다. <br class="hidden md:block">
                     반대로 파밍 효율은 +35, 비주얼은 -35로 크게 벌어집니다. <br class="hidden md:block">
                     이&nbsp;조합이 뜻하는&nbsp;것은 분명합니다.
                 </p>
             <div class="bg-white rounded-2xl p-6 border-2 border-[#FFB74D]">
-                <p class="text-base font-black text-[#4E342E] mb-3">돈을 쓸&nbsp;의향은 비슷하고, 무엇에 쓰는지가 다릅니다</p>
+                <p class="text-base font-black text-[#4E342E] mb-3">돈을 쓸&nbsp;의향은 비슷하고, 무엇에 쓰는지가 다릅니다.</p>
                 <p class="text-sm text-[#5D4037] leading-relaxed max-w-[46em]">
                     <strong class="num-orange-ink">매출 잠재력은 비슷하고 갈리는&nbsp;것은 <strong>무엇에 지불하는가</strong>입니다. 한국은 경쟁 우위와 파밍 효율, 글로벌은 외형입니다.</strong>
                 </p>
@@ -460,7 +464,7 @@
         </div>
 
         <div class="bg-white border-2 border-[#D7CCC8] rounded-2xl p-8">
-            <p class="text-sm font-black text-[#4E342E] mb-4">운영 메시지를 나눴다면 상품 구성도 나눠야 합니다</p>
+            <p class="text-sm font-black text-[#4E342E] mb-4">운영 메시지를 나눴다면 상품 구성도 나눠야 합니다.</p>
             <p class="text-[#5D4037] leading-relaxed mb-6 max-w-[46em] seg-t"><span class="seg-bal-t">
                     공지 문안과 소통 방식을 권역별로 갈랐습니다. </span><br class="hidden md:block"><span class="seg-bal-t">
                     같은 성향 차이가 상품에도 적용되므로, 판매 구성 역시 나누는&nbsp;것이 자연스러운 다음 단계입니다.
@@ -471,7 +475,7 @@
                     <ul class="space-y-2 text-xs text-[#5D4037] leading-relaxed">
                         <li class="bal-m bal-t">&bull; 파밍 시간을 줄여주는 <strong class="text-[#4E342E]">효율 상품</strong>과 시즌 패스</li>
                         <li>&bull; 순위 경쟁에 직결되는 <strong class="text-[#4E342E]">성장 재화 묶음</strong></li>
-                        <li class="bal">&bull; 외형은 성능이나 칭호와 함께 묶어야 구매 동기가 생깁니다</li>
+                        <li class="bal">&bull; 외형은 성능이나 칭호와 함께 묶어야 구매 동기가 생깁니다.</li>
                     </ul>
                 </div>
                 <div class="bg-[#E3F2FD] rounded-2xl p-6 border border-[#90CAF9]">
@@ -479,21 +483,21 @@
                     <ul class="space-y-2 text-xs text-[#5D4037] leading-relaxed">
                         <li>&bull; 성능과 무관한 <strong class="text-[#4E342E]">스킨 단품과 코스튬 세트</strong></li>
                         <li>&bull; 수집 진행도를 보여주는 도감형 상품</li>
-                        <li class="bal">&bull; 효율 상품은 <strong class="text-[#4E342E]">우선순위를 낮춰도</strong> 매출 손실이 크지 않습니다</li>
+                        <li class="bal">&bull; 효율 상품은 <strong class="text-[#4E342E]">우선순위를 낮춰도</strong> 매출 손실이 크지 않습니다.</li>
                     </ul>
                 </div>
             </div>
             <p class="text-xs text-[#795548] leading-relaxed mt-6 pt-6 border-t border-[#D7CCC8] max-w-[46em]">
-                    <strong class="text-[#4E342E]">상품을 나눈다는&nbsp;것은 같은 가격에 다른 가치를 준다는 뜻입니다. 유저는 다른 권역 상점을 봅니다. <strong>구성은 달리하되 가격당 가치의 총량은 맞춥니다.</strong></strong>
+                    <strong class="text-[#4E342E]">상품을 나눈다는&nbsp;것은 같은 가격에 다른 가치를 준다는 뜻입니다. <br class="hidden md:block">유저는 다른 권역 상점을 봅니다. <br class="hidden md:block"><strong>구성은 달리하되 가격당 가치의 총량은 맞춥니다.</strong></strong>
                 </p>
         </div>
     </section>
 
     <!-- 보강: 성향 차트 정규화 -->
     <section class="cookie-card p-10 md:p-14 mb-16 bg-[#FFFDF5]">
-        <h2 class="text-2xl md:text-3xl font-black text-[#4E342E] mb-4">두&nbsp;권역의 총점이 다르면 격차를 그대로 읽을&nbsp;수 없습니다</h2>
+        <h2 class="text-2xl md:text-3xl font-black text-[#4E342E] mb-4">두&nbsp;권역의 총점이 다르면 격차를 그대로 읽을&nbsp;수 없습니다.</h2>
         <p class="text-[#5D4037] leading-relaxed mb-10 max-w-[46em] bal-t">
-                    다섯&nbsp;축을 더하면 한국 420, 글로벌 370이고 넷에서 한국이 높습니다. 그런데 이&nbsp;차트가 재는&nbsp;것은 <strong>무엇을 더&nbsp;좋아하는가</strong>이지 누가 더&nbsp;열심히 하는가가 아닙니다. 총점을 맞추고 다시 봤습니다.
+                    다섯&nbsp;축을 더하면 한국 420, 글로벌 370이고 넷에서 한국이 높습니다. <br class="hidden md:block">그런데 이&nbsp;차트가 재는&nbsp;것은 <strong>무엇을 더&nbsp;좋아하는가</strong>이지 누가 더&nbsp;열심히 하는가가 아닙니다. <br class="hidden md:block">총점을 맞추고 다시 봤습니다.
                 </p>
 
         <div class="overflow-x-auto rounded-2xl border-2 border-[#D7CCC8] mb-10">
@@ -554,7 +558,7 @@
         </div>
 
         <div class="bg-white rounded-2xl p-8 border-2 border-[#A5D6A7] mb-8">
-            <p class="text-sm font-black text-[#2E7D32] mb-5">격차 10짜리 두&nbsp;축은 실제로 차이가 없습니다</p>
+            <p class="text-sm font-black text-[#2E7D32] mb-5">격차 10짜리 두&nbsp;축은 실제로 차이가 없습니다.</p>
             <p class="text-[#5D4037] leading-relaxed mb-6 max-w-[46em]">
                     원래 값으로는 과금 의지와 커뮤니티가 한국이 10씩 높습니다.<br>
 비중으로 바꾸면 <strong>20.2&nbsp;대 20.3, 21.4 대&nbsp;21.6</strong> &mdash; 사실상 같습니다.
@@ -566,7 +570,7 @@
         </div>
 
         <div class="bg-white rounded-2xl p-8 border-2 border-[#EF9A9A] mb-8">
-            <p class="text-sm font-black text-[#C2185B] mb-5">남는 진짜 차이는 세&nbsp;축입니다</p>
+            <p class="text-sm font-black text-[#C2185B] mb-5">남는 진짜 차이는 세&nbsp;축입니다.</p>
             <div class="grid md:grid-cols-3 gap-5 mb-6">
                 <div class="bg-[#FCE4EC] rounded-2xl p-6 text-center border border-[#F8BBD0]">
                     <p class="text-xs font-bold text-[#C2185B] mb-2">비주얼과 스킨</p>
@@ -584,16 +588,16 @@
                     <p class="text-xs text-[#5D4037]">한국이 앞섬</p>
                 </div>
             </div>
-            <p class="text-[#5D4037] leading-relaxed max-w-[46em]">원래 값으로는 파밍 효율과 비주얼이 35로 같은 크기로 보였는데, 총점을 맞추면 <strong>비주얼 11.4가 파밍 효율 6.6의 약&nbsp;1.7배</strong>입니다. 글로벌에서 비주얼 비중이 25.7%&#8288;로 가장 큽니다. 스킨을 맨&nbsp;앞에 두는 근거가 여기에 있습니다.</p>
+            <p class="text-[#5D4037] leading-relaxed max-w-[46em]">원래 값으로는 파밍 효율과 비주얼이 35로 같은 크기로 보였는데, <br class="hidden md:block">총점을 맞추면 <strong>비주얼 11.4가 파밍 효율 6.6의 약&nbsp;1.7배</strong>입니다. <br class="hidden md:block">글로벌에서 비주얼 비중이 25.7%&#8288;로 가장 큽니다. <br class="hidden md:block">스킨을 맨&nbsp;앞에 두는 근거가 여기에 있습니다.</p>
         </div>
 
         <div class="bg-[#E8F5E9] rounded-2xl p-8 border-2 border-[#A5D6A7]">
-            <p class="text-sm font-black text-[#2E7D32] mb-5">공통 항목을 따로 둔&nbsp;판단이 수치로 뒷받침됩니다</p>
+            <p class="text-sm font-black text-[#2E7D32] mb-5">공통 항목을 따로 둔&nbsp;판단이 수치로 뒷받침됩니다.</p>
             <p class="text-[#5D4037] leading-relaxed mb-6 max-w-[46em]">
                     비중으로 보면 과금 의지와 커뮤니티는 두&nbsp;권역이 같습니다.<br><strong>보상의 가치 총량과 커뮤니티 대응 원칙은 권역별로 나눌 이유가 없습니다.</strong>
                 </p>
             <p class="text-[#5D4037] leading-relaxed max-w-[46em]">
-                    콘텐츠와 이벤트는 세&nbsp;축에서 갈리므로 나누는&nbsp;것이 맞습니다. <strong>비중 격차가 5를 넘는&nbsp;축만 나눈다</strong>고 선을 그으면 관리 부담과 문안 어긋남이 함께 줄어듭니다.
+                    콘텐츠와 이벤트는 세&nbsp;축에서 갈리므로 나누는&nbsp;것이 맞습니다. <br class="hidden md:block"><strong>비중 격차가 5를 넘는&nbsp;축만 나눈다</strong>고 선을 그으면 관리 부담과 문안 어긋남이 함께 줄어듭니다.
                 </p>
         </div>
 
@@ -616,7 +620,7 @@
                 </p>
             <div class="bg-[#FFEBEE] rounded-xl p-6 border border-[#EF9A9A]">
                 <p class="text-xs text-[#5D4037] leading-relaxed max-w-[46em]">
-                    커뮤니티는 국경을 넘습니다. 글로벌 유저가 국내 공지를 번역해 보고 <strong>한국에는 설명했는데 우리에게는 안&nbsp;했다</strong>고 여기면, 원래 사고보다 큰&nbsp;불만이 됩니다.
+                    커뮤니티는 국경을 넘습니다. 글로벌 유저가 국내 공지를 번역해 보고 <br class="hidden md:block"><strong>한국에는 설명했는데 우리에게는 안&nbsp;했다</strong>고 여기면, 원래 사고보다 큰&nbsp;불만이 됩니다.
                 </p>
             </div>
             <p class="text-sm text-[#5D4037] leading-relaxed mt-6 max-w-[46em]">
@@ -627,8 +631,8 @@
         </div>
 
         <div class="bg-white rounded-2xl p-8 border-2 border-[#D7CCC8]">
-            <p class="text-sm font-black text-[#4E342E] mb-4">템플릿 뱅크도 관리 대상입니다</p>
-            <p class="text-[#5D4037] leading-relaxed max-w-[46em] bal-t">미리 만든 문안은 낡습니다. 재화 이름이나 수령 경로가 바뀌면 <strong>급할&nbsp;때 꺼낸 템플릿이 틀린 안내</strong>가 됩니다. 시스템이 바뀌는 업데이트마다 관련 템플릿을 점검하는 절차가 있어야 합니다.</p>
+            <p class="text-sm font-black text-[#4E342E] mb-4">템플릿 뱅크도 관리 대상입니다.</p>
+            <p class="text-[#5D4037] leading-relaxed max-w-[46em] bal-t">미리 만든 문안은 낡습니다. <br class="hidden md:block">재화 이름이나 수령 경로가 바뀌면 <strong>급할&nbsp;때 꺼낸 템플릿이 틀린 안내</strong>가 됩니다. <br class="hidden md:block">시스템이 바뀌는 업데이트마다 관련 템플릿을 점검하는 절차가 있어야 합니다.</p>
         </div>
     </section>
 
@@ -644,18 +648,18 @@
             <div class="bg-white rounded-2xl border-l-4 border-l-[#FF8F00] border border-[#D7CCC8] p-7">
                 <p class="font-black text-[#4E342E] mb-3">누가 등급을 정하는지</p>
                 <p class="text-sm text-[#5D4037] leading-relaxed max-w-[46em]">
-                    초기에는 영향 범위를 모릅니다. <strong>판정 권한을 가진 사람과 판단이 안&nbsp;설&nbsp;때의 기본값</strong>을 미리 정합니다. 확실해질&nbsp;때까지 상위 등급으로 두고 나중에 내리는 쪽이 안전합니다.
+                    초기에는 영향 범위를 모릅니다. <br class="hidden md:block"><strong>판정 권한을 가진 사람과 판단이 안&nbsp;설&nbsp;때의 기본값</strong>을 미리 정합니다. <br class="hidden md:block">확실해질&nbsp;때까지 상위 등급으로 두고 나중에 내리는 쪽이 안전합니다.
                 </p>
             </div>
             <div class="bg-white rounded-2xl border-l-4 border-l-[#FF8F00] border border-[#D7CCC8] p-7">
                 <p class="font-black text-[#4E342E] mb-3">등급이 바뀔&nbsp;때의 절차</p>
                 <p class="text-sm text-[#5D4037] leading-relaxed max-w-[46em]">
-                    2단계로 알린&nbsp;뒤 1단계가 되는&nbsp;일이 잦습니다. 수정하면 처음부터 그랬다고 오해하고, 새로 올리면 정보가 흩어집니다. <strong>기존 공지에 덧붙이는 방식</strong>이&nbsp;이력을 남기면서 혼선을&nbsp;줄입니다.
+                    2단계로 알린&nbsp;뒤 1단계가 되는&nbsp;일이 잦습니다. <br class="hidden md:block">수정하면 처음부터 그랬다고 오해하고, 새로 올리면 정보가 흩어집니다. <br class="hidden md:block"><strong>기존 공지에 덧붙이는 방식</strong>이&nbsp;이력을 남기면서 혼선을&nbsp;줄입니다.
                 </p>
             </div>
             <div class="bg-white rounded-2xl border-l-4 border-l-[#C62828] border border-[#D7CCC8] p-7">
                 <p class="font-black text-[#4E342E] mb-3">권역 시차와 심야 대응</p>
-                <p class="text-sm text-[#5D4037] leading-relaxed max-w-[46em] bal-t">즉시 공지는 담당자가 깨어 있을&nbsp;때만 됩니다. 글로벌의 활동 시간대는 한국 기준 심야입니다. <strong>미리 승인해 둔&nbsp;최소 문안</strong>을 두어 담당자가 아니어도 내보낼&nbsp;수 있게 하거나, 당직을 함께 짜야 합니다.</p>
+                <p class="text-sm text-[#5D4037] leading-relaxed max-w-[46em] bal-t">즉시 공지는 담당자가 깨어 있을&nbsp;때만 됩니다. <br class="hidden md:block">글로벌의 활동 시간대는 한국 기준 심야입니다. <br class="hidden md:block"><strong>미리 승인해 둔&nbsp;최소 문안</strong>을 두어 담당자가 아니어도 내보낼&nbsp;수 있게 하거나, 당직을 함께 짜야&nbsp;합니다.</p>
             </div>
         </div>
 
@@ -663,11 +667,11 @@
             <div class="bg-[#E8F5E9] rounded-2xl border-2 border-[#A5D6A7] p-7">
                 <p class="text-sm font-black text-[#2E7D32] mb-4">운영 성과를 볼&nbsp;지표</p>
                 <ul class="space-y-3 text-sm text-[#5D4037] leading-relaxed">
-                    <li>&bull; <strong class="text-[#4E342E]">권역별 1차 공지 소요 시간</strong> &mdash; 감지에서 송출까지. 두&nbsp;권역의 차이가 크면 시차 대응이 미비한&nbsp;것입니다</li>
-                    <li class="bal">&bull; <strong class="text-[#4E342E]">정정 공지 발생 건수</strong> &mdash; 템플릿과 등급 판정의 정확도를 보여줍니다</li>
-                    <li class="bal">&bull; <strong class="text-[#4E342E]">권역&nbsp;간 문안 불일치 신고</strong> &mdash; 위에서 지적한 문안 불일치 사고가 실제로 발생하는지</li>
-                    <li class="bal">&bull; <strong class="text-[#4E342E]">상품별 권역 매출 비중</strong> &mdash; 효율 상품과 외형 상품이 예상대로 갈리는지</li>
-                    <li class="bal">&bull; <strong class="text-[#4E342E]">템플릿 사용률</strong> &mdash; 낮으면 실제 상황에 맞지 않아 새로 쓰고 있다는 뜻입니다</li>
+                    <li>&bull; <strong class="text-[#4E342E]">권역별 1차 공지 소요 시간</strong> &mdash; 감지에서 송출까지. 두&nbsp;권역의 차이가 크면 시차 대응이 미비한&nbsp;것입니다.</li>
+                    <li class="bal">&bull; <strong class="text-[#4E342E]">정정 공지 발생 건수</strong> &mdash; 템플릿과 등급 판정의 정확도를 보여줍니다.</li>
+                    <li class="bal">&bull; <strong class="text-[#4E342E]">권역&nbsp;간 문안 불일치 신고</strong> &mdash; 위에서 지적한 문안 불일치 사고가 실제로 발생하는지 봅니다.</li>
+                    <li class="bal">&bull; <strong class="text-[#4E342E]">상품별 권역 매출 비중</strong> &mdash; 효율 상품과 외형 상품이 예상대로 갈리는지 봅니다.</li>
+                    <li class="bal">&bull; <strong class="text-[#4E342E]">템플릿 사용률</strong> &mdash; 낮으면 실제 상황에 맞지 않아 새로 쓰고 있다는 뜻입니다.</li>
                 </ul>
             </div>
             
@@ -687,7 +691,7 @@
             title: "🇰🇷 국내 라이브 운영 상세 전략",
             accent: "#8B4513",
             cards: [
-                { icon: "📱", title: "푸시 전략", text: "점심/퇴근 피크 타임 집중 발송. 경쟁 심리를 자극하는 효율 중심 문구 사용." },
+                { icon: "📱", title: "푸시 전략", text: "점심/퇴근 피크 타임 집중 발송. <br class=\"hidden md:block\">경쟁 심리를 자극하는 효율 중심 문구 사용." },
                 { icon: "🎁", title: "보상 가이드", text: "고인물 유저의 손실 체감을 상쇄할 수 있는 핵심 재화 및 한정 재료 위주 지급." },
                 { icon: "📢", title: "CS 프로토콜", text: "상세한 기술적 원인 공유와 커뮤니티\u2060(카페) 위주의 투명한 소통 프로세스." }
             ]
@@ -698,7 +702,7 @@
             cards: [
                 { icon: "🌐", title: "권역별 푸시", text: "UTC 시차를 적용한 자동화 발송. 신규 캐릭터/스킨 위주의 감성적 문구 사용." },
                 { icon: "🎲", title: "직관적 보상", text: "언어 무관하게 가치를 인지하는 가챠권, 코스튬 조각 등 캐주얼 보상 중심." },
-                { icon: "🛡️", title: "위기 관리", text: "사전 번역된 Jira 티켓팅 및 Notion 뱅크를 활용한 24/7 대응 체계 가동." }
+                { icon: "🛡️", title: "위기 관리", text: "Jira 티켓팅과 사전 번역된 Notion 문안 뱅크를 활용한 24/7 대응 체계 마련." }
             ]
         }
     };
@@ -744,7 +748,7 @@
         new Chart(ctx, {
             type: 'radar',
             data: {
-                labels: ['경쟁심', '파밍효율', '비주얼/스킨', '과금의지', '커뮤니티'],
+                labels: ['경쟁심', '파밍 효율', '비주얼/스킨', '과금 의지', '커뮤니티'],
                 datasets: [{
                     label: '한국 유저',
                     data: [95, 90, 60, 85, 90],

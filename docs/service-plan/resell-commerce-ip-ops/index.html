@@ -115,6 +115,10 @@
 <style>/* 목차 이동 */
 html { scroll-behavior: smooth; }
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-green-600{color:#15803d}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="selection:bg-black selection:text-white">
 
@@ -123,7 +127,7 @@ html { scroll-behavior: smooth; }
         <div class="max-w-5xl mx-auto px-6 py-3 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             <div class="flex items-center gap-2 flex-shrink-0">
                 <span class="text-lg font-extrabold tracking-tight text-black">리셀 커머스&nbsp;플랫폼</span>
-                <span class="px-2 py-0.5 bg-black text-white text-[11px] font-bold rounded">운영 고도화 제안서</span>
+                <span class="px-2 py-0.5 bg-black text-white text-xs font-bold rounded">운영 고도화 제안서</span>
             </div>
             <nav class="flex gap-5 overflow-x-auto whitespace-nowrap text-sm font-bold" aria-label="문서 안 이동">
                 <a href="#section-1" class="nav-item active">1. 문제 정의</a>
@@ -143,11 +147,11 @@ html { scroll-behavior: smooth; }
                 IP · 엔터테인먼트 운영
             </div>
             <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-black leading-tight mb-6">
-                한정판 드랍 이벤트<br class="hidden md:block">
+                한정판 드랍 이벤트
                 <span class="text-blue-600">현장 운영 설계</span>
             </h1>
             <p class="text-gray-500 leading-relaxed text-base max-w-2xl mx-auto">
-                한정판 드랍 1분 사이에 생기는 결제 이상 징후를 <br class="hidden md:block">
+                한정판 드랍 직후 몇&nbsp;분 사이에 생기는 결제 이상 징후를 <br class="hidden md:block">
                 바로 감지하고 조치하는 운영 체계를 정리했습니다.
             </p>
         </header>
@@ -156,40 +160,40 @@ html { scroll-behavior: smooth; }
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-              <p class="text-[11px] font-black tracking-[0.12em] text-teal-700 mb-3">문서 소개</p>
-              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">한정판 드랍 전후의 데이터 오류와 현장 병목, 결제 이상을 막는 운영 체계를 설계한 문서입니다. 블레이드&amp;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 개인 제안서입니다.</p>
+              <p class="text-xs font-black tracking-[0.12em] text-teal-700 mb-3">문서 소개</p>
+              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">한정판 드랍 전후의 데이터 오류와 현장 병목, 결제 이상을 막는 운영 체계를 설계한 문서입니다. <br class="hidden md:block">블레이드&#8288;&amp;&#8288;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 개인 제안서입니다.</p>
             </div>
             <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">트래픽이 몰리는 구간</p>
-                <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">드랍 1분</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">정가 판매를 여는 시점</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">트래픽이 몰리는 구간</p>
+                <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">드랍&nbsp;후&nbsp;3분</p>
+                <p class="text-xs text-slate-500 mt-1 bal">정가 판매를 여는 시점</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">첫&nbsp;단계에서 막히는 오류</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">첫&nbsp;단계에서 막히는 오류</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">70%</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">예시 분포&#8288;(가정값)&nbsp;기준, 입력 단계에서 저장을 막음</p>
+                <p class="text-xs text-slate-500 mt-1 bal">예시 분포&#8288;(가정값)&nbsp;기준, 입력 단계에서 저장을 막음</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">감지 시점</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">감지 시점</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">3분 단축</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">오픈 3분&nbsp;뒤 감지를 사전 배치로 앞당김&#8288;(모델값)</p>
+                <p class="text-xs text-slate-500 mt-1 bal">오픈 3분&nbsp;뒤 감지를 사전 배치로 앞당김&#8288;(모델값)</p>
               </div>
             </div>
             <div class="px-6 md:px-9 py-6 md:py-7">
-              <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">운영 방안</p>
+              <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">운영 방안</p>
               <div class="grid md:grid-cols-3 gap-3">
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">잘못된 값은 저장 자체를 막는다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">규격 밖 사이즈나 음수 금액은 입력 단계에서 거부합니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">잘못된 값은 저장 자체를 막는다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">규격 밖 사이즈나 음수 금액은 <br class="hidden md:block">입력 단계에서 거부합니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">코드를 자동으로 맞춘다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">파트너사의 상품 코드를 플랫폼 표준 코드로 자동 연결합니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">코드를 자동으로 맞춘다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">파트너사의 상품 코드를 <br class="hidden md:block">플랫폼 표준 코드로 자동 연결합니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">현장 지침을 나눠 갖는다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">한&nbsp;사람이 판단하지 않고 각자 자리에서 할&nbsp;일을 미리 정해 둡니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">현장 지침을 나눠 갖는다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">한&nbsp;사람이 판단하지 않고 <br class="hidden md:block">각자 자리에서 할&nbsp;일을 미리 정해 둡니다.</p>
                 </div>
               </div>
             </div>
@@ -203,7 +207,7 @@ html { scroll-behavior: smooth; }
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 leading-snug">플랫폼 구조</h2>
                 <p class="text-gray-600 leading-relaxed mb-4 max-w-[46em]">
                     리셀 커머스는 한정판 상품을 정가 추첨 판매와 이용자&nbsp;간 재판매로 유통하는 플랫폼입니다. <br class="hidden md:block">
-                    정가 판매를 여는 시점을 드랍이라 하며, 해당 1분에 트래픽이 집중됩니다. <br class="hidden md:block">
+                    정가 판매를 여는 시점을 드랍이라 하며, 그 직후 몇&nbsp;분에 트래픽이 집중됩니다. <br class="hidden md:block">
                     결제 지연 한&nbsp;건이 커뮤니티 확산으로 이어지는 구조입니다.
                 </p>
             </div>
@@ -219,7 +223,7 @@ html { scroll-behavior: smooth; }
                     리셀 커머스 플랫폼의 한정판 트래픽 운영에 옮겨 오다
                 </h2>
                 <p class="text-gray-600 text-base text-body font-medium max-w-[46em] leading-[1.8]">
-                    정해진 1분에 트래픽이 몰리는 구조라, 상시 커머스보다 <strong>대규모 서버 패치</strong>에 가깝습니다.
+                    정해진 시각 직후에 트래픽이 몰리는 구조라, 상시 커머스보다 <strong>대규모 서버 패치</strong>에 가깝습니다.
                 </p>
             </div>
             
@@ -256,7 +260,7 @@ html { scroll-behavior: smooth; }
                         <span class="text-2xl">💡</span> 핵심 제안: 커머스 도메인으로의 역량 확장
                     </h4>
                     <p class="text-base text-gray-700 text-body max-w-[46em] leading-[1.8] bal">
-                    물류와 배송 인프라는 더&nbsp;배워야 하는 영역으로 두고, <strong>트래픽 병목 · 데이터 정합성 · 현장 관제</strong> 셋만 다뤘습니다. 라이브 운영에서 직접 해 본 영역입니다.
+                    물류와 배송 인프라는 더&nbsp;배워야 하는 영역으로 두고, <strong>트래픽 병목 · 데이터 정합성 · 현장 관제</strong> 셋만 다뤘습니다. <br class="hidden md:block">라이브 운영 경험과 맞닿은 영역입니다.
                 </p>
                 </div>
             </div>
@@ -316,8 +320,8 @@ html { scroll-behavior: smooth; }
                     <div class="chart-container">
                         <canvas id="errorChart" role="img" aria-label="막대 차트. 항목 필수값 누락, 상품코드 오기입, 수량 및 단가 오류, 업로드 포맷 에러. 계열 수작업 시 발생 빈도, 템플릿 도입 후"></canvas>
                     </div>
-                    <div class="text-right text-[11px] text-gray-500 mt-4 font-semibold" style="text-wrap:balance">
-                        * 출처: 블레이드&amp;소울 레볼루션 세팅 검수 경험을 대입한 예시 분포&#8288;(가정값)&#8288;이며 해당 플랫폼의 실측 값이 아닙니다
+                    <div class="text-right text-xs text-gray-500 mt-4 font-semibold" style="text-wrap:balance">
+                        * 출처: 블레이드&#8288;&amp;&#8288;소울 레볼루션 세팅 검수 경험을 대입한 예시 분포&#8288;(가정값)&#8288;이며 해당 플랫폼의 실측 값이 아닙니다.
                     </div>
                 </div>
             </div>
@@ -331,7 +335,7 @@ html { scroll-behavior: smooth; }
                     병목 없는 현장을 위한 '분산형 액션 플레이북'
                 </h2>
                 <p class="text-gray-600 text-base text-body font-medium bal">
-                    현장의 단기 스태프들이 중앙 지휘부의 지시를 기다리느라 발생하는 <b>초동 대응 시간</b>을 놓치는 일을 미리 막습니다.
+                    현장의 단기 스태프들이 중앙 지휘부의 지시를 기다리느라 <b>초동 대응 시간</b>을 놓치는 일을 미리 막습니다.
                 </p>
             </div>
 
@@ -339,9 +343,9 @@ html { scroll-behavior: smooth; }
                 <div class="insight-box p-8 mb-10 rounded-xl shadow-inner border-l-blue-600 bg-blue-50">
                     <h3 class="font-bold text-blue-900 mb-3 text-lg flex items-center gap-2"><span>💡</span> 오프라인 현장 관제 인사이트</h3>
                     <p class="text-base text-gray-800 text-body max-w-[46em] leading-[1.8] bal">
-                    현장에서 가장 큰&nbsp;위험은 <strong>지휘부와의 소통이 늦어질&nbsp;때</strong> 옵니다. 인증 서버가 멈추거나 굿즈가 일찍 품절될&nbsp;때, 스태프가 지시를 기다리지 않고 판단할&nbsp;수 있어야 합니다.
+                    현장에서 가장 큰&nbsp;위험은 <strong>지휘부와의 소통이 늦어질&nbsp;때</strong> 옵니다. <br class="hidden md:block">인증 서버가 멈추거나 굿즈가 일찍 품절될&nbsp;때, 스태프가 지시를 기다리지 않고 판단할&nbsp;수 있어야 합니다.
                 </p>
-                    <div class="text-right text-[11px] text-blue-600 mt-3 font-semibold bal-m">
+                    <div class="text-right text-xs text-blue-600 mt-3 font-semibold bal-m">
                         * 출처: e스포츠 대회 중계 스튜디오 현장 운영을 지원하며 남긴 메모
                     </div>
                 </div>
@@ -381,7 +385,7 @@ html { scroll-behavior: smooth; }
                     <h3 class="font-bold text-red-800 mb-3 text-lg flex items-center gap-2">
                         <span class="text-2xl">🛡️</span> 핵심 방어: AI 도입&nbsp;시 데이터 컴플라이언스 준수
                     </h3>
-                    <p class="text-base text-gray-800 text-body max-w-[46em] leading-[1.8] bal">가장 경계할&nbsp;것은 개인정보와 결제 데이터 유출입니다. 이&nbsp;시스템은 <strong>에러 코드명과 초당 발생 건수 같은 익명 값만</strong> 보냅니다. 고객 정보를 넘기지 않고 전파용 리포트와 공지 초안을 만듭니다.</p>
+                    <p class="text-base text-gray-800 text-body max-w-[46em] leading-[1.8] bal">가장 경계할&nbsp;것은 개인정보와 결제 데이터 유출입니다. <br class="hidden md:block">이&nbsp;시스템은 <strong>에러 코드명과 초당 발생 건수 같은 익명 값만</strong> 보냅니다. <br class="hidden md:block">고객 정보를 넘기지 않고 전파용 리포트와 공지 초안을 만듭니다.</p>
                 </div>
 
                 <h3 class="text-2xl font-bold mb-8 text-center text-gray-900">드랍 및&nbsp;티켓팅 실시간 관제 대시보드</h3>
@@ -389,8 +393,8 @@ html { scroll-behavior: smooth; }
                 <div class="chart-container mb-8">
                     <canvas id="liveTrackingChart" role="img" aria-label="꺾은선 차트. 항목 오픈 10분 전, 5분 전, 드랍 오픈, 3분 후, 10분 후, 30분 후. 계열 유저 트래픽 지수, 결제 및 통신 에러 발생 건수"></canvas>
                 </div>
-                <div class="text-right text-[11px] text-gray-500 mb-10 font-semibold">
-                    * 출처: MMORPG 대규모 패치&nbsp;때의 트래픽 움직임을 참고해 구성한 모델값이며 실제 로그가 아닙니다
+                <div class="text-right text-xs text-gray-500 mb-10 font-semibold">
+                    * 출처: MMORPG 대규모 패치&nbsp;때의 트래픽 움직임을 참고해 구성한 모델값이며 실제 로그가 아닙니다.
                 </div>
 
                 <!-- Terminal UI -->
@@ -425,7 +429,7 @@ html { scroll-behavior: smooth; }
             </div>
 
             <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 mb-10">
-                <h3 class="text-xl font-black text-gray-900 mb-5">예시 분포&#8288;(가정값)&#8288;에서 오류 70%&#8288;는 첫&nbsp;단계에서 막힙니다</h3>
+                <h3 class="text-xl font-black text-gray-900 mb-5">예시 분포&#8288;(가정값)&#8288;에서 오류 70%&#8288;는 첫&nbsp;단계에서 막힙니다.</h3>
                 <div class="overflow-x-auto rounded-xl border border-gray-200 mb-6">
                     <table class="w-full min-w-[440px] border-collapse text-sm">
                         <thead>
@@ -472,7 +476,7 @@ html { scroll-behavior: smooth; }
                     </div>
                 </div>
                 <div class="bg-gray-900 rounded-xl p-6 text-white">
-                    <p class="text-sm font-bold text-blue-300 mb-3">가장 큰&nbsp;오류가 가장 단순한 대응으로 해결됩니다</p>
+                    <p class="text-sm font-bold text-blue-300 mb-3">가장 큰&nbsp;오류가 가장 단순한 대응으로 해결됩니다.</p>
                     <p class="text-sm leading-relaxed mb-4 max-w-[46em]">
                     1위 오류인 <strong class="text-blue-300">필수값 누락 45%</strong>&#8288;는 템플릿에 유효성 검사를 걸어 <strong class="text-white">저장 자체를 막는</strong> 것으로 대부분 사라집니다. <br class="hidden md:block">
                     함수 설계도 필요 없고 시스템 개발도 필요 없습니다.
@@ -484,13 +488,13 @@ html { scroll-behavior: smooth; }
                 <div class="bg-amber-50 border border-amber-300 rounded-xl p-5 mt-5">
                     <p class="text-xs font-bold text-amber-800 mb-2">템플릿 배포에 따라오는 조건</p>
                     <p class="text-xs text-gray-600 leading-relaxed max-w-[46em]">
-                    유효성 검사는 <strong>파트너사가 그&nbsp;템플릿을 쓸&nbsp;때만</strong> 작동합니다. 기존 양식으로 보내면 검증 없이 들어옵니다. 템플릿을 온보딩 필수 단계로 두거나, 비표준 접수&nbsp;시 담당자가 변환하는 경로를 함께 정합니다.
+                    유효성 검사는 <strong>파트너사가 그&nbsp;템플릿을 쓸&nbsp;때만</strong> 작동합니다. <br class="hidden md:block">기존 양식으로 보내면 검증 없이 들어옵니다. <br class="hidden md:block">템플릿을 온보딩 필수 단계로 두거나, 비표준 접수&nbsp;시 담당자가 변환하는 경로를 함께 정합니다.
                 </p>
                 </div>
             </div>
 
             <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 mb-10">
-                <h3 class="text-xl font-black text-gray-900 mb-5">오픈 3분&nbsp;뒤였던 감지를 오픈 전으로 옮길&nbsp;수 있습니다</h3>
+                <h3 class="text-xl font-black text-gray-900 mb-5">오픈 3분&nbsp;뒤였던 감지를 오픈 전으로 옮길&nbsp;수 있습니다.</h3>
                 <div class="overflow-x-auto rounded-xl border border-gray-200 mb-6">
                     <table class="w-full min-w-[400px] border-collapse text-sm">
                         <thead>
@@ -539,36 +543,36 @@ html { scroll-behavior: smooth; }
                     <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 text-center">
                         <p class="text-xs font-bold text-gray-600 mb-1">사전 신호</p>
                         <p class="text-2xl font-black text-gray-800">2.5배</p>
-                        <p class="text-[11px] text-gray-500 mt-1">10분 전 10 → 5분 전 25</p>
+                        <p class="text-xs text-gray-500 mt-1">10분 전 10 → 5분 전 25</p>
                     </div>
                     <div class="bg-red-50 border-2 border-red-300 rounded-xl p-5 text-center">
                         <p class="text-xs font-bold text-red-700 mb-1">오픈 순간</p>
                         <p class="text-2xl font-black text-red-700">4.0배</p>
-                        <p class="text-[11px] text-gray-500 mt-1">25 → 100</p>
+                        <p class="text-xs text-gray-500 mt-1">25 → 100</p>
                     </div>
                     <div class="bg-amber-50 border border-amber-300 rounded-xl p-5 text-center">
                         <p class="text-xs font-bold text-amber-700 mb-1">고부하 유지</p>
                         <p class="text-2xl font-black text-amber-700">약&nbsp;3분</p>
-                        <p class="text-[11px] text-gray-500 mt-1">오픈 ~ 3분&nbsp;후 95 이상</p>
+                        <p class="text-xs text-gray-500 mt-1">오픈 ~ 3분&nbsp;후 95 이상</p>
                     </div>
                 </div>
 
                 <div class="bg-gray-900 rounded-xl p-6 text-white mb-5">
-                    <p class="text-sm font-bold text-blue-300 mb-3">감지가 오픈 3분 후인&nbsp;것이 늦습니다</p>
+                    <p class="text-sm font-bold text-blue-300 mb-3">감지가 오픈 3분 후인&nbsp;것이 늦습니다.</p>
                     <p class="text-sm leading-relaxed mb-4 max-w-[46em]">
                     4번의 곡선에서 이상 감지 시점이 <strong class="text-white">오픈 3분&nbsp;후</strong>로 표시되어 있습니다. <br class="hidden md:block">
                     그런데 그&nbsp;시점의 값은 이미 <strong class="text-blue-300">95</strong>입니다. <br class="hidden md:block">
                     감지한&nbsp;뒤 대응을 시작하면 고부하 구간이 거의 끝나 있습니다.
                 </p>
                     <p class="text-sm leading-relaxed max-w-[46em]">
-                    오픈 5분 전에 이미 25로 평시의 2.5배입니다. <strong>드랍은 시각이 미리 정해진 이벤트</strong>이므로 이상 탐지를 기다릴&nbsp;것 없이 일정에 맞춰 미리 배치하는 편이 확실합니다.
+                    오픈 5분 전에 이미 25로 평시의 2.5배입니다. <br class="hidden md:block"><strong>드랍은 시각이 미리 정해진 이벤트</strong>이므로 이상 탐지를 기다릴&nbsp;것 없이 일정에 맞춰 미리 배치하는 편이 확실합니다.
                 </p>
                 </div>
 
                 <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
                     <p class="text-xs font-bold text-blue-800 mb-2">대응 창이 10분이라는&nbsp;점</p>
                     <p class="text-xs text-gray-600 leading-relaxed max-w-[46em]">
-                    10분&nbsp;뒤 70, 30분&nbsp;뒤 피크의 30%&#8288;까지 내려옵니다. <strong class="text-gray-800">위기 구간이 약&nbsp;10분</strong>입니다. 그&nbsp;안에 파악과 송출이 끝나야 하고, 넘기면 트래픽은 이미 정상인데 불만만 남습니다.
+                    10분&nbsp;뒤 70, 30분&nbsp;뒤 피크의 30%&#8288;까지 내려옵니다. <br class="hidden md:block"><strong class="text-gray-800">위기 구간이 약&nbsp;10분</strong>입니다. <br class="hidden md:block">그&nbsp;안에 파악과 송출이 끝나야 하고, 넘기면 트래픽은 이미 정상인데 불만만 남습니다.
                 </p>
                 </div>
             </div>
@@ -580,7 +584,7 @@ html { scroll-behavior: smooth; }
                     못하는&nbsp;것을 적어 두면 불리해 보이지만 실제로는 반대입니다.
                 </p>
                 <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                    <p class="text-sm text-gray-600 leading-relaxed max-w-[46em] bal">다룰 영역을 셋으로 좁혔습니다. <strong>다&nbsp;한다고 쓰면 어느&nbsp;것도 검증되지 않습니다.</strong> 셋&nbsp;밖의 영역은 학습 계획으로 적었습니다.</p>
+                    <p class="text-sm text-gray-600 leading-relaxed max-w-[46em] bal">다룰 영역을 셋으로 좁혔습니다. <br class="hidden md:block"><strong>다&nbsp;한다고 쓰면 어느&nbsp;것도 검증되지 않습니다.</strong> <br class="hidden md:block">셋&nbsp;밖의 영역은 더&nbsp;배워야 할 영역으로 남겨 두었습니다.</p>
                 </div>
             </div>
 
@@ -588,11 +592,11 @@ html { scroll-behavior: smooth; }
                 <div class="bg-white border-2 border-green-200 rounded-2xl p-7">
                     <p class="text-sm font-black text-green-700 mb-4">측정할 지표</p>
                     <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
-                        <li>&bull; <strong class="text-gray-800">템플릿 사용률</strong> &mdash; 전체 온보딩&nbsp;건&nbsp;중 표준 템플릿으로 접수된 비율. 낮으면 유효성 검사가 작동하지 않습니다</li>
-                        <li class="bal">&bull; <strong class="text-gray-800">오류 유형별 발생 건수</strong> &mdash; 필수값 누락 45%&#8288;가 실제로 줄어드는지</li>
-                        <li class="bal">&bull; <strong class="text-gray-800">온보딩 소요 시간</strong> &mdash; 파트너사 데이터 접수부터 시스템 등록까지</li>
-                        <li class="bal">&bull; <strong class="text-gray-800">드랍 시점 결제 실패율</strong> &mdash; 오픈&nbsp;후 10분 구간에 한정해 측정합니다</li>
-                        <li class="bal">&bull; <strong class="text-gray-800">첫&nbsp;안내 송출까지의 시간</strong> &mdash; 이상 인지에서 공지까지. 10분 안에 들어와야 합니다</li>
+                        <li>&bull; <strong class="text-gray-800">템플릿 사용률</strong> &mdash; 전체 온보딩&nbsp;건&nbsp;중 표준 템플릿으로 접수된 비율. 낮으면 유효성 검사가 작동하지 않습니다.</li>
+                        <li class="bal">&bull; <strong class="text-gray-800">오류 유형별 발생 건수</strong> &mdash; 필수값 누락 45%&#8288;가 실제로 줄어드는지 봅니다.</li>
+                        <li class="bal">&bull; <strong class="text-gray-800">온보딩 소요 시간</strong> &mdash; 파트너사 데이터 접수부터 시스템 등록까지 걸리는 시간</li>
+                        <li class="bal">&bull; <strong class="text-gray-800">드랍 시점 결제 실패율</strong> &mdash; 오픈&nbsp;후 10분 구간에 한정해 측정합니다.</li>
+                        <li class="bal">&bull; <strong class="text-gray-800">첫&nbsp;안내 송출까지의 시간</strong> &mdash; 이상 인지에서 공지까지. 10분 안에 들어와야 합니다.</li>
                     </ul>
                 </div>
                 
@@ -647,7 +651,7 @@ html { scroll-behavior: smooth; }
                             </li>
                             <li class="flex gap-4 items-start">
                                 <span class="text-lg bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">2</span> 
-                                <span class="pt-1"><b>초동 고객 안내:</b> "통신 지연으로 수기 결제 진행 중이며, 영수증은 추후 일괄 발송됩니다." 스크립트를 즉각 발성합니다.</span>
+                                <span class="pt-1"><b>초동 고객 안내:</b> "통신 지연으로 수기 결제 진행 중이며, 영수증은 추후 일괄 발송됩니다." 스크립트대로 즉시 안내합니다.</span>
                             </li>
                             <li class="flex gap-4 items-start">
                                 <span class="text-lg bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 font-bold">3</span> 
@@ -752,7 +756,7 @@ html { scroll-behavior: smooth; }
                             offset: 2,
                             font: { weight: 'bold', size: 14 },
                             formatter: function() {
-                                return '0건'; 
+                                return '차단'; 
                             }
                         }
                     }
@@ -768,7 +772,7 @@ html { scroll-behavior: smooth; }
                     y: { 
                         beginAtZero: true, 
                         max: 50, 
-                        title: { display: true, text: '월평균 발생 건수', font: { weight: 'bold'} },
+                        title: { display: true, text: '오류 비중(%)', font: { weight: 'bold'} },
                         grid: { borderDash: [5, 5], color: '#f1f5f9' },
                         ticks: { font: { size: 12 } }
                     },
@@ -790,7 +794,7 @@ html { scroll-behavior: smooth; }
                         callbacks: {
                             label: function(context) {
                                 if(context.datasetIndex === 1) return '도입 후: 오기입 대부분 사전 차단';
-                                return context.dataset.label + ': ' + context.raw + '건';
+                                return context.dataset.label + ': ' + context.raw + '%';
                             },
                             afterBody: function(context) {
                                 if(context[0].datasetIndex === 1) return ''; 

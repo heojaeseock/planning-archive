@@ -105,6 +105,10 @@
 <style>/* 목차 이동 */
 html { scroll-behavior: smooth; }
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-green-500{color:#15803d} html body .text-orange-600{color:#c2410c}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="text-slate-800 antialiased selection:bg-blue-200">
 
@@ -113,7 +117,7 @@ html { scroll-behavior: smooth; }
         <div class="max-w-5xl mx-auto px-4 h-16 flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <span class="font-black text-2xl tracking-tighter text-[#004ea2]">교육 앱</span>
-                <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded font-bold border border-slate-200 mt-1">운영 설계안</span>
+                <span class="text-xs px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded font-bold border border-slate-200 mt-1">운영 설계안</span>
             </div>
             <div class="hidden sm:flex space-x-8 text-sm font-semibold text-slate-600">
                 <a href="#s1" class="hover:text-blue-600 transition-colors">데이터 무결성 검수</a>
@@ -145,40 +149,40 @@ html { scroll-behavior: smooth; }
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-              <p class="text-[11px] font-black tracking-[0.12em] text-teal-700 mb-3">문서 소개</p>
-              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">강의가 끊기지 않게 하는 운영&#8288;·모니터링 체계를 정리한 문서입니다. 블레이드&amp;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 개인 제안서입니다.</p>
+              <p class="text-xs font-black tracking-[0.12em] text-teal-700 mb-3">문서 소개</p>
+              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">강의가 끊기지 않게 하는 운영&#8288;·모니터링 체계를 정리한 문서입니다. <br class="hidden md:block">블레이드&#8288;&amp;&#8288;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 개인 제안서입니다.</p>
             </div>
             <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">몰리는 시점</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">몰리는 시점</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">수능 종료 직후 17시</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">가채점 기능</p>
+                <p class="text-xs text-slate-500 mt-1 bal">가채점 기능</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">평소 서버 이용률</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">평소 서버 이용률</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">25%</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">시뮬레이션: 평시 최고치&nbsp;20, 임계치&nbsp;80</p>
+                <p class="text-xs text-slate-500 mt-1 bal">시뮬레이션: 평시 최고치&nbsp;20, 임계치&nbsp;80</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">그래서 문제는</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">그래서 문제는</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">평균이 아니라 봉우리</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">평균만 보면 서버가 남아 보입니다</p>
+                <p class="text-xs text-slate-500 mt-1 bal">평균만 보면 서버가 남아 보입니다.</p>
               </div>
             </div>
             <div class="px-6 md:px-9 py-6 md:py-7">
-              <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">운영 방안</p>
+              <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">운영 방안</p>
               <div class="grid md:grid-cols-3 gap-3">
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">검수를 자동으로</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">수만&nbsp;개의 강의&#8288;·교재 정보를 손으로 보지 않고 규칙으로 걸러냅니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">수만&nbsp;개의 강의&#8288;·교재 정보를 손으로 보지 않고 규칙으로 걸러냅니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">봉우리를 나눠 받는다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">한&nbsp;시점에 몰리는 접속을 대기열과 단계 개방으로 흩어 놓습니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">봉우리를 나눠 받는다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">한&nbsp;시점에 몰리는 접속을 대기열과 <br class="hidden md:block">단계 개방으로 흩어 놓습니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">불만을 재현 순서로 옮긴다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">'렉&nbsp;걸려요'를 개발팀이 바로 따라 해 볼&nbsp;수 있는 단계로 바꿔 적습니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">불만을 재현 순서로 옮긴다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">'렉&nbsp;걸려요'를 개발팀이 <br class="hidden md:block">바로 따라 해 볼&nbsp;수 있는 단계로 바꿔 적습니다.</p>
                 </div>
               </div>
             </div>
@@ -192,8 +196,7 @@ html { scroll-behavior: smooth; }
         <p class="text-slate-600 leading-relaxed mb-4 max-w-[46em]">
                     인터넷 강의와 교재를 판매하는 앱은 트래픽이 연중 특정 일자에 집중됩니다. <br class="hidden md:block">
                     대표적으로 수능 종료 직후인 17시에 가채점 기능으로 동시 접속이 몰립니다. <br class="hidden md:block">
-                    이&nbsp;피크 구간의 트래픽을 어떻게 방어할지, <br class="hidden md:block">
-                    그리고 강의&#8288;·교재 데이터 검수와 앱 리뷰 처리를 어떻게 자동화할지 다룹니다.
+                    이&nbsp;피크 구간의 트래픽을 어떻게 방어할지, <br class="hidden md:block">그리고 강의&#8288;·교재 데이터 검수와 앱 리뷰 처리를 어떻게 자동화할지 다룹니다.
                 </p>
     </section>
 
@@ -292,8 +295,8 @@ html { scroll-behavior: smooth; }
 
         <!-- Strategy 3: VOC Translator (Interactive) -->
         <section id="s3" class="mb-12 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200/60">
-            <div class="mb-8 text-center border-b border-slate-100 pb-6">
-                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-2">💡 전략 3. 고객 VOC&#8288;(고객의&nbsp;소리)&#8288;를 개발 요건&#8288;(Jira)&#8288;으로 번역</h2>
+            <div class="mb-8 border-b border-slate-100 pb-6">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-2">💡 전략 3. VOC&#8288;(고객의&nbsp;소리)&#8288;를 개발 요건&#8288;(Jira)&#8288;으로 번역</h2>
                 <p class="text-slate-500 font-medium">학생들의 감정적인 불편 사항을 개발팀이 즉각 이해할&nbsp;수 있는 '재현 스텝'으로 번역합니다.</p>
             </div>
 
@@ -308,8 +311,8 @@ html { scroll-behavior: smooth; }
                     
                     <div class="voc-card interactive-card p-5 bg-white border border-slate-200 rounded-2xl cursor-pointer hover:border-blue-400" data-index="0">
                         <div class="flex gap-2 mb-3">
-                            <span class="text-[11px] bg-red-100 text-red-700 px-2 py-0.5 rounded-md font-bold">별점 1점</span>
-                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-medium">아이패드</span>
+                            <span class="text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded-md font-bold">별점 1점</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-medium">아이패드</span>
                         </div>
                         <p class="text-[15px] text-slate-800 font-medium leading-snug">
                     "1.5배속 누르면 갑자기 멈추고 렉&nbsp;걸려요. ㅠㅠ"
@@ -318,16 +321,16 @@ html { scroll-behavior: smooth; }
 
                     <div class="voc-card interactive-card p-5 bg-white border border-slate-200 rounded-2xl cursor-pointer hover:border-blue-400" data-index="1">
                         <div class="flex gap-2 mb-3">
-                            <span class="text-[11px] bg-orange-100 text-orange-700 px-2 py-0.5 rounded-md font-bold">별점 2점</span>
-                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-medium">안드로이드</span>
+                            <span class="text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-md font-bold">별점 2점</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-medium">안드로이드</span>
                         </div>
                         <p class="text-[15px] text-slate-800 font-medium leading-snug bal">"메인 화면 배너 누르면 자꾸 흰 화면만 떠요."</p>
                     </div>
 
                     <div class="voc-card interactive-card p-5 bg-white border border-slate-200 rounded-2xl cursor-pointer hover:border-blue-400" data-index="2">
                         <div class="flex gap-2 mb-3">
-                            <span class="text-[11px] bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-md font-bold">별점 3점</span>
-                            <span class="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-medium">UI/UX</span>
+                            <span class="text-xs bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-md font-bold">별점 3점</span>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-medium">UI/UX</span>
                         </div>
                         <p class="text-[15px] text-slate-800 font-medium leading-snug bal">"결제하기 버튼이 키보드에 가려서 안&nbsp;보여요 ㅡㅡ"</p>
                     </div>
@@ -348,7 +351,7 @@ html { scroll-behavior: smooth; }
                     <!-- Result State (Hidden initially) -->
                     <div id="jira-content" class="hidden mt-6 bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm transition-opacity duration-300">
                         <div class="flex items-center gap-3 mb-4 border-b border-slate-100 pb-4">
-                            <span id="jira-type" class="bg-red-500 text-white text-[10px] px-2 py-1 rounded font-bold tracking-wide">버그</span>
+                            <span id="jira-type" class="bg-red-500 text-white text-xs px-2 py-1 rounded font-bold tracking-wide">버그</span>
                             <span class="text-slate-400 font-mono text-sm">EDU-2024</span>
                             <h3 id="jira-title" class="font-extrabold text-slate-900 text-lg ml-auto w-full">타이틀</h3>
                         </div>
@@ -471,7 +474,7 @@ html { scroll-behavior: smooth; }
         </div>
 
         <div class="bg-amber-50 border-2 border-amber-300 rounded-2xl p-8 mb-8">
-            <p class="text-sm font-black text-amber-800 mb-5">세로축이 사람 수인지 서버 부하인지에 따라 뜻이 갈립니다</p>
+            <p class="text-sm font-black text-amber-800 mb-5">세로축이 사람 수인지 서버 부하인지에 따라 뜻이 갈립니다.</p>
             <p class="text-slate-700 leading-relaxed mb-5 max-w-[46em]">
                     완화 수단은 <strong class="text-slate-900">무거운 동적 화면 대신 텍스트 기반 가채점 페이지로 우회</strong>하는&nbsp;것입니다. <br class="hidden md:block">
                     경량 페이지로 바꿔도 <strong class="text-slate-900">서비스에 들어오는 사람&nbsp;수는 줄지 않습니다.</strong> <br class="hidden md:block">
@@ -483,7 +486,7 @@ html { scroll-behavior: smooth; }
                     <p class="text-xs font-black text-slate-700 mb-2">사람 수라면</p>
                     <p class="text-xs text-slate-600 leading-relaxed">
                     70만큼이 <strong class="text-slate-800">서비스를 쓰지 못한&nbsp;것</strong>이&nbsp;됩니다. <br class="hidden md:block">
-                    수능 당일 가채점은 대체재가 있으므로, 못&nbsp;들어온 유저는 다른 서비스로 갑니다. <br class="hidden md:block">
+                    수능 당일 가채점은 대체재가 있으므로, <br class="hidden md:block">못&nbsp;들어온 유저는 다른 서비스로 갑니다. <br class="hidden md:block">
                     장애는 막았지만 이용자는 잃은 결과입니다.
                 </p>
                 </div>
@@ -497,13 +500,13 @@ html { scroll-behavior: smooth; }
             </div>
             <p class="text-slate-700 leading-relaxed max-w-[46em]">
                     제안의 성격상 <strong class="text-slate-900">후자가 의도일&nbsp;것</strong>입니다. <br class="hidden md:block">
-                    축 이름을 <strong class="text-emerald-700">서버 부하</strong>로 적고 동시접속자&nbsp;수는 폭주와 완화에서 같다는&nbsp;점을 한&nbsp;줄 덧붙이면, 같은 그래프가 <strong class="text-slate-900">이용자를 지키면서 장애를 막았다</strong>는 뜻이 됩니다. <br class="hidden md:block">
+                    축 이름을 <strong class="text-emerald-700">서버 부하</strong>로 적고 동시접속자&nbsp;수는 폭주와 완화에서 같다는&nbsp;점을 한&nbsp;줄 덧붙이면, <br class="hidden md:block">같은 그래프가 <strong class="text-slate-900">이용자를 지키면서 장애를 막았다</strong>는 뜻이 됩니다. <br class="hidden md:block">
                     지금 표기로는 읽는 사람이 반대로 해석할 여지가 남습니다.
                 </p>
         </div>
 
         <div class="bg-white border-2 border-emerald-300 rounded-2xl p-8 mb-8">
-            <p class="text-sm font-black text-emerald-700 mb-5">감소율이 25%&#8288;로 수렴하는&nbsp;것이 경량 페이지의 실력입니다</p>
+            <p class="text-sm font-black text-emerald-700 mb-5">감소율이 25%&#8288;로 수렴하는&nbsp;것이 경량 페이지의 실력입니다.</p>
             <p class="text-slate-600 leading-relaxed mb-5 max-w-[46em]">
                     시간대별 감소율이 0, 21.1, 41.2, 25.0, 25.0%&#8288;입니다. <br class="hidden md:block">
                     후반 두&nbsp;구간이 <strong class="text-slate-900">정확히 25%&#8288;로 같습니다.</strong> <br class="hidden md:block">
@@ -513,14 +516,14 @@ html { scroll-behavior: smooth; }
                 <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
                     <p class="text-xs font-black text-slate-700 mb-2">17시의 21.1%&#8288;가 낮은 이유</p>
                     <p class="text-xs text-slate-600 leading-relaxed bal">
-                    전환이 <strong class="text-slate-800">막 시작된 시점</strong>이라 일부 이용자만 경량 화면을 받은&nbsp;것으로 볼&nbsp;수 있습니다. <br class="hidden md:block">
+                    전환이 <strong class="text-slate-800">막 시작된 시점</strong>이라 일부 이용자만 <br class="hidden md:block">경량 화면을 받은&nbsp;것으로 볼&nbsp;수 있습니다. <br class="hidden md:block">
                     가장 위험한 순간에 효과가 가장 약한 셈입니다.
                 </p>
                 </div>
                 <div class="bg-emerald-50 rounded-2xl p-6 border border-emerald-200">
                     <p class="text-xs font-black text-emerald-700 mb-2">17시 30분의 41.2%&#8288;가 높은 이유</p>
                     <p class="text-xs text-slate-600 leading-relaxed bal seg-t"><span class="seg-bal-t">
-                    전환이 완료된 데다 <strong class="text-slate-800">밀려 있던 요청이 함께 빠지는 구간</strong>이&nbsp;겹친&nbsp;것으로 보입니다. </span><br class="hidden md:block"><span class="seg-bal-t">
+                    전환이 완료된 데다 <br class="hidden md:block"><strong class="text-slate-800">밀려 있던 요청이 함께 빠지는 구간</strong>이&nbsp;겹친&nbsp;것으로 보입니다. </span><br class="hidden md:block"><span class="seg-bal-t">
                     일시적인 값이므로 효과로 제시할&nbsp;때는 25%&#8288;를 쓰는 편이 안전합니다.
                 </span></p>
                 </div>
@@ -528,7 +531,7 @@ html { scroll-behavior: smooth; }
         </div>
 
         <div class="bg-slate-900 rounded-2xl p-8 md:p-10 text-white mb-8">
-            <p class="text-emerald-400 font-black text-[10px] tracking-wide mb-5">이&nbsp;이벤트는 사후 대응이 아니라 사전 배포가 가능합니다</p>
+            <p class="text-emerald-400 font-black text-xs tracking-wide mb-5">이&nbsp;이벤트는 사후 대응이 아니라 사전 배포가 가능합니다.</p>
             <p class="text-sm md:text-base text-slate-300 leading-relaxed mb-5 max-w-[46em]">
                     시뮬레이션은 <strong class="text-white">장애 위험을 감지한&nbsp;뒤 비상용 웹뷰를 배포</strong>하는 순서로 그려져 있습니다. <br class="hidden md:block">
                     그런데 수능 종료 시각은 <strong class="text-emerald-400">몇&nbsp;달 전에 공지되는 확정 일정</strong>입니다. <br class="hidden md:block">
@@ -540,17 +543,17 @@ html { scroll-behavior: smooth; }
                     95가 아니라 처음부터 71 수준으로 들어가므로 용량선에 훨씬 여유가 생깁니다.
                 </p>
             <div class="bg-white/10 rounded-xl p-6 border border-white/20">
-                <p class="text-xs font-black text-emerald-400 mb-3">사후 대응으로 그린&nbsp;것이 제안을 낮춰 보이게 합니다</p>
+                <p class="text-xs font-black text-emerald-400 mb-3">사후 대응으로 그린&nbsp;것이 제안을 낮춰 보이게 합니다.</p>
                 <p class="text-xs text-slate-300 leading-relaxed max-w-[46em]">
                     감지&nbsp;후 대응은 <strong class="text-white">언제 일어날지 모르는 장애</strong>에 쓰는 방식입니다. <br class="hidden md:block">
                     시각이 정해진 이벤트에는 사전 전환이 맞고, 실행 난이도도 더&nbsp;낮습니다. <br class="hidden md:block">
-                    버튼 순서를 <strong class="text-emerald-400">사전 전환과 비상 대응 두&nbsp;가지</strong>로 나눠 보여주면 운영 계획을 세울&nbsp;줄 안다는&nbsp;점이 함께 전달됩니다. 감지 대응은 <strong class="text-white">예측하지 못한 다른 폭주</strong>를 위한 두&nbsp;번째 장치로 남겨둡니다.
+                    버튼 순서를 <strong class="text-emerald-400">사전 전환과 비상 대응 두&nbsp;가지</strong>로 나눠 보여주면 운영 계획을 세울&nbsp;줄 안다는&nbsp;점이 함께 전달됩니다. <br class="hidden md:block">감지 대응은 <strong class="text-white">예측하지 못한 다른 폭주</strong>를 위한 두&nbsp;번째 장치로 남겨둡니다.
                 </p>
             </div>
         </div>
 
         <div class="bg-white border-2 border-slate-300 rounded-2xl p-8 mb-8">
-            <p class="text-sm font-black text-slate-800 mb-5">티켓 세&nbsp;건이 서로 다른 세&nbsp;조직으로 갑니다</p>
+            <p class="text-sm font-black text-slate-800 mb-5">티켓 세&nbsp;건이 서로 다른 세&nbsp;조직으로 갑니다.</p>
             <p class="text-slate-600 leading-relaxed mb-6">
                 전략 3의 예시 티켓은 세&nbsp;건입니다. 담당 영역이 <strong class="text-slate-900">모두 다릅니다.</strong>
             </p>
@@ -587,16 +590,16 @@ html { scroll-behavior: smooth; }
                 </table>
             </div>
             <div class="bg-amber-50 rounded-2xl p-6 border border-amber-200 mb-5">
-                <p class="text-xs font-black text-amber-800 mb-3">결제가 막히는&nbsp;건이 보통으로 잡혀 있습니다</p>
-                <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
+                <p class="text-xs font-black text-amber-800 mb-3">결제가 막히는&nbsp;건이 보통으로 잡혀 있습니다.</p>
+                <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]" style="max-width:50em;text-wrap:wrap">
                     배속 터치 프리징은 <strong class="text-slate-800">높음</strong>, 결제 버튼이 가려지는&nbsp;건은 <strong class="text-slate-800">보통</strong>입니다. <br class="hidden md:block">
                     프리징은 사용 불편이고 결제 차단은 <strong class="text-amber-800">매출이 발생하지 않는 상태</strong>입니다. <br class="hidden md:block">
                     어느 쪽이 급한지는 기준에 따라 갈리는데, 그&nbsp;기준이 문서에 없습니다. <br class="hidden md:block">
-                    영향 범위로 볼지 매출 영향으로 볼지 복구 난이도로 볼지를 정해두지 않으면 <strong class="text-slate-800">번역은 되지만 순서는 담당자마다 달라집니다.</strong>
+                    영향 범위로 볼지 매출 영향으로 볼지 복구 난이도로 볼지를 정해두지 않으면&nbsp;<strong class="text-slate-800">번역은 되지만 순서는 담당자마다 달라집니다.</strong>
                 </p>
             </div>
-            <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">번역 다음은 분류 규칙입니다. 세&nbsp;건의 담당이 모두 다르므로 <strong>어디로 보낼지와 어느 순서로 처리할지를 티켓 양식에 미리 넣어야</strong> 실제로 돌아갑니다. <br class="hidden md:block">
-전략 3의 재현 스텝은 개발팀이 바로 착수하게 해주지만, 어느 개발팀인지는 아직 사람이 판단합니다. 유형과 화면 위치로 담당을 자동 배정하면 전략 1의 자동화와 같은 성격이 됩니다.</p>
+            <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">번역 다음은 분류 규칙입니다. <br class="hidden md:block">세&nbsp;건의 담당이 모두 다르므로 <strong>어디로 보낼지와 어느 순서로 처리할지를 티켓 양식에 미리 넣어야</strong> 실제로 돌아갑니다. <br class="hidden md:block">
+전략 3의 재현 스텝은 개발팀이 바로 착수하게 해주지만, 어느 개발팀인지는 아직 사람이 판단합니다. <br class="hidden md:block">유형과 화면 위치로 담당을 자동 배정하면 전략 1의 자동화와 같은 성격이 됩니다.</p>
         </div>
 
         
@@ -608,10 +611,10 @@ html { scroll-behavior: smooth; }
         <div>
             <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-7">
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                    <li>&bull; <strong class="text-slate-800">피크 시점 최대 동시접속과 응답 시간</strong> &mdash; 완화 전환&nbsp;후에도 용량 대비 여유가 유지되는지</li>
-                    <li class="bal">&bull; <strong class="text-slate-800">전환 시점과 복귀 시점</strong> &mdash; 사전 전환이 실제로 피크를 낮추는지 확인합니다</li>
-                    <li class="bal-m">&bull; <strong class="text-slate-800">검수 오류 유출 건수</strong> &mdash; 자동화 통과&nbsp;후 운영&nbsp;중 발견된 데이터 오류. 절감 시간과 함께 봅니다</li>
-                    <li>&bull; <strong class="text-slate-800">증상별 리뷰 건수</strong> &mdash; 같은 문제의 반복 규모. VOC 처리 우선순위의 근거입니다</li>
+                    <li>&bull; <strong class="text-slate-800">피크 시점 최대 동시접속과 응답 시간</strong> &mdash; 완화 전환&nbsp;후에도 용량 대비 여유가 유지되는지 봅니다.</li>
+                    <li class="bal">&bull; <strong class="text-slate-800">전환 시점과 복귀 시점</strong> &mdash; 사전 전환이 실제로 피크를 낮추는지 확인합니다.</li>
+                    <li class="bal-m">&bull; <strong class="text-slate-800">검수 오류 유출 건수</strong> &mdash; 자동화 통과&nbsp;후 운영&nbsp;중 발견된 데이터 오류. 절감 시간과 함께 봅니다.</li>
+                    <li>&bull; <strong class="text-slate-800">증상별 리뷰 건수</strong> &mdash; 같은 문제의 반복 규모. VOC 처리 우선순위의 근거입니다.</li>
                     <li class="bal">&bull; <strong class="text-slate-800">재현 성공률</strong> &mdash; 작성한 재현 스텝으로 개발팀이 실제 재현한 비율</li>
                 </ul>
             </div>

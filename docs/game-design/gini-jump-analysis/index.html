@@ -99,7 +99,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 800;
         }
         @media (min-width: 768px) {
@@ -161,6 +161,9 @@ html { scroll-behavior: smooth; }
 <style>/* 구역 사이 간격 줄임 (스크롤 양 줄이기) */
 .tab-content + .tab-content{margin-top:0}
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-blue-500{color:#2563eb} html body .text-emerald-600{color:#047857} html body .text-red-600{color:#b91c1c}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="antialiased">
 
@@ -182,7 +185,7 @@ html { scroll-behavior: smooth; }
                             Gini Jump
                         </h1>
                         <p class="text-gray-300 text-sm md:text-base leading-relaxed max-w-2xl mb-6 font-medium">
-                    코로나19 팬데믹 시기, 여행에 대한 대리 만족을 주는 '방구석 세계 여행' 콘셉트의 2D 모바일 점프 아케이드 게임입니다. <br class="hidden md:block">
+                    코로나19 팬데믹 시기, 여행에 대한 대리 만족을 주는 <br class="hidden md:block">'방구석 세계 여행' 콘셉트의 2D 모바일 점프 아케이드 게임입니다. <br class="hidden md:block">
                     자이로센서 조작과 각국 랜드마크를 담은 픽셀 아트 배경을 만들어, 유니티로 앱&nbsp;출시까지 마쳤습니다.
                 </p>
                         <div class="flex flex-wrap gap-3 mt-2 text-gray-400 text-xs font-mono">
@@ -196,7 +199,7 @@ html { scroll-behavior: smooth; }
                     </div>
                     <div class="w-24 h-24 rounded-3xl bg-blue-600 flex flex-col items-center justify-center shadow-2xl shrink-0 border-4 border-white/20 transform rotate-3">
                         <span class="text-4xl drop-shadow-md">🦔</span>
-                        <span class="text-[8px] font-black mt-1 opacity-70 uppercase tracking-widest text-blue-100">Gini Jump</span>
+                        <span class="text-xs font-black mt-1 opacity-70 uppercase tracking-widest text-blue-100">Gini Jump</span>
                     </div>
                 </div>
             </div>
@@ -207,40 +210,40 @@ html { scroll-behavior: smooth; }
                 <section class="mb-12" aria-label="이 문서가 하는 말">
                   <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
                     <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-                      <p class="text-[11px] font-black tracking-[0.12em] text-blue-700 mb-3">문서 소개</p>
+                      <p class="text-xs font-black tracking-[0.12em] text-blue-700 mb-3">문서 소개</p>
                       <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">자이로센서로 조작하는 2D 점프 게임을 기획해 실제 앱으로 출시한 기록입니다.</p>
                     </div>
                     <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
                       <div class="px-3 py-5 md:py-6 text-center">
-                        <p class="text-[11px] font-bold text-slate-500 mb-2 bal">팀</p>
+                        <p class="text-xs font-bold text-slate-500 mb-2 bal">팀</p>
                         <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">4인</p>
-                        <p class="text-[11px] text-slate-500 mt-1 bal">대학 재학&nbsp;중</p>
+                        <p class="text-xs text-slate-500 mt-1 bal">대학 재학&nbsp;중</p>
                       </div>
                       <div class="px-3 py-5 md:py-6 text-center">
-                        <p class="text-[11px] font-bold text-slate-500 mb-2 bal">기간</p>
+                        <p class="text-xs font-bold text-slate-500 mb-2 bal">기간</p>
                         <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">15주</p>
-                        <p class="text-[11px] text-slate-500 mt-1 bal">출시까지</p>
+                        <p class="text-xs text-slate-500 mt-1 bal">출시까지</p>
                       </div>
                       <div class="px-3 py-5 md:py-6 text-center">
-                        <p class="text-[11px] font-bold text-slate-500 mb-2 bal">테마</p>
+                        <p class="text-xs font-bold text-slate-500 mb-2 bal">테마</p>
                         <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">4개국</p>
-                        <p class="text-[11px] text-slate-500 mt-1 bal">픽셀 아트 직접 제작</p>
+                        <p class="text-xs text-slate-500 mt-1 bal">픽셀 아트 직접 제작</p>
                       </div>
                     </div>
                     <div class="px-6 md:px-9 py-6 md:py-7">
-                      <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">출시까지 가기 위해 내린 선택</p>
+                      <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">출시까지 가기 위해 내린 선택</p>
                       <div class="grid md:grid-cols-3 gap-3">
                         <div class="rounded-xl border border-slate-200 p-4">
-                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">만들&nbsp;수 있는 쪽을 골랐습니다</p>
-                          <p class="text-xs text-slate-500 leading-relaxed bal">창의성 최고점 대신 제작 용이성이 높은 후보를 택해 15주 안에 출시까지 끝냈습니다</p>
+                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">만들&nbsp;수 있는 쪽을 골랐습니다.</p>
+                          <p class="text-xs text-slate-500 leading-relaxed bal">창의성 최고점 대신 제작 용이성이 높은 후보를 택해 <br class="hidden md:block">15주 안에 출시까지 끝냈습니다.</p>
                         </div>
                         <div class="rounded-xl border border-slate-200 p-4">
-                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">조작은 자이로로 정했습니다</p>
-                          <p class="text-xs text-slate-500 leading-relaxed bal">설명이 거의 필요 없는 조작을 얻고, 누워서 하는 상황은 내줬습니다</p>
+                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">조작은 자이로로 정했습니다.</p>
+                          <p class="text-xs text-slate-500 leading-relaxed bal">설명이 거의 필요 없는 조작을 얻고, <br class="hidden md:block">누워서 하는 상황은 내줬습니다.</p>
                         </div>
                         <div class="rounded-xl border border-slate-200 p-4">
-                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">테마별 기믹은 다음 과제로 남겼습니다</p>
-                          <p class="text-xs text-slate-500 leading-relaxed bal">지금은 4개국이 같은 발판과 장애물을 씁니다. 배경만 바꾸면 다른 벽지라, 나라마다 기믹이 하나씩 있어야 콘텐츠가 됩니다</p>
+                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">테마별 기믹은 다음 과제로 남겼습니다.</p>
+                          <p class="text-xs text-slate-500 leading-relaxed bal">지금은 4개국이 같은 발판과 장애물을 씁니다. 배경만 바꾸면 다른 벽지라, 나라마다 기믹이 하나씩 있어야 콘텐츠가 됩니다.</p>
                         </div>
                       </div>
                     </div>
@@ -272,28 +275,28 @@ html { scroll-behavior: smooth; }
                             <span class="text-blue-600">#</span> 프로젝트 배경 및&nbsp;기획 의도
                         </h3>
                         <ul class="space-y-4 text-sm text-gray-700 leading-relaxed list-none pl-0">
-                            <li class="flex items-start gap-3"><span class="text-blue-500 mt-1">•</span> <span class="bal-m"><strong>콘셉트 도출:</strong> 코로나19로 단절된 해외여행에 대한 대리 만족을 주고자 '세계 랜드마크 여행'을 메인 테마로 선정</span></li>
-                            <li class="flex items-start gap-3"><span class="text-blue-500 mt-1">•</span> <span class="bal-m"><strong>핵심 기획:</strong> 기기 기울기&#8288;(자이로센서)&#8288;를 활용한 직관적인 조작법 채택 및&nbsp;무작위 발판, 움직이는 장애물 생성 로직 설계</span></li>
+                            <li class="flex items-start gap-3"><span class="text-blue-500 mt-1">•</span> <span class="bal-m"><strong>콘셉트 도출:</strong> 코로나19로 단절된 해외여행에 대한 대리 만족을 주고자 <br class="hidden md:block">'세계 랜드마크 여행'을 메인 테마로 선정</span></li>
+                            <li class="flex items-start gap-3"><span class="text-blue-500 mt-1">•</span> <span class="bal-m"><strong>핵심 기획:</strong> 기기 기울기&#8288;(자이로센서)&#8288;를 활용한 직관적인 조작법 채택 및 <br class="hidden md:block">무작위 발판, 움직이는 장애물 생성 로직 설계</span></li>
                         </ul>
                     </div>
                     
                     <!-- 캐릭터 선정 매트릭스 UI -->
                     <div class="content-panel p-6 md:p-8 shadow-sm border-gray-100 flex flex-col h-full">
-                        <p class="text-[10px] font-bold text-gray-500 mb-6 tracking-[0.2em] text-center">캐릭터 선정 점수표</p>
+                        <p class="text-xs font-bold text-gray-500 mb-6 tracking-[0.2em] text-center">캐릭터 선정 점수표</p>
                         
                         <div class="w-full mx-auto flex-1 flex flex-col justify-center">
                             <div class="grid grid-cols-4 gap-2 mb-4 text-center">
                                 <div></div>
-                                <div class="text-[10px] md:text-xs font-bold text-gray-500">창의성</div>
-                                <div class="text-[10px] md:text-xs font-bold text-gray-500">제작 용이성</div>
-                                <div class="text-[10px] md:text-xs font-bold text-gray-500">협업 가능성</div>
+                                <div class="text-xs md:text-xs font-bold text-gray-500">창의성</div>
+                                <div class="text-xs md:text-xs font-bold text-gray-500">제작 용이성</div>
+                                <div class="text-xs md:text-xs font-bold text-gray-500">협업 가능성</div>
                             </div>
 
                             <div class="grid grid-cols-4 gap-2 items-center bg-blue-50 border-2 border-blue-200 rounded-2xl p-3 mb-3 relative shadow-md transform scale-[1.02] z-10">
-                                <div class="absolute -top-3 left-4 bg-blue-600 text-white text-[9px] font-black px-2 py-0.5 rounded-full tracking-tighter shadow-sm">선택됨</div>
+                                <div class="absolute -top-3 left-4 bg-blue-600 text-white text-xs font-black px-2 py-0.5 rounded-full tracking-tighter shadow-sm">선택됨</div>
                                 <div class="flex flex-col items-center justify-center">
                                     <span class="text-2xl mb-1 drop-shadow-sm">🐹</span>
-                                    <span class="text-[10px] md:text-xs font-black text-blue-900 leading-tight">기니점프</span>
+                                    <span class="text-xs md:text-xs font-black text-blue-900 leading-tight">기니점프</span>
                                 </div>
                                 <div class="flex justify-center">
                                     <div class="donut-chart" style="background: conic-gradient(#34d399 50%, #e5e7eb 0);">
@@ -315,7 +318,7 @@ html { scroll-behavior: smooth; }
                             <div class="grid grid-cols-4 gap-2 items-center bg-white border border-gray-100 rounded-2xl p-3 mb-3 opacity-60 hover:opacity-100 transition-opacity">
                                 <div class="flex flex-col items-center justify-center">
                                     <span class="text-2xl mb-1 grayscale opacity-50">🦥</span>
-                                    <span class="text-[10px] md:text-xs font-bold text-gray-500">늘보런</span>
+                                    <span class="text-xs md:text-xs font-bold text-gray-500">늘보런</span>
                                 </div>
                                 <div class="flex justify-center">
                                     <div class="donut-chart" style="background: conic-gradient(#34d399 50%, #f3f4f6 0);">
@@ -337,7 +340,7 @@ html { scroll-behavior: smooth; }
                             <div class="grid grid-cols-4 gap-2 items-center bg-white border border-gray-100 rounded-2xl p-3 opacity-60 hover:opacity-100 transition-opacity">
                                 <div class="flex flex-col items-center justify-center">
                                     <span class="text-2xl mb-1 grayscale opacity-50">🦡</span>
-                                    <span class="text-[10px] md:text-xs font-bold text-gray-500">개미핥기</span>
+                                    <span class="text-xs md:text-xs font-bold text-gray-500">개미핥기</span>
                                 </div>
                                 <div class="flex justify-center">
                                     <div class="donut-chart" style="background: conic-gradient(#34d399 100%, #f3f4f6 0);">
@@ -357,9 +360,8 @@ html { scroll-behavior: smooth; }
                             </div>
                         </div>
 
-                        <p class="text-[11px] text-gray-500 mt-8 text-center leading-relaxed font-medium">
-                            늘보런, 개미핥기&nbsp;등 동물을 후보군에 두고 점수화하여<br class="hidden md:block"> 
-                            <strong class="text-blue-600 font-bold">제작 용이성&#8288;(4점)&#8288;과 합계&#8288;(9점)&#8288;가 가장 높은 '기니점프'로 최종&nbsp;확정</strong>
+                        <p class="text-xs text-gray-500 mt-8 text-center leading-relaxed font-medium">
+                            늘보런, 개미핥기&nbsp;등 동물을 후보군에 두고 점수화하여 <strong class="text-blue-600 font-bold">제작 용이성&#8288;(4점)&#8288;과 합계&#8288;(9점)&#8288;가 가장 높은 '기니점프'로 최종&nbsp;확정</strong>
                         </p>
                     </div>
                 </div>
@@ -400,27 +402,27 @@ html { scroll-behavior: smooth; }
                 </div>
                 
                 <div class="bg-gray-50 p-6 md:p-10 rounded-[2rem] border border-gray-100 text-center shadow-inner">
-                    <p class="text-[10px] font-bold text-gray-500 mb-8 tracking-[0.2em]">캐릭터 원화</p>
+                    <p class="text-xs font-bold text-gray-500 mb-8 tracking-[0.2em]">캐릭터 원화</p>
                     <div class="max-w-4xl mx-auto mb-10">
                         <img src="guinea-pig-pixel-art-variations.webp" loading="lazy" decoding="async" alt="기니점프 캐릭터 테마별 디자인" class="w-full h-auto rounded-2xl shadow-md border border-white" onerror="this.src='';" width="989" height="197">
                     </div>
                     
                     <div class="flex flex-wrap justify-center gap-3 md:gap-4 max-w-4xl mx-auto mb-10">
                         <div class="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
-                            <span class="text-base">🇰🇷</span><span class="text-[11px] font-black text-slate-700">한국</span>
+                            <span class="text-base">🇰🇷</span><span class="text-xs font-black text-slate-700">한국</span>
                         </div>
                         <div class="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
-                            <span class="text-base">🇺🇸</span><span class="text-[11px] font-black text-slate-700">미국</span>
+                            <span class="text-base">🇺🇸</span><span class="text-xs font-black text-slate-700">미국</span>
                         </div>
                         <div class="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
-                            <span class="text-base">🇫🇷</span><span class="text-[11px] font-black text-slate-700">프랑스</span>
+                            <span class="text-base">🇫🇷</span><span class="text-xs font-black text-slate-700">프랑스</span>
                         </div>
                         <div class="flex items-center gap-2 px-3 py-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
-                            <span class="text-base">🇪🇬</span><span class="text-[11px] font-black text-slate-700">이집트</span>
+                            <span class="text-base">🇪🇬</span><span class="text-xs font-black text-slate-700">이집트</span>
                         </div>
                     </div>
 
-                    <p class="text-sm text-slate-600 max-w-3xl mx-auto leading-relaxed font-medium text-left">
+                    <p class="text-sm text-slate-600 max-w-3xl mx-auto leading-relaxed font-medium text-center">
                     국가 테마에 맞춰 캐릭터 코스튬과 외형을 픽셀 아트로 그렸습니다. <br class="hidden md:block">
                     나라를 바꾸면 캐릭터 모습도 함께 바뀝니다.
                 </p>
@@ -440,9 +442,9 @@ html { scroll-behavior: smooth; }
 버튼 설명이 필요 없는 조작입니다.
                 </p>
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-blue-50 border border-blue-100 rounded-full text-[10px] font-bold text-blue-600">#유니티_엔진</span>
-                            <span class="px-3 py-1 bg-blue-50 border border-blue-100 rounded-full text-[10px] font-bold text-blue-600">#자이로센서</span>
-                            <span class="px-3 py-1 bg-blue-50 border border-blue-100 rounded-full text-[10px] font-bold text-blue-600">#모바일_UI</span>
+                            <span class="px-3 py-1 bg-blue-50 border border-blue-100 rounded-full text-xs font-bold text-blue-600">#유니티_엔진</span>
+                            <span class="px-3 py-1 bg-blue-50 border border-blue-100 rounded-full text-xs font-bold text-blue-600">#자이로센서</span>
+                            <span class="px-3 py-1 bg-blue-50 border border-blue-100 rounded-full text-xs font-bold text-blue-600">#모바일_UI</span>
                         </div>
                     </div>
                     
@@ -453,7 +455,7 @@ html { scroll-behavior: smooth; }
                             <img src="main-screen.webp" alt="시작 화면 및 테마 선택" class="w-full h-auto block relative z-0" onerror="this.src='';" decoding="async" loading="lazy" width="598" height="573">
                         </div>
                         <!-- 해결: 50% 분할로 각 폰 화면의 정중앙에 텍스트 배치 -->
-                        <div class="flex w-full text-[11px] font-black text-slate-500 py-1">
+                        <div class="flex w-full text-xs font-black text-slate-500 py-1">
                             <div class="w-1/2 flex justify-center text-center"><span>[ 시작 화면 ]</span></div>
                             <div class="w-1/2 flex justify-center text-center"><span>[ 테마 선택 화면 ]</span></div>
                         </div>
@@ -467,7 +469,7 @@ html { scroll-behavior: smooth; }
                         <h3 class="text-2xl font-bold text-gray-900 inline-flex items-center gap-2">
                             <span class="text-blue-600">#</span> 인게임 기믹 및&nbsp;국가별 실제 플레이 화면
                         </h3>
-                        <p class="text-sm text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium text-left">
+                        <p class="text-sm text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium text-center">
                     밟으면 더&nbsp;높이 도약하는 '슈퍼 점프 발판'과 플레이어를 방해하는 '장애물'을 배치했습니다. <br class="hidden md:block">
                     아래 4개국 테마는 실제 플레이 화면입니다.
                 </p>
@@ -479,7 +481,7 @@ html { scroll-behavior: smooth; }
                             
                             <!-- 1. 기믹 컴포넌트 시각화 -->
                             <div class="lg:col-span-1 bg-white p-6 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center">
-                                <span class="text-[10px] font-black text-gray-500 tracking-wide mb-8">구성 요소별 기믹</span>
+                                <span class="text-xs font-black text-gray-500 tracking-wide mb-8">구성 요소별 기믹</span>
                                 <div class="space-y-10 w-full flex-1 flex flex-col justify-center px-2">
                                     <!-- 발판 묘사 -->
                                     <div class="flex items-center justify-between">
@@ -488,8 +490,8 @@ html { scroll-behavior: smooth; }
                                             <div class="platform-bar bg-red-500 border-2 border-yellow-300"></div>
                                         </div>
                                         <div class="text-right">
-                                            <span class="bg-gray-100 text-gray-600 text-[10px] font-bold px-2 py-1 rounded">발판</span>
-                                            <p class="text-[11px] font-black text-gray-800 mt-1">일반 / 슈퍼 점프</p>
+                                            <span class="bg-gray-100 text-gray-600 text-xs font-bold px-2 py-1 rounded">발판</span>
+                                            <p class="text-xs font-black text-gray-800 mt-1">일반 / 슈퍼 점프</p>
                                         </div>
                                     </div>
                                     <!-- 장애물 묘사 -->
@@ -499,8 +501,8 @@ html { scroll-behavior: smooth; }
                                             <span class="text-3xl">🦅</span>
                                         </div>
                                         <div class="text-right">
-                                            <span class="bg-red-50 text-red-600 text-[10px] font-bold px-2 py-1 rounded">장애물</span>
-                                            <p class="text-[11px] font-black text-gray-800 mt-1">고양이 / 독수리</p>
+                                            <span class="bg-red-50 text-red-600 text-xs font-bold px-2 py-1 rounded">장애물</span>
+                                            <p class="text-xs font-black text-gray-800 mt-1">고양이 / 독수리</p>
                                         </div>
                                     </div>
                                 </div>
@@ -518,12 +520,12 @@ html { scroll-behavior: smooth; }
                                     <div class="flex w-full bg-white border-t border-slate-100 py-3 z-10 relative">
                                         <div class="w-1/2 flex justify-center border-r border-slate-100">
                                             <div class="flex items-center gap-1.5">
-                                                <span class="text-xs">🇰🇷</span><span class="text-[10px] font-black text-slate-700">한국</span>
+                                                <span class="text-xs">🇰🇷</span><span class="text-xs font-black text-slate-700">한국</span>
                                             </div>
                                         </div>
                                         <div class="w-1/2 flex justify-center">
                                             <div class="flex items-center gap-1.5">
-                                                <span class="text-xs">🇺🇸</span><span class="text-[10px] font-black text-slate-700">미국</span>
+                                                <span class="text-xs">🇺🇸</span><span class="text-xs font-black text-slate-700">미국</span>
                                             </div>
                                         </div>
                                     </div>
@@ -538,12 +540,12 @@ html { scroll-behavior: smooth; }
                                     <div class="flex w-full bg-white border-t border-slate-100 py-3 z-10 relative">
                                         <div class="w-1/2 flex justify-center border-r border-slate-100">
                                             <div class="flex items-center gap-1.5">
-                                                <span class="text-xs">🇫🇷</span><span class="text-[10px] font-black text-slate-700">프랑스</span>
+                                                <span class="text-xs">🇫🇷</span><span class="text-xs font-black text-slate-700">프랑스</span>
                                             </div>
                                         </div>
                                         <div class="w-1/2 flex justify-center">
                                             <div class="flex items-center gap-1.5">
-                                                <span class="text-xs">🇪🇬</span><span class="text-[10px] font-black text-slate-700">이집트</span>
+                                                <span class="text-xs">🇪🇬</span><span class="text-xs font-black text-slate-700">이집트</span>
                                             </div>
                                         </div>
                                     </div>
@@ -591,12 +593,12 @@ html { scroll-behavior: smooth; }
                     <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 space-y-3 shadow-sm transition-transform hover:-translate-y-1">
                         <div class="text-3xl">🌏</div>
                         <h4 class="font-bold text-blue-900 text-sm mb-1">글로벌 테마 확장성</h4>
-                        <p class="text-xs text-gray-700 leading-relaxed">4개국&nbsp;외에도 랜드마크 에셋만 더하면 테마를 늘릴&nbsp;수 있는 구조입니다.</p>
+                        <p class="text-xs text-gray-700 leading-relaxed">4개국&nbsp;외에도 랜드마크 에셋만 더하면 <br class="hidden md:block">테마를 늘릴&nbsp;수 있는 구조입니다.</p>
                     </div>
                     <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 space-y-3 shadow-sm transition-transform hover:-translate-y-1">
                         <div class="text-3xl">🔄</div>
                         <h4 class="font-bold text-blue-900 text-sm mb-1">대중성 및&nbsp;잔존율 확보</h4>
-                        <p class="text-xs text-gray-700 leading-relaxed">랭킹으로 점수를 겨루게 해 다시 플레이할 이유를 만듭니다.</p>
+                        <p class="text-xs text-gray-700 leading-relaxed">랭킹으로 점수를 겨루게 해 <br class="hidden md:block">다시 플레이할 이유를 만듭니다.</p>
                     </div>
                     <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 space-y-3 shadow-sm transition-transform hover:-translate-y-1">
                         <div class="text-3xl">🎯</div>
@@ -622,18 +624,18 @@ html { scroll-behavior: smooth; }
 
                 <div class="grid md:grid-cols-3 gap-4">
                     <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-                        <p class="text-[10px] font-black tracking-wide text-blue-500 mb-3">캐릭터 선정</p>
-                        <p class="font-black text-gray-900 mb-3 leading-snug bal">창의성을 내주고 제작 용이성을 샀습니다</p>
-                        <p class="text-xs text-gray-500 leading-relaxed bal">창의성 최고점인 개미핥기 4점 대신 2점짜리 기니점프를 골랐습니다. 제작 용이성 4점&#8288;(후보&nbsp;중 최고)&#8288;과 협업 3점&#8288;(늘보런과 공동 최고)&#8288;이 이유입니다.</p>
+                        <p class="text-xs font-black tracking-wide text-blue-500 mb-3">캐릭터 선정</p>
+                        <p class="font-black text-gray-900 mb-3 leading-snug bal">창의성을 내주고 제작 용이성을 샀습니다.</p>
+                        <p class="text-xs text-gray-500 leading-relaxed bal">창의성 최고점인 개미핥기 4점 대신 <br class="hidden md:block">2점짜리 기니점프를 골랐습니다. <br class="hidden md:block">제작 용이성 4점&#8288;(후보&nbsp;중 최고)&#8288;과 <br class="hidden md:block">협업 3점&#8288;(늘보런과 공동 최고)&#8288;이 이유입니다.</p>
                     </div>
                     <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-                        <p class="text-[10px] font-black tracking-wide text-blue-500 mb-3">자이로 조작</p>
-                        <p class="font-black text-gray-900 mb-3 leading-snug bal">직관성을 사고 플레이 상황을 내줬습니다</p>
+                        <p class="text-xs font-black tracking-wide text-blue-500 mb-3">자이로 조작</p>
+                        <p class="font-black text-gray-900 mb-3 leading-snug bal">직관성을 사고 플레이 상황을 내줬습니다.</p>
                         <p class="text-xs text-gray-500 leading-relaxed bal">설명이 필요 없는 조작을 얻었지만 누워서나 이동&nbsp;중에는 쓰기 어렵습니다. 터치를 옵션으로 함께 두면 대부분 풀립니다.</p>
                     </div>
                     <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-                        <p class="text-[10px] font-black tracking-wide text-blue-500 mb-3">테마 확장</p>
-                        <p class="font-black text-gray-900 mb-3 leading-snug bal">에셋을 늘리는&nbsp;것과 사람이 남는&nbsp;것은 다릅니다</p>
+                        <p class="text-xs font-black tracking-wide text-blue-500 mb-3">테마 확장</p>
+                        <p class="font-black text-gray-900 mb-3 leading-snug bal">에셋을 늘리는&nbsp;것과 사람이 남는&nbsp;것은 다릅니다.</p>
                         <p class="text-xs text-gray-500 leading-relaxed bal">지금은 4개국이 같은 발판과 장애물을 씁니다. 배경만 바뀌고 발판과 장애물이 같으면 새&nbsp;테마는 다른 벽지입니다. 나라마다 기믹을 하나씩 붙여야 콘텐츠가 됩니다.</p>
                     </div>
                 </div>
@@ -643,7 +645,7 @@ html { scroll-behavior: smooth; }
             <!-- 푸터 -->
             <div class="p-10 bg-gray-950 text-white text-center border-t border-gray-800">
                 <p class="text-xs font-medium text-gray-400 mb-2">기니점프 모바일 게임 기획과 제작</p>
-                <p class="text-[10px] tracking-wide opacity-40">게임 개발 기록 &copy; 허재석</p>
+                <p class="text-xs tracking-wide opacity-40">게임 개발 기록 &copy; 허재석</p>
             </div>
         </div>
     </div>

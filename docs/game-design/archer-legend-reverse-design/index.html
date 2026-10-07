@@ -71,6 +71,8 @@
             background-color: #f1f5f9;
         }
 
+        /* 목업 안 글자를 12px로 키운 뒤 아래 버튼이 잘리지 않게 높이를 조금 늘림 */
+        .mockup-panel.h-\[350px\] { height: 384px; }
         .mockup-panel {
             background: #ffffff;
             border: 1px solid #cbd5e1;
@@ -117,6 +119,10 @@
 html { scroll-behavior: smooth; }
 .tab-btn { display: flex; align-items: center; justify-content: center; text-align: center; padding-left: 12px; padding-right: 12px; }
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-amber-500{color:#b45309} html body .text-amber-600{color:#b45309} html body .text-emerald-600{color:#047857} html body .text-indigo-500{color:#4f46e5} html body .text-red-500{color:#b91c1c} html body .text-rose-500{color:#be123c} html body .text-teal-600{color:#0f766e}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="antialiased">
 
@@ -151,75 +157,74 @@ html { scroll-behavior: smooth; }
                 <section class="mb-12" aria-label="이 문서가 하는 말">
                   <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
                     <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-                      <p class="text-[11px] font-black tracking-[0.12em] text-blue-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
+                      <p class="text-xs font-black tracking-[0.12em] text-blue-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
                       <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">성장 곡선과 과금 구조를 역으로 분석해 신규 시스템 3종을 제안한 문서입니다.</p>
                     </div>
                     <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
                       <div class="px-3 py-5 md:py-6 text-center">
-                        <p class="text-[11px] font-bold text-slate-500 mb-2 bal">3개씩 4번 융합해 전설로</p>
+                        <p class="text-xs font-bold text-slate-500 mb-2 bal">3개씩 4번 융합해 전설로</p>
                         <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">81배</p>
-                        <p class="text-[11px] text-slate-500 mt-1 bal">등급마다 3배씩 쌓입니다</p>
+                        <p class="text-xs text-slate-500 mt-1 bal">등급마다 3배씩 쌓입니다.</p>
                       </div>
                       <div class="px-3 py-5 md:py-6 text-center">
-                        <p class="text-[11px] font-bold text-slate-500 mb-2 bal">상자에서 부위를 고를&nbsp;수 없음</p>
+                        <p class="text-xs font-bold text-slate-500 mb-2 bal">상자에서 부위를 고를&nbsp;수 없음</p>
                         <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">9배</p>
-                        <p class="text-[11px] text-slate-500 mt-1 bal">장착 슬롯이 9칸입니다</p>
+                        <p class="text-xs text-slate-500 mt-1 bal">장착 슬롯이 9칸입니다.</p>
                       </div>
                       <div class="px-3 py-5 md:py-6 text-center">
-                        <p class="text-[11px] font-bold text-slate-500 mb-2 bal">전설 1개에 필요한 뽑기</p>
+                        <p class="text-xs font-bold text-slate-500 mb-2 bal">전설 1개에 필요한 뽑기</p>
                         <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">729회</p>
-                        <p class="text-[11px] text-slate-500 mt-1 bal">81 × 9, 단순화한 기대값</p>
+                        <p class="text-xs text-slate-500 mt-1 bal">81 × 9, 단순화한 기대값</p>
                       </div>
                     </div>
                     <div class="px-6 md:px-9 py-6 md:py-7">
-                      <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">제안 내용</p>
+                      <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">제안 내용</p>
                       <div class="grid md:grid-cols-3 gap-3">
                         <div class="rounded-xl border border-slate-200 p-4">
                           <p class="text-sm font-black text-slate-900 mb-1.5 bal">선택형 상자를 먼저</p>
-                          <p class="text-xs text-slate-500 leading-relaxed bal">부위를 고르게 하면 9배가 사라져 729회가 81회로 줄어듭니다</p>
+                          <p class="text-xs text-slate-500 leading-relaxed bal">부위를 고르게 하면 9배가 사라져 <br class="hidden md:block">729회가 81회로 줄어듭니다.</p>
                         </div>
                         <div class="rounded-xl border border-slate-200 p-4">
                           <p class="text-sm font-black text-slate-900 mb-1.5 bal">거래소는 보류</p>
-                          <p class="text-xs text-slate-500 leading-relaxed bal">수수료로 되찾는&nbsp;것은 5%&#8288;인데 상자 매출과 보석 수요를 갉아먹습니다</p>
+                          <p class="text-xs text-slate-500 leading-relaxed bal">수수료로 되찾는&nbsp;것은 5%&#8288;인데 <br class="hidden md:block">상자 매출과 보석 수요를 갉아먹습니다.</p>
                         </div>
                         <div class="rounded-xl border border-slate-200 p-4">
                           <p class="text-sm font-black text-slate-900 mb-1.5 bal">장비 저장 기능</p>
-                          <p class="text-xs text-slate-500 leading-relaxed bal">맞춰 둔&nbsp;조합을 한&nbsp;번에 바꿔 끼우게 합니다</p>
+                          <p class="text-xs text-slate-500 leading-relaxed bal">맞춰 둔&nbsp;조합을 한&nbsp;번에 바꿔 끼우게 합니다.</p>
                         </div>
                       </div>
                     </div>
                     <div class="px-6 md:px-9 py-4 bg-slate-50 border-t border-slate-200">
-                      <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">역기획은 이미 나온 게임을 뜯어 설계 의도를 되짚는 작업입니다. 이&nbsp;문서는 궁수의 전설 장비 시스템을 그렇게 뜯어본&nbsp;것으로, 개발사와 무관한 개인 분석입니다.</p>
+                      <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">역기획은 이미 나온 게임을 뜯어 설계 의도를 되짚는 작업입니다. <br class="hidden md:block">이&nbsp;문서는 궁수의 전설 장비 시스템을 그렇게 뜯어본&nbsp;것으로, 개발사와 무관한 개인 분석입니다.</p>
                     </div>
                   </div>
                 </section>
                 <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-5">역기획 정의와 문서 요약</h2>
                 <p class="text-slate-600 leading-relaxed mb-6">
-                    <strong class="text-slate-900">같은 등급 3개를 합쳐 한&nbsp;단계 올리는 구조에, 뽑기는 부위를 고를&nbsp;수 없습니다. 두&nbsp;조건을 수치로 바꾸면 <strong>729배</strong>가 나옵니다. 그&nbsp;기준으로 제안 세&nbsp;건의 실행 순서를 다시 정했습니다.</strong>
+                    <strong class="text-slate-900">같은 등급 3개를 합쳐 한&nbsp;단계 올리는 구조에, 뽑기는 부위를 고를&nbsp;수 없습니다. <br class="hidden md:block">두&nbsp;조건을 수치로 바꾸면 <strong>729배</strong>가 나옵니다. <br class="hidden md:block">그&nbsp;기준으로 제안 세&nbsp;건의 실행 순서를 다시 정했습니다.</strong>
                 </p>
                 <div class="grid md:grid-cols-3 gap-4">
                     <div class="bg-rose-50 border-2 border-rose-200 rounded-2xl p-5">
-                        <p class="text-[10px] font-black tracking-wide text-rose-500 mb-2">결론 1</p>
-                        <p class="text-sm font-bold text-slate-900 mb-2">정체의 크기는 729배입니다</p>
+                        <p class="text-xs font-black tracking-wide text-rose-500 mb-2">결론 1</p>
+                        <p class="text-sm font-bold text-slate-900 mb-2">정체의 크기는 729배입니다.</p>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                    3배수 융합으로 81배, 부위 지정 불가로 9배가 곱해집니다. <br class="hidden md:block">
+                    3배수 융합으로 81배, <br class="hidden md:block">부위 지정 불가로 9배가 곱해집니다. <br class="hidden md:block">
                     전설 1개에 필요한 뽑기가 기대값 기준 729회입니다.
                 </p>
                     </div>
                     <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-5">
-                        <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-2">결론 2</p>
-                        <p class="text-sm font-bold text-slate-900 mb-2">해결책은 선택형 상자뿐입니다</p>
+                        <p class="text-xs font-black tracking-wide text-emerald-600 mb-2">결론 2</p>
+                        <p class="text-sm font-bold text-slate-900 mb-2">해결책은 선택형 상자뿐입니다.</p>
                         <p class="text-xs text-slate-600 leading-relaxed">
                     두&nbsp;배수&nbsp;중 하나&#8288;(9배)&#8288;를 실제로 제거해 729회를 81회로&nbsp;줄입니다. <br class="hidden md:block">
                     나머지 제안은 배수를 없애지 못합니다.
                 </p>
                     </div>
                     <div class="bg-slate-100 border-2 border-slate-300 rounded-2xl p-5">
-                        <p class="text-[10px] font-black tracking-wide text-slate-600 mb-2">결론 3</p>
-                        <p class="text-sm font-bold text-slate-900 mb-2">거래소는 보류가 맞습니다</p>
+                        <p class="text-xs font-black tracking-wide text-slate-600 mb-2">결론 3</p>
+                        <p class="text-sm font-bold text-slate-900 mb-2">거래소는 보류가 맞습니다.</p>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                    수수료로 회수하는&nbsp;것은 5%&#8288;인데, 상자 매출과 보석 판매 수요를 잠식합니다. <br class="hidden md:block">
-                    거래소는 보류로 뒀습니다.
+                    수수료로 회수하는&nbsp;것은 5%&#8288;인데, <br class="hidden md:block">상자 매출과 보석 판매 수요를 잠식합니다.
                 </p>
                     </div>
                 </div>
@@ -288,17 +293,17 @@ html { scroll-behavior: smooth; }
                         <div class="content-panel p-5">
                             <div class="text-2xl mb-2">🛡️</div>
                             <h4 class="font-bold text-slate-800 mb-2">장착 슬롯 (총&nbsp;9칸)</h4>
-                            <p class="text-sm text-slate-600 bal-t">무기, 방어구, 반지&#8288;(2), 펫&#8288;(2), 팔찌, 목걸이, 마도서로 구성된 방대한 장비 체계&#8288;(부위 종류는 7종, 반지·펫이 2칸씩)</p>
+                            <p class="text-sm text-slate-600 bal-t">무기, 방어구, 반지&#8288;(2), 펫&#8288;(2), 팔찌, 목걸이, 마도서로 구성된 방대한 장비 체계&#8288; <br class="hidden md:block">(부위 종류는 7종, 반지·펫이&nbsp;2칸씩)</p>
                         </div>
                         <div class="content-panel p-5">
                             <div class="text-2xl mb-2">⬆️</div>
                             <h4 class="font-bold text-slate-800 mb-2">강화 단계</h4>
-                            <p class="text-sm text-slate-600">인게임 기본 재화인 코인과 각&nbsp;장비별 고유 주문서를 소모하여 기본 능력치 상향</p>
+                            <p class="text-sm text-slate-600">인게임 기본 재화인 코인과 각&nbsp;장비별 <br class="hidden md:block">고유 주문서를 소모하여 기본 능력치 상향</p>
                         </div>
                         <div class="content-panel p-5">
                             <div class="text-2xl mb-2">✨</div>
                             <h4 class="font-bold text-slate-800 mb-2">융합 및&nbsp;승급</h4>
-                            <p class="text-sm text-slate-600">동일 종류 및&nbsp;등급의 장비 3개를 융합하여 상위 등급 1개로 승급하는 엄격한 수직적 구조</p>
+                            <p class="text-sm text-slate-600">동일 종류 및&nbsp;등급의 장비 3개를 융합하여 <br class="hidden md:block">상위 등급 1개로 승급하는 엄격한 수직적 구조</p>
                         </div>
                     </div>
                 </div>
@@ -348,12 +353,12 @@ html { scroll-behavior: smooth; }
                     </div>
                     <div class="content-panel p-6 md:p-8">
                         <p class="text-slate-600 leading-relaxed mb-6">
-                    피로는 체감이 아니라 계산으로 나옵니다. 같은 등급 3개를 합쳐 1개로 올리는 구조에서 등급이 5단계면 요구량이 <strong>등급마다 3배씩</strong> 쌓입니다.
+                    피로는 체감이 아니라 계산으로 나옵니다. <br class="hidden md:block">같은 등급 3개를 합쳐 1개로 올리는 구조에서 등급이 5단계면 요구량이 <strong>등급마다 3배씩</strong> 쌓입니다.
                 </p>
 
                         <div class="grid md:grid-cols-2 gap-6 mb-8">
                             <div>
-                                <p class="text-[10px] font-black tracking-wide text-slate-500 mb-3">전설 1개를 만드는&nbsp;데 필요한 하위 등급</p>
+                                <p class="text-xs font-black tracking-wide text-slate-500 mb-3">전설 1개를 만드는&nbsp;데 필요한 하위 등급</p>
                                 <div class="overflow-x-auto rounded-2xl border-2 border-slate-200">
                                     <table class="w-full border-collapse text-sm">
                                         <thead>
@@ -395,12 +400,12 @@ html { scroll-behavior: smooth; }
                             </div>
                             <div class="flex flex-col justify-center gap-4">
                                 <div class="bg-rose-50 border-2 border-rose-300 rounded-2xl p-5">
-                                    <p class="text-[10px] font-black tracking-wide text-rose-500 mb-2">슬롯 1개 기준</p>
+                                    <p class="text-xs font-black tracking-wide text-rose-500 mb-2">슬롯 1개 기준</p>
                                     <p class="text-3xl font-black text-rose-700 mb-1">일반 81개</p>
                                     <p class="text-xs text-slate-600 leading-relaxed">전설 장비 하나를 완성하기 위한 최소 재료량입니다.</p>
                                 </div>
                                 <div class="bg-slate-900 rounded-2xl p-5 text-white">
-                                    <p class="text-[10px] font-black tracking-wide text-amber-400 mb-2">장착 슬롯 9칸 전부</p>
+                                    <p class="text-xs font-black tracking-wide text-amber-400 mb-2">장착 슬롯 9칸 전부</p>
                                     <p class="text-3xl font-black text-white mb-1">일반 729개</p>
                                     <p class="text-xs text-slate-300 leading-relaxed bal">81 &times; 9. 이것이 이&nbsp;게임의 최종 성장 목표가 요구하는 재료 총량입니다.</p>
                                 </div>
@@ -408,34 +413,34 @@ html { scroll-behavior: smooth; }
                         </div>
 
                         <div class="bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-6 mb-6">
-                            <p class="text-[10px] font-black tracking-wide text-indigo-500 mb-3">여기에 부위 지정 불가가 곱해집니다</p>
+                            <p class="text-xs font-black tracking-wide text-indigo-500 mb-3">여기에 부위 지정 불가가 곱해집니다.</p>
                             <p class="text-sm md:text-base text-slate-700 leading-relaxed mb-5">
                     상자가 부위를 지정하지 못하므로 원하는 슬롯이 나올 확률은 <strong class="text-slate-900">9분의 1</strong>입니다. <br class="hidden md:block">
                     재료 요구량에 <strong class="text-indigo-700">다시 9배가 곱해집니다.</strong>
                 </p>
                             <div class="grid md:grid-cols-3 gap-3 text-center">
                                 <div class="bg-white rounded-xl p-4 border border-indigo-200">
-                                    <p class="text-[10px] text-slate-500 font-bold mb-1">특정 부위 일반 1개</p>
+                                    <p class="text-xs text-slate-500 font-bold mb-1">특정 부위 일반 1개</p>
                                     <p class="text-xl font-black text-slate-800">9회</p>
                                 </div>
                                 <div class="bg-white rounded-xl p-4 border-2 border-indigo-400">
-                                    <p class="text-[10px] text-slate-500 font-bold mb-1">특정 부위 전설 1개</p>
+                                    <p class="text-xs text-slate-500 font-bold mb-1">특정 부위 전설 1개</p>
                                     <p class="text-xl font-black text-indigo-700">729회</p>
                                 </div>
                                 <div class="bg-white rounded-xl p-4 border border-indigo-200">
-                                    <p class="text-[10px] text-slate-500 font-bold mb-1">9부위 전부 전설</p>
+                                    <p class="text-xs text-slate-500 font-bold mb-1">9부위 전부 전설</p>
                                     <p class="text-xl font-black text-slate-800">729회 안팎</p>
                                 </div>
                             </div>
-                            <p class="text-[11px] text-slate-600 mt-4 leading-relaxed">
+                            <p class="text-xs text-slate-600 mt-4 leading-relaxed">
                     * 뽑기 1회당 장비 1개 획득, 반지·펫의 2칸도 칸마다 따로 모은다고 보고 장착 칸 9개에 균등하게 나온다고 단순화한 <strong>기대값</strong>입니다. <br class="hidden md:block">
-                    9부위를 모두 올릴&nbsp;때는 다른 부위로 나온 장비도 그&nbsp;부위의 재료가 되므로, 총 뽑기는 재료 총량&#8288;(일반 729개)&#8288;과 비슷해집니다. 9배는 원하는 부위 하나를 먼저 올리려 할&nbsp;때 붙는 벽입니다. <br class="hidden md:block">
+                    9부위를 모두 올릴&nbsp;때는 다른 부위로 나온 장비도 그&nbsp;부위의 재료가 되므로, 총 뽑기는 재료 총량&#8288;(일반 729개)&#8288;과 비슷해집니다. <br class="hidden md:block">9배는 원하는 부위 하나를 먼저 올리려 할&nbsp;때 붙는 벽입니다. <br class="hidden md:block">
                     실제 확률 분포에 따라 달라집니다.
                 </p>
                         </div>
 
                         <div class="bg-slate-900 rounded-2xl p-6 md:p-8 text-white">
-                            <p class="text-amber-400 font-black text-[10px] tracking-wide mb-4">이&nbsp;계산이 말해주는&nbsp;것</p>
+                            <p class="text-amber-400 font-black text-xs tracking-wide mb-4">이&nbsp;계산이 말해주는&nbsp;것</p>
                             <p class="text-sm md:text-base leading-relaxed font-medium mb-4">
                     원인은 확률이 아니라 <strong>3배수 융합 81배 × 부위 분산 9배 = 729배</strong>라는 구조입니다.<br>
 확률을 올려서는 풀리지 않고 두&nbsp;배수&nbsp;중 하나를 없애야 합니다.
@@ -463,18 +468,18 @@ html { scroll-behavior: smooth; }
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <h4 class="text-indigo-600 font-bold mb-2 text-sm">기획 의도</h4>
-                                <p class="text-sm text-slate-600 leading-relaxed">유료 재화인 '보석'을 기준으로 유저&nbsp;간 원하는 장비를 사고팔&nbsp;수 있는 자율 경제 시스템을 구축합니다.</p>
+                                <p class="text-sm text-slate-600 leading-relaxed">유료 재화인 '보석'을 기준으로 유저&nbsp;간 원하는 장비를 사고팔&nbsp;수 있는 <br class="hidden md:block">자율 경제 시스템을 구축합니다.</p>
                             </div>
                             <div>
                                 <h4 class="text-amber-600 font-bold mb-2 text-sm">기대 효과</h4>
                                 <!-- 불릿 간격 최적화 (Flex 적용) -->
                                 <ul class="text-sm text-slate-600 leading-relaxed space-y-1.5">
                                     <li class="flex items-start bal">
-                                        <span class="text-amber-500 mr-2 text-[10px] mt-1 shrink-0">●</span>
+                                        <span class="text-amber-500 mr-2 text-xs mt-1 shrink-0">●</span>
                                         <span><strong>파밍 피로도 완화:</strong> 무소과금 유저는 장비를 팔아 보석을 얻고,<br class="hidden xl:block"> 과금 유저는 보석을 써서 필요한 장비를 빠르게 구하는 선순환을 만듭니다.</span>
                                     </li>
                                     <li class="flex items-start">
-                                        <span class="text-amber-500 mr-2 text-[10px] mt-1 shrink-0">●</span>
+                                        <span class="text-amber-500 mr-2 text-xs mt-1 shrink-0">●</span>
                                         <span class="bal"><strong>신규 수익:</strong> 거래 수수료&#8288;(5%)&#8288;로 잉여 보석을 회수해 다시 결제할 이유를 만듭니다.</span>
                                     </li>
                                 </ul>
@@ -494,14 +499,14 @@ html { scroll-behavior: smooth; }
                                         <div class="bg-white p-2 rounded-lg flex justify-between items-center border border-slate-200 shadow-sm">
                                             <div class="flex gap-2 items-center">
                                                 <div class="w-8 h-8 bg-purple-100 border-purple-300 border rounded flex items-center justify-center text-lg">🗡️</div>
-                                                <div><p class="text-[11px] font-bold text-slate-800 leading-tight">데스 사이스</p><p class="text-[9px] text-purple-600">에픽</p></div>
+                                                <div><p class="text-xs font-bold text-slate-800 leading-tight">데스 사이스</p><p class="text-xs text-purple-600">에픽</p></div>
                                             </div>
                                             <div class="text-amber-700 text-xs font-bold">💎 850</div>
                                         </div>
                                         <div class="bg-white p-2 rounded-lg flex justify-between items-center border border-slate-200 shadow-sm">
                                             <div class="flex gap-2 items-center">
                                                 <div class="w-8 h-8 bg-purple-100 border-purple-300 border rounded flex items-center justify-center text-lg">🏹</div>
-                                                <div><p class="text-[11px] font-bold text-slate-800 leading-tight">스토커 스태프</p><p class="text-[9px] text-purple-600">에픽</p></div>
+                                                <div><p class="text-xs font-bold text-slate-800 leading-tight">스토커 스태프</p><p class="text-xs text-purple-600">에픽</p></div>
                                             </div>
                                             <div class="text-amber-700 text-xs font-bold">💎 920</div>
                                         </div>
@@ -518,7 +523,7 @@ html { scroll-behavior: smooth; }
                                     <div class="w-20 h-20 bg-purple-50 border-2 border-purple-300 rounded-xl flex items-center justify-center text-4xl my-2 shadow-sm">🗡️</div>
                                     <div class="text-center w-full flex-1 flex flex-col justify-center">
                                         <p class="text-purple-700 font-bold text-base mb-2">데스 사이스</p>
-                                        <div class="bg-slate-50 rounded p-2 text-[10px] text-slate-600 border border-slate-200 mb-3 text-left">
+                                        <div class="bg-slate-50 rounded p-2 text-xs text-slate-600 border border-slate-200 mb-3 text-left">
                                             <p>공격력: +150</p>
                                             <p class="text-red-500">지속 효과: 즉사 확률 50%</p>
                                         </div>
@@ -543,12 +548,12 @@ html { scroll-behavior: smooth; }
                                         <div class="aspect-square bg-slate-100 rounded border border-slate-300 flex items-center justify-center text-xl">🪙</div>
                                     </div>
                                     <div class="bg-slate-50 rounded-lg p-3 border border-slate-200 flex-1 flex flex-col justify-center">
-                                        <p class="text-[10px] text-slate-500 mb-1">희망 판매가 (보석)</p>
+                                        <p class="text-xs text-slate-500 mb-1">희망 판매가 (보석)</p>
                                         <div class="flex items-center justify-between bg-white border border-slate-200 p-2 rounded shadow-sm">
                                             <span class="text-xs text-slate-600 font-medium">수량: 1</span>
                                             <span class="text-amber-700 font-bold text-xs">💎 450</span>
                                         </div>
-                                        <p class="text-[9px] text-slate-500 mt-1.5 text-right">* 수수료 5% 차감&nbsp;후 427 수령</p>
+                                        <p class="text-xs text-slate-500 mt-1.5 text-right">* 수수료 5% 차감&nbsp;후 427 수령</p>
                                     </div>
                                     <div class="w-full bg-amber-700 text-white text-center font-bold py-2.5 rounded-lg text-xs mt-3 shadow-sm shrink-0">판매 등록</div>
                                 </div>
@@ -568,18 +573,18 @@ html { scroll-behavior: smooth; }
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <h4 class="text-teal-600 font-bold mb-2 text-sm">기획 의도</h4>
-                                <p class="text-sm text-slate-600 leading-relaxed">무기, 방어구, 장신구&nbsp;등 원하는 장비의 분류를 선택하여 뽑을&nbsp;수 있는 특수 상자를 신규 출시합니다.</p>
+                                <p class="text-sm text-slate-600 leading-relaxed">무기, 방어구, 반지&nbsp;등 원하는 부위를 선택하여 뽑을&nbsp;수 있는 <br class="hidden md:block">특수 상자를 신규 출시합니다.</p>
                             </div>
                             <div>
                                 <h4 class="text-amber-600 font-bold mb-2 text-sm">기대 효과</h4>
                                 <ul class="text-sm text-slate-600 leading-relaxed space-y-1.5">
                                     <li class="flex items-start">
-                                        <span class="text-amber-500 mr-2 text-[10px] mt-1 shrink-0">●</span>
-                                        <span><strong>타깃 과금 유도:</strong> 기존 상자보다 높은 가격으로, 특정 부위 승급이 시급한 유저의 답답함을 풀어 줍니다.</span>
+                                        <span class="text-amber-500 mr-2 text-xs mt-1 shrink-0">●</span>
+                                        <span><strong>타깃 과금 유도:</strong> 기존 상자보다 높은 가격으로, <br class="hidden md:block">특정 부위 승급이 시급한 유저의 답답함을 풀어 줍니다.</span>
                                     </li>
                                     <li class="flex items-start">
-                                        <span class="text-amber-500 mr-2 text-[10px] mt-1 shrink-0">●</span>
-                                        <span><strong>매출 지표 개선:</strong> 필요한 유저에게 맞는 상품을 붙여 1인당 평균 결제액을 올립니다.</span>
+                                        <span class="text-amber-500 mr-2 text-xs mt-1 shrink-0">●</span>
+                                        <span><strong>매출 지표 개선:</strong> 필요한 유저에게 맞는 상품을 붙여 <br class="hidden md:block">1인당 평균 결제액을 올립니다.</span>
                                     </li>
                                 </ul>
                             </div>
@@ -598,15 +603,15 @@ html { scroll-behavior: smooth; }
                                     <div class="flex-1 flex flex-col items-center justify-center">
                                         <div class="text-6xl mb-3">🎁</div>
                                         <h4 class="text-slate-800 font-bold mb-1">고급 무기 상자</h4>
-                                        <p class="text-[10px] text-slate-500 mb-5 text-center">무기 아이템 100% 확정 지급 <br class="hidden md:block">(일반 ~ 에픽 등급)</p>
+                                        <p class="text-xs text-slate-500 mb-5 text-center">무기 아이템 100% 확정 지급 <br class="hidden md:block">(일반 ~ 에픽 등급)</p>
                                         
                                         <div class="flex gap-3 w-full mt-auto shrink-0">
                                             <div class="flex-1 bg-white rounded-lg py-2 flex flex-col items-center border border-slate-200 shadow-sm">
-                                                <span class="text-[10px] text-slate-600 font-bold mb-1">1회 뽑기</span>
+                                                <span class="text-xs text-slate-600 font-bold mb-1">1회 뽑기</span>
                                                 <span class="text-xs text-amber-700 font-bold">💎 150</span>
                                             </div>
                                             <div class="flex-1 bg-teal-50 rounded-lg py-2 flex flex-col items-center border border-teal-200 shadow-sm">
-                                                <span class="text-[10px] text-teal-700 font-bold mb-1">10회 뽑기</span>
+                                                <span class="text-xs text-teal-700 font-bold mb-1">10회 뽑기</span>
                                                 <span class="text-xs text-amber-700 font-bold">💎 1,400</span>
                                             </div>
                                         </div>
@@ -649,17 +654,17 @@ html { scroll-behavior: smooth; }
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <h4 class="text-purple-600 font-bold mb-2 text-sm">기획 의도</h4>
-                                <p class="text-sm text-slate-600 leading-relaxed">터치 한&nbsp;번으로 9개의 장비를 한꺼번에 교체할&nbsp;수 있는 장비 세팅 저장 기능을 도입합니다.</p>
+                                <p class="text-sm text-slate-600 leading-relaxed">터치 한&nbsp;번으로 9개의 장비를 한꺼번에 교체할&nbsp;수 있는 <br class="hidden md:block">장비 세팅 저장 기능을 도입합니다.</p>
                             </div>
                             <div>
                                 <h4 class="text-amber-600 font-bold mb-2 text-sm">기대 효과</h4>
                                 <ul class="text-sm text-slate-600 leading-relaxed space-y-1.5">
                                     <li class="flex items-start">
-                                        <span class="text-amber-500 mr-2 text-[10px] mt-1 shrink-0">●</span>
+                                        <span class="text-amber-500 mr-2 text-xs mt-1 shrink-0">●</span>
                                         <span class="bal"><strong>편의성 향상:</strong> 매번 장비를 하나씩 바꿔야&nbsp;했던 유저들의 불만 사항을 즉각 해결합니다.</span>
                                     </li>
                                     <li class="flex items-start">
-                                        <span class="text-amber-500 mr-2 text-[10px] mt-1 shrink-0">●</span>
+                                        <span class="text-amber-500 mr-2 text-xs mt-1 shrink-0">●</span>
                                         <span><strong>자연스러운 수익화:</strong> 2번, 3번 추가 슬롯은 보석을 사용하여 열도록 설계해 반감 없는 재화 소모를 유도합니다.</span>
                                     </li>
                                 </ul>
@@ -691,7 +696,7 @@ html { scroll-behavior: smooth; }
                                             <div class="w-10 h-10 bg-slate-50 border border-slate-200 rounded shadow-sm"></div>
                                         </div>
                                     </div>
-                                    <div class="absolute bottom-4 bg-white px-4 py-2 rounded-full text-[10px] text-slate-700 font-bold border border-slate-200 shadow-sm">일반 사냥용 세팅</div>
+                                    <div class="absolute bottom-4 bg-white px-4 py-2 rounded-full text-xs text-slate-700 font-bold border border-slate-200 shadow-sm">일반 사냥용 세팅</div>
                                 </div>
                                 <span class="text-xs text-slate-500 font-medium mt-1">1. 메인 간편 교체 UI</span>
                             </div>
@@ -701,11 +706,11 @@ html { scroll-behavior: smooth; }
                                 <div class="mockup-panel w-full h-[350px] p-4 flex flex-col">
                                     <div class="flex justify-between items-center mb-4 border-b border-slate-200 pb-3 shrink-0">
                                         <h4 class="text-slate-800 font-bold text-sm">저장 슬롯 [2] 편집</h4>
-                                        <span class="text-[10px] text-purple-600 bg-purple-50 border border-purple-100 px-2 py-1 rounded">보스전 전용</span>
+                                        <span class="text-xs text-purple-600 bg-purple-50 border border-purple-100 px-2 py-1 rounded">보스전 전용</span>
                                     </div>
                                     
                                     <div class="grid grid-cols-4 gap-2 mb-auto">
-                                        <div class="aspect-square bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-xl relative"><div class="absolute inset-0 bg-black/5 flex items-center justify-center text-[10px] text-slate-700 font-bold">장착&nbsp;중</div></div>
+                                        <div class="aspect-square bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-xl relative"><div class="absolute inset-0 bg-black/5 flex items-center justify-center text-xs text-slate-700 font-bold">장착&nbsp;중</div></div>
                                         <div class="aspect-square bg-purple-50 rounded border border-purple-200 flex items-center justify-center text-xl shadow-sm">🗡️</div>
                                         <div class="aspect-square bg-blue-50 rounded border border-blue-200 flex items-center justify-center text-xl shadow-sm">🏹</div>
                                         <div class="aspect-square bg-white rounded border border-slate-200 flex items-center justify-center text-xl shadow-sm"></div>
@@ -715,9 +720,9 @@ html { scroll-behavior: smooth; }
                                     <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 flex justify-between items-center mt-4 shrink-0">
                                         <div class="flex gap-2 items-center">
                                             <div class="w-8 h-8 bg-purple-50 border border-purple-200 rounded flex items-center justify-center text-base">🗡️</div>
-                                            <div><p class="text-[11px] font-bold text-slate-800">데스 사이스 (에픽)</p></div>
+                                            <div><p class="text-xs font-bold text-slate-800">데스 사이스 (에픽)</p></div>
                                         </div>
-                                        <div class="bg-emerald-700 text-white text-[10px] font-bold px-3 py-2 rounded shadow-sm">장착 저장</div>
+                                        <div class="bg-emerald-700 text-white text-xs font-bold px-3 py-2 rounded shadow-sm">장착 저장</div>
                                     </div>
                                 </div>
                                 <span class="text-xs text-slate-500 font-medium mt-1">2. 슬롯별 상세 세팅 편집</span>
@@ -732,9 +737,8 @@ html { scroll-behavior: smooth; }
             <div id="review" class="tab-content p-6 md:p-10 space-y-14">
                 <div class="text-center max-w-2xl mx-auto">
                     <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">제안 검토 및&nbsp;우선순위</h2>
-                    <p class="text-slate-500 text-base leading-relaxed text-left max-w-[42em] mx-auto">
-                    정체의 원인이 <strong class="text-slate-700">81배 &times; 9배 = 729배</strong>이므로, <br class="hidden md:block">
-                    이&nbsp;기준으로 <strong class="text-slate-700">세&nbsp;제안의 실행 순서를 정했습니다.</strong>
+                    <p class="text-slate-500 text-base leading-relaxed text-center max-w-[42em] mx-auto">
+                    정체의 원인이 <strong class="text-slate-700">81배 &times; 9배 = 729배</strong>이므로, 이&nbsp;기준으로 <strong class="text-slate-700">세&nbsp;제안의 실행 순서를 정했습니다.</strong>
                 </p>
                 </div>
 
@@ -769,7 +773,7 @@ html { scroll-behavior: smooth; }
                                         <td class="p-3 font-bold text-slate-800">선택형 상자 세분화</td>
                                         <td class="p-3 text-center text-slate-500 font-bold">유지</td>
                                         <td class="p-3 text-center text-emerald-700 font-black">제거</td>
-                                        <td class="p-3 text-center font-black text-emerald-700">81회 <span class="text-[10px]">(9분의 1)</span></td>
+                                        <td class="p-3 text-center font-black text-emerald-700">81회 <span class="text-xs">(9분의 1)</span></td>
                                     </tr>
                                     <tr class="border-b border-slate-200">
                                         <td class="p-3 font-bold text-slate-800">유저&nbsp;간 거래소</td>
@@ -787,7 +791,7 @@ html { scroll-behavior: smooth; }
                             </table>
                         </div>
                         <div class="bg-emerald-50 border-l-[6px] border-emerald-500 rounded-r-2xl p-6">
-                            <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-3">평가 결과</p>
+                            <p class="text-xs font-black tracking-wide text-emerald-600 mb-3">평가 결과</p>
                             <p class="text-sm md:text-base text-slate-700 leading-relaxed">
                     배수를 실제로 없애는&nbsp;것은 <strong>선택형 상자</strong> 하나입니다.<br>
 거래소는 보석으로 비껴갈 뿐이라, 보석이 없는 유저에게는 정체가 그대로 남습니다.
@@ -809,13 +813,13 @@ html { scroll-behavior: smooth; }
                 </p>
                         <div class="grid md:grid-cols-2 gap-5 mb-6">
                             <div class="bg-white rounded-2xl p-5 border border-rose-200">
-                                <p class="text-[10px] font-black tracking-wide text-slate-500 mb-3">의도한&nbsp;것</p>
+                                <p class="text-xs font-black tracking-wide text-slate-500 mb-3">의도한&nbsp;것</p>
                                 <p class="text-sm text-slate-600 leading-relaxed">
-                                    거래가 일어날&nbsp;때마다 수수료 5%&#8288;가 소각되어 <strong>보석 총량이 줄고</strong>, 줄어든 만큼 다시 구매가 발생합니다.
+                                    거래가 일어날&nbsp;때마다 수수료 5%&#8288;가 소각되어 <strong>보석 총량이 줄고</strong>, <br class="hidden md:block">줄어든 만큼 다시 구매가 발생합니다.
                                 </p>
                             </div>
                             <div class="bg-white rounded-2xl p-5 border-2 border-rose-400">
-                                <p class="text-[10px] font-black tracking-wide text-rose-500 mb-3">실제로 일어나는&nbsp;것</p>
+                                <p class="text-xs font-black tracking-wide text-rose-500 mb-3">실제로 일어나는&nbsp;것</p>
                                 <p class="text-sm text-slate-600 leading-relaxed">
                     보석은 과금으로만 생깁니다.<br>
 거래소는 이미 풀린 보석을 나눠 옮길 뿐입니다.
@@ -823,16 +827,16 @@ html { scroll-behavior: smooth; }
                             </div>
                         </div>
                         <div class="bg-slate-900 rounded-2xl p-6 text-white mb-6">
-                            <p class="text-rose-400 font-black text-[10px] tracking-wide mb-4">그&nbsp;대가로 새로 생기는 두&nbsp;가지 경로</p>
+                            <p class="text-rose-400 font-black text-xs tracking-wide mb-4">그&nbsp;대가로 새로 생기는 두&nbsp;가지 경로</p>
                             <div class="space-y-4">
                                 <div class="flex items-start gap-3">
-                                    <span class="shrink-0 w-6 h-6 rounded-md bg-rose-500 text-white text-[11px] font-black flex items-center justify-center">1</span>
+                                    <span class="shrink-0 w-6 h-6 rounded-md bg-rose-500 text-white text-xs font-black flex items-center justify-center">1</span>
                                     <p class="text-sm leading-relaxed">
                     <strong class="text-rose-300">거래소에서 바로 사면 상자를 돌릴 이유가 줄어듭니다.</strong>
                 </p>
                                 </div>
                                 <div class="flex items-start gap-3">
-                                    <span class="shrink-0 w-6 h-6 rounded-md bg-rose-500 text-white text-[11px] font-black flex items-center justify-center">2</span>
+                                    <span class="shrink-0 w-6 h-6 rounded-md bg-rose-500 text-white text-xs font-black flex items-center justify-center">2</span>
                                     <p class="text-sm leading-relaxed">
                     <strong class="text-rose-300">무과금 유저가 장비를 팔아 보석을 얻으면 그만큼 보석을 살&nbsp;필요가 사라집니다.</strong>
                 </p>
@@ -843,7 +847,7 @@ html { scroll-behavior: smooth; }
                 </p>
                         </div>
                         <div class="bg-white rounded-2xl p-5 border border-rose-200">
-                            <p class="text-[10px] font-black tracking-wide text-slate-500 mb-3">추가로 검토해야 할&nbsp;리스크</p>
+                            <p class="text-xs font-black tracking-wide text-slate-500 mb-3">추가로 검토해야 할&nbsp;리스크</p>
                             <ul class="space-y-2 text-sm text-slate-600 leading-relaxed">
                                 <li class="bal">· 작업장 유입: 장비가 보석이 되면 자동 계정을 굴릴 동기가 생깁니다. 계정당 거래 한도가 함께 필요합니다.</li>
                                 <li>· 현금 거래: 유저&nbsp;간 거래는 외부 현금 거래의 통로가 되기 쉽고, 계정 도용과 사기 문의가 함께 늡니다.</li>
@@ -862,15 +866,15 @@ html { scroll-behavior: smooth; }
                     <div class="content-panel p-6 md:p-8">
                         <div class="grid md:grid-cols-2 gap-5">
                             <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-5">
-                                <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-2">선택형 상자 &middot; 등급 상한</p>
+                                <p class="text-xs font-black tracking-wide text-emerald-600 mb-2">선택형 상자 &middot; 등급 상한</p>
                                 <p class="text-sm text-slate-600 leading-relaxed">
-                    지급 범위를 에픽까지로 묶고 전설을 뺐습니다. <strong>새&nbsp;상품이 기존 상자의 최상위 수요를 먹지 않게</strong> 미리 막았습니다.
+                    지급 범위를 에픽까지로 묶고 전설을 뺐습니다. <br class="hidden md:block"><strong>새&nbsp;상품이 기존 상자의 최상위 수요를 먹지 않게</strong> 미리 막았습니다.
                 </p>
                             </div>
                             <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-5">
-                                <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-2">프리셋 &middot; 1슬롯 무료</p>
+                                <p class="text-xs font-black tracking-wide text-emerald-600 mb-2">프리셋 &middot; 1슬롯 무료</p>
                                 <p class="text-sm text-slate-600 leading-relaxed">
-                    1번 슬롯을 무료로 열고 2&#8288;·3번만 유료로 뒀습니다. <strong class="text-slate-900">무료 구간이 없으면 불편을 팔았다는&nbsp;말이 나옵니다.</strong>
+                    1번 슬롯을 무료로 열고 2&#8288;·3번만 유료로 뒀습니다. <br class="hidden md:block"><strong class="text-slate-900">무료 구간이 없으면 불편을 팔았다는&nbsp;말이 나옵니다.</strong>
                 </p>
                             </div>
                         </div>
@@ -888,7 +892,7 @@ html { scroll-behavior: smooth; }
                             <div class="flex flex-wrap items-center gap-3 mb-3">
                                 <span class="bg-emerald-600 text-white text-xs font-black px-3 py-1 rounded-full">1순위</span>
                                 <span class="font-black text-slate-900">선택형 상자 세분화</span>
-                                <span class="ml-auto text-[10px] font-black text-slate-500 tracking-wide">배수를 없애는 유일한 안</span>
+                                <span class="ml-auto text-xs font-black text-slate-500 tracking-wide">배수를 없애는 유일한 안</span>
                             </div>
                             <p class="text-sm text-slate-600 leading-relaxed">
                     두&nbsp;배수&nbsp;중 9배를 실제로 없애는 유일한 안입니다. 등급 상한으로 기존 매출 잠식까지 막았습니다.
@@ -898,7 +902,7 @@ html { scroll-behavior: smooth; }
                             <div class="flex flex-wrap items-center gap-3 mb-3">
                                 <span class="bg-indigo-600 text-white text-xs font-black px-3 py-1 rounded-full">2순위</span>
                                 <span class="font-black text-slate-900">장비 프리셋</span>
-                                <span class="ml-auto text-[10px] font-black text-slate-500 tracking-wide">위험 가장 낮음</span>
+                                <span class="ml-auto text-xs font-black text-slate-500 tracking-wide">위험 가장 낮음</span>
                             </div>
                             <p class="text-sm text-slate-600 leading-relaxed">
                     수급과는 무관하지만 위험이 가장 낮습니다. 슬롯 9개를 매번 손으로 바꾸던 터라 체감이 큽니다.
@@ -908,7 +912,7 @@ html { scroll-behavior: smooth; }
                             <div class="flex flex-wrap items-center gap-3 mb-3">
                                 <span class="bg-rose-600 text-white text-xs font-black px-3 py-1 rounded-full">보류</span>
                                 <span class="font-black text-slate-900">유저&nbsp;간 거래소</span>
-                                <span class="ml-auto text-[10px] font-black text-slate-500 tracking-wide">검토&nbsp;뒤 재상정</span>
+                                <span class="ml-auto text-xs font-black text-slate-500 tracking-wide">검토&nbsp;뒤 재상정</span>
                             </div>
                             <p class="text-sm text-slate-600 leading-relaxed">
                     배수를 못&nbsp;없애면서 매출 잠식과 작업장, 법무 위험을 한꺼번에 들여옵니다. 구현 규모도 가장 큽니다. 매출 시뮬레이션과 법무 검토&nbsp;뒤에 다시 올립니다.
@@ -920,7 +924,7 @@ html { scroll-behavior: smooth; }
                 <!-- 5. 검증 지표 · 한계 -->
                 <div>
                     <div class="content-panel p-6 md:p-7">
-                        <p class="text-[10px] font-black tracking-wide text-slate-500 mb-4">적용&nbsp;후 검증 지표</p>
+                        <p class="text-xs font-black tracking-wide text-slate-500 mb-4">적용&nbsp;후 검증 지표</p>
                         <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                             <li class="bal-m">&bull; <strong class="text-slate-800">선택형 상자:</strong> 등급별 승급 도달 일수, 기존 무작위 상자 판매량 변화&#8288;(잠식 감시), 상자 매출 합계</li>
                             <li>&bull; <strong class="text-slate-800">프리셋:</strong> 2&#8288;&middot;3번 슬롯 해금률, 장비 교체 1회당 소요 시간, 관련 CS 인입 건수</li>
@@ -934,28 +938,28 @@ html { scroll-behavior: smooth; }
                 <div class="bg-slate-900 rounded-[32px] p-8 md:p-10 text-white relative overflow-hidden shadow-2xl">
                     <div class="absolute right-0 bottom-0 opacity-10 text-9xl -mb-8 -mr-8 transform rotate-12">⚖️</div>
                     <div class="relative z-10 max-w-4xl mx-auto">
-                        <p class="text-amber-400 font-black text-[10px] tracking-wide mb-5 text-center">정리</p>
+                        <p class="text-amber-400 font-black text-xs tracking-wide mb-5 text-center">정리</p>
                         <p class="text-base md:text-lg font-bold leading-relaxed text-center mb-8">
                     정체의 원인은 확률이 아니라 <strong class="text-amber-300">81배 &times; 9배 = 729배</strong>라는 구조입니다. <br class="hidden md:block">
                     따라서 <strong class="text-amber-300">배수를 제거하는 제안</strong>만이 실제 해결책이 됩니다.
                 </p>
                         <div class="grid md:grid-cols-3 gap-4 text-left">
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
-                                <p class="text-amber-300 font-black text-sm mb-2">가장 화려한 제안이 가장 위험했습니다</p>
+                                <p class="text-amber-300 font-black text-sm mb-2">가장 화려한 제안이 가장 위험했습니다.</p>
                                 <p class="text-slate-300 leading-relaxed text-sm">
                     거래소는 규모가 가장 큰데 배수를 못&nbsp;없앱니다.
                 </p>
                             </div>
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
-                                <p class="text-amber-300 font-black text-sm mb-2">가장 단순한 제안이 가장 효과적입니다</p>
+                                <p class="text-amber-300 font-black text-sm mb-2">가장 단순한 제안이 가장 효과적입니다.</p>
                                 <p class="text-slate-300 leading-relaxed text-sm">
                     선택형 상자는 부위 분산 9배를 없애 뽑기를 <strong>729회에서 81회로</strong> 줄입니다.
                 </p>
                             </div>
                             <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
-                                <p class="text-amber-300 font-black text-sm mb-2">순서를 바꾸는&nbsp;것이 결론입니다</p>
+                                <p class="text-amber-300 font-black text-sm mb-2">순서를 바꾸는&nbsp;것이 결론입니다.</p>
                                 <p class="text-slate-300 leading-relaxed text-sm">
-                    원안의 거래소 &rarr; 선택형 상자 &rarr; 프리셋 순서를 <strong class="text-white">선택형 상자 &rarr; 프리셋 &rarr; 거래소&#8288;(보류)</strong>&#8288;로 다시 정했습니다. <br class="hidden md:block">
+                    원안의 거래소 → 선택형 상자 → 프리셋 순서를&nbsp;<strong class="text-white">선택형 상자 → 프리셋 → 거래소&#8288;</strong>로 다시 정했습니다. <br class="hidden md:block">
                     제안을 더한&nbsp;것이 아니라 순서를 근거로 바꿨습니다.
                 </p>
                             </div>

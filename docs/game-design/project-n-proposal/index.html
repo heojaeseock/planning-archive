@@ -85,7 +85,9 @@
         }
         .animate-pulse-soft {
             animation: pulse-soft 2s infinite ease-in-out;
+            transform-origin: left center;
         }
+        p.animate-pulse-soft { width: fit-content; }
         
         /* 한국어 줄바꿈 최적화 */
         .keep-all {
@@ -133,6 +135,9 @@
 <style>/* 목차 이동 */
 html { scroll-behavior: smooth; }
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-green-600{color:#15803d}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="antialiased scroll-smooth font-sans selection:bg-brand-500 selection:text-white keep-all">
 
@@ -173,28 +178,28 @@ html { scroll-behavior: smooth; }
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-              <p class="text-[11px] font-black tracking-[0.12em] text-blue-700 mb-3">문서 소개</p>
+              <p class="text-xs font-black tracking-[0.12em] text-blue-700 mb-3">문서 소개</p>
               <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">이탈 방어와 인플레이션 검증, 위기 대응을 프로세스로 정리한 문서입니다.</p>
             </div>
             <div class="px-6 md:px-9 py-6 md:py-7">
-              <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">세&nbsp;가지를 하나의 고리로 묶음</p>
+              <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">세&nbsp;가지를 하나의 고리로 묶음</p>
               <div class="grid md:grid-cols-3 gap-3">
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">이탈 방어 — 미리 잡는다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">떠날 낌새를 데이터로 먼저 잡아 손을 씁니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">이탈 방어 — 미리 잡는다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">떠날 낌새를 데이터로 먼저 잡아 손을 씁니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">밸런스 검증 — 사고를 줄인다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">출시 전에 스펙을 재어 사고 자체가 덜&nbsp;나게 합니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">밸런스 검증 — 사고를 줄인다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">출시 전에 스펙을 재어 사고 자체가 덜&nbsp;나게 합니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">위기 대응 — 터진&nbsp;뒤를 맡는다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">2시간&#8288;·12시간&#8288;·24시간으로 나눠 무엇을 할지 미리 정해 둡니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">위기 대응 — 터진&nbsp;뒤를 맡는다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">2시간&#8288;·12시간&#8288;·24시간으로 나눠 <br class="hidden md:block">무엇을 할지 미리 정해 둡니다.</p>
                 </div>
               </div>
             </div>
             <div class="px-6 md:px-9 py-4 bg-slate-50 border-t border-slate-200">
-              <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">블레이드&amp;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 개인 제안서입니다. 프로젝트 N은 웹툰 원작 수집형 RPG를 전제한 가칭입니다. 본문 차트는 절차를 보여주기 위한 가상 데이터입니다.</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">블레이드&#8288;&amp;&#8288;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 개인 제안서입니다. <br class="hidden md:block">프로젝트 N은 웹툰 원작 수집형 RPG를 전제한 가칭입니다. <br class="hidden md:block">본문 차트는 절차를 보여주기 위한 가상 데이터입니다.</p>
             </div>
           </div>
         </section>
@@ -230,7 +235,7 @@ html { scroll-behavior: smooth; }
                         <div class="chart-container">
                             <canvas id="chart-s1" role="img" aria-label="웹툰 RPG 이탈 원인 구성 차트. 버튼으로 원인 비중과 대응 솔루션 두 화면을 전환"></canvas>
                         </div>
-                        <p id="chart-source-1" class="text-right text-xs text-gray-500 mt-4 bal">* 참고: 라이브 운영 경험을 대입해 가정한 예상 지표이며, 실측값이 아닙니다.</p>
+                        <p id="chart-source-1" class="text-center text-xs text-gray-500 mt-4 bal">* 참고: 라이브 운영 경험을 대입해 가정한 예상 지표이며, 실측값이 아닙니다.</p>
                     </div>
                 </div>
             </div>
@@ -264,7 +269,7 @@ html { scroll-behavior: smooth; }
                         <div class="chart-container !h-[300px]">
                             <canvas id="chart-s2" role="img" aria-label="방사형 차트. 항목 단일 DPS, 생존력, 유틸리티, 시너지, 코스트(역방향)"></canvas>
                         </div>
-                        <p class="text-right text-xs text-gray-500 mt-4 bal">* 참고: 검증 프로세스 시연을 위한 가상 데이터입니다.</p>
+                        <p class="text-center text-xs text-gray-500 mt-4 bal">* 참고: 검증 프로세스 시연을 위한 가상 데이터입니다.</p>
                     </div>
                     <!-- Explanation Box -->
                     <div id="qa-desc" class="md:col-span-3 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 fade-in h-full flex flex-col justify-center">
@@ -315,7 +320,7 @@ html { scroll-behavior: smooth; }
         <section id="s4" class="scroll-mt-24">
             <div class="flex items-center gap-4 mb-8">
                 <div class="w-12 h-12 rounded-2xl bg-brand-500 text-white font-black text-xl flex items-center justify-center shrink-0">4</div>
-                <h2 class="text-2xl md:text-3xl font-black text-surface-dark">세&nbsp;솔루션은 하나의 사이클입니다</h2>
+                <h2 class="text-2xl md:text-3xl font-black text-surface-dark">세&nbsp;솔루션은 하나의 사이클입니다.</h2>
             </div>
 
             <p class="text-gray-600 leading-relaxed mb-8 max-w-[46em]">
@@ -326,15 +331,15 @@ html { scroll-behavior: smooth; }
 
             <div class="grid md:grid-cols-3 gap-5 mb-8">
                 <div class="bg-white rounded-2xl p-6 border-t-4 border-t-blue-500 shadow-sm">
-                    <p class="text-[10px] font-black tracking-wide text-blue-700 mb-2">예방 &middot; 솔루션 2</p>
+                    <p class="text-xs font-black tracking-wide text-blue-700 mb-2">예방 &middot; 솔루션 2</p>
                     <p class="font-black text-surface-dark mb-3">밸런스 검증</p>
                     <p class="text-sm text-gray-600 leading-relaxed">
-                    출시 전에 스펙을 교정해 <strong class="text-surface-dark">사고 발생 자체를&nbsp;줄입니다.</strong> <br class="hidden md:block">
+                    출시 전에 스펙을 교정해 <br class="hidden md:block"><strong class="text-surface-dark">사고 발생 자체를&nbsp;줄입니다.</strong> <br class="hidden md:block">
                     여기서 걸러내지 못한&nbsp;것이 3번으로 넘어갑니다.
                 </p>
                 </div>
                 <div class="bg-white rounded-2xl p-6 border-t-4 border-t-orange-500 shadow-sm">
-                    <p class="text-[10px] font-black tracking-wide text-orange-700 mb-2">대응 &middot; 솔루션 3</p>
+                    <p class="text-xs font-black tracking-wide text-orange-700 mb-2">대응 &middot; 솔루션 3</p>
                     <p class="font-black text-surface-dark mb-3">위기 대응</p>
                     <p class="text-sm text-gray-600 leading-relaxed">
                     이미 발생한 사고의 <strong class="text-surface-dark">피해를&nbsp;줄입니다.</strong> <br class="hidden md:block">
@@ -342,7 +347,7 @@ html { scroll-behavior: smooth; }
                 </p>
                 </div>
                 <div class="bg-white rounded-2xl p-6 border-t-4 border-t-green-500 shadow-sm">
-                    <p class="text-[10px] font-black tracking-wide text-green-600 mb-2">학습 &middot; 솔루션 1</p>
+                    <p class="text-xs font-black tracking-wide text-green-600 mb-2">학습 &middot; 솔루션 1</p>
                     <p class="font-black text-surface-dark mb-3">이탈 방어</p>
                     <p class="text-sm text-gray-600 leading-relaxed">
                     쌓인 데이터로 <strong class="text-surface-dark">이탈 원인을 갱신</strong>합니다. <br class="hidden md:block">
@@ -352,7 +357,7 @@ html { scroll-behavior: smooth; }
             </div>
 
             <div class="bg-surface-dark rounded-3xl p-8 md:p-10 text-white">
-                <p class="text-brand-400 font-black text-[10px] tracking-wide mb-5">루프가 닫히는 지점</p>
+                <p class="text-brand-400 font-black text-xs tracking-wide mb-5">루프가 닫히는 지점</p>
                 <p class="text-sm md:text-base leading-relaxed mb-5 max-w-[46em]">
                     솔루션 1의 이탈 원인 1순위가 <strong class="text-brand-300">소환 및&nbsp;과금 피로도</strong>이고 2순위가 <strong class="text-brand-300">파워 인플레이션</strong>입니다. <br class="hidden md:block">
                     그런데 솔루션 2가 바로 <strong class="text-white">파워 인플레이션을 출시 전에 차단하는 프로세스</strong>입니다.
@@ -373,10 +378,10 @@ html { scroll-behavior: smooth; }
 
             <!-- 5-1. 인플레이션 차단과 신캐 매출의 충돌 -->
             <div class="bg-white rounded-3xl p-8 border-2 border-orange-200 shadow-sm mb-6">
-                <p class="text-[10px] font-black tracking-wide text-orange-700 mb-4">검토 01 &middot; 솔루션 2</p>
-                <h3 class="text-lg font-black text-surface-dark mb-4">평균에 맞추면 신규 캐릭터가 팔리지 않습니다</h3>
-                <p class="text-base text-gray-600 leading-relaxed mb-5 max-w-[46em]">
-                    검증 프로세스는 <strong class="text-surface-dark">기존 평균 &rarr; 신캐 초안 비교 &rarr; 최종 교정</strong>으로 스펙을 평균을 소폭 넘는 선까지 끌어내립니다. <br class="hidden md:block">
+                <p class="text-xs font-black tracking-wide text-orange-700 mb-4">검토 01 &middot; 솔루션 2</p>
+                <h3 class="text-lg font-black text-surface-dark mb-4">평균에 맞추면 신규 캐릭터가 팔리지 않습니다.</h3>
+                <p class="text-sm text-gray-600 leading-relaxed mb-5 max-w-[46em]">
+                    검증 프로세스는 <strong class="text-surface-dark">기존 평균 &rarr; 신캐 초안 비교 &rarr; 최종 교정</strong>으로 스펙을 평균보다 소폭 높은 선까지 끌어내립니다. <br class="hidden md:block">
                     인플레이션 차단에는 맞지만, 수집형 게임의 매출 구조와 정면으로 충돌합니다.
                 </p>
                 <div class="grid md:grid-cols-2 gap-4 mb-5">
@@ -397,15 +402,15 @@ html { scroll-behavior: smooth; }
                 </div>
                 <div class="bg-gray-50 rounded-2xl p-5 border border-gray-200">
                     <p class="text-xs text-gray-600 leading-relaxed max-w-[46em]">절대 스펙을 평균에 맞추는 대신 <strong>역할을 갈라 놓습니다.</strong> <br class="hidden md:block">
-총&nbsp;전투력은 기존 최상위권과 비슷하게 두고 특정 콘텐츠나 조합에서만 우위를 갖게 하면, 구매 동기는 생기고 기존 캐릭터도 살아남습니다. <br class="hidden md:block">
+총&nbsp;전투력은 기존 최상위권과 비슷하게 두고 특정 콘텐츠나 조합에서만 우위를 갖게 하면, <br class="hidden md:block">구매 동기는 생기고 기존 캐릭터도 살아남습니다. <br class="hidden md:block">
 검증도 평균 대비 스펙 하나가 아니라 <strong>기존 캐릭터의 사용률 변화</strong>를 함께 봐야 합니다.</p>
                 </div>
             </div>
 
             <!-- 5-2. 시간 기준 -> 상태 기준 -->
             <div class="bg-white rounded-3xl p-8 border-2 border-orange-200 shadow-sm mb-6">
-                <p class="text-[10px] font-black tracking-wide text-orange-700 mb-4">검토 02 &middot; 솔루션 3</p>
-                <h3 class="text-lg font-black text-surface-dark mb-4">시간 기준보다 상태 기준이 안전합니다</h3>
+                <p class="text-xs font-black tracking-wide text-orange-700 mb-4">검토 02 &middot; 솔루션 3</p>
+                <h3 class="text-lg font-black text-surface-dark mb-4">시간 기준보다 상태 기준이 안전합니다.</h3>
                 <p class="text-sm text-gray-600 leading-relaxed mb-5 max-w-[46em]">
                     대응 매뉴얼은 <strong class="text-surface-dark">+2H &middot; +12H &middot; +24H</strong>로 짜여 있습니다. <br class="hidden md:block">
                     단계 구분은 명확하지만, 시각을 기준으로 삼으면 두&nbsp;가지 상황에서 무너집니다.
@@ -444,10 +449,10 @@ html { scroll-behavior: smooth; }
 
             <!-- 5-3. 매출 기반 설득의 한계 -->
             <div class="bg-white rounded-3xl p-8 border-2 border-orange-200 shadow-sm mb-6">
-                <p class="text-[10px] font-black tracking-wide text-orange-700 mb-4">검토 03 &middot; 솔루션 3</p>
-                <h3 class="text-lg font-black text-surface-dark mb-4">매출 기반 설득은 강력하지만 기준이 하나면 위험합니다</h3>
+                <p class="text-xs font-black tracking-wide text-orange-700 mb-4">검토 03 &middot; 솔루션 3</p>
+                <h3 class="text-lg font-black text-surface-dark mb-4">매출 기반 설득은 강력하지만 기준이 하나면 위험합니다.</h3>
                 <p class="text-sm text-gray-600 leading-relaxed mb-5 max-w-[46em]">
-                    &ldquo;DPS 15% 누락&rdquo;&#8288;을 <strong class="text-surface-dark">&ldquo;핵심 과금 유저의 환불 요구 폭증, 일매출 타격&rdquo;&#8288;</strong>으로 바꿔 말하는&nbsp;것은 개발 우선순위를 끌어올리는 실효적인 방법입니다. <br class="hidden md:block">
+                    “DPS 15% 누락”&#8288;을 <strong class="text-surface-dark">“핵심 과금 유저의 환불 요구 폭증, 일매출 타격”&#8288;</strong>으로 바꿔 말하는&nbsp;것은 <br class="hidden md:block">개발 우선순위를 끌어올리는 실효적인 방법입니다. <br class="hidden md:block">
                     이&nbsp;부분은 원안의 강점입니다.
                 </p>
                 <div class="bg-orange-50 rounded-2xl p-5 border border-orange-200 mb-5">
@@ -461,7 +466,7 @@ html { scroll-behavior: smooth; }
                 <div class="bg-gray-50 rounded-2xl p-5 border border-gray-200">
                     <p class="text-xs text-gray-600 leading-relaxed max-w-[46em]">
                     <strong class="text-surface-dark">보완 방향:</strong> 긴급도 산정에 <strong class="text-orange-700">두&nbsp;축</strong>을 둡니다. <br class="hidden md:block">
-                    <strong>즉시 매출 영향</strong>(환불 요청&nbsp;수, 결제 이탈)&#8288;과 <strong>신뢰 영향</strong>(영향 유저&nbsp;수, 커뮤니티 확산 속도, 재발 여부)&#8288;을 각각 산출합니다. 어느 한쪽만 높아도 우선 처리 대상으로 둡니다. <br class="hidden md:block">
+                    <strong>즉시 매출 영향</strong>(환불 요청&nbsp;수, 결제 이탈)&#8288;과 <strong>신뢰 영향</strong>(영향 유저&nbsp;수, 커뮤니티 확산 속도, 재발 여부)&#8288;을 각각 산출합니다. <br class="hidden md:block">어느 한쪽만 높아도 우선 처리 대상으로 둡니다. <br class="hidden md:block">
                     재발 이슈는 <strong class="text-surface-dark">1회 영향이 작아도 누적 신뢰 손실이 크므로</strong> 별도 가중치가 필요합니다.
                 </p>
                 </div>
@@ -470,12 +475,12 @@ html { scroll-behavior: smooth; }
             <!-- 5-4. 검증 지표와 한계 -->
             <div>
                 <div class="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm">
-                    <p class="text-[10px] font-black tracking-wide text-gray-500 mb-4">이&nbsp;체계가 작동하는지 보는 지표</p>
+                    <p class="text-xs font-black tracking-wide text-gray-500 mb-4">이&nbsp;체계가 작동하는지 보는 지표</p>
                     <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
-                        <li>&bull; <strong class="text-surface-dark">예방 효율:</strong> 출시&nbsp;후 긴급 밸런스 패치 건수 &mdash; 솔루션 2가 실제로 걸러내고 있는지</li>
+                        <li>&bull; <strong class="text-surface-dark">예방 효율:</strong> 출시&nbsp;후 긴급 밸런스 패치 건수 &mdash; 솔루션 2가 실제로 걸러내고 있는지 봅니다.</li>
                         <li class="bal">&bull; <strong class="text-surface-dark">기존 캐릭터 생존율:</strong> 신캐 출시 전후 기존 상위 캐릭터의 사용률 변화</li>
                         <li class="bal">&bull; <strong class="text-surface-dark">대응 속도:</strong> 각&nbsp;단계 진입까지 실제 소요 시간과 목표치의&nbsp;차이</li>
-                        <li class="bal">&bull; <strong class="text-surface-dark">대응 품질:</strong> 정정 공지 발생 건수 &mdash; 1차 공지의 정확도를 보여줍니다</li>
+                        <li class="bal">&bull; <strong class="text-surface-dark">대응 품질:</strong> 정정 공지 발생 건수 &mdash; 1차 공지의 정확도를 보여주는 지표</li>
                         <li class="bal">&bull; <strong class="text-surface-dark">회복 여부:</strong> 사고&nbsp;후 환불 취소율과 결제 잔존율 (원안에 이미 포함된 항목)</li>
                     </ul>
                 </div>
@@ -505,7 +510,7 @@ html { scroll-behavior: smooth; }
                         </div>
                         <div class="p-5 bg-white rounded-2xl border-l-4 border-l-orange-400 shadow-sm">
                             <div class="font-extrabold text-surface-dark mb-2 text-lg">📉 2. 파워 인플레이션 (30%)</div>
-                            <div class="text-sm font-medium text-gray-600 leading-relaxed">신규 캐릭터 위주의 밸런스 패치로 인해, 유저가 애정을 가진 기존 선호 캐릭터들의 활용처가 축소되는 현상</div>
+                            <div class="text-sm font-medium text-gray-600 leading-relaxed">신규 캐릭터 위주의 밸런스 패치로 인해, <br class="hidden md:block">유저가 애정을 가진 기존 선호 캐릭터들의 활용처가 축소되는 현상</div>
                         </div>
                         <div class="p-5 bg-white rounded-2xl border-l-4 border-l-yellow-400 shadow-sm">
                             <div class="font-extrabold text-surface-dark mb-2 text-lg">🥱 3. 반복 콘텐츠의 지루함 (25%)</div>
@@ -529,7 +534,7 @@ html { scroll-behavior: smooth; }
                             <span class="text-brand-500 mr-3 text-xl shrink-0 mt-0.5">✔️</span>
                             <div>
                                 <strong class="block mb-1 text-surface-dark">비주류 캐릭터 가치 보존</strong>
-                                <span class="text-sm text-gray-600 leading-relaxed">사용 빈도가 낮아진 캐릭터를 파견 특화 요원으로 투입하여, 애정 캐릭터에 대한 활용처를 지속 제공합니다.</span>
+                                <span class="text-sm text-gray-600 leading-relaxed">사용 빈도가 낮아진 캐릭터를 파견 특화 요원으로 투입하여, <br class="hidden md:block">애정 캐릭터에 대한 활용처를 지속 제공합니다.</span>
                             </div>
                         </div>
                         <div class="flex items-start bg-white p-4 rounded-xl shadow-sm">
@@ -543,7 +548,7 @@ html { scroll-behavior: smooth; }
                             <span class="text-brand-500 mr-3 text-xl shrink-0 mt-0.5">✔️</span>
                             <div>
                                 <strong class="block mb-1 text-surface-dark">소환 스트레스 케어</strong>
-                                <span class="text-sm text-gray-600 leading-relaxed">파견 보상으로 확정 소환 마일리지를 지급하여 무·소과금 유저의 이탈을 적극적으로 방어합니다.</span>
+                                <span class="text-sm text-gray-600 leading-relaxed">파견 보상으로 확정 소환 마일리지를 지급하여 <br class="hidden md:block">무·소과금 유저의 이탈을 적극적으로 방어합니다.</span>
                             </div>
                         </div>
                     </div>
@@ -560,15 +565,15 @@ html { scroll-behavior: smooth; }
         const qaDesc = [
             `
                 <div class="inline-block px-3 py-1 bg-gray-100 text-gray-600 text-xs font-black rounded-full mb-4 tracking-wide">1단계. 데이터 베이스라인</div>
-                <h3 class="text-2xl font-black text-surface-dark mb-4 leading-tight">라이브 데이터 기반<br>기준점 설정</h3>
+                <h3 class="text-2xl font-black text-surface-dark mb-4 leading-tight">라이브 데이터 기반 기준점 설정</h3>
                 <p class="text-gray-600 font-medium leading-relaxed max-w-[46em]">
-                    최근 3개월간 픽률 최상위권인 동급 캐릭터들의 <strong>평균 지표를 회색 선으로 도출</strong>합니다. <br class="hidden md:block">
-                    기획자의 직관에만 의존하지 않고, 스프레드시트를 활용해 명확한 수치 데이터를 기반으로 밸런스의 기준점을 확립합니다.
+                    최근 3개월간 픽률 최상위권인 동급 캐릭터들의 <br class="hidden md:block"><strong>평균 지표를 회색 선으로 도출</strong>합니다. <br class="hidden md:block">
+                    기획자의 직관에만 의존하지 않고, 스프레드시트를 활용해 <br class="hidden md:block">명확한 수치 데이터를 기반으로 밸런스의 기준점을 확립합니다.
                 </p>
             `,
             `
                 <div class="inline-block px-3 py-1 bg-red-100 text-red-600 text-xs font-black rounded-full mb-4 tracking-wide">2단계. 시뮬레이션</div>
-                <h3 class="text-2xl font-black text-surface-dark mb-4 leading-tight">기획 초안<br>인플레이션 감지</h3>
+                <h3 class="text-2xl font-black text-surface-dark mb-4 leading-tight">기획 초안 인플레이션 감지</h3>
                 <p class="text-gray-600 font-medium leading-relaxed max-w-[46em]">
                     초안 스탯을 전투 시뮬레이터에 입력합니다. <br class="hidden md:block">
                     차트의 <strong><span class="text-red-500">붉은 선</span></strong>처럼 특정 지표가 평균을 과도하게 이탈하는 경우, <br class="hidden md:block">
@@ -577,10 +582,10 @@ html { scroll-behavior: smooth; }
             `,
             `
                 <div class="inline-block px-3 py-1 bg-brand-100 text-brand-600 text-xs font-black rounded-full mb-4 tracking-wide">3단계. 최종 확정</div>
-                <h3 class="text-2xl font-black text-surface-dark mb-4 leading-tight">조건부 서식 검증 및<br>최종 스탯 조정</h3>
+                <h3 class="text-2xl font-black text-surface-dark mb-4 leading-tight">조건부 서식 검증 및 최종 스탯 조정</h3>
                 <p class="text-gray-600 font-medium leading-relaxed max-w-[46em]">
                     허용 오차 범위 내로 수치를 정밀 교정합니다. <br class="hidden md:block">
-                    <strong><span class="text-brand-500">주황 선</span></strong>처럼 기존 평균을 소폭 상회하여 신규 캐릭터의 매력은 살리되, <br class="hidden md:block">
+                    <strong><span class="text-brand-500">굵은 선(최종 조정안)</span></strong>처럼 기존 평균을 소폭 상회하여 <br class="hidden md:block">신규 캐릭터의 매력은 살리되, <br class="hidden md:block">
                     전체 게임 생태계를 유지하는 선으로 개발팀에 전달합니다.
                 </p>
             `
@@ -607,13 +612,13 @@ html { scroll-behavior: smooth; }
                     <div class="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-4">
                         <span class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm font-black shrink-0">행동</span>
                         <p class="text-gray-600 leading-relaxed text-sm max-w-[46em]">
-                    운영팀과 협력하여 커뮤니티 동향을 모니터링하고, 해당 불만이 결제 유저의 이탈 및&nbsp;대량 환불 사태로 이어질 수 있는 징후인지 최우선으로 평가합니다.
+                    운영팀과 협력하여 커뮤니티 동향을 모니터링하고, <br class="hidden md:block">해당 불만이 결제 유저의 이탈 및&nbsp;대량 환불 사태로 이어질 수 있는 징후인지 최우선으로 평가합니다.
                 </p>
                     </div>
                     <div class="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-4">
                         <span class="bg-brand-50 text-brand-ink px-3 py-1.5 rounded-lg text-sm font-black shrink-0">소통</span>
                         <p class="text-gray-600 leading-relaxed text-sm max-w-[46em]">
-                    형식적인 사과문보다는 <strong class="text-brand-ink">"현재 실제 전투 로그 데이터를 면밀히 분석 중입니다"</strong>라는 안내로 유저 이탈을 1차 방어하고 대처 과정의 신뢰를 확보합니다.
+                    형식적인 사과문보다는 <strong class="text-brand-ink">"현재 실제 전투 로그 데이터를 면밀히 분석 중입니다"</strong>라는 안내로 <br class="hidden md:block">유저 이탈을 1차 방어하고 대처 과정의 신뢰를 확보합니다.
                 </p>
                     </div>
                 </div>
@@ -630,13 +635,13 @@ html { scroll-behavior: smooth; }
                     <div class="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-4">
                         <span class="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm font-black shrink-0">검증</span>
                         <p class="text-gray-600 leading-relaxed text-sm max-w-[46em]">
-                    라이브 서버 로그를 교차 검증해 결함을 특정하는 동시에, 해당 오류가 <strong class="text-orange-600">핵심 주력 상품의 환불 요청 및 결제 유저 이탈에 미치는 영향</strong>을 즉각 산출합니다.
+                    라이브 서버 로그를 교차 검증해 결함을 특정하는 동시에, <br class="hidden md:block">해당 오류가 <strong class="text-orange-600">핵심 주력 상품의 환불 요청 및 결제 유저 이탈에 미치는 영향</strong>을 즉각 산출합니다.
                 </p>
                     </div>
                     <div class="bg-white p-5 rounded-2xl shadow-sm flex items-start gap-4">
                         <span class="bg-orange-50 text-orange-600 px-3 py-1.5 rounded-lg text-sm font-black shrink-0">소통</span>
                         <p class="text-gray-600 leading-relaxed text-sm max-w-[46em]">
-                    "DPS가 15% 누락되었습니다" (단순 결함 보고, 설득력 부족) → <strong class="text-orange-600">"스킬 누락 오류로 인해 핵심 과금 유저층의 환불 요구가 폭증하고 있습니다. <br class="hidden md:block">
+                    "DPS가 15% 누락되었습니다" (단순 결함 보고, 설득력 부족) → <br class="hidden md:block"><strong class="text-orange-600">"스킬 누락 오류로 인해 핵심 과금 유저층의 환불 요구가 폭증하고 있습니다. <br class="hidden md:block">
                     당장의 일매출 타격 방어를 위해 최고 긴급도로 수정이 필요합니다."</strong> (매출 기반 설득)
                 </p>
                     </div>
@@ -646,7 +651,7 @@ html { scroll-behavior: smooth; }
                 <div class="flex items-center gap-4 mb-6 pb-4 border-b border-gray-200">
                     <div class="text-4xl">📢</div>
                     <div>
-                        <h3 class="text-xl md:text-2xl font-black text-surface-dark mb-1">투명한 진화 및 매출 지표 방어</h3>
+                        <h3 class="text-xl md:text-2xl font-black text-surface-dark mb-1">투명한 사태 수습 및 매출 지표 방어</h3>
                         <p class="text-sm font-bold text-green-500">경제 밸런스를 해치지 않는 전략적 보상과 잔존율 추적</p>
                     </div>
                 </div>

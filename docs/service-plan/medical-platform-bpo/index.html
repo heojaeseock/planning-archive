@@ -138,6 +138,10 @@
             .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
         }
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-emerald-600{color:#047857} html body .text-brand-600{color:#c2410c}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="antialiased font-sans scroll-smooth">
 
@@ -176,40 +180,40 @@
     <section class="mb-12" aria-label="이 문서가 하는 말">
       <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
         <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-          <p class="text-[11px] font-black tracking-[0.12em] text-teal-700 mb-3">문서 소개</p>
-          <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">반복 검수를 시스템으로 흡수해 후기 검수 품질을 유지하는 방안을 정리한 문서입니다. 블레이드&amp;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 개인 제안서이며, 아래 건수는 가설 시뮬레이션 값입니다.</p>
+          <p class="text-xs font-black tracking-[0.12em] text-teal-700 mb-3">문서 소개</p>
+          <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]" style="max-width:44em;text-wrap:wrap">반복 검수를 시스템으로 흡수해 후기 검수 품질을 유지하는 방안을 정리한 문서입니다. <br class="hidden md:block">블레이드&#8288;&amp;&#8288;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 개인 제안서이며, 아래 건수는 가설 시뮬레이션 값입니다.</p>
         </div>
         <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
           <div class="px-3 py-5 md:py-6 text-center">
-            <p class="text-[11px] font-bold text-slate-500 mb-2 bal">사람이 집중해서 보는&nbsp;건</p>
+            <p class="text-xs font-bold text-slate-500 mb-2 bal">사람이 집중해서 보는&nbsp;건</p>
             <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">2,000건</p>
-            <p class="text-[11px] text-slate-500 mt-1 bal">1만&nbsp;건 가운데</p>
+            <p class="text-xs text-slate-500 mt-1 bal">1만&nbsp;건 가운데</p>
           </div>
           <div class="px-3 py-5 md:py-6 text-center">
-            <p class="text-[11px] font-bold text-slate-500 mb-2 bal">사람이 보지 않는&nbsp;건</p>
+            <p class="text-xs font-bold text-slate-500 mb-2 bal">사람이 보지&nbsp;않는&nbsp;건</p>
             <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">8,000건</p>
-            <p class="text-[11px] text-slate-500 mt-1 bal">여기 섞인 가짜는 그대로 노출</p>
+            <p class="text-xs text-slate-500 mt-1 bal">여기 섞인 가짜는 그대로 노출</p>
           </div>
           <div class="px-3 py-5 md:py-6 text-center">
-            <p class="text-[11px] font-bold text-slate-500 mb-2 bal">Q6&#8288;(6번째&nbsp;분기) 위험군 물량 대&nbsp;검수 한계</p>
+            <p class="text-xs font-bold text-slate-500 mb-2 bal">Q6&#8288;(6번째&nbsp;분기) 위험군 물량 대&nbsp;검수 한계</p>
             <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">3배</p>
-            <p class="text-[11px] text-slate-500 mt-1 bal">9,000건 대&nbsp;3,000건</p>
+            <p class="text-xs text-slate-500 mt-1 bal">9,000건 대&nbsp;3,000건</p>
           </div>
         </div>
         <div class="px-6 md:px-9 py-6 md:py-7">
-          <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">핵심 쟁점</p>
+          <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">핵심 쟁점</p>
           <div class="grid md:grid-cols-3 gap-3">
             <div class="rounded-xl border border-slate-200 p-4">
               <p class="text-sm font-black text-slate-900 mb-1.5 bal">필터가 무엇을 놓치는지</p>
-              <p class="text-xs text-slate-500 leading-relaxed bal">문제로 지목한&nbsp;것이 '교묘한 가짜'인데, 교묘한 것일수록 규칙에 안&nbsp;걸립니다</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal">문제로 지목한&nbsp;것이 '교묘한 가짜'인데, <br class="hidden md:block">교묘한 것일수록 규칙에 안&nbsp;걸립니다.</p>
             </div>
             <div class="rounded-xl border border-slate-200 p-4">
-              <p class="text-sm font-black text-slate-900 mb-1.5 bal">한계선은 멈춰 있고 양은 는다</p>
-              <p class="text-xs text-slate-500 leading-relaxed bal">인력 한계는 3,000건에 고정인데 리뷰는 계속 올라갑니다</p>
+              <p class="text-sm font-black text-slate-900 mb-1.5 bal">한계선은 멈춰 있고 양은 는다.</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal">인력 한계는 3,000건에 고정인데 리뷰는 계속 올라갑니다.</p>
             </div>
             <div class="rounded-xl border border-slate-200 p-4">
               <p class="text-sm font-black text-slate-900 mb-1.5 bal">처리 시간은 운영 조직의 지표</p>
-              <p class="text-xs text-slate-500 leading-relaxed bal">빨리 처리했다는&nbsp;것은 운영 조직의 지표이지 이용자가 느끼는 값이 아닙니다</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal">빨리 처리했다는&nbsp;것은 운영 조직의 지표이지 <br class="hidden md:block">이용자가 느끼는 값이 아닙니다.</p>
             </div>
           </div>
         </div>
@@ -223,17 +227,17 @@
             <div class="card p-6 text-center md:text-left hover:-translate-y-1 transition-transform">
                 <div class="icon-box mb-4 mx-auto md:mx-0">⚡</div>
                 <h2 class="text-lg font-bold text-gray-900 mb-2">데이터 자동화</h2>
-                <p class="text-sm text-gray-600">반복적인 데이터 정제&#8288;·검수 시간을 단축하고 휴먼 에러를 차단합니다.</p>
+                <p class="text-sm text-gray-600">반복적인 데이터 정제&#8288;·검수 시간을 단축하고 <br class="hidden md:block">휴먼 에러를 차단합니다.</p>
             </div>
             <div class="card p-6 text-center md:text-left hover:-translate-y-1 transition-transform">
                 <div class="icon-box mb-4 mx-auto md:mx-0">📡</div>
                 <h2 class="text-lg font-bold text-gray-900 mb-2">사전 리포팅</h2>
-                <p class="text-sm text-gray-600">이슈 발생 전 커뮤니티 동향을 파악하여 리스크를 유관 부서에 미리 알립니다.</p>
+                <p class="text-sm text-gray-600">이슈 발생 전 커뮤니티 동향을 파악하여 리스크를 <br class="hidden md:block">유관 부서에 미리 알립니다.</p>
             </div>
             <div class="card p-6 text-center md:text-left hover:-translate-y-1 transition-transform">
                 <div class="icon-box mb-4 mx-auto md:mx-0">🏗️</div>
                 <h2 class="text-lg font-bold text-gray-900 mb-2">요구사항 번역</h2>
-                <p class="text-sm text-gray-600">현장의 불만&#8288;(정성적 피드백)&#8288;을 개발팀이 바로 구현할&nbsp;수 있는 지표로 변환합니다.</p>
+                <p class="text-sm text-gray-600">현장의 불만&#8288;(정성적 피드백)&#8288;을 개발팀이 <br class="hidden md:block">바로 구현할&nbsp;수 있는 지표로 변환합니다.</p>
             </div>
         </div>
     </div>
@@ -264,13 +268,13 @@
                         <h3 class="font-bold text-gray-900 flex items-center gap-2 mb-2">
                             <span class="text-xl">📈</span> 리뷰 데이터 폭증
                         </h3>
-                        <p class="text-gray-600 text-base ml-7">글로벌 진출로 인해 검수해야 할&nbsp;데이터가 기하급수적으로 늘어납니다.</p>
+                        <p class="text-gray-600 text-sm ml-7">글로벌 진출로 인해 검수해야 할&nbsp;데이터가 기하급수적으로 늘어납니다.</p>
                     </div>
                     <div class="p-5 bg-red-50 rounded-xl border border-red-100">
                         <h3 class="font-bold text-red-800 flex items-center gap-2 mb-2">
                             <span class="text-xl">🛑</span> 물리적 한계와 어뷰징 누락
                         </h3>
-                        <p class="text-red-700 ml-7 text-xs">인력을 무한정 늘릴&nbsp;수 없으며, 피로도는 결국 <strong>'교묘한 가짜 후기 누락'</strong>으로 이어집니다.</p>
+                        <p class="text-red-700 ml-7 text-sm">인력을 무한정 늘릴&nbsp;수 없으며, 피로도는 결국 <br class="hidden md:block"><strong>'교묘한 가짜 후기 누락'</strong>으로 이어집니다.</p>
                     </div>
                 </div>
                 
@@ -337,7 +341,7 @@
                     <div class="chart-container">
                         <canvas id="efficiencyChart" role="img" aria-label="막대 차트. 항목 기존 수작업, 제안 (자동화 도입)"></canvas>
                     </div>
-                    <p class="data-source bal">※ 출처: 블레이드&amp;소울 레볼루션 라이브 운영 효율화 경험을 대입한 추정치입니다. 검수 총시간이 4분의&nbsp;1로 준다고 가정했으며 실측값이 아닙니다.</p>
+                    <p class="data-source bal">※ 출처: 블레이드&#8288;&amp;&#8288;소울 레볼루션 라이브 운영 효율화 경험을 대입한 추정치입니다. 검수 총시간이 4분의&nbsp;1로 준다고 가정했으며 실측값이 아닙니다.</p>
                 </div>
             </div>
         </div>
@@ -348,10 +352,9 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-12 text-center">
                 <span class="text-brand-600 font-bold tracking-wider text-sm mb-2 block">03. 해결 전략 2</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">현장의 목소리를 데이터로 번역합니다</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">현장의 목소리를 데이터로 번역합니다.</h2>
                 <p class="text-gray-600">
-                    운영 현장이나 커뮤니티에서 발견된 정성적인 이슈를, <br class="hidden md:block">
-                    기획&#8288;·개발팀이 즉시 구현 가능한 <mark class="point">시스템 스펙</mark>으로 변환하는 과정을 경험해 보세요.
+                    운영 현장이나 커뮤니티에서 발견된 정성적인 이슈를, <br class="hidden md:block">기획&#8288;·개발팀이 즉시 구현 가능한 <mark class="point">시스템 스펙</mark>으로 변환하는 과정을 경험해 보세요.
                 </p>
             </div>
 
@@ -439,7 +442,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10 text-center md:text-left">
                 <span class="text-brand-600 font-bold tracking-wider text-sm mb-2 block">04. 수치 재계산</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">위험군 20%&#8288;도 결국 한계선을 넘습니다</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">위험군 20%&#8288;도 결국 한계선을 넘습니다.</h2>
                 <p class="text-gray-600">문제 정의 차트의 두&nbsp;선과 해결 전략의 <mark class="point">위험군 20%</mark>&#8288;를 같은 표에 놓고 분기별로 비교했습니다.</p>
             </div>
 
@@ -527,12 +530,12 @@
             </div>
 
             <div class="bg-gray-900 rounded-2xl p-8 text-white">
-                <p class="text-sm font-bold text-brand-500 mb-4">20%&#8288;는 고정값이 될&nbsp;수 없습니다</p>
+                <p class="text-sm font-bold text-brand-500 mb-4">20%&#8288;는 고정값이 될&nbsp;수 없습니다.</p>
                 <p class="text-gray-300 leading-relaxed mb-5 max-w-[46em] bal-t">
-                    위험군을 20%&#8288;로 좁히면 Q4까지는 2,400건 대&nbsp;3,000건으로 여유가 있습니다. 그런데 <strong>Q5에서 5,000건, Q6에서 9,000건</strong>이&nbsp;됩니다. 한계선은 3,000건에 멈춰 있는데 리뷰량만 계속 오르기 때문입니다.
+                    위험군을 20%&#8288;로 좁히면 Q4까지는 2,400건 대&nbsp;3,000건으로 여유가 있습니다. <br class="hidden md:block">그런데 <strong>Q5에서 5,000건, Q6에서 9,000건</strong>이&nbsp;됩니다. <br class="hidden md:block">한계선은 3,000건에 멈춰 있는데 리뷰량만 계속 오르기 때문입니다.
                 </p>
                 <p class="text-gray-300 leading-relaxed max-w-[46em]">
-                    Q6에서 3,000건 안에 들어오려면 위험군 비율이 <strong>6.7% 이하</strong>여야 합니다. 필터가 분기마다 더&nbsp;정밀해져야 한다는 뜻이라, 한&nbsp;번 만들고 끝나는 기능이 아니라 계속 조여야 하는 운영 대상입니다.
+                    Q6에서 3,000건 안에 들어오려면 위험군 비율이 <strong>6.7% 이하</strong>여야 합니다. <br class="hidden md:block">필터가 분기마다 더&nbsp;정밀해져야 한다는 뜻이라, 한&nbsp;번 만들고 끝나는 기능이 아니라 계속 조여야 하는 운영 대상입니다.
                 </p>
             </div>
         </div>
@@ -554,18 +557,17 @@
                 <div class="card p-6 border-brand-300 bg-brand-50">
                     <p class="text-xs font-bold text-brand-600 mb-2">자동 필터 도입&nbsp;후</p>
                     <p class="text-2xl font-black text-brand-900 mb-2">건당 54초</p>
-                    <p class="text-base text-gray-700">위험군 2,000건을 30시간에 보는 기준으로, <br class="hidden md:block">
-                    오히려 1.25배 길어집니다.</p>
+                    <p class="text-sm text-gray-700">위험군 2,000건을 30시간에 보는 기준으로, 오히려 1.25배 길어집니다.</p>
                 </div>
             </div>
 
             <div class="card p-8">
-                <p class="text-sm font-bold text-brand-600 mb-4">검수 대상을 바꾸는 안입니다</p>
+                <p class="text-sm font-bold text-brand-600 mb-4">검수 대상을 바꾸는 안입니다.</p>
                 <p class="text-gray-600 leading-relaxed mb-5 max-w-[46em]">
-                    총&nbsp;시간은 120시간에서 30시간으로 75% 줄어듭니다. 그런데 사람이 보는 건수도 1만&nbsp;건에서 2,000건으로 줄어, <strong>건당 시간은 43.2초에서 54초로 늘어납니다.</strong>
+                    총&nbsp;시간은 120시간에서 30시간으로 75% 줄어듭니다. <br class="hidden md:block">그런데 사람이 보는 건수도 1만&nbsp;건에서 2,000건으로 줄어, <strong>건당 시간은 43.2초에서 54초로 늘어납니다.</strong>
                 </p>
                 <p class="text-gray-600 leading-relaxed bal max-w-[46em]">
-                    검수를 빨리 하는&nbsp;것이 아니라 <strong>검수 대상을 바꾸는</strong> 안입니다. 쉬운&nbsp;건은 기계가 보고, 사람은 어려운&nbsp;건에 시간을 더&nbsp;씁니다. 인력을 줄이는&nbsp;것이 아니라 제대로 쓰는 쪽입니다.
+                    검수를 빨리 하는&nbsp;것이 아니라 <strong>검수 대상을 바꾸는</strong> 안입니다. <br class="hidden md:block">쉬운&nbsp;건은 기계가 보고, 사람은 어려운&nbsp;건에 시간을 더&nbsp;씁니다. <br class="hidden md:block">인력을 줄이는&nbsp;것이 아니라 제대로 쓰는 쪽입니다.
                 </p>
             </div>
         </div>
@@ -575,30 +577,30 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10 text-center md:text-left">
                 <span class="text-brand-600 font-bold tracking-wider text-sm mb-2 block">06. 적용 조건</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">규칙 넷에 각각 조건을 붙였습니다</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">규칙 넷에 각각 조건을 붙였습니다.</h2>
                 <p class="text-gray-600 max-w-[42em]">필터가 작동하려면 규칙마다 서로 다른 전제가 필요합니다. 그대로 두면 정상 후기가 걸립니다.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-5">
                 <div class="card p-6">
-                    <p class="text-[10px] font-black tracking-wide text-brand-600 mb-2">이미지 메타데이터</p>
-                    <p class="font-black text-gray-900 mb-3 bal">없는&nbsp;것 자체는 어뷰징 신호가 아닙니다</p>
-                    <p class="text-sm text-gray-600 leading-relaxed bal">메신저를 거친 사진은 대체로 메타데이터가 지워집니다. <strong class="text-gray-900">부재를 위험으로 두면 정상 후기가 위험군으로 대량 분류돼 20% 목표부터 무너집니다.</strong></p>
+                    <p class="text-xs font-black tracking-wide text-brand-600 mb-2">이미지 메타데이터</p>
+                    <p class="font-black text-gray-900 mb-3 bal">없는&nbsp;것 자체는 어뷰징 신호가 아닙니다.</p>
+                    <p class="text-sm text-gray-600 leading-relaxed bal">메신저를 거친 사진은 대체로 메타데이터가 지워집니다. <br class="hidden md:block"><strong class="text-gray-900">부재를 위험으로 두면 정상 후기가 위험군으로 대량 분류돼 20% 목표부터 무너집니다.</strong></p>
                 </div>
                 <div class="card p-6">
-                    <p class="text-[10px] font-black tracking-wide text-brand-600 mb-2">중복 아이피</p>
-                    <p class="font-black text-gray-900 mb-3 bal">혼자서는 판정 근거가 못&nbsp;됩니다</p>
-                    <p class="text-sm text-gray-600 leading-relaxed bal">병원 대기실 와이파이로 남기면 여러 환자가 같은 아이피를 씁니다. 이동통신망도 마찬가지입니다. <strong class="text-gray-900">작성 시간 간격이나 계정 생성 시점과 함께 볼&nbsp;때만</strong> 의미가 생깁니다.</p>
+                    <p class="text-xs font-black tracking-wide text-brand-600 mb-2">중복 아이피</p>
+                    <p class="font-black text-gray-900 mb-3 bal">혼자서는 판정 근거가 못&nbsp;됩니다.</p>
+                    <p class="text-sm text-gray-600 leading-relaxed bal">병원 대기실 와이파이로 남기면 여러 환자가 같은 아이피를 씁니다. <br class="hidden md:block">이동통신망도 마찬가지입니다. <br class="hidden md:block"><strong class="text-gray-900">작성 시간 간격이나 계정 생성 시점과 함께 볼&nbsp;때만</strong> 의미가 생깁니다.</p>
                 </div>
                 <div class="card p-6">
-                    <p class="text-[10px] font-black tracking-wide text-brand-600 mb-2">금칙어</p>
-                    <p class="font-black text-gray-900 mb-3 bal">갱신 주기를 정해야 유지됩니다</p>
-                    <p class="text-sm text-gray-600 leading-relaxed bal">표현은 금방 바뀌는데 규칙을 고치는&nbsp;곳은 외주사가 아니라 플랫폼 개발 조직입니다. <strong>새&nbsp;패턴이 규칙으로 돌아오는 경로</strong>가 이&nbsp;제안의 수명입니다.</p>
+                    <p class="text-xs font-black tracking-wide text-brand-600 mb-2">금칙어</p>
+                    <p class="font-black text-gray-900 mb-3 bal">갱신 주기를 정해야 유지됩니다.</p>
+                    <p class="text-sm text-gray-600 leading-relaxed bal">표현은 금방 바뀌는데 규칙을 고치는&nbsp;곳은 외주사가 아니라 플랫폼 개발 조직입니다. <br class="hidden md:block"><strong>새&nbsp;패턴이 규칙으로 돌아오는 경로</strong>가 이&nbsp;제안의 수명입니다.</p>
                 </div>
                 <div class="card p-6">
-                    <p class="text-[10px] font-black tracking-wide text-brand-600 mb-2">급증 감지 임계치</p>
-                    <p class="font-black text-gray-900 mb-3 bal">정상적으로 300%&#8288;를 넘는 구간이 있습니다</p>
-                    <p class="text-sm text-gray-600 leading-relaxed bal">리뷰량이 분기마다 80~150%&#8288;씩 느는 국면이라 평시를 최근 7일 이동 평균으로 잡은 것이 맞습니다. 다만 신규 입점이나 성수기에 노출을 늦추면 <strong>손해는 브로커가 아니라 환자와 병원이 봅니다.</strong> 입점 직후와 캠페인 기간은 예외로 둡니다.</p>
+                    <p class="text-xs font-black tracking-wide text-brand-600 mb-2">급증 감지 임계치</p>
+                    <p class="font-black text-gray-900 mb-3 bal">정상적으로 300%&#8288;를 넘는 구간이 있습니다.</p>
+                    <p class="text-sm text-gray-600 leading-relaxed bal">리뷰량이 분기마다 80~150%&#8288;씩 느는 국면이라 평시를 <br class="hidden md:block">최근 7일 이동 평균으로 잡은 것이 맞습니다. 다만 신규 입점이나 성수기에 노출을 늦추면 <br class="hidden md:block"><strong>손해는 브로커가 아니라 환자와 병원이 봅니다.</strong> 입점 직후와 캠페인 기간은 예외로 둡니다.</p>
                 </div>
             </div>
         </div>
@@ -608,30 +610,30 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10 text-center md:text-left">
                 <span class="text-brand-600 font-bold tracking-wider text-sm mb-2 block">07. 제안이 치르는 대가</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">75% 절감은 80%&#8288;를 자동 통과시킨다는 말이기도 합니다</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">75% 절감은 80%&#8288;를 자동 통과시킨다는 말이기도 합니다.</h2>
             </div>
 
             <div class="grid md:grid-cols-2 gap-5 mb-8">
                 <div class="card p-6 border-2 border-emerald-200">
-                    <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-2">얻는&nbsp;것</p>
+                    <p class="text-xs font-black tracking-wide text-emerald-600 mb-2">얻는&nbsp;것</p>
                     <p class="text-2xl font-black text-gray-900 mb-1">검수 시간 75% 절감</p>
-                    <p class="text-sm text-gray-500">1만&nbsp;건&nbsp;중 2,000건에 집중합니다</p>
+                    <p class="text-sm text-gray-500">1만&nbsp;건&nbsp;중 2,000건에 집중합니다.</p>
                 </div>
                 <div class="card p-6 border-2 border-rose-200">
-                    <p class="text-[10px] font-black tracking-wide text-rose-600 mb-2">같은 수치의 다른 면</p>
+                    <p class="text-xs font-black tracking-wide text-rose-600 mb-2">같은 수치의 다른 면</p>
                     <p class="text-2xl font-black text-gray-900 mb-1">8,000건은 사람이 안&nbsp;봄</p>
-                    <p class="text-sm text-gray-500">여기 섞인 허위 후기는 그대로 노출됩니다</p>
+                    <p class="text-sm text-gray-500">여기 섞인 허위 후기는 그대로 노출됩니다.</p>
                 </div>
             </div>
 
             <div class="card p-6 md:p-8 mb-5">
-                <p class="font-black text-gray-900 mb-3 text-lg bal">누락이 사라지는&nbsp;게&nbsp;아니라 자리를 옮깁니다</p>
-                <p class="text-base text-gray-600 leading-relaxed max-w-[46em]">필터를 넣으면 누락의 원인이 <strong>사람의 피로도에서 규칙의 빈틈으로</strong> 옮겨갑니다. 수작업 누락은 담당자마다 흩어지지만, 필터는 빈틈 있는 유형만 일관되게 통과시킵니다. 한&nbsp;번 뚫은 방법을 계속 쓸&nbsp;수 있어 총량이 같아도 더&nbsp;위험합니다.</p>
+                <p class="font-black text-gray-900 mb-3 text-lg bal">누락이 사라지는&nbsp;게&nbsp;아니라 자리를 옮깁니다.</p>
+                <p class="text-sm text-gray-600 leading-relaxed max-w-[46em]">필터를 넣으면 누락의 원인이 <strong>사람의 피로도에서 규칙의 빈틈으로</strong> 옮겨갑니다. <br class="hidden md:block">수작업 누락은 담당자마다 흩어지지만, 필터는 빈틈 있는 유형만 일관되게 통과시킵니다. <br class="hidden md:block">한&nbsp;번 뚫은 방법을 계속 쓸&nbsp;수 있어 총량이 같아도 더&nbsp;위험합니다.</p>
             </div>
 
             <div class="card p-6 md:p-8 bg-gray-50">
-                <p class="font-black text-gray-900 mb-3 text-lg bal">이&nbsp;일은 품질 문제이면서 법적 문제입니다</p>
-                <p class="text-sm text-gray-600 leading-relaxed max-w-[46em]">치료 후기를 병원 홍보에 쓰는&nbsp;것은 의료 광고 규제를 받는 영역입니다. 허위 후기를 걸러내는&nbsp;일은 신뢰도 관리를 넘어 <strong>플랫폼이 지는 법적 위험</strong>을 줄이는&nbsp;일입니다.</p>
+                <p class="font-black text-gray-900 mb-3 text-lg bal">이&nbsp;일은 품질 문제이면서 법적 문제입니다.</p>
+                <p class="text-sm text-gray-600 leading-relaxed max-w-[46em]">치료 후기를 병원 홍보에 쓰는&nbsp;것은 의료 광고 규제를 받는 영역입니다. <br class="hidden md:block">허위 후기를 걸러내는&nbsp;일은 신뢰도 관리를 넘어 <strong>플랫폼이 지는 법적 위험</strong>을 줄이는&nbsp;일입니다.</p>
             </div>
         </div>
     </section>
@@ -640,26 +642,26 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10 text-center md:text-left">
                 <span class="text-brand-600 font-bold tracking-wider text-sm mb-2 block">08. 성과 지표</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">시간만 재면 방향이 반대로 잡힙니다</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">시간만 재면 방향이 반대로 잡힙니다.</h2>
             </div>
 
             <div class="grid md:grid-cols-2 gap-5 mb-8">
                 <div class="card p-6">
-                    <p class="text-[10px] font-black tracking-wide text-gray-500 mb-2">플랫폼과 외주사가 보는&nbsp;것</p>
+                    <p class="text-xs font-black tracking-wide text-gray-500 mb-2">플랫폼과 외주사가 보는&nbsp;것</p>
                     <p class="font-bold text-gray-900 mb-1.5">처리 시간과 처리 건수</p>
                     <p class="text-sm text-gray-500 leading-relaxed bal">짧을수록 좋은 지표이고 정산 근거이기도 합니다.</p>
                 </div>
                 <div class="card p-6">
-                    <p class="text-[10px] font-black tracking-wide text-gray-500 mb-2">병원을 고르는 사람이 보는&nbsp;것</p>
+                    <p class="text-xs font-black tracking-wide text-gray-500 mb-2">병원을 고르는 사람이 보는&nbsp;것</p>
                     <p class="font-bold text-gray-900 mb-1.5">후기가 사실인지</p>
                     <p class="text-sm text-gray-500 leading-relaxed bal">검수가 몇&nbsp;시간 걸렸는지는 관심 밖입니다.</p>
                 </div>
             </div>
 
             <div class="card p-6 md:p-8">
-                <p class="text-base text-gray-600 leading-relaxed max-w-[46em] mb-5"><strong class="text-gray-900">필터를 느슨하게 할수록 성과 지표는 좋아지고 놓치는 건수는 늘어납니다.</strong> 처리 시간만 재면 기준을 풀어서 나온 값인지 필터가 좋아져서 나온 값인지 가릴&nbsp;수 없습니다.</p>
+                <p class="text-base text-gray-600 leading-relaxed max-w-[46em] mb-5"><strong class="text-gray-900">필터를 느슨하게 할수록 성과 지표는 좋아지고 놓치는 건수는 늘어납니다.</strong> <br class="hidden md:block">처리 시간만 재면 기준을 풀어서 나온 값인지 필터가 좋아져서 나온 값인지 가릴&nbsp;수 없습니다.</p>
                 <div class="bg-brand-50 border-l-[6px] border-brand-600 rounded-r-2xl p-5">
-                    <p class="text-sm text-gray-700 leading-relaxed max-w-[42em]">그래서 이&nbsp;제안이 쓰는 지표는 절감률이 아니라 <strong class="text-gray-900">자동 통과분에서 나중에 발견된 허위 후기의 비율</strong>입니다. 도입과 함께 표본 검수를 설계해 이&nbsp;값을 만들어 둡니다.</p>
+                    <p class="text-sm text-gray-700 leading-relaxed max-w-[42em]">그래서 이&nbsp;제안이 쓰는 지표는 절감률이 아니라 <strong class="text-gray-900">자동 통과분에서 나중에 발견된 허위 후기의 비율</strong>입니다. <br class="hidden md:block">도입과 함께 표본 검수를 설계해 이&nbsp;값을 만들어 둡니다.</p>
                 </div>
             </div>
         </div>
@@ -676,16 +678,16 @@
                 <div class="card p-6 flex items-start gap-4">
                     <div class="w-8 h-8 rounded-full bg-brand-500 text-slate-900 font-bold flex items-center justify-center shrink-0">1</div>
                     <div>
-                        <p class="font-bold text-gray-900 mb-1">자동 통과분의 표본 재검수를 먼저 붙입니다</p>
-                        <p class="text-base text-gray-600 leading-relaxed max-w-[46em]">
-                    통과된 8,000건&nbsp;중 일부를 무작위로 뽑아 사람이 다시 봅니다. 이&nbsp;값이 없으면 <strong>이후의 모든 판단이 근거를 잃습니다.</strong> 여기 드는 시간은 절감분 안에서 뺍니다.
+                        <p class="font-bold text-gray-900 mb-1">자동 통과분의 표본 재검수를 먼저 붙입니다.</p>
+                        <p class="text-sm text-gray-600 leading-relaxed max-w-[46em]">
+                    통과된 8,000건&nbsp;중 일부를 무작위로 뽑아 사람이 다시 봅니다. <br class="hidden md:block">이&nbsp;값이 없으면 <strong>이후의 모든 판단이 근거를 잃습니다.</strong> <br class="hidden md:block">여기 드는 시간은 절감분 안에서 뺍니다.
                 </p>
                     </div>
                 </div>
                 <div class="card p-6 flex items-start gap-4">
                     <div class="w-8 h-8 rounded-full bg-brand-500 text-slate-900 font-bold flex items-center justify-center shrink-0">2</div>
                     <div>
-                        <p class="font-bold text-gray-900 mb-1">규칙 갱신의 담당자와 주기를 절차로 확정합니다</p>
+                        <p class="font-bold text-gray-900 mb-1">규칙 갱신의 담당자와 주기를 절차로 확정합니다.</p>
                         <p class="text-sm text-gray-600 leading-relaxed max-w-[46em]">
                     검수 담당자가 발견한 새&nbsp;우회 패턴을 어느 조직이 며칠 안에 규칙에 반영하는지 정합니다. <br class="hidden md:block">
                     외주 계약과 개발 요청 경로 양쪽에 들어가야 실제로 작동합니다.
@@ -695,7 +697,7 @@
                 <div class="card p-6 flex items-start gap-4">
                     <div class="w-8 h-8 rounded-full bg-gray-300 text-gray-700 font-bold flex items-center justify-center shrink-0">3</div>
                     <div>
-                        <p class="font-bold text-gray-900 mb-1">위험군 비율 목표를 분기별로 내려 잡습니다</p>
+                        <p class="font-bold text-gray-900 mb-1">위험군 비율 목표를 분기별로 내려 잡습니다.</p>
                         <p class="text-sm text-gray-600 leading-relaxed max-w-[46em]">
                     20%&#8288;를 시작값으로 두고, 리뷰량 증가에 맞춰 Q6까지 6.7% 수준으로 낮추는 계획을 함께 제시합니다. <br class="hidden md:block">
                     비율을 낮추는 방법은 필터 정밀도 개선이며, 그&nbsp;진척은 1번의 표본 검수로 확인합니다.
@@ -705,7 +707,7 @@
                 <div class="card p-6 flex items-start gap-4">
                     <div class="w-8 h-8 rounded-full bg-gray-300 text-gray-700 font-bold flex items-center justify-center shrink-0">4</div>
                     <div>
-                        <p class="font-bold text-gray-900 mb-1">단독 판정 금지 규칙과 노출 지연 예외를 넣습니다</p>
+                        <p class="font-bold text-gray-900 mb-1">단독 판정 금지 규칙과 노출 지연 예외를 넣습니다.</p>
                         <p class="text-sm text-gray-600 leading-relaxed max-w-[46em]">
                     아이피 중복과 메타데이터 부재는 다른 신호와 결합할&nbsp;때만 위험군으로 올립니다. <br class="hidden md:block">
                     신규 입점이나 캠페인 기간은 급증 감지의 예외로 등록해 정상 후기의 노출 지연을 막습니다.
@@ -755,7 +757,7 @@
     <footer class="bg-gray-900 py-16 text-center">
         <div class="max-w-4xl mx-auto px-4">
             <h3 class="text-2xl font-bold text-white mb-4">관리자를 넘어 시스템을 설계하는 파트너</h3>
-            <p class="text-gray-400 mb-8" style="text-wrap:balance">작성자 <span class="font-bold text-brand-500">허재석</span>이 <strong class="text-gray-200">블레이드&amp;소울 레볼루션 라이브 서비스 운영</strong>에서 쓰던 방식을 의료 정보 플랫폼 후기 검수 운영에 옮겨 적었습니다.</p>
+            <p class="text-gray-400 mb-8" style="text-wrap:balance"><strong class="text-gray-200">블레이드&#8288;&amp;&#8288;소울 레볼루션 라이브 서비스 운영</strong>에서 쓰던 방식을 의료 정보 플랫폼 후기 검수 운영에 옮겨 적었습니다.</p>
             <button class="bg-white text-gray-900 font-bold px-6 py-3 rounded-full hover:bg-brand-50 transition shadow-lg" onclick="window.scrollTo(0,0)">
                 ↑ 맨&nbsp;위로 이동
             </button>

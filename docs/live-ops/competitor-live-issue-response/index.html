@@ -8,12 +8,12 @@
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../../favicon.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
-    <meta name="description" content="타사 라이브 이슈 대응 분석. 경쟁 서비스의 장애 대응을 분해해 블소 운영에 옮길 점을 정리.">
+    <meta name="description" content="타사 라이브 이슈 대응 분석. 경쟁 서비스의 사고 대응을 분해해 블소 운영에 옮길 점을 정리.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="허재석 기획·운영 아카이브">
 <meta property="og:title" content="타사 라이브 이슈 대응 분석">
-<meta property="og:description" content="타사 라이브 이슈 대응 분석. 경쟁 서비스의 장애 대응을 분해해 블소 운영에 옮길 점을 정리.">
+<meta property="og:description" content="타사 라이브 이슈 대응 분석. 경쟁 서비스의 사고 대응을 분해해 블소 운영에 옮길 점을 정리.">
 <link rel="canonical" href="https://heojaeseock.github.io/planning-archive/docs/live-ops/competitor-live-issue-response/">
 <meta property="og:url" content="https://heojaeseock.github.io/planning-archive/docs/live-ops/competitor-live-issue-response/">
 <meta property="og:image" content="https://heojaeseock.github.io/planning-archive/docs/live-ops/competitor-live-issue-response/og.png">
@@ -126,6 +126,10 @@ html { scroll-behavior: smooth; }
 .space-y-24>:not([hidden])~:not([hidden]){margin-top:4rem}
 .space-y-12.pb-20{padding-bottom:0}
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-rose-500{color:#e11d48} html body .text-rose-600{color:#be123c}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="text-slate-900">
 
@@ -165,23 +169,23 @@ html { scroll-behavior: smooth; }
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-              <p class="text-[11px] font-black tracking-[0.12em] text-amber-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
-              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">경쟁 서비스의 사고 대응을 공개 자료로 분해해, 블레이드&amp;소울 레볼루션 운영에 옮길 점을 정리한 개인 분석입니다.</p>
+              <p class="text-xs font-black tracking-[0.12em] text-amber-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
+              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">경쟁 서비스의 사고 대응을 공개 자료로 분해해, <br class="hidden md:block">블레이드&#8288;&amp;&#8288;소울 레볼루션 운영에 옮길 점을 정리한 개인 분석입니다.</p>
             </div>
             <div class="px-6 md:px-9 py-6 md:py-7">
-              <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">우리 서비스에 옮길&nbsp;것</p>
+              <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">우리 서비스에 옮길&nbsp;것</p>
               <div class="grid md:grid-cols-3 gap-3">
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">보상 기준을 미리 합의</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">터진&nbsp;뒤에 얼마를 줄지 회의하느라 시간을 버리지 않게 합니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">터진&nbsp;뒤에 얼마를 줄지 회의하느라 <br class="hidden md:block">시간을 버리지 않게 합니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">30분 안에 상황 공유</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">고쳤다는&nbsp;말이 아니라 '보고 있다'는&nbsp;말을 먼저 보냅니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">고쳤다는&nbsp;말이 아니라 <br class="hidden md:block">'보고 있다'는&nbsp;말을 먼저 보냅니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">다만 조건이 있었음</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">공개된 대응 속도를 보면, 그&nbsp;회사에서는 큰돈이 드는 결정도 하루 이틀 만에 승인된 것으로 추정됩니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">공개된 대응 속도를 보면, <br class="hidden md:block">그&nbsp;회사에서는 큰돈이 드는 결정도 <br class="hidden md:block">하루 이틀 만에 승인된 것으로 추정됩니다.</p>
                 </div>
               </div>
             </div>
@@ -221,8 +225,7 @@ html { scroll-behavior: smooth; }
                 
                 <p class="text-slate-600 mb-12 text-base leading-[1.8]">
                     게임 출시 직후, 유저들의 구매가 집중되는 유료 상품의 설명이 실제 기능과 다르게 번역되었습니다. <br class="hidden md:block">
-                    유저들은 <strong>"사기 뽑기"</strong>라며 분노했고, <br class="hidden md:block">
-                    운영진은 이를 해결하기 위해 회사의 큰&nbsp;손해를 감수하는 파격적인 결정을 내렸습니다.
+                    유저들은 <strong>"사기 뽑기"</strong>라며 분노했고, 운영진은 이를 해결하기 위해 회사의 큰&nbsp;손해를 감수하는 파격적인 결정을 내렸습니다.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -236,9 +239,9 @@ html { scroll-behavior: smooth; }
                     <div class="space-y-4">
                         <h4 class="font-bold text-slate-800 border-l-4 border-blue-500 pl-3">대처 방식</h4>
                         <div class="text-[15px] text-slate-500 space-y-4">
-                            <p>• <strong>1시간&nbsp;내 빠른 공지:</strong> 문제를 확인 중임을 즉각 알려 유저들의 막연한 불안감을 해소했습니다.</p>
-                            <p>• <strong>전액 재화 돌려주기:</strong> 사용한 재화를 전부 환급하되, 뽑은 아이템은 그대로 두어 유저의 이득을 보전했습니다.</p>
-                            <p>• <strong>진심 어린 사과:</strong> 외부 업체 탓을 하지 않고 전적으로 운영진 과실임을 인정하며 정면 돌파했습니다.</p>
+                            <p>• <strong>1시간&nbsp;내 빠른 공지:</strong> 문제를 확인 중임을 즉각 알려 <br class="hidden md:block">유저들의 막연한 불안감을 해소했습니다.</p>
+                            <p>• <strong>전액 재화 돌려주기:</strong> 사용한 재화를 전부 환급하되, <br class="hidden md:block">뽑은 아이템은 그대로 두어 유저의 이득을 보전했습니다.</p>
+                            <p>• <strong>진심 어린 사과:</strong> 외부 업체 탓을 하지 않고 <br class="hidden md:block">전적으로 운영진 과실임을 인정하며 정면 돌파했습니다.</p>
                         </div>
                     </div>
                 </div>
@@ -288,8 +291,8 @@ html { scroll-behavior: smooth; }
                 <div class="bg-white p-8 rounded-3xl border border-slate-200 hover:border-blue-300 transition-all card-shadow">
                     <div class="text-4xl mb-5">⚡</div>
                     <h3 class="font-bold text-slate-900 mb-3 text-lg">짧은 보고 단계</h3>
-                    <p class="text-slate-500 leading-relaxed text-base">
-                        막대한 비용이 드는 결정도 하루 이틀 만에 승인될 정도로 내부 의사결정 체계가 매우 단순하고 빨랐습니다.
+                    <p class="text-slate-500 leading-relaxed text-sm">
+                        막대한 비용이 드는 결정도 하루 이틀 만에 승인될 정도로 <br class="hidden md:block">내부 의사결정 체계가 매우 단순하고 빨랐던 것으로 보입니다.
                     </p>
                 </div>
                 <div class="bg-white p-8 rounded-3xl border border-slate-200 hover:border-blue-300 transition-all card-shadow">
@@ -325,21 +328,20 @@ html { scroll-behavior: smooth; }
                         <h3 class="text-2xl font-bold text-slate-900">이슈 발생&nbsp;시 '보상 기준 미리 정하기'</h3>
                     </div>
                     <p class="text-slate-600 mb-10 text-base leading-relaxed text-center md:text-left">
-                    사고가 터졌을&nbsp;때 "얼마를 줄지" 회의하느라 시간을 허비하지 않도록, <br class="hidden md:block">
-                    보상 범위를 미리 <strong>사업부</strong>와 합의해 두어 대응 속도를 높입니다.
+                    사고가 터졌을&nbsp;때 "얼마를 줄지" 회의하느라 시간을 허비하지 않도록, <br class="hidden md:block">보상 범위를 미리 <strong>사업부</strong>와 합의해 두어 대응 속도를 높입니다.
                 </p>
                     <div class="bg-blue-50/50 p-8 rounded-3xl border border-blue-100">
                         <h4 class="font-bold text-sm text-blue-800 mb-6 tracking-wider">실무 가이드 예시</h4>
                         <div class="space-y-4">
                             <div class="flex justify-between items-center p-5 bg-white rounded-2xl border border-blue-200 shadow-sm">
-                                <span class="font-bold text-slate-700">중대한 오류 (유료 상품 문제)</span>
+                                <span class="font-bold text-slate-700">중대한 오류 (유료&nbsp;상품&nbsp;문제)</span>
                                 <span class="text-xs text-blue-600 font-extrabold bg-blue-50 px-3 py-1.5 rounded-lg border border-blue-100">재화 100% 환급 기준</span>
                             </div>
                             <div class="flex justify-between items-center p-5 bg-white rounded-2xl border border-blue-200 shadow-sm">
-                                <span class="font-bold text-slate-700">일반적인 오류 (단순 오타&nbsp;등)</span>
+                                <span class="font-bold text-slate-700">일반적인 오류 (단순&nbsp;오타&nbsp;등)</span>
                                 <span class="text-xs text-blue-600 font-extrabold bg-blue-50 px-3 py-1.5 rounded-lg border border-blue-100">공통 보상 패키지</span>
                             </div>
-                            <p class="text-[11px] text-slate-500 mt-6 text-center italic">
+                            <p class="text-xs text-slate-500 mt-6 text-center italic">
                                 * 사고 인지 즉시 이&nbsp;기준표에 맞춰 사업부와 조율한&nbsp;뒤 바로 보고합니다.
                             </p>
                         </div>
@@ -363,7 +365,7 @@ html { scroll-behavior: smooth; }
                                 <span class="w-2 h-2 bg-blue-400 rounded-full mr-2"></span> 실무자 전결권 부여
                             </h4>
                             <p class="text-xs text-blue-100/70 leading-relaxed">
-                    중대한 결함 발견&nbsp;시, 별도의 복잡한 절차 없이 미리 준비된 "확인 중" 공지를 즉시 올릴&nbsp;수 있도록 운영팀에 권한을 부여합니다.
+                    중대한 결함 발견&nbsp;시, 별도의 복잡한 절차 없이 <br class="hidden md:block">미리 준비된 "확인 중" 공지를 즉시 올릴&nbsp;수 있도록 <br class="hidden md:block">운영팀에 권한을 부여합니다.
                 </p>
                         </div>
                         <div class="bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
@@ -371,7 +373,7 @@ html { scroll-behavior: smooth; }
                                 <span class="w-2 h-2 bg-blue-400 rounded-full mr-2"></span> 초기 대응 양식 마련
                             </h4>
                             <p class="text-xs text-blue-100/70 leading-relaxed">
-                                상황별로 즉시 복사해서 사용할&nbsp;수 있는 공지 양식들을 미리 준비하여 실무자의 작성 시간을 최소화합니다.
+                                상황별로 즉시 복사해서 사용할&nbsp;수 있는 공지 양식들을 <br class="hidden md:block">미리 준비하여 실무자의 작성 시간을 최소화합니다.
                             </p>
                         </div>
                     </div>
@@ -422,7 +424,7 @@ html { scroll-behavior: smooth; }
                                 <td class="p-3 text-center font-bold text-slate-500">+10</td>
                             </tr>
                             <tr class="bg-emerald-50 border-b border-slate-200">
-                                <td class="p-3 font-black text-slate-800">보상 발표 <span class="text-[10px] font-black text-emerald-700">전환점</span></td>
+                                <td class="p-3 font-black text-slate-800">보상 발표 <span class="text-xs font-black text-emerald-700">전환점</span></td>
                                 <td class="p-3 text-center font-bold text-rose-600">25</td>
                                 <td class="p-3 text-center font-bold text-blue-600">70</td>
                                 <td class="p-3 text-center font-black text-emerald-700">-55</td>
@@ -465,14 +467,14 @@ html { scroll-behavior: smooth; }
             </div>
 
             <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-8 mb-8">
-                <p class="text-sm font-black text-emerald-700 mb-5">공지는 시간을 벌고, 보상이 해결합니다</p>
+                <p class="text-sm font-black text-emerald-700 mb-5">공지는 시간을 벌고, 보상이 해결합니다.</p>
                 <p class="text-slate-700 leading-relaxed mb-5 max-w-[46em]">
                     1장에서 대처의 첫&nbsp;항목으로 <strong class="text-slate-900">1시간&nbsp;내 빠른 공지</strong>를 들었습니다. <br class="hidden md:block">
                     수치로 보면 공지는 부정 여론을 <strong class="text-slate-900">15p 낮췄고</strong>, 보상 발표는 <strong class="text-emerald-700">55p 낮췄습니다.</strong> <br class="hidden md:block">
                     공지가 무의미한&nbsp;것은 아니지만, <strong class="text-slate-900">공지만으로는 여론이 뒤집히지 않습니다.</strong>
                 </p>
                 <div class="bg-white rounded-xl p-6 border border-emerald-200">
-                    <p class="text-xs font-black text-slate-800 mb-2">두&nbsp;조치의 역할이 다릅니다</p>
+                    <p class="text-xs font-black text-slate-800 mb-2">두&nbsp;조치의 역할이 다릅니다.</p>
                     <p class="text-xs text-slate-600 leading-relaxed">
                     1차 공지는 <strong class="text-slate-800">확산을 늦춰 대응 시간을 확보</strong>하는 조치입니다. <br class="hidden md:block">
                     95까지 오른 부정 여론이 더&nbsp;오르지 않게 막는&nbsp;것이 역할이고, 실제로 그&nbsp;지점에서 상승이 멈췄습니다. <br class="hidden md:block">
@@ -483,8 +485,8 @@ html { scroll-behavior: smooth; }
             </div>
 
             <div class="bg-white border-2 border-slate-300 rounded-2xl p-8">
-                <p class="text-sm font-black text-slate-800 mb-4">이&nbsp;계산이 실무 제안의 근거가 됩니다</p>
-                <p class="text-slate-600 leading-relaxed max-w-[46em]"><strong>보상 발표까지 걸리는 시간이 곧&nbsp;위기의 길이입니다.</strong> 여론을 뒤집는 조치가 보상이기 때문입니다. <br class="hidden md:block">
+                <p class="text-sm font-black text-slate-800 mb-4">이&nbsp;계산이 실무 제안의 근거가 됩니다.</p>
+                <p class="text-slate-600 leading-relaxed max-w-[46em]"><strong>보상 발표까지 걸리는 시간이 곧&nbsp;위기의 길이입니다.</strong> <br class="hidden md:block">여론을 뒤집는 조치가 보상이기 때문입니다. <br class="hidden md:block">
 사고가 난&nbsp;뒤에 보상 규모를 협의하기 시작하면 그동안 부정 여론이 80 수준에서 유지됩니다. <br class="hidden md:block">
 기준이 미리 정해져 있으면 공지와 보상 사이가 좁혀지고, 줄인 시간이 그대로 피해 감소가 됩니다.</p>
             </div>
@@ -501,7 +503,7 @@ html { scroll-behavior: smooth; }
 
             <div class="space-y-5 mb-10">
                 <div class="bg-white border-l-4 border-l-amber-500 border border-slate-200 rounded-2xl p-7">
-                    <p class="font-black text-slate-900 mb-3">출시 직후였습니다</p>
+                    <p class="font-black text-slate-900 mb-3">출시 직후였습니다.</p>
                     <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">
                     사고 시점이 <strong class="text-slate-900">서비스 초기</strong>였으므로 환급 대상 규모가 관리 가능한 수준이었습니다. <br class="hidden md:block">
                     수년간 운영된 서비스에서 같은 사고가 나면 환급액이 훨씬 커지고, <strong class="text-amber-700">전액 환급이 재무적으로 승인되지 않을&nbsp;수 있습니다.</strong> <br class="hidden md:block">
@@ -509,36 +511,33 @@ html { scroll-behavior: smooth; }
                 </p>
                 </div>
                 <div class="bg-white border-l-4 border-l-amber-500 border border-slate-200 rounded-2xl p-7">
-                    <p class="font-black text-slate-900 mb-3">재화를 돌려주고 아이템을 남긴&nbsp;것은 유저의 순이득입니다</p>
+                    <p class="font-black text-slate-900 mb-3">재화를 돌려주고 아이템을 남긴&nbsp;것은 유저의 순이득입니다.</p>
                     <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">
                     뽑은 아이템을 회수하지 않고 재화만 환급하면 유저는 <strong class="text-slate-900">아이템과 재화를 모두 보유</strong>합니다. <br class="hidden md:block">
                     신뢰 회복 효과는 크지만, 그만큼 <strong class="text-amber-700">게임&nbsp;내 재화가 추가로 풀립니다.</strong> <br class="hidden md:block">
-                    초기 서비스는 경제 규모가 작아 이&nbsp;충격을 흡수할&nbsp;수 있지만, <br class="hidden md:block">
-                    성숙한 경제에서는 인플레이션과 밸런스 영향을 함께 계산해야 합니다.
+                    초기 서비스는 경제 규모가 작아 이&nbsp;충격을 흡수할&nbsp;수 있지만, <br class="hidden md:block">성숙한 경제에서는 인플레이션과 밸런스 영향을 함께 계산해야 합니다.
                 </p>
                 </div>
                 <div class="bg-white border-l-4 border-l-slate-400 border border-slate-200 rounded-2xl p-7">
-                    <p class="font-black text-slate-900 mb-3">짧은 보고 단계는 조직 구조입니다</p>
+                    <p class="font-black text-slate-900 mb-3">짧은 보고 단계는 조직 구조입니다.</p>
                     <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">하루 이틀 만의 승인은 정책이 아니라 의사결정 구조라 개별 담당자가 바꿀&nbsp;수 없습니다. <br class="hidden md:block">
-실무에서 재현할&nbsp;수 있는 형태는 구조 변경이 아니라 <strong>사전 승인 한도</strong>입니다. 일정 금액 아래는 실무 판단으로 즉시 집행하도록 미리 합의해 두면, 빠른 조직이 아니어도 초기 속도가 나옵니다.</p>
+실무에서 재현할&nbsp;수 있는 형태는 구조 변경이 아니라 <strong>사전 승인 한도</strong>입니다. <br class="hidden md:block">일정 금액 아래는 실무 판단으로 즉시 집행하도록 미리 합의해 두면, 빠른 조직이 아니어도 초기 속도가 나옵니다.</p>
                 </div>
             </div>
 
             <div class="bg-amber-50 border-2 border-amber-300 rounded-2xl p-8">
-                <p class="text-sm font-black text-amber-700 mb-4">보상 기준표에 상한이 필요합니다</p>
+                <p class="text-sm font-black text-amber-700 mb-4">보상 기준표에 상한이 필요합니다.</p>
                 <p class="text-slate-700 leading-relaxed mb-5 max-w-[46em]">
                     제안된 기준표는 중대한 오류에 <strong class="text-slate-900">재화 100% 환급</strong>을 명시합니다. <br class="hidden md:block">
-                    기준이 명확해 협의 시간을 줄이는 장점이 있지만, <br class="hidden md:block">
-                    그대로 두면 <strong class="text-amber-800">사고 규모와 무관하게 100%&#8288;를 적용해야 합니다.</strong>
+                    기준이 명확해 협의 시간을 줄이는 장점이 있지만, 그대로 두면 <strong class="text-amber-800">사고 규모와 무관하게 100%&#8288;를 적용해야 합니다.</strong>
                 </p>
                 <div class="bg-white rounded-xl p-6 border border-amber-200">
                     <p class="text-xs font-black text-slate-800 mb-3">기준표를 실행 가능하게 만드는 항목</p>
                     <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
-                        <li class="leading-[1.8] bal-t">&bull; <strong class="text-slate-800">사전 승인 한도</strong> &mdash; 총&nbsp;환급액이 일정 금액 이하면 실무 즉시 집행, 초과하면 경영 판단으로 넘김. 대부분의 사고는 한도 안에서 끝나므로 속도가 확보됩니다</li>
-                        <li class="bal leading-[1.8]">&bull; <strong class="text-slate-800">아이템 회수 여부</strong> &mdash; 재화만 환급할지 아이템도 회수할지 미리 정합니다. 회수하지 않으면 유저 만족은 크지만 경제에 영향이 남습니다</li>
-                        <li class="leading-[1.8]">&bull; <strong class="text-slate-800">중대와 일반의 판정 기준</strong> &mdash; 유료 상품 여부만으로 가를지, <br class="hidden md:block">
-                    영향 유저&nbsp;수도 볼지. 판정이 모호하면 기준표가 있어도 회의가 열립니다</li>
-                        <li class="bal">&bull; <strong class="text-slate-800">사업부 합의 시점</strong> &mdash; 기준표는 사고 전에 합의되어야 합니다. 사고&nbsp;후 합의하면 제안의 목적이 사라집니다</li>
+                        <li class="leading-[1.8] bal-t">&bull; <strong class="text-slate-800">사전 승인 한도</strong> &mdash; 총&nbsp;환급액이 일정 금액 이하면 실무 즉시 집행, 초과하면 경영 판단으로 넘김. 대부분의 사고는 한도 안에서 끝나므로 속도가 확보됩니다.</li>
+                        <li class="bal leading-[1.8]">&bull; <strong class="text-slate-800">아이템 회수 여부</strong> &mdash; 재화만 환급할지 아이템도 회수할지 미리 정합니다. 회수하지 않으면 유저 만족은 크지만 경제에 영향이 남습니다.</li>
+                        <li class="leading-[1.8]">&bull; <strong class="text-slate-800">중대와 일반의 판정 기준</strong> &mdash; 유료 상품 여부만으로 가를지, 영향 유저&nbsp;수도 볼지. 판정이 모호하면 기준표가 있어도 회의가 열립니다.</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">사업부 합의 시점</strong> &mdash; 기준표는 사고 전에 합의되어야 합니다. 사고&nbsp;후 합의하면 제안의 목적이 사라집니다.</li>
                     </ul>
                 </div>
             </div>
@@ -555,7 +554,7 @@ html { scroll-behavior: smooth; }
             <div class="grid md:grid-cols-3 gap-5 mb-8">
                 <div class="bg-white border-2 border-slate-200 rounded-2xl p-6">
                     <p class="text-xs font-black text-slate-700 mb-2">사실 확인 없이도 낼&nbsp;문안</p>
-                    <p class="text-slate-600 leading-relaxed text-sm">30분 안에는 원인을 알&nbsp;수 없습니다. <strong class="text-slate-800">확인 중임을 알리는 최소 문안</strong>을 사전 승인해 두어야 그&nbsp;시점에 낼&nbsp;것이 있습니다. 사례의 1차 공지도 원인 규명이 아니라 확인&nbsp;중 안내였습니다.</p>
+                    <p class="text-slate-600 leading-relaxed text-sm">30분 안에는 원인을 알&nbsp;수 없습니다. <strong class="text-slate-800">확인 중임을 알리는 최소 문안</strong>을 <br class="hidden md:block">사전 승인해 두어야 그&nbsp;시점에 낼&nbsp;것이 있습니다. 사례의 1차 공지도 원인 규명이 아니라 확인&nbsp;중 안내였습니다.</p>
                 </div>
                 <div class="bg-white border-2 border-slate-200 rounded-2xl p-6">
                     <p class="text-xs font-black text-slate-700 mb-2">심야와 휴일</p>

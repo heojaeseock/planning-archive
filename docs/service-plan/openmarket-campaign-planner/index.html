@@ -136,7 +136,10 @@
             transform: translateY(20px);
             transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
         }
-        .알림-레이어.표시 { opacity: 1; visibility: visible; transform: translateY(0); }
+        .알림-레이어.표시 { opacity: 1; visibility: visible; transform: translateY(0); animation: 알림-등장 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+        /* 나타나기 전에는 자리도 차지하지 않는다 (차트 아래 빈 공간 방지) */
+        .알림-레이어:not(.표시) { display: none; }
+        @keyframes 알림-등장 { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
         /* 매뉴얼 확인 버튼 */
         .매뉴얼-버튼 {
@@ -246,6 +249,10 @@ body.py-24{padding-top:4rem;padding-bottom:4rem}
 .성과-요약-보드{margin-top:4rem;padding-top:3rem;padding-bottom:3rem}
 .성과-요약-보드 .mt-16{margin-top:2.5rem}
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-red-500{color:#dc2626}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="py-24">
 
@@ -254,7 +261,7 @@ body.py-24{padding-top:4rem;padding-bottom:4rem}
         <div class="inline-block bg-[#FFD400] text-black font-black px-5 py-1.5 rounded-full mb-8 text-sm">오픈마켓 커머스 캠페인 기획안</div>
         <h1 class="메인-타이틀">
             라이브 게임 운영의 집요함으로<br>
-            <span class="text-[#0064FF]">오픈마켓 커머스 캠페인 성과 개선안을 정리했습니다</span>
+            <span class="text-[#0064FF]">오픈마켓 커머스 캠페인 <br class="hidden md:block">성과 개선안을 정리했습니다.</span>
         </h1>
     </header>
 
@@ -263,45 +270,45 @@ body.py-24{padding-top:4rem;padding-bottom:4rem}
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-              <p class="text-[11px] font-black tracking-[0.12em] text-teal-700 mb-3">문서 소개</p>
-              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">트래픽 누수 지점을 찾아 미리 막는 캠페인 운영 방식을 설계한 문서입니다. 블레이드&amp;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 개인 제안서이며, 아래 지표 변화는 대응 흐름을 보이려고 만든 시연 수치입니다.</p>
+              <p class="text-xs font-black tracking-[0.12em] text-teal-700 mb-3">문서 소개</p>
+              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">트래픽 누수 지점을 찾아 미리 막는 캠페인 운영 방식을 설계한 문서입니다. 블레이드&#8288;&amp;&#8288;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 제안서이며, 아래 지표 변화는 대응 흐름을 보이려고 만든 시연 수치입니다.</p>
             </div>
             <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">클릭률</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">클릭률</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">+41.7%</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">오히려 올랐습니다</p>
+                <p class="text-xs text-slate-500 mt-1 bal">오히려 올랐습니다.</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">전환율</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">전환율</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">-79.3%</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">가격으로는 설명되지 않는 크기</p>
+                <p class="text-xs text-slate-500 mt-1 bal">가격으로는 설명되지 않는 크기</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">그래서 첫&nbsp;조치는</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">그래서 첫&nbsp;조치는</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">링크 점검</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">기술적 원인을 먼저 봅니다</p>
+                <p class="text-xs text-slate-500 mt-1 bal">기술적 원인을 먼저 봅니다.</p>
               </div>
             </div>
             <div class="px-6 md:px-9 py-6 md:py-7">
-              <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">경보를 두&nbsp;단계로 나눔</p>
+              <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">경보를 두&nbsp;단계로 나눔</p>
               <div class="grid md:grid-cols-3 gap-3">
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">전환율이 직전 30분의 절반 이하면</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">기술 점검 경보 — 상세페이지 오류나 결제 실패를 먼저 봅니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">전환 대 클릭 비율이 직전 30분 평균의 절반 이하면</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">기술 점검 경보 — 상세페이지 오류나 <br class="hidden md:block">결제 실패를 먼저 봅니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">20%&#8288;쯤 하락이 두&nbsp;구간 이어지면</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">가격 검증 경보 — 경쟁 판매자의 가격을 봅니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">가격 검증 경보 — 경쟁 판매자의 가격을 봅니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">예비 상품 교체는 동시에</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">복구가 아니라 손실을 끊는&nbsp;것이 목적이라 나중이 아니라 함께 합니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">복구가 아니라 손실을 끊는&nbsp;것이 목적이라 <br class="hidden md:block">나중이 아니라 함께 합니다.</p>
                 </div>
               </div>
             </div>
             <div class="px-6 md:px-9 py-4 bg-slate-50 border-t border-slate-200">
-              <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">오픈마켓은 여러 판매자가 같은 상품을 나란히 파는 구조라, 가격과 노출 위치가 매출을 정합니다. 가격을 잘못 적으면 그대로 팔려 손실과 항의가 함께 옵니다.</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">오픈마켓은 여러 판매자가 같은 상품을 나란히 파는 구조라, 가격과 노출 위치가 매출을 정합니다. <br class="hidden md:block">가격을 잘못 적으면 그대로 팔려 손실과 항의가 함께 옵니다.</p>
             </div>
           </div>
         </section>
@@ -312,7 +319,7 @@ body.py-24{padding-top:4rem;padding-bottom:4rem}
             <div class="bg-white rounded-3xl border border-slate-200 p-8 md:p-12">
                 <h2 class="text-2xl md:text-3xl font-black mt-3 mb-6 leading-snug">시장 구조와 문제</h2>
                 <p class="text-slate-600 leading-relaxed mb-4 max-w-[46em]">
-                    캠페인 한&nbsp;건에 상품 수백에서 수천&nbsp;개가 올라가는데 <strong>가격과 재고 검수는 손으로 하는 엑셀</strong>입니다.<br>
+                    캠페인 한&nbsp;건에 상품 수백에서 수천&nbsp;개가 올라가는데 <strong>가격과 재고 검수는 엑셀에서 손으로 합니다</strong>.<br>
 가격을 잘못 적으면 그대로 팔립니다.
                 </p>
             </div>
@@ -329,13 +336,13 @@ body.py-24{padding-top:4rem;padding-bottom:4rem}
                 <div class="grid md:grid-cols-2 gap-8 text-left">
                     <div class="p-10 bg-slate-50 rounded-[40px] border border-slate-100 h-full flex flex-col justify-center">
                         <span class="text-red-500 font-black text-xs block mb-4">📍 운영 효율 저하</span>
-                        <p class="text-slate-800 font-bold text-base leading-snug bal">
+                        <p class="text-slate-800 font-bold text-lg leading-snug bal">
                             반복적인 수작업 검수를 자동화하여 기획을 위한 <span class="옐로우-포인트">전략적 시간</span>을 확보합니다.
                         </p>
                     </div>
                     <div class="p-10 bg-slate-50 rounded-[40px] border border-slate-100 h-full flex flex-col justify-center">
                         <span class="text-red-500 font-black text-xs block mb-4">⚠️ 브랜드 신뢰도 하락</span>
-                        <p class="text-slate-800 font-bold text-xl leading-snug bal">
+                        <p class="text-slate-800 font-bold text-lg leading-snug bal">
                             가격 오류를 사전에 차단해 구매 <span class="옐로우-포인트">전환율의 하락</span>을 방어하는 방안을 정리했습니다.
                         </p>
                     </div>
@@ -363,8 +370,7 @@ body.py-24{padding-top:4rem;padding-bottom:4rem}
                         <canvas id="차트-정제" role="img" aria-label="막대 차트. 항목 수작업 검수, 자동화 도입"></canvas>
                     </div>
                     <p class="text-slate-600 font-medium max-w-[500px] mx-auto leading-relaxed">
-                        수만&nbsp;건의 보상 데이터를 함수로 자동 대조해<br class="hidden md:block">
-                        빠진 값과 잘못 입력된 값을 걸러냈습니다.
+                        수만&nbsp;건의 보상 데이터를 함수로 자동 대조해 <br class="hidden md:block">빠진 값과 잘못 입력된 값을 걸러냈습니다.
                     </p>
                 </div>
 
@@ -409,7 +415,7 @@ body.py-24{padding-top:4rem;padding-bottom:4rem}
                         <span>🚨</span> 전환율 급락 상황 감지
                     </p>
                     <p class="text-slate-300 font-medium text-base leading-relaxed text-left max-w-[42em] mx-auto">
-                    클릭은 느는데 전환이 빠지면 <strong>가격이 밀렸거나 링크가 깨진&nbsp;것</strong>입니다. 예비 상품으로 구좌&#8288;(상품 노출&nbsp;자리)&#8288;를 바로 갈아 끼워 유입을 흘리지 않는 방안입니다.
+                    클릭은 느는데 전환이 빠지면 <strong>가격이 밀렸거나 링크가 깨진&nbsp;것</strong>입니다. <br class="hidden md:block">예비 상품으로 구좌&#8288;(상품 노출&nbsp;자리)&#8288;를 바로 갈아 끼워 유입을 흘리지 않는 방안입니다.
                 </p>
                     
                     <button onclick="매뉴얼토글()" class="매뉴얼-버튼">
@@ -519,17 +525,17 @@ body.py-24{padding-top:4rem;padding-bottom:4rem}
             </div>
 
             <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-8 mb-10">
-                <p class="text-sm font-black text-emerald-700 mb-5">시뮬레이션 값이 문제 정의와 정확히 맞습니다</p>
+                <p class="text-sm font-black text-emerald-700 mb-5">시뮬레이션 값이 문제 정의와 정확히 맞습니다.</p>
                 <p class="text-slate-700 leading-relaxed mb-5 max-w-[46em]">
                     클릭률 +41.7%, 전환율 -79.3%. <strong class="text-slate-900">클릭은 늘고 전환만 빠지는 상황</strong>을 그대로 재현한 값입니다.
                 </p>
                 <p class="text-slate-700 leading-relaxed max-w-[46em] bal">
-                    79% 급락은 가격 문제로는 설명되지 않는 크기입니다. <strong class="text-slate-900">가격이면 점진적으로 빠지고, 링크나 결제가 막히면 이렇게 급락합니다.</strong> 매뉴얼 1번의 링크 점검이 첫&nbsp;조치인 이유입니다.
+                    79% 급락은 가격 문제로는 설명되지 않는 크기입니다. <br class="hidden md:block"><strong class="text-slate-900">가격이면 점진적으로 빠지고, 링크나 결제가 막히면 이렇게 급락합니다.</strong> <br class="hidden md:block">매뉴얼 1번의 링크 점검이 첫&nbsp;조치인 이유입니다.
                 </p>
             </div>
 
             <div class="bg-white border-2 border-amber-300 rounded-2xl p-8 mb-10">
-                <p class="text-sm font-black text-amber-700 mb-5">하락 폭에 따라 원인과 대응 순서가 갈립니다</p>
+                <p class="text-sm font-black text-amber-700 mb-5">하락 폭에 따라 원인과 대응 순서가 갈립니다.</p>
                 <p class="text-slate-600 leading-relaxed mb-6 max-w-[46em]">
                     매뉴얼은 급락 하나를 전제합니다. 실제로는 완만한 하락이 더&nbsp;잦고, 그때는 원인이 다릅니다.
                 </p>
@@ -538,27 +544,27 @@ body.py-24{padding-top:4rem;padding-bottom:4rem}
                         <p class="text-xs font-black text-rose-700 mb-2">급락 · 절반 이하로 빠질&nbsp;때</p>
                         <p class="text-xs text-slate-600 leading-relaxed">
                     <strong class="text-slate-800">기술 장애</strong>일 가능성이 큽니다. <br class="hidden md:block">
-                    상세페이지 오류, 결제 실패, 재고 소진으로 인한 품절 표시. 매뉴얼 1번의 링크 점검이 정확한 첫&nbsp;조치입니다.
+                    상세페이지 오류, 결제 실패, 재고 소진으로 인한 품절 표시. <br class="hidden md:block">매뉴얼 1번의 링크 점검이 정확한 첫&nbsp;조치입니다.
                 </p>
                     </div>
                     <div class="bg-amber-50 rounded-2xl p-6 border border-amber-200">
                         <p class="text-xs font-black text-amber-800 mb-2">완만한 하락 · 몇십 퍼센트</p>
                         <p class="text-xs text-slate-600 leading-relaxed">
                     <strong class="text-slate-800">가격 경쟁력</strong> 문제일 가능성이 큽니다. <br class="hidden md:block">
-                    경쟁 판매자가 가격을 내렸거나 다른 캠페인이 시작된 경우. 이때는 링크 점검보다 <strong>경쟁 가격 확인</strong>이&nbsp;먼저입니다.
+                    경쟁 판매자가 가격을 내렸거나 다른 캠페인이 시작된 경우. <br class="hidden md:block">이때는 링크 점검보다 <strong>경쟁 가격 확인</strong>이&nbsp;먼저입니다.
                 </p>
                     </div>
                 </div>
                 <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                    <p class="text-xs font-black text-slate-800 mb-2">경보 기준을 두&nbsp;단계로 두면 됩니다</p>
+                    <p class="text-xs font-black text-slate-800 mb-2">경보 기준을 두&nbsp;단계로 두면 됩니다.</p>
                     <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                    직전 30분 평균 대비 <strong class="text-slate-900">50% 이하면 기술 점검 경보</strong>, <strong class="text-slate-900">20% 내외 하락이 두&nbsp;구간 이상 이어지면 가격 검증 경보</strong>로 나눕니다. 같은 지표에서 두&nbsp;신호를 뽑으면 첫&nbsp;조치가 원인에 맞게 시작됩니다.
+                    전환 대 클릭 비율이 직전 30분 평균 대비 <strong class="text-slate-900">50% 이하면 기술 점검 경보</strong>, <br class="hidden md:block"><strong class="text-slate-900">20% 내외 하락이 두&nbsp;구간 이상 이어지면 가격 검증 경보</strong>로 나눕니다. <br class="hidden md:block">같은 지표에서 두&nbsp;신호를 뽑으면 첫&nbsp;조치가 원인에 맞게 시작됩니다.
                 </p>
                 </div>
             </div>
 
             <div class="bg-white border-2 border-slate-200 rounded-2xl p-8 mb-10">
-                <p class="text-sm font-black text-slate-800 mb-5">클릭이 계속 오르는&nbsp;것이 손실을 키웁니다</p>
+                <p class="text-sm font-black text-slate-800 mb-5">클릭이 계속 오르는&nbsp;것이 손실을 키웁니다.</p>
                 <p class="text-slate-600 leading-relaxed mb-5 max-w-[46em]">
                     이상 시점에 클릭률은 오히려 4.8에서 6.8로 올랐습니다.<br>
 유입은 정상인데 구매만 막힌 상태라, <strong class="text-slate-900">문제는 마케팅이 아니라 퍼널 뒷단</strong>입니다.
@@ -567,9 +573,9 @@ body.py-24{padding-top:4rem;padding-bottom:4rem}
                     유입 비용은 그대로 나가고 매출만 없습니다. <strong class="text-slate-900">클릭이 오를수록 손실이 커지는 구조</strong>입니다.
                 </p>
                 <div class="bg-emerald-50 rounded-2xl p-6 border border-emerald-200">
-                    <p class="text-xs font-black text-emerald-800 mb-2">그래서 구좌 교체가 정확한 대응입니다</p>
+                    <p class="text-xs font-black text-emerald-800 mb-2">그래서 구좌 교체가 정확한 대응입니다.</p>
                     <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                    고치는 동안 트래픽을 다른 상품으로 돌리면 확보한 유입이 낭비되지 않습니다. 예비 상품 교체는 복구가 아니라 <strong class="text-slate-900">손실 차단</strong>이므로, 1번&#8288;·2번&nbsp;뒤가 아니라 동시에 갑니다.
+                    고치는 동안 트래픽을 다른 상품으로 돌리면 확보한 유입이 낭비되지 않습니다. <br class="hidden md:block">예비 상품 교체는 복구가 아니라 <strong class="text-slate-900">손실 차단</strong>이므로, 1번&#8288;·2번&nbsp;뒤가 아니라 동시에 갑니다.
                 </p>
                 </div>
             </div>
@@ -578,15 +584,15 @@ body.py-24{padding-top:4rem;padding-bottom:4rem}
                 <p class="text-sm font-black text-slate-800 mb-5">두&nbsp;조치에 필요한 사전 조건</p>
                 <div class="space-y-4">
                     <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
-                        <p class="text-xs font-black text-slate-800 mb-2">예비 상품은 미리 검수를 통과해야 합니다</p>
+                        <p class="text-xs font-black text-slate-800 mb-2">예비 상품은 미리 검수를 통과해야 합니다.</p>
                         <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                    바로 갈아 끼우려면 예비 상품도 검수를 마쳐 둬야 합니다. 급하게 올렸다 가격이 틀리면 같은&nbsp;일이 반복됩니다. 자동 검수 대상에 예비 상품을 함께 넣습니다.
+                    바로 갈아 끼우려면 예비 상품도 검수를 마쳐 둬야 합니다. <br class="hidden md:block">급하게 올렸다 가격이 틀리면 같은&nbsp;일이 반복됩니다. <br class="hidden md:block">자동 검수 대상에 예비 상품을 함께 넣습니다.
                 </p>
                     </div>
                     <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
-                        <p class="text-xs font-black text-slate-800 mb-2">가격 조정은 혼자 결정할&nbsp;수 없습니다</p>
+                        <p class="text-xs font-black text-slate-800 mb-2">가격 조정은 혼자 결정할&nbsp;수 없습니다.</p>
                         <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                    가격 조정은 판매자 합의가 필요해 몇&nbsp;분 안에 끝나지 않습니다. <strong>시작 전에 조정 범위를 미리 합의</strong>해 두면 그&nbsp;안에서는 바로 집행됩니다. 속도는 매뉴얼이 아니라 사전 권한에서 나옵니다.
+                    가격 조정은 판매자 합의가 필요해 몇&nbsp;분 안에 끝나지 않습니다. <br class="hidden md:block"><strong>시작 전에 조정 범위를 미리 합의</strong>해 두면 그&nbsp;안에서는 바로 집행됩니다. <br class="hidden md:block">속도는 매뉴얼이 아니라 사전 권한에서 나옵니다.
                 </p>
                     </div>
                 </div>
@@ -596,11 +602,11 @@ body.py-24{padding-top:4rem;padding-bottom:4rem}
                 <div class="bg-white border-2 border-emerald-200 rounded-2xl p-7">
                     <p class="text-sm font-black text-emerald-700 mb-4">측정할 지표</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li class="bal">&bull; <strong class="text-slate-800">전환 대&nbsp;클릭 비율</strong> &mdash; 두&nbsp;지표를 따로 보지 않고 비율로 관측합니다. 정상 구간 59% 수준이 기준선입니다</li>
-                        <li class="leading-[1.8]">&bull; <strong class="text-slate-800">가격 오류 검출 건수</strong> &mdash; 오픈 전&nbsp;단계에서 잡은 건수와 오픈&nbsp;후 발견된 건수를 나눠 기록합니다. 후자가 0에 가까워야 사전 차단이 작동하는&nbsp;것입니다</li>
-                        <li>&bull; <strong class="text-slate-800">이상 감지에서 교체까지의 시간</strong> &mdash; 손실이 누적되는 구간의 길이입니다</li>
-                        <li>&bull; <strong class="text-slate-800">경보 정확도</strong> &mdash; 기술 경보와 가격 경보가 실제 원인과 맞았는지</li>
-                        <li>&bull; <strong class="text-slate-800">예비 상품 검수 통과율</strong> &mdash; 교체 시점에 쓸&nbsp;수 있는 상태였는지</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">전환 대&nbsp;클릭 비율</strong> &mdash; 두&nbsp;지표를 따로 보지 않고 비율로 관측합니다. 정상 구간 59% 수준이 기준선입니다.</li>
+                        <li class="leading-[1.8]">&bull; <strong class="text-slate-800">가격 오류 검출 건수</strong> &mdash; 오픈 전&nbsp;단계에서 잡은 건수와 오픈&nbsp;후 발견된 건수를 나눠 기록합니다. 후자가 0에 가까워야 사전 차단이 작동하는&nbsp;것입니다.</li>
+                        <li>&bull; <strong class="text-slate-800">이상 감지에서 교체까지의 시간</strong> &mdash; 손실이 누적되는 구간의 길이입니다.</li>
+                        <li>&bull; <strong class="text-slate-800">경보 정확도</strong> &mdash; 기술 경보와 가격 경보가 실제 원인과 맞았는지 봅니다.</li>
+                        <li>&bull; <strong class="text-slate-800">예비 상품 검수 통과율</strong> &mdash; 교체 시점에 쓸&nbsp;수 있는 상태였는지 봅니다.</li>
                     </ul>
                 </div>
                 
@@ -672,12 +678,12 @@ body.py-24{padding-top:4rem;padding-bottom:4rem}
             </div>
 
             <div class="bg-rose-50 border-2 border-rose-300 rounded-2xl p-8 mb-10">
-                <p class="text-sm font-black text-rose-700 mb-5">방향만으로는 이상을 가려낼&nbsp;수 없습니다</p>
+                <p class="text-sm font-black text-rose-700 mb-5">방향만으로는 이상을 가려낼&nbsp;수 없습니다.</p>
                 <p class="text-slate-700 leading-relaxed mb-5 max-w-[46em] bal-t">
-                    클릭이 늘고 전환이 주는&nbsp;것은 상황 설명으로는 맞지만, <strong class="text-slate-900">그대로 경보 규칙으로 쓰면 정상 구간 다섯&nbsp;번&nbsp;중 두&nbsp;번이 이상으로 잡힙니다.</strong> 두&nbsp;지표가 반대로 움직이는&nbsp;일도 다섯&nbsp;번&nbsp;중 네&nbsp;번으로, 평소에도 계속 일어납니다.
+                    클릭이 늘고 전환이 주는&nbsp;것은 상황 설명으로는 맞지만, <br class="hidden md:block"><strong class="text-slate-900">그대로 경보 규칙으로 쓰면 정상 구간 다섯&nbsp;번&nbsp;중 두&nbsp;번이 이상으로 잡힙니다.<br class="hidden md:block"></strong>두&nbsp;지표가 반대로 움직이는&nbsp;일도 다섯&nbsp;번&nbsp;중 네&nbsp;번으로, 평소에도 계속 일어납니다.
                 </p>
                 <p class="text-slate-700 leading-relaxed max-w-[46em] bal">
-                    10시 15~20분 구간도 클릭이 0.4 오르고 전환이 0.1 내렸습니다. <strong>이상 구간과 방향은 같고 다른&nbsp;것은 크기뿐</strong>입니다. 그래서 경보 조건은 방향이 아니라 <strong>하락 폭이 평소 범위를 얼마나 벗어났는가</strong>여야 합니다.
+                    10시 15~20분 구간도 클릭이 0.4 오르고 전환이 0.1 내렸습니다. <br class="hidden md:block"><strong>이상 구간과 방향은 같고 다른&nbsp;것은 크기뿐</strong>입니다. <br class="hidden md:block">그래서 경보 조건은 방향이 아니라 <strong>하락 폭이 평소 범위를 얼마나 벗어났는가</strong>여야 합니다.
                 </p>
             </div>
 
@@ -700,23 +706,23 @@ body.py-24{padding-top:4rem;padding-bottom:4rem}
             </div>
 
             <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-8 mb-10">
-                <p class="text-sm font-black text-emerald-700 mb-5">앞 절의 50% 기준은 이&nbsp;데이터에서 여유 있게 작동합니다</p>
+                <p class="text-sm font-black text-emerald-700 mb-5">앞 절의 50% 기준은 이&nbsp;데이터에서 여유 있게 작동합니다.</p>
                 <p class="text-slate-700 leading-relaxed mb-5 max-w-[46em]">
-                    <strong class="text-slate-900">앞 절의 기준은 비율 값 50%&#8288;가 아니라 직전 30분 평균의 절반입니다.</strong> 정상 구간의 전환 대&nbsp;클릭 비율은 평균 59.2%&#8288;라 경보선은 <strong class="text-slate-900">29.6%</strong>이고, 최저 55.1%&#8288;도 평균의 93% 수준이라 평소에는 걸리지 않습니다.
+                    <strong class="text-slate-900">앞 절의 기준은 비율 값 50%&#8288;가 아니라 직전 30분 평균의 절반입니다.</strong> <br class="hidden md:block">정상 구간의 전환 대&nbsp;클릭 비율은 평균 59.2%&#8288;라 경보선은 <strong class="text-slate-900">29.6%</strong>이고, <br class="hidden md:block">최저 55.1%&#8288;도 평균의 93% 수준이라 평소에는 걸리지 않습니다.
                 </p>
                 <p class="text-slate-700 leading-relaxed mb-5 max-w-[46em]">
-                    이상 시점의 8.8%&#8288;는 평균의 15%&#8288;로 경보선보다 한참 아래이고, 평균에서 흩어진 정도의 <strong class="text-slate-900">열여덟&nbsp;배</strong>만큼 떨어진 값이라 놓칠&nbsp;수 없습니다. <strong class="text-slate-900">절반 기준이면 이&nbsp;데이터에서는 잘못 울리지도, 놓치지도 않습니다.</strong>
+                    이상 시점의 8.8%&#8288;는 평균의 15%&#8288;로 경보선보다 한참 아래이고, <br class="hidden md:block">평균에서 흩어진 정도의 <strong class="text-slate-900">열여덟&nbsp;배</strong>만큼 떨어진 값이라 놓칠&nbsp;수 없습니다. <br class="hidden md:block"><strong class="text-slate-900">절반 기준이면 이&nbsp;데이터에서는 잘못 울리지도, 놓치지도 않습니다.</strong>
                 </p>
                 <div class="bg-white rounded-2xl p-6 border border-emerald-200">
-                    <p class="text-xs font-black text-emerald-800 mb-2">절반 기준은 통계로 잡은 선보다 넉넉합니다</p>
+                    <p class="text-xs font-black text-emerald-800 mb-2">절반 기준은 통계로 잡은 선보다 넉넉합니다.</p>
                     <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                    흩어진 정도의 세&nbsp;배만큼 내려 잡은 선은 <strong>50.8%</strong>, 평균의 86% 수준입니다. 절반 기준은 이보다 훨씬 아래라 오탐 여유가 크고, 그래도 이번 급락은 잡힙니다. 절반까지 가지 않는 하락은 가격 경보가 맡습니다.
+                    흩어진 정도의 세&nbsp;배만큼 내려 잡은 선은 <strong>50.8%</strong>, 평균의 86% 수준입니다. <br class="hidden md:block">절반 기준은 이보다 훨씬 아래라 오탐 여유가 크고, 그래도 이번 급락은 잡힙니다. <br class="hidden md:block">절반까지 가지 않는 하락은 가격 경보가 맡습니다.
                 </p>
                 </div>
             </div>
 
             <div class="bg-white border-2 border-amber-300 rounded-2xl p-8 mb-10">
-                <p class="text-sm font-black text-amber-700 mb-5">가격 경보의 20% 기준은 여유가 좁습니다</p>
+                <p class="text-sm font-black text-amber-700 mb-5">가격 경보의 20% 기준은 여유가 좁습니다.</p>
                 <p class="text-slate-600 leading-relaxed mb-6 max-w-[46em]">
                     같은 절에서 가격 검증 경보를 <strong class="text-slate-900">20% 내외 하락이 두&nbsp;구간 이상 이어질&nbsp;때</strong>로 제안했습니다. <br class="hidden md:block">
                     그런데 정상 구간에서도 비율이 한&nbsp;번에 <strong class="text-slate-900">11.4%</strong>&#8288;까지 움직입니다. <br class="hidden md:block">
@@ -724,22 +730,22 @@ body.py-24{padding-top:4rem;padding-bottom:4rem}
                 </p>
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
                     <div class="bg-rose-50 rounded-2xl p-6 border border-rose-200">
-                        <p class="text-xs font-black text-rose-700 mb-2">한&nbsp;구간만 보면 위험합니다</p>
+                        <p class="text-xs font-black text-rose-700 mb-2">한&nbsp;구간만 보면 위험합니다.</p>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                    정상 변동과 경보선이 가까워 평범한 흔들림도 올라옵니다. <strong>잘못 울리는&nbsp;일이 잦으면 담당자가 무시하게 되고</strong>, 그때부터는 경보가 없는&nbsp;것과 같습니다.
+                    정상 변동과 경보선이 가까워 평범한 흔들림도 올라옵니다. <br class="hidden md:block"><strong>잘못 울리는&nbsp;일이 잦으면 담당자가 무시하게 되고</strong>, <br class="hidden md:block">그때부터는 경보가 없는&nbsp;것과 같습니다.
                 </p>
                     </div>
                     <div class="bg-emerald-50 rounded-2xl p-6 border border-emerald-200">
-                        <p class="text-xs font-black text-emerald-700 mb-2">두&nbsp;구간 연속 조건이 이것을 막습니다</p>
+                        <p class="text-xs font-black text-emerald-700 mb-2">두&nbsp;구간 연속 조건이 이것을 막습니다.</p>
                         <p class="text-xs text-slate-600 leading-relaxed">
-                    정상 구간은 올랐다 내렸다를 번갈아 합니다. <strong>같은 방향 하락이 두&nbsp;구간 이어지는&nbsp;일은 평소에 없으므로</strong>, 연속 조건이 오탐을 막는 장치입니다.
+                    정상 구간은 올랐다 내렸다를 번갈아 합니다. <br class="hidden md:block"><strong>같은 방향 하락이 두&nbsp;구간 이어지는&nbsp;일은 평소에 없으므로</strong>, <br class="hidden md:block">연속 조건이 오탐을 막는 장치입니다.
                 </p>
                     </div>
                 </div>
                 <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                    <p class="text-xs font-black text-slate-800 mb-2">그래서 가격 경보는 연속 조건을 반드시 함께 적어야 합니다</p>
+                    <p class="text-xs font-black text-slate-800 mb-2">그래서 가격 경보는 연속 조건을 반드시 함께 적어야 합니다.</p>
                     <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                    기술 경보는 정상과의 격차가 7.5배라 한&nbsp;구간만 봐도 됩니다. 가격 경보는 격차가 작아 <strong>두&nbsp;구간 연속이라는 조건까지가 기준값</strong>입니다. 20%&#8288;만 옮겨 적으면 규칙이 절반만 전달됩니다.
+                    기술 경보는 정상과의 격차가 7.5배라 한&nbsp;구간만 봐도 됩니다. <br class="hidden md:block">가격 경보는 격차가 작아 <strong>두&nbsp;구간 연속이라는 조건까지가 기준값</strong>입니다. <br class="hidden md:block">20%&#8288;만 옮겨 적으면 규칙이 절반만 전달됩니다.
                 </p>
                 </div>
             </div>
@@ -747,10 +753,10 @@ body.py-24{padding-top:4rem;padding-bottom:4rem}
             <div class="bg-slate-900 rounded-2xl p-8 text-white">
                 <p class="text-sm font-black text-amber-400 mb-5">이&nbsp;계산이 기대는 전제</p>
                 <ul class="space-y-3 text-sm text-slate-300 leading-relaxed">
-                    <li class="bal max-w-[46em] leading-[1.8]">&bull; 정상 구간이 여섯 시점뿐이라 실제 로그에서는 값이 달라집니다. 초기에는 경보를 기록만 남기고 며칠분으로 기준값을 다시 잡습니다.</li>
-                    <li class="max-w-[46em] leading-[1.8] bal">&bull; 시뮬레이션 값은 <strong class="text-white">대응 흐름을 보이기 위한 시연 수치</strong>입니다. 위&nbsp;계산은 그&nbsp;수치를 그대로 따라간&nbsp;것이며 실제 지표 분포가 아닙니다.</li>
-                    <li class="bal max-w-[46em] leading-[1.8]">&bull; 캠페인 성격에 따라 정상 변동 폭이 크게 다를&nbsp;수 있습니다. 오픈 직후와 마감 직전은 평소와 다르게 움직이므로, <strong class="text-white">시간대별로 기준선을 따로 두는&nbsp;것</strong>이&nbsp;필요할&nbsp;수 있습니다.</li>
-                    <li class="max-w-[46em] leading-[1.8]">&bull; 여기서는 <strong class="text-white">비율 한&nbsp;가지</strong>로만 판정했습니다. 노출&nbsp;수가 급감하는 경우처럼 비율은 정상인데 절대량이 무너지는 상황은 이&nbsp;기준으로 잡히지 않습니다.</li>
+                    <li class="bal max-w-[46em] leading-[1.8]">&bull; 정상 구간이 여섯 시점뿐이라 실제 로그에서는 값이 달라집니다. <br class="hidden md:block">초기에는 경보를 기록만 남기고 며칠분으로 기준값을 다시 잡습니다.</li>
+                    <li class="max-w-[46em] leading-[1.8] bal">&bull; 시뮬레이션 값은 <strong class="text-white">대응 흐름을 보이기 위한 시연 수치</strong>입니다. <br class="hidden md:block">위&nbsp;계산은 그&nbsp;수치를 그대로 따라간&nbsp;것이며 실제 지표 분포가 아닙니다.</li>
+                    <li class="bal max-w-[46em] leading-[1.8]">&bull; 캠페인 성격에 따라 정상 변동 폭이 크게 다를&nbsp;수 있습니다. <br class="hidden md:block">오픈 직후와 마감 직전은 평소와 다르게 움직이므로, <strong class="text-white">시간대별로 기준선을 따로 두는&nbsp;것</strong>이&nbsp;필요할&nbsp;수 있습니다.</li>
+                    <li class="max-w-[46em] leading-[1.8]">&bull; 여기서는 <strong class="text-white">비율 한&nbsp;가지</strong>로만 판정했습니다. <br class="hidden md:block">노출&nbsp;수가 급감하는 경우처럼 비율은 정상인데 절대량이 무너지는 상황은 이&nbsp;기준으로 잡히지 않습니다.</li>
                 </ul>
             </div>
         </section>
@@ -771,7 +777,7 @@ body.py-24{padding-top:4rem;padding-bottom:4rem}
 
                 <div class="성과-아이템">
                     <span class="성과-수치">즉시 대응</span>
-                    <p class="성과-라벨">지표 이상이 감지되면 예비 상품으로 구좌 교체</p>
+                    <p class="성과-라벨">지표 이상이 감지되면 <br class="hidden md:block">예비 상품으로 구좌 교체</p>
                 </div>
 
             </div>

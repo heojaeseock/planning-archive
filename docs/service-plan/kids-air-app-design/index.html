@@ -23,6 +23,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
+    <script>Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";</script>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     
     <style>
@@ -54,7 +55,7 @@
         
         /* 탭으로 나뉘어 있던 구역을 세로로 이어 보여 준다 */
         .tab-content { display: block; opacity: 1; scroll-margin-top: 96px; }
-        .tab-content + .tab-content { margin-top: 4rem; border-top: 1px solid rgba(100,116,139,.25); }
+        .tab-content + .tab-content { margin-top: 4rem; padding-top: 3.5rem; border-top: 1px solid rgba(100,116,139,.25); }
         @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
         /* 버튼형 내비게이션 */
@@ -163,7 +164,7 @@
         .mock-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 11px;
+            font-size: 12px;
             background: white;
             border-radius: 12px;
             overflow: hidden;
@@ -222,6 +223,10 @@
 <style>/* 목차 이동 */
 html { scroll-behavior: smooth; }
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-emerald-600{color:#047857} html body .text-rose-500{color:#be123c} html body .text-rose-600{color:#be123c} html body .text-sky-500{color:#0369a1} html body .text-sky-600{color:#0369a1}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 아이콘 옆 설명이 좁은 기둥처럼 꺾이지 않게 아이콘과 간격을 줄임 */ @media (max-width:640px){ .flex.gap-6.items-start > .w-16.h-16{width:3rem;height:3rem;font-size:1.5rem} .flex.gap-6.items-start{gap:1rem} }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="antialiased">
 
@@ -251,7 +256,7 @@ html { scroll-behavior: smooth; }
                 <p class="text-slate-500 text-lg md:text-xl leading-relaxed max-w-3xl font-medium">
                      어린이집의 공기 상태를 보호자가 바로 확인할&nbsp;수 있게 만든 앱입니다.
                 </p>
-                <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-10 text-[11px] font-black text-slate-500">
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-10 text-xs font-black text-slate-500">
                     <span class="bg-white border border-slate-200 px-5 py-2.5 rounded-2xl shadow-sm tracking-wide">담당 역할: 서비스 기획&#8288;·디자인, 개발 보조</span>
                     <span class="bg-white border border-slate-200 px-5 py-2.5 rounded-2xl shadow-sm tracking-wide">개발 환경: 안드로이드 네이티브</span>
                 </div>
@@ -263,28 +268,28 @@ html { scroll-behavior: smooth; }
     <section class="mb-12" aria-label="이 문서가 하는 말">
       <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
         <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-          <p class="text-[11px] font-black tracking-[0.12em] text-teal-700 mb-3">문서 소개</p>
+          <p class="text-xs font-black tracking-[0.12em] text-teal-700 mb-3">문서 소개</p>
           <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">어린이집 실내 공기질 정보 앱을 기획&#8288;·디자인하고, 안드로이드 개발을 보조하며 출시까지 함께한 기록입니다.</p>
         </div>
         <div class="px-6 md:px-9 py-6 md:py-7">
-          <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">먼저 확인할&nbsp;점</p>
+          <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">먼저 확인할&nbsp;점</p>
           <div class="grid md:grid-cols-3 gap-3">
             <div class="rounded-xl border border-slate-200 p-4">
               <p class="text-sm font-black text-slate-900 mb-1.5 bal">어린이집이 공개할 이유</p>
-              <p class="text-xs text-slate-500 leading-relaxed bal">수치가 나쁘게 나오면 손해를 보는 쪽이 데이터를 내줘야 합니다</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal">수치가 나쁘게 나오면 손해를 보는 쪽이 <br class="hidden md:block">데이터를 내줘야 합니다.</p>
             </div>
             <div class="rounded-xl border border-slate-200 p-4">
               <p class="text-sm font-black text-slate-900 mb-1.5 bal">위협으로 적은 항목이 가장 현실적</p>
-              <p class="text-xs text-slate-500 leading-relaxed bal">스스로 SWOT의 위협&nbsp;칸에 적은&nbsp;것이 실제로 가장 먼저 닥칩니다</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal">스스로 SWOT의 위협&nbsp;칸에 적은&nbsp;것이 <br class="hidden md:block">실제로 가장 먼저 닥칩니다.</p>
             </div>
             <div class="rounded-xl border border-slate-200 p-4">
               <p class="text-sm font-black text-slate-900 mb-1.5 bal">색과 이모지의 기준을 정해&nbsp;둘&nbsp;것</p>
-              <p class="text-xs text-slate-500 leading-relaxed bal">어느 수치부터 빨간색인지 정하지 않으면 같은 공기가 앱마다 다르게 보입니다</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal">어느 수치부터 빨간색인지 정하지 않으면 <br class="hidden md:block">같은 공기가 앱마다 다르게 보입니다.</p>
             </div>
           </div>
         </div>
         <div class="px-6 md:px-9 py-4 bg-slate-50 border-t border-slate-200">
-          <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">어린이집 실내 공기질을 보호자가 확인하게 만든 앱으로, 대학 재학&nbsp;중 기획&#8288;·디자인해 안드로이드로 출시했습니다. 기존 미세먼지 앱이 바깥 수치를 다루는&nbsp;것과 달리 실내 측정값을 씁니다.</p>
+          <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">어린이집 실내 공기질을 보호자가 확인하게 만든 앱으로, 대학 재학&nbsp;중 기획&#8288;·디자인해 안드로이드로 출시했습니다. <br class="hidden md:block">기존 미세먼지 앱이 바깥 수치를 다루는&nbsp;것과 달리 실내 측정값을 씁니다.</p>
         </div>
       </div>
     </section>
@@ -308,7 +313,7 @@ html { scroll-behavior: smooth; }
                     <span class="text-2xl">📊</span> 시장 및&nbsp;전략 분석
                 </a>
                 <a href="#architecture" class="modern-nav-btn">
-                    <span class="text-2xl">🗺️</span> 전체 정보 설계
+                    <span class="text-2xl">🗺️</span> 화면 구조 설계
                 </a>
                 <a href="#design-guide" class="modern-nav-btn">
                     <span class="text-2xl">🎨</span> 주요 화면 및&nbsp;UX
@@ -337,7 +342,7 @@ html { scroll-behavior: smooth; }
                         <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
                             <p class="text-sm text-slate-700 leading-relaxed font-bold mb-2 italic">환경 리스크</p>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                     영유아에게는 바깥보다 실내 공기의 영향이 더&nbsp;큰데, 어린이집 데이터를 모아 보여주는 서비스는 없었습니다.
+                     영유아에게는 바깥보다 실내 공기의 영향이 더&nbsp;큰데, <br class="hidden md:block">어린이집 데이터를 모아 보여주는 서비스는 없었습니다.
                 </p>
                         </div>
                         <div class="p-6 bg-slate-50 rounded-3xl border border-slate-200">
@@ -360,11 +365,11 @@ html { scroll-behavior: smooth; }
                     <div class="grid grid-cols-2 gap-5 h-72">
                         <div class="bg-sky-50 p-5 rounded-3xl border border-sky-100 flex flex-col justify-center">
                             <span class="text-xs font-black text-sky-600 mb-2 opacity-60">강점</span>
-                            <span class="text-sm font-bold text-slate-800 leading-tight">어린이집 실내<br>공기질 특화 (당시 유사 서비스 없음)</span>
+                            <span class="text-sm font-bold text-slate-800 leading-tight">어린이집 실내<br>공기질 특화 (당시&nbsp;유사&nbsp;서비스&nbsp;없음)</span>
                         </div>
                         <div class="bg-slate-50 p-5 rounded-3xl border border-slate-200 flex flex-col justify-center">
                             <span class="text-xs font-black text-slate-500 mb-2 opacity-60">약점</span>
-                            <span class="text-sm font-bold text-slate-800 leading-tight">신규 브랜드로서<br>초기 사용자 확보</span>
+                            <span class="text-sm font-bold text-slate-800 leading-tight">신규 브랜드로서<br>초기 사용자 확보의 어려움</span>
                         </div>
                         <div class="bg-emerald-50 p-5 rounded-3xl border border-emerald-100 flex flex-col justify-center text-sm">
                             <span class="text-xs font-black text-emerald-600 mb-2 opacity-60">기회</span>
@@ -379,34 +384,34 @@ html { scroll-behavior: smooth; }
             </div>
         </div>
 
-        <!-- 섹션 2: 정보 설계 -->
+        <!-- 섹션 2: 화면 구조 설계 -->
         <div id="architecture" class="max-w-5xl w-full tab-content space-y-12">
             <div class="content-card p-8 md:p-12">
                 <div class="space-y-6 mb-10 text-center">
                     <h3 class="text-3xl font-black text-slate-900 border-b-4 border-slate-100 pb-6">화면 구조 설계</h3>
-                    <p class="text-slate-600 text-base leading-relaxed font-medium max-w-3xl mx-auto text-left">
-                    첫&nbsp;화면에서 상세 조회, 위젯 설정까지 한&nbsp;줄로 이어지게 짰습니다. 찾는 정보에 <strong>터치 두&nbsp;번 안에</strong> 닿게 하는&nbsp;것이 기준이었습니다.
+                    <p class="text-slate-600 text-base leading-relaxed font-medium max-w-3xl mx-auto text-center">
+                    첫&nbsp;화면에서 상세 조회, 위젯 설정까지 한&nbsp;줄로 이어지게 짰습니다. <br class="hidden md:block">찾는 정보에 <strong>터치 두&nbsp;번 안에</strong> 닿게 하는&nbsp;것이 기준이었습니다.
                 </p>
                 </div>
                 
                 <div class="space-y-4">
                     <div class="flex justify-between items-end px-2">
-                        <p class="text-xs font-black text-slate-500 tracking-wide">Kids Air 정보 설계 구조도</p>
-                        <p class="text-[10px] text-sky-600 font-bold bg-sky-50 px-3 py-1 rounded-full animate-pulse">이미지를 클릭하면 확대됩니다</p>
+                        <p class="text-xs font-black text-slate-500 tracking-wide">Kids Air 화면 구조도</p>
+                        <p class="text-xs text-sky-600 font-bold bg-sky-50 px-3 py-1 rounded-full animate-pulse">이미지를 클릭하면 확대됩니다.</p>
                     </div>
                     <div class="ia-container group overflow-hidden" onclick="openImageModal('kids_air_ia.webp')" tabindex="0" role="button">
-                        <img src="kids_air_ia.webp" alt="정보 설계 구조도" class="w-full h-auto rounded-xl shadow-lg transition-transform duration-500 group-hover:scale-[1.01]" onerror="this.src='';" decoding="async" loading="lazy" width="1977" height="1106">
+                        <img src="kids_air_ia.webp" alt="화면 구조도" class="w-full h-auto rounded-xl shadow-lg transition-transform duration-500 group-hover:scale-[1.01]" onerror="this.src='';" decoding="async" loading="lazy" width="1977" height="1106">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
                     <div class="p-8 bg-slate-50 rounded-[2.5rem] space-y-3 border border-slate-100">
                         <h4 class="font-black text-slate-800 text-base flex items-center gap-2">📍 위치 기반 인터랙션</h4>
-                        <p class="text-xs text-slate-500 leading-relaxed font-medium">현재 위치나 자녀가 다니는 어린이집을 등록하여 주변 공기 상태를 한눈에 파악합니다.</p>
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium">현재 위치나 자녀가 다니는 어린이집을 등록하여 <br class="hidden md:block">주변 공기 상태를 한눈에 파악합니다.</p>
                     </div>
                     <div class="p-8 bg-slate-50 rounded-[2.5rem] space-y-3 border border-slate-100">
                         <h4 class="font-black text-slate-800 text-base flex items-center gap-2">📌 맞춤형 위젯 시스템</h4>
-                        <p class="text-xs text-slate-500 leading-relaxed font-medium bal">앱을 직접 열지 않고도 스마트폰 배경화면에서 실시간 공기 상태를 바로 확인합니다.</p>
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium bal">앱을 직접 열지 않고도 스마트폰 배경화면에서 <br class="hidden md:block">실시간 공기 상태를 바로 확인합니다.</p>
                     </div>
                 </div>
             </div>
@@ -419,7 +424,7 @@ html { scroll-behavior: smooth; }
                 <div class="max-w-3xl mb-16 relative z-10 text-center md:text-left">
                     <h3 class="text-4xl font-black text-slate-900 mb-8">주요 화면 및&nbsp;UX 기획</h3>
                     <p class="text-slate-600 text-lg leading-relaxed font-medium text-left max-w-[42em] mx-auto">
-                    실내 환경을 그대로 공개하는&nbsp;것이 신뢰를 얻는 길입니다. 누구나 한눈에 판별할&nbsp;수 있는 화면으로 만들었습니다.
+                    실내 환경을 그대로 공개하는&nbsp;것이 신뢰를 얻는 길입니다. <br class="hidden md:block">누구나 한눈에 판별할&nbsp;수 있는 화면으로 만들었습니다.
                 </p>
                 </div>
 
@@ -430,7 +435,7 @@ html { scroll-behavior: smooth; }
                             <div class="space-y-2">
                                 <h4 class="font-black text-slate-800 text-xl">직관적인 상태 알림</h4>
                                 <p class="text-sm text-slate-500 leading-relaxed font-medium bal">
-                    복잡한 수치 대신 색과 이모지로 지금 위험도를 한눈에 보여줍니다.
+                    복잡한 수치 대신 색과 이모지로 <br class="hidden md:block">지금 위험도를 한눈에 보여줍니다.
                 </p>
                             </div>
                         </div>
@@ -438,14 +443,14 @@ html { scroll-behavior: smooth; }
                             <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl shrink-0 border border-slate-200 shadow-sm">📋</div>
                             <div class="space-y-2">
                                 <h4 class="font-black text-slate-800 text-xl">시간대별 세부 데이터</h4>
-                                <p class="text-sm text-slate-500 leading-relaxed font-medium">단순 현재 수치를 넘어, 시간대별 공기질 변화를 표로 제공하여 운영의 투명성과 신뢰도를 확보합니다.</p>
+                                <p class="text-sm text-slate-500 leading-relaxed font-medium">단순 현재 수치를 넘어, 시간대별 공기질 변화를 <br class="hidden md:block">표로 제공하여 운영의 투명성과 신뢰도를 확보합니다.</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- 가상 UI 체험 위젯 -->
                     <div class="w-80 h-[540px] bg-white p-8 flex flex-col relative overflow-hidden rounded-[32px] border-4 border-slate-200 shadow-2xl">
-                        <p class="text-[10px] font-black text-slate-500 mb-8 text-center tracking-wide">가상 UI 체험</p>
+                        <p class="text-xs font-black text-slate-500 mb-8 text-center tracking-wide">가상 UI 체험</p>
                         
                         <div id="statusBall" class="w-44 h-44 mx-auto rounded-full bg-sky-50 flex flex-col items-center justify-center mb-10 transition-all duration-700 border border-sky-100">
                             <span id="statusEmoji" class="text-6xl mb-3 text-center">😊</span>
@@ -454,7 +459,7 @@ html { scroll-behavior: smooth; }
 
                         <div class="space-y-4">
                             <div class="px-1 border-b border-slate-100 pb-2">
-                                <p class="text-[10px] font-black text-slate-500">시간별 기록</p>
+                                <p class="text-xs font-black text-slate-500">시간별 기록</p>
                             </div>
                             <div style="overflow-x:auto">
                               <table class="mock-table">
@@ -482,26 +487,26 @@ html { scroll-behavior: smooth; }
                         </div>
 
                         <div class="flex gap-3 mt-auto h-14">
-                            <button onclick="simulateStatus('good')" class="flex-1 bg-sky-600 text-white text-[11px] font-black rounded-2xl active:scale-95 transition-transform shadow-md flex items-center justify-center">좋음 상태</button>
-                            <button onclick="simulateStatus('bad')" class="flex-1 bg-rose-500 text-white text-[11px] font-black rounded-2xl active:scale-95 transition-transform shadow-md flex items-center justify-center">나쁨 상태</button>
+                            <button onclick="simulateStatus('good')" class="flex-1 bg-sky-600 text-white text-xs font-black rounded-2xl active:scale-95 transition-transform shadow-md flex items-center justify-center">좋음 상태</button>
+                            <button onclick="simulateStatus('bad')" class="flex-1 bg-rose-500 text-white text-xs font-black rounded-2xl active:scale-95 transition-transform shadow-md flex items-center justify-center">나쁨 상태</button>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="space-y-12">
-                <h3 class="text-3xl font-black text-slate-900 text-center tracking-tight italic">기획안에서 실제 구현 화면까지</h3>
+                <h3 class="text-3xl font-black text-slate-900 text-center tracking-tight">기획안에서 실제 구현 화면까지</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     
                     <div class="content-card p-10 space-y-8 cursor-pointer" onclick="openImageModal('kids_air_splash_final.webp')" tabindex="0" role="button">
                         <h4 class="text-center font-black text-slate-800">스플래시 화면 과정</h4>
                         <div class="flex gap-6 items-end">
                             <div class="w-1/2 space-y-4 text-center">
-                                <p class="text-center text-[10px] text-slate-500 font-black tracking-wide">와이어프레임</p>
+                                <p class="text-center text-xs text-slate-500 font-black tracking-wide">와이어프레임</p>
                                 <img alt="스플래시 화면 와이어프레임" src="kids_air_splash_wf.webp" class="img-box" onerror="this.src='';" decoding="async" loading="lazy" width="331" height="596">
                             </div>
                             <div class="w-1/2 space-y-4 text-center">
-                                <p class="text-center text-[10px] text-sky-50 font-black bg-sky-600 rounded px-2 tracking-wide inline-block">최종 UI</p>
+                                <p class="text-center text-xs text-sky-50 font-black bg-sky-600 rounded px-2 tracking-wide inline-block">최종 UI</p>
                                 <img alt="스플래시 화면 최종 UI" src="kids_air_splash_final.webp" class="img-box ring-4 ring-sky-50 shadow-xl" onerror="this.src='';" decoding="async" loading="lazy" width="282" height="597">
                             </div>
                         </div>
@@ -511,11 +516,11 @@ html { scroll-behavior: smooth; }
                         <h4 class="text-center font-black text-slate-800">공기질 대시보드 과정</h4>
                         <div class="flex gap-6 items-end">
                             <div class="w-1/2 space-y-4 text-center">
-                                <p class="text-center text-[10px] text-slate-500 font-black tracking-wide">와이어프레임</p>
+                                <p class="text-center text-xs text-slate-500 font-black tracking-wide">와이어프레임</p>
                                 <img alt="공기질 대시보드 와이어프레임" src="kids_air_dashboard_wf.webp" class="img-box" onerror="this.src='';" decoding="async" loading="lazy" width="331" height="596">
                             </div>
                             <div class="w-1/2 space-y-4 text-center">
-                                <p class="text-center text-[10px] text-sky-50 font-black bg-sky-600 rounded px-2 tracking-wide inline-block">최종 UI</p>
+                                <p class="text-center text-xs text-sky-50 font-black bg-sky-600 rounded px-2 tracking-wide inline-block">최종 UI</p>
                                 <img alt="공기질 대시보드 최종 UI" src="kids_air_dashboard_final.webp" class="img-box ring-4 ring-sky-50 shadow-xl" onerror="this.src='';" decoding="async" loading="lazy" width="274" height="597">
                             </div>
                         </div>
@@ -525,11 +530,11 @@ html { scroll-behavior: smooth; }
                         <h4 class="text-center font-black text-slate-800">메뉴 및&nbsp;기능 구성</h4>
                         <div class="flex gap-6 items-end">
                             <div class="w-1/2 space-y-4 text-center">
-                                <p class="text-center text-[10px] text-slate-500 font-black tracking-wide">와이어프레임</p>
+                                <p class="text-center text-xs text-slate-500 font-black tracking-wide">와이어프레임</p>
                                 <img alt="메뉴 및 기능 구성 와이어프레임" src="kids_air_menu_wf.webp" class="img-box" onerror="this.src='';" decoding="async" loading="lazy" width="330" height="596">
                             </div>
                             <div class="w-1/2 space-y-4 text-center">
-                                <p class="text-center text-[10px] text-sky-50 font-black bg-sky-600 rounded px-2 tracking-wide inline-block">최종 UI</p>
+                                <p class="text-center text-xs text-sky-50 font-black bg-sky-600 rounded px-2 tracking-wide inline-block">최종 UI</p>
                                 <img alt="메뉴 및 기능 구성 최종 UI" src="kids_air_menu_final.webp" class="img-box ring-4 ring-sky-50 shadow-xl" onerror="this.src='';" decoding="async" loading="lazy" width="280" height="597">
                             </div>
                         </div>
@@ -538,7 +543,7 @@ html { scroll-behavior: smooth; }
                     <div class="content-card p-10 space-y-8 cursor-pointer" onclick="openImageModal('kids_air_search_final.webp')" tabindex="0" role="button">
                         <h4 class="text-center font-black text-slate-800">검색 인터페이스</h4>
                         <div class="flex flex-col items-center space-y-6 text-center">
-                            <p class="text-[10px] text-sky-50 font-black bg-sky-600 rounded px-4 py-1 tracking-wide inline-block">최종 검색 UI</p>
+                            <p class="text-xs text-sky-50 font-black bg-sky-600 rounded px-4 py-1 tracking-wide inline-block">최종 검색 UI</p>
                             <img alt="검색 인터페이스 최종 UI" src="kids_air_search_final.webp" class="img-box max-w-[280px] shadow-2xl" onerror="this.src='';" decoding="async" loading="lazy" width="276" height="597">
                         </div>
                     </div>
@@ -548,26 +553,30 @@ html { scroll-behavior: smooth; }
 
         <!-- 섹션 4: 기대 효과 -->
         <div id="impact" class="max-w-5xl w-full tab-content space-y-12">
+            <div class="text-center max-w-2xl mx-auto">
+                <h3 class="text-3xl font-black text-slate-900 mb-4">프로젝트 기대 효과</h3>
+                <p class="text-slate-600 text-base leading-relaxed font-medium">공공데이터, 보육 환경, 시장 세&nbsp;측면에서 기대한 효과를 정리했습니다.</p>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div class="content-card p-12 group hover:bg-sky-600 transition-all duration-500 hover:-translate-y-4">
                     <div class="text-6xl mb-10 transition-transform duration-500">🏛️</div>
                     <h4 class="font-black text-slate-900 text-xl mb-6 group-hover:text-white">공공데이터 선순환</h4>
                     <p class="text-slate-500 leading-relaxed group-hover:text-sky-100 font-bold text-sm">
-                        정부의 데이터를 사용자 친화적으로 재가공하여 영유아 보육 환경의 투명성을 높이고자 했습니다.
+                        정부의 데이터를 사용자 친화적으로 재가공하여 영유아 보육 환경의 <br class="hidden md:block">투명성을 높이고자 했습니다.
                     </p>
                 </div>
                 <div class="content-card p-12 group hover:bg-emerald-600 transition-all duration-500 hover:-translate-y-4">
                     <div class="text-6xl mb-10 transition-transform duration-500">🌿</div>
                     <h4 class="font-black text-slate-900 text-xl mb-6 group-hover:text-white">보육 환경 개선</h4>
                     <p class="text-slate-500 leading-relaxed group-hover:text-emerald-100 font-bold text-sm">
-                        수치를 공개해 어린이집이 스스로 쾌적한 환경을 유지하도록 이끄는&nbsp;것을 기대했습니다.
+                        수치를 공개해 어린이집이 <br class="hidden md:block">스스로 쾌적한 환경을 유지하도록 이끄는&nbsp;것을 기대했습니다.
                     </p>
                 </div>
                 <div class="content-card p-12 group hover:bg-slate-900 transition-all duration-500 hover:-translate-y-4">
                     <div class="text-6xl mb-10 transition-transform duration-500">🏆</div>
                     <h4 class="font-black text-slate-900 text-xl mb-6 group-hover:text-white">시장 선점 효과</h4>
                     <p class="text-slate-500 leading-relaxed group-hover:text-slate-400 font-bold text-sm">
-                    기획 당시 확인한 범위에서는 어린이집 실내 공기질만 다루는 앱이 없어, 기존 알림장 앱과 겹치지 않는 자리를 잡을&nbsp;수 있다고 판단했습니다.
+                    기획 당시 확인한 범위에서는 어린이집 실내 공기질만 다루는 앱이 없어, <br class="hidden md:block">기존 알림장 앱과 겹치지 않는 자리를 잡을&nbsp;수 있다고 판단했습니다.
                 </p>
                 </div>
             </div>
@@ -602,7 +611,7 @@ html { scroll-behavior: smooth; }
                         </div>
                     </div>
                     <div class="bg-slate-900 rounded-xl p-6 text-white">
-                        <p class="text-xs font-black text-amber-300 mb-3">그래서 서비스가 두&nbsp;종류로 갈립니다</p>
+                        <p class="text-xs font-black text-amber-300 mb-3">그래서 서비스가 두&nbsp;종류로 갈립니다.</p>
                         <p class="text-sm text-slate-300 leading-relaxed mb-4">
                     공공데이터만으로 만들면 <strong class="text-white">시설별 정기 측정 결과를 조회하는 앱</strong>이&nbsp;됩니다. <br class="hidden md:block">
                     학부모가 어린이집을 고를&nbsp;때 참고하는 용도이고, 매일 볼&nbsp;서비스는 아닙니다.
@@ -620,7 +629,7 @@ html { scroll-behavior: smooth; }
             </section>
 
             <section>
-                <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">데이터를 주는 쪽과 이익을 얻는 쪽이 다릅니다</h2>
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">데이터를 주는 쪽과 이익을 얻는 쪽이 다릅니다.</h2>
                 <p class="text-slate-600 leading-relaxed mb-8">
                     이&nbsp;서비스의 사용자는 <strong class="text-slate-900">학부모</strong>이고, 데이터를 제공하는 쪽은 <strong class="text-slate-900">어린이집</strong>입니다. <br class="hidden md:block">
                     둘의 이해가 같은 방향이 아니라는&nbsp;점이 사업 구조의 핵심 과제입니다.
@@ -639,7 +648,7 @@ html { scroll-behavior: smooth; }
                         <p class="text-xs font-black text-rose-700 mb-3">어린이집 입장에서는</p>
                         <p class="text-sm text-slate-700 leading-relaxed">
                     나쁜 수치가 공개되면 <strong class="text-slate-900">불리합니다.</strong> <br class="hidden md:block">
-                    좋을&nbsp;때만 공개하면 데이터의 신뢰가 사라지고, 항상 공개하면 참여할 동기가 약해집니다.
+                    좋을&nbsp;때만 공개하면 데이터의 신뢰가 사라지고, <br class="hidden md:block">항상 공개하면 참여할 동기가 약해집니다.
                 </p>
                     </div>
                 </div>
@@ -650,7 +659,7 @@ html { scroll-behavior: smooth; }
                         <div class="bg-emerald-50 rounded-xl p-5 border border-emerald-200">
                             <p class="text-xs font-black text-emerald-800 mb-2">절대 수치 대신 개선 활동을 보여주기</p>
                             <p class="text-xs text-slate-600 leading-relaxed">
-                    농도가 아니라 <strong>환기를 몇&nbsp;번 했는지, 공기청정기를 언제 켰는지</strong>를 보여줍니다. 바깥이 나쁜 날의 수치는 시설 잘못이 아니지만 관리 노력은 시설이 정할&nbsp;수 있으므로, 공개해도 불리하지 않습니다.
+                    농도가 아니라 <strong>환기를 몇&nbsp;번 했는지, 공기청정기를 언제 켰는지</strong>를 보여줍니다. <br class="hidden md:block">바깥이 나쁜 날의 수치는 시설 잘못이 아니지만 관리 노력은 시설이 정할&nbsp;수 있으므로, 공개해도 불리하지 않습니다.
                 </p>
                         </div>
                         <div class="bg-emerald-50 rounded-xl p-5 border border-emerald-200">
@@ -668,26 +677,26 @@ html { scroll-behavior: smooth; }
             </section>
 
             <section>
-                <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">위협으로 적은 항목이 가장 현실적입니다</h2>
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4">위협으로 적은 항목이 가장 현실적입니다.</h2>
                 <p class="text-slate-600 leading-relaxed mb-8">
                     분석에서 위협으로 <strong class="text-slate-900">기존 대형 알림장 앱의 기능 확장</strong>을 꼽았습니다. <br class="hidden md:block">
                     네&nbsp;항목&nbsp;중 실현 가능성이 가장 높은&nbsp;것이고, 이유는 사용 빈도에 있습니다.
                 </p>
 
                 <div class="bg-white rounded-2xl border-2 border-slate-300 p-8 mb-6">
-                    <p class="text-sm font-black text-slate-800 mb-5">단독 앱은 열&nbsp;이유가 하루 한두&nbsp;번입니다</p>
+                    <p class="text-lg font-black text-slate-800 mb-5">단독 앱은 열&nbsp;이유가 하루 한두&nbsp;번입니다.</p>
                     <p class="text-slate-600 leading-relaxed mb-5">
                     하루 한두&nbsp;번 보는 정보로는 앱을 깔아&nbsp;둘&nbsp;이유가 약합니다.<br>
 알림장 앱은 등하원 알림과 사진으로 매일 열리므로, <strong>거기에 화면이 하나 붙으면 별도 앱이 설&nbsp;자리가 없습니다.</strong>
                 </p>
                     <div class="bg-emerald-50 rounded-xl p-6 border border-emerald-200 mb-5">
-                        <p class="text-xs font-black text-emerald-800 mb-2">위젯을 넣은&nbsp;것은 이&nbsp;문제에 대한 정확한 대응입니다</p>
+                        <p class="text-xs font-black text-emerald-800 mb-2">위젯을 넣은&nbsp;것은 이&nbsp;문제에 대한 정확한 대응입니다.</p>
                         <p class="text-xs text-slate-600 leading-relaxed bal-t">
-                    앱을 열지 않고 배경화면에서 보는 위젯은 <strong>낮은 사용 빈도를 비켜 가는</strong> 방법입니다. 여는 행동이 필요 없으면 빈도가 낮아도 서비스가 남습니다.
+                    앱을 열지 않고 배경화면에서 보는 위젯은 <strong>낮은 사용 빈도를 비켜 가는</strong> 방법입니다. <br class="hidden md:block">여는 행동이 필요 없으면 빈도가 낮아도 서비스가 남습니다.
                 </p>
                     </div>
                     <p class="text-sm text-slate-600 leading-relaxed bal-t">
-                    <strong class="text-slate-800">다만 알림장 앱도 위젯을 만들&nbsp;수 있습니다. 구조적인 답은 <strong>경쟁하지 않고 들어가는&nbsp;것</strong>입니다. 알림장 앱에 데이터를 공급하면 위협이 유통 경로로 바뀝니다.</strong>
+                    <strong class="text-slate-800">다만 알림장 앱도 위젯을 만들&nbsp;수 있습니다. 구조적인 답은 <strong>경쟁하지 않고 들어가는&nbsp;것</strong>입니다. <br class="hidden md:block">알림장 앱에 데이터를 공급하면 위협이 유통 경로로 바뀝니다.</strong>
                 </p>
                 </div>
             </section>
@@ -699,10 +708,10 @@ html { scroll-behavior: smooth; }
                 </p>
                 <div class="bg-white rounded-2xl border-2 border-slate-200 p-7">
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li class="bal">&bull; <strong class="text-slate-800">기준의 출처</strong> &mdash; 좋음과 나쁨을 가르는 수치가 <strong>환경부 실내공기질 기준</strong>인지 자체 기준인지 표시합니다. 공식 기준을 쓰면 표시 자체가 근거를 갖습니다</li>
-                        <li class="bal">&bull; <strong class="text-slate-800">영유아 기준의 별도 적용</strong> &mdash; 성인 기준과 영유아 권장 수준이 다를&nbsp;수 있습니다. 대상이 어린이집이므로 더&nbsp;엄격한 기준을 쓴다면 그&nbsp;사실을 밝히는 편이 신뢰에 유리합니다</li>
-                        <li class="bal">&bull; <strong class="text-slate-800">측정 시각 표기</strong> &mdash; 색상만 보여주면 언제 측정한 값인지 알&nbsp;수 없습니다. <strong>몇&nbsp;분 전 데이터인지</strong>를 함께 표시해야 실시간이라는 주장이 확인됩니다</li>
-                        <li class="bal-m">&bull; <strong class="text-slate-800">데이터 없음 상태</strong> &mdash; 센서 오류나 미설치 시설은 회색 같은 별도 상태로 구분합니다. 좋음으로 표시되면 잘못된 안심을 줍니다</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">기준의 출처</strong> &mdash; 좋음과 나쁨을 가르는 수치가 <strong>환경부 실내공기질 기준</strong>인지 자체 기준인지 표시합니다. 공식 기준을 쓰면 표시 자체가 근거를 갖습니다.</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">영유아 기준의 별도 적용</strong> &mdash; 성인 기준과 영유아 권장 수준이 다를&nbsp;수 있습니다. 대상이 어린이집이므로 더&nbsp;엄격한 기준을 쓴다면 그&nbsp;사실을 밝히는 편이 신뢰에 유리합니다.</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">측정 시각 표기</strong> &mdash; 색상만 보여주면 언제 측정한 값인지 알&nbsp;수 없습니다. <strong>몇&nbsp;분 전 데이터인지</strong>를 함께 표시해야 실시간이라는 주장이 확인됩니다.</li>
+                        <li class="bal-m">&bull; <strong class="text-slate-800">데이터 없음 상태</strong> &mdash; 센서 오류나 미설치 시설은 회색 같은 별도 상태로 구분합니다. 좋음으로 표시되면 잘못된 안심을 줍니다.</li>
                     </ul>
                 </div>
             </section>
@@ -711,11 +720,11 @@ html { scroll-behavior: smooth; }
                 <div class="bg-white rounded-2xl border-2 border-emerald-200 p-7">
                     <p class="text-sm font-black text-emerald-700 mb-4">출시&nbsp;후 확인할 지표</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li>&bull; <strong class="text-slate-800">위젯 설치율</strong> &mdash; 앱 설치자&nbsp;중 위젯을 배치한 비율. 낮으면 사용 빈도 문제가 그대로 남습니다</li>
-                        <li>&bull; <strong class="text-slate-800">앱 실행 빈도와 위젯 조회 비율</strong> &mdash; 어느 경로로 정보를 보는지</li>
-                        <li>&bull; <strong class="text-slate-800">등록 시설&nbsp;수</strong> &mdash; 데이터를 제공하는 어린이집&nbsp;수. 이것이 서비스 가치의 상한입니다</li>
-                        <li class="bal">&bull; <strong class="text-slate-800">데이터 없음 비율</strong> &mdash; 조회했는데 값이 없던 비율. 높으면 재방문하지 않습니다</li>
-                        <li class="bal">&bull; <strong class="text-slate-800">30일 잔존율</strong> &mdash; 하루 한&nbsp;번 보는 정보로 유지가 되는지 확인하는 값입니다</li>
+                        <li>&bull; <strong class="text-slate-800">위젯 설치율</strong> &mdash; 앱 설치자&nbsp;중 위젯을 배치한 비율. 낮으면 사용 빈도 문제가 그대로 남습니다.</li>
+                        <li>&bull; <strong class="text-slate-800">앱 실행 빈도와 위젯 조회 비율</strong> &mdash; 어느 경로로 정보를 보는지 봅니다.</li>
+                        <li>&bull; <strong class="text-slate-800">등록 시설&nbsp;수</strong> &mdash; 데이터를 제공하는 어린이집&nbsp;수. 이것이 서비스 가치의 상한입니다.</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">데이터 없음 비율</strong> &mdash; 조회했는데 값이 없던 비율. 높으면 재방문하지 않습니다.</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">30일 잔존율</strong> &mdash; 하루 한&nbsp;번 보는 정보로 유지가 되는지 확인하는 값입니다.</li>
                     </ul>
                 </div>
                 
@@ -724,7 +733,7 @@ html { scroll-behavior: smooth; }
 
         <footer class="mt-24 py-16 border-t border-slate-200 text-center w-full max-w-5xl">
             <p class="text-slate-500 text-xs font-black tracking-wide mb-4 text-center">키즈에어 기획 및&nbsp;디자인 작업 기록</p>
-            <p class="text-slate-500 text-[11px] font-bold tracking-tight text-center">&copy; 허재석</p>
+            <p class="text-slate-500 text-xs font-bold tracking-tight text-center">&copy; 허재석</p>
         </footer>
 
     </div>
@@ -793,7 +802,7 @@ html { scroll-behavior: smooth; }
                 label.className = "text-sm font-black text-rose-500 tracking-tight text-center";
                 tableBody.innerHTML = `
                     <tr><td>09:00</td><td>21</td><td class="text-amber-500">60</td><td class="text-amber-500">56</td></tr>
-                    <tr><td>10:00</td><td>23</td><td class="text-rose-500">78</td><td class="text-rose-500">88</td></tr>
+                    <tr><td>10:00</td><td>23</td><td class="text-rose-500">98</td><td class="text-rose-500">88</td></tr>
                     <tr><td>11:00</td><td>21</td><td class="text-sky-500">45</td><td class="text-sky-500">26</td></tr>
                 `;
             }

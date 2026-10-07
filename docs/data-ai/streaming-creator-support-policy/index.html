@@ -85,20 +85,24 @@
 html { scroll-behavior: smooth; }
 .tab-btn { display: flex; align-items: center; justify-content: center; text-align: center; padding-left: 12px; padding-right: 12px; }
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-cyan-600{color:#0e7490} html body .text-emerald-600{color:#047857} html body .text-indigo-500{color:#4f46e5} html body .text-red-600{color:#b91c1c}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="antialiased bg-slate-50">
 
 <div class="max-w-5xl mx-auto px-6 py-16" role="main">
     <!-- Header Section -->
     <header class="mb-16 text-center md:text-left">
-        <div class="inline-block bg-indigo-50 text-indigo-700 text-[10px] font-bold px-3 py-1 rounded-full mb-4">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full mb-4">
             서비스 기획 분석
         </div>
         <h1 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight mb-4">SOOP&#8288;·치지직 신입 스트리머 락인 전략 비교</h1>
-        <p class="text-slate-500 text-lg max-w-2xl leading-relaxed bal">
-            국내 스트리밍 시장 재편에 따른 플랫폼 지속 성장 동력 확보 및&nbsp;신규 크리에이터 정착 지원 정책 제언
+        <p class="text-slate-500 text-lg max-w-2xl leading-relaxed bal" style="max-width:41em;text-wrap:wrap">
+            국내 스트리밍 시장 재편에 따른 플랫폼 지속 성장 동력 확보 및 신규 크리에이터 정착 지원 정책 제언
         </p>
-                <p class="mt-6 inline-flex items-center gap-1.5 text-[11px] font-bold bg-slate-100 text-slate-600 px-3 py-1.5 rounded-full border border-slate-200"><span>📌</span><span>데이터 기준: 2024년 2분기까지 공개된 자료 · 이후 정책 변경은 반영돼 있지 않습니다</span></p>
+                <p class="mt-6 inline-flex items-center gap-1.5 text-xs font-bold bg-slate-100 text-slate-600 px-3 py-1.5 rounded-full border border-slate-200"><span>📌</span><span>데이터 기준: 2024년 2분기까지 공개된 자료 · 이후 정책 변경은 반영돼 있지 않습니다.</span></p>
     </header>
 
     <!-- 이 문서가 하는 말 -->
@@ -106,39 +110,39 @@ html { scroll-behavior: smooth; }
     <section class="mb-12" aria-label="이 문서가 하는 말">
       <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
         <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-          <p class="text-[11px] font-black tracking-[0.12em] text-violet-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
-          <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">신규 창작자 정착 정책과 락인 전략을 플랫폼별로 비교한 문서입니다. 공개 자료와 시장 추정치를 바탕으로 한&nbsp;개인 분석이며, 아래 이탈률은 추정 생존 곡선에서 계산한 값입니다.</p>
+          <p class="text-xs font-black tracking-[0.12em] text-violet-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
+          <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">신규 창작자 정착 정책과 락인 전략을 플랫폼별로 비교한 문서입니다. <br class="hidden md:block">공개 자료와 시장 추정치를 바탕으로 한&nbsp;개인 분석이며, <br class="hidden md:block">아래 이탈률은 추정 생존 곡선에서 계산한 값입니다.</p>
         </div>
         <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
           <div class="px-3 py-5 md:py-6 text-center">
-            <p class="text-[11px] font-bold text-slate-500 mb-2 bal">첫&nbsp;달 이탈률</p>
+            <p class="text-xs font-bold text-slate-500 mb-2 bal">첫&nbsp;달 이탈률</p>
             <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">32.0%</p>
           </div>
           <div class="px-3 py-5 md:py-6 text-center">
-            <p class="text-[11px] font-bold text-slate-500 mb-2 bal">1→2개월&nbsp;차 이탈률</p>
+            <p class="text-xs font-bold text-slate-500 mb-2 bal">1→2개월&nbsp;차 이탈률</p>
             <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">52.9%</p>
-            <p class="text-[11px] text-slate-500 mt-1 bal">가장 높은 봉우리</p>
+            <p class="text-xs text-slate-500 mt-1 bal">가장 높은&nbsp;봉우리</p>
           </div>
           <div class="px-3 py-5 md:py-6 text-center">
-            <p class="text-[11px] font-bold text-slate-500 mb-2 bal">4~6개월&nbsp;차 이탈률</p>
+            <p class="text-xs font-bold text-slate-500 mb-2 bal">4~6개월&nbsp;차 이탈률</p>
             <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">14.3%</p>
-            <p class="text-[11px] text-slate-500 mt-1 bal">자기 시청자를 확보한 상태</p>
+            <p class="text-xs text-slate-500 mt-1 bal">자기 시청자를 확보한 상태</p>
           </div>
         </div>
         <div class="px-6 md:px-9 py-6 md:py-7">
-          <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">다시 볼&nbsp;지점</p>
+          <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">다시 볼&nbsp;지점</p>
           <div class="grid md:grid-cols-3 gap-3">
             <div class="rounded-xl border border-slate-200 p-4">
               <p class="text-sm font-black text-slate-900 mb-1.5 bal">문제는 양이 아니라 구조</p>
-              <p class="text-xs text-slate-500 leading-relaxed bal">트래픽의 절대량이 아니라 줬다가 거두는 방식이 이탈을 만듭니다</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal">트래픽의 절대량이 아니라 줬다가 <br class="hidden md:block">거두는 방식이 이탈을 만듭니다.</p>
             </div>
             <div class="rounded-xl border border-slate-200 p-4">
               <p class="text-sm font-black text-slate-900 mb-1.5 bal">처방이 진단을 겨냥하는지</p>
-              <p class="text-xs text-slate-500 leading-relaxed bal">제안한 합방&#8288;(기성&nbsp;BJ와의 합동&nbsp;방송)&#8288;도 줬다가 거두는 지원이라, 끝난&nbsp;뒤 버프 종료 때와 같은 낙폭이 올&nbsp;수 있습니다</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal">제안한 합방&#8288;&#8288;도 줬다가 거두는 지원이라, <br class="hidden md:block">끝난&nbsp;뒤 버프 종료 때와 같은 낙폭이 올&nbsp;수 있습니다.</p>
             </div>
             <div class="rounded-xl border border-slate-200 p-4">
               <p class="text-sm font-black text-slate-900 mb-1.5 bal">목표 지표를 바꿔야 함</p>
-              <p class="text-xs text-slate-500 leading-relaxed bal">합방 기간의 시청자&nbsp;수가 아니라 합방이 끝난&nbsp;뒤 남는 시청자로 재야 합니다</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal">합방 기간의 시청자&nbsp;수가 아니라 <br class="hidden md:block">합방이 끝난&nbsp;뒤 남는 시청자로 재야&nbsp;합니다.</p>
             </div>
           </div>
         </div>
@@ -156,7 +160,7 @@ html { scroll-behavior: smooth; }
             <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-5">용어와 문제 구간</h2>
             <p class="text-slate-600 leading-relaxed mb-4 max-w-[46em]">
                     별풍선은 시청자 후원 아이템, 신입 버프는 방송 초기에 목록 상단으로 노출해 주는 혜택입니다. <br class="hidden md:block">
-                    이탈이 집중되는 구간은 신입 버프가 종료되는 시점으로, 시청자 0명 상태가 이어지며 대부분이 방송을 중단합니다. SOOP과 치지직의 신입 지원 정책을 비교하고 잔존 방안을 제안했습니다.
+                    이탈이 집중되는 구간은 신입 버프가 종료되는 시점으로, 시청자 0명 상태가 이어지며 대부분이 방송을 중단합니다. <br class="hidden md:block">SOOP과 치지직의 신입 지원 정책을 비교하고 잔존 방안을 제안했습니다.
                 </p>
         </div>
     </section>
@@ -169,15 +173,14 @@ html { scroll-behavior: smooth; }
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
                 <h3 class="font-bold text-lg mb-4 text-indigo-600">시장 경쟁 상황</h3>
-                <p class="text-base text-slate-600 leading-relaxed">
-                    트위치 철수 이후 국내 라이브 스트리밍 시장은 <strong>SOOP(기성 팬덤)</strong>&#8288;과 <strong>치지직&#8288;(네이버 인프라)</strong>&#8288;의 양강 구도로 굳어졌습니다. <br class="hidden md:block">
-                    초기 유입 경쟁 단계는 지났고, <br class="hidden md:block">
-                    지금은 콘텐츠 다양성을 채울 신규 인력이 들어와 자리를 잡는지가 플랫폼 성장의 핵심 지표입니다.
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    트위치 철수 이후 국내 라이브 스트리밍 시장은 <br class="hidden md:block"><strong>SOOP</strong>&#8288;과 <strong>치지직&#8288;</strong>&#8288;의 양강 구도로 굳어졌습니다. <br class="hidden md:block">
+                    초기 유입 경쟁 단계는 지났고, 지금은 콘텐츠 다양성을 채울 신규 인력이 들어와 자리를 잡는지가 플랫폼 성장의 핵심 지표입니다.
                 </p>
             </div>
             <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
                 <h3 class="font-bold text-lg mb-4 text-indigo-600">기획자 관점의 시사점</h3>
-                <p class="text-sm text-slate-600 leading-relaxed"><span class="seg-bal-md">신입 스트리머 확보는 단순히 채널&nbsp;수를 늘리는&nbsp;일이 아닙니다.</span> <span class="seg-bal-md">대형 크리에이터 한&nbsp;명에 대한 의존도를 낮추고, 광고&#8288;·후원 모델의 저변을 넓히는&nbsp;일입니다.</span> <span class="seg-bal-md"><strong>'플랫폼 리스크 분산'</strong>과 <strong>'LTV(고객&nbsp;생애&nbsp;가치)&nbsp;향상'</strong>을 위한 핵심 전략입니다.</span></p>
+                <p class="text-sm text-slate-600 leading-relaxed"><span class="seg-bal-md">신입 스트리머 확보는 단순히 채널&nbsp;수를 늘리는&nbsp;일이 아닙니다.</span> <span class="seg-bal-md">대형 크리에이터 한&nbsp;명에 대한 의존도를 낮추고, 광고&#8288;·후원 모델의 저변을 넓히는&nbsp;일입니다.</span> <span class="seg-bal-md"><strong>'플랫폼 리스크 분산'</strong>과&nbsp;<strong>'LTV 향상'</strong>을 위한 핵심 전략입니다.</span></p>
             </div>
         </div>
     </section>
@@ -186,7 +189,7 @@ html { scroll-behavior: smooth; }
     <section class="mb-20">
         <div class="flex items-center justify-between mb-8">
             <h2 class="text-2xl md:text-3xl font-black text-slate-900">2. 핵심 지표 비교: SOOP vs 치지직</h2>
-            <span class="text-[10px] text-slate-500">항목을 클릭하여 세부 분석 내용을 확인하세요</span>
+            <span class="text-xs text-slate-500">항목을 클릭하여 세부 분석 내용을 확인하세요</span>
         </div>
         
         <div class="space-y-4">
@@ -196,7 +199,7 @@ html { scroll-behavior: smooth; }
                 <div class="flex-1">
                     <div class="flex justify-between items-center mb-1">
                         <h3 class="font-bold text-slate-800">초기 진입 및&nbsp;노출 방식</h3>
-                        <span class="text-[10px] font-bold text-indigo-500">분석</span>
+                        <span class="text-xs font-bold text-indigo-500">분석</span>
                     </div>
                     <div class="grid grid-cols-2 gap-4 text-xs text-slate-500">
                         <p><strong class="text-indigo-600">SOOP:</strong> 신입 전용 카테고리 강제 상단 노출</p>
@@ -204,8 +207,8 @@ html { scroll-behavior: smooth; }
                     </div>
                 </div>
             </div>
-            <div id="detail1" class="hidden px-8 py-6 bg-indigo-50/30 rounded-2xl border border-indigo-100 -mt-2 text-xs leading-relaxed text-slate-600">
-                <strong>[시사점]</strong> SOOP은 신입 버프 기간 동안 트래픽을 집중 투입하여 빠른 인지도 확보를 돕지만, 버프 종료 시점의 낙폭이 커&nbsp;상대적 박탈감을 유발함. 치지직은 점진적인 성장을 유도하나 0명 시청자 구간 탈출이 상대적으로 어려움.
+            <div id="detail1" class="hidden px-8 py-6 bg-indigo-50/30 rounded-2xl border border-indigo-100 -mt-2 text-sm leading-relaxed text-slate-600">
+                <strong>[시사점]</strong> SOOP은 신입 버프 기간 동안 트래픽을 집중 투입하여 빠른 인지도 확보를 돕지만, <br class="hidden md:block">버프 종료 시점의 낙폭이 커&nbsp;상대적 박탈감을 유발함. 치지직은 점진적인 성장을 유도하나 0명 시청자 구간 탈출이 상대적으로 어려움.
             </div>
 
             <!-- Row 2 -->
@@ -214,7 +217,7 @@ html { scroll-behavior: smooth; }
                 <div class="flex-1">
                     <div class="flex justify-between items-center mb-1">
                         <h3 class="font-bold text-slate-800">수익 창출 조건 및&nbsp;체계</h3>
-                        <span class="text-[10px] font-bold text-indigo-500">분석</span>
+                        <span class="text-xs font-bold text-indigo-500">분석</span>
                     </div>
                     <div class="grid grid-cols-2 gap-4 text-xs text-slate-500">
                         <p><strong class="text-indigo-600">SOOP:</strong> 별풍선 즉시 수령 가능</p>
@@ -222,8 +225,8 @@ html { scroll-behavior: smooth; }
                     </div>
                 </div>
             </div>
-            <div id="detail2" class="hidden px-8 py-6 bg-indigo-50/30 rounded-2xl border border-indigo-100 -mt-2 text-xs leading-relaxed text-slate-600">
-                <strong>[시사점]</strong> SOOP은 소액이라도 즉시 지급되는 보상이 이루어져 스트리머의 '생존 가능성'을 높여줌. 치지직은 자격 요건 충족 과정에서 신입의 인내심을 테스트하는 구조로, 이&nbsp;과정에서의 이탈 방어 기제 부재가 약점임.
+            <div id="detail2" class="hidden px-8 py-6 bg-indigo-50/30 rounded-2xl border border-indigo-100 -mt-2 text-sm leading-relaxed text-slate-600">
+                <strong>[시사점]</strong> SOOP은 소액이라도 즉시 지급되는 보상이 이루어져 스트리머의 '생존 가능성'을 높여줌. <br class="hidden md:block">치지직은 자격 요건 충족 과정에서 신입의 인내심을 테스트하는 구조로, 이&nbsp;과정에서의 이탈 방어 기제 부재가 약점임.
             </div>
 
             <!-- Row 3 -->
@@ -232,7 +235,7 @@ html { scroll-behavior: smooth; }
                 <div class="flex-1">
                     <div class="flex justify-between items-center mb-1">
                         <h3 class="font-bold text-slate-800">성장 지원 인프라</h3>
-                        <span class="text-[10px] font-bold text-indigo-500">분석</span>
+                        <span class="text-xs font-bold text-indigo-500">분석</span>
                     </div>
                     <div class="grid grid-cols-2 gap-4 text-xs text-slate-500">
                         <p><strong class="text-indigo-600">SOOP:</strong> 스튜디오 대관 및&nbsp;기술 1:1 지원</p>
@@ -240,8 +243,8 @@ html { scroll-behavior: smooth; }
                     </div>
                 </div>
             </div>
-            <div id="detail3" class="hidden px-8 py-6 bg-indigo-50/30 rounded-2xl border border-indigo-100 -mt-2 text-xs leading-relaxed text-slate-600">
-                <strong>[시사점]</strong> SOOP은 오프라인 시설과 기술 인력을 투입하여 방송 품질의 하한선을 보장함. 치지직은 IT 플랫폼적 편의성은 높으나, 방송 초보를 위한 밀착형 케어 및&nbsp;물적 자원 투입량에서는 SOOP에 뒤처짐.
+            <div id="detail3" class="hidden px-8 py-6 bg-indigo-50/30 rounded-2xl border border-indigo-100 -mt-2 text-sm leading-relaxed text-slate-600">
+                <strong>[시사점]</strong> SOOP은 오프라인 시설과 기술 인력을 투입하여 방송 품질의 하한선을 보장함. <br class="hidden md:block">치지직은 IT 플랫폼적 편의성은 높으나, 방송 초보를 위한 밀착형 케어 및&nbsp;물적 자원 투입량에서는 SOOP에 뒤처짐.
             </div>
         </div>
     </section>
@@ -255,8 +258,8 @@ html { scroll-behavior: smooth; }
                 <div class="chart-container">
                     <canvas id="survivalChart" role="img" aria-label="꺾은선 차트. 항목 시작, 1개월, 2개월, 3개월, 4개월, 6개월. 계열 생존율(%)"></canvas>
                 </div>
-                <div class="mt-4 p-4 bg-slate-50 rounded-2xl text-[11px] text-slate-500 leading-relaxed bal">
-                    <span class="font-bold text-slate-800">고립감 분석:</span> 3개월&nbsp;차까지 <strong>누적 80% 이상&#8288;(81.5%)&#8288;이 이탈</strong>하고, 가장 큰 낙폭은 신입 버프 종료 직후인 1~2개월&nbsp;차에 발생. 주된 원인은 시청자 0명 상태의 장기화에 따른 심리적 고립감 및&nbsp;트래픽 정체임.
+                <div class="mt-4 p-4 bg-slate-50 rounded-2xl text-xs text-slate-500 leading-relaxed bal">
+                    <span class="font-bold text-slate-800">고립감 분석:</span> 3개월&nbsp;차까지 <strong>누적 80% 이상&#8288;(81.5%)&#8288;이 이탈</strong>하고, 가장 큰 낙폭은 신입 버프 종료 직후인 1~2개월&nbsp;차에 발생. <br class="hidden md:block">주된 원인은 시청자 0명 상태의 장기화에 따른 심리적 고립감 및&nbsp;트래픽 정체임.
                 </div>
             </div>
             <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
@@ -264,8 +267,8 @@ html { scroll-behavior: smooth; }
                 <div class="chart-container">
                     <canvas id="competencyChart" role="img" aria-label="방사형 차트. 항목 수익성, 팬덤소통, 노출지원, 대중성, 인프라/기술. 계열 SOOP, 치지직"></canvas>
                 </div>
-                <div class="mt-4 p-4 bg-slate-50 rounded-2xl text-[11px] text-slate-500 leading-relaxed">
-                    <span class="font-bold text-slate-800">생태계적 강점:</span> SOOP은 수익성과 커뮤니티 결속력에서 치지직 대비 우위. 신입을 기성 대형 크루에 물리적으로 연결하여 <strong>'관계 기반의 락인'</strong>을 유도하는&nbsp;것이 승부처임.
+                <div class="mt-4 p-4 bg-slate-50 rounded-2xl text-xs text-slate-500 leading-relaxed">
+                    <span class="font-bold text-slate-800">생태계적 강점:</span> SOOP은 수익성과 커뮤니티 결속력에서 치지직 대비 우위. <br class="hidden md:block">신입을 기성 대형 크루에 물리적으로 연결하여 <br class="hidden md:block"><strong>'관계 기반의 락인'</strong>을 유도하는&nbsp;것이 승부처임.
                 </div>
             </div>
         </div>
@@ -295,8 +298,8 @@ html { scroll-behavior: smooth; }
                                     <span class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-sm">01</span>
                                     공식 멘토링 합방 (SOOP-Mate)
                                 </h3>
-                                <p class="text-base text-slate-600 leading-relaxed bal max-w-[46em]">
-                    기성 대형 BJ&#8288;(파트너/베스트)&#8288;와 신입 BJ를 공식 시스템으로 매칭하여 트래픽의 낙수 효과와 커뮤니티 소속감을 강제로 제공하는 전략입니다.
+                                <p class="text-sm text-slate-600 leading-relaxed bal max-w-[46em]">
+                    기성 대형 BJ&#8288;(파트너/베스트)&#8288;와 신입 BJ를 공식 시스템으로 매칭하여 <br class="hidden md:block">트래픽의 낙수 효과와 커뮤니티 소속감을 강제로 제공하는 전략입니다.
                 </p>
                             </div>
                             <div class="grid grid-cols-1 gap-4">
@@ -316,17 +319,17 @@ html { scroll-behavior: smooth; }
                         </div>
                         <div class="md:w-2/5">
                             <div class="bg-indigo-50/50 p-6 rounded-3xl border border-indigo-100">
-                                <h5 class="font-bold text-indigo-900 mb-4 text-sm">기대 효과 지표 <span class="normal-case font-medium text-[10px] text-indigo-500">(실측치 아님 · 도입&nbsp;시 목표 수준)</span></h5>
+                                <h5 class="font-bold text-indigo-900 mb-4 text-sm">기대 효과 지표 <span class="normal-case font-medium text-xs text-indigo-500">(실측치 아님 · 도입&nbsp;시 목표 수준)</span></h5>
                                 <div class="space-y-6">
                                     <div class="flex justify-between items-end">
-                                        <span class="text-[11px] text-indigo-700">신입 초기 유입 증가</span>
+                                        <span class="text-xs text-indigo-700">신입 초기 유입 증가</span>
                                         <span class="text-lg font-black text-indigo-600">증가 기대</span>
                                     </div>
                                     <div class="w-full bg-indigo-200 h-1.5 rounded-full overflow-hidden">
                                         <div class="bg-indigo-600 h-full" style="width: 85%;"></div>
                                     </div>
                                     <div class="flex justify-between items-end">
-                                        <span class="text-[11px] text-indigo-700 bal-t">3개월&nbsp;차 생존율 상승</span>
+                                        <span class="text-xs text-indigo-700 bal-t">3개월&nbsp;차 생존율 상승</span>
                                         <span class="text-lg font-black text-emerald-600">상승 기대</span>
                                     </div>
                                     <div class="w-full bg-indigo-200 h-1.5 rounded-full overflow-hidden">
@@ -348,8 +351,7 @@ html { scroll-behavior: smooth; }
                                     게이미피케이션 마일스톤 (성장 패스)
                                 </h3>
                                 <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">
-                     방송 초기 90일의 막연함을 게임 퀘스트처럼 구조화하여 정량적 성취감을 부여하고, <br class="hidden md:block">
-                    성장에 필요한 실질적 아이템을 보상으로 지급합니다.
+                     방송 초기 90일의 막연함을 게임 퀘스트처럼 구조화하여 정량적 성취감을 부여하고, <br class="hidden md:block">성장에 필요한 실질적 아이템을 보상으로 지급합니다.
                 </p>
                             </div>
                             <div class="grid grid-cols-1 gap-3">
@@ -357,21 +359,21 @@ html { scroll-behavior: smooth; }
                                     <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center font-bold text-amber-800 text-xs">Lv.1</div>
                                     <div class="flex-1">
                                         <h4 class="font-bold text-xs text-slate-800">50시간 방송 달성</h4>
-                                        <p class="text-[10px] text-slate-500">보상: 메인 리스트 1시간 상단 고정 노출권</p>
+                                        <p class="text-xs text-slate-500">보상: 메인 리스트 1시간 상단 고정 노출권</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-4 p-4 border border-slate-100 rounded-2xl hover:bg-amber-50/30 transition-colors">
                                     <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center font-bold text-amber-800 text-xs">Lv.2</div>
                                     <div class="flex-1">
                                         <h4 class="font-bold text-xs text-slate-800">즐겨찾기 300명 달성</h4>
-                                        <p class="text-[10px] text-slate-500">보상: 전용 시그니처 이모티콘 1종 무료 등록권</p>
+                                        <p class="text-xs text-slate-500">보상: 전용 시그니처 이모티콘 1종 무료 등록권</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-4 p-4 border border-slate-100 rounded-2xl hover:bg-amber-50/30 transition-colors">
                                     <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center font-bold text-amber-800 text-xs">Lv.3</div>
                                     <div class="flex-1">
                                         <h4 class="font-bold text-xs text-slate-800">첫&nbsp;정산 성공 (10만&nbsp;원 이상)</h4>
-                                        <p class="text-[10px] text-slate-500 bal-m">보상: 수수료 1개월간 5% 인하 및&nbsp;송출 장비 우선 지원</p>
+                                        <p class="text-xs text-slate-500 bal-m">보상: 수수료 1개월간 5% 인하 및&nbsp;송출 장비 우선 지원</p>
                                     </div>
                                 </div>
                             </div>
@@ -380,14 +382,14 @@ html { scroll-behavior: smooth; }
                             <div class="bg-amber-50/50 p-8 rounded-3xl border border-amber-100 text-center space-y-6">
                                 <h5 class="font-bold text-amber-900 text-sm">신입 성장 패스 UI 예시</h5>
                                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-amber-200">
-                                    <p class="text-[10px] text-slate-500 font-bold mb-2">현재 퀘스트 달성률</p>
+                                    <p class="text-xs text-slate-500 font-bold mb-2">현재 퀘스트 달성률</p>
                                     <p class="text-3xl font-black text-amber-600">65%</p>
                                     <div class="w-full bg-slate-100 h-2 mt-4 rounded-full overflow-hidden">
                                         <div class="bg-amber-500 h-full" style="width: 65%;"></div>
                                     </div>
-                                    <p class="text-[10px] text-slate-500 mt-2">다음 레벨까지: 즐겨찾기 105명 남음 (195/300)</p>
+                                    <p class="text-xs text-slate-500 mt-2">다음 레벨까지 즐겨찾기 105명&nbsp;남음 <br class="hidden md:block">(195/300)</p>
                                 </div>
-                                <p class="text-[10px] text-amber-700 leading-relaxed italic">"명확한 단기 목표를 제시해 <br class="hidden md:block">3개월&nbsp;차 번아웃 이탈을 줄이는&nbsp;것이 목표"</p>
+                                <p class="text-xs text-amber-700 leading-relaxed italic">"명확한 단기 목표를 제시해 <br class="hidden md:block">3개월&nbsp;차 번아웃 이탈을 줄이는&nbsp;것이 목표"</p>
                             </div>
                         </div>
                     </div>
@@ -399,7 +401,7 @@ html { scroll-behavior: smooth; }
     <!-- [보강] 5. 생존 곡선 재해석 -->
     <section class="mb-20">
         <p class="text-xs font-black tracking-[.2em] text-indigo-600 mb-3">다시 계산하기</p>
-        <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-5">5. 곡선을 구간별로 나누면 자원을 어디 쓸지 정해집니다</h2>
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-5">5. 곡선을 구간별로 나누면 자원을 어디 쓸지 정해집니다.</h2>
         <p class="text-slate-600 leading-relaxed mb-8 max-w-[46em]">
                     3번에서 <strong class="text-slate-900">&ldquo;3개월&nbsp;차까지 누적 80% 이상 이탈&rdquo;</strong>&#8288;이라고 정리했습니다. <br class="hidden md:block">
                     누적으로는 맞지만, <strong class="text-slate-900">구간별 상대 이탈률</strong>로 환산하면 어느 시점이 진짜 고비인지가 드러납니다.
@@ -423,7 +425,7 @@ html { scroll-behavior: smooth; }
                                 <td class="p-3 text-center font-black text-amber-700">32.0%</td>
                             </tr>
                             <tr class="bg-red-50 border-b border-slate-200">
-                                <td class="p-3 font-black text-slate-800">1개월 &rarr; 2개월 <span class="text-[10px] font-black text-red-600">최대</span></td>
+                                <td class="p-3 font-black text-slate-800">1개월 &rarr; 2개월 <span class="text-xs font-black text-red-600">최대</span></td>
                                 <td class="p-3 text-center font-bold text-slate-600">32.0%</td>
                                 <td class="p-3 text-center font-bold text-slate-600">36.0%p</td>
                                 <td class="p-3 text-center font-black text-red-700">52.9%</td>
@@ -452,18 +454,17 @@ html { scroll-behavior: smooth; }
 
         <div class="grid md:grid-cols-2 gap-6 mb-8">
             <div class="bg-red-50 border-2 border-red-300 rounded-2xl p-7">
-                <p class="text-[11px] font-black tracking-wide text-red-600 mb-3">발견 1</p>
-                <p class="font-black text-slate-900 mb-3">고비는 2개월&nbsp;차입니다</p>
+                <p class="text-xs font-black tracking-wide text-red-600 mb-3">발견 1</p>
+                <p class="font-black text-slate-900 mb-3">고비는 2개월&nbsp;차입니다.</p>
                 <p class="text-sm text-slate-600 leading-relaxed">
-                    남아 있던 사람&nbsp;중 <strong class="text-red-700">52.9%&#8288;가 1&rarr;2개월 구간에서 빠집니다.</strong> <br class="hidden md:block">
+                    남아 있던 사람&nbsp;중 <strong class="text-red-700">52.9%&#8288;가 1→2개월 구간에서 빠집니다.</strong> <br class="hidden md:block">
                     첫&nbsp;달 이탈률&#8288;(32.0%)&#8288;보다 훨씬 높습니다. <br class="hidden md:block">
-                    &lsquo;1~3개월&rsquo;&#8288;로 묶으면 이&nbsp;봉우리가 평탄해져 보이지만,<br>
-실제로는 한&nbsp;구간에 몰려 있습니다.
+                    ‘1~3개월’&#8288;로 묶으면 이&nbsp;봉우리가 평탄해져 보이지만, <br class="hidden md:block">실제로는 한&nbsp;구간에 몰려 있습니다.
                 </p>
             </div>
             <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-7">
-                <p class="text-[11px] font-black tracking-wide text-emerald-700 mb-3">발견 2</p>
-                <p class="font-black text-slate-900 mb-3">3개월을 넘기면 안정권입니다</p>
+                <p class="text-xs font-black tracking-wide text-emerald-700 mb-3">발견 2</p>
+                <p class="font-black text-slate-900 mb-3">3개월을 넘기면 안정권입니다.</p>
                 <p class="text-sm text-slate-600 leading-relaxed bal-t seg-t"><span class="seg-bal-t">
                     상대 이탈률이 <strong class="text-emerald-700">42.2% &rarr; 24.3% &rarr; 14.3%</strong>&#8288;로 급격히 낮아집니다. </span><br class="hidden md:block"><span class="seg-bal-t">
                     3개월 생존자는 이미 자기 시청자를 확보한 상태로 볼&nbsp;수 있습니다.
@@ -472,7 +473,7 @@ html { scroll-behavior: smooth; }
         </div>
 
         <div class="bg-slate-900 rounded-3xl p-8 md:p-10 text-white">
-            <p class="text-indigo-300 font-black text-[11px] tracking-wide mb-5">정책 설계에 주는 함의</p>
+            <p class="text-indigo-300 font-black text-xs tracking-wide mb-5">정책 설계에 주는 함의</p>
             <p class="text-base leading-relaxed mb-5 max-w-[46em]">
                     전략 02의 성장 패스는 <strong class="text-white">90일에 걸친 균등한 퀘스트 구조</strong>입니다. <br class="hidden md:block">
                     그런데 이탈은 균등하지 않습니다. <br class="hidden md:block">
@@ -482,7 +483,7 @@ html { scroll-behavior: smooth; }
                 <div class="bg-white/10 rounded-2xl p-5">
                     <p class="text-sm font-black text-indigo-300 mb-2">앞으로 당길&nbsp;것</p>
                     <p class="text-xs text-slate-300 leading-relaxed bal">
-                    &lsquo;즐겨찾기 300명&rsquo;&#8288;처럼 도달이 늦은 목표는 <strong class="text-white">2개월&nbsp;차 이전에 닿을&nbsp;수 있는 중간 단계</strong>로 쪼갭니다. <br class="hidden md:block">
+                    ‘즐겨찾기 300명’&#8288;처럼 도달이 늦은 목표는 <br class="hidden md:block"><strong class="text-white">2개월&nbsp;차 이전에 닿을&nbsp;수 있는 중간 단계</strong>로 쪼갭니다. <br class="hidden md:block">
                     고비를 넘기기 전에 성취가 한&nbsp;번은 발생해야 합니다.
                 </p>
                 </div>
@@ -561,14 +562,14 @@ html { scroll-behavior: smooth; }
         </div>
 
         <div class="bg-indigo-50 border-2 border-indigo-200 rounded-3xl p-8">
-            <p class="text-[11px] font-black tracking-wide text-indigo-600 mb-4">해석</p>
+            <p class="text-xs font-black tracking-wide text-indigo-600 mb-4">해석</p>
             <p class="text-slate-700 leading-relaxed mb-5 max-w-[46em]">
                     두&nbsp;전략은 모두 <strong class="text-slate-900">이미 우위인 항목&#8288;(수익성 &middot; 팬덤소통 &middot; 노출)&#8288;</strong>을 더&nbsp;강화합니다. <br class="hidden md:block">
                     강점을 굳히는&nbsp;것은 유효한 전략이고, 신입의 &lsquo;생존 가능성&rsquo;&#8288;을 높이는&nbsp;데 직접 작용합니다. <br class="hidden md:block">
                     다만&nbsp;유일한 열위인 <strong class="text-red-700">대중성&#8288;(격차 -4.5)</strong>&#8288;에는 대응이 없습니다.
                 </p>
-            <p class="text-slate-700 leading-relaxed max-w-[46em] seg-t"><span class="seg-bal-t">신입에게 대중성은 성장의 상한입니다. 수익화가 빨라도 닿을&nbsp;수 있는 시청자가 좁으면 일정 규모에서 멈춥니다. </span><br class="hidden md:block"><span class="seg-bal-t">
-3개월을 넘긴 생존자가 다음에 부딪히는 벽이 여기입니다. <strong>초기 90일 밖이라 여기서는 다루지 않고 후속 과제로 둡니다.</strong></span></p>
+            <p class="text-slate-700 leading-relaxed max-w-[46em] seg-t"><span class="seg-bal-t">신입에게 대중성은 성장의 상한입니다. <br class="hidden md:block">수익화가 빨라도 닿을&nbsp;수 있는 시청자가 좁으면 일정 규모에서 멈춥니다. </span><br class="hidden md:block"><span class="seg-bal-t">
+3개월을 넘긴 생존자가 다음에 부딪히는 벽이 여기입니다. <br class="hidden md:block"><strong>초기 90일 밖이라 여기서는 다루지 않고 후속 과제로 둡니다.</strong></span></p>
         </div>
     </section>
 
@@ -580,7 +581,7 @@ html { scroll-behavior: smooth; }
             <div class="bg-white border-2 border-emerald-200 rounded-3xl p-7">
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                     <li>&bull; <strong class="text-slate-800">합방&nbsp;후 팔로우 전환율:</strong> 합방 유입 시청자&nbsp;중 신입 채널을 팔로우하고 <strong>다음 방송에 재방문</strong>한&nbsp;비율 &mdash; 전략 01의 핵심 판정</li>
-                    <li class="bal">&bull; <strong class="text-slate-800">구간별 잔존율:</strong> 특히 <strong>1&rarr;2개월 상대 이탈률 52.9%</strong>&#8288;가 내려가는지</li>
+                    <li class="bal">&bull; <strong class="text-slate-800">구간별 잔존율:</strong> 특히 <strong>1&rarr;2개월 상대 이탈률 52.9%</strong>&#8288;가 내려가는지 봅니다.</li>
                     <li class="bal">&bull; <strong class="text-slate-800">고정 시청자&nbsp;수:</strong> 합방 없는 일반 방송의 평균 동시 시청자 추이</li>
                     <li class="bal-m">&bull; <strong class="text-slate-800">멘토 참여율과 재참여율:</strong> 낮으면 인센티브 설계 문제</li>
                     <li class="bal-m">&bull; <strong class="text-slate-800">기성 BJ 노출 지표:</strong> 슬롯 배정으로 인한 잠식 여부</li>
@@ -594,9 +595,9 @@ html { scroll-behavior: smooth; }
     <!-- Footer: Data Sources -->
     <footer class="mt-20 pt-10 border-t border-slate-200">
         <h3 class="text-sm font-bold text-slate-800 mb-6 flex items-center gap-2">
-            <span class="w-5 h-5 bg-slate-100 rounded-full flex items-center justify-center text-[10px]">i</span> 자료 출처 및&nbsp;신뢰도 검증
+            <span class="w-5 h-5 bg-slate-100 rounded-full flex items-center justify-center text-xs">i</span> 자료 출처 및&nbsp;신뢰도 검증
         </h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-[11px] text-slate-500 leading-relaxed">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-xs text-slate-500 leading-relaxed">
             <ul class="space-y-1 list-disc pl-4">
                 <li>SOOP(구 아프리카TV) 2024년 2분기 IR 경영 실적 보고서</li>
                 <li class="bal">네이버 치지직 공식 라운지 공지사항 및&nbsp;스트리머 등급 정책 가이드</li>
@@ -608,7 +609,7 @@ html { scroll-behavior: smooth; }
                 <li class="bal">신입 스트리머 유입 후 LTV(고객&nbsp;생애&nbsp;가치) 자체 시뮬레이션 모델 (공개 지표 기반 추정)</li>
             </ul>
         </div>
-        <p class="mt-8 text-center text-[10px] text-slate-500 italic">
+        <p class="mt-8 text-center text-xs text-slate-500 italic">
                     본 리포트는 공개 데이터와 시장 추정치를 기획자 관점에서 재가공한&nbsp;것으로 실제 내부 지표와 차이가 있을&nbsp;수 있습니다.
                 </p>
     </footer>

@@ -121,6 +121,9 @@
 @media (min-width:768px){.md\:p-20{padding:3.5rem}}
 footer.mt-32{margin-top:4rem}
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-teal-600{color:#0f766e}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="bg-slate-50/50">
 
@@ -137,7 +140,7 @@ footer.mt-32{margin-top:4rem}
             <span class="text-teal-600">핵심 플레이 동기 및&nbsp;전략&nbsp;제안</span>
         </h1>
         <p class="text-slate-500 mt-6 text-base max-w-3xl leading-relaxed text-balanced mx-auto">
-                    북미 앱스토어 상위 게임을 직접 플레이하며 분석해 도출한 이용자 심리 트리거를 공유합니다. <br class="hidden md:block">
+                    글로벌 마켓 Top 50 게임을 직접 플레이하며 분석해 도출한 이용자 심리 트리거를 공유합니다. <br class="hidden md:block">
                     성장 구조를 가진 게임이 차트에 오래 남았고, 시각적 정렬 소재가 이용자를 가장 싸게 데려오는 것으로 추정됩니다.
                 </p>
     </header>
@@ -147,40 +150,40 @@ footer.mt-32{margin-top:4rem}
     <section class="mb-12" aria-label="이 문서가 하는 말">
       <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
         <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-          <p class="text-[11px] font-black tracking-[0.12em] text-violet-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
-          <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]" style="text-wrap:balance">장르&#8288;·소재별 점유율과 유입 효율을 지표로 정리한 문서입니다. 직접 플레이와 AI 딥리서치로 세운 가설 추정치를 바탕으로 한&nbsp;개인 분석이며, 공식 통계가 아닙니다.</p>
+          <p class="text-xs font-black tracking-[0.12em] text-violet-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
+          <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]" style="text-wrap:balance">장르&#8288;·소재별 점유율과 유입 효율을 지표로 정리한 문서입니다. <br class="hidden md:block">직접 플레이와 AI 딥리서치로 세운 가설 추정치를 바탕으로 한&nbsp;개인 분석이며, 공식 통계가 아닙니다.</p>
         </div>
         <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
           <div class="px-3 py-5 md:py-6 text-center">
-            <p class="text-[11px] font-bold text-slate-500 mb-2 bal">차트에 남는&nbsp;것</p>
+            <p class="text-xs font-bold text-slate-500 mb-2 bal">차트에 남는&nbsp;것</p>
             <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">복합 성장형 45%</p>
-            <p class="text-[11px] text-slate-500 mt-1 bal">단순 조작형은 20%&#8288;에 머뭅니다</p>
+            <p class="text-xs text-slate-500 mt-1 bal">단순 조작형은 20%&#8288;에 머뭅니다.</p>
           </div>
           <div class="px-3 py-5 md:py-6 text-center">
-            <p class="text-[11px] font-bold text-slate-500 mb-2 bal">데려오는&nbsp;것</p>
+            <p class="text-xs font-bold text-slate-500 mb-2 bal">데려오는&nbsp;것</p>
             <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">시각적 정렬 소재</p>
-            <p class="text-[11px] text-slate-500 mt-1 bal">경영 시뮬 소재 대비 유입 비용이 약&nbsp;60% 낮다고 추정</p>
+            <p class="text-xs text-slate-500 mt-1 bal">경영 시뮬 소재 대비 유입 비용이 약&nbsp;60% 낮다고 추정</p>
           </div>
           <div class="px-3 py-5 md:py-6 text-center">
-            <p class="text-[11px] font-bold text-slate-500 mb-2 bal">제안</p>
+            <p class="text-xs font-bold text-slate-500 mb-2 bal">제안</p>
             <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight bal-m">둘을 붙이는&nbsp;것</p>
-            <p class="text-[11px] text-slate-500 mt-1 bal">정렬로 데려와 성장으로 남깁니다</p>
+            <p class="text-xs text-slate-500 mt-1 bal">정렬로 데려와 성장으로 남깁니다.</p>
           </div>
         </div>
         <div class="px-6 md:px-9 py-6 md:py-7">
-          <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">정렬 소재의 유입 비용이 낮은 이유</p>
+          <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">정렬 소재의 유입 비용이 낮은 이유</p>
           <div class="grid md:grid-cols-3 gap-3">
             <div class="rounded-xl border border-slate-200 p-4">
-              <p class="text-sm font-black text-slate-900 mb-1.5 bal">보기만 해도 무슨 게임인지 안다</p>
-              <p class="text-xs text-slate-500 leading-relaxed bal">광고 몇&nbsp;초로 설명이 끝나 설득 비용이 들지 않습니다</p>
+              <p class="text-sm font-black text-slate-900 mb-1.5 bal">보기만 해도 무슨 게임인지 안다.</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal">광고 몇&nbsp;초로 설명이 끝나 설득 비용이 들지 않습니다.</p>
             </div>
             <div class="rounded-xl border border-slate-200 p-4">
               <p class="text-sm font-black text-slate-900 mb-1.5 bal">어질러진&nbsp;것이 제자리를 찾는 쾌감</p>
-              <p class="text-xs text-slate-500 leading-relaxed bal">따로 배울&nbsp;것 없이 바로 시원함이 옵니다</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal">따로 배울&nbsp;것 없이 바로 시원함이 옵니다.</p>
             </div>
             <div class="rounded-xl border border-slate-200 p-4">
-              <p class="text-sm font-black text-slate-900 mb-1.5 bal">다만 그것만으로는 안&nbsp;남는다</p>
-              <p class="text-xs text-slate-500 leading-relaxed bal">성장 구조가 없으면 며칠 만에 할&nbsp;일이 떨어집니다</p>
+              <p class="text-sm font-black text-slate-900 mb-1.5 bal">다만 그것만으로는 안&nbsp;남는다.</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal">성장 구조가 없으면 며칠 만에 할&nbsp;일이 떨어집니다.</p>
             </div>
           </div>
         </div>
@@ -217,7 +220,7 @@ footer.mt-32{margin-top:4rem}
         <div class="bg-white rounded-[3rem] p-10 md:p-14 shadow-sm border border-slate-200/60 relative">
             <!-- 수치 출처 안내문 (가설 기반 추정 명시) -->
             <div class="absolute top-8 right-10 flex items-center gap-2 bg-slate-50 px-4 py-1.5 rounded-full border border-slate-200 group cursor-help transition-colors hover:bg-slate-100">
-                <span class="text-[10px] font-bold text-slate-500 tracking-wider">출처</span>
+                <span class="text-xs font-bold text-slate-500 tracking-wider">출처</span>
                 <div class="absolute bottom-full right-0 mb-3 w-72 bg-slate-800 text-white text-[12px] p-4 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none leading-relaxed shadow-2xl z-20">
                     본 수치는 글로벌 마켓 Top 50 게임들을 직접 플레이하며 분석한 정성적 데이터와 AI 딥리서치를 활용해 도출한 <strong>'가설 기반 추정 지표'</strong>입니다.
                 </div>
@@ -231,7 +234,7 @@ footer.mt-32{margin-top:4rem}
                     <div>
                         <h3 class="text-2xl font-bold text-slate-900 mb-5">하이브리드 장르의 시장 안착</h3>
                         <p class="text-slate-600 leading-relaxed text-lg">
-                    단순 조작을 넘어, <strong>방치형 성장</strong> 구조와 <strong>장기적 목표</strong> 요소가 결합된 복합 장르 게임이 북미 차트 상위권의 45% 내외를 점유하고 있습니다. <br class="hidden md:block">
+                    단순 조작을 넘어, <strong>방치형 성장</strong> 구조와 <strong>장기적 목표</strong> 요소가 결합된 복합 장르 게임이 글로벌 차트 상위권의 <br class="hidden md:block">45% 내외를 점유하고 있습니다. <br class="hidden md:block">
                     짧게 해도 남는&nbsp;것이 있길 바라는 요구가 반영된 결과입니다.
                 </p>
                     </div>
@@ -252,7 +255,7 @@ footer.mt-32{margin-top:4rem}
                         <h3 class="text-2xl font-bold text-slate-900 mb-5">정돈의 쾌감을 활용한 유입 전략</h3>
                         <p class="text-slate-600 leading-relaxed text-lg">
                     정리 정돈 및&nbsp;세척과 같이 <strong>시각적 정렬의 재미</strong>를 강조한 소재는 경영 시뮬레이션 소재 대비 이용자 유입 비용이 약&nbsp;60% 낮은 것으로 추정됩니다&#8288;(성장 소재 대비로는 약&nbsp;1.6배 효율). <br class="hidden md:block">
-                    시각적 시원함과 경쾌한 피드백이 영상 매체에서 이용자의 시선을 즉시 사로잡기 때문입니다.
+                    시각적 시원함과 경쾌한 피드백이 영상 매체에서 <br class="hidden md:block">이용자의 시선을 즉시 사로잡기 때문입니다.
                 </p>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -301,13 +304,13 @@ footer.mt-32{margin-top:4rem}
                             <div class="shrink-0 w-12 h-12 rounded-2xl bg-teal-100 flex items-center justify-center text-teal-600 font-bold text-lg">2</div>
                             <div>
                                 <p class="font-bold text-slate-800 mb-2">시장 분석 사례</p>
-                                <p class="text-slate-600 leading-relaxed text-balanced">캐주얼 게임 개발사의 'Burger Please!'는 조작의 단순함과 공간 확장의 쾌감을 결합하여 글로벌 대흥행을 기록했습니다.</p>
+                                <p class="text-slate-600 leading-relaxed text-balanced">'Burger Please!'는 조작의 단순함과 공간 확장의 쾌감을 결합하여 글로벌 대흥행을 기록했습니다.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="md:col-span-5 bg-slate-50 rounded-[2rem] p-8 shadow-inner">
-                    <p class="text-[10px] font-black text-slate-500 tracking-wide text-center mb-8">동기 지표</p>
+                    <p class="text-xs font-black text-slate-500 tracking-wide text-center mb-8">동기 지표</p>
                     <div class="h-56 w-full"><canvas id="radar1" role="img" aria-label="방사형 차트. 빠른 성장을 통한 통제감 유형의 동기 구성. 항목 즉각 보상, 장기 목표, 정서 안정, 낮은 피로, 시각 효과"></canvas></div>
                 </div>
             </div>
@@ -337,7 +340,7 @@ footer.mt-32{margin-top:4rem}
                     </div>
                 </div>
                 <div class="md:col-span-5 bg-slate-50 rounded-[2rem] p-8 shadow-inner">
-                    <p class="text-[10px] font-black text-slate-400 tracking-wide text-center mb-8">동기 지표</p>
+                    <p class="text-xs font-black text-slate-400 tracking-wide text-center mb-8">동기 지표</p>
                     <div class="h-56 w-full"><canvas id="radar2" role="img" aria-label="방사형 차트. 정돈과 정렬이 주는 정서적 해소 유형의 동기 구성. 항목 즉각 보상, 장기 목표, 정서 안정, 낮은 피로, 시각 효과"></canvas></div>
                 </div>
             </div>
@@ -361,13 +364,13 @@ footer.mt-32{margin-top:4rem}
                             <div class="shrink-0 w-12 h-12 rounded-2xl bg-teal-100 flex items-center justify-center text-teal-600 font-bold text-lg">2</div>
                             <div>
                                 <p class="font-bold text-slate-800 mb-2">시장 분석 사례</p>
-                                <p class="text-slate-600 leading-relaxed text-balanced">'Idle Lumber Empire'와 같이 공정을 자동화하고 관리 지점을 넓혀가는 타이쿤 장르가 장기 잔존율을 확보합니다.</p>
+                                <p class="text-slate-600 leading-relaxed text-balanced">'Idle Lumber Empire'와 같이 공정을 자동화하고 <br class="hidden md:block">관리 지점을 넓혀가는 타이쿤 장르가 장기 잔존율을 확보합니다.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="md:col-span-5 bg-slate-50 rounded-[2rem] p-8 shadow-inner">
-                    <p class="text-[10px] font-black text-slate-400 tracking-wide text-center mb-8">동기 지표</p>
+                    <p class="text-xs font-black text-slate-400 tracking-wide text-center mb-8">동기 지표</p>
                     <div class="h-56 w-full"><canvas id="radar3" role="img" aria-label="방사형 차트. 생산과 관리를 통한 전략적 순환 유형의 동기 구성. 항목 즉각 보상, 장기 목표, 정서 안정, 낮은 피로, 시각 효과"></canvas></div>
                 </div>
             </div>
@@ -376,7 +379,7 @@ footer.mt-32{margin-top:4rem}
 
     <!-- 보강: 두 지표의 관계 -->
     <section class="mb-28">
-        <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4 tracking-tight">두&nbsp;지표의 1위가 서로 다릅니다</h2>
+        <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4 tracking-tight">두&nbsp;지표의 1위가 서로 다릅니다.</h2>
         <p class="text-slate-600 leading-relaxed mb-10 max-w-3xl">
                     1장 차트의 두&nbsp;화면은 각각 다른&nbsp;것을 1위로 보여 줍니다. <br class="hidden md:block">
                     <strong class="text-slate-900">점유율 1위는 복합 성장형 45%</strong>&#8288;이고, <strong class="text-slate-900">유입 효율 1위는 시각적 정렬 소재&#8288;(효율 지표 72)</strong>&#8288;입니다. <br class="hidden md:block">
@@ -450,7 +453,7 @@ footer.mt-32{margin-top:4rem}
                     <p class="text-sm font-black text-teal-300 mb-2">정렬만 있으면</p>
                     <p class="text-sm text-slate-300 leading-relaxed">
                     유입은 싸지만 <strong class="text-white">남을 이유가 없습니다.</strong> <br class="hidden md:block">
-                    본문이 정리한 대로 정렬의 보상은 인지적 완결이고, 이는 <strong>그&nbsp;순간에 소비되고 끝납니다.</strong> <br class="hidden md:block">
+                    본문이 정리한 대로 정렬의 보상은 인지적 완결이고, <br class="hidden md:block">이는 <strong>그&nbsp;순간에 소비되고 끝납니다.</strong> <br class="hidden md:block">
                     점유율에서 단순 조작형이 20%&#8288;에 머무는 이유입니다.
                 </p>
                 </div>
@@ -466,18 +469,17 @@ footer.mt-32{margin-top:4rem}
         </div>
 
         <div class="bg-amber-50 border-2 border-amber-300 rounded-[2rem] p-8">
-            <p class="text-sm font-black text-amber-700 mb-4">이&nbsp;조합에는 조건이 하나 붙습니다</p>
+            <p class="text-sm font-black text-amber-700 mb-4">이&nbsp;조합에는 조건이 하나 붙습니다.</p>
             <p class="text-slate-700 leading-relaxed mb-5 max-w-[46em]">
                     정렬로 광고를 만들고 안에는 성장 게임을 넣으면 <strong class="text-slate-900">광고와 실제 내용이 어긋납니다.</strong> <br class="hidden md:block">
-                    본문은 <strong>&ldquo;설치 직후 바로 느껴지는 만족감이 이탈률을 낮춘다&rdquo;</strong>&#8288;고 정리했는데, 이&nbsp;효과는 <strong class="text-amber-800">광고에서 본&nbsp;것이 게임 안에 실제로 있을&nbsp;때만</strong> 성립합니다.
+                    본문은 <strong>“설치 직후 바로 느껴지는 만족감이 이탈률을 낮춘다”</strong>&#8288;고 정리했는데, <br class="hidden md:block">이&nbsp;효과는 <strong class="text-amber-800">광고에서 본&nbsp;것이 게임 안에 실제로 있을&nbsp;때만</strong> 성립합니다.
                 </p>
             <div class="bg-white rounded-2xl p-6 border border-amber-200 mb-5">
                 <p class="text-xs font-black text-slate-800 mb-2">어긋날 경우</p>
                 <p class="text-xs text-slate-600 leading-relaxed max-w-[46em] bal-m">
                     설치 직후 이탈률이 오히려 올라갑니다. <br class="hidden md:block">
                     광고에서 본 정렬 플레이를 기대했는데 성장 관리 화면이 나오면 기대가 깨집니다. <br class="hidden md:block">
-                    <strong class="text-slate-800">스토어 정책상 오해를 유발하는 광고로 판단될 여지</strong>도 생기므로, <br class="hidden md:block">
-                    마케팅 소재 검수 단계에서 함께 볼&nbsp;항목입니다.
+                    <strong class="text-slate-800">스토어 정책상 오해를 유발하는 광고로 판단될 여지</strong>도 생기므로, 마케팅 소재 검수 단계에서 함께 볼&nbsp;항목입니다.
                 </p>
             </div>
             <p class="text-slate-700 leading-relaxed max-w-[46em]">
@@ -528,11 +530,11 @@ footer.mt-32{margin-top:4rem}
             <div class="bg-white border-2 border-emerald-200 rounded-[2rem] p-8">
                 <p class="text-sm font-black text-emerald-700 mb-4">검증할 지표</p>
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                    <li class="bal">&bull; <strong class="text-slate-800">광고 소재별 설치 단가</strong> &mdash; 정렬 소재의 효율 우위가 실제로 나타나는지</li>
-                    <li>&bull; <strong class="text-slate-800">설치 직후 이탈률</strong> &mdash; 소재별로 나눠 봅니다. 광고와 내용이 어긋나면 여기서 드러납니다</li>
-                    <li>&bull; <strong class="text-slate-800">정렬 플레이 비중</strong> &mdash; 전체 플레이 시간&nbsp;중 정렬 행위가 차지하는 비율. 낮으면 광고용 장식에 그친&nbsp;것입니다</li>
-                    <li>&bull; <strong class="text-slate-800">광고 시청과 결제의 관계</strong> &mdash; 시청량이 많은 유저의 결제율. 낮으면 잠식이 발생하는&nbsp;것입니다</li>
-                    <li>&bull; <strong class="text-slate-800">구간별 잔존</strong> &mdash; 정렬 재미가 소진되는 시점과 성장 목표가 이어받는 시점이 이어지는지</li>
+                    <li class="bal">&bull; <strong class="text-slate-800">광고 소재별 설치 단가</strong> &mdash; 정렬 소재의 효율 우위가 실제로 나타나는지 봅니다.</li>
+                    <li>&bull; <strong class="text-slate-800">설치 직후 이탈률</strong> &mdash; 소재별로 나눠 봅니다. 광고와 내용이 어긋나면 여기서 드러납니다.</li>
+                    <li>&bull; <strong class="text-slate-800">정렬 플레이 비중</strong> &mdash; 전체 플레이 시간&nbsp;중 정렬 행위가 차지하는 비율. 낮으면 광고용 장식에 그친&nbsp;것입니다.</li>
+                    <li>&bull; <strong class="text-slate-800">광고 시청과 결제의 관계</strong> &mdash; 시청량이 많은 유저의 결제율. 낮으면 잠식이 발생하는&nbsp;것입니다.</li>
+                    <li>&bull; <strong class="text-slate-800">구간별 잔존</strong> &mdash; 정렬 재미가 소진되는 시점과 성장 목표가 이어받는 시점이 이어지는지 봅니다.</li>
                 </ul>
             </div>
             
@@ -564,17 +566,17 @@ footer.mt-32{margin-top:4rem}
                         <div class="space-y-12">
                             <div class="flex flex-col items-center group">
                                 <span class="text-5xl mb-4 group-hover:scale-110 transition-transform">📦</span>
-                                <span class="text-[10px] font-bold text-slate-400 tracking-wide">퍼즐 구간</span>
+                                <span class="text-xs font-bold text-slate-400 tracking-wide">퍼즐 구간</span>
                             </div>
                             <div class="w-px h-10 bg-gradient-to-b from-slate-700 to-transparent mx-auto"></div>
                             <div class="flex flex-col items-center group">
                                 <span class="text-5xl mb-4 group-hover:scale-110 transition-transform">🚛</span>
-                                <span class="text-[10px] font-bold text-slate-400 tracking-wide">방치 구간</span>
+                                <span class="text-xs font-bold text-slate-400 tracking-wide">방치 구간</span>
                             </div>
                             <div class="w-px h-10 bg-gradient-to-b from-slate-700 to-transparent mx-auto"></div>
                             <div class="flex flex-col items-center group">
                                 <span class="text-5xl mb-4 group-hover:scale-110 transition-transform">🏢</span>
-                                <span class="text-[10px] font-bold text-slate-400 tracking-wide">성장 구간</span>
+                                <span class="text-xs font-bold text-slate-400 tracking-wide">성장 구간</span>
                             </div>
                         </div>
                     </div>
@@ -602,7 +604,7 @@ footer.mt-32{margin-top:4rem}
                     </h4>
                     <p class="text-slate-600 leading-relaxed text-base text-balanced max-w-[46em]">
                     상자 안에 물건이 '딱' 들어맞는 시각적 쾌감과 정교한 효과음을 강조한 숏폼 영상을 마케팅의 전면에 내세웁니다. <br class="hidden md:block">
-                    이는 <strong>최저 수준의 유입 비용</strong>을 보장하며, <br class="hidden md:block">
+                    이를 통해 <strong>낮은 유입 비용</strong>을 기대할 수 있으며, <br class="hidden md:block">
                     설치 직후 이용자에게 바로 느껴지는 만족감을 주어 이탈률을 낮춥니다.
                 </p>
                 </section>
@@ -629,7 +631,7 @@ footer.mt-32{margin-top:4rem}
                 </section>
 
                 <section class="bg-slate-900 p-10 rounded-[2.5rem] text-white">
-                    <p class="text-[10px] font-black text-teal-400 tracking-wide mb-4">핵심 원칙</p>
+                    <p class="text-xs font-black text-teal-400 tracking-wide mb-4">핵심 원칙</p>
                     <p class="text-xl font-bold leading-relaxed italic text-teal-50 text-balanced">
                         "시각적 쾌감으로 유입시키고, <br class="hidden md:block">숫자의 성장으로 유저를 붙잡습니다."
                     </p>
@@ -643,7 +645,7 @@ footer.mt-32{margin-top:4rem}
     </div>
 
     <footer class="mt-32 text-center border-t border-slate-200 pt-12 pb-16">
-        <p class="text-[11px] font-black text-slate-500 uppercase tracking-[0.4em]">글로벌 캐주얼 게임 시장 조사</p>
+        <p class="text-sm font-black text-slate-500 uppercase tracking-[0.4em]">글로벌 캐주얼 게임 시장 조사</p>
     </footer>
 
 </div>

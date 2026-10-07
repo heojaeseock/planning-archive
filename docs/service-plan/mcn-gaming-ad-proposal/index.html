@@ -134,6 +134,10 @@
 html { scroll-behavior: smooth; }
 [id] { scroll-margin-top: 80px; }
 </style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
+<style>/* 휴대폰: 제목이 두 줄로 꺾여도 노란 밑줄이 줄마다 글자 아래에 오게 */ @media (max-width:767px){ .mcn-bar{display:none} .mcn-hl{background:linear-gradient(transparent 64%, rgba(255,209,0,.4) 64%);-webkit-box-decoration-break:clone;box-decoration-break:clone} h1 .mcn-hl{font-size:inherit} }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="antialiased selection:bg-brand-light selection:text-slate-900">
 
@@ -165,12 +169,12 @@ html { scroll-behavior: smooth; }
         <h1 class="text-4xl md:text-5xl font-extrabold mb-8 leading-tight text-slate-900">
             MCN Gaming AD 맞춤형 <br>
             <span class="relative inline-block mt-2">
-                <span class="relative z-10">세일즈 자동화 및&nbsp;리스크 방어 전략</span>
-                <span class="absolute bottom-1 left-0 w-full h-4 bg-brand opacity-40 -z-10"></span>
+                <span class="relative z-10 mcn-hl">세일즈 자동화 및&nbsp;리스크 방어 전략</span>
+                <span class="absolute bottom-1 left-0 w-full h-4 bg-brand opacity-40 -z-10 mcn-bar"></span>
             </span>
         </h1>
-        <p class="text-lg text-slate-600 mb-12 max-w-3xl mx-auto text-left" style="margin-bottom:0">
-                     게임 정보만 넣으면 <strong>크리에이터 탐색과 영업 메일 초안까지</strong> 자동으로 나오게 하고, 신작 정보가 밖으로 나갈 경로 자체를 없앴습니다.
+        <p class="text-lg text-slate-600 mb-12 max-w-3xl mx-auto text-center" style="margin-bottom:0">
+                     게임 정보만 넣으면 <strong>크리에이터 탐색과 영업 메일 초안까지</strong> 자동으로 나오게 하고, <br class="hidden md:block">신작 정보가 밖으로 나갈 경로 자체를 없애는 방안입니다.
                 </p>
     </section>
 
@@ -179,45 +183,45 @@ html { scroll-behavior: smooth; }
 <section class="mb-12" aria-label="이 문서가 하는 말">
   <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
     <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-      <p class="text-[11px] font-black tracking-[0.12em] text-teal-700 mb-3">문서 소개</p>
-      <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">크리에이터 DB와 신작 데이터를 교차해 광고를 매칭하는 기획안입니다. 블레이드&amp;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 개인 제안서이며, 아래 비중은 측정값이 아닌 기대치입니다.</p>
+      <p class="text-xs font-black tracking-[0.12em] text-teal-700 mb-3">문서 소개</p>
+      <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">크리에이터 DB와 신작 데이터를 교차해 광고를 매칭하는 기획안입니다. <br class="hidden md:block">블레이드&#8288;&amp;&#8288;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 개인 제안서이며, <br class="hidden md:block">아래 비중은 측정값이 아닌 기대치입니다.</p>
     </div>
     <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
       <div class="px-3 py-5 md:py-6 text-center">
-        <p class="text-[11px] font-bold text-slate-500 mb-2 bal">제안서 작성 비중(%)</p>
+        <p class="text-xs font-bold text-slate-500 mb-2 bal">제안서 작성 비중(%)</p>
         <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">70 → 10</p>
-        <p class="text-[11px] text-slate-500 mt-1 bal">60이 빠집니다</p>
+        <p class="text-xs text-slate-500 mt-1 bal">60이 빠집니다.</p>
       </div>
       <div class="px-3 py-5 md:py-6 text-center">
-        <p class="text-[11px] font-bold text-slate-500 mb-2 bal">영업 활동 비중(%)</p>
+        <p class="text-xs font-bold text-slate-500 mb-2 bal">영업 활동 비중(%)</p>
         <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">30 → 90</p>
-        <p class="text-[11px] text-slate-500 mt-1 bal">빠진 60이 그대로 옮겨갑니다</p>
+        <p class="text-xs text-slate-500 mt-1 bal">빠진 60이 그대로 옮겨 갑니다.</p>
       </div>
       <div class="px-3 py-5 md:py-6 text-center">
-        <p class="text-[11px] font-bold text-slate-500 mb-2 bal">남은 10의 성격</p>
+        <p class="text-xs font-bold text-slate-500 mb-2 bal">남은 10의 성격</p>
         <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">검수와 손질</p>
-        <p class="text-[11px] text-slate-500 mt-1 bal">AI 초안을 그대로 보내지는 않습니다</p>
+        <p class="text-xs text-slate-500 mt-1 bal">AI 초안을 그대로 보내지는 않습니다.</p>
       </div>
     </div>
     <div class="px-6 md:px-9 py-6 md:py-7">
-      <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">설계 내용</p>
+      <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">설계 내용</p>
       <div class="grid md:grid-cols-3 gap-3">
         <div class="rounded-xl border border-slate-200 p-4">
           <p class="text-sm font-black text-slate-900 mb-1.5 bal">사내에서만 도는 AI로 매칭</p>
-          <p class="text-xs text-slate-500 leading-relaxed bal">출시 전 게임 정보는 게임사의 1급 기밀이라 밖으로 보낼&nbsp;수 없습니다</p>
+          <p class="text-xs text-slate-500 leading-relaxed bal">출시 전 게임 정보는 게임사의 1급 기밀이라 <br class="hidden md:block">밖으로 보낼&nbsp;수 없습니다.</p>
         </div>
         <div class="rounded-xl border border-slate-200 p-4">
           <p class="text-sm font-black text-slate-900 mb-1.5 bal">생방송 돌발 상황 지침</p>
-          <p class="text-xs text-slate-500 leading-relaxed bal">광고비가 이미 나간 방송&nbsp;중에 서버가 죽으면 무엇을 할지 미리 정해 둡니다</p>
+          <p class="text-xs text-slate-500 leading-relaxed bal">광고비가 이미 나간 방송&nbsp;중에 서버가 죽으면 <br class="hidden md:block">무엇을 할지 미리 정해 둡니다.</p>
         </div>
         <div class="rounded-xl border border-slate-200 p-4">
           <p class="text-sm font-black text-slate-900 mb-1.5 bal">다만 계약에 근거가 있어야</p>
-          <p class="text-xs text-slate-500 leading-relaxed bal">지침대로 방송을 멈추려면 그&nbsp;권한이 계약서에 적혀 있어야 작동합니다</p>
+          <p class="text-xs text-slate-500 leading-relaxed bal">지침대로 방송을 멈추려면 그&nbsp;권한이 <br class="hidden md:block">계약서에 적혀 있어야 작동합니다.</p>
         </div>
       </div>
     </div>
     <div class="px-6 md:px-9 py-4 bg-slate-50 border-t border-slate-200">
-      <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">MCN은 크리에이터가 소속된 매니지먼트 회사이고, Gaming AD는 게임사 광고를 소속 크리에이터 방송으로 집행하는 사업입니다.</p>
+      <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">MCN은 크리에이터가 소속된 매니지먼트 회사이고, Gaming AD는 <br class="hidden md:block">게임사 광고를 소속 크리에이터 방송으로 집행하는 사업입니다.</p>
     </div>
   </div>
 </section>
@@ -229,7 +233,7 @@ html { scroll-behavior: smooth; }
         <div class="max-w-4xl mx-auto px-6">
             <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-6">사업 구조</h2>
             <p class="text-slate-600 leading-relaxed mb-4 max-w-[46em]">
-                    게임사 광고를 소속 크리에이터 방송으로 집행하는 사업입니다. 부담은 두&nbsp;군데 &mdash; <strong>매&nbsp;건 새로 쓰는 제안 준비</strong>와 <strong>광고비가 이미 나간 생방송&nbsp;중의 돌발 상황</strong>입니다.
+                    게임사 광고를 소속 크리에이터 방송으로 집행하는 사업입니다. <br class="hidden md:block">부담은 두&nbsp;군데 &mdash; <strong>매&nbsp;건 새로 쓰는 제안 준비</strong>와 <strong>광고비가 이미 나간 생방송&nbsp;중의 돌발 상황</strong>입니다.
                 </p>
         </div>
     </section>
@@ -239,8 +243,7 @@ html { scroll-behavior: smooth; }
             <div class="text-center mb-16 max-w-2xl mx-auto">
                 <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">현장의 딜레마와 해결 목표</h2>
                 <p class="text-slate-500">
-                    현재 마케팅 대행사와 게임사가 각각 겪고 있는 핵심 고충을 파악하고, <br class="hidden md:block">
-                    이를 해결하여 MCN의 영업 경쟁력을 높입니다.
+                    현재 마케팅 대행사와 게임사가 각각 겪고 있는 핵심 고충을 파악하고, <br class="hidden md:block">이를 해결하여 MCN의 영업 경쟁력을 높입니다.
                 </p>
             </div>
 
@@ -258,7 +261,7 @@ html { scroll-behavior: smooth; }
                         <div class="text-3xl mb-4">🏢</div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">게임사의 불안: 생방송 리스크</h3>
                         <p class="text-slate-600 bal">
-                     돈이 이미 나간 방송에서 서버가 내려가거나 말실수가 나오면 브랜드가 먼저 다칩니다. 통제할&nbsp;수 없다는&nbsp;점이 가장 두렵습니다.
+                     돈이 이미 나간 방송에서 서버가 내려가거나 <br class="hidden md:block">말실수가 나오면 브랜드가 먼저 다칩니다. <br class="hidden md:block">통제할&nbsp;수 없다는&nbsp;점이 가장 두렵습니다.
                 </p>
                     </div>
                 </div>
@@ -271,8 +274,7 @@ html { scroll-behavior: smooth; }
                     </div>
                     <div class="mt-8 p-4 bg-white rounded-lg border-l-4 border-brand shadow-sm">
                         <p class="text-sm text-slate-600" style="text-wrap:balance">
-                     <strong class="text-slate-900">데이터 산출 근거:</strong> 측정값이 아닌 기대치입니다. 크리에이터 탐색과 초안 작성을 자동화하면 제안서 작성 몫은 검수&nbsp;10만 남고, <br class="hidden md:block">
-                    빠진 시간이 그대로 <span class="font-bold text-slate-900">영업 활동</span>으로 옮겨 간다고 가정했습니다.
+                     <strong class="text-slate-900">데이터 산출 근거:</strong> 측정값이 아닌 기대치입니다. <br class="hidden md:block">크리에이터 탐색과 초안 작성을 자동화하면 제안서 작성 몫은 <br class="hidden md:block">검수&nbsp;10만 남고, 빠진 시간이 그대로 <span class="font-bold text-slate-900">영업 활동</span>으로 옮겨 간다고&nbsp;가정했습니다.
                 </p>
                     </div>
                 </div>
@@ -285,7 +287,7 @@ html { scroll-behavior: smooth; }
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">1. 신규 영업 자동화: 기밀 유출 없는 '로컬 AI' 매칭 시스템</h2>
-                <p class="text-slate-500 text-left max-w-[42em] mx-auto">
+                <p class="text-slate-500 text-center max-w-[42em] mx-auto">
                     노션에 게임 정보만 입력하면, AI가 최적의 크리에이터를 찾고 영업 메일 초안까지 자동으로 작성합니다. <br class="hidden md:block">
                     아래 단계를 클릭하여 자동화 흐름을 확인해 보세요.
                 </p>
@@ -296,7 +298,7 @@ html { scroll-behavior: smooth; }
                 <span class="text-2xl mr-4 mt-1">🔒</span>
                 <div>
                     <h3 class="font-bold text-slate-900 mb-3 text-lg">왜 외부 AI가 아닌 '사내 구축형 로컬 AI'인가요?</h3>
-                    <p class="text-slate-600 leading-relaxed max-w-[46em]">출시 전 신작 정보는 1급 기밀입니다. 입력이 바깥으로 가는 일반 AI 대신 <strong>사내망에만 두는 AI</strong>를 씁니다. 나갈 경로 자체를 만들지 않는 방식입니다.</p>
+                    <p class="text-slate-600 leading-relaxed max-w-[46em]">출시 전 신작 정보는 1급 기밀입니다. <br class="hidden md:block">입력이 바깥으로 가는 일반 AI 대신 <strong>사내망에만 두는 AI</strong>를 씁니다. <br class="hidden md:block">나갈 경로 자체를 만들지 않는 방식입니다.</p>
                 </div>
             </div>
 
@@ -323,7 +325,7 @@ html { scroll-behavior: smooth; }
                     <div class="bg-slate-50 p-6 rounded-xl w-full md:w-1/3 text-center border border-slate-200">
                         <p class="font-bold text-slate-900 mb-2">도구: 노션</p>
                         <p class="text-slate-500 text-sm leading-relaxed">
-                            담당자가 게임사 미팅&nbsp;후, 신작 게임의 핵심 키워드를 정해진 템플릿에 체크합니다.
+                            담당자가 게임사 미팅&nbsp;후, 신작 게임의 <br class="hidden md:block">핵심 키워드를 정해진 템플릿에 체크합니다.
                         </p>
                     </div>
                     <div class="w-full md:w-2/3">
@@ -376,9 +378,9 @@ html { scroll-behavior: smooth; }
                             <span class="w-3 h-3 rounded-full bg-brand mr-3"></span> 크리에이터에게
                         </h4>
                         <ul class="text-sm text-slate-300 space-y-4" id="risk-target-1">
-                            <li class="bal">당황하지 않도록 즉각 인이어 및&nbsp;메신저로 상황 인지 안내</li>
+                            <li class="bal">당황하지 않도록 즉각 인이어 및 메신저로 <br class="hidden md:block">상황 인지 안내</li>
                             <li>사전 준비된 '서버 점검/대기' 송출 화면으로 즉각 전환 요청</li>
-                            <li class="bal-m">접속 불가 시간 동안 시간 끌기가 가능한 예비 콘텐츠&#8288;(Q&A&nbsp;등) 진행 유도</li>
+                            <li class="bal-m">접속 불가 시간 동안 시간 끌기가 가능한 <br class="hidden md:block">예비 콘텐츠&#8288;(Q&amp;A&nbsp;등) 진행 유도</li>
                         </ul>
                     </div>
                     <!-- 대상 2 -->
@@ -387,9 +389,9 @@ html { scroll-behavior: smooth; }
                             <span class="w-3 h-3 rounded-full bg-green-400 mr-3"></span> 클라이언트에게
                         </h4>
                         <ul class="text-sm text-slate-300 space-y-4" id="risk-target-2">
-                            <li class="bal-m">핫라인을 통해 상황 즉시 브리핑 및&nbsp;서버 복구 예상 시간&#8288;(ETA) 확인 요청</li>
-                            <li>광고주의 불안감 사전 차단을 위해 방송 시간 유연 연장안 1차 제시</li>
-                            <li>시청자 이탈을 막기 위한 시청자 대상 깜짝 보상 쿠폰 발급 긴급 승인 요청</li>
+                            <li class="bal-m">핫라인을 통해 상황 즉시 브리핑 및 <br class="hidden md:block">서버 복구 예상 시간&#8288;(ETA) 확인 요청</li>
+                            <li>광고주의 불안감 사전 차단을 위해 <br class="hidden md:block">방송 시간 유연 연장안 1차 제시</li>
+                            <li>시청자 이탈을 막기 위한 시청자 대상 <br class="hidden md:block">깜짝 보상 쿠폰 발급 긴급 승인 요청</li>
                         </ul>
                     </div>
                     <!-- 대상 3 -->
@@ -398,8 +400,8 @@ html { scroll-behavior: smooth; }
                             <span class="w-3 h-3 rounded-full bg-blue-400 mr-3"></span> 내부 조치 (AE·광고 영업 담당)
                         </h4>
                         <ul class="text-sm text-slate-300 space-y-4" id="risk-target-3">
-                            <li>채팅창에 공식 매니저 계정으로 현재 서버 상황 고정 메시지 노출</li>
-                            <li>MCN 내부 캠페인 운영팀에 이슈 전파 및&nbsp;후속 일정 조정 준비</li>
+                            <li>채팅창에 공식 매니저 계정으로 <br class="hidden md:block">현재 서버 상황 고정 메시지 노출</li>
+                            <li>MCN 내부 캠페인 운영팀에 이슈&nbsp;전파&nbsp;및 <br class="hidden md:block">후속 일정 조정 준비</li>
                         </ul>
                     </div>
                 </div>
@@ -420,7 +422,7 @@ html { scroll-behavior: smooth; }
                     <div class="text-slate-900 font-extrabold text-5xl mb-6">매출 <span class="text-brand-ink">증대</span></div>
                     <h3 class="text-2xl font-bold text-slate-900 mb-4">영업 리소스 전면 재배치</h3>
                     <p class="text-slate-600 bal">
-                     자동화로 절약된 제안서 작성 시간을 온전히 전략 기획과 신규 클라이언트 발굴에 쏟아부어, 동일 인력으로 더&nbsp;많은 캠페인을 유치합니다.
+                     자동화로 절약된 제안서 작성 시간을 <br class="hidden md:block">온전히 전략 기획과 신규 클라이언트 발굴에 쏟아부어, 동일 인력으로 더&nbsp;많은 캠페인을 유치합니다.
                 </p>
                 </div>
                 
@@ -445,7 +447,7 @@ html { scroll-behavior: smooth; }
                 </p>
 
             <div class="bg-slate-50 rounded-3xl border-2 border-slate-200 p-8 mb-12">
-                <h3 class="text-xl font-black text-slate-900 mb-5">비는 60%p를 채울 업무</h3>
+                <h3 class="text-xl font-black text-slate-900 mb-5">비는 60p를 채울 업무</h3>
                 <div class="overflow-x-auto rounded-2xl border-2 border-slate-200 mb-6">
                     <table class="w-full min-w-[480px] border-collapse text-sm bg-white">
                         <thead>
@@ -473,18 +475,17 @@ html { scroll-behavior: smooth; }
                     </table>
                 </div>
                 <p class="text-slate-600 leading-relaxed mb-5 max-w-[46em]">
-                    줄어든 60p가 그대로 영업으로 갑니다. 이&nbsp;배분은 <strong>담당자 업무 시간 안에서의 계산</strong>이고, 사내 구축형 AI를 택하면 서버와 유지 인력이 따로 필요합니다&#8288;(아래 '따라오는 부담').
-                </p>
+                    줄어든 60p가 그대로 영업으로 갑니다. <br class="hidden md:block">이&nbsp;배분은 <strong>담당자 업무 시간 안에서의 계산</strong>이고, 사내 구축형 AI를 택하면 서버와 유지 인력이 따로 필요합니다.</p>
                 <div class="bg-white rounded-2xl p-6 border border-slate-200">
-                    <p class="text-xs font-black text-slate-800 mb-2">다만 10p의 성격을 정해&nbsp;두면 더&nbsp;정확합니다</p>
+                    <p class="text-xs font-black text-slate-800 mb-2">다만 10p의 성격을 정해&nbsp;두면 더&nbsp;정확합니다.</p>
                     <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                    AI 초안을 그대로 보내지는 않으므로 남는 10p는 검수와 손질입니다. <strong>사라진&nbsp;것은 초안 작성이고 판단과 마무리는 남습니다.</strong> 실제 값이 15~20이 나와도 설계 범위 안입니다.
+                    AI 초안을 그대로 보내지는 않으므로 남는 10p는 검수와 손질입니다. <br class="hidden md:block"><strong>사라진&nbsp;것은 초안 작성이고 판단과 마무리는 남습니다.</strong> <br class="hidden md:block">실제 값이 15~20이 나와도 설계 범위 안입니다.
                 </p>
                 </div>
             </div>
 
             <div class="bg-white rounded-3xl border-2 border-amber-300 p-8 mb-12">
-                <h3 class="text-xl font-black text-slate-900 mb-5">로컬 AI가 유일한 답은 아닙니다</h3>
+                <h3 class="text-xl font-black text-slate-900 mb-5">로컬 AI가 유일한 답은 아닙니다.</h3>
                 <p class="text-slate-600 leading-relaxed mb-6 max-w-[46em]">
                     로컬 AI는 신작 정보가 밖으로 나갈 경로를 아예 만들지 않는 방식입니다. 다만 <strong>그&nbsp;방식에 따라오는 부담</strong>이&nbsp;있습니다.
                 </p>
@@ -505,9 +506,9 @@ html { scroll-behavior: smooth; }
                     </div>
                 </div>
                 <div class="bg-slate-900 rounded-2xl p-6 text-white">
-                    <p class="text-xs font-black text-amber-300 mb-3">두&nbsp;단계로 나눠 들어가면 됩니다</p>
+                    <p class="text-xs font-black text-amber-300 mb-3">두&nbsp;단계로 나눠 들어가면 됩니다.</p>
                     <p class="text-slate-300 leading-relaxed mb-4 text-sm max-w-[46em] bal">
-                    기업 계약에 <strong>입력을 학습에 쓰지 않는다</strong>는 조건을 넣으면 외부 서비스로도 상당 부분 통제됩니다. 계약으로 되는 몫과 구조로만 되는 몫을 갈라 두면 클라이언트가 자기 보안 정책에 맞춰 고릅니다.
+                    기업 계약에 <strong>입력을 학습에 쓰지 않는다</strong>는 조건을 넣으면 외부 서비스로도 상당 부분 통제됩니다. <br class="hidden md:block">계약으로 되는 몫과 구조로만 되는 몫을 갈라 두면 클라이언트가 자기 보안 정책에 맞춰 고릅니다.
                 </p>
                     <p class="text-sm text-slate-300 leading-relaxed max-w-[46em]">
                     <strong class="text-white">1단계는 계약 기반 외부 서비스로 빠르게 시작하고, 기밀 등급이 높은 클라이언트가 생기면 2단계로 사내 구축을 봅니다. <strong>처음부터 사내 구축을 전제하면 도입 시점이 인프라에 묶입니다.</strong></strong>
@@ -521,21 +522,20 @@ html { scroll-behavior: smooth; }
                     장르와 타깃, 게임 특징, 마케팅 목표로 매칭하면 성향의 일치는 확인됩니다. 실무에서는 몇&nbsp;개를 더&nbsp;봅니다.
                 </p>
                 <ul class="space-y-3 text-sm text-slate-600 leading-relaxed mb-6">
-                    <li class="max-w-[46em] leading-[1.8] bal">&bull; <strong class="text-slate-800">경쟁사 광고 이력</strong> &mdash; 직전에 같은 장르 경쟁 게임 광고를 했다면 부적합합니다. 시청자가 진정성을 의심하고, <br class="hidden md:block">
-                    클라이언트도 꺼립니다. 매칭에서 <strong>먼저 걸러내야 하는 조건</strong>입니다</li>
-                    <li class="bal-t">&bull; <strong class="text-slate-800">과거 유사 게임 성과</strong> &mdash; 같은 장르 방송의 시청자&nbsp;수와 반응. 성향이 맞아도 성과가 없었다면 다시 확인할 필요가 있습니다</li>
-                    <li class="bal-t">&bull; <strong class="text-slate-800">스케줄 가용성</strong> &mdash; 매칭이 맞아도 일정이 안&nbsp;되면 제안이 무의미합니다. 이&nbsp;정보는 사내에 있으므로 자동 확인이 가능합니다</li>
-                    <li class="bal max-w-[46em] leading-[1.8]" style="text-wrap:balance">&bull; <strong class="text-slate-800">과거 논란 이력</strong> &mdash; 설계의 안전성 검증은 타사 게임 방송&nbsp;중 논란만 봅니다. 방송 밖 논란까지 브랜드 안전 관점에서 확인이 필요합니다. 2번 솔루션이 방송&nbsp;중 리스크를 다루는데, 매칭 단계에서 걸러내는&nbsp;것이 더&nbsp;앞선&nbsp;방어입니다</li>
+                    <li class="max-w-[46em] leading-[1.8] bal">• <strong class="text-slate-800">경쟁사 광고 이력</strong> — 직전에 같은 장르 경쟁 게임 광고를 했다면 부적합합니다. <br class="hidden md:block">시청자가 진정성을 의심하고,&nbsp;클라이언트도 꺼립니다. <br class="hidden md:block">매칭에서 <strong>먼저 걸러내야 하는 조건</strong>입니다.</li>
+                    <li class="bal-t">&bull; <strong class="text-slate-800">과거 유사 게임 성과</strong> &mdash; 같은 장르 방송의 시청자&nbsp;수와 반응. 성향이 맞아도 성과가 없었다면 다시 확인할 필요가 있습니다.</li>
+                    <li class="bal-t">&bull; <strong class="text-slate-800">스케줄 가용성</strong> &mdash; 매칭이 맞아도 일정이 안&nbsp;되면 제안이 무의미합니다. 이&nbsp;정보는 사내에 있으므로 자동 확인이 가능합니다.</li>
+                    <li class="bal max-w-[46em] leading-[1.8]" style="text-wrap:balance">&bull; <strong class="text-slate-800">과거 논란 이력</strong> &mdash; 설계의 안전성 검증은 타사 게임 방송&nbsp;중 논란만 봅니다. <br class="hidden md:block">방송 밖 논란까지 브랜드 안전 관점에서 확인이 필요합니다. <br class="hidden md:block">2번 솔루션이 방송&nbsp;중 리스크를 다루는데, 매칭 단계에서 걸러내는&nbsp;것이 더&nbsp;앞선&nbsp;방어입니다.</li>
                 </ul>
                 <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
                     <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                    <strong class="text-slate-800">광고 이력과 방송 성과는 사내 데이터라 규칙으로 걸러집니다. 논란 이력은 사람이 봅니다. <strong>자동 제외와 수동 확인을 갈라 두면</strong> AI가 판단을 대신하지 않으면서 후보만 좁힙니다.</strong>
+                    <strong class="text-slate-800">광고 이력과 방송 성과는 사내 데이터라 규칙으로 걸러집니다. <br class="hidden md:block">논란 이력은 사람이 봅니다. <br class="hidden md:block"><strong>자동 제외와 수동 확인을 갈라 두면</strong> AI가 판단을 대신하지 않으면서 후보만 좁힙니다.</strong>
                 </p>
                 </div>
             </div>
 
             <div class="bg-white rounded-3xl border-2 border-rose-300 p-8 mb-12">
-                <h3 class="text-xl font-black text-slate-900 mb-5">대응 매뉴얼은 계약에 근거가 있어야 작동합니다</h3>
+                <h3 class="text-xl font-black text-slate-900 mb-5">대응 매뉴얼은 계약에 근거가 있어야 작동합니다.</h3>
                 <p class="text-slate-600 leading-relaxed mb-6 max-w-[46em]">
                     서버 다운 상황의 대응에 <strong class="text-slate-900">시청자 대상 보상 쿠폰 발급 긴급 승인 요청</strong>과 <strong class="text-slate-900">방송 시간 유연 연장</strong>이&nbsp;들어 있습니다. <br class="hidden md:block">
                     두&nbsp;조치 모두 <strong class="text-rose-700">MCN이 결정할&nbsp;수 없는 사항</strong>입니다.
@@ -557,13 +557,13 @@ html { scroll-behavior: smooth; }
                     </div>
                 </div>
                 <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                    <p class="text-xs font-black text-slate-800 mb-3">계약 단계로 옮기면 즉시 집행이 됩니다</p>
+                    <p class="text-xs font-black text-slate-800 mb-3">계약 단계로 옮기면 즉시 집행이 됩니다.</p>
                     <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                    광고 계약서에 비상 조항을 미리 넣습니다. 보상 한도와 연장 가능 시간, 추가 정산 기준을 앞서 합의해 두면 <strong>방송&nbsp;중에는 협의가 아니라 통보</strong>가 됩니다. 대응 속도는 매뉴얼이 아니라 계약 문구에서 나옵니다.
+                    광고 계약서에 비상 조항을 미리 넣습니다. <br class="hidden md:block">보상 한도와 연장 가능 시간, 추가 정산 기준을 앞서 합의해 두면 <strong>방송&nbsp;중에는 협의가 아니라 통보</strong>가 됩니다. <br class="hidden md:block">대응 속도는 매뉴얼이 아니라 계약 문구에서 나옵니다.
                 </p>
                 </div>
                 <p class="text-sm text-slate-600 leading-relaxed mt-6 max-w-[46em]">
-                    <strong class="text-slate-800">크리에이터 오안내도 같습니다. 방송&nbsp;전&nbsp;금지 표현과 필수 고지를 목록으로 주고 확인 서명을 받으면 사고율도 줄고 책임 구분도 분명해집니다. <strong>사후 매뉴얼보다 사전 체크리스트가 앞선 방어</strong>입니다.</strong>
+                    <strong class="text-slate-800">크리에이터 오안내도 같습니다. <br class="hidden md:block">방송&nbsp;전&nbsp;금지 표현과 필수 고지를 목록으로 주고 확인 서명을 받으면 사고율도 줄고 책임 구분도 분명해집니다. <br class="hidden md:block"><strong>사후 매뉴얼보다 사전 체크리스트가 앞선 방어</strong>입니다.</strong>
                 </p>
             </div>
 
@@ -571,11 +571,11 @@ html { scroll-behavior: smooth; }
                 <div class="bg-white rounded-3xl border-2 border-emerald-200 p-7">
                     <p class="text-sm font-black text-emerald-700 mb-4">측정할 지표</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li>&bull; <strong class="text-slate-800">제안서 작성 소요 시간</strong> &mdash; 초안 생성과 검수를 나눠 기록합니다. 목표 10은 검수만 남은 상태입니다</li>
-                        <li>&bull; <strong class="text-slate-800">제안 수락률</strong> &mdash; 자동화 도입 전후 비교. 시간이 줄어도 수락률이 떨어지면 초안 품질 문제입니다</li>
-                        <li>&bull; <strong class="text-slate-800">매칭 반송률</strong> &mdash; AI가 제안한 크리에이터가 담당자 검토에서 제외된 비율. 높으면 기준에 빠진 항목이 있습니다</li>
-                        <li class="bal">&bull; <strong class="text-slate-800">신규 게임사 접촉 건수</strong> &mdash; 확보한 60p가 실제로 영업으로 갔는지 보여주는 값입니다</li>
-                        <li>&bull; <strong class="text-slate-800">방송&nbsp;중 사고 발생률과 대응 소요 시간</strong> &mdash; 계약 조항 도입 전후 비교</li>
+                        <li>&bull; <strong class="text-slate-800">제안서 작성 소요 시간</strong> &mdash; 초안 생성과 검수를 나눠 기록합니다. 목표 10은 검수만 남은 상태입니다.</li>
+                        <li>&bull; <strong class="text-slate-800">제안 수락률</strong> &mdash; 자동화 도입 전후 비교. 시간이 줄어도 수락률이 떨어지면 초안 품질 문제입니다.</li>
+                        <li>&bull; <strong class="text-slate-800">매칭 반송률</strong> &mdash; AI가 제안한 크리에이터가 담당자 검토에서 제외된 비율. 높으면 기준에 빠진 항목이 있습니다.</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">신규 게임사 접촉 건수</strong> &mdash; 확보한 60p가 실제로 영업으로 갔는지 보여주는 값입니다.</li>
+                        <li>&bull; <strong class="text-slate-800">방송&nbsp;중 사고 발생률과 대응 소요 시간</strong> &mdash; 계약 조항 도입 전후를 비교합니다.</li>
                     </ul>
                 </div>
                 
@@ -654,7 +654,7 @@ html { scroll-behavior: smooth; }
                 list: [
                     "<strong>시청자 성향 매칭:</strong> 신작 타깃층과 크리에이터 구독자층의 일치 여부 확인",
                     "<strong>안전성 검증:</strong> 해당 크리에이터가 과거 타사 게임 방송 중 논란이 없었는지 교차 검증",
-                    "<strong>속도 개선:</strong> 수십 명의 후보군을 수동으로 찾던 탐색 시간을 10초로 단축"
+                    "<strong>속도 개선:</strong> 수십 명의 후보군을 수동으로 찾던 탐색 시간을 10초 수준으로 줄이는 것이 목표"
                 ]
             },
             3: {
@@ -664,7 +664,7 @@ html { scroll-behavior: smooth; }
                 list: [
                     "<strong>상위 3인 추천:</strong> 가장 전환 효율이 높을 것으로 분석된 최적의 크리에이터 3인 리스트업",
                     "<strong>추천 근거 요약:</strong> 게임사 담당자를 설득할 수 있는 AI의 논리적 추천 사유(3줄 요약) 제공",
-                    "<strong>즉시 발송:</strong> 담당자 이름만 복사/붙여넣기 하여 즉시 전송 가능한 메일 본문 텍스트 완성"
+                    "<strong>즉시 발송:</strong> 담당자 이름만 복사/붙여넣기하여 즉시 전송 가능한 메일 본문 텍스트 완성"
                 ]
             }
         };
@@ -715,17 +715,17 @@ html { scroll-behavior: smooth; }
             2: {
                 title: "🗣️ 상황 2. 크리에이터의 게임 정보 오안내",
                 targets: [
-                    ["즉각 개별 연락망으로 명확한 '정정 워딩' 전달 (당황하지 않게 비난 자제)", "'아까 설명에 오해가 있어 다시 말씀드린다'는 자연스러운 정정 멘트 유도", "크리에이터가 멘탈이 흔들리지 않도록 텐션 유지 케어"],
-                    ["이슈 발생 즉시 클라이언트에게 상황 인지 및 선제 조치 중임을 보고", "방송 종료 후 VOD 클립 편집 컷오프 약속 및 고정 댓글을 통한 정정 게재 안내", "필요 시 커뮤니티 추가 포스팅을 통한 보완 마케팅 방향 제안 (진화 작업)"],
-                    ["채팅창 유저 혼동 방지를 위해 올바른 정보 텍스트 즉시 핑(고정)", "이슈 확산 조짐 시 MCN PR팀 및 위기관리팀에 스탠바이 요청"]
+                    ["즉각 개별 연락망으로 명확한 '정정 워딩' 전달 (당황하지 않게 비난 자제)", "'아까 설명에 오해가 있어 다시 말씀드린다'는 자연스러운 정정 멘트 유도", "크리에이터가 멘탈이 흔들리지 않도록 <br class=\"hidden md:block\">텐션 유지 케어"],
+                    ["이슈 발생 즉시 클라이언트에게 상황 인지 및 선제 조치 중임을 보고", "방송 종료 후 VOD 클립 편집 컷오프 약속 및 고정 댓글을 통한 정정 게재 안내", "필요 시 커뮤니티 추가 포스팅을 통한 <br class=\"hidden md:block\">보완 마케팅 방향 제안 (진화 작업)"],
+                    ["채팅창 유저 혼동 방지를 위해 <br class=\"hidden md:block\">올바른 정보 텍스트 즉시 핀(고정)", "이슈 확산 조짐 시 MCN PR팀 및 <br class=\"hidden md:block\">위기관리팀에 스탠바이 요청"]
                 ]
             },
             3: {
                 title: "🔥 상황 3. 시청자 민심 악화로 인한 악성 채팅 테러",
                 targets: [
                     ["채팅창 여론에 휘말려 같이 화내지 않도록 강력한 멘탈 가이드 전달", "인게임 화면을 내리고 소통 화면으로 우회하여 게임과 일시적 거리두기 지시", "준비해 둔 경품 추첨 이벤트 조기 가동하여 분위기 전환 시도"],
-                    ["실시간 민심 동향(불만 원인)을 빠르게 요약하여 클라이언트에게 즉각 피드백", "브랜드 훼손 방지를 위한 최후의 수단으로 '방송 조기 종료' 가능성 협의", "분위기 진정을 위한 즉각적인 특별 보상안 (사과 쿠폰 등) 배포 제안"],
-                    ["매니저 권한으로 악성 도배 채팅 즉각 블라인드 및 슬로우 모드 발동", "팬카페 및 외부 커뮤니티 모니터링을 통해 2차 불길 확산 방어"]
+                    ["실시간 민심 동향(불만 원인)을 빠르게 요약하여 클라이언트에게 즉각 피드백", "브랜드 훼손 방지를 위한 최후의 수단으로 <br class=\"hidden md:block\">'방송 조기 종료' 가능성 협의", "분위기 진정을 위한 즉각적인 특별 보상안 <br class=\"hidden md:block\">(사과 쿠폰 등) 배포 제안"],
+                    ["매니저 권한으로 악성 도배 채팅 <br class=\"hidden md:block\">즉각 블라인드 및 슬로우 모드 발동", "팬카페 및 외부 커뮤니티 모니터링을 통해 <br class=\"hidden md:block\">2차 불길 확산 방어"]
                 ]
             }
         };

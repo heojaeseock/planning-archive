@@ -60,7 +60,7 @@
 
         /* 클릭 유도 뱃지 스타일 */
         .reveal-badge {
-            font-size: 0.65rem;
+            font-size: .75rem;
             background: #f1f5f9;
             color: #64748b;
             padding: 2px 8px;
@@ -124,6 +124,9 @@
             .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
         }
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-indigo-500{color:#4f46e5} html body .text-rose-500{color:#e11d48}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="antialiased">
 
@@ -141,9 +144,8 @@
         <!-- 문서 제목 -->
         <header class="doc-hero">
             <div class="doc-hero-badge">콘텐츠 기획</div>
-            <h1 class="doc-hero-title">서브컬처 타깃 유저 분석과<br class="doc-hero-br">
-                <span class="doc-hero-accent">캐릭터 기획</span></h1>
-            <p class="doc-hero-sub">유저 페르소나를 정의하고 육성 파라미터까지 연결해 <br class="doc-hero-br">캐릭터를 설계한 개인 기획안입니다.</p>
+            <h1 class="doc-hero-title">서브컬처 타깃 유저 분석과&nbsp;<span class="doc-hero-accent">캐릭터 기획</span></h1>
+            <p class="doc-hero-sub">유저 페르소나를 정의하고 육성 파라미터까지 연결해&nbsp; 캐릭터를 설계한 개인 기획안입니다.</p>
         </header>
 
 
@@ -151,28 +153,28 @@
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-              <p class="text-[11px] font-black tracking-[0.12em] text-blue-700 mb-3">문서 소개</p>
+              <p class="text-xs font-black tracking-[0.12em] text-blue-700 mb-3">문서 소개</p>
               <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">서브컬처 유저 페르소나에서 출발해 학생 캐릭터&nbsp;둘의 결핍 서사와 육성 수치를 함께 설계한 문서입니다.</p>
             </div>
             <div class="px-6 md:px-9 py-6 md:py-7">
-              <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">설계에서 미리 거른&nbsp;것</p>
+              <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">설계에서 미리 거른&nbsp;것</p>
               <div class="grid md:grid-cols-3 gap-3">
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">관리 주기를 공용 자원으로 묶었습니다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">수집형은 보유 캐릭터가 계속 느는데, 하나하나가 주기적 손질을 요구하면 수집 자체를 막습니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">관리 주기를 공용 자원으로 묶었습니다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">수집형은 보유 캐릭터가 계속 느는데, 하나하나가 주기적 손질을 요구하면 수집 자체를 막습니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">실패를 다른 서사 분기로 돌렸습니다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">애정을 전제로 만든 캐릭터를 잃게 하면 처벌이 됩니다. 되돌릴&nbsp;수 있는 상태로 뒀습니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">실패를 다른 서사 분기로 돌렸습니다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal" style="text-wrap:wrap">애정을 전제로 만든 캐릭터를 잃게 하면 처벌이 됩니다. <br class="hidden md:block">되돌릴&nbsp;수 있는 상태로 뒀습니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">무한 성장 대신 고유 역할을 줬습니다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">상한이 없으면 무과금도 시간만으로 최상위에 닿아 다른 캐릭터를 뽑을 이유가 사라집니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">무한 성장 대신 고유 역할을 줬습니다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal" style="text-wrap:wrap">상한이 없으면 무과금도 시간만으로 최상위에 닿아 <br class="hidden md:block">다른 캐릭터를 뽑을 이유가 줄어듭니다.</p>
                 </div>
               </div>
             </div>
             <div class="px-6 md:px-9 py-4 bg-slate-50 border-t border-slate-200">
-              <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">프로젝트 C는 이&nbsp;기획안에서 쓴&nbsp;가칭이며, 실제 개발 중인 프로젝트가 아닙니다. 학원을 배경으로 학생 캐릭터를 모으고 키우는 장르를 전제로 했고, 캐릭터 2종과 적 3종은 예시입니다.</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">프로젝트 C는 이&nbsp;기획안에서 쓴&nbsp;가칭이며, 실제 개발 중인 프로젝트가 아닙니다. <br class="hidden md:block">학원을 배경으로 학생 캐릭터를 모으고 키우는 장르를 전제로 했고, 캐릭터 2종과 적 3종은 예시입니다.</p>
             </div>
           </div>
         </section>
@@ -192,15 +194,15 @@
                 <div class="space-y-6">
                     <div class="point-box bg-white p-5 rounded-r-xl shadow-sm">
                         <h3 class="font-bold text-slate-800 mb-2">● 완벽함 속의 결핍 (Gap-Moe)</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed bal-m seg-t"><span class="seg-bal-t">
-                    최근 유저들은 완벽한 캐릭터보다 보호가 필요한 약점을 가진 캐릭터에게 더&nbsp;높은 지불 용의&#8288;(WTP)&#8288;를 보입니다. </span><br class="hidden md:block"><span class="seg-bal-t">
-                    이는 유저의 개입 명분이 되어 잔존율을 높이는 강력한 기제가 될 수 있다는 것이 이&nbsp;기획안의 가설입니다.
-                </span></p>
+                        <p class="text-sm text-slate-600 leading-relaxed bal-m seg-t">
+                    최근 유저들은 완벽한 캐릭터보다 보호가 필요한 약점을 가진 <br class="hidden md:block">캐릭터에게 더&nbsp;높은 지불 용의&#8288;(WTP)&#8288;를 보입니다. <br class="hidden md:block">
+                    이는 유저의 개입 명분이 되어 잔존율을 높이는 <br class="hidden md:block">강력한 기제가 될 수 있다는 것이 이&nbsp;기획안의 가설입니다.
+                </p>
                     </div>
                     <div class="point-box bg-white p-5 rounded-r-xl shadow-sm" style="border-left-color: #8b5cf6;">
                         <h3 class="font-bold text-slate-800 mb-2">● 상호 구원 서사의 비즈니스화</h3>
                         <p class="text-sm text-slate-600 leading-relaxed">
-                    유저&#8288;(플레이어)&#8288;가 캐릭터의 결핍을 채워줄&nbsp;때 발생하는 정서적 보상은 고가치 가챠&#8288;(확률형 뽑기, Pick-up)&#8288;를 뽑을 이유가 되고, 팬덤의 충성도도 높입니다.
+                    유저&#8288;(플레이어)&#8288;가 캐릭터의 결핍을 채워줄&nbsp;때 발생하는 정서적 보상은 <br class="hidden md:block">고가치 가챠&#8288;(확률형 뽑기, Pick-up)&#8288;를 뽑을 이유가 되고, 팬덤의 충성도도 높입니다.
                 </p>
                     </div>
                 </div>
@@ -237,7 +239,7 @@
                                     "모두 저를 완벽하다고 하지만... 사실은 한계에 다다른 상태예요."
                                 </p>
                                 <div class="bg-slate-50 p-4 rounded-xl text-slate-700 text-sm bal">
-                                    <strong>기획 포인트:</strong> 학원&nbsp;내 최고의 엘리트지만 극심한 번아웃을 겪는 인물. 유저에게만 자신의 소소한 비밀을 공유하며 의존도를 높임.
+                                    <strong>기획 포인트:</strong> 학원&nbsp;내 최고의 엘리트지만 극심한 번아웃을 겪는 인물. <br class="hidden md:block">유저에게만 자신의 소소한 비밀을 공유하며 의존도를&nbsp;높임.
                                 </div>
                             </div>
                         </div>
@@ -253,7 +255,7 @@
                                     <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden"><div class="bg-red-500 h-full" style="width: 10%"></div></div>
                                 </div>
                                 <div class="bg-white p-4 rounded-xl text-xs text-slate-600 leading-relaxed shadow-sm bal">
-                                    효율이 좋은 대신 스트레스 임계점이 매우 낮음. 유저는 주기적으로 '특수 대화'나 '전용 아이템'을 사용하여 배드엔딩을 방어해야 함.
+                                    효율이 좋은 대신 스트레스 임계점이 매우 낮음. <br class="hidden md:block">유저는 주기적으로 '특수 대화'나 '전용 아이템'을 사용하여 배드엔딩을 방어해야 함.
                                 </div>
                             </div>
                         </div>
@@ -291,8 +293,8 @@
                                     <div class="flex justify-between text-xs font-bold mb-2"><span>호감도 비례 성장 가속</span> <span>무한 (EX)</span></div>
                                     <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden"><div class="bg-violet-500 h-full" style="width: 100%"></div></div>
                                 </div>
-                                <div class="bg-white p-4 rounded-xl text-xs text-slate-600 leading-relaxed shadow-sm bal">
-                                    유저가 칭찬 아이템을 쓰거나 이벤트를 수행할&nbsp;때마다 능력치 상한선이 해금됨. '버려진 아이를 최강으로 키워냈다'는 성취감 제공.
+                                <div class="bg-white p-4 rounded-xl text-xs text-slate-600 leading-relaxed shadow-sm bal" style="text-wrap:wrap">
+                                    유저가 칭찬 아이템을 쓰거나 이벤트를 수행할&nbsp;때마다 능력치 상한선이 해금됨. <br class="hidden md:block">'버려진 아이를 최강으로 키워냈다'는 성취감 제공.
                                 </div>
                             </div>
                         </div>
@@ -306,7 +308,7 @@
             <div class="text-center mb-8">
                 <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">3. 에너미 설정: '내면의 그림자'</h2>
                 <div class="inline-flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full border border-blue-100 shadow-sm">
-                    <span class="text-blue-600 text-xs font-bold">💡 보는 방법</span>
+                    <span class="text-blue-600 text-xs font-bold">💡 보는&nbsp;방법</span>
                     <span class="text-slate-600 text-xs font-medium">카드를 클릭하여 학생들의 <span class="text-blue-600 font-bold">내면&#8288;(진실)</span>&#8288;을 확인해보세요.</span>
                     <span class="click-hint text-blue-400">👈</span>
                 </div>
@@ -322,9 +324,8 @@
                     <h3 class="font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors">망각의 규율자</h3>
                     <p class="text-xs text-slate-500 leading-relaxed mb-4">학업 스트레스가 뭉쳐진 고서 형태의 몬스터</p>
                     <div id="enemy1" class="hidden mt-auto pt-4 border-t border-slate-100 text-xs text-blue-600 font-medium animate-[fadeIn_0.3s_ease-out]">
-                        <p class="bg-blue-50 p-3 rounded-lg border-l-2 border-blue-400 text-sm max-w-[46em] leading-[1.8]">
-                    <strong>[서사 트리거]:</strong> 전투 승리&nbsp;시 학생의 학습 강박 수치를 낮추고, <br class="hidden md:block">
-                    즉시 유저와의 1:1 상담 이벤트로 직행하여 정서적 유대감 형성.
+                        <p class="bg-blue-50 p-3 rounded-lg border-l-2 border-blue-400">
+                    <strong>[서사 트리거]:</strong> 전투 승리&nbsp;시 학생의 학습 강박 수치를 낮추고, 즉시 유저와의 1:1 상담 이벤트로 직행하여 정서적 유대감 형성.
                 </p>
                     </div>
                 </div>
@@ -337,8 +338,8 @@
                     <h3 class="font-bold text-slate-800 mb-2 group-hover:text-violet-600 transition-colors">가식의 광대</h3>
                     <p class="text-xs text-slate-500 leading-relaxed mb-4">대인 관계의 피로감이 실체화된 그림자</p>
                     <div id="enemy2" class="hidden mt-auto pt-4 border-t border-slate-100 text-xs text-violet-600 font-medium animate-[fadeIn_0.3s_ease-out]">
-                        <p class="bg-violet-50 p-3 rounded-lg border-l-2 border-violet-400">
-                            <strong>[서사 연출]:</strong> 상태 이상&#8288;(혼란) 공격을 가하며, 이를 파훼하는 과정에서 학생이 억눌렀던 본심을 고백하는 연출 삽입.
+                        <p class="bg-violet-50 p-3 rounded-lg border-l-2 border-violet-400" style="text-wrap:wrap">
+                            <strong>[서사 연출]:</strong> 상태 이상&#8288;(혼란) 공격을 가하며, <br class="hidden md:block">이를 파훼하는 과정에서 학생이 억눌렀던 본심을 고백하는 연출 삽입.
                         </p>
                     </div>
                 </div>
@@ -352,7 +353,7 @@
                     <p class="text-xs text-slate-500 leading-relaxed mb-4">가문의 압박이 사슬로 형상화된 보스급 적</p>
                     <div id="enemy3" class="hidden mt-auto pt-4 border-t border-slate-100 text-xs text-red-600 font-medium animate-[fadeIn_0.3s_ease-out]">
                         <p class="bg-red-50 p-3 rounded-lg border-l-2 border-red-400">
-                    <strong>[서사의 정점]:</strong> 물리적 공격보다 유저가 부여하는 '자유' 버프를 통해 공략. 트라우마 극복 서사를 전투 시스템에 반영.
+                    <strong>[서사의 정점]:</strong> 물리적 공격보다 유저가 부여하는 <br class="hidden md:block">'자유' 버프를 통해 공략. 트라우마 극복 서사를 전투 시스템에 반영.
                 </p>
                     </div>
                 </div>
@@ -362,56 +363,56 @@
         <!-- [보강] 4. 설계 검토 -->
         <section id="design-review" class="space-y-6">
             <div>
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">4. 두&nbsp;캐릭터는 정반대 위험을 안고 있습니다</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">4. 두&nbsp;캐릭터는 정반대 위험을 안고 있습니다.</h2>
                 <p class="text-slate-600 leading-relaxed max-w-[42em]">같은 결핍 서사에서 나왔는데, 육성 파라미터를 보면 문제의 방향이 서로 반대입니다.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-5">
                 <div class="bg-white rounded-3xl border-2 border-rose-200 p-6 shadow-sm">
-                    <p class="text-[10px] font-black tracking-wide text-rose-500 mb-3">클로에</p>
-                    <p class="font-black text-slate-900 mb-3 bal">유지 비용을 물립니다</p>
-                    <p class="text-sm text-slate-600 leading-relaxed mb-4 bal">스트레스 저항이 최저라 주기적으로 개입해 배드엔딩을 막아야 합니다. <strong class="text-slate-900">수집형은 캐릭터가 계속 늘어나므로 이&nbsp;부담이 쌓여 수집 자체를 누릅니다.</strong> 애정을 전제로 만든 캐릭터인데 관리 실패의 결과가 상실이면 처벌로 읽힙니다.</p>
+                    <p class="text-xs font-black tracking-wide text-rose-500 mb-3">클로에</p>
+                    <p class="font-black text-slate-900 mb-3 bal">유지 비용을 물립니다.</p>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4 bal">스트레스 저항이 최저라 주기적으로 개입해 배드엔딩을 막아야 합니다. <br class="hidden md:block"><strong class="text-slate-900">수집형은 캐릭터가 계속 늘어나므로 이&nbsp;부담이 쌓여 수집 자체를 누릅니다.</strong> 애정을 전제로 만든 캐릭터인데 관리 실패의 결과가 상실이면 처벌로 읽힙니다.</p>
                     <div class="bg-rose-50 rounded-2xl p-4">
-                        <p class="text-xs text-slate-600 leading-relaxed bal"><strong class="text-slate-900">배드엔딩을 되돌릴&nbsp;수 있는 상태로 두고</strong> 다른 서사 분기로 처리합니다. 실패도 콘텐츠가 되면 처벌이 아니라 선택입니다. 관리 주기는 캐릭터별이 아니라 공용 자원으로 묶어 부담이 곱해지지 않게 합니다.</p>
+                        <p class="text-xs text-slate-600 leading-relaxed bal"><strong class="text-slate-900">배드엔딩을 되돌릴&nbsp;수 있는 상태로 두고</strong> 다른 서사 분기로 처리합니다. <br class="hidden md:block">실패도 콘텐츠가 되면 처벌이 아니라 선택입니다. <br class="hidden md:block">관리 주기는 캐릭터별이 아니라 공용 자원으로 묶어 부담이 곱해지지 않게 합니다.</p>
                     </div>
                 </div>
                 <div class="bg-white rounded-3xl border-2 border-indigo-200 p-6 shadow-sm">
-                    <p class="text-[10px] font-black tracking-wide text-indigo-500 mb-3">루나</p>
-                    <p class="font-black text-slate-900 mb-3 bal">매출을 잠식할&nbsp;수 있습니다</p>
-                    <p class="text-sm text-slate-600 leading-relaxed mb-4 bal">호감도에 비례해 상한이 무한으로 열립니다. <strong class="text-slate-900">상한이 없으면 무과금도 시간만으로 최상위 스펙에 닿아, 다른 캐릭터를 뽑을 이유가 줄어듭니다.</strong> 그렇다고 호감도 재화를 유료로 팔면 격려가 결제가 되어 상호 구원 서사가 약해집니다.</p>
+                    <p class="text-xs font-black tracking-wide text-indigo-500 mb-3">루나</p>
+                    <p class="font-black text-slate-900 mb-3 bal">매출을 잠식할&nbsp;수 있습니다.</p>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4 bal">호감도에 비례해 상한이 무한으로 열립니다. <br class="hidden md:block"><strong class="text-slate-900">상한이 없으면 무과금도 시간만으로 최상위 스펙에 닿아, <br class="hidden md:block">다른 캐릭터를 뽑을 이유가 줄어듭니다.</strong> <br class="hidden md:block">그렇다고 호감도 재화를 유료로 팔면 격려가 결제가 되어 상호 구원 서사가 약해집니다.</p>
                     <div class="bg-indigo-50 rounded-2xl p-4">
-                        <p class="text-xs text-slate-600 leading-relaxed bal"><strong class="text-slate-900">무한 성장 대신 고유 역할을 줍니다.</strong> 총&nbsp;전투력은 다른 캐릭터와 비슷하게 두고 루나만 가능한 역할을 붙이면, 키워낸 보람은 남고 다른 캐릭터의 구매 동기도 지킵니다. 호감도는 성능이 아니라 서사와 연출을 여는&nbsp;축으로 둡니다.</p>
+                        <p class="text-xs text-slate-600 leading-relaxed bal"><strong class="text-slate-900">무한 성장 대신 고유 역할을 줍니다.</strong> <br class="hidden md:block">총&nbsp;전투력은 다른 캐릭터와 비슷하게 두고 루나만 가능한 역할을 붙이면, <br class="hidden md:block">키워낸 보람은 남고 다른 캐릭터의 구매 동기도 지킵니다. <br class="hidden md:block">호감도는 성능이 아니라 서사와 연출을 여는&nbsp;축으로&nbsp;둡니다.</p>
                     </div>
                 </div>
             </div>
 
             <div class="bg-slate-900 rounded-3xl p-6 md:p-8 text-white">
-                <p class="text-[10px] font-black tracking-wide text-rose-400 mb-3">가장 큰&nbsp;위험</p>
-                <p class="text-lg md:text-xl font-black mb-4 leading-snug bal max-w-[34em]">결핍은 채워지면 사라집니다</p>
-                <p class="text-sm text-slate-300 leading-relaxed max-w-[46em] mb-5">이&nbsp;기획의 동력은 결핍을 채워주는 개입입니다. 그런데 <strong class="text-white">서사가 완결되는 순간 그&nbsp;캐릭터에 개입할 명분도 함께 끝납니다.</strong> 캐릭터가 수십&nbsp;종으로 늘면 결핍 유형이 겹칩니다. 모두가 상처를 가지면 개별성이 사라지고 서사가 공식처럼 읽힙니다.</p>
+                <p class="text-xs font-black tracking-wide text-rose-400 mb-3">가장 큰&nbsp;위험</p>
+                <p class="text-lg md:text-xl font-black mb-4 leading-snug bal max-w-[34em]">결핍은 채워지면 사라집니다.</p>
+                <p class="text-sm text-slate-300 leading-relaxed max-w-[46em] mb-5">이&nbsp;기획의 동력은 결핍을 채워주는 개입입니다. <br class="hidden md:block">그런데 <strong class="text-white">서사가 완결되는 순간 그&nbsp;캐릭터에 개입할 명분도 함께 끝납니다.<br class="hidden md:block"></strong>캐릭터가 수십&nbsp;종으로 늘면 결핍 유형이 겹칩니다. <br class="hidden md:block">모두가 상처를 가지면 개별성이 사라지고 서사가 공식처럼 읽힙니다.</p>
                 <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
-                    <p class="text-sm text-slate-200 leading-relaxed max-w-[46em] bal-t">결핍을 한&nbsp;번에 풀지 않고 <strong class="text-white">시즌마다 새&nbsp;국면으로 이어지는 단계 구조</strong>로 둡니다. 해소 이후를 위한 관계 유지 콘텐츠를 따로 두어야 서사 완결이 캐릭터 은퇴가 되지 않습니다. 확장할&nbsp;때는 결핍 유형 목록을 만들어 중복을 관리합니다.</p>
+                    <p class="text-sm text-slate-200 leading-relaxed max-w-[46em] bal-t">결핍을 한&nbsp;번에 풀지 않고 <strong class="text-white">시즌마다 새&nbsp;국면으로 이어지는 단계 구조</strong>로 둡니다. <br class="hidden md:block">해소 이후를 위한 관계 유지 콘텐츠를 따로 두어야 서사 완결이 캐릭터 은퇴가 되지 않습니다. <br class="hidden md:block">확장할&nbsp;때는 결핍 유형 목록을 만들어 중복을 관리합니다.</p>
                 </div>
             </div>
 
             <div class="grid md:grid-cols-2 gap-5">
                 <div class="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm">
-                    <p class="text-[10px] font-black tracking-wide text-slate-500 mb-4">소재를 다루는 수위</p>
-                    <p class="text-xs text-slate-500 leading-relaxed mb-4 bal">번아웃과 학업 강박, 트라우마는 흔한 소재지만 이&nbsp;기획은 그것을 <strong class="text-slate-700">수치와 전투 메커닉으로 직접</strong> 다룹니다.</p>
+                    <p class="text-xs font-black tracking-wide text-slate-500 mb-4">소재를 다루는 수위</p>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4 bal">번아웃과 학업 강박, 트라우마는 흔한 소재지만 <br class="hidden md:block">이&nbsp;기획은 그것을 <strong class="text-slate-700">수치와 전투 메커닉으로 직접</strong> 다룹니다.</p>
                     <ul class="space-y-2 text-sm text-slate-600 leading-relaxed">
-                        <li class="bal">· 배드엔딩이 무엇을 묘사하는지 먼저 정의하고 표현 가이드를 문서로 남깁니다</li>
-                        <li class="bal">· 정신 건강 묘사는 연령 등급에 영향을 주므로 기획 단계에서 확인합니다</li>
-                        <li class="bal">· 같은 소재도 지역마다 다르게 받아들여지므로 현지화 검수 범위에 넣습니다</li>
+                        <li class="bal">· 배드엔딩이 무엇을 묘사하는지 먼저 정의하고 표현 가이드를 문서로 남깁니다.</li>
+                        <li class="bal">· 정신 건강 묘사는 연령 등급에 영향을 주므로 기획 단계에서 확인합니다.</li>
+                        <li class="bal">· 같은 소재도 지역마다 다르게 받아들여지므로 현지화 검수 범위에 넣습니다.</li>
                     </ul>
                 </div>
                 <div class="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm">
-                    <p class="text-[10px] font-black tracking-wide text-slate-500 mb-4">가설을 검증할 지표</p>
-                    <p class="text-xs text-slate-500 leading-relaxed mb-4 bal">1번의 가설은 <strong class="text-slate-700">‘결핍이 개입을 부르고 개입이 잔존을 높인다’</strong>&#8288;입니다. 이렇게 쪼개면 잴&nbsp;수 있습니다.</p>
+                    <p class="text-xs font-black tracking-wide text-slate-500 mb-4">가설을 검증할 지표</p>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-4 bal">1번의 가설은 <strong class="text-slate-700">‘결핍이 개입을 부르고 개입이 잔존을 높인다’</strong>&#8288;입니다. <br class="hidden md:block">이렇게 쪼개면 잴&nbsp;수 있습니다.</p>
                     <ul class="space-y-2 text-sm text-slate-600 leading-relaxed">
                         <li class="bal">· <strong class="text-slate-800">개입과 잔존의 상관</strong> — 개입 상위와 하위 그룹의 D30 잔존&nbsp;차이</li>
                         <li class="bal">· <strong class="text-slate-800">서사 완결&nbsp;후 사용률</strong> — 결핍 해소&nbsp;뒤 편성률 변화로 소진 확인</li>
                         <li class="bal">· <strong class="text-slate-800">배드엔딩&nbsp;뒤 이탈</strong> — 발생 유저의 다음 주 잔존으로 처벌 여부 확인</li>
-                        <li class="bal">· <strong class="text-slate-800">결핍 유형별 소환 전환율</strong></li>
+                        <li class="bal">· <strong class="text-slate-800">결핍 유형별 소환 전환율</strong> — 유형마다 소환 비율을 견줘 어떤 결핍이 결제로 이어지는지 확인</li>
                     </ul>
                 </div>
             </div>
@@ -423,7 +424,7 @@
                 "캐릭터에 대한 책임감이 결제 동기로 이어지는 구조를 설계했습니다."
             </h3>
             <p class="text-slate-400 max-w-2xl mx-auto text-sm leading-relaxed bal">
-                    유저가 ‘왜&nbsp;내가 이&nbsp;아이를 도와야 하는가’&#8288;에 대한 서사적 이유를 주어 장기 LTV&#8288;(고객 생애&nbsp;가치)&#8288;를 높이는 프로젝트 C만의 차별화 전략입니다.
+                    유저에게 ‘왜&nbsp;내가 이&nbsp;아이를 도와야 하는가’&#8288;에 대한 서사적 이유를 주어 <br class="hidden md:block">장기 LTV&#8288;(고객 생애&nbsp;가치)&#8288;를 높이는 프로젝트 C만의 차별화 전략입니다.
                 </p>
         </section>
 

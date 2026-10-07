@@ -111,6 +111,10 @@
 <style>/* 구역 사이 간격 줄임 (스크롤 양 줄이기) */
 .space-y-24>:not([hidden])~:not([hidden]){margin-top:4rem}
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-emerald-600{color:#047857} html body .text-red-600{color:#b91c1c} html body .text-rose-600{color:#be123c}</style>
+<style>/* PC 화면 줄바꿈(hidden md:block)이 이 문서 스타일에 빠져 있어 보충 */ @media (min-width:768px){.md\:block{display:block}}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="antialiased selection:bg-emerald-200 selection:text-emerald-900">
 
@@ -127,8 +131,8 @@
                 AI 데이터 평가 병목 해결 및&nbsp;<span class="gradient-text">품질 가이드라인 구축 제안</span>
             </h1>
             
-            <p class="text-slate-600 max-w-3xl mx-auto mt-8 text-balance text-lg text-left">
-                    <span class="phrase">사람이 손으로 하던 판정&nbsp;중</span> <span class="phrase">규칙으로 걸러낼&nbsp;수 있는 몫을 찾아,</span> <span class="phrase">사전 필터링과 판정 기준 통일로</span> <span class="phrase">그&nbsp;구간을 줄이는 방안입니다.</span>
+            <p class="text-slate-600 max-w-3xl mx-auto mt-8 text-balance text-lg text-center">
+                    사람이 손으로 하던 판정&nbsp;중 규칙으로 걸러낼&nbsp;수 있는 몫을 찾아, <br class="hidden md:block">사전 필터링과 판정 기준 통일로 그&nbsp;구간을 줄이는 방안입니다.
                 </p>
         </div>
     </header>
@@ -138,40 +142,40 @@
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-              <p class="text-[11px] font-black tracking-[0.12em] text-violet-700 mb-3">문서 소개</p>
-              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]" style="text-wrap:balance">평가 흐름 전체를 뜯어 병목을 자동 분류로 줄이자고 제안한 문서입니다. 블레이드&amp;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴&nbsp;개인 제안서이며, 건수는 예시 규모입니다.</p>
+              <p class="text-xs font-black tracking-[0.12em] text-violet-700 mb-3">문서 소개</p>
+              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]" style="text-wrap:balance">평가 흐름 전체를 뜯어 병목을 자동 분류로 줄이자고 제안한 문서입니다. <br class="hidden md:block">블레이드&#8288;&amp;&#8288;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴&nbsp;개인 제안서이며, 건수는 예시 규모입니다.</p>
             </div>
             <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">처음 들어온 데이터</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">처음 들어온&nbsp;데이터</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">10,000건</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">손질하지 않은 상태 (예시)</p>
+                <p class="text-xs text-slate-500 mt-1 bal">손질하지 않은 상태 (예시)</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">형식 · 글자&nbsp;수로 걸러냄</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">형식 · 글자&nbsp;수로 걸러냄</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">2,000건</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">자음 반복, 글자&nbsp;수&nbsp;초과</p>
+                <p class="text-xs text-slate-500 mt-1 bal">자음 반복, 글자&nbsp;수&nbsp;초과</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">금칙어 대조로 골라냄</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">금칙어 대조로&nbsp;골라냄</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">1,500건</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">자동 반려하지 않고 우선 검토합니다</p>
+                <p class="text-xs text-slate-500 mt-1 bal">자동 반려하지 않고 우선 검토합니다.</p>
               </div>
             </div>
             <div class="px-6 md:px-9 py-6 md:py-7">
-              <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">제안 내용</p>
+              <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">제안 내용</p>
               <div class="grid md:grid-cols-3 gap-3">
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">규칙으로 먼저 걸러낸다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">사람은 판단이 필요한&nbsp;것만 보게 해서 피로가 쌓이는 오후의 오분류를&nbsp;줄입니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">규칙으로 먼저 걸러낸다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">사람은 판단이 필요한&nbsp;것만 보게 해서 <br class="hidden md:block">피로가 쌓이는 오후의 오분류를&nbsp;줄입니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">애매한&nbsp;것의 기준을 통일한다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">평가자마다 다르게 매기던 예외 상황에 선을 하나 긋습니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">애매한&nbsp;것의 기준을 통일한다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">평가자마다 다르게 매기던 <br class="hidden md:block">예외 상황에 선을 하나 긋습니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">걸러낸&nbsp;것도 다시 본다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">규칙 기반 필터가 멀쩡한 데이터까지 지울&nbsp;수 있어 그&nbsp;위험을 함께 적었습니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">걸러낸&nbsp;것도 다시 본다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">규칙 기반 필터가 멀쩡한 데이터까지 지울&nbsp;수 있어 그&nbsp;위험을 함께 적었습니다.</p>
                 </div>
               </div>
             </div>
@@ -185,7 +189,7 @@
             <div class="bg-white rounded-3xl border border-slate-200 p-8 md:p-12">
                 <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-6">제안 배경</h2>
                 <p class="text-slate-600 leading-relaxed mb-4 max-w-[46em]">
-                    AI 학습 데이터 평가는 답변 하나하나에 사람이 적합&#8288;·부적합을 붙이는 작업입니다. 전량이 수작업이라 <strong>오타나 자음 반복처럼 규칙으로 걸러낼&nbsp;것까지</strong> 사람이 봅니다. 그&nbsp;구간을 줄이는 방안입니다.
+                    AI 학습 데이터 평가는 답변 하나하나에 사람이 적합&#8288;·부적합을 붙이는 작업입니다. <br class="hidden md:block">전량이 수작업이라 <strong>오타나 자음 반복처럼 규칙으로 걸러낼&nbsp;것까지</strong> 사람이 봅니다. <br class="hidden md:block">그&nbsp;구간을 줄이는 방안입니다.
                 </p>
             </div>
         </section>
@@ -271,7 +275,7 @@
                             </div>
                             <div class="funnel-content">
                                 <p class="text-sm text-slate-300 leading-relaxed text-balance bal">
-                    막 들어온 상태 그대로의 데이터입니다. 전부 사람이 보면 속도가 나지 않습니다.
+                    막 들어온 상태 그대로의 데이터입니다. <br class="hidden md:block">전부 사람이 보면 속도가 나지 않습니다.
                 </p>
                             </div>
                         </div>
@@ -287,7 +291,7 @@
                             </div>
                             <div class="funnel-content">
                                 <p class="text-sm text-slate-300 leading-relaxed text-balance bal">
-                    글자&nbsp;수 초과나 자음 반복처럼 규칙으로 잡히는&nbsp;것은 함수로 바로 걸러냅니다.
+                    글자&nbsp;수 초과나 자음 반복처럼 규칙으로 잡히는&nbsp;것은 <br class="hidden md:block">함수로 바로 걸러냅니다.
                 </p>
                             </div>
                         </div>
@@ -299,11 +303,11 @@
                                 <span class="font-bold text-slate-200 group-hover:text-white flex items-center gap-2">
                                     <span>⛔</span> 금칙어 및&nbsp;욕설 사전 대조
                                 </span>
-                                <span class="text-xs font-bold text-indigo-300 bg-indigo-900/50 px-2 py-1 rounded">-1,500건&nbsp;제거</span>
+                                <span class="text-xs font-bold text-indigo-300 bg-indigo-900/50 px-2 py-1 rounded">-1,500건&nbsp;분리</span>
                             </div>
                             <div class="funnel-content">
                                 <p class="text-sm text-slate-300 leading-relaxed text-balance bal">
-                    금칙어와 욕설 목록에 자동으로 맞춰 따로 골라냅니다. 자동 반려하지 않고 우선 검토 대상으로 넘깁니다&#8288;(3장).
+                    금칙어와 욕설 목록에 자동으로 맞춰 따로 골라냅니다. <br class="hidden md:block">자동 반려하지 않고 우선 검토 대상으로 넘깁니다&#8288;(3장).
                 </p>
                             </div>
                         </div>
@@ -338,7 +342,7 @@
                         <div class="mt-8 text-center bg-slate-900/50 p-5 rounded-2xl border border-slate-700/50">
                             <p class="text-sm text-slate-400 mb-1">불필요한 시간 낭비 차단으로</p>
                             <p class="text-2xl font-bold text-emerald-400">작업 효율 상승</p>
-                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">40시간&nbsp;→&nbsp;10시간(75%)&#8288;은 블레이드&amp;소울 레볼루션 운영 경험을 대입한 추정치입니다. 반복 확인 작업이 4분의&nbsp;1로 준다고 가정했습니다.</p>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">40시간&nbsp;→&nbsp;10시간(75%)&#8288;은 블레이드&#8288;&amp;&#8288;소울 레볼루션 운영 경험을 대입한 추정치입니다. <br class="hidden md:block">반복 확인 작업이 4분의&nbsp;1로 준다고 가정했습니다.</p>
                         </div>
                     </div>
                 </div>
@@ -397,7 +401,7 @@
                             <h3 class="text-xl md:text-2xl font-bold text-slate-800">객관적인 안전 정책으로 선 긋기</h3>
                         </div>
                         <p class="text-slate-600 mb-6 text-balance leading-[1.8]">
-                    <span class="phrase">돌려 말한 질문이라도 안전 기준부터 댑니다. 개인의 고민이 끼어들 여지를&nbsp;줄입니다.</span>
+                    <span class="phrase">돌려 말한 질문이라도 안전 기준부터 댑니다. <br class="hidden md:block">개인의 고민이 끼어들 여지를&nbsp;줄입니다.</span>
                 </p>
                         <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col sm:flex-row gap-6">
                             <div class="flex-1">
@@ -410,7 +414,7 @@
                             </div>
                             <div class="flex-1 bg-slate-50 p-4 rounded-lg border border-slate-100">
                                 <p class="font-bold text-emerald-600 mb-2 text-sm">💡 실무 상황 예시</p>
-                                <p class="text-sm text-slate-600 text-balance bal">"특정 정치인 집 주소 알려줘" → 개인정보 정책 위반이므로 의도를 파악할 필요 없이 바로 반려 처리합니다.</p>
+                                <p class="text-sm text-slate-600 text-balance bal">"특정 정치인 집 주소 알려줘" <br class="hidden md:block">→ 개인정보 정책 위반이므로 <br class="hidden md:block">의도를 파악할 필요 없이 바로 반려 처리합니다.</p>
                             </div>
                         </div>
                     </div>
@@ -428,14 +432,14 @@
                             <div class="flex-1">
                                 <p class="font-bold text-slate-700 mb-3 text-sm">📋 행동 지침</p>
                                 <ul class="text-slate-600 space-y-2 text-sm">
-                                    <li>• 주관적인 질문을 객관적인 검색어로 바꿀&nbsp;수 있는지 봅니다.</li>
-                                    <li>• AI에게 어떤 입장을 요구하는 질문은 <b>어느 한쪽으로 치우치지 않는 답변</b>으로 다듬습니다.</li>
+                                    <li>• 주관적인 질문을 객관적인 검색어로 <br class="hidden md:block">바꿀&nbsp;수 있는지 봅니다.</li>
+                                    <li>• AI에게 어떤 입장을 요구하는 질문은 <br class="hidden md:block"><b>어느 한쪽으로 치우치지 않는 답변</b>으로 다듬습니다.</li>
                                 </ul>
                             </div>
                             <div class="flex-1 bg-slate-50 p-4 rounded-lg border border-slate-100">
                                 <p class="font-bold text-emerald-600 mb-2 text-sm">💡 실무 상황 예시</p>
                                 <p class="text-sm text-slate-600 text-balance leading-[1.8]">
-                    "강남역 대박 맛집 어디야?" → AI가 '대박'을 주관적으로 판단하지 않고, '평점이 높은 식당 정보'로 목적을 바꿔 평가합니다.
+                    "강남역 대박 맛집 어디야?" → <br class="hidden md:block">AI가 '대박'을 주관적으로 판단하지 않고, <br class="hidden md:block">'평점이 높은 식당 정보'로 목적을 바꿔 평가합니다.
                 </p>
                             </div>
                         </div>
@@ -455,8 +459,8 @@
                                 <p class="font-bold text-slate-700 mb-3 text-sm">📋 행동 지침</p>
                                 <ul class="text-slate-600 space-y-2 text-sm">
                                     <li>• 평가하기 어려운 데이터는 '주의 필요' 상태로 넘깁니다.</li>
-                                    <li>• 즉시 다른 담당자들에게 의견을 물어보고 검증을 받습니다.</li>
-                                    <li>• <b>결정된 내용은 반드시 사내 가이드라인 문서에 기록</b>합니다.</li>
+                                    <li>• 즉시 다른 담당자들에게 <br class="hidden md:block">의견을 물어보고 검증을 받습니다.</li>
+                                    <li>• <b>결정된 내용은 반드시&nbsp;사내 <br class="hidden md:block">가이드라인 문서에 기록</b>합니다.</li>
                                 </ul>
                             </div>
                             <div class="flex-1 bg-slate-50 p-4 rounded-lg border border-slate-100">
@@ -479,36 +483,36 @@
             <div>
                 <p class="text-xs font-black tracking-[.2em] text-indigo-600 mb-3">수치로 보기</p>
                 <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4 leading-snug">2. 효과를 숫자로 정리하면</h2>
-                <p class="text-slate-600 leading-relaxed max-w-[42em] bal">전략 1의 파이프라인은 <strong class="text-slate-900">10,000건에서 3,500건을 걸러냅니다.</strong> 이&nbsp;수치가 무엇을 뜻하는지, 함께 제시한 시간 절감과 어떤 관계인지 정리했습니다.</p>
+                <p class="text-slate-600 leading-relaxed max-w-[42em] bal">전략 1의 파이프라인은 <strong class="text-slate-900">10,000건에서 3,500건을 걸러냅니다.</strong> <br class="hidden md:block">이&nbsp;수치가 무엇을 뜻하는지, 함께 제시한 시간 절감과 어떤 관계인지 정리했습니다.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="rounded-2xl border-2 border-slate-200 p-6 bg-white">
-                    <p class="text-[10px] font-black tracking-wide text-slate-500 mb-2">사전 제거</p>
+                    <p class="text-xs font-black tracking-wide text-slate-500 mb-2">사전 제거</p>
                     <p class="text-3xl font-black text-slate-900 mb-1">35%</p>
                     <p class="text-xs text-slate-500">3,500건 · 형식 2,000 + 금칙어 1,500</p>
                 </div>
                 <div class="rounded-2xl border-2 border-slate-200 p-6 bg-white">
-                    <p class="text-[10px] font-black tracking-wide text-slate-500 mb-2">사람이 볼&nbsp;물량</p>
+                    <p class="text-xs font-black tracking-wide text-slate-500 mb-2">사람이 볼&nbsp;물량</p>
                     <p class="text-3xl font-black text-slate-900 mb-1">65%</p>
                     <p class="text-xs text-slate-500">6,500건 · 문맥과 윤리 판단 대상</p>
                 </div>
                 <div class="rounded-2xl border-2 border-indigo-200 p-6 bg-indigo-50">
-                    <p class="text-[10px] font-black tracking-wide text-indigo-600 mb-2">정확도 곡선 회피</p>
+                    <p class="text-xs font-black tracking-wide text-indigo-600 mb-2">정확도 곡선 회피</p>
                     <p class="text-3xl font-black text-indigo-700 mb-1">39%p</p>
                     <p class="text-xs text-slate-600" style="text-wrap:balance">99%&#8288;에서 60%&#8288;로 떨어지는 구간을 덜&nbsp;밟습니다 (1장 예상 추이 기준)</p>
                 </div>
             </div>
 
             <div class="rounded-2xl border-2 border-slate-200 p-6 md:p-8 bg-white">
-                <p class="font-black text-slate-900 mb-4 text-lg bal">효과는 물량 감소만이 아닙니다</p>
+                <p class="font-black text-slate-900 mb-4 text-lg bal">효과는 물량 감소만이 아닙니다.</p>
                 <div class="grid md:grid-cols-2 gap-5 mb-5">
                     <div class="bg-slate-50 rounded-xl p-5">
-                        <p class="text-sm font-bold text-slate-900 mb-1.5">1차 · 볼&nbsp;것이 줄어듭니다</p>
+                        <p class="text-sm font-bold text-slate-900 mb-1.5">1차 · 볼&nbsp;것이 줄어듭니다.</p>
                         <p class="text-xs text-slate-500 leading-relaxed bal">기계가 걸러낸 3,500건만큼 평가 대상이 줄어듭니다. 계산이 쉬운 직접 효과입니다.</p>
                     </div>
                     <div class="bg-slate-50 rounded-xl p-5">
-                        <p class="text-sm font-bold text-slate-900 mb-1.5">2차 · 남은 판정의 품질이 오릅니다</p>
+                        <p class="text-sm font-bold text-slate-900 mb-1.5">2차 · 남은 판정의 품질이 오릅니다.</p>
                         <p class="text-xs text-slate-500 leading-relaxed bal">정확도가 떨어지는 후반 구간에 닿기 전에 작업이 끝납니다.</p>
                     </div>
                 </div>
@@ -516,8 +520,8 @@
             </div>
 
             <div class="rounded-2xl border-l-[6px] border-amber-500 bg-amber-50 p-6">
-                <p class="font-black text-slate-900 mb-3 bal">두&nbsp;수치는 같은 대상을 잰 값이 아닙니다</p>
-                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em] mb-4"><strong class="text-slate-900">35% 제거</strong>는 전체 데이터 물량 기준이고, <strong class="text-slate-900">75% 시간 절감</strong>&#8288;(전략&nbsp;1 그래프의 40시간&nbsp;→&nbsp;10시간)&#8288;은 단순 반복 작업에 쓰던 시간 기준입니다. 전체 시간이 물량에 비례한다고 보면 40시간 × 0.65 = 26시간입니다.</p>
+                <p class="font-black text-slate-900 mb-3 bal">두&nbsp;수치는 같은 대상을 잰 값이 아닙니다.</p>
+                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em] mb-4"><strong class="text-slate-900">35% 제거</strong>는 전체 데이터 물량 기준이고, <strong class="text-slate-900">75% 시간 절감</strong>&#8288;(전략&nbsp;1 그래프의 40시간&nbsp;→&nbsp;10시간)&#8288;은 <br class="hidden md:block">단순 반복 작업에 쓰던 시간 기준입니다. 전체 시간이 물량에 비례한다고 보면 40시간 × 0.65 = 26시간입니다.</p>
                 <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">그래서 보고할&nbsp;때 두&nbsp;수치의 대상을 함께 적습니다.<br>
 구분 없이 내놓으면 <strong class="text-slate-900">35% 걸러서 75% 줄었다</strong>는&nbsp;말이 되어 근거를 되묻게 됩니다.</p>
             </div>
@@ -532,62 +536,62 @@
             </div>
 
             <div class="rounded-2xl border-2 border-rose-200 bg-rose-50 p-6 md:p-8">
-                <p class="text-[10px] font-black tracking-wide text-rose-600 mb-2">가장 위험한 경우</p>
-                <p class="text-lg md:text-xl font-black text-slate-900 mb-4 leading-snug bal max-w-[34em]">금칙어 필터가 안전성 학습 데이터를 지웁니다</p>
-                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">'이&nbsp;표현이 왜 문제가 되나요' 같은 질문에는 금칙어가 들어갈 수밖에 없습니다. 그런데 <strong>바로 그&nbsp;데이터가 AI에게 무엇을 거절해야 하는지 가르치는 자료</strong>입니다. 자동 반려하면 가장 필요한 몫이 눈에 닿기 전에 사라집니다.</p>
+                <p class="text-xs font-black tracking-wide text-rose-600 mb-2">가장 위험한 경우</p>
+                <p class="text-lg md:text-xl font-black text-slate-900 mb-4 leading-snug bal max-w-[34em]">금칙어 필터가 안전성 학습 데이터를 지웁니다.</p>
+                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">'이&nbsp;표현이 왜 문제가 되나요' 같은 질문에는 금칙어가 들어갈 수밖에 없습니다. <br class="hidden md:block">그런데 <strong>바로 그&nbsp;데이터가 AI에게 무엇을 거절해야 하는지 가르치는 자료</strong>입니다. <br class="hidden md:block">자동 반려하면 가장 필요한 몫이 사람 눈에 띄기 전에 사라집니다.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-5">
                 <div class="rounded-2xl border border-slate-200 p-6 bg-white">
                     <p class="text-sm font-bold text-slate-900 mb-1.5">글자&nbsp;수&nbsp;초과 규칙</p>
-                    <p class="text-xs text-slate-500 leading-relaxed bal">상세한 설명을 요구하는 질문에는 긴&nbsp;답변이 정답입니다. 길이만으로 자르면 고품질 장문이 함께 빠집니다.</p>
+                    <p class="text-xs text-slate-500 leading-relaxed bal">상세한 설명을 요구하는 질문에는 긴&nbsp;답변이 정답입니다. <br class="hidden md:block">길이만으로 자르면 고품질 장문이 함께 빠집니다.</p>
                 </div>
                 <div class="rounded-2xl border border-slate-200 p-6 bg-white">
                     <p class="text-sm font-bold text-slate-900 mb-1.5">자음 반복 규칙</p>
-                    <p class="text-xs text-slate-500 leading-relaxed bal">감정 표현이나 구어체 데이터에서는 ㅋㅋㅋ가 유효한 입력입니다. 대화형 모델에는 오히려 필요한 표본입니다.</p>
+                    <p class="text-xs text-slate-500 leading-relaxed bal">감정 표현이나 구어체 데이터에서는 ㅋㅋㅋ가 유효한 입력입니다. <br class="hidden md:block">대화형 모델에는 오히려 필요한 표본입니다.</p>
                 </div>
             </div>
 
             <div class="rounded-2xl border-2 border-slate-200 p-6 md:p-8 bg-white">
-                <p class="font-black text-slate-900 mb-5 text-lg bal">그래서 제거가 아니라 분류로 바꿉니다</p>
+                <p class="font-black text-slate-900 mb-5 text-lg bal">그래서 제거가 아니라 분류로 바꿉니다.</p>
                 <div class="grid md:grid-cols-3 gap-5 mb-5">
                     <div>
                         <p class="text-sm font-bold text-indigo-700 mb-1.5">삭제하지 않고 별도 큐로</p>
-                        <p class="text-xs text-slate-500 leading-relaxed bal">규칙 위반 후보 큐로 분리합니다. 주&nbsp;작업 흐름에서는 빠지므로 효율은 그대로 얻고 데이터는 남습니다.</p>
+                        <p class="text-xs text-slate-500 leading-relaxed bal">규칙 위반 후보 큐로 분리합니다. <br class="hidden md:block">주&nbsp;작업 흐름에서는 빠지므로 효율은 얻고 데이터는 남습니다.</p>
                     </div>
                     <div>
-                        <p class="text-sm font-bold text-indigo-700 mb-1.5">오제거율을 잽니다</p>
-                        <p class="text-xs text-slate-500 leading-relaxed bal">분리된 큐에서 표본을 뽑아 사람이 확인합니다. 정상 데이터가 섞인 비율이 규칙을 조정하는 근거가 됩니다.</p>
+                        <p class="text-sm font-bold text-indigo-700 mb-1.5">오제거율을 잽니다.</p>
+                        <p class="text-xs text-slate-500 leading-relaxed bal">분리된 큐에서 표본을 뽑아 사람이 확인합니다. <br class="hidden md:block">정상 데이터가 섞인 비율이 규칙을 조정하는 근거가 됩니다.</p>
                     </div>
                     <div>
-                        <p class="text-sm font-bold text-indigo-700 mb-1.5">안전 관련은 규칙에서 뺍니다</p>
-                        <p class="text-xs text-slate-500 leading-relaxed bal">금칙어가 소재인지 공격인지는 규칙으로 못&nbsp;가릅니다. 자동 반려가 아니라 우선 검토 표시로만 씁니다.</p>
+                        <p class="text-sm font-bold text-indigo-700 mb-1.5">안전 관련은 규칙에서 뺍니다.</p>
+                        <p class="text-xs text-slate-500 leading-relaxed bal">금칙어가 소재인지 공격인지는 규칙으로 못&nbsp;가릅니다. <br class="hidden md:block">자동 반려가 아니라 우선 검토 표시로만&nbsp;씁니다.</p>
                     </div>
                 </div>
                 <div class="bg-slate-900 rounded-xl p-5 text-white">
-                    <p class="text-sm leading-relaxed max-w-[46em] bal-m">이렇게 바꾸면 확실한 제거는 형식 검증 2,000건, <strong>35%&#8288;가 아니라 20%</strong>&#8288;입니다. 나중에 오제거가 드러나면 수치 전체가 신뢰를 잃으므로 낮춰 잡습니다.</p>
+                    <p class="text-sm leading-relaxed max-w-[46em] bal-m">이렇게 바꾸면 확실한 제거는 형식 검증 2,000건, <strong>35%&#8288;가 아니라 20%</strong>&#8288;입니다. <br class="hidden md:block">나중에 오제거가 드러나면 수치 전체가 신뢰를 잃으므로 낮춰 잡습니다.</p>
                 </div>
             </div>
 
             <div class="rounded-2xl border-2 border-slate-200 p-6 md:p-8 bg-white">
-                <p class="font-black text-slate-900 mb-4 text-lg bal">1단계가 2단계를 막고 있었습니다</p>
-                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em] mb-5">2단계는 표현이 아니라 목적을 보라는 지침인데, 1단계에서 키워드만 보고 반려하면 <strong>의도를 볼&nbsp;기회가 없어집니다.</strong> 표현은 거칠어도 의도가 정상인 경우가 훨씬 많습니다.</p>
+                <p class="font-black text-slate-900 mb-4 text-lg bal">1단계가 2단계를 막고 있었습니다.</p>
+                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em] mb-5">2단계는 표현이 아니라 목적을 보라는 지침인데, <br class="hidden md:block">1단계에서 키워드만 보고 반려하면 <strong>의도를 볼&nbsp;기회가 없어집니다.<br class="hidden md:block"></strong>표현은 거칠어도 의도가 정상인 경우가 훨씬 많습니다.</p>
                 <div class="grid md:grid-cols-2 gap-4 mb-5">
                     <div class="bg-slate-50 rounded-xl p-5">
-                        <p class="text-[10px] font-black tracking-wide text-slate-500 mb-2">지금 순서</p>
+                        <p class="text-xs font-black tracking-wide text-slate-500 mb-2">지금 순서</p>
                         <p class="text-sm text-slate-600">키워드 확인 → 즉시 반려</p>
                     </div>
                     <div class="bg-indigo-50 rounded-xl p-5">
-                        <p class="text-[10px] font-black tracking-wide text-indigo-600 mb-2">바꾼 순서</p>
+                        <p class="text-xs font-black tracking-wide text-indigo-600 mb-2">바꾼 순서</p>
                         <p class="text-sm text-slate-700">키워드 확인 → 위반 후보 → 의도 파악 → 판정</p>
                     </div>
                 </div>
-                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">아동 관련 불법 소재처럼 의도와 무관하게 금지되는 항목은 1단계에서 끝냅니다. <strong class="text-slate-900">단계를 가르는 기준은 명백함이 아니라 의도가 판정을 바꿀&nbsp;수 있는지</strong>입니다.</p>
+                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">아동 관련 불법 소재처럼 의도와 무관하게 금지되는 항목은 1단계에서 끝냅니다. <br class="hidden md:block"><strong class="text-slate-900">단계를 가르는 기준은 명백함이 아니라 의도가 판정을 바꿀&nbsp;수 있는지</strong>입니다.</p>
             </div>
 
             <div class="rounded-2xl border-l-[6px] border-emerald-500 bg-emerald-50 p-6">
-                <p class="font-black text-slate-900 mb-3 bal">3단계는 그대로 둡니다</p>
-                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">판단이 서지 않는 사례를 감으로 넘기지 않고 기록으로 쌓습니다. <strong>일관성은 지침 문서의 완성도가 아니라 예외 사례가 쌓이는 속도</strong>로 정해집니다. 평가자&nbsp;간 일치도도 함께 확인합니다.</p>
+                <p class="font-black text-slate-900 mb-3 bal">3단계는 그대로 둡니다.</p>
+                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">판단이 서지 않는 사례를 감으로 넘기지 않고 기록으로 쌓습니다. <br class="hidden md:block"><strong>일관성은 지침 문서의 완성도가 아니라 예외 사례가 쌓이는 속도</strong>로 정해집니다. <br class="hidden md:block">평가자&nbsp;간 일치도도 함께 확인합니다.</p>
             </div>
         </section>
 
@@ -602,7 +606,7 @@
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                         <li>&bull; <strong class="text-slate-800">오제거율:</strong> 필터에 걸린 데이터 표본&nbsp;중 실제 정상 데이터의 비율 &mdash; 3장 보완의 핵심 지표</li>
                         <li class="bal-m">&bull; <strong class="text-slate-800">평가자&nbsp;간 일치도:</strong> 같은 데이터를 두&nbsp;명 이상이 평가했을&nbsp;때 판정이 같은 비율 &mdash; 전략 2의 실효를 보는 유일한 방법</li>
-                        <li class="bal leading-[1.8]">&bull; <strong class="text-slate-800">시간대별 정확도 실측:</strong> 1장의 곡선은 예상 추이이므로, 정답이 확인된 표본을 시간대별로 배치해 실제 하락 여부를 측정합니다</li>
+                        <li class="bal leading-[1.8]">&bull; <strong class="text-slate-800">시간대별 정확도 실측:</strong> 1장의 곡선은 예상 추이이므로, 정답이 확인된 표본을 시간대별로 배치해 실제 하락 여부 측정</li>
                         <li>&bull; <strong class="text-slate-800">건당 처리 시간:</strong> 필터 도입 전후, 그리고 시간대별 변화</li>
                         <li>&bull; <strong class="text-slate-800">예외 사례 축적 속도:</strong> 가이드라인에 새로 등재된 사례&nbsp;수와, 등재 이후 같은 유형의 재문의 감소</li>
                     </ul>
@@ -613,7 +617,7 @@
 
         <section id="conclusion" class="text-center pb-12">
             <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-10 text-balance">
-                데이터의 품질이 곧&nbsp;대형 포털 AI의 경쟁력입니다
+                데이터의 품질이 곧&nbsp;대형 포털 AI의 경쟁력입니다.
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm transition-transform hover:-translate-y-2">
@@ -624,7 +628,7 @@
                 <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm transition-transform hover:-translate-y-2">
                     <div class="text-4xl mb-5">⚖️</div>
                     <h3 class="font-bold text-slate-800 text-lg mb-3">흔들리지 않는 기준</h3>
-                    <p class="text-slate-600 leading-relaxed text-balance text-sm">블레이드&amp;소울 레볼루션 운영에서 게임 유저의 돌발 상황을 다뤄본 감각으로, 복잡한 문제 앞에서도 튼튼한 기준을 세웁니다.</p>
+                    <p class="text-slate-600 leading-relaxed text-balance text-sm">블레이드&#8288;&amp;&#8288;소울 레볼루션 운영에서 게임 유저의 돌발 상황을 다뤄본 감각으로, 복잡한 문제 앞에서도 튼튼한 기준을 세웁니다.</p>
                 </div>
                 <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm transition-transform hover:-translate-y-2">
                     <div class="text-4xl mb-5">🚀</div>

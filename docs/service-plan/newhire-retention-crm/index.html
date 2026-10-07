@@ -110,6 +110,11 @@
 html { scroll-behavior: smooth; }
 .tab-btn { display: flex; align-items: center; justify-content: center; text-align: center; padding-left: 12px; padding-right: 12px; }
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-emerald-600{color:#047857} html body .text-orange-600{color:#c2410c} html body .text-rose-600{color:#be123c}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
+<style>/* 휴대폰: 범례가 차트 제목 위에 겹치지 않게 제목 위 한 줄로 */ @media (max-width:767px){ .nh-legend{position:static !important;padding:0 0 12px !important} }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="antialiased">
 
@@ -153,28 +158,28 @@ html { scroll-behavior: smooth; }
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-              <p class="text-[11px] font-black tracking-[0.12em] text-teal-700 mb-3">문서 소개</p>
-              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">초기 이탈 구간을 짚어 시기별 케어 시나리오를 설계한 문서입니다. 블레이드&amp;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 개인 제안서입니다.</p>
+              <p class="text-xs font-black tracking-[0.12em] text-teal-700 mb-3">문서 소개</p>
+              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">초기 이탈 구간을 짚어 시기별 케어 시나리오를 설계한 문서입니다. <br class="hidden md:block">블레이드&#8288;&amp;&#8288;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 개인 제안서입니다.</p>
             </div>
             <div class="px-6 md:px-9 py-6 md:py-7">
-              <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">주요 작업</p>
+              <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">주요 작업</p>
               <div class="grid md:grid-cols-3 gap-3">
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">75일 시점에 한&nbsp;번을 더&nbsp;넣었습니다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">수수료가 확정되기 직전이 가장 위험한 구간이기 때문입니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">75일 시점에 한&nbsp;번을 더&nbsp;넣었습니다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">수수료가 확정되기 직전이 <br class="hidden md:block">가장 위험한 구간이기 때문입니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">공고와 실제 업무의 차이를 묻습니다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">직무 기대 불일치는 메시지로 닿지 않아, 고객사 공고 품질에 되먹이는 경로를 뒀습니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">공고와 실제 업무의 차이를 묻습니다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">직무 기대 불일치는 메시지로 닿지 않아, <br class="hidden md:block">고객사 공고 품질에 되먹이는 경로를 뒀습니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">지표에 장기 근속률을 넣었습니다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">3개월에서 끊으면 합격자가 아니라 수수료를 지키는 지표로만 읽히기 때문입니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">지표에 장기 근속률을 넣었습니다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">3개월에서 끊으면 합격자가 아니라 <br class="hidden md:block">수수료를 지키는 지표로만 읽히기 때문입니다.</p>
                 </div>
               </div>
             </div>
             <div class="px-6 md:px-9 py-4 bg-slate-50 border-t border-slate-200">
-              <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">채용 플랫폼은 소개한 사람이 입사하면 수수료를 받고, 일찍 그만두면 상당 부분을 돌려줍니다. 그래서 3개월 근속 여부가 매출 확정과 직결됩니다.</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">채용 플랫폼은 소개한 사람이 입사하면 수수료를 받고, 일찍 그만두면 상당 부분을 돌려줍니다. <br class="hidden md:block">그래서 3개월 근속 여부가 매출 확정과 직결됩니다.</p>
             </div>
           </div>
         </section>
@@ -182,7 +187,7 @@ html { scroll-behavior: smooth; }
         <!-- 0. 문서 개요 -->
         <section id="overview" class="scroll-mt-24">
             <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
-                <h2 class="text-2xl md:text-3xl font-bold italic text-gray-800 mb-6">수익 구조와 근속</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">수익 구조와 근속</h2>
                 <p class="text-gray-600 leading-relaxed mb-4 max-w-[46em]">
                     합격자의 <strong>3개월 근속 여부가 곧&nbsp;매출 확정</strong>입니다.<br>
 게임에서 신규 유저를 붙잡던 설계를 그대로 이&nbsp;구간에 옮긴 운영안입니다.
@@ -194,30 +199,30 @@ html { scroll-behavior: smooth; }
         <section id="analysis" class="scroll-mt-24">
             <div class="flex items-center gap-3 mb-10">
                 <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
-                <h2 class="text-2xl md:text-3xl font-bold italic text-gray-800">1. 초기 퇴사 원인 및&nbsp;감정 변화 흐름</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">1. 초기 퇴사 원인 및&nbsp;감정 변화 흐름</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
                     <div class="text-3xl mb-4">📋</div>
                     <h3 class="font-bold mb-2">직무 기대치 불일치</h3>
-                    <p class="text-gray-500 leading-relaxed text-base">면접에서 들은 업무와 실제 배정된 업무가 다르면, 입사 첫&nbsp;주부터 이탈을 고민하게 됩니다.</p>
+                    <p class="text-gray-500 leading-relaxed text-sm">면접에서 들은 업무와 실제 배정된 업무가 다르면, 입사 첫&nbsp;주부터 이탈을 고민하게 됩니다.</p>
                 </div>
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
                     <div class="text-3xl mb-4">🧊</div>
                     <h3 class="font-bold mb-2">온보딩 방치 및&nbsp;소외감</h3>
-                    <p class="text-gray-500 leading-relaxed text-sm">체계적인 적응 가이드가 부족할&nbsp;때 조직에 대한 신뢰를 잃고 스스로를 이방인으로 여기게 됩니다.</p>
+                    <p class="text-gray-500 leading-relaxed text-sm">체계적인 적응 가이드가 부족할&nbsp;때 <br class="hidden md:block">조직에 대한 신뢰를 잃고 <br class="hidden md:block">스스로를 이방인으로 여기게 됩니다.</p>
                 </div>
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
                     <div class="text-3xl mb-4">📉</div>
                     <h3 class="font-bold mb-2">불확실한 피드백</h3>
-                    <p class="text-gray-500 leading-relaxed text-sm">자신의 업무 성과나 적응 상태를 확인할 길이 없을&nbsp;때 무력감을 느끼며 구직을 다시 시작합니다.</p>
+                    <p class="text-gray-500 leading-relaxed text-sm">자신의 업무 성과나 적응 상태를 <br class="hidden md:block">확인할 길이 없을&nbsp;때 무력감을 느끼며 <br class="hidden md:block">구직을 다시 시작합니다.</p>
                 </div>
             </div>
 
             <div class="bg-white rounded-3xl p-10 border border-gray-100 shadow-sm relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-8">
-                    <div class="flex gap-4 text-[10px] font-bold">
+                <div class="absolute top-0 right-0 p-8 nh-legend">
+                    <div class="flex gap-4 text-xs font-bold">
                         <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-brand-blue"></span> 심리적 안정감</div>
                         <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-red-400"></span> 이탈 위험도</div>
                     </div>
@@ -226,7 +231,7 @@ html { scroll-behavior: smooth; }
                 <div class="chart-container">
                     <canvas id="emotionChart" role="img" aria-label="꺾은선 차트. 항목 입사일, D+7, D+14, D+30, D+60, D+90. 계열 심리적 안정감, 이탈 위험도"></canvas>
                 </div>
-                <div class="mt-4 flex justify-between text-[10px] font-black text-gray-500">
+                <div class="mt-4 flex justify-between text-xs font-black text-gray-500">
                     <span>1주&nbsp;차: 불안기</span>
                     <span>1개월&nbsp;차: 자각 및&nbsp;회의기</span>
                     <span>3개월&nbsp;차: 결단기</span>
@@ -239,19 +244,18 @@ html { scroll-behavior: smooth; }
         <section id="gaming" class="scroll-mt-24 space-y-10">
             <div class="flex items-center gap-3">
                 <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
-                <h2 class="text-2xl md:text-3xl font-bold italic text-gray-800">2. 게임 라이브 운영 기법 벤치마킹</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">2. 게임 라이브 운영 기법 벤치마킹</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-gray-900 text-white p-10 rounded-3xl relative overflow-hidden group border-2 border-transparent hover:border-brand-blue transition-all">
                     <div class="text-4xl mb-6">🔔</div>
                     <h3 class="text-xl font-bold mb-4">단계별 튜토리얼 넛지</h3>
-                    <p class="text-base text-gray-400 leading-relaxed mb-8">
-                    신규 유저가 복잡한 기능을 한&nbsp;번에 배우지 않도록, 레벨에 맞춰 정보를 하나씩 해금하듯 시기별 필수 정보를 자동으로 전달합니다.
+                    <p class="text-sm text-gray-400 leading-relaxed mb-8">
+                    신규 유저가 복잡한 기능을 한&nbsp;번에 배우지 않도록, <br class="hidden md:block">레벨에 맞춰 정보를 하나씩 해금하듯 <br class="hidden md:block">시기별 필수 정보를 자동으로 전달합니다.
                 </p>
                     <div class="bg-white/10 p-5 rounded-2xl border border-white/20 text-xs">
-                        <span class="text-brand-blue-soft font-bold">적용:</span> 입사 5일&nbsp;차 적응 아티클, 30일&nbsp;차 교육 패스권처럼 <br class="hidden md:block">
-                    시기에 맞는 정보를 발송합니다.
+                        <span class="text-brand-blue-soft font-bold">적용:</span> 입사 5일&nbsp;차 적응 아티클, 30일&nbsp;차 교육 패스권처럼 <br class="hidden md:block">시기에 맞는 정보를 발송합니다.
                     </div>
                 </div>
                 <div class="bg-gray-900 text-white p-10 rounded-3xl relative overflow-hidden group border-2 border-transparent hover:border-yellow-400 transition-all">
@@ -261,8 +265,7 @@ html { scroll-behavior: smooth; }
                      현금성 보상이 없더라도 유저에게 '칭호'나 '배지'를 주어 성취감을 주듯, 합격자가 조직에 안착했음을 시각적으로 증명해줍니다.
                 </p>
                     <div class="bg-white/10 p-5 rounded-2xl border border-white/20 text-xs">
-                        <span class="text-yellow-400 font-bold">적용:</span> "첫&nbsp;주 완주 배지",<br>
-"1개월 안착 배지"를 플랫폼&nbsp;내 프로필에 자동 부여합니다.
+                        <span class="text-yellow-400 font-bold">적용:</span> "첫&nbsp;주 완주 배지", "1개월 안착 배지"를 <br class="hidden md:block">플랫폼&nbsp;내 프로필에 자동 부여합니다.
                     </div>
                 </div>
             </div>
@@ -272,7 +275,7 @@ html { scroll-behavior: smooth; }
         <section id="roadmap" class="scroll-mt-24 space-y-10">
             <div class="flex items-center gap-3">
                 <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
-                <h2 class="text-2xl md:text-3xl font-bold italic text-gray-800">3. 채용 플랫폼 맞춤형 자동화 CRM 운영 로드맵</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">3. 채용 플랫폼 맞춤형 자동화 CRM 운영 로드맵</h2>
             </div>
 
             <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
@@ -286,8 +289,8 @@ html { scroll-behavior: smooth; }
                     <div class="flex flex-col md:flex-row gap-16 items-center">
                         <div class="flex-1 space-y-6">
                             <h3 class="text-2xl font-bold text-gray-900">"첫&nbsp;주 완주 응원 및&nbsp;아티클 제안"</h3>
-                            <p class="text-gray-600 text-base leading-relaxed bal">
-                    가장 불안한 시기인 금요일 오후, 따뜻한 격려 메시지와 함께 채용 플랫폼만의 양질의 직무 아티클을 자동으로 발송합니다.
+                            <p class="text-gray-600 text-sm leading-relaxed bal">
+                    가장 불안한 시기인 금요일 오후, 따뜻한 격려 메시지와 함께 <br class="hidden md:block">채용 플랫폼만의 양질의 직무 아티클을 자동으로 발송합니다.
                 </p>
                             <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100">
                                 <p class="text-xs font-bold text-brand-blue mb-2">알림 내용:</p>
@@ -334,21 +337,21 @@ html { scroll-behavior: smooth; }
                         <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center text-2xl">📈</div>
                         <div>
                             <h3 class="font-bold text-lg">수수료 정산율 안정화</h3>
-                            <p class="text-xs text-white">조기 이탈 방어를 통해 수수료 환불 리스크를&nbsp;줄이고 안정적 매출을 보전합니다.</p>
+                            <p class="text-xs text-white">조기 이탈 방어를 통해 수수료 환불 리스크를&nbsp;줄이고 <br class="hidden md:block">안정적 매출을 보전합니다.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-5">
                         <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center text-2xl">🤝</div>
                         <div>
                             <h3 class="font-bold text-lg">고객사 만족도 향상</h3>
-                            <p class="text-xs text-white">"채용 플랫폼에서 뽑은 인재는 적응력이 좋다"는 평판을 쌓아 고객사 락인을 유도합니다.</p>
+                            <p class="text-xs text-white">"채용 플랫폼에서 뽑은 인재는 적응력이 좋다"는 <br class="hidden md:block">평판을 쌓아 고객사 락인을 유도합니다.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-5">
                         <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center text-2xl">🚀</div>
                         <div>
                             <h3 class="font-bold text-lg">플랫폼 생태계 활성화</h3>
-                            <p class="text-xs text-white">합격자를 콘텐츠 및&nbsp;교육 유저로 전환시켜 서비스&nbsp;간 선순환 구조를 구축합니다.</p>
+                            <p class="text-xs text-white">합격자를 콘텐츠 및&nbsp;교육 유저로 전환시켜 <br class="hidden md:block">서비스&nbsp;간 선순환 구조를 구축합니다.</p>
                         </div>
                     </div>
                 </div>
@@ -360,25 +363,25 @@ html { scroll-behavior: smooth; }
                 <div class="space-y-3">
                     <div class="action-item-card p-5 bg-gray-50 rounded-2xl border border-transparent">
                         <div class="flex items-center gap-4">
-                            <span class="step-num w-8 h-8 bg-brand-blue text-white text-[10px] font-black rounded-full flex items-center justify-center shrink-0 transition-colors">1</span>
+                            <span class="step-num w-8 h-8 bg-brand-blue text-white text-xs font-black rounded-full flex items-center justify-center shrink-0 transition-colors">1</span>
                             <p class="text-sm font-bold text-gray-800 transition-colors bal">데이터 연동: 합격자 '출근일' 기준 트리거 자동화 (개발팀)</p>
                         </div>
                     </div>
                     <div class="action-item-card p-5 bg-gray-50 rounded-2xl border border-transparent">
                         <div class="flex items-center gap-4">
-                            <span class="step-num w-8 h-8 bg-brand-blue text-white text-[10px] font-black rounded-full flex items-center justify-center shrink-0 transition-colors">2</span>
+                            <span class="step-num w-8 h-8 bg-brand-blue text-white text-xs font-black rounded-full flex items-center justify-center shrink-0 transition-colors">2</span>
                             <p class="text-sm font-bold text-gray-800 transition-colors bal">CRM 세팅: 알림톡 템플릿 및&nbsp;시나리오 구축 (마케팅팀)</p>
                         </div>
                     </div>
                     <div class="action-item-card p-5 bg-gray-50 rounded-2xl border border-transparent">
                         <div class="flex items-center gap-4">
-                            <span class="step-num w-8 h-8 bg-brand-blue text-white text-[10px] font-black rounded-full flex items-center justify-center shrink-0 transition-colors">3</span>
+                            <span class="step-num w-8 h-8 bg-brand-blue text-white text-xs font-black rounded-full flex items-center justify-center shrink-0 transition-colors">3</span>
                             <p class="text-sm font-bold text-gray-800 transition-colors bal">콘텐츠 큐레이션: 직군별 아티클 및&nbsp;교육 리스트업 (운영팀)</p>
                         </div>
                     </div>
                     <div class="action-item-card p-5 bg-gray-50 rounded-2xl border border-transparent">
                         <div class="flex items-center gap-4">
-                            <span class="step-num w-8 h-8 bg-brand-blue text-white text-[10px] font-black rounded-full flex items-center justify-center shrink-0 transition-colors">4</span>
+                            <span class="step-num w-8 h-8 bg-brand-blue text-white text-xs font-black rounded-full flex items-center justify-center shrink-0 transition-colors">4</span>
                             <p class="text-sm font-bold text-gray-800 transition-colors bal">지표 모니터링: 메시지 오픈율 및&nbsp;3개월 근속 코호트 분석</p>
                         </div>
                     </div>
@@ -389,7 +392,7 @@ html { scroll-behavior: smooth; }
         <section id="recalc" class="scroll-mt-24 space-y-8">
             <div class="flex items-center gap-3">
                 <div class="w-2 h-8 bg-brand-blue rounded-full"></div>
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">4. 개입 시점을 위기 구간에 맞춥니다</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">4. 개입 시점을 위기 구간에 맞춥니다.</h2>
             </div>
 
             <p class="text-gray-600 leading-relaxed max-w-[42em]">위기 구간 차트&#8288;(개념 곡선)&#8288;를 구간별 변화량으로 바꾸고 개입 시점을 같은&nbsp;줄에 놓았습니다.</p>
@@ -440,10 +443,10 @@ html { scroll-behavior: smooth; }
             </div>
 
             <div class="bg-white rounded-3xl border-2 border-gray-200 p-6 md:p-8">
-                <p class="text-lg md:text-xl font-black text-gray-900 mb-4 leading-snug bal max-w-[34em]">떨어진&nbsp;뒤 회복이 없는 구간은 <span class="text-brand-blue">D+60에서 D+90</span> 하나뿐입니다</p>
-                <p class="text-sm text-gray-600 leading-relaxed max-w-[46em] mb-5 bal-m">D+7의 55는 D+14에 75로, D+30의 45는 D+60에 60으로 <strong>스스로</strong> 올라옵니다. 그런데 개입 두&nbsp;번이 모두 그&nbsp;회복 구간 앞에 있고, 회복이 없는 마지막 구간은 비어 있습니다.</p>
+                <p class="text-lg md:text-xl font-black text-gray-900 mb-4 leading-snug bal max-w-[34em]">떨어진&nbsp;뒤 회복이 없는 구간은 <span class="text-brand-blue">D+60에서 D+90</span> 하나뿐입니다.</p>
+                <p class="text-sm text-gray-600 leading-relaxed max-w-[46em] mb-5 bal-m">D+7의 55는 D+14에 75로, D+30의 45는 D+60에 60으로 <strong>스스로</strong> 올라옵니다. <br class="hidden md:block">그런데 개입 두&nbsp;번이 모두 그&nbsp;회복 구간 앞에 있고, 회복이 없는 마지막 구간은 비어 있습니다.</p>
                 <div class="bg-blue-50 border-l-[6px] border-brand-blue rounded-r-2xl p-5">
-                    <p class="text-sm text-gray-700 leading-relaxed max-w-[42em] bal-m"><strong class="text-gray-900">D+75 전후에 한&nbsp;번을 더&nbsp;넣습니다.</strong> 자연 회복이 없는 구간이라 효과를 확인하기도 가장 쉽습니다. 지금 배치대로면 근속률이 올라가도 개입의 결과인지 원래의 적응 흐름인지 가릴&nbsp;수 없습니다.</p>
+                    <p class="text-sm text-gray-700 leading-relaxed max-w-[42em] bal-m"><strong class="text-gray-900">D+75 전후에 한&nbsp;번을 더&nbsp;넣습니다.</strong> <br class="hidden md:block">자연 회복이 없는 구간이라 효과를 확인하기도 가장 쉽습니다. <br class="hidden md:block">지금 배치대로면 근속률이 올라가도 개입의 결과인지 원래의 적응 흐름인지 가릴&nbsp;수 없습니다.</p>
                 </div>
             </div>
         </section>
@@ -457,24 +460,24 @@ html { scroll-behavior: smooth; }
 
             <div class="grid md:grid-cols-3 gap-5">
                 <div class="bg-white rounded-3xl border-2 border-brand-blue/30 p-6 shadow-sm">
-                    <p class="text-[10px] font-black tracking-wide text-brand-blue mb-3">직무 기대 불일치</p>
-                    <p class="font-black text-gray-900 mb-3 bal">플랫폼만 할&nbsp;수 있는&nbsp;일입니다</p>
-                    <p class="text-sm text-gray-600 leading-relaxed bal">공고를 올린 고객사와 입사한 사람 <strong>양쪽을 아는 유일한 자리</strong>입니다. 실제 업무가 공고와 얼마나 달랐는지를 물어 공고 품질로 되돌리면 다음 채용의 어긋남이 줄어듭니다.</p>
+                    <p class="text-xs font-black tracking-wide text-brand-blue mb-3">직무 기대 불일치</p>
+                    <p class="font-black text-gray-900 mb-3 bal">플랫폼만 할&nbsp;수 있는&nbsp;일입니다.</p>
+                    <p class="text-sm text-gray-600 leading-relaxed bal">공고를 올린 고객사와 입사한 사람 <br class="hidden md:block"><strong>양쪽을 아는 유일한 자리</strong>입니다. <br class="hidden md:block">실제 업무가 공고와 얼마나 달랐는지를 물어 공고 품질로 되돌리면 다음 채용의 어긋남이 줄어듭니다.</p>
                 </div>
                 <div class="bg-white rounded-3xl border border-gray-200 p-6 shadow-sm">
-                    <p class="text-[10px] font-black tracking-wide text-gray-500 mb-3">온보딩 방치와 소외감</p>
-                    <p class="font-black text-gray-900 mb-3 bal">개인의 대처까지 돕습니다</p>
-                    <p class="text-sm text-gray-600 leading-relaxed bal">질문하는 법을 다룬 아티클은 합격자 본인이 바꿀&nbsp;수 있는 부분을 겨냥합니다. 온보딩 체계 자체는 고객사가 운영하므로 여기까지가 플랫폼의 몫입니다.</p>
+                    <p class="text-xs font-black tracking-wide text-gray-500 mb-3">온보딩 방치와 소외감</p>
+                    <p class="font-black text-gray-900 mb-3 bal">개인의 대처까지 돕습니다.</p>
+                    <p class="text-sm text-gray-600 leading-relaxed bal">질문하는 법을 다룬 아티클은 합격자 본인이 바꿀&nbsp;수 있는 부분을 겨냥합니다. <br class="hidden md:block">온보딩 체계 자체는 고객사가 운영하므로 여기까지가 플랫폼의 몫입니다.</p>
                 </div>
                 <div class="bg-white rounded-3xl border border-gray-200 p-6 shadow-sm">
-                    <p class="text-[10px] font-black tracking-wide text-gray-500 mb-3">불확실한 피드백</p>
-                    <p class="font-black text-gray-900 mb-3 bal">범위 밖으로 둡니다</p>
-                    <p class="text-sm text-gray-600 leading-relaxed bal">업무 성과 피드백은 고객사 조직 안에서 이뤄집니다. 외부 플랫폼이 개입할 권한이 없어, 다루지 않는&nbsp;것을 <strong class="text-gray-900">범위로 못박았습니다</strong>.</p>
+                    <p class="text-xs font-black tracking-wide text-gray-500 mb-3">불확실한 피드백</p>
+                    <p class="font-black text-gray-900 mb-3 bal">범위 밖으로 둡니다.</p>
+                    <p class="text-sm text-gray-600 leading-relaxed bal">업무 성과 피드백은 고객사 조직 안에서 이뤄집니다. 외부 플랫폼이 개입할 권한이 없어, 다루지 않는&nbsp;것을 <strong class="text-gray-900">범위로 못 박았습니다</strong>.</p>
                 </div>
             </div>
 
             <div class="bg-gray-50 rounded-3xl p-6">
-                <p class="text-sm text-gray-600 leading-relaxed max-w-[46em]">심리적 안정감은 플랫폼이 잴&nbsp;수 없어 사람마다 시점을 달리할&nbsp;수 없습니다. 가진 데이터로 할&nbsp;수 있는 방식은 <strong>시점 기준 일괄 발송</strong>뿐입니다. 그래서 잘&nbsp;적응한 사람에게도 같은 메시지가 갑니다.</p>
+                <p class="text-sm text-gray-600 leading-relaxed max-w-[46em]">심리적 안정감은 플랫폼이 잴&nbsp;수 없어 사람마다 시점을 달리할&nbsp;수 없습니다. <br class="hidden md:block">가진 데이터로 할&nbsp;수 있는 방식은 <strong>시점 기준 일괄 발송</strong>뿐입니다. <br class="hidden md:block">그래서 잘&nbsp;적응한 사람에게도 같은 메시지가 갑니다.</p>
             </div>
         </section>
 
@@ -488,30 +491,30 @@ html { scroll-behavior: smooth; }
 
             <div class="grid md:grid-cols-3 gap-5">
                 <div class="bg-white rounded-3xl border border-gray-200 p-6 shadow-sm">
-                    <p class="text-[10px] font-black tracking-wide text-gray-500 mb-3">알림 메시지</p>
-                    <p class="text-sm text-gray-600 leading-relaxed bal mb-3">입사한 사람은 구직 앱&nbsp;알림을 끄려는 시점입니다. 이때&nbsp;말을 걸면 응원으로도, 이직 권유로도 읽힙니다.</p>
-                    <p class="text-xs font-bold text-brand-blue bal">→ 이직 관련 문구를 하나도 넣지 않습니다</p>
+                    <p class="text-xs font-black tracking-wide text-gray-500 mb-3">알림 메시지</p>
+                    <p class="text-sm text-gray-600 leading-relaxed bal mb-3">입사한 사람은 구직 앱&nbsp;알림을 끄려는 시점입니다. <br class="hidden md:block">이때&nbsp;말을 걸면 응원으로도, <br class="hidden md:block">이직 권유로도 읽힙니다.</p>
+                    <p class="text-xs font-bold text-brand-blue bal">→ 이직 관련 문구를 하나도 넣지 않습니다.</p>
                 </div>
                 <div class="bg-white rounded-3xl border border-gray-200 p-6 shadow-sm">
-                    <p class="text-[10px] font-black tracking-wide text-gray-500 mb-3">유료 패스권</p>
-                    <p class="text-sm text-gray-600 leading-relaxed bal mb-3">구직 기능이 섞여 있으면 근속을 돕겠다며 이직 도구를 주는 모양이 됩니다.</p>
-                    <p class="text-xs font-bold text-brand-blue bal">→ 지급 범위를 학습 콘텐츠로 한정합니다</p>
+                    <p class="text-xs font-black tracking-wide text-gray-500 mb-3">유료 패스권</p>
+                    <p class="text-sm text-gray-600 leading-relaxed bal mb-3">구직 기능이 섞여 있으면 근속을 돕겠다며 <br class="hidden md:block">이직 도구를 주는 모양이 됩니다.</p>
+                    <p class="text-xs font-bold text-brand-blue bal">→ 지급 범위를 학습 콘텐츠로 한정합니다.</p>
                 </div>
                 <div class="bg-white rounded-3xl border border-gray-200 p-6 shadow-sm">
-                    <p class="text-[10px] font-black tracking-wide text-gray-500 mb-3">프로필 배지</p>
-                    <p class="text-sm text-gray-600 leading-relaxed bal mb-3">배지가 붙는&nbsp;곳은 구직 프로필입니다. 공개되면 재직 사실과 근속 기간이 함께 노출됩니다.</p>
-                    <p class="text-xs font-bold text-brand-blue bal">→ 본인 열람을 기본값으로 둡니다</p>
+                    <p class="text-xs font-black tracking-wide text-gray-500 mb-3">프로필 배지</p>
+                    <p class="text-sm text-gray-600 leading-relaxed bal mb-3">배지가 붙는&nbsp;곳은 구직 프로필입니다. <br class="hidden md:block">공개되면 재직 사실과 <br class="hidden md:block">근속 기간이 함께 노출됩니다.</p>
+                    <p class="text-xs font-bold text-brand-blue bal">→ 본인 열람을 기본값으로 둡니다.</p>
                 </div>
             </div>
 
             <div class="grid md:grid-cols-2 gap-5">
                 <div class="bg-gray-50 rounded-3xl p-6">
                     <p class="font-black text-gray-900 mb-3 bal">새&nbsp;시스템 없이도 드는 비용</p>
-                    <p class="text-sm text-gray-600 leading-relaxed bal">새&nbsp;시스템을 사지는 않습니다. 다만 패스권을 무료로 주면 <strong>유료로 살&nbsp;사람의 수요를 미리 써&nbsp;버리고</strong>, 알림에는 건당 비용이 붙습니다. 조기 퇴사 한&nbsp;건의 환불액과 나란히 놓으면 규모가 보입니다.</p>
+                    <p class="text-sm text-gray-600 leading-relaxed bal">새&nbsp;시스템을 사지는 않습니다. <br class="hidden md:block">다만 패스권을 무료로 주면 <strong>유료로 살&nbsp;사람의 수요를 미리 써&nbsp;버리고</strong>, <br class="hidden md:block">알림에는 건당 비용이 붙습니다. <br class="hidden md:block">조기 퇴사 한&nbsp;건의 환불액과 나란히 놓으면 규모가 보입니다.</p>
                 </div>
                 <div class="bg-gray-50 rounded-3xl p-6">
-                    <p class="font-black text-gray-900 mb-3 bal">고객사에게는 자기 직원에게 온&nbsp;외부 연락입니다</p>
-                    <p class="text-sm text-gray-600 leading-relaxed bal">고객사가 모르는 채로 합격자에게 연락이 가면 <strong>반대 방향의 반응</strong>이&nbsp;나옵니다. 미리 알리고 발송 내용을 공유하면 같은 활동이 고객사와 함께 하는 온보딩 지원이 됩니다.</p>
+                    <p class="font-black text-gray-900 mb-3 bal">고객사에게는 자기 직원에게 온&nbsp;외부 연락입니다.</p>
+                    <p class="text-sm text-gray-600 leading-relaxed bal">고객사가 모르는 채로 합격자에게 연락이 가면 <strong>반대 방향의 반응</strong>이&nbsp;나옵니다. 미리 알리고 발송 내용을 공유하면 같은 활동이 <br class="hidden md:block">고객사와 함께 하는 온보딩 지원이 됩니다.</p>
                 </div>
             </div>
         </section>
@@ -525,7 +528,7 @@ html { scroll-behavior: smooth; }
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
                     <p class="text-xs font-bold text-gray-500 mb-3">플랫폼이 원하는&nbsp;것</p>
-                    <p class="text-base text-gray-600 leading-relaxed">
+                    <p class="text-sm text-gray-600 leading-relaxed">
                     <strong class="text-gray-900">3개월 근속</strong>입니다. <br class="hidden md:block">
                     이&nbsp;선을 넘기면 수수료가 확정됩니다.
                 </p>
@@ -540,11 +543,11 @@ html { scroll-behavior: smooth; }
             </div>
 
             <div class="bg-gray-900 text-white p-10 rounded-3xl space-y-6">
-                <p class="text-sm font-bold text-brand-blue">3개월 근속률만 재면 평판 효과를 주장할&nbsp;수 없습니다</p>
+                <p class="text-sm font-bold text-brand-blue">3개월 근속률만 재면 평판 효과를 주장할&nbsp;수 없습니다.</p>
                 <p class="text-gray-300 leading-relaxed max-w-[46em] bal">
-                    노리는&nbsp;것은 <strong>이&nbsp;플랫폼에서 뽑은 인재는 적응이 빠르다</strong>는 평판입니다. 그&nbsp;평판은 고객사가 만들고, 고객사가 보는 기준은 3개월이 아닙니다.
+                    노리는&nbsp;것은 <strong>이&nbsp;플랫폼에서 뽑은 인재는 적응이 빠르다</strong>는 평판입니다. <br class="hidden md:block">그&nbsp;평판은 고객사가 만들고, 고객사가 보는 기준은 3개월이 아닙니다.
                 </p>
-                <p class="text-gray-300 leading-relaxed max-w-[46em] bal">6개월과 12개월 근속률을 같은 집단으로 이어 보면 그&nbsp;평판에 근거가 생깁니다. <strong>3개월을 넘긴&nbsp;뒤의 이직은 플랫폼에 손실이 아니라 다음 거래</strong>라서, 지표를 3개월에서 끊으면 의심을 삽니다. 장기 근속률을 스스로 넣는&nbsp;것이 그&nbsp;의심을 먼저 막습니다.</p>
+                <p class="text-gray-300 leading-relaxed max-w-[46em] bal">6개월과 12개월 근속률을 같은 집단으로 이어 보면 그&nbsp;평판에 근거가 생깁니다. <br class="hidden md:block"><strong>3개월을 넘긴&nbsp;뒤의 이직은 플랫폼에 손실이 아니라 다음 거래</strong>라서, 지표를 3개월에서 끊으면 의심을 삽니다. <br class="hidden md:block">장기 근속률을 스스로 넣는&nbsp;것이 그&nbsp;의심을 먼저 막습니다.</p>
             </div>
         </section>
 
@@ -558,47 +561,47 @@ html { scroll-behavior: smooth; }
                 <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
                     <span class="w-8 h-8 bg-brand-blue text-white text-xs font-black rounded-full flex items-center justify-center shrink-0">1</span>
                     <div>
-                        <p class="font-bold text-gray-800 mb-1">실제 출근일을 확보할&nbsp;수 있는지 먼저 확인합니다</p>
-                        <p class="text-base text-gray-500 leading-relaxed max-w-[46em] bal-t">
-                    모든 발송이 <strong>출근일</strong>을 기준으로 돕니다. 그런데 입사일 확정과 연기, 포기는 고객사와 합격자 사이에서 정해집니다. 플랫폼이 그&nbsp;날짜를 언제 어떤 경로로 받는지가 정해지지 않으면 첫&nbsp;발송조차 할&nbsp;수 없습니다.
+                        <p class="font-bold text-gray-800 mb-1">실제 출근일을 확보할&nbsp;수 있는지 먼저 확인합니다.</p>
+                        <p class="text-sm text-gray-500 leading-relaxed max-w-[46em] bal-t">
+                    모든 발송이 <strong>출근일</strong>을 기준으로 돕니다. <br class="hidden md:block">그런데 입사일 확정과 연기, 포기는 고객사와 합격자 사이에서 정해집니다. <br class="hidden md:block">플랫폼이 그&nbsp;날짜를 언제 어떤 경로로 받는지가 정해지지 않으면 첫&nbsp;발송조차 할&nbsp;수 없습니다.
                 </p>
                     </div>
                 </div>
                 <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
                     <span class="w-8 h-8 bg-brand-blue text-white text-xs font-black rounded-full flex items-center justify-center shrink-0">2</span>
                     <div>
-                        <p class="font-bold text-gray-800 mb-1">D+75 전후 개입을 하나 더&nbsp;넣습니다</p>
-                        <p class="text-xs text-gray-500 leading-relaxed max-w-[46em]">
+                        <p class="font-bold text-gray-800 mb-1">D+75 전후 개입을 하나 더&nbsp;넣습니다.</p>
+                        <p class="text-sm text-gray-500 leading-relaxed max-w-[46em]">
                     위험도 상승 폭이 가장 큰&nbsp;구간이고 수수료가 확정되기 직전입니다. <br class="hidden md:block">
                     앞의 두&nbsp;개입과 달리 자연 회복이 없는 구간이므로 효과를 확인하기도 가장 쉽습니다.
                 </p>
                     </div>
                 </div>
                 <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
-                    <span class="w-8 h-8 bg-gray-300 text-gray-700 text-xs font-black rounded-full flex items-center justify-center shrink-0">3</span>
+                    <span class="w-8 h-8 bg-brand-blue text-white text-xs font-black rounded-full flex items-center justify-center shrink-0">3</span>
                     <div>
-                        <p class="font-bold text-gray-800 mb-1">패스권 지급 범위와 배지 공개 범위를 정합니다</p>
-                        <p class="text-xs text-gray-500 leading-relaxed max-w-[46em]">
+                        <p class="font-bold text-gray-800 mb-1">패스권 지급 범위와 배지 공개 범위를 정합니다.</p>
+                        <p class="text-sm text-gray-500 leading-relaxed max-w-[46em]">
                     패스권은 학습 콘텐츠로 한정하고, 배지는 본인 열람을 기본값으로 둡니다. <br class="hidden md:block">
                     둘&nbsp;다&nbsp;개발 없이 정책으로 정할&nbsp;수 있는 항목입니다.
                 </p>
                     </div>
                 </div>
                 <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
-                    <span class="w-8 h-8 bg-gray-300 text-gray-700 text-xs font-black rounded-full flex items-center justify-center shrink-0">4</span>
+                    <span class="w-8 h-8 bg-brand-blue text-white text-xs font-black rounded-full flex items-center justify-center shrink-0">4</span>
                     <div>
-                        <p class="font-bold text-gray-800 mb-1">개입군과 비개입군을 나눠 시작합니다</p>
-                        <p class="text-xs text-gray-500 leading-relaxed max-w-[46em]">
+                        <p class="font-bold text-gray-800 mb-1">개입군과 비개입군을 나눠 시작합니다.</p>
+                        <p class="text-sm text-gray-500 leading-relaxed max-w-[46em]">
                     전체에 한꺼번에 적용하면 근속률 변화가 개입 때문인지 알&nbsp;수 없습니다. <br class="hidden md:block">
                     직군이나 입사 시기로 구간을 나눠 일부에만 먼저 적용하면 비교 대상이 생깁니다.
                 </p>
                     </div>
                 </div>
                 <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-4">
-                    <span class="w-8 h-8 bg-gray-300 text-gray-700 text-xs font-black rounded-full flex items-center justify-center shrink-0">5</span>
+                    <span class="w-8 h-8 bg-brand-blue text-white text-xs font-black rounded-full flex items-center justify-center shrink-0">5</span>
                     <div>
-                        <p class="font-bold text-gray-800 mb-1">공고와 실제 업무의 차이를 수집하는 문항을 넣습니다</p>
-                        <p class="text-xs text-gray-500 leading-relaxed max-w-[46em]">
+                        <p class="font-bold text-gray-800 mb-1">공고와 실제 업무의 차이를 수집하는 문항을 넣습니다.</p>
+                        <p class="text-sm text-gray-500 leading-relaxed max-w-[46em]">
                     직무 기대치 불일치는 세&nbsp;원인&nbsp;중 플랫폼만 다룰&nbsp;수 있는 항목입니다. <br class="hidden md:block">
                     D+30 메시지에 짧은 문항 하나를 붙이는&nbsp;것으로 시작할&nbsp;수 있습니다.
                 </p>

@@ -104,6 +104,9 @@
 #partnership,#metrics-limits{padding-bottom:0}
 #outro{padding-top:3rem}
 </style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="text-slate-800 antialiased keep-all">
 
@@ -129,45 +132,45 @@
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-              <p class="text-[11px] font-black tracking-[0.12em] text-amber-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
-              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">현장 운영 시나리오와 돌발 상황 대처법까지 담은 팝업 캠페인안입니다. 블레이드&amp;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 개인 기획안이며, 아래 전환율은 모두 가설값입니다.</p>
+              <p class="text-xs font-black tracking-[0.12em] text-amber-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
+              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">현장 운영 시나리오와 돌발 상황 대처법까지 담은 팝업 캠페인안입니다. <br class="hidden md:block">블레이드&#8288;&amp;&#8288;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 개인 기획안이며, <br class="hidden md:block">아래 전환율은 모두 가설값입니다.</p>
             </div>
             <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">초대 → 미션 달성</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">초대 → 미션 달성</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">30.0%</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">10만&nbsp;명&nbsp;중 3만&nbsp;명</p>
+                <p class="text-xs text-slate-500 mt-1 bal">10만&nbsp;명&nbsp;중&nbsp;3만&nbsp;명</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">미션 달성 → 현장 방문</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">미션 달성 → 현장 방문</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">26.7%</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">2만 2천&nbsp;명이 여기서 빠집니다</p>
+                <p class="text-xs text-slate-500 mt-1 bal">2만 2천&nbsp;명이 여기서 빠집니다.</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">현장 방문 → 게임 복귀</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">현장 방문 → 게임 복귀</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">75.0%</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">온&nbsp;사람은 대부분 돌아옵니다</p>
+                <p class="text-xs text-slate-500 mt-1 bal">온&nbsp;사람은 대부분 돌아옵니다.</p>
               </div>
             </div>
             <div class="px-6 md:px-9 py-6 md:py-7">
-              <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">개선할 지점</p>
+              <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">개선할 지점</p>
               <div class="grid md:grid-cols-3 gap-3">
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">가장 많이 새는&nbsp;곳은 중간</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">티켓은 받았는데 현장에 못&nbsp;온 2만 2천&nbsp;명이 가장 큰&nbsp;덩어리입니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">티켓은 받았는데 현장에 못&nbsp;온 <br class="hidden md:block">2만 2천&nbsp;명이 가장 큰&nbsp;덩어리입니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">그&nbsp;2만 2천&nbsp;명을 되찾는다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">오지 못한 사람에게 게임 안에서 주사위를 굴릴 기회를 줍니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">그&nbsp;2만 2천&nbsp;명을 되찾는다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">오지 못한 사람에게 게임 안에서 <br class="hidden md:block">주사위를 굴릴 기회를 줍니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">오지 못한 이유부터 갈라 봅니다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">지역 제약인지 관심이 없어서인지에 따라 다음에&nbsp;둘&nbsp;수가 달라집니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">오지 못한 이유부터 갈라 봅니다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">지역 제약인지 관심이 없어서인지에 따라 다음에&nbsp;둘&nbsp;수가 달라집니다.</p>
                 </div>
               </div>
             </div>
             <div class="px-6 md:px-9 py-4 bg-slate-50 border-t border-slate-200">
-              <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">게임 속 주사위를 실물로 옮긴 오프라인 팝업 행사입니다. 대형 주사위를 굴려 입장하고, 미니게임으로 코인을 모아 굿즈로 바꿉니다.</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">게임 속 주사위를 실물로 옮긴 오프라인 팝업 행사입니다. <br class="hidden md:block">대형 주사위를 굴려 입장하고, 미니게임으로 코인을 모아 굿즈로 바꿉니다.</p>
             </div>
           </div>
         </section>
@@ -186,7 +189,7 @@
                 <div class="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-xl mb-5">🎯</div>
                 <h2 class="text-xl font-bold mb-3">정확한 실행력 및&nbsp;유저 소통</h2>
                 <p class="text-slate-500 text-sm relaxed-text">
-                 기획부터 참여 데이터 확인, 보상 지급까지 정해진 절차대로 처리합니다.
+                 기획부터 참여 데이터 확인, 보상 지급까지 <br class="hidden md:block">정해진 절차대로 처리합니다.
             </p>
             </div>
         </section>
@@ -196,7 +199,7 @@
             <div class="bg-white rounded-3xl border border-slate-200 p-8 md:p-10 text-left">
                 <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-5">캠페인 목적과 지표</h2>
                 <p class="text-slate-600 leading-relaxed mb-4 max-w-[46em]" style="text-wrap:balance">
-                    굿즈를 파는 자리가 아니라 <strong>휴면 유저를 부르고 팬덤을 묶는</strong> 자리입니다. 그래서 성과는 방문자&nbsp;수가 아니라 방문&nbsp;뒤 인게임 복귀 인원으로 잽니다. 다만 아래 퍼널은 최근 접속 유저에게 초대를 보내는 가설이라, 휴면 유저 쪽은 뒤에서 따로&nbsp;나눕니다.
+                    굿즈를 파는 자리가 아니라 <strong>휴면 유저를 부르고 팬덤을 묶는</strong> 자리입니다. <br class="hidden md:block">그래서 성과는 방문자&nbsp;수가 아니라 방문&nbsp;뒤 인게임 복귀 인원으로 잽니다. <br class="hidden md:block">다만 아래 퍼널은 최근 접속 유저에게 초대를 보내는 가설이라, 휴면 유저 쪽은 뒤에서 따로&nbsp;나눕니다.
                 </p>
             </div>
         </section>
@@ -226,7 +229,7 @@
                     <div class="w-12 h-12 bg-slate-50 group-hover:bg-blue-50 group-hover:text-blue-600 rounded-2xl flex items-center justify-center text-xl mb-5 font-bold text-slate-500 transition-colors">1</div>
                     <h5 class="text-lg font-bold mb-3 text-slate-800">확률의 문 (입장 구역)</h5>
                     <p class="text-slate-500 relaxed-text text-xs leading-[1.8]">
-                    성인 키만 한&nbsp;대형 실물 주사위를 직접 굴려 입장합니다. <br class="hidden md:block">
+                    성인 키만 한&nbsp;대형 실물 주사위를 <br class="hidden md:block">직접 굴려 입장합니다. <br class="hidden md:block">
                     나온 숫자에 따라 6가지의 다른 입장 코스와 환영 선물이 즉석에서 결정됩니다.
                 </p>
                 </div>
@@ -235,7 +238,7 @@
                     <div class="w-12 h-12 bg-slate-50 group-hover:bg-blue-50 group-hover:text-blue-600 rounded-2xl flex items-center justify-center text-xl mb-5 font-bold text-slate-500 transition-colors">2</div>
                     <h5 class="text-lg font-bold mb-3 text-slate-800">전략의 방 (미니게임)</h5>
                     <p class="text-slate-500 relaxed-text text-xs leading-[1.8]">
-                    다트, 핀볼&nbsp;등 가벼운 미니게임에 참여하여 현장 코인을 획득합니다. <br class="hidden md:block">
+                    다트, 핀볼&nbsp;등 가벼운 미니게임에 <br class="hidden md:block">참여하여 현장 코인을 획득합니다. <br class="hidden md:block">
                     게임의 난이도를 유저가 직접 선택하여 하이리스크 하이리턴을 노릴&nbsp;수 있습니다.
                 </p>
                 </div>
@@ -260,22 +263,22 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="bg-white p-5 rounded-2xl shadow-sm text-center border border-slate-100 hover:-translate-y-1 transition-transform">
                     <span class="block text-2xl mb-2">📱</span>
-                    <span class="text-[10px] text-slate-500 font-bold block mb-1">1단계</span>
+                    <span class="text-xs text-slate-500 font-bold block mb-1">1단계</span>
                     <h5 class="font-bold text-sm text-slate-800">게임&nbsp;내 초대장</h5>
                 </div>
                 <div class="bg-white p-5 rounded-2xl shadow-sm text-center border border-slate-100 hover:-translate-y-1 transition-transform delay-75">
                     <span class="block text-2xl mb-2">🎟️</span>
-                    <span class="text-[10px] text-slate-500 font-bold block mb-1">2단계</span>
-                    <h5 class="font-bold text-sm text-slate-800">현장 입장 확인</h5>
+                    <span class="text-xs text-slate-500 font-bold block mb-1">2단계</span>
+                    <h5 class="font-bold text-sm text-slate-800">미션 달성&#8288;·티켓 획득</h5>
                 </div>
                 <div class="bg-white p-5 rounded-2xl shadow-sm text-center border border-slate-100 hover:-translate-y-1 transition-transform delay-150">
                     <span class="block text-2xl mb-2">🎯</span>
-                    <span class="text-[10px] text-slate-500 font-bold block mb-1">3단계</span>
-                    <h5 class="font-bold text-sm text-slate-800">현장 미니게임</h5>
+                    <span class="text-xs text-slate-500 font-bold block mb-1">3단계</span>
+                    <h5 class="font-bold text-sm text-slate-800">현장 방문&#8288;·미니게임</h5>
                 </div>
                 <div class="bg-blue-50 p-5 rounded-2xl shadow-sm text-center border border-blue-200 hover:-translate-y-1 transition-transform delay-200">
                     <span class="block text-2xl mb-2">🎁</span>
-                    <span class="text-[10px] text-blue-700 font-bold block mb-1">4단계</span>
+                    <span class="text-xs text-blue-700 font-bold block mb-1">4단계</span>
                     <h5 class="font-bold text-sm text-blue-800">게임 보상 획득</h5>
                 </div>
             </div>
@@ -375,7 +378,7 @@
                                 <span class="inline-flex items-center text-xs font-bold text-white bg-blue-500 px-3 py-1 rounded-full mb-3">현장 조치</span>
                                 <p class="text-slate-700 text-sm leading-relaxed">
                     준비해둔 '예약 주문 배너'로 즉시 교체합니다. <br class="hidden md:block">
-                    현장 예약자에게는 배송비 무료 혜택과 인게임&nbsp;위로 보상 쿠폰을 선지급하여 헛걸음에 대한 불만을 차단합니다.
+                    현장 예약자에게는 배송비 무료 혜택과 인게임 위로 보상 쿠폰을 선지급하여 헛걸음에 대한 불만을 차단합니다.
                 </p>
                             </div>
                             <div class="bg-slate-50 p-6 rounded-2xl">
@@ -394,8 +397,8 @@
                             <div class="bg-slate-50 p-6 rounded-2xl">
                                 <span class="inline-flex items-center text-xs font-bold text-white bg-blue-500 px-3 py-1 rounded-full mb-3">현장 조치</span>
                                 <p class="text-slate-700 text-sm leading-relaxed">
-                    흐름이 끊기지 않도록 예비용 '대형 실물 주사위 보드판'을 즉시 투입합니다. <br class="hidden md:block">
-                    MC가 '긴급 특별 룰'을 선언하여 현장 진행을 바로 전환합니다.
+                    흐름이 끊기지 않도록 예비용 <br class="hidden md:block">'대형 실물 주사위 보드판'을 즉시 투입합니다. <br class="hidden md:block">
+                    MC가 '긴급 특별 룰'을 선언하여 <br class="hidden md:block">현장 진행을 바로 전환합니다.
                 </p>
                             </div>
                             <div class="bg-slate-50 p-6 rounded-2xl">
@@ -428,16 +431,15 @@
                 <div class="md:w-2/3 space-y-5">
                     <div class="bg-slate-800/50 p-5 rounded-2xl border border-slate-700 hover:bg-slate-800 transition-colors">
                         <h5 class="text-sm font-bold text-yellow-400 mb-1">📍 주변 상권 인파 유입</h5>
-                        <p class="text-slate-300 text-xs leading-relaxed">인지도 높은 외식 브랜드의 파워를 활용해, 주변 상권의 일반 대중도 호기심에 방문하도록 유도합니다.</p>
+                        <p class="text-slate-300 text-xs leading-relaxed">인지도 높은 외식 브랜드의 파워를 활용해, <br class="hidden md:block">주변 상권의 일반 대중도 호기심에 방문하도록 유도합니다.</p>
                     </div>
                     <div class="bg-slate-800/50 p-5 rounded-2xl border border-slate-700 hover:bg-slate-800 transition-colors">
                         <h5 class="text-sm font-bold text-yellow-400 mb-1">🎁 주사위 랜덤 버거 박스</h5>
-                        <p class="text-slate-300 text-xs leading-relaxed">패키지를 주사위 모양으로 제작하고,<br>
-박스 안에 무료 교환권이나 게임 보상을 무작위로 넣어 재미를 더합니다.</p>
+                        <p class="text-slate-300 text-xs leading-relaxed">패키지를 주사위 모양으로 제작하고, 박스 안에 무료 교환권이나 <br class="hidden md:block">게임 보상을 무작위로 넣어 재미를 더합니다.</p>
                     </div>
                     <div class="bg-slate-800/50 p-5 rounded-2xl border border-slate-700 hover:bg-slate-800 transition-colors">
                         <h5 class="text-sm font-bold text-yellow-400 mb-1">🔋 체력&#8288;(SP) 충전소 콘셉트</h5>
-                        <p class="text-slate-300 text-xs leading-relaxed bal">현장 식음료 공간을 게임 속 '체력 충전소' 개념으로 꾸며 유저의 몰입감을 높이고 체류 시간을 연장합니다.</p>
+                        <p class="text-slate-300 text-xs leading-relaxed bal">현장 식음료 공간을 게임 속 '체력 충전소' 개념으로 꾸며 <br class="hidden md:block">유저의 몰입감을 높이고 체류 시간을 연장합니다.</p>
                     </div>
                 </div>
             </div>
@@ -511,14 +513,14 @@
             </div>
 
             <div class="bg-rose-50 border-2 border-rose-300 rounded-2xl p-8">
-                <p class="text-sm font-black text-rose-700 mb-4">손실 규모와 손실 가치는 다릅니다</p>
+                <p class="text-sm font-black text-rose-700 mb-4">손실 규모와 손실 가치는 다릅니다.</p>
                 <p class="text-slate-700 leading-relaxed mb-5 max-w-[46em]">
                     인원으로는 첫&nbsp;구간에서 <strong class="text-slate-900">7만&nbsp;명</strong>이&nbsp;빠져 가장 큽니다. <br class="hidden md:block">
                     그런데 이들은 초대만 받은 상태라 <strong class="text-slate-900">참여 의지가 확인되지 않은 유저</strong>입니다. <br class="hidden md:block">
                     발송 비용도 낮습니다.
                 </p>
                 <p class="text-slate-700 leading-relaxed max-w-[46em]">
-                    두&nbsp;번째 구간의 22,000명은 다릅니다. <strong>이미 미션을 마치고 티켓까지 챙긴 유저</strong>입니다. 못&nbsp;오는 이유는 흥미보다 거리와 일정일 가능성이 큽니다. 이&nbsp;가설이 맞다면 의지가 있는데 구조 때문에 못&nbsp;오는 손실이라 여기가 가장 아깝습니다. 실제 이유는 티켓 보유자의 지역 분포로 먼저 확인합니다.
+                    두&nbsp;번째 구간의 22,000명은 다릅니다. <br class="hidden md:block"><strong>이미 미션을 마치고 티켓까지 챙긴 유저</strong>입니다. <br class="hidden md:block">못&nbsp;오는 이유는 흥미보다 거리와 일정일 가능성이 큽니다. <br class="hidden md:block">이&nbsp;가설이 맞다면 의지가 있는데 구조 때문에 못&nbsp;오는 손실이라 여기가 가장 아깝습니다. <br class="hidden md:block">실제 이유는 티켓 보유자의 지역 분포로 먼저 확인합니다.
                 </p>
             </div>
 
@@ -528,13 +530,13 @@
                     <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
                         <p class="text-xs font-black text-slate-800 mb-2">온라인 연계 참여</p>
                         <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                    티켓은 챙겼는데 못&nbsp;온&nbsp;유저에게 <strong>인게임에서 주사위를 굴릴 기회</strong>를 줍니다. 현장보다 낮은 등급이면 방문 동기는 그대로이고, 티켓이 헛되지 않았다는 경험이 남습니다.
+                    티켓은 챙겼는데 못&nbsp;온&nbsp;유저에게 <strong>인게임에서 주사위를 굴릴 기회</strong>를 줍니다. <br class="hidden md:block">현장보다 낮은 등급이면 방문 동기는 그대로이고, 티켓이 헛되지 않았다는 경험이 남습니다.
                 </p>
                     </div>
                     <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
                         <p class="text-xs font-black text-slate-800 mb-2">티켓 양도 허용</p>
                         <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
-                     방문이 불가능한 유저가 <strong class="text-slate-800">친구에게 티켓을 넘길&nbsp;수 있게</strong> 하면 현장 방문&nbsp;수는 유지되고 신규 유입 경로가 생깁니다. 양도자에게도 소량 보상을 주면 참여가 마무리됩니다.
+                     방문이 불가능한 유저가 <strong class="text-slate-800">친구에게 티켓을 넘길&nbsp;수 있게</strong> 하면 현장 방문&nbsp;수는 유지되고 신규 유입 경로가 생깁니다. <br class="hidden md:block">양도자에게도 소량 보상을 주면 참여가 마무리됩니다.
                 </p>
                     </div>
                     <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
@@ -555,7 +557,7 @@
                 <div class="bg-white border-2 border-slate-200 rounded-2xl p-7">
                     <p class="text-xs font-bold text-slate-500 mb-3">문서에 적힌 목적</p>
                     <p class="text-sm text-slate-700 leading-relaxed bal">
-                    굿즈 판매가 아니라 <strong class="text-slate-900">휴면 유저의 복귀</strong>와 코어 팬덤 결속. 성과 지표는 방문자&nbsp;수가 아니라 <strong class="text-slate-900">방문&nbsp;후 인게임 복귀 인원</strong>.
+                    굿즈 판매가 아니라 <strong class="text-slate-900">휴면 유저의 복귀</strong>와 코어 팬덤 결속. <br class="hidden md:block">성과 지표는 방문자&nbsp;수가 아니라 <strong class="text-slate-900">방문&nbsp;후 인게임 복귀&nbsp;인원</strong>.
                 </p>
                 </div>
                 <div class="bg-amber-50 border-2 border-amber-300 rounded-2xl p-7">
@@ -567,7 +569,7 @@
             </div>
 
             <div class="bg-slate-900 rounded-2xl p-8 text-white">
-                <p class="text-sm font-black text-amber-300 mb-4">이미 접속 중인 유저는 복귀할&nbsp;것이 없습니다</p>
+                <p class="text-sm font-black text-amber-300 mb-4">이미 접속 중인 유저는 복귀할&nbsp;것이 없습니다.</p>
                 <p class="leading-relaxed mb-5 max-w-[46em]">
                     최근 한&nbsp;달 안에 접속한 유저는 휴면이 아닙니다. 이&nbsp;층에게 만드는&nbsp;것은 복귀가 아니라 <strong>참여 강화</strong>입니다.
                 </p>
@@ -586,12 +588,12 @@
                     <div class="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
                         <p class="text-xs font-black text-emerald-800 mb-3">휴면 유저 대상</p>
                         <p class="text-xs text-slate-600 leading-relaxed bal-t">
-                    게임에 들어오지 않는&nbsp;층이라 <strong>인게임 초대장이 닿지 않습니다.</strong> 푸시와 외부 채널, 그리고 현장에 오지 않고도 참여할 경로가 있어야 합니다.
+                    게임에 들어오지 않는&nbsp;층이라 <strong>인게임 초대장이 닿지 않습니다.</strong> <br class="hidden md:block">푸시와 외부 채널, 그리고 현장에 오지 않고도 <br class="hidden md:block">참여할 경로가 있어야 합니다.
                 </p>
                     </div>
                 </div>
                 <p class="text-xs text-slate-500 leading-relaxed mt-6 pt-6 border-t border-emerald-200 max-w-[46em]">
-                    타깃을 나누면 퍼널도&nbsp;둘입니다. 지금의 6%&#8288;는 활동 중인 유저의 값이고 휴면 쪽은 더&nbsp;낮게 잡아야 합니다. <strong>목적이 둘이면 지표도&nbsp;둘</strong>이어야 어느 쪽이 됐는지 압니다.
+                    타깃을 나누면 퍼널도&nbsp;둘입니다. <br class="hidden md:block">지금의 6%&#8288;는 활동 중인 유저의 값이고 휴면 쪽은 더&nbsp;낮게 잡아야 합니다. <br class="hidden md:block"><strong>목적이 둘이면 지표도&nbsp;둘</strong>이어야 어느 쪽이 됐는지 압니다.
                 </p>
             </div>
         </section>
@@ -602,11 +604,11 @@
             <div>
                 <div class="bg-white border-2 border-emerald-200 rounded-2xl p-7">
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
-                        <li class="bal">&bull; <strong class="text-slate-800">구간별 실제 전환율</strong> &mdash; 가설값 30 / 26.7 / 75와 대조합니다. 어긋난 구간이 다음 캠페인의 개선 지점입니다</li>
-                        <li class="bal">&bull; <strong class="text-slate-800">티켓 보유자의 지역 분포</strong> &mdash; 방문하지 못한 22,000명이 실제로 지역 제약 때문인지 확인합니다</li>
-                        <li class="bal">&bull; <strong class="text-slate-800">액티브와 휴면 분리 집계</strong> &mdash; 방문자&nbsp;중 최근 접속이 없던 유저 비율. 복귀 성과의 실제 크기입니다</li>
-                        <li>&bull; <strong class="text-slate-800">캠페인&nbsp;후 결제와 활동량</strong> &mdash; 액티브 유저 대상 성과는 재접속이 아니라 여기서 나타납니다</li>
-                        <li class="bal">&bull; <strong class="text-slate-800">1인당 획득 비용</strong> &mdash; 현장 운영비를 순증 복귀 인원으로 나눈 값. 온라인 캠페인과 비교할 기준이 됩니다</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">구간별 실제 전환율</strong> &mdash; 가설값 30&nbsp;/&nbsp;26.7&nbsp;/&nbsp;75와 대조합니다. 어긋난 구간이 다음 캠페인의 개선 지점입니다.</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">티켓 보유자의 지역 분포</strong> &mdash; 방문하지 못한 22,000명이 실제로 지역 제약 때문인지 확인합니다.</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">액티브와 휴면 분리 집계</strong> &mdash; 방문자&nbsp;중 최근 접속이 없던 유저 비율. 복귀 성과의 실제 크기입니다.</li>
+                        <li>&bull; <strong class="text-slate-800">캠페인&nbsp;후 결제와 활동량</strong> &mdash; 액티브 유저 대상 성과는 재접속이 아니라 여기서 나타납니다.</li>
+                        <li class="bal">&bull; <strong class="text-slate-800">1인당 획득 비용</strong> &mdash; 현장 운영비를 순증 복귀 인원으로 나눈 값. 온라인 캠페인과 비교할 기준이 됩니다.</li>
                     </ul>
                 </div>
                 
@@ -623,13 +625,13 @@
                 </div>
                 <div class="flex items-center gap-3 bg-white px-6 py-4 rounded-full shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-slate-100">
                     <span class="text-2xl">🔥</span>
-                    <span class="font-bold text-slate-700 text-sm">휴면 유저 복귀 및&nbsp;코어 팬덤의 결속력 강화</span>
+                    <span class="font-bold text-slate-700 text-sm">코어 팬덤의 결속력 강화</span>
                 </div>
             </div>
 
             <div class="pt-8">
-                <p class="text-slate-500 text-base leading-relaxed max-w-xl mx-auto text-left">
-                    현장에서 실제로 터지는 변수와 그때의 조치까지 함께 적었습니다.
+                <p class="text-slate-500 text-base leading-relaxed max-w-xl mx-auto text-center">
+                    현장에서 생길 수 있는 변수와 그때의 조치까지 함께 적었습니다.
                 </p>
             </div>
         </section>

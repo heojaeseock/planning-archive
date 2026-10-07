@@ -152,6 +152,10 @@
 <style>/* 목차 이동 */
 html { scroll-behavior: smooth; }
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-red-500{color:#b91c1c}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="antialiased selection:bg-[#cce2ff]">
 
@@ -184,10 +188,10 @@ html { scroll-behavior: smooth; }
                 <div class="inline-block px-4 py-1.5 bg-gray-100 text-gray-700 text-sm font-bold rounded-full border border-gray-200 mb-6">
                     총무&#8288;·경영지원 업무 자동화
                 </div>
-                <h1 class="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight text-gray-900 leading-tight">뷰티 브랜드 기업<br class="hidden md:block">총무 관리 체계 고도화 제안</h1>
-                <p class="text-base text-gray-500 mb-8 leading-relaxed max-w-2xl mx-auto" style="text-wrap:balance">블레이드&amp;소울 레볼루션 라이브 운영에서 익힌 프로세스를 총무&#8288;·경영지원 직무에 적용해 본 개인 제안서입니다.</p>
-                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm max-w-2xl mx-auto text-left">
-                    <p class="text-base text-gray-800 leading-relaxed max-w-[46em]">손으로 적던 자산 대장을 <strong>자동 매핑</strong>으로 바꾸고, 반복되는 사내 문의는 <strong>AI가 1차 응대</strong>하게 하는 안입니다. 담당자의 시간을 자산 운용과 비용 절감 쪽으로 옮기는&nbsp;것이 목적입니다.</p>
+                <h1 class="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight text-gray-900 leading-tight">뷰티 브랜드 기업 <br class="hidden md:block">총무 관리 체계 고도화 제안</h1>
+                <p class="text-base text-gray-500 mb-8 leading-relaxed max-w-2xl mx-auto" style="text-wrap:balance">블레이드&#8288;&amp;&#8288;소울 레볼루션 라이브 운영에서 익힌 프로세스를 총무&#8288;·경영지원 직무에 적용해 본 개인 제안서입니다.</p>
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm max-w-2xl mx-auto text-left" style="max-width:46em;text-wrap:wrap">
+                    <p class="text-base text-gray-800 leading-relaxed max-w-[46em]" style="text-wrap:wrap">손으로 적던 자산 대장을 <strong>자동 매핑</strong>으로 바꾸고, 반복되는 사내 문의는 <strong>AI가 1차 응대</strong>하게 하는 안입니다. 담당자의 시간을 자산 운용과 비용 절감 쪽으로 옮기는&nbsp;것이 목적입니다.</p>
                 </div>
             </header>
 
@@ -195,40 +199,40 @@ html { scroll-behavior: smooth; }
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-              <p class="text-[11px] font-black tracking-[0.12em] text-violet-700 mb-3">문서 소개</p>
-              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">자산 관리 자동화와 사내 헬프데스크, 인프라 위기 대응 체계를 제안한 문서입니다. 아래 인원&#8288;·부하 수치는 설명을 위해 세운 가정값이며, 2024년은 예상, 2025년은 목표입니다.</p>
+              <p class="text-xs font-black tracking-[0.12em] text-violet-700 mb-3">문서 소개</p>
+              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">자산 관리 자동화와 사내 헬프데스크, 인프라 위기 대응 체계를 제안한 문서입니다. <br class="hidden md:block">아래 인원&#8288;·부하 수치는 설명을 위해 세운 가정값이며, 2024년은 예상, 2025년은 목표입니다.</p>
             </div>
             <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">임직원</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">임직원</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">4.33배</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">150명 → 650명</p>
+                <p class="text-xs text-slate-500 mt-1 bal">150명 → 650명</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">업무 부하</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">업무 부하</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">5.00배</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">지수 20 → 100</p>
+                <p class="text-xs text-slate-500 mt-1 bal">지수 20 → 100</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">한&nbsp;사람이 지는 몫</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">한&nbsp;사람이 지는 몫</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">+15.4%</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">0.133 → 0.154</p>
+                <p class="text-xs text-slate-500 mt-1 bal">0.133 → 0.154</p>
               </div>
             </div>
             <div class="px-6 md:px-9 py-6 md:py-7">
-              <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">제안 내용</p>
+              <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">제안 내용</p>
               <div class="grid md:grid-cols-3 gap-3">
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">자산&#8288;·라이선스를 자동으로 본다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">만료 7일 전과 미반납 자산을 색으로 띄워 안&nbsp;써도 될 돈을 막습니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">자산&#8288;·라이선스를 자동으로 본다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">만료 7일 전과 미반납 자산을 <br class="hidden md:block">색으로 띄워 안&nbsp;써도 될 돈을 막습니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">1차 문의는 챗봇이 받는다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">두&nbsp;번 안에 못&nbsp;풀면 사람에게 넘기고, 상담원 연결 길도 늘 열어 둡니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">1차 문의는 챗봇이 받는다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">두&nbsp;번 안에 못&nbsp;풀면 사람에게 넘기고, <br class="hidden md:block">상담원 연결 길도 늘 열어 둡니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
-                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">장애&nbsp;때 알릴 순서를 정해 둔다</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">누구에게 무엇을 언제 알릴지 미리 적어 둡니다</p>
+                  <p class="text-sm font-black text-slate-900 mb-1.5 bal">장애&nbsp;때 알릴 순서를 정해 둔다.</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">누구에게 무엇을 언제 알릴지 미리 적어 둡니다.</p>
                 </div>
               </div>
             </div>
@@ -246,7 +250,7 @@ html { scroll-behavior: smooth; }
                 <div class="border border-slate-200 rounded-2xl p-8">
                     <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-5">직무 범위</h2>
                     <p class="text-slate-600 leading-relaxed mb-4 max-w-[46em] bal">
-                    인원이 빠르게 늘면 손으로 적는 자산 대장이 현황을 못&nbsp;따라갑니다. 미반납 장비가 빠지고 안&nbsp;쓰는 라이선스 비용이 남습니다.
+                    인원이 빠르게 늘면 손으로 적는 자산 대장이 현황을 못&nbsp;따라갑니다. <br class="hidden md:block">미반납 장비가 빠지고 안&nbsp;쓰는 라이선스 비용이 남습니다.
                 </p>
                 </div>
             </section>
@@ -258,7 +262,7 @@ html { scroll-behavior: smooth; }
                 
                 <h3 class="text-lg font-bold mb-4 text-gray-800">조직 규모 확장에 따른 관리의 복잡도 증가</h3>
                 <p class="mb-8 text-gray-700 max-w-[46em] leading-[1.8]">
-                    임직원이 빠르게 느는 단계에서는 손으로 하던 방식이 한계를 맞습니다. 경영지원에 나타나는 병목은 두&nbsp;갈래입니다.
+                    임직원이 빠르게 느는 단계에서는 손으로 하던 방식이 한계에 이릅니다. 경영지원에 나타나는 병목은 두&nbsp;갈래입니다.
                 </p>
 
                 <!-- 인터랙티브 차트 -->
@@ -274,13 +278,13 @@ html { scroll-behavior: smooth; }
                         <div class="text-3xl mb-4">💻</div>
                         <h4 class="font-bold mb-3 text-lg text-gray-900">사내 자산 추적의 어려움</h4>
                         <p class="text-sm text-gray-600 leading-relaxed">
-                    입&#8288;·퇴사와 부서 이동에 따른 지급 현황을 손으로 관리하면 기록이 빠지고, 쓰지 않는 라이선스 비용이 그대로 나갑니다.
+                    입&#8288;·퇴사와 부서 이동에 따른 지급 현황을 손으로 관리하면 기록이 빠지고, <br class="hidden md:block">쓰지 않는 라이선스 비용이 그대로 나갑니다.
                 </p>
                     </div>
                     <div class="bg-gray-50 border border-gray-100 p-7 rounded-2xl">
                         <div class="text-3xl mb-4">🗣️</div>
                         <h4 class="font-bold mb-3 text-lg text-gray-900">IT 문의 대응의 비효율성</h4>
-                        <p class="text-sm text-gray-600 leading-relaxed"><span class="seg-bal-md">"프로그램 권한이 없다고 뜹니다", "복지 신청은 어디서 하나요?"와 같은 단순 반복 문의가 쏟아집니다.</span> <span class="seg-bal-md">담당자가 일일이 응대하는&nbsp;것은 핵심 기획 업무의 몰입을 방해하는 가장 큰&nbsp;요인입니다.</span></p>
+                        <p class="text-sm text-gray-600 leading-relaxed"><span class="seg-bal-md">"프로그램 권한이 없다고 뜹니다", "복지&nbsp;신청은&nbsp;어디서&nbsp;하나요?"와 같은 단순 반복 문의가 쏟아집니다.</span> <span class="seg-bal-md">담당자가 일일이 응대하는&nbsp;것은 핵심 기획 업무 몰입을 방해하는 가장 큰&nbsp;요인입니다.</span></p>
                     </div>
                 </div>
             </section>
@@ -301,16 +305,15 @@ html { scroll-behavior: smooth; }
                 <ul class="list-disc pl-6 mb-10 space-y-4 text-gray-700">
                     <li class="max-w-[46em] leading-[1.8]">
                         <strong class="text-gray-900">데이터 통합 자동화:</strong> 
-                        인사팀의 입퇴사자 명단과 총무팀의 자산 대장을 VLOOKUP과 INDEX/MATCH 함수로 연동하여 하나의 마스터 문서로 구축합니다.
+                        인사팀의 입퇴사자 명단과 총무팀의 자산 대장을 <br class="hidden md:block">VLOOKUP과 INDEX/MATCH 함수로 연동하여 하나의 마스터 문서로 구축합니다.
                     </li>
                     <li class="max-w-[46em] leading-[1.8]">
                         <strong class="text-gray-900">시각적 알림 및&nbsp;비용 방어:</strong> 
-                        조건부 서식을 적용하여 고가의 라이선스 만료 7일 전, <br class="hidden md:block">
-                    미반납 자산&nbsp;등을 붉은색으로 자동 강조하여 불필요한 결제를 사전 차단합니다.
+                        조건부 서식을 적용하여 고가의 라이선스 만료 7일 전, <br class="hidden md:block">미반납 자산&nbsp;등을 붉은색으로 자동 강조하여 불필요한 결제를 사전 차단합니다.
                     </li>
                     <li class="max-w-[46em] leading-[1.8]">
                         <strong class="text-gray-900">오류 차단:</strong> 
-                        데이터 유효성 검사를 통해 자산 일련번호의 중복 입력이나 오타를 입력 단계에서 막아, 대장을 신뢰할&nbsp;수 있는 상태로 유지합니다.
+                        데이터 유효성 검사를 통해 자산 일련번호의 중복 입력이나 오타를 입력 단계에서 막아, <br class="hidden md:block">대장을 신뢰할&nbsp;수 있는 상태로 유지합니다.
                     </li>
                 </ul>
 
@@ -347,12 +350,12 @@ html { scroll-behavior: smooth; }
                 <div class="bg-purple-50/50 border border-purple-200 rounded-2xl p-7 mb-8">
                     <h3 class="text-lg font-bold text-purple-900 mb-3">🤖 약점 극복: 시스템을 통한 효율적인 1차 대응</h3>
                     <p class="text-base text-purple-800 leading-relaxed max-w-[46em]">
-                    설정과 권한 문의는 챗봇이 바로 풀고, 사람이 가야 하는 기기 고장은 파트너사로 자동 연결합니다. 모든 장애를 안에서 고칠 이유가 없습니다.
+                    설정과 권한 문의는 챗봇이 바로 풀고, 사람이 가야 하는 기기 고장은 파트너사로 자동 연결합니다. <br class="hidden md:block">모든 장애를 안에서 고칠 이유가 없습니다.
                 </p>
                 </div>
 
                 <p class="mb-8 text-gray-700 max-w-[46em] leading-[1.8]">
-                    사내망 설정법과 복지 신청 절차를 누구나 따라 할&nbsp;수 있는 형태로 규격화하고, 사내 메신저에 붙은 AI에 학습시킵니다. 단순 응대가 담당자까지 오지 않습니다.
+                    사내망 설정법과 복지 신청 절차를 누구나 따라 할&nbsp;수 있는 형태로 규격화하고, 사내 메신저에 붙은 AI에 학습시킵니다. <br class="hidden md:block">단순 응대가 담당자까지 오지 않습니다.
                 </p>
 
                 <!-- 아코디언 버튼 -->
@@ -404,7 +407,7 @@ html { scroll-behavior: smooth; }
                                     <div class="space-y-3 text-gray-700 mt-1">
                                         <p class="font-bold text-blue-800">AI 헬프데스크 안내입니다.</p>
                                         <p>1. 전자결재 시스템에서 [소프트웨어 신청서]를 작성하여 부서장 승인을 받아주세요.</p>
-                                        <p class="max-w-[46em] leading-[1.8] bal">
+                                        <p class="max-w-[46em] leading-[1.8] bal" style="max-width:50em;text-wrap:wrap">
                     2. 결재 완료&nbsp;시, 총무팀 자동화 시스템에 의해 매일 오후 4시에 라이선스가 일괄 할당되며 사내 메신저로 알림이 발송됩니다.
                 </p>
                                     </div>
@@ -425,7 +428,7 @@ html { scroll-behavior: smooth; }
                 <div class="bg-green-50/50 border border-green-200 rounded-2xl p-7 mb-8">
                     <h3 class="text-lg font-bold text-green-900 mb-3">🛡️ 관리자적 시각: 빠른 원인 파악과 정확한 전파</h3>
                     <p class="text-base text-green-800 leading-relaxed max-w-[46em] bal">
-                    네트워크 마비나 랜섬웨어 감염&nbsp;때 실무자가 선을 직접 만지고 있으면 늦습니다. 전파와 전문 인력 투입 순서를 미리 정해 두는&nbsp;것이 실제 역할입니다.
+                    네트워크 마비나 랜섬웨어 감염&nbsp;때 실무자가 선을 직접 만지고 있으면 늦습니다. <br class="hidden md:block">전파와 전문 인력 투입 순서를 미리 정해 두는&nbsp;것이 실제 역할입니다.
                 </p>
                 </div>
 
@@ -469,26 +472,26 @@ html { scroll-behavior: smooth; }
 
             <!-- [보강] 5. 부하 증가 구조 분석 -->
             <section id="section5" class="mb-20 scroll-mt-24">
-                <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3"><span class="text-gray-500 font-normal">5.</span> [분석] 인원보다 부하가 빠르게 늘어납니다</h2>
-                <p class="text-gray-500 font-medium leading-relaxed mb-8 max-w-[46em] bal">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3"><span class="text-gray-500 font-normal">5.</span> [분석] 인원보다 부하가 빠르게 늘어납니다.</h2>
+                <p class="text-gray-500 font-medium leading-relaxed mb-8 max-w-[46em] bal" style="max-width:50em;text-wrap:wrap">
                     임직원&nbsp;수와 업무 부하를 나눠 보면 <strong class="text-gray-900">사람이 늘어 힘든&nbsp;것이 아니라 증원으로는 따라잡을&nbsp;수 없는 구조</strong>라는&nbsp;점이 드러납니다.
                 </p>
 
                 <div class="grid md:grid-cols-3 gap-4 mb-8">
                     <div class="bg-white border-2 border-gray-200 rounded-xl p-5 text-center">
-                        <p class="text-[11px] font-black tracking-wide text-gray-500 mb-2">임직원 증가</p>
+                        <p class="text-xs font-black tracking-wide text-gray-500 mb-2">임직원 증가</p>
                         <p class="text-3xl font-black text-gray-800">4.33<span class="text-base">배</span></p>
-                        <p class="text-[11px] text-gray-500 mt-1">150명 &rarr; 650명</p>
+                        <p class="text-xs text-gray-500 mt-1">150명 &rarr; 650명</p>
                     </div>
                     <div class="bg-white border-2 border-red-300 rounded-xl p-5 text-center">
-                        <p class="text-[11px] font-black tracking-wide text-red-500 mb-2">업무 부하 증가</p>
+                        <p class="text-xs font-black tracking-wide text-red-500 mb-2">업무 부하 증가</p>
                         <p class="text-3xl font-black text-red-600">5.00<span class="text-base">배</span></p>
-                        <p class="text-[11px] text-gray-500 mt-1">지수 20 &rarr; 100</p>
+                        <p class="text-xs text-gray-500 mt-1">지수 20 &rarr; 100</p>
                     </div>
                     <div class="bg-gray-900 rounded-xl p-5 text-center text-white">
-                        <p class="text-[11px] font-black tracking-wide text-blue-300 mb-2">1인당 부하</p>
+                        <p class="text-xs font-black tracking-wide text-blue-300 mb-2">1인당 부하</p>
                         <p class="text-3xl font-black text-blue-300">+15.4<span class="text-base">%</span></p>
-                        <p class="text-[11px] text-gray-400 mt-1">0.133 &rarr; 0.154</p>
+                        <p class="text-xs text-gray-400 mt-1">0.133 &rarr; 0.154</p>
                     </div>
                 </div>
 
@@ -538,38 +541,37 @@ html { scroll-behavior: smooth; }
                 </div>
 
                 <div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-6 md:p-8 mb-6">
-                    <p class="text-[11px] font-black tracking-wide text-blue-600 mb-3">이&nbsp;차이가 의미하는&nbsp;것</p>
+                    <p class="text-xs font-black tracking-wide text-blue-600 mb-3">이&nbsp;차이가 의미하는&nbsp;것</p>
                     <p class="text-sm md:text-base text-gray-700 font-medium leading-relaxed mb-4 max-w-[46em] bal">
-                    인원은 4.33배인데 부하는 5.00배입니다. 관리 대상이 인원 수만큼이 아니라 <strong>부서 이동 · 자산 이력 · 권한 조합처럼 관계의&nbsp;수</strong>만큼 늘기 때문입니다.
+                    인원은 4.33배인데 부하는 5.00배입니다. <br class="hidden md:block">관리 대상이 인원 수만큼이 아니라 <strong>부서 이동 · 자산 이력 · 권한 조합처럼 관계의&nbsp;수</strong>만큼 늘기 때문입니다.
                 </p>
                     <p class="text-sm md:text-base text-gray-700 font-medium leading-relaxed max-w-[46em]">
-                    그래서 사람을 비례해 늘려도 따라잡지 못합니다. 1인당 부하는 2022년 이후 0.154~0.170에 머물며 2021년의 0.133으로 돌아가지 않습니다. <strong>증원이 아니라 자동화</strong>가 답이 되는 이유입니다.
+                    그래서 사람을 비례해 늘려도 따라잡지 못합니다. <br class="hidden md:block">1인당 부하는 2022년 이후 0.154~0.170에 머물며 2021년의 0.133으로 돌아가지 않습니다. <br class="hidden md:block"><strong>증원이 아니라 자동화</strong>가 답이 되는 이유입니다.
                 </p>
                 </div>
 
                 <div class="bg-white border-2 border-gray-200 rounded-xl p-6 md:p-8">
-                    <p class="text-[11px] font-black tracking-wide text-gray-500 mb-4">전략 1의 효과를 연간으로 환산하면</p>
+                    <p class="text-xs font-black tracking-wide text-gray-500 mb-4">전략 1의 효과를 연간으로 환산하면</p>
                     <div class="grid md:grid-cols-3 gap-4 mb-5 text-center">
                         <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                            <p class="text-[11px] text-gray-500 font-bold mb-1">일 절감</p>
+                            <p class="text-xs text-gray-500 font-bold mb-1">일 절감</p>
                             <p class="text-xl font-black text-gray-800">3시간</p>
-                            <p class="text-[10px] text-gray-500 mt-1">4시간 &rarr; 1시간</p>
+                            <p class="text-xs text-gray-500 mt-1">4시간 &rarr; 1시간</p>
                         </div>
                         <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                            <p class="text-[11px] text-gray-500 font-bold mb-1">절감률</p>
+                            <p class="text-xs text-gray-500 font-bold mb-1">절감률</p>
                             <p class="text-xl font-black text-gray-800">75%</p>
-                            <p class="text-[10px] text-gray-500 mt-1">자산 대장 업무 기준</p>
+                            <p class="text-xs text-gray-500 mt-1">자산 대장 업무 기준</p>
                         </div>
                         <div class="bg-blue-50 rounded-lg p-4 border-2 border-blue-300">
-                            <p class="text-[11px] text-blue-600 font-bold mb-1">연 환산</p>
+                            <p class="text-xs text-blue-600 font-bold mb-1">연 환산</p>
                             <p class="text-xl font-black text-blue-700">약&nbsp;750시간</p>
-                            <p class="text-[10px] text-gray-600 mt-1">영업일 250일 가정</p>
+                            <p class="text-xs text-gray-600 mt-1">영업일 250일 가정</p>
                         </div>
                     </div>
-                    <p class="text-xs text-gray-500 font-medium leading-relaxed max-w-[46em]">
-                    <strong class="text-gray-700">전제:</strong> 4시간과 1시간은 <strong>블레이드&amp;소울 레볼루션 운영 경험을 대입한 추정값</strong>으로, 반복 대조 작업이 4분의&nbsp;1로 준다고 가정했습니다. 계측된 실적이 아닙니다. <br class="hidden md:block">
-                    연 환산은 영업일 250일을 가정한 산술 결과이므로, <br class="hidden md:block">
-                    실제 도입&nbsp;시에는 도입 전&nbsp;2~4주간 실측한 값으로 다시 계산해야 합니다.
+                    <p class="text-xs text-gray-500 font-medium leading-relaxed max-w-[46em]" style="max-width:62em;text-wrap:wrap">
+                    <strong class="text-gray-700">전제:</strong> 4시간과 1시간은 <strong>블레이드&#8288;&amp;&#8288;소울 레볼루션 운영 경험을 대입한 추정값</strong>으로, 반복 대조 작업이 4분의&nbsp;1로 준다고 가정했습니다. 계측된 실적이 아닙니다. <br class="hidden md:block">
+                    연 환산은 영업일 250일을 가정한 산술 결과이므로, 실제 도입&nbsp;시에는 도입 전&nbsp;2~4주간 실측한 값으로 다시 계산해야&nbsp;합니다.
                 </p>
                 </div>
             </section>
@@ -584,30 +586,30 @@ html { scroll-behavior: smooth; }
                 <!-- 전략 1 검토 -->
                 <div class="bg-white border-2 border-amber-300 rounded-xl p-6 md:p-8 mb-5">
                     <div class="flex flex-wrap items-center gap-3 mb-4">
-                        <span class="bg-amber-500 text-slate-900 text-[10px] font-black px-3 py-1 rounded-full tracking-wide">검토 1</span>
-                        <span class="font-extrabold text-gray-900">엑셀 자동화는 1단계입니다</span>
+                        <span class="bg-amber-500 text-slate-900 text-xs font-black px-3 py-1 rounded-full tracking-wide">검토 1</span>
+                        <span class="font-extrabold text-gray-900">엑셀 자동화는 1단계입니다.</span>
                     </div>
                     <p class="text-sm text-gray-600 font-medium leading-relaxed mb-5 max-w-[46em] bal">
-                    수식과 조건부 서식은 추가 예산 없이 바로 효과가 나는 선택입니다. 다만 650명 규모로 계속 쓰기에는 제약이 붙습니다.
+                    수식과 조건부 서식은 추가 예산 없이 바로 효과가 나는 선택입니다. <br class="hidden md:block">다만 650명 규모로 계속 쓰기에는 제약이 붙습니다.
                 </p>
                     <div class="grid md:grid-cols-2 gap-4 mb-5">
                         <div class="bg-amber-50 rounded-lg p-5 border border-amber-200">
                             <p class="text-xs font-black text-amber-700 mb-2">담당자 의존</p>
                             <p class="text-xs text-gray-600 leading-relaxed">
-                    수식으로 짠 대장은 만든 사람이 없으면 손보기 어렵습니다. 담당자가 자주 바뀌는 직무에서는 그&nbsp;자체가 위험입니다.
+                    수식으로 짠 대장은 만든 사람이 없으면 손보기 어렵습니다. <br class="hidden md:block">담당자가 자주 바뀌는 직무에서는 그&nbsp;자체가 위험입니다.
                 </p>
                         </div>
                         <div class="bg-amber-50 rounded-lg p-5 border border-amber-200">
                             <p class="text-xs font-black text-amber-700 mb-2">파일 기반의 한계</p>
                             <p class="text-xs text-gray-600 leading-relaxed">
-                    동시 편집 충돌과 버전 갈림이 생기고, 인사 데이터가 든&nbsp;파일이 개인 단말에 흩어집니다.
+                    동시 편집 충돌과 버전 갈림이 생기고, <br class="hidden md:block">인사 데이터가 든&nbsp;파일이 개인 단말에 흩어집니다.
                 </p>
                         </div>
                     </div>
                     <div class="bg-gray-900 rounded-lg p-5 text-white">
-                        <p class="text-xs font-black text-blue-300 mb-2">그래서 다음 단계를 함께 제시해야 합니다</p>
+                        <p class="text-xs font-black text-blue-300 mb-2">그래서 다음 단계를 함께 제시해야 합니다.</p>
                         <p class="text-xs text-gray-300 leading-relaxed max-w-[46em]">
-                    엑셀 단계에서 <strong class="text-white">관리할 항목을 확정한&nbsp;뒤 그&nbsp;정의를 전용 도구로 옮기는 경로</strong>를 로드맵에 넣습니다. 그러면 엑셀이 임시방편이 아니라 요구사항을 검증하는 1단계가 됩니다.
+                    엑셀 단계에서 <strong class="text-white">관리할 항목을 확정한&nbsp;뒤 그&nbsp;정의를 전용 도구로 옮기는 경로</strong>를 로드맵에 넣습니다. <br class="hidden md:block">그러면 엑셀이 임시방편이 아니라 요구사항을 검증하는 1단계가 됩니다.
                 </p>
                     </div>
                 </div>
@@ -615,20 +617,20 @@ html { scroll-behavior: smooth; }
                 <!-- 전략 2 검토 -->
                 <div class="bg-white border-2 border-amber-300 rounded-xl p-6 md:p-8 mb-5">
                     <div class="flex flex-wrap items-center gap-3 mb-4">
-                        <span class="bg-amber-500 text-slate-900 text-[10px] font-black px-3 py-1 rounded-full tracking-wide">검토 2</span>
-                        <span class="font-extrabold text-gray-900">챗봇이 지연을 만들&nbsp;수 있습니다</span>
+                        <span class="bg-amber-500 text-slate-900 text-xs font-black px-3 py-1 rounded-full tracking-wide">검토 2</span>
+                        <span class="font-extrabold text-gray-900">챗봇이 지연을 만들&nbsp;수 있습니다.</span>
                     </div>
                     <p class="text-sm text-gray-600 font-medium leading-relaxed mb-5 max-w-[46em] bal">
-                    1차를 챗봇에 맡기면 챗봇이 못&nbsp;푼 문의가 담당자에게 늦게 갑니다. <strong class="text-gray-900">급한&nbsp;건이 챗봇에서 시간을 쓰면 도입 전보다 나빠집니다.</strong>
+                    1차를 챗봇에 맡기면 챗봇이 못&nbsp;푼 문의가 담당자에게 늦게 갑니다. <br class="hidden md:block"><strong class="text-gray-900">급한&nbsp;건이 챗봇에서 시간을 쓰면 도입 전보다 나빠집니다.</strong>
                 </p>
                     <ul class="space-y-2 text-xs text-gray-600 leading-relaxed mb-5">
-                        <li class="bal max-w-[46em] leading-[1.8]">&bull; <strong class="text-gray-800">에스컬레이션 상한:</strong> 챗봇 응대 2회&nbsp;내 미해결이면 자동으로 담당자에게 넘깁니다. 직원이 ‘상담원 연결’&#8288;을 즉시 고를&nbsp;수 있는 경로도 항상 열어 둡니다.</li>
+                        <li class="bal max-w-[46em] leading-[1.8]">&bull; <strong class="text-gray-800">에스컬레이션 상한:</strong> 챗봇 응대 2회&nbsp;내 미해결이면 자동으로 담당자에게 넘깁니다. <br class="hidden md:block">직원이 ‘상담원 연결’&#8288;을 즉시 고를&nbsp;수 있는 경로도 항상 열어 둡니다.</li>
                         <li>&bull; <strong class="text-gray-800">긴급 우회:</strong> 네트워크 단절처럼 업무 중단급 사안은 <strong>챗봇을 건너뛰는 별도 채널</strong>을 둡니다.</li>
-                        <li class="max-w-[46em] leading-[1.8] bal-m">&bull; <strong class="text-gray-800">지식 갱신:</strong> 복지 절차나 포털 메뉴가 바뀌면 챗봇은 <strong>옛 안내를 자신 있게 반복</strong>합니다. 절차 변경&nbsp;시 챗봇 지식 갱신을 필수 단계로 넣어야 합니다.</li>
+                        <li class="max-w-[46em] leading-[1.8] bal-m">&bull; <strong class="text-gray-800">지식 갱신:</strong> 복지 절차나 포털 메뉴가 바뀌면 챗봇은 <strong>옛 안내를 자신 있게 반복</strong>합니다. <br class="hidden md:block">절차 변경&nbsp;시 챗봇 지식 갱신을 필수 단계로 넣어야 합니다.</li>
                     </ul>
                     <div class="bg-amber-50 rounded-lg p-4 border border-amber-200">
                         <p class="text-xs text-gray-600 leading-relaxed max-w-[46em]">
-                    <strong class="text-gray-800">임계값 근거:</strong> 전략&nbsp;3 장애 감지의 연속 3건 알림은 쓸모 있는 규칙이지만, <strong class="text-gray-900">층별 인원이 적으면 3건이 모이기 전에 퍼지고 많으면 오탐이 잦습니다.</strong> 층별 인원 대비 비율로 두고 도입&nbsp;뒤 분포를 보며 조정합니다.
+                    <strong class="text-gray-800">임계값 근거:</strong> 전략&nbsp;3 장애 감지의 연속 3건 알림은 쓸모 있는 규칙이지만, <br class="hidden md:block"><strong class="text-gray-900">층별 인원이 적으면 3건이 모이기 전에 퍼지고 많으면 오탐이 잦습니다.<br class="hidden md:block"></strong>층별 인원 대비 비율로 두고 도입&nbsp;뒤 분포를 보며 조정합니다.
                 </p>
                     </div>
                 </div>
@@ -636,16 +638,16 @@ html { scroll-behavior: smooth; }
                 <!-- 전략 3 검토 -->
                 <div class="bg-white border-2 border-amber-300 rounded-xl p-6 md:p-8 mb-8">
                     <div class="flex flex-wrap items-center gap-3 mb-4">
-                        <span class="bg-amber-500 text-slate-900 text-[10px] font-black px-3 py-1 rounded-full tracking-wide">검토 3</span>
-                        <span class="font-extrabold text-gray-900">전사 지침 발송에는 권한과 오탐 비용이 붙습니다</span>
+                        <span class="bg-amber-500 text-slate-900 text-xs font-black px-3 py-1 rounded-full tracking-wide">검토 3</span>
+                        <span class="font-extrabold text-gray-900">전사 지침 발송에는 권한과 오탐 비용이 붙습니다.</span>
                     </div>
                     <p class="text-sm text-gray-600 font-medium leading-relaxed mb-5 max-w-[46em] bal">
-                    해당&nbsp;층 랜선 즉시 분리는 확산을 막지만 <strong class="text-gray-900">오탐이면 그&nbsp;층의 업무가 전면 중단됩니다.</strong> 빠른 발동과 오탐 비용이 정면으로 부딪히므로 미리 정할&nbsp;것이 있습니다.
+                    해당&nbsp;층 랜선 즉시 분리는 확산을 막지만 <strong class="text-gray-900">오탐이면 그&nbsp;층의 업무가 전면 중단됩니다.</strong> <br class="hidden md:block">빠른 발동과 오탐 비용이 정면으로 부딪히므로 미리 정할&nbsp;것이 있습니다.
                 </p>
                     <div class="grid md:grid-cols-3 gap-4">
                         <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
                             <p class="text-xs font-black text-gray-800 mb-1">발동 권한</p>
-                            <p class="text-xs text-gray-600 leading-relaxed">누가 승인 없이 보낼&nbsp;수 있는지. 승인을 거치면 시간을 놓치고, 안&nbsp;거치면 오탐 책임이 흐려집니다.</p>
+                            <p class="text-xs text-gray-600 leading-relaxed">누가 승인 없이 보낼&nbsp;수 있는지. <br class="hidden md:block">승인을 거치면 시간을 놓치고, 안&nbsp;거치면 오탐 책임이 흐려집니다.</p>
                         </div>
                         <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
                             <p class="text-xs font-black text-gray-800 mb-1">해제 절차</p>
@@ -667,13 +669,12 @@ html { scroll-behavior: smooth; }
                 <!-- 검증 지표와 한계 -->
                 <div>
                     <div class="bg-white border-2 border-green-200 rounded-xl p-6">
-                        <p class="text-[11px] font-black tracking-wide text-green-700 mb-4">도입&nbsp;후 측정할 지표</p>
+                        <p class="text-xs font-black tracking-wide text-green-700 mb-4">도입&nbsp;후 측정할 지표</p>
                         <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
                             <li class="bal">&bull; <strong class="text-gray-800">순 절감 시간:</strong> 자산 대장 절감분에서 <strong>대장 유지&#8288;·챗봇 지식 갱신 시간을 차감</strong>한&nbsp;값</li>
                             <li class="bal">&bull; <strong class="text-gray-800">라이선스 비용 절감:</strong> 미사용 라이선스&nbsp;수 &times; 단가 &times; 방치 기간 &mdash; 만료 알림 도입 전후 비교</li>
                             <li class="bal-m">&bull; <strong class="text-gray-800">자산 대장 정확도:</strong> 실물 재고 조사와 대장의 불일치 건수</li>
-                            <li>&bull; <strong class="text-gray-800">챗봇 해결률과 지연:</strong> 1차 해결 비율, <br class="hidden md:block">
-                    그리고 <strong>에스컬레이션&nbsp;건의 총&nbsp;소요 시간</strong></li>
+                            <li>&bull; <strong class="text-gray-800">챗봇 해결률과 지연:</strong> 1차 해결 비율, 그리고 <strong>에스컬레이션&nbsp;건의 총&nbsp;소요 시간</strong></li>
                             <li>&bull; <strong class="text-gray-800">오탐률:</strong> 위기 대응 발동&nbsp;중 실제 장애가 아닌 비율</li>
                         </ul>
                     </div>

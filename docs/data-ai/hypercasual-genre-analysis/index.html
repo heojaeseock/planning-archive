@@ -73,6 +73,9 @@
             .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
         }
 </style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="antialiased">
 
@@ -98,40 +101,40 @@
     <section class="mb-12" aria-label="이 문서가 하는 말">
       <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
         <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-          <p class="text-[11px] font-black tracking-[0.12em] text-violet-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
+          <p class="text-xs font-black tracking-[0.12em] text-violet-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
           <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">하이퍼캐주얼의 한계와 하이브리드 전환을 분석하고 소프트런칭 지표까지 정리한 개인 분석입니다.</p>
         </div>
         <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
           <div class="px-3 py-5 md:py-6 text-center">
-            <p class="text-[11px] font-bold text-slate-500 mb-2 bal">출시해도 되는지 재는&nbsp;식</p>
+            <p class="text-xs font-bold text-slate-500 mb-2 bal">출시해도 되는지 재는&nbsp;식</p>
             <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight bal-m">LTV ÷ CPI ≥ 1</p>
-            <p class="text-[11px] text-slate-500 mt-1 bal">한&nbsp;명이 남기는 돈&nbsp;÷ 데려오는 비용</p>
+            <p class="text-xs text-slate-500 mt-1 bal">한&nbsp;명이 남기는 돈&nbsp;÷ 데려오는 비용</p>
           </div>
           <div class="px-3 py-5 md:py-6 text-center">
-            <p class="text-[11px] font-bold text-slate-500 mb-2 bal">광고를 늘리면</p>
+            <p class="text-xs font-bold text-slate-500 mb-2 bal">광고를 늘리면</p>
             <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">매출 ↑ 잔존 ↓</p>
-            <p class="text-[11px] text-slate-500 mt-1 bal">같은&nbsp;식의 두&nbsp;항이 반대로 움직입니다</p>
+            <p class="text-xs text-slate-500 mt-1 bal">같은&nbsp;식의 두&nbsp;항이 반대로 움직입니다.</p>
           </div>
           <div class="px-3 py-5 md:py-6 text-center">
-            <p class="text-[11px] font-bold text-slate-500 mb-2 bal">그래서 단기 일매출은</p>
+            <p class="text-xs font-bold text-slate-500 mb-2 bal">그래서 단기 일매출은</p>
             <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">올라도 LTV는 하락</p>
-            <p class="text-[11px] text-slate-500 mt-1 bal">오늘이 좋아도 총합은 나빠집니다</p>
+            <p class="text-xs text-slate-500 mt-1 bal">오늘이 좋아도 총합은 나빠집니다.</p>
           </div>
         </div>
         <div class="px-6 md:px-9 py-6 md:py-7">
-          <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">장르가 옮겨&nbsp;간 이유</p>
+          <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">장르가 옮겨&nbsp;간 이유</p>
           <div class="grid md:grid-cols-3 gap-3">
             <div class="rounded-xl border border-slate-200 p-4">
               <p class="text-sm font-black text-slate-900 mb-1.5 bal">예전 방식은 며칠 만에 떠나는 유저</p>
-              <p class="text-xs text-slate-500 leading-relaxed bal">광고 단가가 오르면서 한&nbsp;명당 기대 수익을 맞추기 어려워졌습니다</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal">광고 단가가 오르면서 한&nbsp;명당 기대 수익을 맞추기 어려워졌습니다.</p>
             </div>
             <div class="rounded-xl border border-slate-200 p-4">
               <p class="text-sm font-black text-slate-900 mb-1.5 bal">그래서 성장 구조를 얹음</p>
-              <p class="text-xs text-slate-500 leading-relaxed bal">깔때기로 흘려보내던&nbsp;것을 돌고 도는 구조로 바꿨습니다</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal">깔때기로 흘려보내던&nbsp;것을 <br class="hidden md:block">돌고 도는 구조로 바꿨습니다.</p>
             </div>
             <div class="rounded-xl border border-slate-200 p-4">
-              <p class="text-sm font-black text-slate-900 mb-1.5 bal">세&nbsp;지표를&nbsp;식&nbsp;위에 올려 봄</p>
-              <p class="text-xs text-slate-500 leading-relaxed bal">어느 조치가&nbsp;식의 어느 항을 움직이는지가 정해집니다</p>
+              <p class="text-sm font-black text-slate-900 mb-1.5 bal">네&nbsp;지표를&nbsp;식&nbsp;위에 올려 봄</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal">어느 조치가&nbsp;식의 어느 항을 움직이는지가 정해집니다.</p>
             </div>
           </div>
         </div>
@@ -170,7 +173,7 @@
         <h3 class="text-lg font-black mb-3">빠르게 소모되는 성장 구조</h3>
         <p class="text-slate-600 leading-relaxed text-sm">
                     며칠만 플레이해도 콘텐츠가 고갈됩니다. <br class="hidden md:block">
-                    획득한 재화가 캐릭터 크기 증가 같은 단일&nbsp;축&nbsp;성장에만 쓰여 금방 한계에 부딪힙니다.
+                    획득한 재화가 캐릭터 크기 증가 같은 단일&nbsp;축&nbsp;성장에만 쓰여 <br class="hidden md:block">금방 한계에 부딪힙니다.
                 </p>
       </div>
       <div class="card p-7">
@@ -193,18 +196,18 @@
       <div class="rounded-2xl border border-white/15 bg-white/5 p-6">
         <p class="text-xs font-bold text-slate-400 mb-2">기존 (깔때기)</p>
         <p class="text-lg font-black mb-2">대량 유입 → 단기 광고 소진</p>
-        <p class="text-base text-slate-300 leading-relaxed bal">저렴하게 대중을 데려와 단기간에 전면 광고로 회수합니다.</p>
+        <p class="text-base text-slate-300 leading-relaxed bal">저렴하게 대중을 데려와 단기간에 <br class="hidden md:block">전면 광고로 회수합니다.</p>
       </div>
       <p class="text-3xl text-center text-indigo-300 font-black">→</p>
       <div class="rounded-2xl border border-indigo-400/40 bg-indigo-500/15 p-6">
         <p class="text-xs font-bold text-indigo-200 mb-2">전환 (순환)</p>
         <p class="text-lg font-black mb-2">유입 → 성장 → 결제 → 재접속</p>
-        <p class="text-sm text-slate-200 leading-relaxed">접근성은 유지하되 성장의 깊이를 더해 <br class="hidden md:block">체류 기간을 늘립니다.</p>
+        <p class="text-sm text-slate-200 leading-relaxed">접근성은 유지하되 성장의 깊이를 더해 체류 기간을 늘립니다.</p>
       </div>
     </div>
 
     <p class="text-slate-300 leading-relaxed max-w-[46em] bal">
-                    하이퍼캐주얼은 게임을 하지 않던 사람까지 끌어오는 마케팅 통로에 가깝습니다. 그&nbsp;통로만으로 수지가 맞지 않게 되면서 <strong>대중성은 두고 성장 요소를 얹는 쪽</strong>으로 옮겨 갔습니다.
+                    하이퍼캐주얼은 게임을 하지 않던 사람까지 끌어오는 마케팅 통로에 가깝습니다. <br class="hidden md:block">그&nbsp;통로만으로 수지가 맞지 않게 되면서 <strong>대중성은 두고 성장 요소를 얹는 쪽</strong>으로 옮겨 갔습니다.
                 </p>
   </section>
 
@@ -281,7 +284,7 @@
     <div class="card p-8 mb-6">
       <h3 class="text-lg font-black mb-3">선정 사유</h3>
       <p class="text-slate-600 leading-relaxed max-w-[46em]">
-                    아케이드 원형에 방치형 성장과 결제 설계를 붙인 사례입니다. <strong>단순한 조작으로 모객 비용을 낮추고 결제 구간으로 기대 수익을 올린</strong> 구조를 보려고 골랐습니다.
+                    아케이드 원형에 방치형 성장과 결제 설계를 붙인 사례입니다. <br class="hidden md:block"><strong>단순한 조작으로 모객 비용을 낮추고 결제 구간으로 기대 수익을 올린</strong> 구조를 보려고 골랐습니다.
                 </p>
     </div>
 
@@ -290,7 +293,7 @@
         <p class="chip bg-sky-50 text-sky-700 mb-4">유저 경험 설계</p>
         <ul class="space-y-4 text-sm text-slate-600 leading-relaxed">
           <li><b class="block text-slate-900 mb-1">조작의 직관성</b>조이스틱 이동만으로 적을 사냥합니다.<br>반복 플레이의 피로도를 낮춘 설계입니다.</li>
-          <li class="leading-[1.8]"><b class="block text-slate-900 mb-1">단계별 성장 유도</b>초반 10분은 가방 용량을 묶어 사냥&#8288;·반납&#8288;·강화 고리를 익히게 하고, 하루 뒤부터는 혹한기 페널티와 높은 강화 비용으로 자동화가 필요해지게 만듭니다.</li>
+          <li class="leading-[1.8]"><b class="block text-slate-900 mb-1">단계별 성장 유도</b>초반 10분은 가방 용량을 묶어 사냥&#8288;·반납&#8288;·강화 고리를 익히게 하고, <br class="hidden md:block">하루 뒤부터는 혹한기 페널티와 높은 강화 비용으로 <br class="hidden md:block">자동화가 필요해지게 만듭니다.</li>
         </ul>
       </div>
       <div class="card p-8">
@@ -305,7 +308,7 @@
     <div class="card p-8 mb-6">
       <h3 class="text-lg font-black mb-3">경쟁작 대비 차별점: Legend of Slime과 비교</h3>
       <p class="text-slate-600 leading-relaxed max-w-[46em]">
-                    Legend of Slime은 자동 전투와 뽑기에 기대고, Alien Invasion은 직접 조종해 맵을 넓혀 갑니다. 후자는 <strong>넣은 만큼 성장하고</strong> 탐험이 체류 시간을 늘려 광고 노출까지 넓힙니다.
+                    Legend of Slime은 자동 전투와 뽑기에 기대고, Alien Invasion은 직접 조종해 맵을 넓혀 갑니다. <br class="hidden md:block">후자는 <strong>넣은 만큼 성장하고</strong> 탐험이 체류 시간을 늘려 광고 노출까지 넓힙니다.
                 </p>
     </div>
 
@@ -336,30 +339,30 @@
 
     <div class="grid md:grid-cols-3 gap-5 mb-6">
       <div class="card p-7">
-        <p class="text-[11px] font-black tracking-wide text-slate-500 mb-3">01 · 유입 단가</p>
+        <p class="text-xs font-black tracking-wide text-slate-500 mb-3">01 · 유입 단가</p>
         <p class="text-3xl font-black text-indigo-600 mb-3">$0.3~$0.5</p>
         <h3 class="text-base font-black mb-2">CPI가 손익선 안에 들어오는지</h3>
         <p class="text-slate-600 leading-relaxed text-sm">
                     기대 수익이 높아도 모객 비용이 비싸면 모델이 성립하지 않습니다. <br class="hidden md:block">
-                    숏폼 플랫폼 테스트로 유입 단가가 기준선 안인지 먼저 봅니다.
+                    숏폼 플랫폼 테스트로 유입 단가가 <br class="hidden md:block">기준선 안인지 먼저 봅니다.
                 </p>
       </div>
       <div class="card p-7">
-        <p class="text-[11px] font-black tracking-wide text-slate-500 mb-3">02 · 잔존율</p>
+        <p class="text-xs font-black tracking-wide text-slate-500 mb-3">02 · 잔존율</p>
         <p class="text-3xl font-black text-emerald-600 mb-3">D7 15~20%</p>
         <h3 class="text-base font-black mb-2">성장 시스템이 작동하는지</h3>
         <p class="text-slate-600 leading-relaxed text-sm">
                     일주일&nbsp;뒤 재접속률이 성장 설계의 성적표입니다. <br class="hidden md:block">
-                    장르 기준선은 15~20%&#8288;이고, 같은 장르 상위작 Pizza Ready!&#8288;가 기록한 D7 23.7%&#8288;를 목표선으로 잡았습니다.
+                    장르 기준선은 15~20%&#8288;이고, <br class="hidden md:block">같은 장르 상위작 Pizza Ready!&#8288;가 기록한 <br class="hidden md:block">D7 23.7%&#8288;를 목표선으로 잡았습니다.
                 </p>
       </div>
       <div class="card p-7">
-        <p class="text-[11px] font-black tracking-wide text-slate-500 mb-3">03 · 체류 시간</p>
+        <p class="text-xs font-black tracking-wide text-slate-500 mb-3">03 · 체류 시간</p>
         <p class="text-3xl font-black text-amber-600 mb-3">15~30분</p>
         <h3 class="text-base font-black mb-2">광고 재고가 확보되는지</h3>
         <p class="text-slate-600 leading-relaxed text-sm">
-                    1인당 하루 누적 플레이타임이 광고 노출량과 결제 유도의 바탕입니다. <br class="hidden md:block">
-                    경제 밸런스가 맞는지 판단하는 척도로 봅니다.
+                    1인당 하루 누적 플레이타임이 <br class="hidden md:block">광고 노출량과 결제 유도의 바탕입니다. <br class="hidden md:block">
+                    경제 밸런스가 맞는지&nbsp;판단하는 척도로 봅니다.
                 </p>
       </div>
     </div>
@@ -388,7 +391,7 @@
         <div>
           <h3 class="text-lg font-black mb-2">이탈 위험군 맞춤 푸시</h3>
           <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">
-                    난이도가 오르는 구간, 얼음 지대 진입 직후를 이탈 지점으로 잡고 <strong>48시간 이상 안&nbsp;들어온 유저</strong>를 뽑습니다. 지원 물품이 도착했다는 문구와 소량의 크리스탈로 부릅니다.
+                    난이도가 오르는 구간, 얼음 지대 진입 직후를 이탈 지점으로 잡고 <strong>48시간 이상 안&nbsp;들어온 유저</strong>를 뽑습니다. <br class="hidden md:block">지원 물품이 도착했다는 문구와 소량의 크리스탈로 부릅니다.
                 </p>
         </div>
       </div>
@@ -406,17 +409,17 @@
     </div>
   </section>
 
-  <!-- [보강] 6. 세 지표를 하나의 판정식으로 -->
+  <!-- [보강] 6. 네 지표를 하나의 판정식으로 -->
   <section class="mb-14">
     <p class="text-xs font-black tracking-[.16em] text-indigo-600 mb-4">손익 구조</p>
-    <h2 class="text-2xl md:text-3xl font-black mb-4 leading-snug text-slate-900">6. 세&nbsp;지표는 하나의&nbsp;식으로 묶입니다</h2>
-    <p class="text-slate-600 leading-relaxed mb-8 max-w-[42em]">출시 여부를 판단할&nbsp;때는 셋을 따로 보지 않고 한&nbsp;줄의&nbsp;식으로 놓습니다. 그래야 <strong class="text-slate-900">D7이 20%&#8288;인데&nbsp;내도 되는가</strong>에 답할&nbsp;수 있습니다.</p>
+    <h2 class="text-2xl md:text-3xl font-black mb-4 leading-snug text-slate-900">6. 네&nbsp;지표는 하나의&nbsp;식으로 묶입니다.</h2>
+    <p class="text-slate-600 leading-relaxed mb-8 max-w-[42em]">출시 여부를 판단할&nbsp;때는 넷을 따로 보지 않고 한&nbsp;줄의&nbsp;식으로 놓습니다. <br class="hidden md:block">그래야 <strong class="text-slate-900">D7이 20%&#8288;인데&nbsp;내도 되는가</strong>에 답할&nbsp;수 있습니다.</p>
 
     <div class="card p-8 bg-slate-900 text-white border-none text-center mb-8">
-      <p class="text-[10px] font-black tracking-[.16em] text-indigo-300 mb-3">판정식</p>
+      <p class="text-xs font-black tracking-[.16em] text-indigo-300 mb-3">판정식</p>
       <p class="text-3xl md:text-4xl font-black mb-3">LTV &divide; CPI &ge; 1</p>
-      <p class="text-xs text-indigo-200 mb-3 bal-m">LTV는 유저 한&nbsp;명이 평생 남기는 수익, CPI는 그&nbsp;한&nbsp;명을 데려오는 광고 비용입니다</p>
-      <p class="text-sm text-slate-300 leading-relaxed max-w-[42em] mx-auto text-left">유저 1인이 남기는 총수익이 데려오는 비용을 넘어야 모델이 섭니다. 마케팅 여력을 감안하면 실무 목표선은 1보다 여유 있게 잡습니다.</p>
+      <p class="text-xs text-indigo-200 mb-3 bal-m">LTV는 유저 한&nbsp;명이 평생 남기는 수익, CPI는 그&nbsp;한&nbsp;명을 데려오는 광고 비용입니다.</p>
+      <p class="text-sm text-slate-300 leading-relaxed max-w-[42em] mx-auto text-center">유저 1인이 남기는 총수익이 데려오는 비용을 넘어야 모델이 섭니다. <br class="hidden md:block">마케팅 여력을 감안하면 실무 목표선은 1보다 여유 있게 잡습니다.</p>
     </div>
 
     <div class="overflow-x-auto rounded-2xl border border-slate-200 mb-8">
@@ -432,61 +435,61 @@
           <tr class="border-b border-slate-200">
             <td class="p-3 font-bold text-slate-800">유입 단가</td>
             <td class="p-3 text-slate-600">분모 전체</td>
-            <td class="p-3 text-xs text-slate-500">게임이 좋아도 모객에서 적자가 납니다. 가장 먼저 보는 이유입니다</td>
+            <td class="p-3 text-xs text-slate-500">게임이 좋아도 모객에서 적자가 납니다. 가장 먼저 보는 이유입니다.</td>
           </tr>
           <tr class="border-b border-slate-200">
             <td class="p-3 font-bold text-slate-800">잔존율</td>
             <td class="p-3 text-slate-600">수익이 발생하는&nbsp;기간</td>
-            <td class="p-3 text-xs text-slate-500">체류와 결제가 좋아도 곱해질 기간이 짧아 오르지 않습니다</td>
+            <td class="p-3 text-xs text-slate-500">체류와 결제가 좋아도 곱해질 기간이 짧아 LTV가 오르지 않습니다.</td>
           </tr>
           <tr class="border-b border-slate-200">
             <td class="p-3 font-bold text-slate-800">체류 시간</td>
             <td class="p-3 text-slate-600">일 광고 수익</td>
-            <td class="p-3 text-xs text-slate-500">광고를 띄울 자리가 없어 상한이 낮게 고정됩니다</td>
+            <td class="p-3 text-xs text-slate-500">광고를 띄울 자리가 없어 상한이 낮게 고정됩니다.</td>
           </tr>
           <tr>
             <td class="p-3 font-bold text-slate-800">결제 전환율</td>
             <td class="p-3 text-slate-600">인앱 결제</td>
-            <td class="p-3 text-xs text-slate-500">하이브리드 캐주얼은 결제 비중이 50~60%&#8288;라, 이&nbsp;항이 없으면 장르 전환의 의미가 사라집니다</td>
+            <td class="p-3 text-xs text-slate-500">하이브리드 캐주얼은 결제 비중이 50~60%&#8288;라, 이&nbsp;항이 없으면 장르 전환의 의미가 사라집니다.</td>
           </tr>
         </tbody>
       </table>
     </div>
 
     <div class="card p-6 md:p-8">
-      <p class="font-black text-slate-900 mb-3 text-lg bal">그래서 목표선의 의미가 달라집니다</p>
-      <p class="text-slate-600 leading-relaxed max-w-[46em]">D7 23.7%&#8288;는 그&nbsp;자체로 합격선이 아니라 <strong class="text-slate-900">설치 단가와&nbsp;일 수익이 주어졌을&nbsp;때 회수에 필요한 최소 잔존</strong>과 견줘 봐야 하는 값입니다. 단가가 낮은 지역이면 더&nbsp;낮아도 되고, 높으면 23.7%&#8288;로도 모자랍니다.</p>
-      <p class="text-xs text-slate-500 leading-relaxed mt-5 pt-5 border-t border-slate-200 max-w-[46em]">이&nbsp;식은 판단의 구조이고, 항에 넣을 실제 값은 해당 게임의 소프트런칭 데이터로만 채웁니다. 여기서는 어떤 값을 모아야 하는지까지 정했습니다.</p>
+      <p class="font-black text-slate-900 mb-3 text-lg bal">그래서 목표선의 의미가 달라집니다.</p>
+      <p class="text-slate-600 leading-relaxed max-w-[46em]">D7 23.7%&#8288;는 그&nbsp;자체로 합격선이 아니라&nbsp;<strong class="text-slate-900">설치 단가와&nbsp;일 수익이 주어졌을&nbsp;때 <br class="hidden md:block">회수에 필요한 최소 잔존</strong>과 견줘 봐야 하는 값입니다. <br class="hidden md:block">단가가 낮은 지역이면 더&nbsp;낮아도 되고, 높으면 23.7%&#8288;로도 모자랍니다.</p>
+      <p class="text-xs text-slate-500 leading-relaxed mt-5 pt-5 border-t border-slate-200 max-w-[46em]">이&nbsp;식은 판단의 구조이고, 항에 넣을 실제 값은 해당 게임의 소프트런칭 데이터로만 채웁니다. <br class="hidden md:block">여기서는 어떤 값을 모아야 하는지까지 정했습니다.</p>
     </div>
   </section>
 
   <!-- [보강] 7. 지표 간 상충 -->
   <section class="mb-14">
     <p class="text-xs font-black tracking-[.16em] text-indigo-600 mb-4">대가</p>
-    <h2 class="text-2xl md:text-3xl font-black mb-4 leading-snug text-slate-900">7. 세&nbsp;지표는 서로를 밀어냅니다</h2>
-    <p class="text-slate-600 leading-relaxed mb-8 max-w-[42em] bal">각&nbsp;항을 올리려는 조치가 다른 항을 깎습니다. 3번 SWOT의 약점에 적힌 <strong class="text-slate-900">잦은 전면 광고에 따른 초기 이탈</strong>이&nbsp;바로 이&nbsp;충돌입니다.</p>
+    <h2 class="text-2xl md:text-3xl font-black mb-4 leading-snug text-slate-900">7. 세&nbsp;지표는 서로를 밀어냅니다.</h2>
+    <p class="text-slate-600 leading-relaxed mb-8 max-w-[42em] bal">각&nbsp;항을 올리려는 조치가 다른 항을 깎습니다. <br class="hidden md:block">3번 SWOT의 약점에 적힌 <strong class="text-slate-900">잦은 전면 광고에 따른 초기 이탈</strong>이&nbsp;바로 이&nbsp;충돌입니다.</p>
 
     <div class="grid md:grid-cols-2 gap-5 mb-5">
       <div class="card p-6">
-        <p class="text-[10px] font-black tracking-wide text-indigo-600 mb-2">광고 수익 &harr; 잔존율</p>
-        <p class="text-sm text-slate-600 leading-relaxed bal mb-4">노출 빈도를 늘리면&nbsp;일 광고 수익은 오르지만 초기 이탈이 늘어 잔존 기간이 짧아집니다. 같은&nbsp;식의 두&nbsp;항이 반대로 움직여, <strong class="text-slate-900">단기 일매출은 오르고 LTV는 떨어집니다.</strong></p>
-        <p class="text-xs font-bold text-indigo-700 bal">→ 빈도를 바꿀&nbsp;때는 ARPDAU&#8288;(하루 접속&nbsp;유저당 매출)&#8288;가 아니라 코호트&#8288;(같은 시기 유입&nbsp;유저 묶음) LTV로 비교합니다. 일 단위로는 이&nbsp;손실이 안&nbsp;보입니다</p>
+        <p class="text-xs font-black tracking-wide text-indigo-600 mb-2">광고 수익 &harr; 잔존율</p>
+        <p class="text-sm text-slate-600 leading-relaxed bal mb-4">노출 빈도를 늘리면&nbsp;일 광고 수익은 오르지만 <br class="hidden md:block">초기 이탈이 늘어 잔존 기간이 짧아집니다. <br class="hidden md:block">같은&nbsp;식의 두&nbsp;항이 반대로 움직여, <strong class="text-slate-900">단기 일매출은 오르고 LTV는 떨어집니다.</strong></p>
+        <p class="text-xs font-bold text-indigo-700 bal">→ 빈도를 바꿀&nbsp;때는 ARPDAU&#8288;(하루 접속&nbsp;유저당 매출)&#8288;가 아니라 코호트&#8288;(같은 시기 유입&nbsp;유저 묶음) LTV로 비교합니다. <br class="hidden md:block">일 단위로는 이&nbsp;손실이 안&nbsp;보입니다.</p>
       </div>
       <div class="card p-6">
-        <p class="text-[10px] font-black tracking-wide text-indigo-600 mb-2">광고 제거 상품 &harr; 광고 수익</p>
-        <p class="text-sm text-slate-600 leading-relaxed bal mb-4">5번의 광고 제거 패키지는 팔릴&nbsp;때마다 <strong class="text-slate-900">그&nbsp;유저에게서 나올 광고 수익을 스스로 없앱니다.</strong> 결제 항을 올리는 대신 광고 항을 0으로 만드는 거래입니다.</p>
-        <p class="text-xs font-bold text-indigo-700 bal">→ 가격이 잔여 생애 광고 수익보다 커야 이득입니다. 잔존 구간별로 가격을 달리 둡니다</p>
+        <p class="text-xs font-black tracking-wide text-indigo-600 mb-2">광고 제거 상품 &harr; 광고 수익</p>
+        <p class="text-sm text-slate-600 leading-relaxed bal mb-4">5번의 광고 제거 패키지는 팔릴&nbsp;때마다 <br class="hidden md:block"><strong class="text-slate-900">그&nbsp;유저에게서 나올 광고 수익을 스스로 없앱니다.<br class="hidden md:block"></strong>결제 항을 올리는 대신 광고 항을 0으로 만드는 거래입니다.</p>
+        <p class="text-xs font-bold text-indigo-700 bal">→ 가격이 잔여 생애 광고 수익보다 커야 이득입니다. 잔존 구간별로 가격을 달리 둡니다.</p>
       </div>
     </div>
 
     <div class="grid md:grid-cols-2 gap-5">
       <div class="card p-6 bg-slate-50">
         <p class="text-sm font-bold text-slate-900 mb-2">주말 피버 타임 · 재화 1.5배</p>
-        <p class="text-xs text-slate-500 leading-relaxed bal">매주 상시화되면 평일 플레이의 가치가 떨어져 유저가 주말까지 성장을 미룹니다. 격주로 두거나 배수를 낮추고 대상 재화를 한정합니다.</p>
+        <p class="text-xs text-slate-500 leading-relaxed bal">매주 상시화되면 평일 플레이의 가치가 떨어져 유저가 주말까지 성장을 미룹니다. <br class="hidden md:block">격주로 두거나 배수를 낮추고 대상 재화를 한정합니다.</p>
       </div>
       <div class="card p-6 bg-slate-50">
         <p class="text-sm font-bold text-slate-900 mb-2">이탈 위험군 푸시</p>
-        <p class="text-xs text-slate-500 leading-relaxed bal">빈도가 높으면 알림 차단이나 삭제로 이어져 재접근 경로 자체를 잃습니다. 유저당 발송 상한과 최소 간격을 규칙으로 두고 차단율을 함께 잽니다.</p>
+        <p class="text-xs text-slate-500 leading-relaxed bal">빈도가 높으면 알림 차단이나 삭제로 이어져 재접근 경로 자체를 잃습니다. <br class="hidden md:block">유저당 발송 상한과 최소 간격을 규칙으로 두고 차단율을 함께&nbsp;잽니다.</p>
       </div>
     </div>
   </section>
@@ -500,16 +503,16 @@
 
     <div class="grid md:grid-cols-3 gap-5 mb-8">
       <div class="card p-6">
-        <p class="text-[10px] font-black tracking-wide text-slate-500 mb-2">변수를 하나로</p>
-        <p class="text-sm text-slate-600 leading-relaxed bal">지금은 구성과 가격이 동시에 다릅니다. <strong class="text-slate-900">1차는 같은 가격에서 구성만, 2차에서 승자를 놓고 가격만</strong> 비교합니다.</p>
+        <p class="text-xs font-black tracking-wide text-slate-500 mb-2">변수를 하나로</p>
+        <p class="text-sm text-slate-600 leading-relaxed bal">지금은 구성과 가격이 동시에 다릅니다. <br class="hidden md:block"><strong class="text-slate-900">1차는 같은 가격에서 구성만, <br class="hidden md:block">2차에서 승자를 놓고 가격만</strong> 비교합니다.</p>
       </div>
       <div class="card p-6">
-        <p class="text-[10px] font-black tracking-wide text-slate-500 mb-2">판정 지표를 하나로</p>
-        <p class="text-sm text-slate-600 leading-relaxed bal">결제율과 총수익을 함께 보면 결론이 안&nbsp;납니다. <strong class="text-slate-900">순 ARPU를 주 지표로</strong> 두고, 광고 수익 손실을 차감해 계산합니다.</p>
+        <p class="text-xs font-black tracking-wide text-slate-500 mb-2">판정 지표를 하나로</p>
+        <p class="text-sm text-slate-600 leading-relaxed bal">결제율과 총수익을 함께 보면 결론이 안&nbsp;납니다. <strong class="text-slate-900">순 ARPU를 주 지표로</strong> 두고, <br class="hidden md:block">광고 수익 손실을 차감해 계산합니다.</p>
       </div>
       <div class="card p-6">
-        <p class="text-[10px] font-black tracking-wide text-slate-500 mb-2">기준을 먼저 고정</p>
-        <p class="text-sm text-slate-600 leading-relaxed bal">기간, 그룹당 최소 인원, 채택 기준을 시작 전에 문서로 남깁니다. <strong class="text-slate-900">결과를 보고 기준을 정하면 원하는 결론이 나옵니다.</strong></p>
+        <p class="text-xs font-black tracking-wide text-slate-500 mb-2">기준을 먼저 고정</p>
+        <p class="text-sm text-slate-600 leading-relaxed bal">기간, 그룹당 최소 인원, 채택 기준을 <br class="hidden md:block">시작 전에 문서로 남깁니다. <br class="hidden md:block"><strong class="text-slate-900">결과를 보고 기준을 정하면 원하는 결론이 나옵니다.</strong></p>
       </div>
     </div>
 
@@ -517,8 +520,8 @@
       <p class="font-black text-slate-900 mb-4 bal">테스트 순서</p>
       <div class="grid md:grid-cols-3 gap-5">
         <div><p class="text-sm font-bold text-slate-900 mb-1.5">1차 · 구성</p><p class="text-xs text-slate-500 leading-relaxed bal">가격 고정, 구성만 비교. 어떤 묶음이 더&nbsp;팔리는지 봅니다.</p></div>
-        <div><p class="text-sm font-bold text-slate-900 mb-1.5">2차 · 가격</p><p class="text-xs text-slate-500 leading-relaxed bal">승자 구성으로 가격대 2~3종 비교. 유저당 순수익이 가장 큰&nbsp;지점을 찾습니다.</p></div>
-        <div><p class="text-sm font-bold text-slate-900 mb-1.5">3차 · 노출 시점</p><p class="text-xs text-slate-500 leading-relaxed bal">같은 상품을 언제 띄울지. 광고 피로가 쌓인 직후의 전환율을 봅니다.</p></div>
+        <div><p class="text-sm font-bold text-slate-900 mb-1.5">2차 · 가격</p><p class="text-xs text-slate-500 leading-relaxed bal">승자 구성으로 가격대 2~3종 비교. <br class="hidden md:block">유저당 순수익이 가장 큰&nbsp;지점을 찾습니다.</p></div>
+        <div><p class="text-sm font-bold text-slate-900 mb-1.5">3차 · 노출 시점</p><p class="text-xs text-slate-500 leading-relaxed bal">같은 상품을 언제 띄울지. <br class="hidden md:block">광고 피로가 쌓인 직후의 전환율을 봅니다.</p></div>
       </div>
     </div>
   </section>
@@ -529,9 +532,9 @@
   <!-- 결론 -->
   <section class="card p-8 md:p-12 bg-slate-900 text-white border-none">
     <p class="text-xs font-black tracking-[.16em] text-indigo-300 mb-4">정리</p>
-    <h2 class="text-2xl md:text-3xl font-black mb-6 leading-snug">지표를 보고 가설을 고쳐 나가는 과정이 남습니다</h2>
+    <h2 class="text-2xl md:text-3xl font-black mb-6 leading-snug">지표를 보고 가설을 고쳐 나가는 과정이 남습니다.</h2>
     <p class="text-slate-300 leading-relaxed max-w-[46em] bal">
-                    처음부터 밸런스가 맞는 게임은 나오지 않습니다. <strong>소프트런칭 지표를 냉정하게 읽고 이탈 지점을 찾아 고쳐 나가는</strong> 쪽이 현실적입니다. 장르 분석에서 운영안까지 한&nbsp;흐름으로 정리했습니다.
+                    처음부터 밸런스가 맞는 게임은 나오지 않습니다. <br class="hidden md:block"><strong>소프트런칭 지표를 냉정하게 읽고 이탈 지점을 찾아 고쳐 나가는</strong> 쪽이 현실적입니다. <br class="hidden md:block">장르 분석에서 운영안까지 한&nbsp;흐름으로 정리했습니다.
                 </p>
   </section>
 

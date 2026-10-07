@@ -79,6 +79,10 @@
             .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
         }
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-teal-500{color:#0f766e}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-teal-200 selection:text-teal-900 leading-relaxed">
 
@@ -107,45 +111,45 @@
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-              <p class="text-[11px] font-black tracking-[0.12em] text-violet-700 mb-3">문서 소개</p>
-              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">민감 정보를 밖으로 내보내지 않고 인사 문의에 자동 응대하는 구조를 설계한 문서입니다. 블레이드&amp;소울 레볼루션 운영 경험을 바탕으로 정리한 개인 아이디어 제안서입니다.</p>
+              <p class="text-xs font-black tracking-[0.12em] text-violet-700 mb-3">문서 소개</p>
+              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">민감 정보를 밖으로 내보내지 않고 인사 문의에 자동 응대하는 구조를 설계한 문서입니다. <br class="hidden md:block">블레이드&#8288;&amp;&#8288;소울 레볼루션 운영 경험을 바탕으로 정리한 개인 아이디어 제안서입니다.</p>
             </div>
             <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">주간 소요 시간</p>
-                <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">15시간 → 2시간</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">87% 줄이는&nbsp;것이 목표</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">주간 소요 시간</p>
+                <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">15시간&nbsp;→&nbsp;2시간</p>
+                <p class="text-xs text-slate-500 mt-1 bal">87% 줄이는&nbsp;것이 목표</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">그&nbsp;숫자의 성격</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">그&nbsp;숫자의 성격</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">목표선</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">계측한 실적이 아닙니다</p>
+                <p class="text-xs text-slate-500 mt-1 bal">계측한 실적이 아닙니다.</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">민감 정보가 나가는&nbsp;곳</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">민감 정보가 나가는&nbsp;곳</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">없음</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">설계상 이름&#8288;·연봉 값&nbsp;기준 (막지&nbsp;못하는 경로는&nbsp;아래에)</p>
+                <p class="text-xs text-slate-500 mt-1 bal">설계상 이름&#8288;·연봉 값&nbsp;기준 (막지&nbsp;못하는 경로는&nbsp;아래에)</p>
               </div>
             </div>
             <div class="px-6 md:px-9 py-6 md:py-7">
-              <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">설계 내용</p>
+              <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">설계 내용</p>
               <div class="grid md:grid-cols-3 gap-3">
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">사내 메신저에서 답하는 AI</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">자주 묻는 규정을 미리 정리해 두고 그&nbsp;안에서만 답하게 합니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">자주 묻는 규정을 미리 정리해 두고 그&nbsp;안에서만 답하게 합니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">밖으로 안&nbsp;나가는 문서 생성기</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">AI에는 빈칸 양식만 받고, 이름과 금액은 담당자 브라우저에서만 채워 넣습니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">AI에게서는 빈칸 양식만 받고, <br class="hidden md:block">이름과 금액은 담당자 브라우저에서만 채워 넣습니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">막지 못하는&nbsp;것도 밝힘</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">구조가 막는&nbsp;것과 못&nbsp;막는&nbsp;것, AI가 틀렸을&nbsp;때의 규칙을 함께 정리했습니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">구조가 막는&nbsp;것과 못&nbsp;막는&nbsp;것, <br class="hidden md:block">AI가 틀렸을&nbsp;때의 규칙을 함께 정리했습니다.</p>
                 </div>
               </div>
             </div>
             <div class="px-6 md:px-9 py-4 bg-slate-50 border-t border-slate-200">
-              <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">15시간은 반복 문의 응대와 양식 작성에 주당 이만큼 든다고 가정한 값이고, 87%&#8288;는 목표로 잡은 선입니다. 도입하면 항목별로 재서 채워야 합니다.</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">15시간은 반복 문의 응대와 양식 작성에 주당 이만큼 든다고 가정한 값이고, 87%&#8288;는 목표로 잡은 선입니다. <br class="hidden md:block">도입하면 항목별로 재서 채워야 합니다.</p>
             </div>
           </div>
         </section>
@@ -155,8 +159,7 @@
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-5">문제 정의</h2>
             <p class="text-slate-600 leading-relaxed mb-4 max-w-[46em]">
                     인사 담당자의 업무 시간은 반복 문의 응대와 양식 문서 작성에 집중됩니다. <br class="hidden md:block">
-                    두&nbsp;업무 모두 AI로 대체할&nbsp;수 있지만, <br class="hidden md:block">
-                    이름&#8288;·연봉&nbsp;등 인사 데이터를 외부 서비스에 입력할&nbsp;수 없어 도입이 막힙니다. <br class="hidden md:block">
+                    두&nbsp;업무 모두 AI로 대체할&nbsp;수 있지만, 이름&#8288;·연봉&nbsp;등 인사 데이터를 외부 서비스에 입력할&nbsp;수 없어 도입이 막힙니다. <br class="hidden md:block">
                     AI에는 빈칸 양식만 생성하게 하고 민감 정보는 담당자 단말에서 결합하는 구조를 제안했습니다.
                 </p>
         </section>
@@ -174,11 +177,11 @@
                     <ul class="space-y-4 text-slate-700">
                         <li class="flex items-start">
                             <span class="mr-2 mt-1 text-slate-500">▪️</span> 
-                            <div><strong>반복적인 사내 문의로 인한 리소스 분산:</strong><br>다양한 사내 규정으로 인해 메신저를 통한 유사 문의가 꾸준히 발생하며, 이를 응대하는 과정에서 HR 실무자의 핵심 업무 집중도가 저하될&nbsp;수 있습니다.</div>
+                            <div><strong>반복적인 사내 문의로 인한 리소스 분산:</strong><br>다양한 사내 규정으로 인해 메신저를 통한 유사 문의가 꾸준히 발생하며, 이를 응대하는 과정에서 HR 실무자의 <br class="hidden md:block">핵심 업무 집중도가 저하될&nbsp;수 있습니다.</div>
                         </li>
                         <li class="flex items-start">
                             <span class="mr-2 mt-1 text-slate-500">▪️</span> 
-                            <div class="bal-m bal-t"><strong>사내 보안 가이드를 준수하는 안전한 AI 활용:</strong><br>민감한 인사 데이터&#8288;(이름, 연봉&nbsp;등)&#8288;를 다룰&nbsp;때, 기업의 엄격한 보안 지침을 준수하면서도 최신 AI의 작업 속도와 편의성을 그대로 활용할&nbsp;수 있는 환경 구축이 필요합니다.</div>
+                            <div class="bal-m bal-t"><strong>사내 보안 가이드를 준수하는 안전한 AI 활용:</strong><br>민감한 인사 데이터&#8288;(이름, 연봉&nbsp;등)&#8288;를 다룰&nbsp;때, 기업의 엄격한 보안 지침을 준수하면서도 최신 AI의 작업 속도와 편의성을 <br class="hidden md:block">그대로 활용할&nbsp;수 있는 환경 구축이 필요합니다.</div>
                         </li>
                     </ul>
                 </div>
@@ -191,8 +194,7 @@
                         </li>
                         <li class="flex items-start">
                             <span class="mr-2 mt-1 text-teal-500">▪️</span> 
-                            <div><strong>보안형 로컬 AI 생성기 도입:</strong><br>외부 서버 통신을 제한하고, <br class="hidden md:block">
-                    담당자의 브라우저 내부에서만 민감 정보를 결합하는 자체 자동화 문서 생성기를 기획하여 보안을 강화합니다.</div>
+                            <div><strong>보안형 로컬 문서 생성기 도입:</strong><br>외부 서버 통신을 제한하고, 담당자의 브라우저 내부에서만 민감 정보를 결합하는 자체 자동화 문서 생성기를 기획하여 보안을 강화합니다.</div>
                         </li>
                     </ul>
                 </div>
@@ -205,7 +207,7 @@
                 기능 1: 노션 데이터베이스 및&nbsp;사내 메신저 AI 답변
             </h2>
             <p class="text-slate-600 mb-6 max-w-[46em] leading-[1.8]">
-                    구성원이 자주 묻는 질문을 직관적으로 정리한 데이터 구조와, 이를 활용하여 사내 메신저에서 AI가 답변하게 만드는 프롬프트 기획안입니다. <br class="hidden md:block">
+                    구성원이 자주 묻는 질문을 직관적으로 정리한 데이터 구조와, <br class="hidden md:block">이를 활용하여 사내 메신저에서 AI가 답변하게 만드는 프롬프트 기획안입니다. <br class="hidden md:block">
                     <strong>아래 표의 행을 클릭하여 AI 답변 지침이 어떻게 변하는지 확인해 보세요.</strong>
                 </p>
 
@@ -223,19 +225,19 @@
                         <tr class="hover:bg-slate-50 transition-colors cursor-pointer" data-id="1">
                             <td><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">근태/휴가</span></td>
                             <td>반차&#8288;(0.5일) 사용&nbsp;시 근무 시간 기준이 어떻게 되나요?</td>
-                            <td>반차 사용&nbsp;시 의무 근무 시간은 4시간이며, 코어타임&#8288;(11:00~16:00) 포함 여부와 무관하게 총량만 채우면 됨.</td>
+                            <td>반차 사용&nbsp;시 의무 근무 시간은 4시간이며, 코어타임&#8288;(11:00~16:00) <br class="hidden md:block">포함 여부와 무관하게 총량만 채우면 됨.</td>
                             <td class="text-blue-600 underline">@근태가이드</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition-colors cursor-pointer" data-id="2">
                             <td><span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs font-medium">복리후생</span></td>
                             <td>게임 지원금 결제 영수증 처리는 언제까지 해야 하나요?</td>
-                            <td>매월 25일까지 사내 시스템 '복지비 청구' 메뉴에 영수증 스캔본 첨부하여 상신 필수.</td>
+                            <td>매월 25일까지 사내 시스템 '복지비 청구' 메뉴에 <br class="hidden md:block">영수증 스캔본 첨부하여 상신 필수.</td>
                             <td class="text-blue-600 underline">@복지규정</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition-colors cursor-pointer" data-id="3">
                             <td><span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">행정/증명서</span></td>
                             <td>재직증명서 영문 발급이 가능한가요?</td>
-                            <td>사내 포털 > 인사지원 > 제증명 발급 메뉴에서 국/영문 선택 가능. 신청 즉시 PDF 자동 발급.</td>
+                            <td>사내 포털 &gt; 인사지원 &gt; 제증명 발급 메뉴에서 <br class="hidden md:block">국/영문 선택 가능. 신청 즉시 PDF 자동 발급.</td>
                             <td class="text-blue-600 underline">@포털매뉴얼</td>
                         </tr>
                     </tbody>
@@ -246,7 +248,7 @@
                 <div class="absolute top-0 right-0 bg-teal-500 text-slate-900 px-4 py-1.5 rounded-bl-lg text-xs font-bold tracking-wider">AI 프롬프트 가이드</div>
                 
                 <div class="mb-2 text-teal-400 font-bold mt-2"># AI 역할 부여</div>
-                <div class="mb-6 text-slate-100 bal-t">당신은 게임 개발사 인사 조직의 친절하고 정확한 HR 어시스턴트입니다. 아래 제공된 [참조 정보] 규정만을 바탕으로 구성원의 문의에 답변하세요. 규정에 없는 내용은 절대 지어내지 마세요.</div>
+                <div class="mb-6 text-slate-100 bal-t">당신은 게임 개발사 인사 조직의 친절하고 정확한 HR 어시스턴트입니다. <br class="hidden md:block">아래 제공된 [참조 정보] 규정만을 바탕으로 구성원의 문의에 답변하세요. 규정에 없는 내용은 절대 지어내지 마세요.</div>
                 
                 <div class="mb-2 text-teal-400 font-bold"># 참조 정보 (노션 연동 데이터)</div>
                 <div id="prompt-context" class="mb-6 text-yellow-300 bg-slate-800 p-3 rounded border border-slate-700 transition-all">위 표에서 항목을 클릭해 주세요.</div>
@@ -307,7 +309,7 @@
                     </div>
                 </div>
                 <button id="generate-btn" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 px-4 rounded-lg transition-colors flex items-center justify-center text-lg shadow-md">
-                    외부 서버 전송 없이 안전하게 생성하기
+                    민감 정보 전송 없이 안전하게 생성하기
                 </button>
 
                 <div id="result-container" class="mt-8 hidden">
@@ -351,23 +353,22 @@
                     <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-md hover:shadow-lg transition-shadow relative overflow-hidden">
                         <div class="absolute top-0 left-0 w-1 h-full bg-teal-500"></div>
                         <h3 class="font-bold text-lg text-slate-800 mb-3">⏱️ 운영 효율화 (정량적 리소스 확보)</h3>
-                        <p class="text-base text-slate-600 leading-relaxed">
-                    반복적인 사내 문의 응대와 문서 템플릿 작성에 드는 <strong>주간 소요 시간을 크게 줄일&nbsp;수 있습니다</strong>. <br class="hidden md:block">
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                    반복적인 사내 문의 응대와 문서 템플릿 작성에 드는 <br class="hidden md:block"><strong>주간 소요 시간을 크게 줄일&nbsp;수 있습니다</strong>. <br class="hidden md:block">
                     도입&nbsp;시 기대 수준이며 실측치는 아닙니다. <br class="hidden md:block">
-                    확보한 시간은 조직 문화 개선, <br class="hidden md:block">
-                    채용 기획&nbsp;등 다른 HR 업무에 쓸&nbsp;수 있습니다.
+                    확보한 시간은 조직 문화 개선, 채용 기획&nbsp;등 다른 HR 업무에 쓸&nbsp;수 있습니다.
                 </p>
                     </div>
                     <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-md hover:shadow-lg transition-shadow relative overflow-hidden">
                         <div class="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
                         <h3 class="font-bold text-lg text-slate-800 mb-3">🛡️ 개인정보 유출 경로 차단</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed bal"><span class="seg-bal-md">이름, 연봉, 평가&nbsp;등 민감한 <strong>인사 데이터가 외부&nbsp;서버로 전송되는 경로 자체를 만들지 않습니다</strong>.</span> <span class="seg-bal-md">민감 정보는 담당자 브라우저 안에서만 결합되므로 외부망 유출 경로가 차단됩니다.</span> <span class="seg-bal-md">AI의 편리함과 속도는 취하되 보안 리스크는 줄이는 실무 환경을 만듭니다.</span></p>
+                        <p class="text-sm text-slate-600 leading-relaxed bal"><span class="seg-bal-md">이름, 연봉, 평가&nbsp;등 민감한 <strong>인사 데이터가 외부&nbsp;서버로 전송되는 경로 자체를 만들지 않습니다</strong>.</span> <span class="seg-bal-md">민감 정보는 담당자 브라우저 안에서만 결합되므로 외부 AI로 나가는 유출 경로가 차단됩니다.</span> <span class="seg-bal-md">AI의 편리함과 속도는 취하되 보안 리스크는 줄이는 실무 환경을 만듭니다.</span></p>
                     </div>
                     <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-md hover:shadow-lg transition-shadow relative overflow-hidden">
                         <div class="absolute top-0 left-0 w-1 h-full bg-purple-500"></div>
                         <h3 class="font-bold text-lg text-slate-800 mb-3">📚 HR 지식 자산의 중앙화</h3>
                         <p class="text-sm text-slate-600 leading-relaxed bal">
-                     파편화되어 있던 HR 응대 히스토리와 정책을 <strong>노션 단일 채널로 자산화</strong>하여, 담당자 부재나 교체&nbsp;시에도 일관된 정책 안내가 가능해집니다.
+                     파편화되어 있던 HR 응대 히스토리와 정책을 <strong>노션 단일 채널로 자산화</strong>하여, <br class="hidden md:block">담당자 부재나 교체&nbsp;시에도 일관된 정책 안내가 가능해집니다.
                 </p>
                     </div>
                 </div>
@@ -387,7 +388,7 @@
 
             <div class="grid md:grid-cols-2 gap-5 mb-6">
                 <div class="bg-emerald-50 border-2 border-emerald-200 rounded-xl p-5">
-                    <p class="text-[11px] font-black tracking-wide text-emerald-700 mb-3">이&nbsp;구조가 막는&nbsp;것</p>
+                    <p class="text-xs font-black tracking-wide text-emerald-700 mb-3">이&nbsp;구조가 막는&nbsp;것</p>
                     <ul class="space-y-2 text-sm text-slate-700 leading-relaxed">
                         <li>&bull; 이름 &middot; 연봉 <strong>값 자체가 외부 API로 전송</strong>되는&nbsp;것</li>
                         <li class="bal-m">&bull; 외부 서비스 로그나 학습 데이터에 인사 정보가 남는&nbsp;것</li>
@@ -395,18 +396,18 @@
                     </ul>
                 </div>
                 <div class="bg-rose-50 border-2 border-rose-200 rounded-xl p-5">
-                    <p class="text-[11px] font-black tracking-wide text-rose-700 mb-3">이&nbsp;구조가 막지 못하는&nbsp;것</p>
+                    <p class="text-xs font-black tracking-wide text-rose-700 mb-3">이&nbsp;구조가 막지 못하는&nbsp;것</p>
                     <ul class="space-y-2 text-sm text-slate-700 leading-relaxed">
-                        <li class="bal">&bull; 브라우저에 남는 입력값 — 공용 단말에서 그대로 노출됩니다</li>
-                        <li>&bull; 완성본의 전달 경로 — 메신저나 메일로 보내는 순간 새&nbsp;경로가 생깁니다</li>
-                        <li class="bal">&bull; <strong>담당자의 실수</strong> &mdash; 값을 프롬프트 창에 직접 입력하면 구조가 무력화됩니다</li>
-                        <li class="bal">&bull; <strong>문서 종류 노출</strong> &mdash; &lsquo;연봉 계약서 양식&rsquo; 같은 요청 자체가 외부에 남습니다</li>
+                        <li class="bal">&bull; 브라우저에 남는 입력값 — 공용 단말에서 그대로 노출됩니다.</li>
+                        <li>&bull; 완성본의 전달 경로 — 메신저나 메일로 보내는 순간 새&nbsp;경로가 생깁니다.</li>
+                        <li class="bal">&bull; <strong>담당자의 실수</strong> &mdash; 값을 프롬프트 창에 직접 입력하면 구조가 무력화됩니다.</li>
+                        <li class="bal">&bull; <strong>문서 종류 노출</strong> &mdash; &lsquo;연봉 계약서 양식&rsquo; 같은 요청 자체가 외부에 남습니다.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
-                <p class="text-[11px] font-black tracking-wide text-slate-500 mb-4">보완 설계</p>
+                <p class="text-xs font-black tracking-wide text-slate-500 mb-4">보완 설계</p>
                 <div class="space-y-3">
                     <div class="bg-white rounded-lg p-4 border border-slate-200">
                         <p class="text-xs font-black text-slate-800 mb-1">입력값 잔존 차단</p>
@@ -437,19 +438,19 @@
         <section id="answer-risk" class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">AI 답변의 오답 리스크와 운영 규칙</h2>
             <p class="text-slate-500 text-base mb-6 leading-relaxed max-w-[46em] bal">
-                    근태 · 급여 · 계약과 바로 닿는 안내라, 틀린 답 하나가 분쟁이 됩니다. <strong>지어내지 말라는 프롬프트 한&nbsp;줄로는 막히지 않습니다.</strong>
+                    근태 · 급여 · 계약과 바로 닿는 안내라, 틀린 답 하나가 분쟁이 됩니다. <br class="hidden md:block"><strong>지어내지 말라는 프롬프트 한&nbsp;줄로는 막히지 않습니다.</strong>
                 </p>
 
             <div class="space-y-4 mb-6">
                 <div class="border-l-4 border-l-rose-500 bg-rose-50 rounded-r-xl p-5">
-                    <p class="text-sm font-black text-slate-900 mb-2">위험 1 &middot; 규정이 바뀌면 AI는 옛 내용을 자신 있게 말합니다</p>
+                    <p class="text-sm font-black text-slate-900 mb-2">위험 1 &middot; 규정이 바뀌면 AI는 옛 내용을 자신 있게 말합니다.</p>
                     <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
                     DB에 있는&nbsp;것만 답하므로 DB가 개정을 못&nbsp;따라가면 오답이 확정입니다.<br>
 게다가 <strong>근거를 단 형식으로 답해서 아무도 의심하지 않습니다.</strong>
                 </p>
                 </div>
                 <div class="border-l-4 border-l-rose-500 bg-rose-50 rounded-r-xl p-5">
-                    <p class="text-sm font-black text-slate-900 mb-2">위험 2 &middot; 요약 과정에서 조건이 탈락합니다</p>
+                    <p class="text-sm font-black text-slate-900 mb-2">위험 2 &middot; 요약 과정에서 조건이 탈락합니다.</p>
                     <p class="text-xs text-slate-600 leading-relaxed max-w-[46em]">
                     규정에서 중요한&nbsp;것은 대개 <strong>예외 조건과 단서</strong>인데, 요약은 그것부터 떨어뜨립니다.<br>
 문장은 맞지만&nbsp;내 경우에는 틀린 답이 나옵니다.
@@ -458,7 +459,7 @@
             </div>
 
             <div class="bg-slate-900 rounded-xl p-6 text-white">
-                <p class="text-[11px] font-black tracking-wide text-amber-400 mb-4">운영 규칙으로 넣어야 할&nbsp;것</p>
+                <p class="text-xs font-black tracking-wide text-amber-400 mb-4">운영 규칙으로 넣어야 할&nbsp;것</p>
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="bg-white/10 rounded-lg p-4">
                         <p class="text-xs font-black text-amber-300 mb-1">답변 고지 문구</p>
@@ -475,7 +476,7 @@
                     <div class="bg-white/10 rounded-lg p-4">
                         <p class="text-xs font-black text-amber-300 mb-1">에스컬레이션 경로</p>
                         <p class="text-xs text-slate-300 leading-relaxed bal">
-                    규정 밖 문의는 추측하지 않고 담당자로 넘깁니다. <strong>모른다고 답할&nbsp;수 있게 만드는&nbsp;것</strong>이&nbsp;정확도의 핵심입니다.
+                    규정 밖 문의는 추측하지 않고 담당자로 넘깁니다. <br class="hidden md:block"><strong>모른다고 답할&nbsp;수 있게 만드는&nbsp;것</strong>이&nbsp;정확도의 핵심입니다.
                 </p>
                     </div>
                     <div class="bg-white/10 rounded-lg p-4">
@@ -486,7 +487,7 @@
                     </div>
                 </div>
                 <p class="text-sm text-slate-300 leading-relaxed mt-5 pt-5 border-t border-white/20 max-w-[46em]">
-                    규정 개정 절차에 <strong>노션 DB 갱신</strong>을 필수 단계로 넣는&nbsp;것이 생명선입니다. 도구를 만드는&nbsp;일보다 갱신 책임자와 주기를 정하는&nbsp;일이 어렵습니다.
+                    규정 개정 절차에 <strong>노션 DB 갱신</strong>을 필수 단계로 넣는&nbsp;것이 생명선입니다. <br class="hidden md:block">도구를 만드는&nbsp;일보다 갱신 책임자와 주기를 정하는&nbsp;일이 어렵습니다.
                 </p>
             </div>
         </section>
@@ -496,7 +497,7 @@
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">도입&nbsp;후 확인할 지표</h2>
             <div class="mt-6">
                 <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
-                    <p class="text-[11px] font-black tracking-wide text-emerald-700 mb-4">측정할 지표</p>
+                    <p class="text-xs font-black tracking-wide text-emerald-700 mb-4">측정할 지표</p>
                     <ul class="space-y-3 text-sm text-slate-600 leading-relaxed">
                         <li class="bal">&bull; <strong class="text-slate-800">문의 건수 변화:</strong> 메신저로 인입되는 반복 문의&nbsp;수 &mdash; 도입 전 4주 평균과 비교</li>
                         <li class="bal">&bull; <strong class="text-slate-800">순 절감 시간:</strong> 응대 &middot; 문서 작성 절감분에서 <strong>DB 갱신과 품질 관리 시간을 차감</strong>한&nbsp;값</li>
@@ -510,9 +511,9 @@
             </div>
 
             <div class="bg-indigo-50 border-2 border-indigo-200 rounded-xl p-6 mt-6">
-                <p class="text-[11px] font-black tracking-wide text-indigo-600 mb-3">정리</p>
+                <p class="text-xs font-black tracking-wide text-indigo-600 mb-3">정리</p>
                 <p class="text-sm md:text-base text-slate-700 leading-relaxed max-w-[46em] bal">
-                    빈칸 양식만 외부에서 받고 결합은 안에서 하는 방식은, <strong>‘AI를 쓸&nbsp;수 없다’&#8288;는 제약을 ‘이렇게 쓰면 된다’</strong>&#8288;로 바꿉니다. 도입까지 가려면 저장 · 전달 · 잔존 구간과, 절감 시간에서 새&nbsp;관리 업무를 뺀 숫자가 함께 있어야 합니다.
+                    빈칸 양식만 외부에서 받고 결합은 안에서 하는 방식은, <strong>‘AI를 쓸&nbsp;수 없다’&#8288;는 제약을 ‘이렇게 쓰면 된다’</strong>&#8288;로 바꿉니다. <br class="hidden md:block">도입까지 가려면 저장 · 전달 · 잔존 구간과, 절감 시간에서 새&nbsp;관리 업무를 뺀 숫자가 함께 있어야&nbsp;합니다.
                 </p>
             </div>
         </section>
@@ -566,7 +567,7 @@
             generateBtn.classList.add('opacity-80');
             
             setTimeout(() => {
-                const name = nameInput.value || '작성자';
+                const name = nameInput.value || '근로자';
                 const salary = salaryInput.value || '협의된 금액';
                 
                 const mergedText = aiTemplate
@@ -576,7 +577,7 @@
                 finalOutput.textContent = mergedText;
                 resultContainer.classList.remove('hidden');
                 
-                generateBtn.innerHTML = '외부 서버 전송 없이 안전하게 생성 완료 ✅';
+                generateBtn.innerHTML = '민감 정보 전송 없이 안전하게 생성 완료 ✅';
                 generateBtn.classList.remove('bg-teal-600', 'hover:bg-teal-700', 'opacity-80');
                 generateBtn.classList.add('bg-slate-800');
             }, 700); // 0.7초의 시뮬레이션 지연

@@ -23,6 +23,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4"></script>
+    <script>Chart.defaults.font.family = "'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif";</script>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
         body { 
@@ -144,6 +145,10 @@
 html { scroll-behavior: smooth; }
 .tab-btn { display: flex; align-items: center; justify-content: center; text-align: center; padding-left: 12px; padding-right: 12px; }
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-amber-600{color:#b45309} html body .text-green-600{color:#15803d} html body .text-orange-500{color:#c2410c} html body .text-red-500{color:#b91c1c}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="antialiased">
 
@@ -176,39 +181,39 @@ html { scroll-behavior: smooth; }
                 <section class="mb-12" aria-label="이 문서가 하는 말">
                   <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
                     <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-                      <p class="text-[11px] font-black tracking-[0.12em] text-amber-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
-                      <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">수집&#8288;·교환 구조를 활용한 시즌 이벤트와 운영 프로세스를 설계한 개인 기획안입니다. 블레이드&amp;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 가상 이벤트이며, 아래 확률은 기획안에서 정한 설계값입니다.</p>
+                      <p class="text-xs font-black tracking-[0.12em] text-amber-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
+                      <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]" style="max-width:44em;text-wrap:wrap">수집&#8288;·교환 구조를 활용한 시즌 이벤트와 운영 프로세스를 설계한 기획안입니다. <br class="hidden md:block">블레이드&#8288;&amp;&#8288;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 가상 이벤트이며, <br class="hidden md:block">아래 확률은 기획안에서 정한 설계값입니다.</p>
                     </div>
                     <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
                       <div class="px-3 py-5 md:py-6 text-center">
-                        <p class="text-[11px] font-bold text-slate-500 mb-2 bal">토끼 잡기 50%</p>
+                        <p class="text-xs font-bold text-slate-500 mb-2 bal">토끼 잡기 50%</p>
                         <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">20회</p>
-                        <p class="text-[11px] text-slate-500 mt-1 bal">당근 10개까지</p>
+                        <p class="text-xs text-slate-500 mt-1 bal">당근 10개까지</p>
                       </div>
                       <div class="px-3 py-5 md:py-6 text-center">
-                        <p class="text-[11px] font-bold text-slate-500 mb-2 bal">상자 열기 30%</p>
+                        <p class="text-xs font-bold text-slate-500 mb-2 bal">상자 열기 30%</p>
                         <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">33.3회</p>
                       </div>
                       <div class="px-3 py-5 md:py-6 text-center">
-                        <p class="text-[11px] font-bold text-slate-500 mb-2 bal">항아리 20%</p>
+                        <p class="text-xs font-bold text-slate-500 mb-2 bal">항아리 20%</p>
                         <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">50.0회</p>
-                        <p class="text-[11px] text-slate-500 mt-1 bal">토끼의 2.5배</p>
+                        <p class="text-xs text-slate-500 mt-1 bal">토끼의 2.5배</p>
                       </div>
                     </div>
                     <div class="px-6 md:px-9 py-6 md:py-7">
-                      <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">개선할&nbsp;점</p>
+                      <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">개선할&nbsp;점</p>
                       <div class="grid md:grid-cols-3 gap-3">
                         <div class="rounded-xl border border-slate-200 p-4">
-                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">확률을 좁힌다</p>
-                          <p class="text-xs text-slate-500 leading-relaxed bal">40 / 35 / 30으로 좁히면 필요 횟수가 25~33회로 모여 경로가 고르게 쓰입니다</p>
+                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">확률을 좁힌다.</p>
+                          <p class="text-xs text-slate-500 leading-relaxed bal">40 / 35 / 30으로 좁히면 필요 횟수가 <br class="hidden md:block">25~33회로 모여 경로가 고르게 쓰입니다.</p>
                         </div>
                         <div class="rounded-xl border border-slate-200 p-4">
-                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">평균&nbsp;뒤의 흩어짐도 본다</p>
-                          <p class="text-xs text-slate-500 leading-relaxed bal">평균 20회지만 운이 나쁜 열&nbsp;명&nbsp;중 한&nbsp;명은 26회, 백&nbsp;명&nbsp;중 한&nbsp;명은 33회를 돌아야 합니다</p>
+                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">평균&nbsp;뒤의 흩어짐도 본다.</p>
+                          <p class="text-xs text-slate-500 leading-relaxed bal">평균 20회지만 운이 나쁜 열&nbsp;명&nbsp;중 한&nbsp;명은 26회, 백&nbsp;명&nbsp;중 한&nbsp;명은 33회를 돌아야 합니다.</p>
                         </div>
                         <div class="rounded-xl border border-slate-200 p-4">
                           <p class="text-sm font-black text-slate-900 mb-1.5 bal">1회 한정과 복귀 유입은 같이 안&nbsp;감</p>
-                          <p class="text-xs text-slate-500 leading-relaxed bal">계정당 1회라 예전에 이&nbsp;이벤트를 마치고 떠난 유저는 돌아와도 참여할&nbsp;수 없습니다</p>
+                          <p class="text-xs text-slate-500 leading-relaxed bal">계정당 1회라 예전에 이&nbsp;이벤트를 마치고 떠난 유저는 돌아와도 참여할&nbsp;수 없습니다.</p>
                         </div>
                       </div>
                     </div>
@@ -251,25 +256,25 @@ html { scroll-behavior: smooth; }
                             <div class="space-y-1">
                                 <p class="text-sm font-bold text-amber-800">시놉시스</p>
                                 <p class="text-xs text-amber-700 leading-relaxed">
-                    선물을 나눠줘야 할&nbsp;산타맛 쿠키가 루돌프의 먹이&#8288;(당근)&#8288;가 없어 출발하지&nbsp;못하는 상황입니다. <br class="hidden md:block">
+                    선물을 나눠줘야 할&nbsp;산타맛 쿠키가 <br class="hidden md:block">루돌프의 먹이&#8288;(당근)&#8288;가 없어 출발하지&nbsp;못하는 상황입니다. <br class="hidden md:block">
                     플레이어가 스토리 모드를 돌며 당근을 모아다 주는 따뜻한 겨울 이야기를 담았습니다.
                 </p>
                             </div>
                             <div class="bg-orange-50 p-3 rounded-lg border border-orange-100">
-                                <p class="text-[11px] font-bold text-orange-700">핵심 규칙</p>
-                                <p class="text-[11px] text-orange-700 mt-1 text-sm">
-                    '산타의 장바구니' 아이템을 보유한 상태로 싱글 스토리 모드를 진행할&nbsp;때만 당근 획득이 가능하도록 설계했습니다.
+                                <p class="text-xs font-bold text-orange-700">핵심 규칙</p>
+                                <p class="text-xs text-orange-700 mt-1 text-sm">
+                    '산타의 장바구니' 아이템을 보유한 상태로 싱글 스토리 모드를 진행할&nbsp;때만 <br class="hidden md:block">당근 획득이 가능하도록 설계했습니다.
                 </p>
                             </div>
                         </div>
                     </div>
 
                     <!-- 획득 확률 차트 -->
-                    <div class="space-y-6">
+                    <div class="space-y-6 flex flex-col">
                         <h3 class="text-xl font-bold text-amber-900 flex items-center gap-2">
                             <span class="text-orange-500">#</span> 당근 획득 밸런스 (확률)
                         </h3>
-                        <div class="content-panel p-6 border-amber-200 h-full flex flex-col justify-center">
+                        <div class="content-panel p-6 border-amber-200 flex-1 flex flex-col justify-center">
                             <div class="space-y-4">
                                 <div>
                                     <div class="flex justify-between text-xs font-bold mb-1">
@@ -299,7 +304,7 @@ html { scroll-behavior: smooth; }
                                     </div>
                                 </div>
                             </div>
-                            <p class="text-[10px] text-amber-700 mt-6 text-center italic bal">* 유저의 플레이 피로도를 고려하여 수집 난이도를 조정했습니다.</p>
+                            <p class="text-xs text-amber-700 mt-6 text-center italic bal">* 유저의 플레이 피로도를 고려하여 수집 난이도를 조정했습니다.</p>
                         </div>
                     </div>
                 </div>
@@ -318,10 +323,10 @@ html { scroll-behavior: smooth; }
                             <div class="text-5xl mb-4">🐰</div>
                             <h4 class="font-bold text-amber-900 mb-2">크리스마스 토끼</h4>
                             <p class="text-amber-600 leading-relaxed text-sm">
-                    이벤트 기간&nbsp;중 스토리 모드에 한정 출현하는 특수 몬스터입니다. <br class="hidden md:block">
+                    이벤트 기간&nbsp;중 스토리 모드에 <br class="hidden md:block">한정 출현하는 특수 몬스터입니다. <br class="hidden md:block">
                     처치&nbsp;시 당근 드롭 확률이 가장 높습니다.
                 </p>
-                            <span class="mt-4 px-2 py-1 bg-red-50 text-[10px] font-bold text-red-500 rounded border border-red-100">신규 제작 리소스</span>
+                            <span class="mt-4 px-2 py-1 bg-red-50 text-xs font-bold text-red-500 rounded border border-red-100">신규 제작 리소스</span>
                         </div>
                         <!-- 오브젝트 2 -->
                         <div class="content-panel p-6 border-amber-200 text-center flex flex-col items-center">
@@ -329,9 +334,9 @@ html { scroll-behavior: smooth; }
                             <h4 class="font-bold text-amber-900 mb-2">루돌프의 당근</h4>
                             <p class="text-amber-600 leading-relaxed text-sm">
                     이벤트 퀘스트 핵심 아이템입니다. <br class="hidden md:block">
-                    총&nbsp;10개를 수집하여 산타맛 쿠키에게 전달해야 합니다.
+                    총&nbsp;10개를 수집하여 <br class="hidden md:block">산타맛 쿠키에게 전달해야 합니다.
                 </p>
-                            <span class="mt-4 px-2 py-1 bg-amber-50 text-[10px] font-bold text-amber-600 rounded border border-amber-100">기존 리소스 활용</span>
+                            <span class="mt-4 px-2 py-1 bg-amber-50 text-xs font-bold text-amber-600 rounded border border-amber-100">기존 리소스 활용</span>
                         </div>
                         <!-- 오브젝트 3 -->
                         <div class="content-panel p-6 border-amber-200 text-center flex flex-col items-center">
@@ -339,9 +344,9 @@ html { scroll-behavior: smooth; }
                             <h4 class="font-bold text-amber-900 mb-2">이벤트 선물상자</h4>
                             <p class="text-amber-600 leading-relaxed text-sm">
                     최종 보상 아이템입니다. <br class="hidden md:block">
-                    사용&nbsp;시 무작위로 레어에서 에픽 등급의 장비를 획득할&nbsp;수 있습니다.
+                    사용&nbsp;시 무작위로 레어에서 <br class="hidden md:block">에픽 등급의 장비를 획득할&nbsp;수 있습니다.
                 </p>
-                            <span class="mt-4 px-2 py-1 bg-green-50 text-[10px] font-bold text-green-600 rounded border border-green-100">기간 한정 소모품</span>
+                            <span class="mt-4 px-2 py-1 bg-green-50 text-xs font-bold text-green-600 rounded border border-green-100">기간 한정 소모품</span>
                         </div>
                     </div>
                 </div>
@@ -395,18 +400,18 @@ html { scroll-behavior: smooth; }
                         <!-- 조작 버튼 (Click UI 추가) -->
                         <div class="flex gap-4">
                             <button onclick="updateUI('progress')" class="relative px-6 py-3 bg-amber-100 hover:bg-amber-200 text-amber-800 rounded-xl text-xs font-bold transition-all shadow-sm border border-amber-200 group">
-                                <span class="absolute -top-3 -right-2 bg-red-500 text-white text-[10px] font-black px-2 py-0.5 rounded-full animate-bounce-subtle shadow-md z-10">눌러보기</span>
+                                <span class="absolute -top-3 -right-2 bg-red-500 text-white text-xs font-black px-2 py-0.5 rounded-full animate-bounce-subtle shadow-md z-10">눌러보기</span>
                                 진행&nbsp;중 상태
                             </button>
                             <button onclick="updateUI('complete')" class="relative px-6 py-3 bg-emerald-100 hover:bg-emerald-200 text-emerald-800 rounded-xl text-xs font-bold transition-all shadow-sm border border-emerald-200 group">
-                                <span class="absolute -top-3 -right-2 bg-red-500 text-white text-[10px] font-black px-2 py-0.5 rounded-full animate-bounce-subtle shadow-md z-10">눌러보기</span>
+                                <span class="absolute -top-3 -right-2 bg-red-500 text-white text-xs font-black px-2 py-0.5 rounded-full animate-bounce-subtle shadow-md z-10">눌러보기</span>
                                 수집 완료 상태
                             </button>
                         </div>
 
                         <!-- 시나리오 설명 -->
                         <div class="mt-8">
-                            <p class="text-[10px] font-bold text-amber-700 tracking-wide mb-2">대사 스크립트</p>
+                            <p class="text-xs font-bold text-amber-700 tracking-wide mb-2">대사 스크립트</p>
                             <div id="scriptBox" class="bg-white p-5 rounded-xl border border-amber-100 text-xs leading-relaxed min-h-[100px] shadow-inner">
                                 <strong>[산타맛 쿠키]:</strong> 루돌프가 배고파서 움직이질 않네... 토끼들이 당근을 다&nbsp;먹어치우고 있어! 당근 10개만 구해줄&nbsp;수 있을까?
                             </div>
@@ -418,7 +423,7 @@ html { scroll-behavior: smooth; }
                         <div class="mockup-phone shadow-2xl border-amber-900/10">
                             <!-- 헤더 -->
                             <div class="h-8 bg-black/30 flex items-center px-4 justify-between">
-                                <span class="text-[8px] text-white/50 italic">Cookie Run: Tower of Adventures</span>
+                                <span class="text-xs text-white/50 italic">Cookie Run: Tower of Adventures</span>
                                 <div class="flex gap-1">
                                     <div class="w-1.5 h-1.5 bg-white/20 rounded-full"></div>
                                     <div class="w-1.5 h-1.5 bg-white/20 rounded-full"></div>
@@ -437,12 +442,12 @@ html { scroll-behavior: smooth; }
                                         <div class="flex gap-3 items-center">
                                             <div class="w-12 h-12 bg-amber-200 rounded-xl flex items-center justify-center text-2xl shadow-inner">🎅</div>
                                             <div class="flex-1">
-                                                <p class="text-white font-bold text-[10px]">크리스마스 이벤트!</p>
-                                                <p class="text-white/60 text-[8px]">루돌프를 위해 당근을 모아주세요.</p>
+                                                <p class="text-white font-bold text-xs">크리스마스 이벤트!</p>
+                                                <p class="text-white/60 text-xs">루돌프를 위해 당근을 모아주세요.</p>
                                             </div>
                                         </div>
                                         <div class="mt-5 space-y-2">
-                                            <div class="flex justify-between text-[9px] font-bold">
+                                            <div class="flex justify-between text-xs font-bold">
                                                 <span class="text-white">당근 수집 현황</span>
                                                 <span id="mockupCounter" class="text-red-400">7 / 10</span>
                                             </div>
@@ -450,7 +455,7 @@ html { scroll-behavior: smooth; }
                                                 <div id="mockupBar" class="bg-orange-500 h-full w-[70%] transition-all duration-500"></div>
                                             </div>
                                         </div>
-                                        <button id="mockupBtn" class="mt-5 w-full py-2.5 bg-gray-600 text-white/50 text-[10px] font-bold rounded-lg cursor-not-allowed transition-all">수집&nbsp;중...</button>
+                                        <button id="mockupBtn" class="mt-5 w-full py-2.5 bg-gray-600 text-white/50 text-xs font-bold rounded-lg cursor-not-allowed transition-all">수집&nbsp;중...</button>
                                     </div>
                                 </div>
                                 
@@ -483,7 +488,7 @@ html { scroll-behavior: smooth; }
                         </thead>
                         <tbody>
                                 <tr class="bg-emerald-50 border-b border-amber-100">
-                                    <td class="p-3 font-black text-amber-900">크리스마스 토끼 처치 <span class="text-[10px] font-black text-emerald-700">가장 효율적</span></td>
+                                    <td class="p-3 font-black text-amber-900">크리스마스 토끼 처치 <span class="text-xs font-black text-emerald-700">가장 효율적</span></td>
                                     <td class="p-3 text-center font-bold text-amber-800">50%</td>
                                     <td class="p-3 text-center font-black text-emerald-700">20.0회</td>
                                 </tr>
@@ -493,7 +498,7 @@ html { scroll-behavior: smooth; }
                                     <td class="p-3 text-center font-black text-amber-700">33.3회</td>
                                 </tr>
                                 <tr class="bg-rose-50 border-b border-amber-100">
-                                    <td class="p-3 font-black text-amber-900">항아리 트랩 제거 <span class="text-[10px] font-black text-rose-700">가장 비효율</span></td>
+                                    <td class="p-3 font-black text-amber-900">항아리 트랩 제거 <span class="text-xs font-black text-rose-700">가장 비효율</span></td>
                                     <td class="p-3 text-center font-bold text-amber-800">20%</td>
                                     <td class="p-3 text-center font-black text-rose-700">50.0회</td>
                                 </tr>
@@ -502,13 +507,13 @@ html { scroll-behavior: smooth; }
                 </div>
 
                 <div class="bg-rose-50 border-2 border-rose-300 rounded-2xl p-8 mb-8">
-                    <p class="text-sm font-black text-rose-700 mb-4">유저는 토끼만 찾습니다</p>
+                    <p class="text-sm font-black text-rose-700 mb-4">유저는 토끼만 찾습니다.</p>
                     <p class="text-amber-900 leading-relaxed mb-5 seg-t"><span class="seg-bal-t">
                     경로&nbsp;간 필요 시행이 <strong class="text-rose-700">20회에서 50회로 2.5배</strong> 차이 납니다. </span><br class="hidden md:block"><span class="seg-bal-t">
                     이&nbsp;정도 격차면 유저는 계산하지 않아도 체감으로 알게 되고, <strong class="text-amber-900">확률이 가장 높은 토끼만 노리게 됩니다.</strong>
                 </span></p>
                     <div class="bg-white rounded-xl p-6 border border-rose-200 mb-5">
-                        <p class="text-xs font-black text-rose-700 mb-2">그&nbsp;결과 두&nbsp;가지가 생깁니다</p>
+                        <p class="text-xs font-black text-rose-700 mb-2">그&nbsp;결과 두&nbsp;가지가 생깁니다.</p>
                         <ul class="space-y-2 text-xs text-amber-900 leading-relaxed">
                             <li>&bull; <strong class="text-amber-900">보물상자와 항아리는 쓰이지 않습니다.</strong> 세&nbsp;경로를 설계한 의도가 실제 플레이에서 사라집니다.</li>
                             <li class="bal">&bull; 토끼는 <strong class="text-amber-900">이벤트 기간 한정 출현</strong>이므로 특정 스테이지에 몰립니다. 유저는 토끼가 많이 나오는 한&nbsp;스테이지만 반복합니다.</li>
@@ -533,7 +538,7 @@ html { scroll-behavior: smooth; }
                             <p class="text-xs font-black text-amber-900 mb-2">경로별 상한을 두는 방법</p>
                             <p class="text-xs text-amber-800 leading-relaxed">
                     확률은 그대로 두고 <strong class="text-amber-900">경로별 일일 획득 상한</strong>을 겁니다. <br class="hidden md:block">
-                    토끼로 3개까지만 얻을&nbsp;수 있게 하면 나머지는 다른 경로를 쓰게 되고, 오브젝트가 배치된 여러 스테이지를 돌게 됩니다. <strong class="text-amber-900">재진입 동기라는 원래 목적에 더&nbsp;직접적</strong>입니다.
+                    토끼로 3개까지만 얻을&nbsp;수 있게 하면 나머지는 다른 경로를 쓰게 되고, 오브젝트가 배치된 여러 스테이지를 돌게 됩니다. <br class="hidden md:block"><strong class="text-amber-900">재진입 동기라는 원래 목적에 더&nbsp;직접적</strong>입니다.
                 </p>
                         </div>
                         <div class="bg-amber-50 rounded-xl p-5 border border-amber-200">
@@ -606,38 +611,38 @@ html { scroll-behavior: smooth; }
                 </p>
 
                 <div class="bg-rose-50 border-2 border-rose-300 rounded-2xl p-8 mb-8">
-                    <p class="text-sm font-black text-rose-700 mb-4">불만은 평균이 아니라 꼬리에서 나옵니다</p>
+                    <p class="text-sm font-black text-rose-700 mb-4">불만은 평균이 아니라 꼬리에서 나옵니다.</p>
                     <p class="text-amber-900 leading-relaxed mb-5">
                     토끼만 노리면 평균 20회인데 <strong>열&nbsp;명&nbsp;중 한&nbsp;명은 26회, 백&nbsp;명&nbsp;중 한&nbsp;명은 33회</strong>를 돌아야 합니다.<br>
 같은 이벤트가 누군가에게는 1.3배 긴&nbsp;작업이 됩니다.
                 </p>
                     <p class="text-amber-900 leading-relaxed mb-5">
-                    <strong class="text-rose-700">확률이 낮을수록 격차가 커집니다. 항아리는 평균 50회에 열&nbsp;명&nbsp;중 한&nbsp;명이 69회, 백&nbsp;명&nbsp;중 한&nbsp;명이 89회입니다. <strong>평균과의 차이가 토끼는 6회, 항아리는 19회</strong>입니다. 확률을 40 · 35 · 30으로 좁히면 편중만이 아니라 이&nbsp;편차도 함께 줄어듭니다.</strong>
+                    <strong class="text-rose-700">확률이 낮을수록 격차가 커집니다. <br class="hidden md:block">항아리는 평균 50회에 열&nbsp;명&nbsp;중 한&nbsp;명이 69회, 백&nbsp;명&nbsp;중 한&nbsp;명이 89회입니다. <br class="hidden md:block"><strong>평균과의 차이가 토끼는 6회, 항아리는 19회</strong>입니다. <br class="hidden md:block">확률을 40 · 35 · 30으로 좁히면 편중만이 아니라 이&nbsp;편차도 함께 줄어듭니다.</strong>
                 </p>
                     <div class="bg-white rounded-xl p-6 border border-rose-200">
                         <p class="text-xs font-black text-rose-700 mb-2">꼬리를 잘라내는 표준적인 방법</p>
                         <p class="text-xs text-amber-900 leading-relaxed">
-                    일정 횟수를 넘기면 <strong>확정 지급</strong>으로 바꿉니다. 토끼를 20회 잡았는데 당근이 10개에 못&nbsp;미치면 모자란 만큼 채우는&nbsp;식입니다. 평균은 그대로인데 가장 운 나쁜 구간만 사라집니다. 문의가 몰리는&nbsp;곳도 여기입니다.
+                    일정 횟수를 넘기면 <strong>확정 지급</strong>으로 바꿉니다. <br class="hidden md:block">토끼를 26회 잡았는데 당근이 10개에 못&nbsp;미치면 모자란 만큼 채우는&nbsp;식입니다. <br class="hidden md:block">평균은 거의 그대로인데 가장 운 나쁜 구간만 사라집니다. <br class="hidden md:block">문의가 몰리는&nbsp;곳도 여기입니다.
                 </p>
                     </div>
                 </div>
 
                 <div class="bg-white border-2 border-amber-300 rounded-2xl p-8 mb-8">
-                    <p class="text-sm font-black text-amber-800 mb-4">최종 보상의 확률은 문서에 없습니다</p>
+                    <p class="text-sm font-black text-amber-800 mb-4">최종 보상의 확률은 문서에 없습니다.</p>
                     <p class="text-amber-900 leading-relaxed mb-5">
                     당근 획득 확률은 경로별로 50 · 30 · 20까지 명기되어 있습니다. <br class="hidden md:block">
                     그런데 최종 보상인 이벤트 선물상자는 <strong class="text-amber-900">사용&nbsp;시 무작위로 레어에서 에픽 등급 장비를 획득</strong>한다고만 적혀 있고 등급별 확률이 없습니다.
                 </p>
                     <div class="grid md:grid-cols-2 gap-6 mb-5">
                         <div class="bg-emerald-50 rounded-xl p-5 border border-emerald-200">
-                            <p class="text-xs font-black text-emerald-700 mb-2">획득 경로는 기준을 지켰습니다</p>
+                            <p class="text-xs font-black text-emerald-700 mb-2">획득 경로는 기준을 지켰습니다.</p>
                             <p class="text-xs text-amber-800 leading-relaxed">
                     세&nbsp;경로의 확률을 모두 적어둔 덕분에 앞의 필요 시행 계산이 가능했습니다. <br class="hidden md:block">
                     <strong class="text-amber-900">확률을 숫자로 적어둔 기획서는 검토가 가능</strong>합니다.
                 </p>
                         </div>
                         <div class="bg-rose-50 rounded-xl p-5 border border-rose-200">
-                            <p class="text-xs font-black text-rose-700 mb-2">보상 상자는 빠져 있습니다</p>
+                            <p class="text-xs font-black text-rose-700 mb-2">보상 상자는 빠져 있습니다.</p>
                             <p class="text-xs text-amber-800 leading-relaxed">
                     같은 문서 안에서 <strong class="text-amber-900">기준이 다르게 적용</strong>되었습니다. <br class="hidden md:block">
                     레어와 에픽의 비율에 따라 이벤트 체감 보상이 크게 달라집니다.
@@ -645,30 +650,30 @@ html { scroll-behavior: smooth; }
                         </div>
                     </div>
                     <div class="bg-amber-50 rounded-xl p-6 border border-amber-200">
-                        <p class="text-xs font-black text-amber-900 mb-2">이것은 선택 사항이 아닙니다</p>
+                        <p class="text-xs font-black text-amber-900 mb-2">선택 사항으로 두기 어렵습니다.</p>
                         <p class="text-xs text-amber-800 leading-relaxed">확률로 결과가 갈리는 유료 아이템은 <strong>확률 표시가 법으로 의무</strong>입니다.<br>
 선물상자는 이벤트로 얻지만 유상 재화 장비와 같은 등급 체계를 쓰므로, 기획 단계에서 등급별 확률을 채워&nbsp;둡니다.</p>
                     </div>
                 </div>
 
                 <div class="bg-amber-50/60 border-2 border-amber-200 rounded-2xl p-8 mb-8">
-                    <p class="text-sm font-black text-amber-800 mb-4">신규 리소스는 한&nbsp;종뿐이고 그것이 핵심 경로입니다</p>
+                    <p class="text-sm font-black text-amber-800 mb-4">신규 리소스는 한&nbsp;종뿐이고 그것이 핵심 경로입니다.</p>
                     <p class="text-amber-900 leading-relaxed mb-5 bal-t">
                     세&nbsp;종&nbsp;중 새로 만드는&nbsp;것은 토끼 하나입니다. <strong>비용이 드는 한&nbsp;종에 가장 높은 확률 50%</strong>&#8288;를 뒀으니 만든&nbsp;것이 가장 많이 쓰입니다.
                 </p>
                     <div class="bg-white rounded-xl p-6 border border-amber-200">
-                        <p class="text-xs font-black text-amber-900 mb-2">다만 앞의 제안과 방향이 엇갈립니다</p>
+                        <p class="text-xs font-black text-amber-900 mb-2">다만 앞의 제안과 방향이 엇갈립니다.</p>
                         <p class="text-xs text-amber-800 leading-relaxed">일일 상한을 걸면 새로 만든 리소스의 노출이 줄어듭니다. <strong>토끼를 여러 스테이지에 나눠 배치</strong>하면&nbsp;둘&nbsp;다 됩니다. 확률은 그대로 두고 자리만 흩는 방법입니다.</p>
                     </div>
                 </div>
 
                 <div class="bg-white border-2 border-amber-300 rounded-2xl p-8">
-                    <p class="text-sm font-black text-amber-800 mb-4">복귀 유저 유입은 처음 보는 유저에게만 작동합니다</p>
+                    <p class="text-sm font-black text-amber-800 mb-4">복귀 유저 유입은 처음 보는 유저에게만 작동합니다.</p>
                     <p class="text-amber-900 leading-relaxed mb-5">
                     노리는&nbsp;것&nbsp;중 하나가 복귀 유저입니다. 그런데 참여 조건이 <strong>계정당 1회</strong>라, 예전에 이&nbsp;이벤트를 마치고 떠난 유저는 참여할&nbsp;수 없습니다.
                 </p>
                     <p class="text-amber-900 leading-relaxed">
-                    해마다 같은 방식이면 그&nbsp;대상이 계속 늡니다. <strong>1회 한정을 계정이 아니라 시즌 단위로</strong> 두면 회차가 다를&nbsp;때 다시 참여할&nbsp;수 있습니다. 보상 등급만 조정하면 재화가 부풀지도 않습니다.
+                    해마다 같은 방식이면 그&nbsp;대상이 계속 늡니다. <br class="hidden md:block"><strong>1회 한정을 계정이 아니라 시즌 단위로</strong> 두면 회차가 다를&nbsp;때 다시 참여할&nbsp;수 있습니다. <br class="hidden md:block">보상 등급만 조정하면 재화가 부풀지도 않습니다.
                 </p>
                 </div>
             </div>
@@ -680,11 +685,11 @@ html { scroll-behavior: smooth; }
                     <div class="bg-emerald-50 rounded-2xl p-7 border-2 border-emerald-200">
                         <p class="text-sm font-black text-emerald-700 mb-4">확인할 지표</p>
                         <ul class="space-y-3 text-sm text-amber-900 leading-relaxed">
-                            <li class="bal">&bull; <strong class="text-amber-900">경로별 획득 비중</strong> &mdash; 토끼가 8할을 넘으면&nbsp;위 지적이 현실화된&nbsp;것입니다</li>
-                            <li>&bull; <strong class="text-amber-900">참여 스테이지&nbsp;수</strong> &mdash; 1인당 방문한 서로 다른 스테이지 개수. 재진입 동기의 실제 성과입니다</li>
-                            <li class="bal">&bull; <strong class="text-amber-900">완료까지 걸린 일수</strong> &mdash; 이벤트 기간 대비 얼마나 빨리 끝나는지</li>
-                            <li>&bull; <strong class="text-amber-900">완료&nbsp;후 접속률</strong> &mdash; 선물상자를 받은&nbsp;뒤에도 접속하는지. 낮으면 후속 동기가 필요합니다</li>
-                            <li>&bull; <strong class="text-amber-900">중도 이탈 구간</strong> &mdash; 당근 몇&nbsp;개에서 포기하는지. 특정 지점에 몰리면 목표량이 과한&nbsp;것입니다</li>
+                            <li class="bal">&bull; <strong class="text-amber-900">경로별 획득 비중</strong> &mdash; 토끼가 8할을 넘으면&nbsp;위 지적이 현실화된&nbsp;것입니다.</li>
+                            <li>&bull; <strong class="text-amber-900">참여 스테이지&nbsp;수</strong> &mdash; 1인당 방문한 서로 다른 스테이지 개수. 재진입 동기의 실제 성과입니다.</li>
+                            <li class="bal">&bull; <strong class="text-amber-900">완료까지 걸린 일수</strong> &mdash; 이벤트 기간 대비 얼마나 빨리 끝나는지 봅니다.</li>
+                            <li>&bull; <strong class="text-amber-900">완료&nbsp;후 접속률</strong> &mdash; 선물상자를 받은&nbsp;뒤에도 접속하는지. 낮으면 후속 동기가 필요합니다.</li>
+                            <li>&bull; <strong class="text-amber-900">중도 이탈 구간</strong> &mdash; 당근 몇&nbsp;개에서 포기하는지. 특정 지점에 몰리면 목표량이 과한&nbsp;것입니다.</li>
                         </ul>
                     </div>
                     

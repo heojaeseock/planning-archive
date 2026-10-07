@@ -131,6 +131,12 @@
 html { scroll-behavior: smooth; }
 .tab-btn { display: flex; align-items: center; justify-content: center; text-align: center; padding-left: 12px; padding-right: 12px; }
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-amber-600{color:#b45309} html body .text-blue-500{color:#2563eb} html body .text-emerald-600{color:#047857} html body .text-green-600{color:#15803d} html body .text-purple-500{color:#9333ea} html body .text-red-500{color:#dc2626} html body .text-rose-500{color:#be123c} html body .text-rose-600{color:#be123c} html body .text-yellow-600{color:#854d0e}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
+<style>@media (min-width:768px){.md\:text-2xl{font-size:1.5rem;line-height:2rem}}</style>
+<style>#mode.tab-content{padding-bottom:3rem}@media (min-width:768px){#mode.tab-content{padding-bottom:4.5rem}}</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="antialiased">
 
@@ -147,7 +153,7 @@ html { scroll-behavior: smooth; }
 
                 <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
                     <div class="flex-1">
-                        <p class="text-yellow-300 font-black tracking-[0.2em] text-[10px] mb-3 flex items-center gap-2 uppercase">
+                        <p class="text-yellow-300 font-black tracking-[0.2em] text-xs mb-3 flex items-center gap-2 uppercase">
                             <span class="w-2.5 h-2.5 rounded-full bg-yellow-400 animate-pulse"></span>
                             게임 시스템 분석
                         </p>
@@ -158,12 +164,12 @@ html { scroll-behavior: smooth; }
                         <!-- 요약문 -->
                         <p class="text-white text-sm md:text-base leading-relaxed max-w-2xl mb-6 font-medium">브롤스타즈가 오래 가는 이유를 재화 설계에서 찾았습니다. <br class="hidden md:block">
 요구 재화 표를 직접 계산해 보니 <strong>파워 포인트 요구량은 피보나치 수열</strong>로 늘고 코인은 정반대로 감속합니다. <br class="hidden md:block">
-코인 소모의 약&nbsp;60%&#8288;는 11레벨 달성&nbsp;뒤에 몰려 있습니다. 이&nbsp;구조를 다른 장르에 옮길&nbsp;때의 조건과 한계까지 정리했습니다.</p>
+코인 소모의 약&nbsp;60%&#8288;는 11레벨 달성&nbsp;뒤에 몰려 있습니다. <br class="hidden md:block">이&nbsp;구조를 다른 장르에 옮길&nbsp;때의 조건과 한계까지 정리했습니다.</p>
                     </div>
                     <!-- 게임 테마 뱃지 -->
                     <div class="w-24 h-24 rounded-3xl bg-yellow-400 border-4 border-white flex flex-col items-center justify-center shadow-xl shrink-0 transform rotate-3">
                         <span class="text-4xl drop-shadow-md">🏆</span>
-                        <span class="text-[9px] font-black mt-1 uppercase tracking-widest text-blue-800">Supercell</span>
+                        <span class="text-xs font-black mt-1 uppercase tracking-widest text-blue-800">Supercell</span>
                     </div>
                 </div>
             </div>
@@ -174,40 +180,40 @@ html { scroll-behavior: smooth; }
                 <section class="mb-12" aria-label="이 문서가 하는 말">
                   <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
                     <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-                      <p class="text-[11px] font-black tracking-[0.12em] text-blue-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
+                      <p class="text-xs font-black tracking-[0.12em] text-blue-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
                       <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">브롤러 71종의 클래스 체계와 레벨별 요구 재화를 작성 시점 인게임 공개 수치로 정리한 개인 분석입니다.</p>
                     </div>
                     <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
                       <div class="px-3 py-5 md:py-6 text-center">
-                        <p class="text-[11px] font-bold text-slate-500 mb-2 bal">파워 포인트 요구량 증가율</p>
+                        <p class="text-xs font-bold text-slate-500 mb-2 bal">파워 포인트 요구량 증가율</p>
                         <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">1.618</p>
-                        <p class="text-[11px] text-slate-500 mt-1 bal">피보나치 수열이라 황금비로 수렴합니다</p>
+                        <p class="text-xs text-slate-500 mt-1 bal">피보나치 수열이라 황금비로 수렴합니다.</p>
                       </div>
                       <div class="px-3 py-5 md:py-6 text-center">
-                        <p class="text-[11px] font-bold text-slate-500 mb-2 bal">코인 요구량 증가율</p>
+                        <p class="text-xs font-bold text-slate-500 mb-2 bal">코인 요구량 증가율</p>
                         <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">1.49</p>
-                        <p class="text-[11px] text-slate-500 mt-1 bal">반대로 느려집니다</p>
+                        <p class="text-xs text-slate-500 mt-1 bal">반대로 느려집니다.</p>
                       </div>
                       <div class="px-3 py-5 md:py-6 text-center">
-                        <p class="text-[11px] font-bold text-slate-500 mb-2 bal">11레벨&nbsp;뒤에 남은 코인 소모</p>
+                        <p class="text-xs font-bold text-slate-500 mb-2 bal">11레벨&nbsp;뒤에 남은 코인 소모</p>
                         <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">12,000</p>
-                        <p class="text-[11px] text-slate-500 mt-1 bal">최대 19,765 가운데</p>
+                        <p class="text-xs text-slate-500 mt-1 bal">최대 19,765 가운데</p>
                       </div>
                     </div>
                     <div class="px-6 md:px-9 py-6 md:py-7">
-                      <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">여기서 끌어낸 설계 원칙</p>
+                      <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">여기서 끌어낸 설계 원칙</p>
                       <div class="grid md:grid-cols-3 gap-3">
                         <div class="rounded-xl border border-slate-200 p-4">
-                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">돈 버는 재화와 세지는 재화를 나눈다</p>
-                          <p class="text-xs text-slate-500 leading-relaxed bal">치장 쪽이 매출을, 성장 쪽이 밸런스를 맡아 서로 건드리지 않습니다</p>
+                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">돈 버는 재화와 세지는 재화를 나눈다.</p>
+                          <p class="text-xs text-slate-500 leading-relaxed bal">치장 쪽이 매출을, 성장 쪽이 밸런스를 맡아 <br class="hidden md:block">서로 건드리지 않습니다.</p>
                         </div>
                         <div class="rounded-xl border border-slate-200 p-4">
-                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">성장 곡선을 수열로 만든다</p>
-                          <p class="text-xs text-slate-500 leading-relaxed bal">구간마다 손으로 찍지 않으니 값이 튀지 않습니다</p>
+                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">성장 곡선을 수열로 만든다.</p>
+                          <p class="text-xs text-slate-500 leading-relaxed bal">구간마다 손으로 찍지 않으니 값이 튀지 않습니다.</p>
                         </div>
                         <div class="rounded-xl border border-slate-200 p-4">
-                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">지출은 목표&nbsp;뒤에 둔다</p>
-                          <p class="text-xs text-slate-500 leading-relaxed bal">11레벨이라는 목표를 준&nbsp;다음 코인 소모의 약 60%&#8288;를 그 뒤에 배치했습니다</p>
+                          <p class="text-sm font-black text-slate-900 mb-1.5 bal">지출은 목표&nbsp;뒤에 둔다.</p>
+                          <p class="text-xs text-slate-500 leading-relaxed bal">11레벨이라는 목표를 준&nbsp;다음 코인 소모의 약 60%&#8288;를 <br class="hidden md:block">그 뒤에 배치했습니다.</p>
                         </div>
                       </div>
                     </div>
@@ -215,8 +221,7 @@ html { scroll-behavior: smooth; }
                 </section>
                                 <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-5">분석 범위</h2>
                 <p class="text-slate-600 leading-relaxed max-w-[42em]">
-                    재화 순환 &middot; 성장 커브 &middot; 플레이 모드 세&nbsp;축으로 나눠 구조를 뜯고, <br class="hidden md:block">
-                    확률형 뽑기 대신 패스제와 외형 상품으로 과금&nbsp;축을 옮긴 설계를 중심에 뒀습니다.
+                    재화 순환 · 성장 커브 · 플레이 모드 세&nbsp;축으로 나눠 구조를 뜯고, <br class="hidden md:block">확률형 뽑기 대신 패스제와 외형 상품으로 과금&nbsp;축을 옮긴 설계를 중심에 뒀습니다.
                 </p>
             </div>
 
@@ -245,22 +250,22 @@ html { scroll-behavior: smooth; }
                             <div class="bg-rose-50 p-4 rounded-2xl border border-rose-200 shadow-sm">
                                 <div class="text-2xl mb-1">⚡</div>
                                 <h4 class="font-black text-rose-700 text-sm mb-1">파워 포인트</h4>
-                                <p class="text-[11px] text-slate-600 font-medium text-sm">브롤러 레벨업을 위한 필수 재화. 브롤 패스, 클럽 리그&nbsp;등 다양한 게임 플레이를 통해 획득</p>
+                                <p class="text-xs text-slate-600 font-medium text-sm">브롤러 레벨업을 위한 필수 재화. <br class="hidden md:block">브롤 패스, 클럽 리그&nbsp;등 <br class="hidden md:block">다양한 게임 플레이를 통해 획득</p>
                             </div>
                             <div class="bg-yellow-50 p-4 rounded-2xl border border-yellow-200 shadow-sm">
                                 <div class="text-2xl mb-1">🪙</div>
                                 <h4 class="font-black text-yellow-700 text-sm mb-1">코인</h4>
-                                <p class="text-[11px] text-slate-600 font-medium text-sm bal">레벨업 승급 비용 및&nbsp;가젯, 기어, 스타 파워, 하이퍼차지를 직접 구매하는 범용 화폐</p>
+                                <p class="text-xs text-slate-600 font-medium text-sm bal">레벨업 승급 비용 및&nbsp;가젯, 기어, 스타 파워, 하이퍼차지를 직접 구매하는 범용 화폐</p>
                             </div>
                             <div class="bg-fuchsia-50 p-4 rounded-2xl border border-fuchsia-200 shadow-sm">
                                 <div class="text-2xl mb-1">✨</div>
                                 <h4 class="font-black text-fuchsia-700 text-sm mb-1">블링</h4>
-                                <p class="text-[11px] text-slate-600 font-medium text-sm">무소과금도 스킨, 핀&nbsp;등 치장용 아이템을 구매할&nbsp;수 있도록 도입된 랭크 보상 재화</p>
+                                <p class="text-xs text-slate-600 font-medium text-sm">무소과금도 스킨, 핀&nbsp;등 치장용 아이템을 구매할&nbsp;수 있도록 도입된 랭크 보상 재화</p>
                             </div>
                             <div class="bg-emerald-50 p-4 rounded-2xl border border-emerald-200 shadow-sm">
                                 <div class="text-2xl mb-1">🟩</div>
                                 <h4 class="font-black text-emerald-700 text-sm mb-1">보석</h4>
-                                <p class="text-[11px] text-slate-600 font-medium text-sm bal-t">브롤 패스 플러스 구매, 특별 스킨, 패키지 구매&nbsp;등 핵심 과금 프리미엄 재화</p>
+                                <p class="text-xs text-slate-600 font-medium text-sm bal-t">브롤 패스 플러스 구매, 특별 스킨, <br class="hidden md:block">패키지 구매&nbsp;등 핵심 과금 프리미엄 재화</p>
                             </div>
                         </div>
                     </div>
@@ -273,33 +278,33 @@ html { scroll-behavior: smooth; }
                         <div class="mockup-ui bg-slate-50 flex flex-col h-full">
                             <!-- 브롤 패스 UI -->
                             <div class="p-4 border-b border-slate-200">
-                                <p class="text-[10px] font-black text-slate-500 tracking-wide mb-2">브롤 패스 구조</p>
+                                <p class="text-xs font-black text-slate-500 tracking-wide mb-2">브롤 패스 구조</p>
                                 <div class="flex gap-2">
                                     <div class="flex-1 bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center justify-center">
                                         <span class="text-xs font-bold text-slate-500 mb-1">무료 패스</span>
-                                        <span class="text-[10px] text-center text-slate-500">토큰 수집&nbsp;시<br>기본 재화 제공</span>
+                                        <span class="text-xs text-center text-slate-500">토큰 수집&nbsp;시<br>기본 재화 제공</span>
                                     </div>
                                     <div class="flex-1 bg-gradient-to-br from-yellow-300 to-amber-500 p-3 rounded-xl shadow-md flex flex-col items-center justify-center border border-yellow-400 transform scale-105 z-10">
                                         <span class="text-xs font-black text-white mb-1 drop-shadow-sm">브롤 패스 플러스</span>
-                                        <span class="text-[10px] text-center text-yellow-50 font-bold drop-shadow-sm">전용 스킨 및&nbsp;핀<br>재화 2배 획득</span>
+                                        <span class="text-xs text-center text-yellow-50 font-bold drop-shadow-sm">전용 스킨 및&nbsp;핀<br>재화 2배 획득</span>
                                     </div>
                                 </div>
                             </div>
                             <!-- 상점 UI -->
                             <div class="p-4 flex-1">
-                                <p class="text-[10px] font-black text-slate-500 tracking-wide mb-2">상점 화면 구조</p>
+                                <p class="text-xs font-black text-slate-500 tracking-wide mb-2">상점 화면 구조</p>
                                 <div class="space-y-2">
                                     <div class="bg-white p-2 rounded border border-slate-200 flex items-center justify-between shadow-sm">
                                         <span class="text-xs font-bold text-slate-700">🎁 특별 상품</span>
-                                        <span class="text-[10px] text-slate-500">현금 결제 전용 패키지</span>
+                                        <span class="text-xs text-slate-500">현금 결제 전용 패키지</span>
                                     </div>
                                     <div class="bg-white p-2 rounded border border-slate-200 flex items-center justify-between shadow-sm">
                                         <span class="text-xs font-bold text-slate-700">👕 스킨 및&nbsp;꾸미기</span>
-                                        <span class="text-[10px] text-slate-500">보석 및&nbsp;블링 소모처</span>
+                                        <span class="text-xs text-slate-500">보석 및&nbsp;블링 소모처</span>
                                     </div>
                                     <div class="bg-white p-2 rounded border border-slate-200 flex items-center justify-between shadow-sm">
                                         <span class="text-xs font-bold text-slate-700">💎 자원 충전</span>
-                                        <span class="text-[10px] text-slate-500">프리미엄 재화 획득</span>
+                                        <span class="text-xs text-slate-500">프리미엄 재화 획득</span>
                                     </div>
                                 </div>
                             </div>
@@ -319,7 +324,7 @@ html { scroll-behavior: smooth; }
                 </p>
                         <div class="grid md:grid-cols-2 gap-5 mb-6">
                             <div class="bg-blue-50 rounded-2xl p-5 border-2 border-blue-200">
-                                <p class="text-[10px] font-black tracking-wide text-blue-700 mb-2">성장&nbsp;축 · 시간으로 지불</p>
+                                <p class="text-xs font-black tracking-wide text-blue-700 mb-2">성장&nbsp;축 · 시간으로 지불</p>
                                 <p class="font-black text-slate-900 mb-3">파워 포인트 &middot; 코인</p>
                                 <p class="text-sm text-slate-600 leading-relaxed bal">
                     전투력에 직결되지만 <strong>현금 직접 구매 비중이 낮고</strong> 플레이 보상으로 넓게 풀립니다. <br class="hidden md:block">
@@ -327,16 +332,16 @@ html { scroll-behavior: smooth; }
                 </p>
                             </div>
                             <div class="bg-yellow-50 rounded-2xl p-5 border-2 border-yellow-300">
-                                <p class="text-[10px] font-black tracking-wide text-yellow-800 mb-2">치장&nbsp;축 · 돈으로 지불</p>
+                                <p class="text-xs font-black tracking-wide text-yellow-800 mb-2">치장&nbsp;축 · 주로 돈으로 지불</p>
                                 <p class="font-black text-slate-900 mb-3">보석 &middot; 블링</p>
                                 <p class="text-sm text-slate-600 leading-relaxed">
-                    스킨과 핀에만 쓰이고 <strong>전투력에 영향이 없습니다.</strong> <br class="hidden md:block">
+                    주로 스킨과 핀에 쓰이고 <strong>전투력에 영향이 없습니다.</strong> <br class="hidden md:block">
                     매출의 주축이지만 승패를 바꾸지 않으므로 밸런스 항의를 유발하지 않습니다.
                 </p>
                             </div>
                         </div>
                         <div class="bg-slate-900 rounded-2xl p-6 text-white">
-                            <p class="text-yellow-400 font-black text-[10px] tracking-wide mb-3">이&nbsp;분리가 만드는&nbsp;것</p>
+                            <p class="text-yellow-400 font-black text-xs tracking-wide mb-3">이&nbsp;분리가 만드는&nbsp;것</p>
                             <p class="text-sm md:text-base leading-relaxed font-medium bal-t">
                     성장 재화를 후하게 풀어도 매출이 안&nbsp;줄고, 치장을 비싸게 팔아도 P2W 소리를 듣지 않습니다.<br><strong class="text-white">한&nbsp;재화가 성장과 매출을 겸하면&nbsp;둘&nbsp;중 하나는 포기해야 합니다.</strong>
                 </p>
@@ -355,18 +360,17 @@ html { scroll-behavior: smooth; }
                 </p>
                         <div class="grid md:grid-cols-2 gap-5">
                             <div class="border-2 border-rose-200 bg-rose-50 rounded-2xl p-5">
-                                <p class="text-[10px] font-black tracking-wide text-rose-500 mb-3">포기한&nbsp;것</p>
+                                <p class="text-xs font-black tracking-wide text-rose-500 mb-3">포기한&nbsp;것</p>
                                 <ul class="space-y-3 text-sm text-slate-700">
-                                    <li><strong class="text-rose-700">결제 상한선이 생겼습니다.</strong> 뽑기는 한&nbsp;유저가 원하는 만큼 무한히 결제할&nbsp;수 있지만, 패스는 정액입니다. 최상위 과금 유저 1인당 매출 천장이 낮아집니다.</li>
+                                    <li><strong class="text-rose-700">결제 상한선이 생겼습니다.</strong> <br class="hidden md:block">뽑기는 한&nbsp;유저가 원하는 만큼 무한히 결제할&nbsp;수 있지만, 패스는 정액입니다. <br class="hidden md:block">최상위 과금 유저 1인당 매출 천장이 낮아집니다.</li>
                                     <li><strong class="text-rose-700">단기 매출 스파이크가 사라졌습니다.<br></strong> 신규 뽑기 배너로 만드는 급격한 매출 피크를 쓸&nbsp;수 없습니다.</li>
                                 </ul>
                             </div>
                             <div class="border-2 border-emerald-200 bg-emerald-50 rounded-2xl p-5">
-                                <p class="text-[10px] font-black tracking-wide text-emerald-600 mb-3">얻은&nbsp;것</p>
+                                <p class="text-xs font-black tracking-wide text-emerald-600 mb-3">얻은&nbsp;것</p>
                                 <ul class="space-y-3 text-sm text-slate-700">
-                                    <li><strong class="text-emerald-700">매출이 예측 가능해졌습니다.<br></strong> 패스 구매자&nbsp;수 &times; 정액이므로 시즌 단위 예측이 가능하고, <br class="hidden md:block">
-                    운영 계획을 여기에 맞출&nbsp;수 있습니다.</li>
-                                    <li><strong class="text-emerald-700">확률 규제 리스크에서 벗어났습니다.</strong> 각국의 확률형 아이템 규제 강화 흐름에서 구조적으로 자유롭습니다.</li>
+                                    <li><strong class="text-emerald-700">매출이 예측 가능해졌습니다.<br></strong> 패스 구매자&nbsp;수 × 정액이므로 시즌 단위 예측이 가능하고, <br class="hidden md:block">운영 계획을 여기에 맞출&nbsp;수 있습니다.</li>
+                                    <li><strong class="text-emerald-700">확률 규제 리스크에서 벗어났습니다.</strong> <br class="hidden md:block">각국의 확률형 아이템 규제 강화 흐름에서 구조적으로 자유롭습니다.</li>
                                     <li class="bal"><strong class="text-emerald-700">이탈 사유 하나를 제거했습니다.</strong> 뽑기 실패로 인한 불만 자체가 발생하지 않습니다.</li>
                                 </ul>
                             </div>
@@ -384,8 +388,7 @@ html { scroll-behavior: smooth; }
                 <div class="text-center max-w-2xl mx-auto mb-10">
                     <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-3 tracking-tight">브롤러 육성 및&nbsp;밸런스 체계 구조화</h2>
                     <p class="text-slate-500 text-base font-medium leading-relaxed">
-                    71종 브롤러의 클래스 체계와 점진적 스펙업 로직, <br class="hidden md:block">
-                    그리고 이를 달성하기 위한 누적 요구 재화 데이터를 수치화했습니다.
+                    71종 브롤러의 클래스 체계와 점진적 스펙업 로직, <br class="hidden md:block">그리고 이를 달성하기 위한 누적 요구 재화 데이터를 수치화했습니다.
                 </p>
                 </div>
 
@@ -396,12 +399,12 @@ html { scroll-behavior: smooth; }
                         <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
                             <h4 class="font-bold text-blue-600 text-sm mb-3 border-b border-slate-100 pb-2">7단계 희귀도 시스템</h4>
                             <p class="text-slate-600 leading-relaxed font-medium text-sm">
-                    기본 ➔ <span class="text-green-700 font-bold">희귀</span> ➔ <span class="text-blue-500 font-bold">초희귀</span> ➔ <span class="text-purple-500 font-bold">영웅</span> ➔ <span class="text-red-500 font-bold">신화</span> ➔ <span class="text-yellow-700 font-bold">전설</span> ➔ 크로마틱 <span class="text-[10px] text-slate-500 mt-1 block">* 등급이 오를수록 획득 난이도와 스킬 메커니즘의 복잡도가 올라갑니다.</span>
+                    기본 ➔ <span class="text-green-700 font-bold">희귀</span> ➔ <span class="text-blue-500 font-bold">초희귀</span> ➔ <span class="text-purple-500 font-bold">영웅</span> ➔ <span class="text-red-500 font-bold">신화</span> ➔ <span class="text-yellow-700 font-bold">전설</span> ➔ 크로마틱 <span class="text-xs text-slate-500 mt-1 block">* 등급이 오를수록 획득 난이도와 스킬 메커니즘의 복잡도가 올라갑니다.</span>
                 </p>
                         </div>
                         <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
                             <h4 class="font-bold text-blue-600 text-sm mb-3 border-b border-slate-100 pb-2">역할군 구분</h4>
-                            <div class="flex flex-wrap gap-2 text-[11px] font-bold text-slate-600 bal">
+                            <div class="flex flex-wrap gap-2 text-xs font-bold text-slate-600 bal">
                                 <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">🛡️ 탱커</span>
                                 <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">⚔️ 어쌔신</span>
                                 <span class="bg-slate-100 px-2 py-1 rounded border border-slate-200">💥 대미지 딜러</span>
@@ -425,10 +428,10 @@ html { scroll-behavior: smooth; }
                         <!-- Lv 7: 가젯 -->
                         <div class="bg-white rounded-2xl border-t-[8px] border-green-500 shadow-lg p-5 flex-1 relative z-10 flex flex-col">
                             <div class="text-center mb-3">
-                                <span class="bg-slate-100 text-slate-500 text-[10px] font-black px-3 py-1 rounded-full uppercase">7레벨</span>
+                                <span class="bg-slate-100 text-slate-500 text-xs font-black px-3 py-1 rounded-full uppercase">7레벨</span>
                             </div>
                             <h4 class="font-black text-green-600 text-center text-base mb-3">가젯</h4>
-                            <p class="text-[11px] text-slate-600 font-medium text-center leading-relaxed mb-auto">
+                            <p class="text-xs text-slate-600 font-medium text-center leading-relaxed mb-auto">
                     브롤러 고유의 <strong class="text-slate-800">액티브 특수 스킬</strong>로, 게임당 사용 횟수가 정해져 있습니다. <br class="hidden md:block">
                     하단의 초록색 버튼을 눌러 사용합니다.
                 </p>
@@ -437,10 +440,10 @@ html { scroll-behavior: smooth; }
                         <!-- Lv 8, 10: 기어 -->
                         <div class="bg-white rounded-2xl border-t-[8px] border-blue-500 shadow-lg p-5 flex-1 relative z-10 flex flex-col">
                             <div class="text-center mb-3">
-                                <span class="bg-slate-100 text-slate-500 text-[10px] font-black px-3 py-1 rounded-full uppercase">8&middot;10레벨</span>
+                                <span class="bg-slate-100 text-slate-500 text-xs font-black px-3 py-1 rounded-full uppercase">8&middot;10레벨</span>
                             </div>
                             <h4 class="font-black text-blue-600 text-center text-base mb-3">기어</h4>
-                            <p class="text-[11px] text-slate-600 font-medium text-center leading-relaxed mb-auto">
+                            <p class="text-xs text-slate-600 font-medium text-center leading-relaxed mb-auto">
                                 공통/영웅/신화로 나뉘는 <strong class="text-slate-800">패시브 능력</strong>으로, 8레벨과 10레벨에 슬롯이 하나씩 열립니다.
                             </p>
                         </div>
@@ -448,10 +451,10 @@ html { scroll-behavior: smooth; }
                         <!-- Lv 9: 스타파워 -->
                         <div class="bg-white rounded-2xl border-t-[8px] border-yellow-400 shadow-lg p-5 flex-1 relative z-10 flex flex-col">
                             <div class="text-center mb-3">
-                                <span class="bg-slate-100 text-slate-500 text-[10px] font-black px-3 py-1 rounded-full uppercase">9레벨</span>
+                                <span class="bg-slate-100 text-slate-500 text-xs font-black px-3 py-1 rounded-full uppercase">9레벨</span>
                             </div>
                             <h4 class="font-black text-yellow-700 text-center text-base mb-3">스타 파워</h4>
-                            <p class="text-[11px] text-slate-600 font-medium text-center leading-relaxed mb-auto">
+                            <p class="text-xs text-slate-600 font-medium text-center leading-relaxed mb-auto">
                                 브롤러에게 강력한 <strong class="text-slate-800">핵심 패시브 능력</strong>을 부여하거나 기존 능력을 진화시키는 시스템입니다.
                             </p>
                         </div>
@@ -459,10 +462,10 @@ html { scroll-behavior: smooth; }
                         <!-- Lv 11: 하이퍼차지 -->
                         <div class="bg-white rounded-2xl border-t-[8px] border-purple-500 shadow-lg p-5 flex-1 relative z-10 flex flex-col">
                             <div class="text-center mb-3">
-                                <span class="bg-slate-100 text-slate-500 text-[10px] font-black px-3 py-1 rounded-full uppercase">11레벨</span>
+                                <span class="bg-slate-100 text-slate-500 text-xs font-black px-3 py-1 rounded-full uppercase">11레벨</span>
                             </div>
                             <h4 class="font-black text-purple-600 text-center text-base mb-3">하이퍼차지</h4>
-                            <p class="text-[11px] text-slate-600 font-medium text-center leading-relaxed mb-auto">
+                            <p class="text-xs text-slate-600 font-medium text-center leading-relaxed mb-auto">
                     버프형 궁극 <strong class="text-slate-800">액티브 스킬</strong>입니다. <br class="hidden md:block">
                     특수 공격과 같이 충전식이며, 일시적으로 능력치를 올리고 특수 공격을 크게 강화합니다.
                 </p>
@@ -524,13 +527,13 @@ html { scroll-behavior: smooth; }
                             </table>
                         </div>
                     </div>
-                    <p class="text-[10px] font-bold text-slate-500 mt-2 text-right bal-m">* 풀업&#8288;(11레벨+모든 장비 장착) 달성&nbsp;시 코인 소모량이 급격히 증가하여 전략적 과금을 유도하는 구조</p>
+                    <p class="text-xs font-bold text-slate-500 mt-2 text-right bal-m">* 풀업&#8288;(11레벨+모든 장비 장착) 달성&nbsp;시 코인 소모량이 급격히 증가하는 구조</p>
                 </div>
 
                 <!-- [보강] 요구 재화 커브 해석 -->
                 <div>
                     <h3 class="text-lg font-black text-slate-800 mb-4 flex items-center gap-2">
-                        🔍 커브 해석 &mdash; 두&nbsp;재화는 정반대 방향으로 설계되었습니다
+                        🔍 커브 해석 &mdash; 두&nbsp;재화는 정반대 방향으로 설계되었습니다.
                     </h3>
                     <div class="content-panel p-6 md:p-8">
                         <p class="text-slate-600 leading-relaxed mb-6 max-w-[42em] bal-t">요구량을 구간별 증가율로 바꾸니 <strong class="text-slate-900">파워 포인트는 가속하고 코인은 감속</strong>합니다. 정확히 반대로 움직입니다.</p>
@@ -576,29 +579,29 @@ html { scroll-behavior: smooth; }
 
                         <div class="grid md:grid-cols-2 gap-5 mb-6">
                             <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-5">
-                                <p class="text-[10px] font-black tracking-wide text-amber-600 mb-2">파워 포인트</p>
-                                <p class="font-black text-slate-900 mb-2 bal">피보나치 수열입니다</p>
-                                <p class="text-sm text-slate-600 leading-relaxed bal">3→4 구간부터 요구량이 <strong class="text-slate-900">앞 두&nbsp;구간의 합과 전 구간 예외 없이 일치</strong>합니다. 그래서 증가율이 황금비 1.618로 수렴합니다. 임의로 정한 숫자가 아니라 수열로 만든 값입니다.</p>
+                                <p class="text-xs font-black tracking-wide text-amber-600 mb-2">파워 포인트</p>
+                                <p class="font-black text-slate-900 mb-2 bal">피보나치 수열입니다.</p>
+                                <p class="text-sm text-slate-600 leading-relaxed bal">3→4 구간부터 요구량이 <strong class="text-slate-900">앞 두&nbsp;구간의 합과 전 구간 예외 없이 일치</strong>합니다. <br class="hidden md:block">그래서 증가율이 황금비 1.618로 수렴합니다. <br class="hidden md:block">임의로 정한 숫자가 아니라 수열로 만든 값입니다.</p>
                             </div>
                             <div class="bg-slate-50 border-2 border-slate-200 rounded-2xl p-5">
-                                <p class="text-[10px] font-black tracking-wide text-slate-500 mb-2">코인</p>
-                                <p class="font-black text-slate-900 mb-2 bal">거꾸로 완만해집니다</p>
-                                <p class="text-sm text-slate-600 leading-relaxed bal">초반 2.14배까지 튀었다가 후반에 1.49배로 내려옵니다. <strong class="text-slate-900">초반에 조여 체감 난이도를 올리고, 후반에는 병목을 파워 포인트 쪽으로 넘깁니다.</strong></p>
+                                <p class="text-xs font-black tracking-wide text-slate-500 mb-2">코인</p>
+                                <p class="font-black text-slate-900 mb-2 bal">거꾸로 완만해집니다.</p>
+                                <p class="text-sm text-slate-600 leading-relaxed bal">초반 2.14배까지 튀었다가 후반에 1.49배로 내려옵니다. <br class="hidden md:block"><strong class="text-slate-900">초반에 조여 체감 난이도를 올리고, 후반에는 병목을 파워 포인트 쪽으로 넘깁니다.</strong></p>
                             </div>
                         </div>
 
                         <div class="bg-slate-50 border-l-[6px] border-slate-400 rounded-r-xl p-5 mb-6">
-                            <p class="text-sm text-slate-700 leading-relaxed max-w-[46em]">파워 포인트는 넓게 풀리지만 몰아주기 어렵고, 코인은 어디든 쓰지만 나오는&nbsp;곳이 좁습니다. 후반 병목이 파워 포인트로 옮겨 가면 과제가 <strong class="text-slate-900">모으는&nbsp;일에서 고르는&nbsp;일</strong>로 바뀝니다.</p>
+                            <p class="text-sm text-slate-700 leading-relaxed max-w-[46em]">파워 포인트는 넓게 풀리지만 몰아주기 어렵고, 코인은 어디든 쓰지만 나오는&nbsp;곳이 좁습니다. <br class="hidden md:block">후반 병목이 파워 포인트로 옮겨 가면 과제가 <strong class="text-slate-900">모으는&nbsp;일에서 고르는&nbsp;일</strong>로 바뀝니다.</p>
                         </div>
 
                         <div class="bg-slate-900 rounded-2xl p-6 text-white">
-                            <p class="text-[10px] font-black tracking-wide text-yellow-400 mb-4">11레벨은 끝이 아니라 시작입니다</p>
+                            <p class="text-xs font-black tracking-wide text-yellow-400 mb-4">11레벨은 끝이 아니라 시작입니다.</p>
                             <div class="grid grid-cols-3 gap-4 mb-5">
-                                <div><p class="text-xs text-slate-400 mb-1">11레벨 도달</p><p class="text-2xl font-black">7,765</p></div>
-                                <div><p class="text-xs text-slate-400 mb-1">장비 전체 구매</p><p class="text-2xl font-black">+12,000</p></div>
-                                <div><p class="text-xs text-slate-400 mb-1">완전 풀업</p><p class="text-2xl font-black text-yellow-300">19,765</p></div>
+                                <div><p class="text-xs text-slate-400 mb-1">11레벨 도달</p><p class="text-xl md:text-2xl font-black">7,765</p></div>
+                                <div><p class="text-xs text-slate-400 mb-1">장비 전체 구매</p><p class="text-xl md:text-2xl font-black">+12,000</p></div>
+                                <div><p class="text-xs text-slate-400 mb-1">완전 풀업</p><p class="text-xl md:text-2xl font-black text-yellow-300">19,765</p></div>
                             </div>
-                            <p class="text-sm leading-relaxed max-w-[46em]">레벨업보다 <strong class="text-yellow-300">장비에 드는 코인이 약&nbsp;1.5배 큽니다.</strong> 11레벨 달성이 목표처럼 보이지만 실제 소모의 약&nbsp;60%&#8288;가 그&nbsp;뒤에 있습니다. 눈에 보이는 목표는 앞에, 실제 지출은&nbsp;뒤에 둔&nbsp;구조입니다.</p>
+                            <p class="text-sm leading-relaxed max-w-[46em]">레벨업보다 <strong class="text-yellow-300">장비에 드는 코인이 약&nbsp;1.5배 큽니다.</strong> <br class="hidden md:block">11레벨 달성이 목표처럼 보이지만 실제 소모의 약&nbsp;60%&#8288;가 그&nbsp;뒤에 있습니다. <br class="hidden md:block">눈에 보이는 목표는 앞에, <br class="hidden md:block">실제 지출은&nbsp;뒤에 둔&nbsp;구조입니다.</p>
                         </div>
 
                         <p class="text-xs text-slate-500 leading-relaxed mt-6 pt-6 border-t border-slate-200 max-w-[46em]">증가율과 피보나치 정합성은 앞의 요구 재화 표를 기준으로 직접 계산한 값입니다.<br>
@@ -616,52 +619,51 @@ html { scroll-behavior: smooth; }
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                     <!-- 플레이 모드 -->
-                    <div class="space-y-6">
+                    <div class="space-y-6 flex flex-col">
                         <h3 class="text-lg font-black text-blue-600 flex items-center gap-2">
                             <span class="text-xl">🎮</span> 다채로운 플레이 모드
                         </h3>
-                        <div class="content-panel p-6 space-y-4 shadow-sm">
+                        <div class="content-panel p-6 space-y-4 shadow-sm flex-1">
                             <div class="flex items-center gap-4 bg-slate-50 p-3 rounded-xl border border-slate-100">
                                 <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center text-white text-xl shadow-inner shrink-0">☠️</div>
                                 <div>
                                     <h4 class="font-black text-slate-800 text-sm mb-1">쇼다운</h4>
-                                    <p class="text-[11px] text-slate-500 font-medium bal">독구름이 좁혀 오는 맵에서 파워 큐브를 모으며 최후의 1인&#8288;(혹은 1팀)&#8288;이 되는 10인 배틀로얄</p>
+                                    <p class="text-xs text-slate-500 font-medium bal">독구름이 좁혀 오는 맵에서 파워 큐브를 모으며 최후의 1인&#8288;(혹은 1팀)&#8288;이 되는 10인 배틀로얄</p>
                                 </div>
                             </div>
                             <div class="flex items-center gap-4 bg-slate-50 p-3 rounded-xl border border-slate-100">
                                 <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center text-white text-xl shadow-inner shrink-0">⚽️</div>
                                 <div>
                                     <h4 class="font-black text-slate-800 text-sm mb-1">브롤 볼</h4>
-                                    <p class="text-[11px] text-slate-500 font-medium bal">상대&nbsp;팀 골대에 먼저 공을 2번 넣으면 승리하는 템포가 빠른 3v3 축구 모드</p>
+                                    <p class="text-xs text-slate-500 font-medium bal">상대&nbsp;팀 골대에 먼저 공을 2번 넣으면 승리하는 템포가 빠른 3v3 축구 모드</p>
                                 </div>
                             </div>
                             <div class="flex items-center gap-4 bg-slate-50 p-3 rounded-xl border border-slate-100">
                                 <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center text-white text-xl shadow-inner shrink-0">💎</div>
                                 <div>
                                     <h4 class="font-black text-slate-800 text-sm mb-1">젬 그랩 및&nbsp;맵 메이커</h4>
-                                    <p class="text-[11px] text-slate-500 font-medium bal">보석 10개를 먼저 모으는 모드 및&nbsp;유저가 직접 맵을 만들어 공유하는 자생적 생태계 구축</p>
+                                    <p class="text-xs text-slate-500 font-medium bal">보석 10개를 먼저 모으는 모드 및&nbsp;유저가 직접 맵을 만들어 공유하는 자생적 생태계 구축</p>
                                 </div>
                             </div>
                             <!-- 조작법 팁 -->
                             <div class="bg-blue-50/50 p-3 rounded-lg border border-blue-100 text-center">
                                 <p class="text-xs text-blue-800 font-bold">🕹️ 듀얼 스틱 조작법</p>
-                                <p class="text-[10px] text-blue-600 mt-1 text-sm bal-m">좌측 스틱&#8288;(이동)&#8288;과 우측 스틱&#8288;(에임 및&nbsp;공격)&#8288;으로 모바일 한계 극복</p>
+                                <p class="text-xs text-blue-600 mt-1 text-sm bal-m">좌측 스틱&#8288;(이동)&#8288;과 우측 스틱&#8288;(에임 및&nbsp;공격)&#8288;으로 모바일 한계 극복</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- 소셜 및 랭킹 시스템 -->
-                    <div class="space-y-6">
+                    <div class="space-y-6 flex flex-col">
                         <h3 class="text-lg font-black text-blue-600 flex items-center gap-2">
                             <span class="text-xl">🤝</span> 소셜 연동 및&nbsp;리더보드 구조
                         </h3>
-                        <p class="text-xs text-slate-500" style="margin-top:.5rem">구조를 보여주는 화면 예시이며, 이름과 트로피 수는 가상 값입니다.</p>
-                        <div class="mockup-ui h-full bg-slate-900 text-white flex flex-col relative overflow-hidden shadow-xl border-slate-800">
+                        <div class="mockup-ui flex-1 bg-slate-900 text-white flex flex-col relative overflow-hidden shadow-xl border-slate-800">
                             <div class="absolute inset-0 opacity-10 bg-gradient-to-br from-white to-transparent"></div>
                             
                             <div class="p-4 border-b border-slate-700 bg-slate-800/80 z-10 flex justify-between items-center">
                                 <span class="font-black text-yellow-400">🏆 글로벌 리더보드</span>
-                                <span class="text-[10px] bg-slate-700 px-2 py-1 rounded font-bold">지역: KR</span>
+                                <span class="text-xs bg-slate-700 px-2 py-1 rounded font-bold">지역: KR</span>
                             </div>
                             
                             <div class="flex-1 p-4 space-y-3 z-10 font-mono">
@@ -692,10 +694,11 @@ html { scroll-behavior: smooth; }
                                 <div class="bg-slate-700 p-3 rounded-xl border border-slate-600 flex justify-between items-center cursor-pointer hover:bg-slate-600 transition-colors">
                                     <div>
                                         <h4 class="font-bold text-xs mb-1 text-blue-300">🛡️ 클럽 시스템</h4>
-                                        <p class="text-[10px] text-slate-400">소셜 연동 파티 및&nbsp;클럽 리그 참여</p>
+                                        <p class="text-xs text-slate-400">소셜 연동 파티 및&nbsp;클럽 리그 참여</p>
                                     </div>
                                     <span class="text-xl">➔</span>
                                 </div>
+                                <p class="text-xs text-slate-400 mt-3">구조를 보여주는 화면 예시이며, 이름과 트로피 수는 가상 값입니다.</p>
                             </div>
                         </div>
                     </div>
@@ -722,10 +725,9 @@ html { scroll-behavior: smooth; }
                             <div class="flex items-start gap-4">
                                 <span class="w-8 h-8 shrink-0 rounded-lg bg-blue-600 text-white font-black text-sm flex items-center justify-center">01</span>
                                 <div>
-                                    <p class="font-black text-slate-900 text-base mb-2">매출원과 전투력을 다른 재화에 태운다</p>
+                                    <p class="font-black text-slate-900 text-base mb-2">매출원과 전투력을 다른 재화에 태운다.</p>
                                     <p class="text-sm text-slate-600 leading-relaxed mb-3">
-                    보석&#8288;&middot;블링&#8288;(치장)&#8288;과 파워 포인트&#8288;·코인&#8288;(성장)&#8288;이 완전히 분리되어 있어, <br class="hidden md:block">
-                    성장 재화를 후하게 풀어도 매출이 줄지 않고, 치장을 비싸게 팔아도 P2W 소리를 듣지 않습니다.
+                    보석&#8288;&middot;블링&#8288;(치장)&#8288;과 파워 포인트&#8288;·코인&#8288;(성장)&#8288;이 완전히 분리되어 있어, 성장 재화를 후하게 풀어도 매출이 줄지 않고, 치장을 비싸게 팔아도 P2W 소리를 듣지 않습니다.
                 </p>
                                     <p class="text-xs text-slate-500 leading-relaxed bg-slate-50 rounded-lg p-3">
                     <strong class="text-slate-700">옮기려면:</strong>                     외형이 욕심나는 게임이어야 성립합니다. 캐릭터가 작게 보이면 치장&nbsp;축이 매출을 못&nbsp;받칩니다.
@@ -737,7 +739,7 @@ html { scroll-behavior: smooth; }
                             <div class="flex items-start gap-4">
                                 <span class="w-8 h-8 shrink-0 rounded-lg bg-rose-500 text-white font-black text-sm flex items-center justify-center">02</span>
                                 <div>
-                                    <p class="font-black text-slate-900 text-base mb-2">성장 커브는 수열로 만들고, 두&nbsp;재화를 반대로 움직인다</p>
+                                    <p class="font-black text-slate-900 text-base mb-2">성장 커브는 수열로 만들고, 두&nbsp;재화를 반대로 움직인다.</p>
                                     <p class="text-sm text-slate-600 leading-relaxed mb-3">
                      파워 포인트를 피보나치 수열&#8288;(증가율 1.618 수렴)&#8288;로 가속시키고 코인은 1.49까지 감속시켜, <br class="hidden md:block">
                     후반 병목을 &ldquo;재화 총량 부족&rdquo;&#8288;에서 “어느 캐릭터에 집중할지의 선택”&#8288;으로 바꿉니다.
@@ -752,7 +754,7 @@ html { scroll-behavior: smooth; }
                             <div class="flex items-start gap-4">
                                 <span class="w-8 h-8 shrink-0 rounded-lg bg-yellow-700 text-white font-black text-sm flex items-center justify-center">03</span>
                                 <div>
-                                    <p class="font-black text-slate-900 text-base mb-2 bal-m">눈에 보이는 목표는 앞에, 실제 지출은&nbsp;뒤에 둔다</p>
+                                    <p class="font-black text-slate-900 text-base mb-2 bal-m">눈에 보이는 목표는 앞에, 실제 지출은&nbsp;뒤에 둔다.</p>
                                     <p class="text-sm text-slate-600 leading-relaxed mb-3 bal">
                     &ldquo;11레벨&rdquo;&#8288;이라는 명확한 숫자 목표를 제시하지만 코인 소모의 약&nbsp;60%&#8288;(12,000 / 19,765)&#8288;는 레벨 도달 이후의 장비 구간에 배치되어 있습니다.
                 </p>
@@ -789,31 +791,31 @@ html { scroll-behavior: smooth; }
                                         <td class="font-black text-slate-700 !text-left">성장 상한</td>
                                         <td>11레벨 &middot; 유한</td>
                                         <td>사실상 무한</td>
-                                        <td class="!text-left text-[11px] text-rose-600 font-bold">수열 커브를 무한 확장하면 후반 요구량이 폭발해 커브 자체를 다시 설계해야 합니다</td>
+                                        <td class="!text-left text-xs text-rose-600 font-bold">수열 커브를 무한 확장하면 후반 요구량이 폭발해 커브 자체를 다시 설계해야 합니다.</td>
                                     </tr>
                                     <tr>
                                         <td class="font-black text-slate-700 !text-left">전투력 격차</td>
                                         <td>매칭으로 상쇄</td>
                                         <td>필드&#8288;&middot;PvP에서 직접 노출</td>
-                                        <td class="!text-left text-[11px] text-rose-600 font-bold">성장 재화를 무료로 풀면 과금 유저의 우위가 사라져 핵심 과금 동기가 훼손됩니다</td>
+                                        <td class="!text-left text-xs text-rose-600 font-bold">성장 재화를 무료로 풀면 과금 유저의 우위가 사라져 핵심 과금 동기가 훼손됩니다.</td>
                                     </tr>
                                     <tr>
                                         <td class="font-black text-slate-700 !text-left">치장의 매출 기여</td>
                                         <td>주 매출원</td>
                                         <td>보조 매출원</td>
-                                        <td class="!text-left text-[11px] text-rose-600 font-bold">치장만으로 매출을 받칠&nbsp;수 없어 성장&nbsp;축 과금을 유지해야 합니다</td>
+                                        <td class="!text-left text-xs text-rose-600 font-bold">치장만으로 매출을 받칠&nbsp;수 없어 성장&nbsp;축 과금을 유지해야 합니다.</td>
                                     </tr>
                                     <tr>
                                         <td class="font-black text-slate-700 !text-left">결제 상한</td>
                                         <td>패스 정액</td>
                                         <td>상한 없는 고액 과금 의존</td>
-                                        <td class="!text-left text-[11px] text-rose-600 font-bold">정액제 전환&nbsp;시 최상위 과금층 매출이 즉시 감소합니다</td>
+                                        <td class="!text-left text-xs text-rose-600 font-bold">정액제 전환&nbsp;시 최상위 과금층 매출이 즉시 감소합니다.</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <p class="text-sm text-slate-500 leading-relaxed mt-6 pt-6 border-t border-slate-200 bal">
-                    <strong class="text-slate-800">결론:</strong> 옮길&nbsp;수 있는&nbsp;것은 패스제라는 형태가 아니라 <strong class="text-blue-700">재화의 역할을 나눈다</strong>는 원칙입니다. 성장&nbsp;축 과금을 놓을&nbsp;수 없다면, 성장 재화 안에서 다시 <strong>필수분</strong>과 <strong>가속분</strong>을 나누면 됩니다.
+                    <strong class="text-slate-800">결론:</strong> 옮길&nbsp;수 있는&nbsp;것은 패스제라는 형태가 아니라 <strong class="text-blue-700">재화의 역할을 나눈다</strong>는 원칙입니다. <br class="hidden md:block">성장&nbsp;축 과금을 놓을&nbsp;수 없다면, 성장 재화 안에서 다시 <strong>필수분</strong>과 <strong>가속분</strong>을 나누면 됩니다.
                 </p>
                     </div>
                 </div>
@@ -824,7 +826,7 @@ html { scroll-behavior: smooth; }
             <!-- 푸터 -->
             <div class="p-8 bg-slate-900 text-white text-center border-t-[8px] border-blue-600 relative overflow-hidden">
                 <div class="relative z-10">
-                    <p class="text-[10px] font-bold tracking-wide opacity-50 mb-2 text-yellow-400">브롤스타즈 성장 구조 분석</p>
+                    <p class="text-xs font-bold tracking-wide opacity-50 mb-2 text-yellow-400">브롤스타즈 성장 구조 분석</p>
                     <p class="text-xs font-medium text-slate-400">브롤스타즈 시스템 및&nbsp;비즈니스 모델 분석 &copy; 허재석</p>
                 </div>
             </div>

@@ -85,7 +85,7 @@
             display: inline-block;
             background-color: #FF7E36;
             color: white;
-            font-size: 11px;
+            font-size: 12px;
             padding: 4px 12px;
             border-radius: 20px;
             font-weight: 800;
@@ -150,6 +150,10 @@
             .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
         }
 </style>
+<style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-blue-600{color:#1d4ed8} html body .text-orange-600{color:#c2410c} html body .text-red-600{color:#b91c1c}</style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="bg-[#F9FAFB]">
 
@@ -161,7 +165,7 @@
                 <p class="font-bold text-lg tracking-tight">중고거래 리스크 관리 제안서</p>
             </div>
             <div class="text-xs font-bold text-gray-500 bg-gray-50 px-3 py-1 rounded-full">
-                블레이드&amp;소울 레볼루션 운영 경험 기반
+                블레이드&#8288;&amp;&#8288;소울 레볼루션 운영 경험 기반
             </div>
         </div>
     </header>
@@ -170,9 +174,8 @@
         <!-- 문서 제목 -->
         <header class="doc-hero">
             <div class="doc-hero-badge">라이브 운영 · 리스크 관리</div>
-            <h1 class="doc-hero-title">중고거래 플랫폼<br class="doc-hero-br">
-                <span class="doc-hero-accent">리스크 관리 기획</span></h1>
-            <p class="doc-hero-sub">돌려줄 방법이 없는 거래에서, <br class="doc-hero-br">사기와 계정 탈취를 거래 전에 막는 탐지 체계를 설계했습니다.</p>
+            <h1 class="doc-hero-title">중고거래 플랫폼&nbsp;<span class="doc-hero-accent">리스크 관리 기획</span></h1>
+            <p class="doc-hero-sub">돌려줄 방법이 없는 거래에서, 사기와 계정 탈취를 거래 전에 막는 탐지 체계를 설계했습니다.</p>
         </header>
 
 
@@ -180,45 +183,45 @@
         <section class="mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-              <p class="text-[11px] font-black tracking-[0.12em] text-amber-700 mb-3">문서 소개</p>
-              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">계정 탈취와 거래 사기를 미리 탐지해 차단하는 운영 체계를 정리한 개인 제안서입니다. 블레이드&amp;소울 레볼루션 라이브 운영 경험을 대입했고, 아래 업무량 수치는 반복 검수가 4분의 1로 준다고 가정한 추정치입니다.</p>
+              <p class="text-xs font-black tracking-[0.12em] text-amber-700 mb-3">문서 소개</p>
+              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">계정 탈취와 거래 사기를 미리 탐지해 차단하는 운영 체계를 정리한 개인 제안서입니다. 블레이드&#8288;&amp;&#8288;소울 레볼루션 라이브 운영 경험을 대입했고, 아래 업무량 수치는 반복 검수가 4분의 1로 준다고 가정한 추정치입니다.</p>
             </div>
             <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">검수 업무량</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">검수 업무량</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">100 → 25</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">전수 조사에서 선별 검수로</p>
+                <p class="text-xs text-slate-500 mt-1 bal">전수 조사에서 선별 검수로</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">같은 인력으로 감당하는 물량</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">같은 인력으로 감당하는 물량</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">4배</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">얻은&nbsp;것</p>
+                <p class="text-xs text-slate-500 mt-1 bal">얻은&nbsp;것</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">사람 눈을 거치지 않는&nbsp;건</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">사람 눈을 거치지 않는&nbsp;건</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">75%</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">내준&nbsp;것</p>
+                <p class="text-xs text-slate-500 mt-1 bal">내준&nbsp;것</p>
               </div>
             </div>
             <div class="px-6 md:px-9 py-6 md:py-7">
-              <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">함께 볼&nbsp;점</p>
+              <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">함께 볼&nbsp;점</p>
               <div class="grid md:grid-cols-3 gap-3">
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">걸러낸&nbsp;것&nbsp;중 정상은 없었는지</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">정책 두&nbsp;건에서 정상 이용자가 걸리는 지점을 짚었습니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">정책 두&nbsp;건에서 정상 이용자가 걸리는 지점을 짚었습니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">플랫폼이 할&nbsp;수 있는&nbsp;일의 끝</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">돈이 앱 밖에서 오가므로 플랫폼이 막을&nbsp;수 있는 범위에 한계가 있습니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">돈이 앱 밖에서 오가므로 <br class="hidden md:block">플랫폼이 막을&nbsp;수 있는 범위에 한계가 있습니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">사후 환불에서 사전 탐지로</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">터진&nbsp;뒤 물어주는 대신 터지기 전에 잡는 쪽으로 옮겼습니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">터진&nbsp;뒤 물어주는 대신 <br class="hidden md:block">터지기 전에 잡는 쪽으로 옮겼습니다.</p>
                 </div>
               </div>
             </div>
             <div class="px-6 md:px-9 py-4 bg-slate-50 border-t border-slate-200">
-              <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">지역 기반 중고거래는 이웃끼리 직접 만나 거래하고, 돈은 앱을 거치지 않고 계좌로 오갑니다. 그래서 계정 탈취와 판매 사기가 신뢰도에 곧바로 영향을 줍니다.</p>
+              <p class="text-xs text-slate-500 leading-relaxed bal max-w-[46em]">지역 기반 중고거래는 이웃끼리 직접 만나 거래하고, 돈은 앱을 거치지 않고 계좌로 오갑니다. <br class="hidden md:block">그래서 계정 탈취와 판매 사기가 신뢰도에 곧바로 영향을 줍니다.</p>
             </div>
           </div>
         </section>
@@ -229,7 +232,7 @@
             <div class="bg-white p-8 md:p-10 card border border-gray-100">
                 <h2 class="text-2xl md:text-3xl font-black text-gray-900 mb-5">서비스 구조와 리스크</h2>
                 <p class="text-base leading-relaxed text-gray-700 mb-4 max-w-[46em]">
-                    대금이 플랫폼을 거치지 않고 앱 밖에서 오가는 구조라 <strong class="text-slate-900">환불할 수단 자체가 없습니다.</strong> 사후 대응이 불가능하니 사전 탐지만 남습니다. 그&nbsp;탐지 체계를 설계했습니다.
+                    대금이 플랫폼을 거치지 않고 앱 밖에서 오가는 구조라 <strong class="text-slate-900">환불할 수단 자체가 없습니다.</strong> <br class="hidden md:block">사후 대응이 불가능하니 사전 탐지만 남습니다. <br class="hidden md:block">그&nbsp;탐지 체계를 설계했습니다.
                 </p>
             </div>
         </section>
@@ -242,7 +245,7 @@
                     데이터 기반의 정밀 필터링으로<br>
                     <span class="brand-orange">수작업 검수 업무량을 75%&#8288;&nbsp;줄이는</span> 설계입니다.
                 </h2>
-                <p class="text-xs text-gray-500 mb-8" style="text-wrap:balance">* 블레이드&amp;소울 레볼루션 운영 경험을 대입한 추정치입니다. 필터링으로 반복 검수 작업이 4분의 1로 줄어든다고 가정했으며, 실제 도입 전후를 측정한 값이 아닙니다.</p>
+                <p class="text-xs text-gray-500 mb-8" style="text-wrap:balance">* 블레이드&#8288;&amp;&#8288;소울 레볼루션 운영 경험을 대입한 추정치입니다. 필터링으로 반복 검수 작업이 4분의 1로 줄어든다고 가정했으며, 실제 도입 전후를 측정한 값이 아닙니다.</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="flex gap-4 items-start">
@@ -336,7 +339,7 @@
                     <div class="space-y-6">
                         <div class="mb-4">
                             <h4 class="font-black text-2xl mb-4 leading-tight">
-                                차별화된 리스크 관리<br>
+                                차별화된 리스크 관리
                                 <span class="brand-orange">솔루션</span> 체험하기
                             </h4>
                         </div>
@@ -344,7 +347,7 @@
                         <div class="space-y-3">
                             <button onclick="runSimulation('cooldown', this)" class="sim-btn w-full py-5 px-6 bg-[#F9FAFB] hover:bg-orange-50 border border-gray-200 hover:border-orange-200 rounded-[28px] text-left transition-all flex items-center justify-between group shadow-sm">
                                 <div>
-                                    <span class="inline-block px-2 py-1 bg-orange-100 text-orange-600 rounded-lg text-[10px] font-bold mb-2">1단계. 행동 마찰 부여</span>
+                                    <span class="inline-block px-2 py-1 bg-orange-100 text-orange-600 rounded-lg text-xs font-bold mb-2">1단계. 행동 마찰 부여</span>
                                     <p class="font-bold text-base">송금 전 쿨다운 팝업</p>
                                     <p class="text-xs text-gray-500 mt-1 bal-m bal-t">계좌 복사&nbsp;시 3초 지연시켜 충동적 입금 방지</p>
                                 </div>
@@ -353,7 +356,7 @@
 
                             <button onclick="runSimulation('blur', this)" class="sim-btn w-full py-5 px-6 bg-[#F9FAFB] hover:bg-orange-50 border border-gray-200 hover:border-orange-200 rounded-[28px] text-left transition-all flex items-center justify-between group shadow-sm">
                                 <div>
-                                    <span class="inline-block px-2 py-1 bg-blue-100 text-blue-600 rounded-lg text-[10px] font-bold mb-2">2단계. 교차 검증</span>
+                                    <span class="inline-block px-2 py-1 bg-blue-100 text-blue-600 rounded-lg text-xs font-bold mb-2">2단계. 교차 검증</span>
                                     <p class="font-bold text-base">도용 의심 이미지 블러 처리</p>
                                     <p class="text-xs text-gray-500 mt-1">타 중고거래 사이트에서 퍼온 사진 실시간 판별</p>
                                 </div>
@@ -362,7 +365,7 @@
                             
                             <button onclick="runSimulation('ocr', this)" class="sim-btn w-full py-5 px-6 bg-[#F9FAFB] hover:bg-orange-50 border border-gray-200 hover:border-orange-200 rounded-[28px] text-left transition-all flex items-center justify-between group shadow-sm">
                                 <div>
-                                    <span class="inline-block px-2 py-1 bg-red-100 text-red-600 rounded-lg text-[10px] font-bold mb-2">3단계. 사각지대 차단</span>
+                                    <span class="inline-block px-2 py-1 bg-red-100 text-red-600 rounded-lg text-xs font-bold mb-2">3단계. 사각지대 차단</span>
                                     <p class="font-bold text-base">이미지 속 글자로 적은 우회 연락처 탐지&#8288;(OCR)</p>
                                     <p class="text-xs text-gray-500 mt-1">텍스트 필터링을 피하기 위한 꼼수 이미지 차단</p>
                                 </div>
@@ -410,7 +413,7 @@
                     <p class="text-sm font-black text-emerald-700 mb-3">얻은&nbsp;것</p>
                     <p class="text-4xl font-black text-emerald-700 mb-3">75% 절감</p>
                     <p class="text-sm text-gray-600 leading-relaxed bal seg-t"><span class="seg-bal-t">
-                    전수 조사에서 선별 검수로 바꿔 <strong class="text-gray-900">같은 인력으로 네&nbsp;배의 물량</strong>을 감당할&nbsp;수 있게 됩니다. </span><br class="hidden md:block"><span class="seg-bal-t">
+                    전수 조사에서 선별 검수로 바꿔 <br class="hidden md:block"><strong class="text-gray-900">같은 인력으로 네&nbsp;배의 물량</strong>을 감당할&nbsp;수 있게&nbsp;됩니다. </span><br class="hidden md:block"><span class="seg-bal-t">
                     검수자가 위험도 높은 건에만 집중하므로 판정 품질도 올라갑니다.
                 </span></p>
                 </div>
@@ -426,7 +429,7 @@
             </div>
 
             <div class="bg-white border-2 border-gray-200 rounded-3xl p-8">
-                <p class="text-sm font-black text-gray-800 mb-5 bal-m">미탐&#8288;(위험한 건을 정상으로 놓침)&#8288;이 조금만 있어도 규모가 커집니다</p>
+                <p class="text-sm font-black text-gray-800 mb-5 bal-m">미탐&#8288;(위험한 건을 정상으로 놓침)&#8288;이 조금만 있어도 규모가 커집니다.</p>
                 <p class="text-gray-600 leading-relaxed mb-6 max-w-[46em]">
                     전체 검수 대상을 1만&nbsp;건으로 가정하면 필터 통과분은 7,500건입니다. <br class="hidden md:block">
                     이&nbsp;안에 위험이 얼마나 섞여 있느냐에 따라 놓치는 건수가 정해집니다.
@@ -475,7 +478,7 @@
                     <div class="bg-white/10 rounded-2xl p-6">
                         <p class="text-sm font-black text-amber-300 mb-2">미탐률 측정 방법</p>
                         <p class="text-xs text-gray-300 leading-relaxed bal">
-                    나중에 신고로 드러난&nbsp;건의 원래 필터 판정을 되짚으면 미탐률이 나옵니다. 이&nbsp;값이 오르면 <strong>수법이 필터를 우회하기 시작한 신호</strong>입니다.
+                    나중에 신고로 드러난&nbsp;건의 원래 필터 판정을 되짚으면 미탐률이 나옵니다. <br class="hidden md:block">이&nbsp;값이 오르면 <strong>수법이 필터를 우회하기 시작한 신호</strong>입니다.
                 </p>
                     </div>
                     <div class="bg-white/10 rounded-2xl p-6">
@@ -505,39 +508,39 @@
             </div>
 
             <div class="bg-white border-2 border-gray-200 rounded-3xl p-8">
-                <p class="text-sm font-black text-gray-800 mb-4">위치 기반 탐지 · 기기 변경 교차 검증은 이미 들어가 있습니다</p>
+                <p class="text-lg font-black text-gray-800 mb-4">위치 기반 탐지 · 기기 변경 교차 검증은 이미 들어가 있습니다.</p>
                 <p class="text-gray-600 leading-relaxed mb-5 max-w-[46em] bal">
                     기기 변경과 이동 소요 시간을 함께 보면 여행객은 걸러집니다. 남은 오탐 요인은 <strong>위치 정보 자체의 부정확성</strong>입니다.
                 </p>
                 <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200 mb-5">
                     <p class="text-xs font-black text-gray-700 mb-3">여전히 오탐이 발생하는 경우</p>
                     <ul class="space-y-2 text-xs text-gray-600 leading-relaxed">
-                        <li class="bal max-w-[46em] leading-[1.8]">&bull; <strong class="text-gray-800">모바일 통신사 IP</strong> &mdash; 실제 위치와 다른 지역으로 잡히는 경우가 흔합니다. 기지국 사정에 따라 갑자기 먼 지역 IP가 배정될&nbsp;수 있습니다</li>
-                        <li>&bull; <strong class="text-gray-800">VPN과 회사망</strong> &mdash; 원격 근무나 보안 프로그램이 IP를 다른 지역으로 바꿉니다</li>
-                        <li>&bull; <strong class="text-gray-800">여행&nbsp;중 기기 교체</strong> &mdash; 분실이나 고장으로 현지에서 기기를 바꾸면 두&nbsp;조건이 동시에 충족됩니다</li>
+                        <li class="bal max-w-[46em] leading-[1.8]">&bull; <strong class="text-gray-800">모바일 통신사 IP</strong> &mdash; 실제 위치와 다른 지역으로 잡히는 경우가 흔합니다. <br class="hidden md:block">기지국 사정에 따라 갑자기 먼 지역 IP가 배정될&nbsp;수 있습니다.</li>
+                        <li>&bull; <strong class="text-gray-800">VPN과 회사망</strong> &mdash; 원격 근무나 보안 프로그램이 IP를 다른 지역으로 바꿉니다.</li>
+                        <li>&bull; <strong class="text-gray-800">여행&nbsp;중 기기 교체</strong> &mdash; 분실이나 고장으로 현지에서 기기를 바꾸면 두&nbsp;조건이 동시에 충족됩니다.</li>
                     </ul>
                 </div>
                 <p class="text-sm text-gray-600 leading-relaxed max-w-[46em] bal">
-                    <strong class="text-gray-800">계정 보호 조치는 정확도보다 <strong>해제 경로의 속도</strong>가 중요합니다. 본인 인증으로 바로 풀리면 피해는 지연에 그치지만, 상담원 확인이 필요하면 오탐 한&nbsp;건이 거래 기회 손실과 CS 인입이 됩니다. 기준을 조이기 전에 해제 동선을 먼저 만듭니다.</strong>
+                    <strong class="text-gray-800">계정 보호 조치는 정확도보다 <strong>해제 경로의 속도</strong>가 중요합니다. <br class="hidden md:block">본인 인증으로 바로 풀리면 피해는 지연에 그치지만, <br class="hidden md:block">상담원 확인이 필요하면 오탐 한&nbsp;건이 거래 기회 손실과 CS 인입이 됩니다. <br class="hidden md:block">기준을 조이기 전에 해제 동선을 먼저 만듭니다.</strong>
                 </p>
             </div>
 
             <div class="bg-white border-2 border-gray-200 rounded-3xl p-8">
-                <p class="text-sm font-black text-gray-800 mb-4">신뢰 점수 탐지 · 무료 나눔은 선의의 행동입니다</p>
+                <p class="text-lg font-black text-gray-800 mb-4">신뢰 점수 탐지 · 무료 나눔은 선의의 행동입니다.</p>
                 <p class="text-gray-600 leading-relaxed mb-5 max-w-[46em] bal">
-                    짧은 기간 무료 나눔으로 신뢰도를 쌓고 고액&nbsp;물품을 올리는&nbsp;것은 실제 사기 수법입니다. 다만&nbsp;나눔은 선의의 이용자도 하는 행동이라, 그&nbsp;사람이 고액&nbsp;물품을 팔&nbsp;때 걸리면 억울합니다.
+                    짧은 기간 무료 나눔으로 신뢰도를 쌓고 고액&nbsp;물품을 올리는&nbsp;것은 실제 사기 수법입니다. <br class="hidden md:block">다만&nbsp;나눔은 선의의 이용자도 하는 행동이라, 그&nbsp;사람이 고액&nbsp;물품을 팔&nbsp;때 걸리면 억울합니다.
                 </p>
                 <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200 mb-5">
-                    <p class="text-xs font-black text-gray-700 mb-3">나눔 횟수보다 나눔의 형태를 봐야 합니다</p>
+                    <p class="text-xs font-black text-gray-700 mb-3">나눔 횟수보다 나눔의 형태를 봐야 합니다.</p>
                     <ul class="space-y-2 text-xs text-gray-600 leading-relaxed">
-                        <li class="bal-m">&bull; <strong class="text-gray-800">상대의 다양성</strong> &mdash; 소수의 동일 계정과 반복 거래했는지. 자기 계정끼리 거래해 점수를 만드는 경우가 여기서 잡힙니다</li>
-                        <li class="bal-m">&bull; <strong class="text-gray-800">기간 집중도</strong> &mdash; 며칠 안에 몰려 있는지, 오랜 기간에 걸쳐 있는지</li>
-                        <li class="bal-m">&bull; <strong class="text-gray-800">거래 완결성</strong> &mdash; 실제로 만나 물건이 전달됐는지 확인할 흔적이 있는지</li>
-                        <li>&bull; <strong class="text-gray-800">계정 연령</strong> &mdash; 가입 직후 나눔이 집중되는 패턴인지</li>
+                        <li class="bal-m">&bull; <strong class="text-gray-800">상대의 다양성</strong> &mdash; 소수의 동일 계정과 반복 거래했는지. 자기 계정끼리 거래해 점수를 만드는 경우가 여기서 잡힙니다.</li>
+                        <li class="bal-m">&bull; <strong class="text-gray-800">기간 집중도</strong> &mdash; 며칠 안에 몰려 있는지, 오랜 기간에 걸쳐 있는지 봅니다.</li>
+                        <li class="bal-m">&bull; <strong class="text-gray-800">거래 완결성</strong> &mdash; 실제로 만나 물건이 전달됐는지 확인할 흔적이 있는지 봅니다.</li>
+                        <li>&bull; <strong class="text-gray-800">계정 연령</strong> &mdash; 가입 직후 나눔이 집중되는 패턴인지 봅니다.</li>
                     </ul>
                 </div>
                 <p class="text-sm text-gray-600 leading-relaxed bal max-w-[46em]">
-                    이렇게 보면 오래 활동한 이용자는 걸리지 않고 <strong>단기간에 점수를 만든 계정만</strong> 남습니다. 조치도 차단이 아니라 본인 인증 추가와 검수 우선순위 분류라, 오탐이 나도 거래를 완전히 막지는 않습니다.
+                    이렇게 보면 오래 활동한 이용자는 걸리지 않고 <strong>단기간에 점수를 만든 계정만</strong> 남습니다. <br class="hidden md:block">조치도 차단이 아니라 본인 인증 추가와 검수 우선순위 분류라, 오탐이 나도 거래를 완전히 막지는 않습니다.
                 </p>
             </div>
         </section>
@@ -547,7 +550,7 @@
             
 
             <div class="bg-amber-50 border-2 border-amber-300 rounded-3xl p-8">
-                <p class="text-sm font-black text-amber-700 mb-5">사전 탐지로 전환한&nbsp;것은 선택이 아니라 제약 때문입니다</p>
+                <p class="text-sm font-black text-amber-700 mb-5">사전 탐지로 전환한&nbsp;것은 선택이 아니라 제약 때문입니다.</p>
                 <p class="text-gray-700 leading-relaxed mb-5 max-w-[46em]">
                     플랫폼이 대금을 쥐고 있지 않으니 <strong>사후 대응은 처음부터 선택지에 없습니다.</strong>
                 </p>
@@ -558,7 +561,7 @@
             </div>
 
             <div class="bg-white border-2 border-gray-200 rounded-3xl p-8">
-                <p class="text-sm font-black text-gray-800 mb-4">근본 해결책과 그&nbsp;대가</p>
+                <p class="text-lg font-black text-gray-800 mb-4">근본 해결책과 그&nbsp;대가</p>
                 <p class="text-gray-600 leading-relaxed mb-5 max-w-[46em]">
                     대금이 플랫폼을 거치게 만드는 <strong class="text-gray-900">안전결제 도입</strong>이&nbsp;구조적 해결입니다. <br class="hidden md:block">
                     대금을 보유하면 사후 환불이 가능해지고, 사기 유인 자체가 크게 줄어듭니다. <br class="hidden md:block">
@@ -581,7 +584,7 @@
                     </div>
                 </div>
                 <p class="text-sm text-gray-600 leading-relaxed mt-5 max-w-[46em] bal">
-                    <strong class="text-gray-800">전면 도입 대신 <strong>고액 거래와 원거리 배송</strong>에만 선택적으로 적용합니다. 피해가 몰리는 구간만 덮으면 수수료 저항을 줄이면서 위험을 낮출&nbsp;수 있습니다.</strong>
+                    <strong class="text-gray-800">전면 도입 대신 <strong>고액 거래와 원거리 배송</strong>에만 선택적으로 적용합니다. <br class="hidden md:block">피해가 몰리는 구간만 덮으면 수수료 저항을 줄이면서 위험을 낮출&nbsp;수 있습니다.</strong>
                 </p>
             </div>
         </section>
@@ -592,11 +595,11 @@
             <div>
                 <div class="bg-white border-2 border-emerald-200 rounded-3xl p-8">
                     <ul class="space-y-3 text-sm text-gray-600 leading-relaxed">
-                        <li>&bull; <strong class="text-gray-800">미탐률</strong> &mdash; 필터 통과&nbsp;후 사기로 접수된&nbsp;건의 비율. 절감률과 반드시 함께 봅니다</li>
+                        <li>&bull; <strong class="text-gray-800">미탐률</strong> &mdash; 필터 통과&nbsp;후 사기로 접수된&nbsp;건의 비율. 절감률과 반드시 함께 봅니다.</li>
                         <li class="bal-m">&bull; <strong class="text-gray-800">오탐률</strong> &mdash; 계정 보호 조치&nbsp;중 정상 이용자로 확인된 비율</li>
-                        <li>&bull; <strong class="text-gray-800">보호 해제 소요 시간</strong> &mdash; 오탐 유저가 다시 거래할&nbsp;수 있게 되기까지. 오탐의 실제 피해 크기를 결정합니다</li>
-                        <li>&bull; <strong class="text-gray-800">쿨다운 이탈률</strong> &mdash; 3초 지연&nbsp;후 송금을 포기한 비율. 마찰의 효과 크기입니다</li>
-                        <li class="bal-m">&bull; <strong class="text-gray-800">사기 접수 건수와 피해액</strong> &mdash; 최종 목표 지표. 검수 효율이 올라도 이&nbsp;값이 그대로면 정책이 작동하지 않는&nbsp;것입니다</li>
+                        <li>&bull; <strong class="text-gray-800">보호 해제 소요 시간</strong> &mdash; 오탐 유저가 다시 거래할&nbsp;수 있게 되기까지. 오탐의 실제 피해 크기를 결정합니다.</li>
+                        <li>&bull; <strong class="text-gray-800">쿨다운 이탈률</strong> &mdash; 3초 지연&nbsp;후 송금을 포기한 비율. 마찰의 효과 크기입니다.</li>
+                        <li class="bal-m">&bull; <strong class="text-gray-800">사기 접수 건수와 피해액</strong> &mdash; 최종 목표 지표. 검수 효율이 올라도 이&nbsp;값이 그대로면 정책이 작동하지 않는&nbsp;것입니다.</li>
                     </ul>
                 </div>
                 
@@ -609,20 +612,19 @@
                 <div class="flex gap-4 items-start">
                     <span class="text-[#FF7E36] font-black italic text-xl">01</span>
                     <p class="text-sm md:text-base leading-relaxed">
-                    대금이 앱 밖에서 오가 환불이 어려운 구조에서 <strong>이상 거래를 미리 찾아 막는</strong> 운영 매니저입니다. <br class="hidden md:block">
-                    객관적인 데이터 근거를 바탕으로 서비스의 신뢰도를 지킵니다.
+                    대금이 앱 밖에서 오가 환불할 수단이 없는 구조에서 <br class="hidden md:block"><strong>이상 거래를 미리 찾아 막는</strong> 운영 방안을 제안합니다. <br class="hidden md:block">객관적인 데이터 근거를 바탕으로 서비스의 신뢰도를 지키는 데 초점을 맞췄습니다.
                 </p>
                 </div>
                 <div class="flex gap-4 items-start border-t border-gray-800 pt-8">
                     <span class="text-[#FF7E36] font-black italic text-xl">02</span>
                     <p class="text-sm md:text-base leading-relaxed bal">
-                    데이터 노이즈를 걸러내는 <strong>필터링 로직을 설계</strong>해 수작업 업무량을 75%&#8288;까지 줄이는&nbsp;것을 목표로 한 효율 중심의 방안입니다.
+                    데이터 노이즈를 걸러내는 <strong>필터링 로직을 설계</strong>해 <br class="hidden md:block">수작업 업무량을 75%&#8288;까지 줄이는&nbsp;것을 목표로 한 효율 중심의 방안입니다.
                 </p>
                 </div>
                 <div class="flex gap-4 items-start border-t border-gray-800 pt-8">
                     <span class="text-[#FF7E36] font-black italic text-xl">03</span>
                     <p class="text-sm md:text-base leading-relaxed bal">
-                     지역 기반 중고거래 플랫폼의 가치에 맞는 <strong>사전 탐지 중심의 리스크 차단 정책</strong>으로 유저 경험을 보호하며, 따뜻하고 안전한 동네 마켓을 위한 방안을 정리했습니다.
+                     지역 기반 중고거래 플랫폼의 가치에 맞는 <strong>사전 탐지 중심의 리스크 차단 정책</strong>으로 <br class="hidden md:block">유저 경험을 보호하며, 따뜻하고 안전한 동네 마켓을 위한 방안을 정리했습니다.
                 </p>
                 </div>
             </div>
@@ -678,7 +680,7 @@
                     </div>
                     <div class="nudge-anim bg-orange-50 border border-orange-200 p-4 rounded-2xl text-xs text-center shadow-sm mx-1 my-4 leading-relaxed">
                         ⏳ <strong>송금 전 주의! (쿨다운)</strong><br>
-                        해당 계좌번호의 사기 이력을 자동 조회 중입니다. 안전을 위해 잠시 후 <strong>계좌 복사</strong>가 가능합니다.<br>
+                        해당 계좌번호의 사기 이력을 <br class="hidden md:block">자동 조회 중입니다. <br class="hidden md:block">안전을 위해 잠시 후 <strong>계좌 복사</strong>가 가능합니다.<br>
                         <div class="mt-3 bg-gray-200 text-gray-400 font-bold py-1.5 px-4 rounded-full shadow-sm w-full">3초 후 복사 활성화...</div>
                     </div>
                 `;
@@ -694,13 +696,13 @@
                         <div class="chat-bubble bg-white border border-gray-100 shadow-sm p-1">
                             <div class="relative w-32 h-32 bg-gray-800 rounded-xl overflow-hidden flex items-center justify-center flex-col">
                                 <span class="text-white text-3xl mb-1 filter blur-[1px]">🚫</span>
-                                <span class="text-white text-[11px] font-bold px-2 text-center bg-black/60 rounded py-1 filter blur-[0.5px]">도용 의심 이미지</span>
+                                <span class="text-white text-xs font-bold px-2 text-center bg-black/60 rounded py-1 filter blur-[0.5px]">도용 의심 이미지</span>
                             </div>
                         </div>
                     </div>
                     <div class="nudge-anim bg-blue-50 border border-blue-200 p-4 rounded-2xl text-xs text-center shadow-sm mx-1 my-4 leading-relaxed">
                         ⚠️ <strong>이미지 도용 주의</strong><br>
-                        타 중고거래 사이트에서 <strong>사용된 적 있는 사진</strong>으로 탐지되었습니다. 사기 피해에 각별히 주의하세요!
+                        타 중고거래 사이트에서 <strong>사용된 적 있는 사진</strong>으로 탐지되었습니다. <br class="hidden md:block">사기 피해에 각별히 주의하세요!
                     </div>
                 `;
             } else if (type === 'ocr') {
@@ -720,7 +722,7 @@
                     </div>
                     <div class="nudge-anim bg-red-50 border border-red-300 text-red-800 p-4 rounded-2xl text-xs text-center shadow-sm mx-1 my-2 leading-relaxed">
                         👁️‍🗨️ <strong>우회 연락처 탐지 (OCR)</strong><br>
-                        이미지 내에서 <strong>외부 메신저(카카오톡) 유도 문구</strong>가 식별되어 이미지가 블라인드 처리되었습니다. 지역 기반 중고거래 플랫폼 앱 내에서 거래해주세요.
+                        이미지 내에서 <br class="hidden md:block"><strong>외부 메신저(카카오톡) 유도 문구</strong>가 식별되어 <br class="hidden md:block">이미지가 블라인드 처리되었습니다. <br class="hidden md:block">중고거래 플랫폼 앱 내에서 거래해주세요.
                     </div>
                 `;
             }

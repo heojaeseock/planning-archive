@@ -133,6 +133,9 @@ html { scroll-behavior: smooth; }
 .mb-24{margin-bottom:4rem}
 .mt-24{margin-top:4rem}
 </style>
+<style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
+<style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
+<style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
 </head>
 <body class="antialiased relative">
 
@@ -163,7 +166,7 @@ html { scroll-behavior: smooth; }
                 캐주얼 물리 기반 스포츠 게임 <br class="hidden md:block">핵심 기획 분석
             </h1>
             <p class="text-base md:text-lg text-sand-800 leading-relaxed max-w-2xl mx-auto">
-                    로켓 리그 사이드스와이프, 헤드 사커, 오메가 스트라이커스&nbsp;등 성공작들의 물리 엔진 세팅과 차별화되는 시스템 특징을 분석합니다.
+                    로켓 리그 사이드스와이프, 헤드 사커, 오메가 스트라이커스&nbsp;등 <br class="hidden md:block">성공작들의 물리 엔진 세팅과 차별화되는 시스템 특징을 분석합니다.
                 </p>
         </header>
 
@@ -171,40 +174,40 @@ html { scroll-behavior: smooth; }
         <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-12" aria-label="이 문서가 하는 말">
           <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
             <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-              <p class="text-[11px] font-black tracking-[0.12em] text-violet-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
-              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]">물리 기반 조작의 재미를 구성 요소로 분해한 문서입니다. 공개된 게임을 직접 플레이하며 분석한 개인 작업이며, 아래 점수는 기획 의도를 보여 주려고 매긴 가정 값입니다.</p>
+              <p class="text-xs font-black tracking-[0.12em] text-violet-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
+              <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]" style="max-width:44em;text-wrap:wrap">물리 기반 조작의 재미를 구성 요소로 분해한 문서입니다. <br class="hidden md:block">공개된 게임을 직접 플레이하며 분석한 개인 작업이며, 아래 점수는 기획 의도를 보여 주려고 매긴 가정 값입니다.</p>
             </div>
             <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">현실 물리 반영</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">현실 물리 반영</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">90 → 25</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">65점을 내줬습니다</p>
+                <p class="text-xs text-slate-500 mt-1 bal">65점을 내줬습니다.</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">그&nbsp;대가로 얻은&nbsp;것</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">그&nbsp;대가로 얻은&nbsp;것</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">진입 장벽 제거</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">조작을 배우지 않아도 됩니다</p>
+                <p class="text-xs text-slate-500 mt-1 bal">조작을 배우지 않아도 됩니다.</p>
               </div>
               <div class="px-3 py-5 md:py-6 text-center">
-                <p class="text-[11px] font-bold text-slate-500 mb-2 bal">조작 네&nbsp;항목&nbsp;중 유독 낮은 하나</p>
+                <p class="text-xs font-bold text-slate-500 mb-2 bal">조작 네&nbsp;항목&nbsp;중 유독 낮은 하나</p>
                 <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">85</p>
-                <p class="text-[11px] text-slate-500 mt-1 bal">나머지 셋은 90~95</p>
+                <p class="text-xs text-slate-500 mt-1 bal">나머지 셋은&nbsp;90~95</p>
               </div>
             </div>
             <div class="px-6 md:px-9 py-6 md:py-7">
-              <p class="text-[11px] font-black tracking-[0.12em] text-slate-500 mb-4">재미를 만드는 조건</p>
+              <p class="text-xs font-black tracking-[0.12em] text-slate-500 mb-4">재미를 만드는 조건</p>
               <div class="grid md:grid-cols-3 gap-3">
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">공이 오래 떠 있게</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">중력을 실제보다 낮춰 궤적을 눈으로 좇을&nbsp;수 있게 만듭니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">중력을 실제보다 낮춰 궤적을 눈으로 좇을&nbsp;수 있게 만듭니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">판정을 후하게</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">보이지 않는 판정 범위를 캐릭터보다 15~20% 키워 대충 맞춰도 맞습니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">보이지 않는 판정 범위를 캐릭터보다 <br class="hidden md:block">15~20% 키워 대충 맞춰도 맞습니다.</p>
                 </div>
                 <div class="rounded-xl border border-slate-200 p-4">
                   <p class="text-sm font-black text-slate-900 mb-1.5 bal">즉시 반응하게</p>
-                  <p class="text-xs text-slate-500 leading-relaxed bal">관성을&nbsp;줄이고 가속을 높여 누르는 즉시 움직입니다</p>
+                  <p class="text-xs text-slate-500 leading-relaxed bal">관성을&nbsp;줄이고 가속을 높여 누르는 즉시 움직입니다.</p>
                 </div>
               </div>
             </div>
@@ -217,7 +220,7 @@ html { scroll-behavior: smooth; }
                 <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">분석 대상</h2>
                 <p class="text-slate-600 leading-relaxed mb-4 max-w-[46em]">
                     물리 연산을 과장해 조작의 재미를 만드는 캐주얼 스포츠 장르를 다룹니다. <br class="hidden md:block">
-                    로켓 리그 사이드스와이프, 헤드 사커, 오메가 스트라이커스를 대상으로 중력&#8288;·히트박스&#8288;·가속도 설정을 비교했습니다. 비교 수치는 기획 의도를 시각화하기 위한 값이며 실제 추출값은 아닙니다.
+                    로켓 리그 사이드스와이프, 헤드 사커, 오메가 스트라이커스를 대상으로 중력&#8288;·히트박스&#8288;·가속도 설정을 비교했습니다. <br class="hidden md:block">비교 수치는 기획 의도를 시각화하기 위한 값이며 실제 추출값은 아닙니다.
                 </p>
             </div>
         </section>
@@ -292,7 +295,7 @@ html { scroll-behavior: smooth; }
                             <div class="chart-container">
                                 <canvas id="systemBarChart" role="img" aria-label="막대 차트. 항목 평균 득점력, 역전 빈도, 플레이 속도. 계열 수치"></canvas>
                             </div>
-                            <p class="text-[10px] text-center text-sand-600 mt-6 leading-relaxed">
+                            <p class="text-xs text-center text-sand-600 mt-6 leading-relaxed">
                                 *수치는 기획적 의도를 시각화한 지표입니다.
                             </p>
                         </div>
@@ -307,7 +310,7 @@ html { scroll-behavior: smooth; }
                     <span class="text-3xl">💡</span> 신규 프로토타입 '특수 기믹' 제안
                 </h2>
                 <p class="text-sand-800 max-w-2xl mx-auto">
-                    단조로운 패턴을 방지하고 유저&nbsp;간의 실력 격차를 완화하는 두&nbsp;가지 기믹입니다. 아직 만들어 시험해 보지 않은 제안 단계입니다.
+                    단조로운 패턴을 방지하고 유저&nbsp;간의 실력 격차를 완화하는 두&nbsp;가지 기믹입니다. <br class="hidden md:block">아직 만들어 시험해 보지 않은 제안 단계입니다.
                 </p>
             </div>
 
@@ -323,7 +326,7 @@ html { scroll-behavior: smooth; }
                     
                     <div class="text-sand-800 space-y-4">
                         <div class="bg-sand-50 p-4 rounded-2xl text-sm border-l-4 border-coral-500">
-                            <strong>작동 방식:</strong> 경기장 특정 구역에 공이 닿으면 예측 불가능한 속도와 각도로 튕겨 나가는 범퍼를 배치합니다.
+                            <strong>작동 방식:</strong> 경기장 특정 구역에 공이 닿으면 예측 불가능한 속도와 각도로 <br class="hidden md:block">튕겨 나가는 범퍼를 배치합니다.
                         </div>
                         <div id="gimmick1-details" class="hidden fade-in space-y-3 mt-4 text-sm bg-white p-4 rounded-xl border border-sand-100">
                             <h4 class="font-bold text-sand-900 border-b border-sand-100 pb-2">기획 의도</h4>
@@ -347,7 +350,7 @@ html { scroll-behavior: smooth; }
                     
                     <div class="text-sand-800 space-y-4">
                         <div class="bg-sand-50 p-4 rounded-2xl text-sm border-l-4 border-ocean-500">
-                            <strong>작동 방식:</strong> 특정 시간마다 '저중력' 또는 '고중력' 타일이 활성화되어 낙하 속도와 점프 높이가 달라집니다.
+                            <strong>작동 방식:</strong> 특정 시간마다 '저중력' 또는 '고중력' 타일이 활성화되어 <br class="hidden md:block">낙하 속도와 점프 높이가 달라집니다.
                         </div>
                         <div id="gimmick2-details" class="hidden fade-in space-y-3 mt-4 text-sm bg-white p-4 rounded-xl border border-sand-100">
                             <h4 class="font-bold text-sand-900 border-b border-sand-100 pb-2">기획 의도</h4>
@@ -434,7 +437,7 @@ html { scroll-behavior: smooth; }
             </div>
 
             <div class="bg-sand-900 rounded-2xl p-8 text-white mb-8">
-                <p class="text-sm font-black text-amber-300 mb-4">이&nbsp;교환은 장르 선택입니다</p>
+                <p class="text-sm font-black text-amber-300 mb-4">이&nbsp;교환은 장르 선택입니다.</p>
                 <p class="leading-relaxed max-w-[46em]">
                     두&nbsp;방향은 우열이 아니라 <strong class="text-white">다른 유저에게 파는 다른 상품</strong>입니다. <br class="hidden md:block">
                     현실 물리 25는 결함이 아니라 <strong class="text-amber-300">의도한 포기</strong>이고, 그&nbsp;대가로 조작 진입 장벽을 없앴습니다. <br class="hidden md:block">
@@ -444,7 +447,7 @@ html { scroll-behavior: smooth; }
             </div>
 
             <div class="bg-white rounded-2xl border-2 border-sand-300 p-7">
-                <p class="text-sm font-black text-sand-800 mb-3">한&nbsp;항목만 상한이 걸려 있습니다</p>
+                <p class="text-sm font-black text-sand-800 mb-3">한&nbsp;항목만 상한이 걸려 있습니다.</p>
                 <p class="text-sand-600 leading-relaxed mb-4 max-w-[46em]">
                     조작 네&nbsp;항목&nbsp;중 셋은 90~95인데 <strong class="text-sand-900">히트박스 관대함만 85</strong>로 5~10점 낮습니다. <br class="hidden md:block">
                     나머지는 올릴수록 좋지만 이&nbsp;항목은 다르기 때문입니다.
@@ -452,8 +455,7 @@ html { scroll-behavior: smooth; }
                 <p class="text-sand-600 leading-relaxed max-w-[46em]">
                     히트박스를 과하게 키우면 <strong class="text-sand-900">정확히 맞힌&nbsp;것과 대충 맞힌&nbsp;것의 결과가 같아집니다.</strong> <br class="hidden md:block">
                     조작을 연습한 유저가 보상을 받지 못하면 숙련이라는 목표가 사라집니다. <br class="hidden md:block">
-                    본문이 제시한 <strong class="text-sand-900">15~20%</strong>&#8288;라는 구체적인 범위는 그&nbsp;상한을 관리하는 값이고, <br class="hidden md:block">
-                    이&nbsp;장르에서 가장 조심스럽게 다뤄야 하는 수치입니다.
+                    본문이 제시한 <strong class="text-sand-900">15~20%</strong>&#8288;라는 구체적인 범위는 그&nbsp;상한을 관리하는 값이고, <br class="hidden md:block">이&nbsp;장르에서 가장 조심스럽게 다뤄야 하는 수치입니다.
                 </p>
             </div>
         </section>
@@ -468,11 +470,11 @@ html { scroll-behavior: smooth; }
                 <div class="bg-white rounded-2xl border-2 border-emerald-200 p-7">
                     <p class="text-sm font-black text-emerald-700 mb-4">프로토타입에서 측정할&nbsp;것</p>
                     <ul class="space-y-3 text-sm text-sand-600 leading-relaxed">
-                        <li>&bull; <strong class="text-sand-800">실력 반영도</strong> &mdash; 상위 숙련 그룹과 하위 그룹의 승률&nbsp;차이. 차이가 너무 작으면 완화 장치가 과합니다</li>
-                        <li class="bal">&bull; <strong class="text-sand-800">범퍼 관여 득점 비율</strong> &mdash; 전체 득점&nbsp;중 범퍼를 거친 비율. 높으면 운의 비중이 큰&nbsp;것입니다</li>
-                        <li class="bal">&bull; <strong class="text-sand-800">숙련 유저 잔존</strong> &mdash; 상위 그룹의 재접속률. 이&nbsp;값이 떨어지면&nbsp;히트박스를 키워 숙련 보상이 사라진다는 앞의 우려가 현실화된&nbsp;것입니다</li>
-                        <li class="bal">&bull; <strong class="text-sand-800">히트박스 민감도</strong> &mdash; 배율을 조정하며 신규 이탈과 숙련 잔존을 함께 봅니다</li>
-                        <li>&bull; <strong class="text-sand-800">역전 발생률</strong> &mdash; 너무 높으면 앞서는 의미가 사라집니다</li>
+                        <li>&bull; <strong class="text-sand-800">실력 반영도</strong> &mdash; 상위 숙련 그룹과 하위 그룹의 승률&nbsp;차이. 차이가 너무 작으면 완화 장치가 과합니다.</li>
+                        <li class="bal">&bull; <strong class="text-sand-800">범퍼 관여 득점 비율</strong> &mdash; 전체 득점&nbsp;중 범퍼를 거친 비율. 높으면 운의 비중이 큰&nbsp;것입니다.</li>
+                        <li class="bal">&bull; <strong class="text-sand-800">숙련 유저 잔존</strong> &mdash; 상위 그룹의 재접속률. 이&nbsp;값이 떨어지면&nbsp;히트박스를 키워 숙련 보상이 사라진다는 앞의 우려가 현실화된&nbsp;것입니다.</li>
+                        <li class="bal">&bull; <strong class="text-sand-800">히트박스 민감도</strong> &mdash; 배율을 조정하며 신규 이탈과 숙련 잔존을 함께 봅니다.</li>
+                        <li>&bull; <strong class="text-sand-800">역전 발생률</strong> &mdash; 너무 높으면 앞서는 의미가 사라집니다.</li>
                     </ul>
                 </div>
                 
@@ -493,17 +495,17 @@ html { scroll-behavior: smooth; }
             casual: {
                 scoring: {
                     title: "즉각적인 도파민 보상",
-                    desc: "목표 점수제나 3분 내외의 짧은 단판 승부를 선호합니다. 골인&nbsp;시 화면 진동, 사운드, 파티클 이펙트를 과도할 정도로 화려하게 연출하여 득점의 가치를 감각적으로 전달합니다.",
+                    desc: "목표 점수제나 3분 내외의 짧은 단판 승부를 선호합니다. <br class=\"hidden md:block\">골인&nbsp;시 화면 진동, 사운드, 파티클 이펙트를 과도할 정도로 화려하게 연출하여 <br class=\"hidden md:block\">득점의 가치를 감각적으로 전달합니다.",
                     icon: "🎯"
                 },
                 comeback: {
                     title: "인위적 역전 찬스",
-                    desc: "점수 차가 벌어지면 실점한 유저에게 특수 능력을 부여하거나 경기 종료 직전 '골든 골' 찬스를 주어 게임이 끝날 때까지 유저가 긴장의 끈을 놓지 못하게 합니다.",
+                    desc: "점수 차가 벌어지면 실점한 유저에게 특수 능력을 부여하거나 경기 종료 직전 <br class=\"hidden md:block\">'골든 골' 찬스를 주어 게임이 끝날 때까지 유저가 긴장의 끈을 놓지 못하게 합니다.",
                     icon: "🔥"
                 },
                 ux: {
                     title: "대기 없는 빠른 순환 구조",
-                    desc: "불필요한 리플레이를 스킵하고 즉시 다음 킥오프로 연결합니다. 경기 종료 후에도 '재경기' 버튼을 전면에 배치하여 유저가 고민 없이 다음 판으로 진입하도록 유도합니다.",
+                    desc: "불필요한 리플레이를 스킵하고 즉시 다음 킥오프로 연결합니다. <br class=\"hidden md:block\">경기 종료 후에도 '재경기' 버튼을 전면에 배치하여 <br class=\"hidden md:block\">유저가 고민 없이 다음 판으로 진입하도록 유도합니다.",
                     icon: "⚡"
                 }
             },
@@ -515,12 +517,12 @@ html { scroll-behavior: smooth; }
                 },
                 comeback: {
                     title: "전술과 실력 위주의 승부",
-                    desc: "시스템적인 보정보다는 선수 교체, 포메이션 변경 등 매니징 요소와 조작 실력의 숙련도를 통해 유저 스스로가 불리한 상황을 극복하도록 설계합니다.",
+                    desc: "시스템적인 보정보다는 선수 교체, 포메이션 변경 등 매니징 요소와 조작 실력의 숙련도를 통해 <br class=\"hidden md:block\">유저 스스로가 불리한 상황을 극복하도록 설계합니다.",
                     icon: "♟️"
                 },
                 ux: {
                     title: "현실적인 현장감 전달",
-                    desc: "실제 중계 화면과 유사한 연출, 긴 호흡의 리플레이, 선수의 감정 표현 컷신 등을 통해 유저가 실제 프로 선수가 된 듯한 시뮬레이션 경험을 제공합니다.",
+                    desc: "실제 중계 화면과 유사한 연출, 긴 호흡의 리플레이, 선수의 감정 표현 컷신 등을 통해 <br class=\"hidden md:block\">유저가 실제 프로 선수가 된 듯한 시뮬레이션 경험을 제공합니다.",
                     icon: "📺"
                 }
             }
