@@ -92,6 +92,8 @@
   .job{padding:24px;border:1px solid var(--border);border-radius:14px;
     background:var(--surface);margin-bottom:16px}
   .job:last-of-type{margin-bottom:0}
+  /* 겸직(AX 리드) 묶음과 블소 운영 묶음 사이를 띄워 서로 다른 업무로 보이게 한다 */
+  .job + .banner{margin-top:44px}
   .job-head{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap;margin-bottom:18px}
   .job h3{margin:0;font-size:17px;font-weight:800;letter-spacing:-.025em;flex:1 1 240px}
   .role{flex-shrink:0;font-size:12px;font-weight:800;padding:5px 11px;border-radius:999px;
@@ -119,7 +121,6 @@
   .blk.win li::before{background:var(--accent)}
   .blk.win li{color:var(--text)}
   .blk.win h4{color:var(--accent)}
-  .blk li strong{font-weight:800;color:var(--text)}
 
   /* 하단 고정 '문서 목록' 버튼: 상단에 돌아가기 링크가 있으니 조금 내려 읽을 때부터 보인다 */
   a[aria-label="문서 목록으로 돌아가기"]{transition:opacity .2s,visibility .2s}
@@ -296,15 +297,11 @@
   <!-- 실무 경험 -->
   <section>
     <h2>실무 경험</h2>
-    <p class="sub">현업에서 라이브 서비스를 운영하며 담당한 업무입니다.</p>
-
-    <div class="banner">
-      <img src="img/bns-live.webp" alt="블레이드&amp;소울 레볼루션 라이브 서비스 운영" loading="lazy" decoding="async" width="1918" height="1110">
-    </div>
+    <p class="sub">현업에서 담당한 업무입니다. AX 리드는 라이브 서비스 운영과 겸직하고 있습니다.</p>
 
     <div class="svc">
-      <b>[라이브 서비스 운영] 블레이드&#8288;&amp;&#8288;소울 레볼루션</b>
-      <span class="bal-m">아이지에스 · 2024.12 ~ 현재 · 국내 및&nbsp;글로벌 4개 권역</span>
+      <b>[겸직] 부서 AX 리드</b>
+      <span class="bal-m">아이지에스 · 2026.10 ~ 현재 · 블레이드&#8288;&amp;&#8288;소울 레볼루션 운영과 병행</span>
     </div>
 
     <!-- AX 리드 -->
@@ -316,8 +313,8 @@
       <div class="award">
         <span class="medal">🧭</span>
         <div>
-          <b>주니어 연차 최초 AX 리드 선정</b>
-          <span class="d">팀당 1~2명이 맡고 주로 고연차&#8288;·파트장급이 선정되는 역할로, 주니어 연차로는 처음 선정되었습니다.<br>사내 AI 도구를 운영 실무에 먼저 도입하고 품질을 관리해 부서의 AI 전환 속도를 높이는 역할입니다.</span>
+          <b>부서 AX 리드 선정</b>
+          <span class="d">팀별로 AI 도구 도입과 활용을 이끄는 담당자로 선정되었습니다.<br>사내 AI 도구를 운영 실무에 먼저 도입하고 품질을 관리해 부서의 AI 전환 속도를 높이는 역할입니다.</span>
         </div>
       </div>
       <div class="blk">
@@ -334,13 +331,22 @@
       <div class="blk win">
         <h4>🏆 주요 활동</h4>
         <ul>
-          <li class="bal-t">흩어져 있던 이벤트 당첨자 취합&#8288;·당첨 이력 대조 툴을 직접 만든 이벤트 운영 자동화 도구에 통합하고, 인게임 이벤트 공지 생성과 SNS 이벤트 기획&#8288;·취합 기능까지 더해 이벤트 업무를 한&nbsp;도구로 묶음</li>
+          <li class="bal-t">당첨자 취합&#8288;·이력 대조 툴과 인게임&#8288;·SNS 이벤트 기능을 이벤트 운영 자동화 도구로 통합</li>
           <li class="bal-t">부서&nbsp;내 자체 개발 AI 툴과 사내 공유 사례를 한&nbsp;곳에 모으고, 여러 프로젝트에 확대 적용할&nbsp;수 있는지 프로젝트별로 검토</li>
-          <li class="bal-t">번역 AI 도구의 용어집&#8288;·고정 문구 기능을 프로젝트별로 인터뷰해, 실무에서 쓰이지 않는 원인&#8288;(매번 파일에 문구를 추가해야 하는 번거로움, 이해하기 어려운 안내&nbsp;등)&#8288;을 찾아냄</li>
-          <li class="bal-t">CS 답변 초안 도구 도입에 앞서 AI 정착 후 CS 업무 방식이 어떻게 바뀔지 단계별로 정리하고, 건의&#8288;·민원 자동 취합처럼 난도가 낮고 효과가 빠른 영역부터 적용하는 방향을 제안</li>
+          <li class="bal-t">번역 AI 도구의 용어집&#8288;·고정 문구 기능이 실무에서 안&nbsp;쓰이는 원인을 프로젝트별 인터뷰로 파악</li>
+          <li class="bal-t">CS 답변 초안 도구 도입 전 업무 변화를 단계별로 정리하고, 건의&#8288;·민원 자동 취합부터 적용하도록 제안</li>
           <li class="bal-m">커뮤니티 동향 AI 리포트를 기존 일일 리포트와 항목별로 비교해, 대체할&nbsp;수 있는 항목과 보완이 필요한 항목을 구분</li>
         </ul>
       </div>
+    </div>
+
+    <div class="banner">
+      <img src="img/bns-live.webp" alt="블레이드&amp;소울 레볼루션 라이브 서비스 운영" loading="lazy" decoding="async" width="1918" height="1110">
+    </div>
+
+    <div class="svc">
+      <b>[라이브 서비스 운영] 블레이드&#8288;&amp;&#8288;소울 레볼루션</b>
+      <span class="bal-m">아이지에스 · 2024.12 ~ 현재 · 국내 및&nbsp;글로벌 4개 권역</span>
     </div>
 
     <!-- 1 -->
@@ -558,8 +564,8 @@
         <h4>프로젝트 요약</h4>
         <ul>
           <li class="bal-t">포럼 이벤트의 분석&#8288;·기획&#8288;·당첨자 공지부터 인게임 이벤트 공지까지, 이벤트 운영 전 과정을 한&nbsp;곳에서 처리하는 사내용 웹&nbsp;도구를 단독 제작</li>
-          <li class="bal-m"><strong>포럼 이벤트:</strong> 지난 공지 분석, 주제 한&nbsp;줄로 공지 초안 작성, 당첨자 대조&#8288;·발표 공지까지 처리</li>
-          <li class="bal-m"><strong>인게임 이벤트:</strong> 기획서를 읽어 공지까지 작성하고, 기획서가 없는 프로젝트도 지난 공지를 바탕으로 새 공지를 생성</li>
+          <li class="bal-m">포럼 이벤트: 지난 공지 분석, 주제 한&nbsp;줄로 공지 초안 작성, 당첨자 대조&#8288;·발표 공지까지 처리</li>
+          <li class="bal-m">인게임 이벤트: 기획서를 읽어 공지까지 작성하고, 기획서가 없는 프로젝트도 지난 공지를 바탕으로 새 공지를 생성</li>
           <li class="bal-m">AI를 직접 연동하고 즐겨찾기 버튼 하나로 보던 화면을 불러와 복사&#8288;·붙여넣기 4단계를 없애고, 쌓인 과거 이벤트를 함께 실어 운영 톤에 맞는 초안이 나오도록 설계</li>
           <li class="bal-m">게시 전 자동 검사 10종&#8288;(요일&#8288;·날짜 순서 대조, 미승인 보상 교정, 빈칸&#8288;·오타&#8288;·중복 검출)&#8288;을 붙여 공지 사고를 차단</li>
           <li>색상&#8288;·배너&#8288;·말머리&#8288;·조판을 공지 소스에서 직접 읽는 구조로 만들어, 코드를 고치지 않고 다른 게임을 추가할&nbsp;수 있게 설계</li>
