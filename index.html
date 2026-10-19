@@ -33,6 +33,7 @@
     --mkt:#a5147a; --mkt-bg:#fdecf7;
     --data:#0b6e63; --data-bg:#e5f4f1;
     --cm:#6b30d4;  --cm-bg:#f2ecfe;
+    --gold:#8a6410; --gold-2:#8b6c26; --gold-bg:#fffaed; --gold-br:#eddcae;
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
@@ -45,6 +46,7 @@
       --mkt:#f79ad6; --mkt-bg:#33132a;
       --data:#63cfc1; --data-bg:#0d2a27;
       --cm:#bfa2ff;  --cm-bg:#231a3c;
+      --gold:#f2d183; --gold-2:#c9a75f; --gold-bg:#241d0d; --gold-br:#4a3a18;
     }
   }
   *{box-sizing:border-box}
@@ -73,19 +75,6 @@
   /* 넓은 화면에서 사진 높이를 옆 소개 글 높이에 맞춘다 */
   @media (min-width:641px){.photo{width:162px}}
   .hero-txt .lede{margin-top:14px}
-  .cta{display:flex;align-items:center;gap:16px;margin:26px 0 0;padding:18px 22px;
-    border:1px solid var(--border-2);border-radius:14px;background:var(--surface);
-    text-decoration:none;transition:.16s;max-width:560px;
-    box-shadow:0 1px 2px rgba(16,24,40,.04)}
-  .cta:hover{border-color:var(--accent);background:var(--accent-weak);
-    transform:translateY(-2px);box-shadow:0 8px 22px rgba(31,79,216,.13)}
-  .cta-ico{font-size:26px;line-height:1;flex-shrink:0}
-  .cta-body{display:flex;flex-direction:column;gap:3px;min-width:0}
-  .cta-kicker{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-  .cta-title{font-size:16.5px;font-weight:800;letter-spacing:-.02em;color:var(--text)}
-  .cta-desc{font-size:13px;color:var(--muted);line-height:1.5}
-  .cta-go{margin-left:auto;flex-shrink:0;font-size:19px;font-weight:800;color:var(--accent);transition:transform .16s}
-  .cta:hover .cta-go{transform:translateX(4px)}
   /* 먼저 보면 좋은 대표 문서 */
   .picks{margin:30px 0 0}
   .picks-h{margin:0 0 12px;font-size:14px;color:var(--muted)}
@@ -100,15 +89,77 @@
   .pick .tag{align-self:flex-start}
   .pick b{font-size:13.5px;font-weight:700;letter-spacing:-.015em;line-height:1.4;text-wrap:balance;word-break:keep-all}
   .pick span.why{font-size:12.5px;color:var(--muted);line-height:1.55;text-wrap:balance}
-  .guide{margin:34px 0 0;font-size:14px;color:var(--muted)}
-  .guide b{color:var(--text)}
-  .guide-line{display:block;width:34px;height:2px;border-radius:2px;background:var(--border-2);margin:0 0 14px}
+  /* 경력 요약 (자세한 내용은 경력기술서) */
+  .career{margin:30px 0 0}
+  .career-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 12px}
+  .career-head h2{margin:0;font-size:14px;font-weight:700;color:var(--muted)}
+  .career-more{font-size:13.5px;font-weight:700;color:var(--accent);text-decoration:none}
+  .career-more:hover{text-decoration:underline}
+  .career a{color:inherit;text-decoration:none}
+
+  /* 회사·역할 카드 */
+  .c-main{display:grid;grid-template-columns:200px 1fr;gap:16px 26px;align-items:center;
+    padding:22px 24px;border:1px solid var(--border);border-radius:14px;background:var(--surface);transition:.15s}
+  .c-main:hover{border-color:var(--accent)}
+  .c-co-name{margin:0;font-size:19px;font-weight:800;letter-spacing:-.025em}
+  .c-co-meta{margin:3px 0 0;font-size:13px;font-weight:600;color:var(--faint)}
+  .c-roles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .c-role{display:flex;flex-direction:column;gap:2px;padding:12px 15px;border-radius:10px;
+    background:var(--surface-2);border-left:3px solid var(--accent)}
+  .c-k{font-size:12px;font-weight:800;color:var(--accent)}
+  .c-role b{font-size:15px;font-weight:800;letter-spacing:-.02em}
+  .c-s{font-size:12.5px;color:var(--muted)}
+  .c-chips{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:14px 0 0;
+    border-top:1px solid var(--border);list-style:none}
+  .c-chips li{font-size:12.5px;font-weight:700;padding:5px 11px;border-radius:999px;
+    background:var(--accent-weak);color:var(--accent)}
+
+  /* 수상 */
+  .c-awards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+  .c-award{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;
+    background:var(--gold-bg);border:1px solid var(--gold-br);transition:.15s}
+  .c-award:hover{transform:translateY(-2px);border-color:var(--gold-2)}
+  .c-award .m{font-size:26px;line-height:1;flex-shrink:0}
+  .c-award b{display:block;font-size:14px;font-weight:800;letter-spacing:-.02em;color:var(--gold)}
+  .c-award i{display:block;font-style:normal;font-size:12.5px;font-weight:600;color:var(--gold-2)}
+
+  /* 사내 도구 */
+  .c-sub{margin:22px 0 10px;font-size:14px;font-weight:700;color:var(--muted)}
+  .c-tools{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .c-tool{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:12px;
+    overflow:hidden;background:var(--surface);transition:.15s}
+  .c-tool:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 18px rgba(16,24,40,.07)}
+  .c-tool img{width:100%;height:auto;aspect-ratio:16/8;object-fit:cover;object-position:top left;display:block;
+    border-bottom:1px solid var(--border);background:var(--surface-2)}
+  .c-tool-b{display:flex;flex-direction:column;gap:3px;padding:12px 14px 13px}
+  .c-tool-b b{font-size:14px;font-weight:800;letter-spacing:-.02em}
+  .c-tool-b em{font-style:normal;font-size:12px;font-weight:700;color:var(--gold);margin-left:4px;white-space:nowrap}
+  .c-tool-b span{font-size:12.5px;color:var(--muted);line-height:1.5}
+
+  @media (max-width:860px){
+    .c-main{grid-template-columns:1fr}
+    .c-awards,.c-tools{grid-template-columns:1fr}
+  }
+  @media (max-width:520px){
+    .c-main{padding:18px}
+    .c-roles{grid-template-columns:1fr}
+  }
+
+  /* 전체 작업 기록 (접기·펼치기) */
+  .archive{margin:34px 0 0}
+  .archive > summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:2px 14px;align-items:center;
+    padding:18px 22px;border:1px solid var(--border-2);border-radius:14px;background:var(--surface);transition:.15s}
+  .archive > summary::-webkit-details-marker{display:none}
+  .archive > summary:hover{border-color:var(--accent);background:var(--accent-weak)}
+  .archive > summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .a-t{font-size:16.5px;font-weight:800;letter-spacing:-.02em}
+  .a-t b{color:var(--accent)}
+  .a-d{grid-column:1;font-size:13px;color:var(--muted)}
+  .a-ico{grid-row:1/3;grid-column:2;font-size:22px;font-weight:800;color:var(--accent);line-height:1;transition:transform .2s}
+  .archive[open] > summary{margin-bottom:6px}
+  .archive[open] .a-ico{transform:rotate(180deg)}
   footer a{color:var(--accent);font-weight:700;text-decoration:none}
   footer a:hover{text-decoration:underline}
-  @media (max-width:520px){
-    .cta{align-items:flex-start;padding:16px 18px}
-    .cta-go{align-self:center}
-  }
 
   .bar{position:sticky;top:0;z-index:20;background:var(--bg);
     padding:14px 0 13px;border-bottom:1px solid var(--border)}
@@ -193,7 +244,7 @@
       --text:#000; --muted:#33383f; --faint:#5a606a; --accent:#1f4fd8; --accent-weak:#f2f5ff;
     }
     body{background:#fff;color:#000;font-size:10pt}
-    .bar,.pills,.search,.status,.reset,.cta-go{display:none !important}
+    .bar,.pills,.search,.status,.reset{display:none !important}
     .card{break-inside:avoid;page-break-inside:avoid}
     .ghead{break-after:avoid}
     @page{margin:14mm 12mm}
@@ -230,15 +281,64 @@
       </div>
     </div>
 
-    <a class="cta" href="career/index.html">
-      <span class="cta-ico">📄</span>
-      <span class="cta-body">
-        <span class="cta-kicker">경력&#8288;·역량 요약</span>
-        <span class="cta-title">경력기술서 보기</span>
-        <span class="cta-desc">담당한 서비스와 실제 수행 업무, 직접 만든 사내 도구 세&nbsp;가지를 정리했습니다.</span>
-      </span>
-      <span class="cta-go" aria-hidden="true">→</span>
-    </a>
+    <!-- 경력 요약: 자세한 내용은 경력기술서 -->
+    <section class="career" aria-label="경력 요약">
+      <div class="career-head">
+        <h2>경력 요약</h2>
+        <a class="career-more" href="career/index.html">경력기술서 전체 보기 <span aria-hidden="true">→</span></a>
+      </div>
+      <!-- 회사와 맡은 역할 -->
+      <a class="c-main" href="career/index.html#experience">
+        <div class="c-co">
+          <p class="c-co-name">아이지에스&nbsp;(IGS)</p>
+          <p class="c-co-meta">넷마블 계열사 · 2024.12 ~ 현재</p>
+        </div>
+        <div class="c-roles">
+          <div class="c-role">
+            <span class="c-k">라이브 서비스 운영</span>
+            <b>블레이드&#8288;&amp;&#8288;소울 레볼루션</b>
+            <span class="c-s">국내&#8288;·글로벌 4개 권역</span>
+          </div>
+          <div class="c-role ax">
+            <span class="c-k">겸직</span>
+            <b>부서 AX&#8288;(AI&nbsp;전환) 리드</b>
+            <span class="c-s">2026.10 ~ 현재</span>
+          </div>
+        </div>
+        <ul class="c-chips" aria-label="주요 업무">
+          <li>프로젝트 관리</li>
+          <li>라이브 이슈 대응</li>
+          <li>이벤트 기획&#8288;·운영</li>
+          <li>GM 콘텐츠&#8288;·프로모션</li>
+          <li>e스포츠 대회 관제</li>
+          <li>운영툴 세팅&#8288;·QA</li>
+        </ul>
+      </a>
+
+      <!-- 수상 -->
+      <div class="c-awards">
+        <a class="c-award" href="career/index.html#awards"><span class="m">🏆</span><span><b>사내 스포트라이트상</b><i>개인 부문 · 2026.09</i></span></a>
+        <a class="c-award" href="career/index.html#awards"><span class="m">🥇</span><span><b>업무 효율화 컨퍼런스 최우수작</b><i>2회차 · 2026.08</i></span></a>
+        <a class="c-award" href="career/index.html#awards"><span class="m">🥈</span><span><b>업무 효율화 컨퍼런스 우수작</b><i>3회차 · 2026.10</i></span></a>
+      </div>
+
+      <!-- 직접 만든 사내 도구 -->
+      <p class="c-sub">AI로 직접 만든 사내 도구</p>
+      <div class="c-tools">
+        <a class="c-tool" href="career/index.html#tools">
+          <img src="career/img/notice-tool-1.webp" alt="상품 공지 자동 생성기 화면" loading="lazy" decoding="async" width="1160" height="667">
+          <span class="c-tool-b"><b>상품 공지 자동 생성기 <em>🥇 최우수작</em></b><span>기획서를 포럼 공지 소스로 원클릭 변환</span></span>
+        </a>
+        <a class="c-tool" href="career/index.html#tools">
+          <img src="career/img/event-tool-1.webp" alt="이벤트 운영 자동화 도구 화면" loading="lazy" decoding="async" width="1650" height="847">
+          <span class="c-tool-b"><b>이벤트 운영 자동화 도구 <em>🥈 우수작</em></b><span>이벤트 분석&#8288;·기획&#8288;·당첨자 공지를 한&nbsp;곳에서</span></span>
+        </a>
+        <a class="c-tool" href="career/index.html#tools">
+          <img src="career/img/log-tool-1.webp" alt="로그 번역기 화면" loading="lazy" decoding="async" width="1440" height="685">
+          <span class="c-tool-b"><b>로그 번역기</b><span>아이템 코드를 이름으로 바꿔 CS 로그 확인 단축</span></span>
+        </a>
+      </div>
+    </section>
 
 
     <section class="picks" aria-label="먼저 보면 좋은 문서">
@@ -252,8 +352,15 @@
       </div>
     </section>
 
-    <p class="guide"><span class="guide-line"></span>아래는 작업 기록 46건입니다. <b>직무별</b>로 나눠서 보실&nbsp;수 있습니다.</p>
   </header>
+
+  <!-- 전체 작업 기록: 처음에는 접어 두고, 펼친 상태는 다른 문서를 보고 돌아와도 유지한다 -->
+  <details class="archive" id="archive">
+  <summary>
+    <span class="a-t">전체 작업 기록 <b>46건</b> 보기</span>
+    <span class="a-d">게임 기획, 라이브 운영, 데이터 분석, 서비스 기획 등 직무별로 나눠 볼&nbsp;수 있습니다.</span>
+    <span class="a-ico" aria-hidden="true">⌄</span>
+  </summary>
 
   <div class="bar">
     <div class="bar-inner">
@@ -520,6 +627,7 @@
     </div>
     <p class="empty" hidden>조건에 맞는 문서가 없습니다. 검색어를 지우거나 <b>전체</b>를 선택해 주세요.</p>
   </main>
+  </details>
 
   <footer>작성 · 정리 허재석 · <a href="career/index.html">경력기술서</a></footer>
 </div>
@@ -546,6 +654,16 @@
   var jobT    = document.querySelector(".jh-t");
   var jobD    = document.querySelector(".jh-d");
   var job = "all";
+  var archive = document.getElementById("archive");
+
+  // 펼친 상태를 기억해, 문서를 보고 '문서 목록'으로 돌아왔을 때 다시 펼쳐 둔다
+  var OPEN_KEY = "archive-open";
+  try { if (sessionStorage.getItem(OPEN_KEY) === "1") archive.open = true; } catch (e) {}
+  if (location.hash === "#archive") archive.open = true;
+  archive.addEventListener("toggle", function(){
+    try { sessionStorage.setItem(OPEN_KEY, archive.open ? "1" : "0"); } catch (e) {}
+  });
+  function toArchive(){ archive.scrollIntoView({ behavior: "smooth", block: "start" }); }
 
   function render(){
     var q = input.value.trim().toLowerCase();
@@ -589,7 +707,7 @@
       pills.forEach(function(x){ x.setAttribute("aria-pressed", String(x === p)); });
       job = p.dataset.j;
       render();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      toArchive();
     });
   });
 
@@ -602,7 +720,7 @@
       x.setAttribute("aria-pressed", String(x.dataset.j === "all"));
     });
     render();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    toArchive();
   });
 
   render();
