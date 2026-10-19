@@ -141,6 +141,7 @@
 <style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
 <style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
 <style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
+<style>/* 휴대폰: 하단 고정 문서 목록 버튼을 작게 해 본문을 덜 가린다 */@media (max-width:640px){a[aria-label="문서 목록으로 돌아가기"]{padding:11px 22px !important;font-size:14.5px !important;bottom:16px !important;gap:7px !important}}</style>
 </head>
 <body class="antialiased min-h-screen flex flex-col relative break-keep">
 
@@ -306,19 +307,19 @@
                     <div class="timeline-line"></div>
                     
                     <div class="relative z-10 pl-[85px] pb-10 min-h-[56px] flex flex-col justify-center">
-                        <div class="absolute left-6 top-0 w-14 h-14 rounded-full bg-white border-4 border-indigo-500 flex items-center justify-center font-black text-indigo-600 text-sm shadow-sm">0H</div>
+                        <div class="absolute left-6 top-0 w-14 h-14 rounded-full bg-white border-4 border-indigo-500 flex items-center justify-center font-black text-indigo-600 text-sm shadow-sm">0h</div>
                         <h3 class="font-black text-lg text-slate-800">메타데이터 전수 검사</h3>
                         <p class="text-slate-500 text-sm mt-1 bal-m bal">20개 플랫폼 가사 및&nbsp;크레딧 정상 노출 즉각 확인</p>
                     </div>
                     
                     <div class="relative z-10 pl-[85px] pb-10 min-h-[56px] flex flex-col justify-center">
-                        <div class="absolute left-6 top-0 w-14 h-14 rounded-full bg-white border-4 border-rose-400 flex items-center justify-center font-black text-rose-500 text-sm shadow-sm">8H</div>
+                        <div class="absolute left-6 top-0 w-14 h-14 rounded-full bg-white border-4 border-rose-400 flex items-center justify-center font-black text-rose-500 text-sm shadow-sm">8h</div>
                         <h3 class="font-black text-lg text-slate-800">1차 개입: 누락 수정</h3>
                         <p class="text-slate-500 text-sm mt-1 bal-m">누락 발견&nbsp;시 핫라인 즉시 가동, 초기 반응이 좋으면 추가&nbsp;노출&nbsp;요청</p>
                     </div>
                     
                     <div class="relative z-10 pl-[85px] min-h-[56px] flex flex-col justify-center">
-                        <div class="absolute left-6 top-0 w-14 h-14 rounded-full bg-white border-4 border-slate-300 flex items-center justify-center font-black text-slate-500 text-sm shadow-sm">24H</div>
+                        <div class="absolute left-6 top-0 w-14 h-14 rounded-full bg-white border-4 border-slate-300 flex items-center justify-center font-black text-slate-500 text-sm shadow-sm">24h</div>
                         <h3 class="font-black text-lg text-slate-800">2차 개입: 노출 확대</h3>
                         <p class="text-slate-500 text-sm mt-1">차트 진입과 사전 피칭된 배너 노출을 점검해 추가&nbsp;노출&nbsp;요청</p>
                     </div>

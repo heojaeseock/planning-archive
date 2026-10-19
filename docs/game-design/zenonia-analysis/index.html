@@ -137,6 +137,7 @@ html { scroll-behavior: smooth; }
 <style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
 <style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
 <style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
+<style>/* 휴대폰: 하단 고정 문서 목록 버튼을 작게 해 본문을 덜 가린다 */@media (max-width:640px){a[aria-label="문서 목록으로 돌아가기"]{padding:11px 22px !important;font-size:14.5px !important;bottom:16px !important;gap:7px !important}}</style>
 </head>
 <body class="antialiased">
 
@@ -423,7 +424,7 @@ html { scroll-behavior: smooth; }
                             </div>
                         </div>
                         <div class="w-full lg:w-1/2 mockup-panel p-8 bg-slate-50 text-slate-900 border-slate-300 shadow-sm">
-                            <p class="text-xs text-slate-400 font-bold mb-6 text-center tracking-wide">코스튬 설정 화면</p>
+                            <p class="text-xs text-slate-500 font-bold mb-6 text-center tracking-wide">코스튬 설정 화면</p>
                             <div class="grid grid-cols-2 gap-6">
                                 <div class="bg-white p-5 rounded-2xl border border-blue-200 flex flex-col items-center shadow-sm">
                                     <span class="text-xs font-bold text-blue-600 mb-3">능력치 슬롯</span>
@@ -493,15 +494,15 @@ html { scroll-behavior: smooth; }
                             <div class="bg-slate-900/90 rounded-xl p-5 space-y-3">
                                 <div class="flex justify-between text-xs border-b border-slate-700 pb-3">
                                     <span class="text-purple-400 font-bold">[에픽] 신비한 무기 상자</span>
-                                    <span class="text-white font-mono">0.50%</span>
+                                    <span class="text-white" style="font-variant-numeric:tabular-nums">0.50%</span>
                                 </div>
                                 <div class="flex justify-between text-xs border-b border-slate-700 pb-3">
                                     <span class="text-blue-400 font-bold">[레어] 희귀 스킬북 선택권</span>
-                                    <span class="text-white font-mono">2.80%</span>
+                                    <span class="text-white" style="font-variant-numeric:tabular-nums">2.80%</span>
                                 </div>
                                 <div class="flex justify-between text-xs">
                                     <span class="text-slate-400">일반 재화 및&nbsp;소모품</span>
-                                    <span class="text-white font-mono">96.70%</span>
+                                    <span class="text-white" style="font-variant-numeric:tabular-nums">96.70%</span>
                                 </div>
                             </div>
                         </div>

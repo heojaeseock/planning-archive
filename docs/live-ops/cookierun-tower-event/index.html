@@ -79,7 +79,8 @@
         .mockup-phone {
             width: 100%;
             max-width: 400px;
-            aspect-ratio: 16 / 9;
+            /* 내용(카드·진행바·버튼)이 16:9 높이보다 커서 고정 비율 대신 최소 높이만 둔다 */
+            min-height: 225px;
             background: #1e293b;
             border: 8px solid #334155;
             border-radius: 24px;
@@ -92,6 +93,7 @@
             0%, 100% { transform: translateY(-10%) rotate(-5deg); }
             50% { transform: translateY(10%) rotate(-5deg); }
         }
+        .active\:scale-95:active { transform: scale(.95); }
         .animate-bounce-subtle {
             animation: bounce-subtle 1.5s infinite ease-in-out;
         }
@@ -149,6 +151,7 @@ html { scroll-behavior: smooth; }
 <style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
 <style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
 <style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
+<style>/* 휴대폰: 하단 고정 문서 목록 버튼을 작게 해 본문을 덜 가린다 */@media (max-width:640px){a[aria-label="문서 목록으로 돌아가기"]{padding:11px 22px !important;font-size:14.5px !important;bottom:16px !important;gap:7px !important}}</style>
 </head>
 <body class="antialiased">
 
@@ -181,13 +184,13 @@ html { scroll-behavior: smooth; }
                 <section class="mb-12" aria-label="이 문서가 하는 말">
                   <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
                     <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-                      <p class="text-xs font-black tracking-[0.12em] text-amber-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
+                      <p class="text-xs font-black tracking-[0.12em] text-amber-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 가상 기획안 · 설계값 기준</span></p>
                       <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]" style="max-width:44em;text-wrap:wrap">수집&#8288;·교환 구조를 활용한 시즌 이벤트와 운영 프로세스를 설계한 기획안입니다. <br class="hidden md:block">블레이드&#8288;&amp;&#8288;소울 레볼루션 라이브 운영 경험을 바탕으로 쓴 가상 이벤트이며, <br class="hidden md:block">아래 확률은 기획안에서 정한 설계값입니다.</p>
                     </div>
                     <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
                       <div class="px-3 py-5 md:py-6 text-center">
                         <p class="text-xs font-bold text-slate-500 mb-2 bal">토끼 잡기 50%</p>
-                        <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">20회</p>
+                        <p class="text-lg md:text-2xl font-black text-slate-900 tracking-tight">20.0회</p>
                         <p class="text-xs text-slate-500 mt-1 bal">당근 10개까지</p>
                       </div>
                       <div class="px-3 py-5 md:py-6 text-center">
@@ -423,7 +426,7 @@ html { scroll-behavior: smooth; }
                         <div class="mockup-phone shadow-2xl border-amber-900/10">
                             <!-- 헤더 -->
                             <div class="h-8 bg-black/30 flex items-center px-4 justify-between">
-                                <span class="text-xs text-white/50 italic">Cookie Run: Tower of Adventures</span>
+                                <span class="text-xs text-white/50 italic">CookieRun: Tower of Adventures</span>
                                 <div class="flex gap-1">
                                     <div class="w-1.5 h-1.5 bg-white/20 rounded-full"></div>
                                     <div class="w-1.5 h-1.5 bg-white/20 rounded-full"></div>
@@ -737,14 +740,14 @@ html { scroll-behavior: smooth; }
                 counter.className = 'text-red-400';
                 bar.style.width = '70%';
                 btn.innerText = '수집 중...';
-                btn.className = 'mt-5 w-full py-2.5 bg-gray-600 text-white/50 text-[10px] font-bold rounded-lg cursor-not-allowed';
+                btn.className = 'mt-5 w-full py-2.5 bg-gray-600 text-white/50 text-xs font-bold rounded-lg cursor-not-allowed';
                 script.innerHTML = '<strong>[산타맛 쿠키]:</strong> 루돌프가 배고파서 움직이질 않네... 토끼들이 당근을 다 먹어치우고 있어! 당근 10개만 구해줄 수 있을까?';
             } else {
                 counter.innerText = '10 / 10';
                 counter.className = 'text-green-400 font-black';
                 bar.style.width = '100%';
                 btn.innerText = '교환하기';
-                btn.className = 'mt-5 w-full py-2.5 bg-green-500 text-white text-[10px] font-bold rounded-lg shadow-lg shadow-green-900/20 active:scale-95 transition-all';
+                btn.className = 'mt-5 w-full py-2.5 bg-green-500 text-white text-xs font-bold rounded-lg shadow-lg shadow-green-900/20 active:scale-95 transition-all';
                 script.innerHTML = '<strong>[산타맛 쿠키]:</strong> 정말 다 구해왔구나! 우리 루돌프가 아주 좋아하겠어! 자, 고마움의 표시로 선물을 줄게!';
             }
         }

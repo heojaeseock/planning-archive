@@ -115,6 +115,7 @@
 <style>/* PC 화면 줄바꿈(hidden md:block)이 이 문서 스타일에 빠져 있어 보충 */ @media (min-width:768px){.md\:block{display:block}}</style>
 <style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
 <style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
+<style>/* 휴대폰: 하단 고정 문서 목록 버튼을 작게 해 본문을 덜 가린다 */@media (max-width:640px){a[aria-label="문서 목록으로 돌아가기"]{padding:11px 22px !important;font-size:14.5px !important;bottom:16px !important;gap:7px !important}}</style>
 </head>
 <body class="antialiased selection:bg-emerald-200 selection:text-emerald-900">
 
@@ -521,7 +522,7 @@
 
             <div class="rounded-2xl border-l-[6px] border-amber-500 bg-amber-50 p-6">
                 <p class="font-black text-slate-900 mb-3 bal">두&nbsp;수치는 같은 대상을 잰 값이 아닙니다.</p>
-                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em] mb-4"><strong class="text-slate-900">35% 제거</strong>는 전체 데이터 물량 기준이고, <strong class="text-slate-900">75% 시간 절감</strong>&#8288;(전략&nbsp;1 그래프의 40시간&nbsp;→&nbsp;10시간)&#8288;은 <br class="hidden md:block">단순 반복 작업에 쓰던 시간 기준입니다. 전체 시간이 물량에 비례한다고 보면 40시간 × 0.65 = 26시간입니다.</p>
+                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em] mb-4"><strong class="text-slate-900">35% 제거</strong>는 전체 데이터 물량 기준이고, <strong class="text-slate-900">75% 시간 절감</strong>&#8288;(전략&nbsp;1 그래프의 40시간&nbsp;→&nbsp;10시간)&#8288;은 <br class="hidden md:block">단순 반복 작업에 쓰던 시간 기준입니다. 전체 시간이 물량에 비례한다고 보면 40시간 × 0.65 = 26시간으로, 물량 기준 절감은 14시간에 그칩니다.</p>
                 <p class="text-sm text-slate-600 leading-relaxed max-w-[46em]">그래서 보고할&nbsp;때 두&nbsp;수치의 대상을 함께 적습니다.<br>
 구분 없이 내놓으면 <strong class="text-slate-900">35% 걸러서 75% 줄었다</strong>는&nbsp;말이 되어 근거를 되묻게 됩니다.</p>
             </div>
@@ -575,7 +576,7 @@
 
             <div class="rounded-2xl border-2 border-slate-200 p-6 md:p-8 bg-white">
                 <p class="font-black text-slate-900 mb-4 text-lg bal">1단계가 2단계를 막고 있었습니다.</p>
-                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em] mb-5">2단계는 표현이 아니라 목적을 보라는 지침인데, <br class="hidden md:block">1단계에서 키워드만 보고 반려하면 <strong>의도를 볼&nbsp;기회가 없어집니다.<br class="hidden md:block"></strong>표현은 거칠어도 의도가 정상인 경우가 훨씬 많습니다.</p>
+                <p class="text-sm text-slate-600 leading-relaxed max-w-[46em] mb-5">2단계는 표현이 아니라 목적을 보라는 지침인데, <br class="hidden md:block">1단계에서 키워드만 보고 반려하면 <strong>의도를 볼&nbsp;기회가 없어집니다. <br class="hidden md:block"></strong>표현은 거칠어도 의도가 정상인 경우가 훨씬 많습니다.</p>
                 <div class="grid md:grid-cols-2 gap-4 mb-5">
                     <div class="bg-slate-50 rounded-xl p-5">
                         <p class="text-xs font-black tracking-wide text-slate-500 mb-2">지금 순서</p>
@@ -617,13 +618,13 @@
 
         <section id="conclusion" class="text-center pb-12">
             <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-10 text-balance">
-                데이터의 품질이 곧&nbsp;대형 포털 AI의 경쟁력입니다.
+                데이터의 품질이 곧&nbsp;AI 서비스의 경쟁력입니다.
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm transition-transform hover:-translate-y-2">
                     <div class="text-4xl mb-5">⚙️</div>
                     <h3 class="font-bold text-slate-800 text-lg mb-3">똑똑한 업무 환경</h3>
-                    <p class="text-slate-600 leading-relaxed text-balance text-sm">단순 반복 업무를 줄이는 사전 필터링을 기획하여 팀원들의 귀중한 시간을 아끼겠습니다.</p>
+                    <p class="text-slate-600 leading-relaxed text-balance text-sm">사전 필터링으로 단순 반복 업무를 걷어내, 평가자가 판단이 필요한 데이터에 집중하게 합니다.</p>
                 </div>
                 <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm transition-transform hover:-translate-y-2">
                     <div class="text-4xl mb-5">⚖️</div>

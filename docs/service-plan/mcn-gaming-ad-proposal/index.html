@@ -138,6 +138,7 @@ html { scroll-behavior: smooth; }
 <style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
 <style>/* 휴대폰: 제목이 두 줄로 꺾여도 노란 밑줄이 줄마다 글자 아래에 오게 */ @media (max-width:767px){ .mcn-bar{display:none} .mcn-hl{background:linear-gradient(transparent 64%, rgba(255,209,0,.4) 64%);-webkit-box-decoration-break:clone;box-decoration-break:clone} h1 .mcn-hl{font-size:inherit} }</style>
 <style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
+<style>/* 휴대폰: 하단 고정 문서 목록 버튼을 작게 해 본문을 덜 가린다 */@media (max-width:640px){a[aria-label="문서 목록으로 돌아가기"]{padding:11px 22px !important;font-size:14.5px !important;bottom:16px !important;gap:7px !important}}</style>
 </head>
 <body class="antialiased selection:bg-brand-light selection:text-slate-900">
 

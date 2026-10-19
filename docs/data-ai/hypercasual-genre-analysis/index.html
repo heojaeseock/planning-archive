@@ -76,6 +76,7 @@
 <style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
 <style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
 <style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
+<style>/* 휴대폰: 하단 고정 문서 목록 버튼을 작게 해 본문을 덜 가린다 */@media (max-width:640px){a[aria-label="문서 목록으로 돌아가기"]{padding:11px 22px !important;font-size:14.5px !important;bottom:16px !important;gap:7px !important}}</style>
 </head>
 <body class="antialiased">
 
@@ -413,7 +414,7 @@
   <section class="mb-14">
     <p class="text-xs font-black tracking-[.16em] text-indigo-600 mb-4">손익 구조</p>
     <h2 class="text-2xl md:text-3xl font-black mb-4 leading-snug text-slate-900">6. 네&nbsp;지표는 하나의&nbsp;식으로 묶입니다.</h2>
-    <p class="text-slate-600 leading-relaxed mb-8 max-w-[42em]">출시 여부를 판단할&nbsp;때는 넷을 따로 보지 않고 한&nbsp;줄의&nbsp;식으로 놓습니다. <br class="hidden md:block">그래야 <strong class="text-slate-900">D7이 20%&#8288;인데&nbsp;내도 되는가</strong>에 답할&nbsp;수 있습니다.</p>
+    <p class="text-slate-600 leading-relaxed mb-8 max-w-[42em]">4장의 세&nbsp;지표에 결제 전환율을 더한 넷을 따로 보지 않고 한&nbsp;줄의&nbsp;식으로 놓습니다. <br class="hidden md:block">그래야 <strong class="text-slate-900">D7이 20%&#8288;인데&nbsp;내도 되는가</strong>에 답할&nbsp;수 있습니다.</p>
 
     <div class="card p-8 bg-slate-900 text-white border-none text-center mb-8">
       <p class="text-xs font-black tracking-[.16em] text-indigo-300 mb-3">판정식</p>
@@ -466,7 +467,7 @@
   <!-- [보강] 7. 지표 간 상충 -->
   <section class="mb-14">
     <p class="text-xs font-black tracking-[.16em] text-indigo-600 mb-4">대가</p>
-    <h2 class="text-2xl md:text-3xl font-black mb-4 leading-snug text-slate-900">7. 세&nbsp;지표는 서로를 밀어냅니다.</h2>
+    <h2 class="text-2xl md:text-3xl font-black mb-4 leading-snug text-slate-900">7. 네&nbsp;항은 서로를 밀어냅니다.</h2>
     <p class="text-slate-600 leading-relaxed mb-8 max-w-[42em] bal">각&nbsp;항을 올리려는 조치가 다른 항을 깎습니다. <br class="hidden md:block">3번 SWOT의 약점에 적힌 <strong class="text-slate-900">잦은 전면 광고에 따른 초기 이탈</strong>이&nbsp;바로 이&nbsp;충돌입니다.</p>
 
     <div class="grid md:grid-cols-2 gap-5 mb-5">
@@ -477,7 +478,7 @@
       </div>
       <div class="card p-6">
         <p class="text-xs font-black tracking-wide text-indigo-600 mb-2">광고 제거 상품 &harr; 광고 수익</p>
-        <p class="text-sm text-slate-600 leading-relaxed bal mb-4">5번의 광고 제거 패키지는 팔릴&nbsp;때마다 <br class="hidden md:block"><strong class="text-slate-900">그&nbsp;유저에게서 나올 광고 수익을 스스로 없앱니다.<br class="hidden md:block"></strong>결제 항을 올리는 대신 광고 항을 0으로 만드는 거래입니다.</p>
+        <p class="text-sm text-slate-600 leading-relaxed bal mb-4">5번의 광고 제거 패키지는 팔릴&nbsp;때마다 <br class="hidden md:block"><strong class="text-slate-900">그&nbsp;유저에게서 나올 광고 수익을 스스로 없앱니다. <br class="hidden md:block"></strong>결제 항을 올리는 대신 광고 항을 0으로 만드는 거래입니다.</p>
         <p class="text-xs font-bold text-indigo-700 bal">→ 가격이 잔여 생애 광고 수익보다 커야 이득입니다. 잔존 구간별로 가격을 달리 둡니다.</p>
       </div>
     </div>

@@ -99,6 +99,7 @@ main.pb-32{padding-bottom:4rem}
 <style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
 <style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
 <style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
+<style>/* 휴대폰: 하단 고정 문서 목록 버튼을 작게 해 본문을 덜 가린다 */@media (max-width:640px){a[aria-label="문서 목록으로 돌아가기"]{padding:11px 22px !important;font-size:14.5px !important;bottom:16px !important;gap:7px !important}}</style>
 </head>
 <body class="bg-stone-50 text-stone-800 selection:bg-red-100 selection:text-red-900">
 
@@ -121,7 +122,7 @@ main.pb-32{padding-bottom:4rem}
     </nav>
 
     <header class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-700 text-white text-xs font-black rounded tracking-[0.2em] mb-6">조사 초안</div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-700 text-white text-xs font-black rounded tracking-[0.2em] mb-6">던파 모바일 중국 운영 전략 리포트 · 조사 초안</div>
         <h1 class="text-4xl md:text-5xl font-extrabold text-stone-900 mb-8 tracking-tight leading-[1.1]">지하성과 용사: 기원<br><span class="text-red-700">라이브 서비스 데이터 분석 및&nbsp;운영 제언</span></h1>
         <p class="text-xl text-stone-600 max-w-4xl leading-relaxed font-light">
                     2025~2026년 중국 시장의 공개 지표를 조합해 추정한 자료입니다. <br class="hidden md:block">
@@ -197,7 +198,7 @@ main.pb-32{padding-bottom:4rem}
                         </div>
                     </div>
                     <div class="chart-container">
-                        <canvas id="eventPerformanceChart" role="img" aria-label="막대 차트. 항목 25.01, 춘절, 03, 노동절, 1주년, 06, 08, 국경절, 연말, 26.춘절. 계열 성과 지표"></canvas>
+                        <canvas id="eventPerformanceChart" role="img" aria-label="막대 차트. 항목 25.01, 춘절, 03, 노동절, 1주년, 06, 08, 국경절, 연말, 26년 춘절. 계열 성과 지표"></canvas>
                     </div>
                 </div>
 
@@ -387,12 +388,12 @@ main.pb-32{padding-bottom:4rem}
                 <div class="bg-red-50 border-2 border-red-200 rounded-2xl p-7 text-center">
                     <p class="text-xs font-bold text-red-700 mb-2">이벤트 구간 평균</p>
                     <p class="text-4xl font-black text-red-700 mb-2">94.0</p>
-                    <p class="text-stone-600 text-xs">춘절 · 노동절 · 1주년 · 국경절 · 26춘절</p>
+                    <p class="text-stone-600 text-xs">춘절 · 노동절 · 1주년 · 국경절 · 26년 춘절</p>
                 </div>
                 <div class="bg-stone-100 border-2 border-stone-300 rounded-2xl p-7 text-center">
                     <p class="text-xs font-bold text-stone-600 mb-2">사이 구간 평균</p>
                     <p class="text-4xl font-black text-stone-700 mb-2">60.0</p>
-                    <p class="text-xs text-stone-600">최저는 06월 50</p>
+                    <p class="text-xs text-stone-600">최저는 6월 50</p>
                 </div>
                 <div class="bg-zinc-950 rounded-2xl p-7 text-center text-white">
                     <p class="text-xs font-bold text-red-400 mb-2">이벤트 배수</p>
@@ -431,7 +432,7 @@ main.pb-32{padding-bottom:4rem}
                 </span></p>
                 <div class="bg-amber-50 rounded-xl p-6 border border-amber-200">
                     <p class="text-xs font-bold text-amber-800 mb-2">사이 구간을 올리는&nbsp;것이 다른 선택입니다.</p>
-                    <p class="text-xs text-stone-600 leading-relaxed max-w-[46em]">가장 낮은 지점은 <strong>06월의 50</strong>입니다. <br class="hidden md:block">여기를 60~65로 올리는 편이 이벤트 피크를 105에서 110으로 올리는&nbsp;것보다 합계에 크게 기여합니다. <br class="hidden md:block">
+                    <p class="text-xs text-stone-600 leading-relaxed max-w-[46em]">가장 낮은 지점은 <strong>6월의 50</strong>입니다. <br class="hidden md:block">여기를 60~65로 올리는 편이 이벤트 피크를 105에서 110으로 올리는&nbsp;것보다 합계에 크게 기여합니다. <br class="hidden md:block">
 피크는 유저가 이미 결제할 준비를 한&nbsp;시점이라 여력이 제한되지만, 사이 구간은 손대지 않은 영역입니다.</p>
                 </div>
             </div>
@@ -638,7 +639,7 @@ main.pb-32{padding-bottom:4rem}
         let performanceChart = new Chart(ctxPerformance, {
             type: 'bar',
             data: {
-                labels: ['25.01', '춘절', '03', '노동절', '1주년', '06', '08', '국경절', '연말', '26.춘절'],
+                labels: ['25.01', '춘절', '03', '노동절', '1주년', '06', '08', '국경절', '연말', '26년 춘절'],
                 datasets: [{ 
                     label: '성과 지표 ',
                     data: [60, 100, 55, 80, 95, 50, 65, 90, 70, 105], 
@@ -671,7 +672,7 @@ main.pb-32{padding-bottom:4rem}
                 anniv: [50, 95, 92, 70, 65]
             };
             performanceChart.data.datasets[0].data = chartData[type];
-            performanceChart.data.labels = type === 'all' ? ['25.01', '춘절', '03', '노동절', '1주년', '06', '08', '국경절', '연말', '26.춘절'] : ['1주차', '2주차', '3주차', '4주차', '5주차'];
+            performanceChart.data.labels = type === 'all' ? ['25.01', '춘절', '03', '노동절', '1주년', '06', '08', '국경절', '연말', '26년 춘절'] : ['1주차', '2주차', '3주차', '4주차', '5주차'];
             performanceChart.update();
             renderEventInfo(type);
         };

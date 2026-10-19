@@ -115,6 +115,7 @@ html { scroll-behavior: smooth; }
 <style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
 <style>/* 휴대폰: 범례가 차트 제목 위에 겹치지 않게 제목 위 한 줄로 */ @media (max-width:767px){ .nh-legend{position:static !important;padding:0 0 12px !important} }</style>
 <style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
+<style>/* 휴대폰: 하단 고정 문서 목록 버튼을 작게 해 본문을 덜 가린다 */@media (max-width:640px){a[aria-label="문서 목록으로 돌아가기"]{padding:11px 22px !important;font-size:14.5px !important;bottom:16px !important;gap:7px !important}}</style>
 </head>
 <body class="antialiased">
 
@@ -690,7 +691,7 @@ html { scroll-behavior: smooth; }
                 plugins: { legend: { display: false } },
                 scales: {
                     y: { display: false, min: 0, max: 100 },
-                    x: { grid: { display: false }, ticks: { font: { weight: 'black', size: 11 }, color: '#64748b' } }
+                    x: { grid: { display: false }, ticks: { font: { weight: '900', size: 12 }, color: '#64748b' } }
                 }
             }
         });

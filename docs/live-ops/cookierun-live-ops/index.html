@@ -164,6 +164,7 @@
 <style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
 <style>/* 위기 대응 4단계: 카드 4개와 화살표 3개를 한 줄에 */ @media (min-width:1200px){ .cr-flow{grid-template-columns:1fr auto 1fr auto 1fr auto 1fr !important;gap:1rem} .cr-flow .jelly-node{height:100%} } @media (min-width:768px) and (max-width:1199px){ .cr-flow{grid-template-columns:1fr 1fr !important} .cr-flow .arrow-text{display:none} .cr-flow .jelly-node{height:100%} }</style>
 <style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
+<style>/* 휴대폰: 하단 고정 문서 목록 버튼을 작게 해 본문을 덜 가린다 */@media (max-width:640px){a[aria-label="문서 목록으로 돌아가기"]{padding:11px 22px !important;font-size:14.5px !important;bottom:16px !important;gap:7px !important}}</style>
 </head>
 <body class="p-4 md:p-10">
 
@@ -171,8 +172,8 @@
     
     <!-- Header Area -->
     <header class="text-center mb-20" style="margin-bottom:2.5rem;padding-top:1.5rem">
-        <div class="inline-block bg-[#8B4513] text-[#FFD700] px-10 py-3 rounded-full text-2xl font-bold mb-6 shadow-xl border-4 border-white transform -rotate-1">
-            달려라 라이브 운영! 🍪
+        <div class="inline-block bg-[#8B4513] text-[#FFD700] px-10 py-3 rounded-full text-2xl font-bold mb-6 shadow-xl border-4 border-white transform -rotate-1" style="font-size:clamp(1rem,4.2vw,1.5rem)">
+            쿠키런 권역별 라이브 운영 전략 🍪
         </div>
         <h1 class="text-3xl md:text-5xl text-[#3E2723] mb-8 leading-tight">
             국내 vs 글로벌 <br> <span class="text-[#FF4D6D]">투트랙 위기관리</span> 전략
@@ -189,7 +190,7 @@
     <section class="mb-12" aria-label="이 문서가 하는 말">
       <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
         <div class="px-6 md:px-9 pt-7 md:pt-8 pb-6">
-          <p class="text-xs font-black tracking-[0.12em] text-amber-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 작성 시점의 공개 자료 기준</span></p>
+          <p class="text-xs font-black tracking-[0.12em] text-amber-700 mb-3">문서 소개<span style="font-weight:700;letter-spacing:0;color:#64748b"> · 가상 게임 가정 · 가설값 기준</span></p>
           <p class="text-base md:text-lg font-bold text-slate-700 leading-relaxed bal max-w-[40em]" style="max-width:44em;text-wrap:wrap">국내와 글로벌 유저의 성향 차이에 맞춰 공지와 위기 대응을 나눠 설계한 운영안입니다. <br class="hidden md:block">블레이드&#8288;&amp;&#8288;소울 레볼루션 라이브 운영 경험을 바탕으로 쿠키런 스타일 게임을 가정해 쓴 개인 제안이며, <br class="hidden md:block">아래 격차는 상대 표시값&#8288;(추정)입니다.</p>
         </div>
         <div class="grid grid-cols-3 border-y border-slate-200 divide-x divide-slate-200 bg-slate-50">
@@ -329,12 +330,12 @@
                 </thead>
                 <tbody class="text-gray-700 font-bold">
                     <tr class="border-b-2 border-[#EED9C4]">
-                        <td class="p-4 text-[#FF4D6D] text-lg">1단계</td>
+                        <td class="p-4 text-lg" style="color:#C2185B">1단계</td>
                         <td class="p-4">접속 불가, 결제 오류&nbsp;등 플레이 자체가 막히는 상황</td>
                         <td class="p-4">감지 즉시 1차 공지, 복구&nbsp;후 상세 공지. 전체 대상 보상</td>
                     </tr>
                     <tr class="border-b-2 border-[#EED9C4]">
-                        <td class="p-4 text-[#B8860B] text-lg">2단계</td>
+                        <td class="p-4 text-lg" style="color:#8A6508">2단계</td>
                         <td class="p-4">일부 콘텐츠&#8288;·기능만 정상 동작하지 않는 상황</td>
                         <td class="p-4">상황 공지&nbsp;후 원인 파악. 영향받은 유저 한정 보상</td>
                     </tr>
@@ -775,7 +776,7 @@
                         angleLines: { color: '#D2B48C', lineWidth: 2 },
                         grid: { color: '#EED9C4', lineWidth: 2 },
                         pointLabels: {
-                            font: { size: 18, weight: '900', family: 'Black Han Sans' },
+                            font: { size: 18, weight: '900', family: 'Pretendard' },
                             color: '#3E2723'
                         },
                         ticks: { display: false, stepSize: 20 }
@@ -785,7 +786,7 @@
                     legend: {
                         position: 'bottom',
                         labels: { 
-                            font: { size: 18, weight: 'bold', family: 'Nanum Square Round' },
+                            font: { size: 18, weight: 'bold', family: 'Pretendard' },
                             color: '#3E2723',
                             padding: 25
                         }

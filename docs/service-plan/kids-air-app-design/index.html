@@ -52,6 +52,9 @@
             padding: 3rem;
             border: 1px solid #e2e8f0;
         }
+        /* 휴대폰: 체험 위젯이 카드 밖으로 잘리지 않게 */
+        @media (max-width: 640px) { .ui-stage { padding: 1rem; } }
+        .kids-ui-widget { max-width: 100%; }
         
         /* 탭으로 나뉘어 있던 구역을 세로로 이어 보여 준다 */
         .tab-content { display: block; opacity: 1; scroll-margin-top: 96px; }
@@ -227,6 +230,7 @@ html { scroll-behavior: smooth; }
 <style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
 <style>/* 휴대폰: 아이콘 옆 설명이 좁은 기둥처럼 꺾이지 않게 아이콘과 간격을 줄임 */ @media (max-width:640px){ .flex.gap-6.items-start > .w-16.h-16{width:3rem;height:3rem;font-size:1.5rem} .flex.gap-6.items-start{gap:1rem} }</style>
 <style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
+<style>/* 휴대폰: 하단 고정 문서 목록 버튼을 작게 해 본문을 덜 가린다 */@media (max-width:640px){a[aria-label="문서 목록으로 돌아가기"]{padding:11px 22px !important;font-size:14.5px !important;bottom:16px !important;gap:7px !important}}</style>
 </head>
 <body class="antialiased">
 
@@ -449,7 +453,7 @@ html { scroll-behavior: smooth; }
                     </div>
 
                     <!-- 가상 UI 체험 위젯 -->
-                    <div class="w-80 h-[540px] bg-white p-8 flex flex-col relative overflow-hidden rounded-[32px] border-4 border-slate-200 shadow-2xl">
+                    <div class="kids-ui-widget w-80 h-[540px] bg-white p-8 flex flex-col relative overflow-hidden rounded-[32px] border-4 border-slate-200 shadow-2xl">
                         <p class="text-xs font-black text-slate-500 mb-8 text-center tracking-wide">가상 UI 체험</p>
                         
                         <div id="statusBall" class="w-44 h-44 mx-auto rounded-full bg-sky-50 flex flex-col items-center justify-center mb-10 transition-all duration-700 border border-sky-100">

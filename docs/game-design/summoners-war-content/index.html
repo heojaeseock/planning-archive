@@ -162,6 +162,8 @@
 <style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-amber-600{color:#b45309} html body .text-emerald-600{color:#047857} html body .text-rose-500{color:#be123c}</style>
 <style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
 <style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
+<style>/* 휴대폰: 하단 고정 문서 목록 버튼을 작게 해 본문을 덜 가린다 */@media (max-width:640px){a[aria-label="문서 목록으로 돌아가기"]{padding:11px 22px !important;font-size:14.5px !important;bottom:16px !important;gap:7px !important}}</style>
+<style>/* 휴대폰: 문서 제목 크기를 다른 문서와 같게 줄인다 */@media (max-width:767px){h1.text-5xl{font-size:1.875rem;line-height:1.25}}</style>
 </head>
 <body class="p-6 md:p-12 lg:p-20">
 

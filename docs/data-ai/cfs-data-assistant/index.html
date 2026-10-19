@@ -119,6 +119,7 @@
 <style>/* 휴대폰: 넓은 표가 화면 밖으로 잘리지 않게 폭에 맞추고 칸 글을 줄바꿈 */ @media (max-width:640px){ table[class*="min-w-"]{min-width:0 !important;table-layout:auto} table[class*="min-w-"] th, table[class*="min-w-"] td{padding-left:.375rem !important;padding-right:.375rem !important;font-size:13px;word-break:keep-all} }</style>
 <style>/* 잠금 안내(🔒)가 상자 밖으로 잘리지 않게 최소 높이 */ [id^="solution-"]{min-height:170px}</style>
 <style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
+<style>/* 휴대폰: 하단 고정 문서 목록 버튼을 작게 해 본문을 덜 가린다 */@media (max-width:640px){a[aria-label="문서 목록으로 돌아가기"]{padding:11px 22px !important;font-size:14.5px !important;bottom:16px !important;gap:7px !important}}</style>
 </head>
 <body class="antialiased text-slate-800">
 
@@ -278,11 +279,11 @@
                                 <div class="grid grid-cols-2 gap-3 flex-1">
                                     <div class="bg-red-50 p-3 rounded border border-red-100 flex flex-col items-center justify-center">
                                         <div class="text-xs text-slate-500 font-sans whitespace-nowrap mb-1">조건 일치 (에러+빈칸)</div>
-                                        <div class="font-extrabold text-red-600 text-2xl tracking-tight">1,245<span class="text-sm text-red-400 font-medium ml-1">건</span></div>
+                                        <div class="font-extrabold text-red-600 text-2xl tracking-tight">1,245<span class="text-sm text-red-600 font-medium ml-1">건</span></div>
                                     </div>
                                     <div class="bg-blue-50 p-3 rounded border border-blue-100 flex flex-col items-center justify-center">
                                         <div class="text-xs text-slate-500 font-sans whitespace-nowrap mb-1">전체 대비 불량률</div>
-                                        <div class="font-extrabold text-blue-600 text-2xl tracking-tight">2.39<span class="text-sm text-blue-400 font-medium ml-1">%</span></div>
+                                        <div class="font-extrabold text-blue-600 text-2xl tracking-tight">2.39<span class="text-sm text-blue-600 font-medium ml-1">%</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -682,7 +683,7 @@
             <div class="relative z-10 flex flex-col items-center">
                 <h3 class="text-3xl font-extrabold mb-4 tracking-tight">업무 효율 개선 효과를 정리했습니다.</h3>
                 <p class="text-slate-300 text-sm md:text-base max-w-2xl mx-auto mb-10 leading-relaxed word-break-keep text-left">
-                    기술이나 코딩 지식 자체보다 더&nbsp;중요한&nbsp;것은 <br class="hidden md:block"><strong>'문제를 끝까지 파고들어 해답을 찾아내는 집요함'</strong>이라고 생각합니다. <br class="hidden md:block">
+                    이&nbsp;제안은 도구보다 현장의 문제에서 출발했습니다. <br class="hidden md:block"><strong>'반복되는 문제를 끝까지 추적해 원인을 찾는 것'</strong>에 집중했습니다. <br class="hidden md:block">
                     AI라는 강력한 도구를 무기로 삼아 복잡한 데이터를 단순화하고, <br class="hidden md:block">물류 현장에 필요한 오퍼레이션 개선안을 정리했습니다.
                 </p>
             </div>

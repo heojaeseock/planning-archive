@@ -139,6 +139,8 @@ footer.py-24{padding-top:4rem;padding-bottom:4rem}
 </style>
 <style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
 <style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
+<style>/* 휴대폰: 폰 목업이 화면 폭을 넘지 않게 */.lp-phone{max-width:100%}</style>
+<style>/* 휴대폰: 하단 고정 문서 목록 버튼을 작게 해 본문을 덜 가린다 */@media (max-width:640px){a[aria-label="문서 목록으로 돌아가기"]{padding:11px 22px !important;font-size:14.5px !important;bottom:16px !important;gap:7px !important}}</style>
 </head>
 <body class="selection:bg-brand/30">
 
@@ -319,7 +321,7 @@ footer.py-24{padding-top:4rem;padding-bottom:4rem}
                     </button>
                 </div>
                 <div class="md:w-1/2 flex justify-center">
-                    <div class="relative w-[280px] h-[460px] bg-slate-900 rounded-[3rem] border-[10px] border-slate-900 shadow-2xl overflow-hidden">
+                    <div class="lp-phone relative w-[280px] h-[460px] bg-slate-900 rounded-[3rem] border-[10px] border-slate-900 shadow-2xl overflow-hidden">
                         <div class="w-full h-full bg-white p-6 pt-10">
                             <div class="bg-brand-soft p-5 rounded-2xl mb-6">
                                 <h3 class="text-xs font-black text-brand-ink mb-1">성수동 퀘스트 시작! 🗺️</h3>
@@ -525,21 +527,21 @@ footer.py-24{padding-top:4rem;padding-bottom:4rem}
                 <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 font-bold text-slate-800 leading-relaxed mb-6 italic text-[15px]">
                     "성수동 핫플 다녀오셨나요? <br class="hidden md:block">지금 사진 인증하면 대형 포털 포인트 500원이 즉시 지급됩니다! 💸"
                 </div>
-                <p class="text-xs text-slate-400">전략: 결제 및 방문 패턴 분석 기반 실시간 발송으로 전환율 향상.</p>
+                <p class="text-xs text-slate-500">전략: 결제 및 방문 패턴 분석 기반 실시간 발송으로 전환율 향상.</p>
             `,
             push2: `
                 <h4 class="text-xs font-black text-brand mb-6">유형 B. 가치 자극</h4>
                 <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 font-bold text-slate-800 leading-relaxed mb-6 italic text-[15px]">
                     "당신의 리뷰가 동네 카페 사장님께 큰 힘이 됩니다. <br class="hidden md:block">소중한 단골집의 마스터가 되어 힘을 보태주세요 ☕"
                 </div>
-                <p class="text-xs text-slate-400">전략: 유저의 심리적 보상을 자극하여 포인트 이상의 고품질 데이터 생산 유도.</p>
+                <p class="text-xs text-slate-500">전략: 유저의 심리적 보상을 자극하여 포인트 이상의 고품질 데이터 생산 유도.</p>
             `,
             push3: `
                 <h4 class="text-xs font-black text-brand mb-6">유형 C. 게임 요소</h4>
                 <div class="p-8 bg-slate-50 rounded-3xl border border-slate-100 font-bold text-slate-800 leading-relaxed mb-6 italic text-[15px]">
                     "[신규 퀘스트] 성수동 탐험 지도가 열렸습니다! 🗺️ <br class="hidden md:block">지금 참여하고 마스터 배지를 획득하세요!"
                 </div>
-                <p class="text-xs text-slate-400">전략: 라이브 운영 공지 스타일로 호기심을 유발하여 푸시 클릭률(CTR) 개선.</p>
+                <p class="text-xs text-slate-500">전략: 라이브 운영 공지 스타일로 호기심을 유발하여 푸시 클릭률(CTR) 개선.</p>
             `
         };
 

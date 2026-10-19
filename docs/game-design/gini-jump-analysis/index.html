@@ -164,6 +164,7 @@ html { scroll-behavior: smooth; }
 <style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-blue-500{color:#2563eb} html body .text-emerald-600{color:#047857} html body .text-red-600{color:#b91c1c}</style>
 <style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
 <style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
+<style>/* 휴대폰: 하단 고정 문서 목록 버튼을 작게 해 본문을 덜 가린다 */@media (max-width:640px){a[aria-label="문서 목록으로 돌아가기"]{padding:11px 22px !important;font-size:14.5px !important;bottom:16px !important;gap:7px !important}}</style>
 </head>
 <body class="antialiased">
 
@@ -179,7 +180,7 @@ html { scroll-behavior: smooth; }
                     <div class="flex-1">
                         <p class="text-blue-400 font-bold text-xs mb-3 flex items-center gap-2 uppercase tracking-widest">
                             <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                            모바일 게임 기획과 제작
+                            기니점프 · 모바일 게임 기획과 제작
                         </p>
                         <h1 class="text-4xl md:text-5xl font-black leading-tight mb-5 tracking-tight">
                             Gini Jump
@@ -188,7 +189,7 @@ html { scroll-behavior: smooth; }
                     코로나19 팬데믹 시기, 여행에 대한 대리 만족을 주는 <br class="hidden md:block">'방구석 세계 여행' 콘셉트의 2D 모바일 점프 아케이드 게임입니다. <br class="hidden md:block">
                     자이로센서 조작과 각국 랜드마크를 담은 픽셀 아트 배경을 만들어, 유니티로 앱&nbsp;출시까지 마쳤습니다.
                 </p>
-                        <div class="flex flex-wrap gap-3 mt-2 text-gray-400 text-xs font-mono">
+                        <div class="flex flex-wrap gap-3 mt-2 text-gray-400 text-xs">
                             <span class="bg-gray-800 px-3 py-1.5 rounded-full border border-gray-700 shadow-sm flex items-center gap-1">
                                 <span>👤</span> <span>4인&nbsp;팀 프로젝트 (노라조)</span>
                             </span>

@@ -97,6 +97,7 @@ html { scroll-behavior: smooth; }
 <style>/* 글자 대비 보강: 밝은 배경 위 강조색 글자를 한 단계 진하게 */ html body .text-red-500{color:#b91c1c}</style>
 <style>/* PC 화면: 본문 글은 줄 길이 맞추기(balance) 대신 줄을 채우고 마지막 줄만 너무 짧지 않게(pretty). 제목·굵은 글은 그대로 */ @media (min-width:1024px){ p.bal:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.bal:not(.font-black):not(.font-bold):not(.font-extrabold), td.bal, p.text-balance:not(.font-black):not(.font-bold):not(.font-extrabold):not(.font-semibold), li.text-balance { text-wrap: pretty; } }</style>
 <style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
+<style>/* 휴대폰: 하단 고정 문서 목록 버튼을 작게 해 본문을 덜 가린다 */@media (max-width:640px){a[aria-label="문서 목록으로 돌아가기"]{padding:11px 22px !important;font-size:14.5px !important;bottom:16px !important;gap:7px !important}}</style>
 </head>
 <body class="text-gray-800 font-sans break-keep">
 
@@ -216,7 +217,7 @@ html { scroll-behavior: smooth; }
                     <ul class="text-sm space-y-3 text-gray-800 font-bold bg-white p-5 rounded-xl border border-orange-100">
                         <li class="flex items-center gap-3"><span class="text-brand-orange-ink text-lg">✔️</span> 즉시 망 분리 (격리)</li>
                         <li class="flex items-center gap-3"><span class="text-brand-orange-ink text-lg">✔️</span> 1시간&nbsp;내 핫라인 신고</li>
-                        <li class="flex items-center gap-3"><span class="text-brand-orange-ink text-lg">✔️</span> 신속한 원인 분석 협조</li>
+                        <li class="flex items-center gap-3"><span class="text-brand-orange-ink text-lg">✔️</span> 신속한 원인 분석 및 복구</li>
                     </ul>
                 </div>
 
@@ -249,7 +250,7 @@ html { scroll-behavior: smooth; }
                     </button>
                     <button class="node w-14 h-14 md:w-16 md:h-16 rounded-full bg-gray-50 text-gray-500 font-bold border-4 border-white shadow-md flex flex-col items-center justify-center relative z-0 hover:bg-gray-100" onclick="activateNode(3)">
                         <span class="text-xl">3</span>
-                        <span class="text-xs mt-3 absolute -bottom-8 w-24 text-center font-bold text-gray-600">복구/보상</span>
+                        <span class="text-xs mt-3 absolute -bottom-8 w-24 text-center font-bold text-gray-600">분석/복구</span>
                     </button>
                 </div>
 
@@ -345,7 +346,7 @@ html { scroll-behavior: smooth; }
                     <div class="relative min-h-[140px] flex items-center">
                         <!-- Tech Text -->
                         <div id="card1-tech" class="fade-transition fade-in w-full">
-                            <h4 class="text-lg md:text-xl font-mono text-gray-800 font-bold leading-relaxed break-keep">
+                            <h4 class="text-lg md:text-xl text-gray-800 font-bold leading-relaxed break-keep">
                                 "SQL Injection 취약점 발견 및&nbsp;방화벽 인바운드 정책 미흡"
                             </h4>
                         </div>
@@ -372,7 +373,7 @@ html { scroll-behavior: smooth; }
                     <div class="relative min-h-[140px] flex items-center">
                         <!-- Tech Text -->
                         <div id="card2-tech" class="fade-transition fade-in w-full">
-                            <h4 class="text-lg md:text-xl font-mono text-gray-800 font-bold leading-relaxed break-keep">
+                            <h4 class="text-lg md:text-xl text-gray-800 font-bold leading-relaxed break-keep">
                                 "MFA(다중인증) 미적용으로 인한 Credential Stuffing 위험 노출"
                             </h4>
                         </div>

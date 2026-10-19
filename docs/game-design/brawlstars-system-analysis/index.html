@@ -137,6 +137,7 @@ html { scroll-behavior: smooth; }
 <style>@media (min-width:768px){.md\:text-2xl{font-size:1.5rem;line-height:2rem}}</style>
 <style>#mode.tab-content{padding-bottom:3rem}@media (min-width:768px){#mode.tab-content{padding-bottom:4.5rem}}</style>
 <style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
+<style>/* 휴대폰: 하단 고정 문서 목록 버튼을 작게 해 본문을 덜 가린다 */@media (max-width:640px){a[aria-label="문서 목록으로 돌아가기"]{padding:11px 22px !important;font-size:14.5px !important;bottom:16px !important;gap:7px !important}}</style>
 </head>
 <body class="antialiased">
 
@@ -328,7 +329,7 @@ html { scroll-behavior: smooth; }
                                 <p class="font-black text-slate-900 mb-3">파워 포인트 &middot; 코인</p>
                                 <p class="text-sm text-slate-600 leading-relaxed bal">
                     전투력에 직결되지만 <strong>현금 직접 구매 비중이 낮고</strong> 플레이 보상으로 넓게 풀립니다. <br class="hidden md:block">
-                    무과금도 시간을 넣으면 도달할&nbsp;수 있는 영역입니다.
+                    무소과금도 시간을 넣으면 도달할&nbsp;수 있는 영역입니다.
                 </p>
                             </div>
                             <div class="bg-yellow-50 rounded-2xl p-5 border-2 border-yellow-300">
@@ -666,7 +667,7 @@ html { scroll-behavior: smooth; }
                                 <span class="text-xs bg-slate-700 px-2 py-1 rounded font-bold">지역: KR</span>
                             </div>
                             
-                            <div class="flex-1 p-4 space-y-3 z-10 font-mono">
+                            <div class="flex-1 p-4 space-y-3 z-10" style="font-variant-numeric:tabular-nums">
                                 <div class="bg-blue-900/50 border border-blue-500/30 p-3 rounded-lg flex justify-between items-center shadow-md">
                                     <div class="flex gap-3 items-center">
                                         <span class="text-lg">🥇</span>

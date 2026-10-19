@@ -102,6 +102,10 @@
   .award b{display:block;font-size:14.5px;font-weight:800;letter-spacing:-.02em;color:var(--gold)}
   .award span.d{display:block;margin-top:3px;font-size:13.5px;font-weight:600;
     color:var(--gold-2);line-height:1.55}
+  /* 수상 구역: 수상 상자를 세로로 모아 보여 준다 */
+  .awards .award{margin-bottom:12px}
+  .awards .award:last-child{margin-bottom:0}
+  .award .yr{font-weight:700;color:var(--gold-2)}
   .blk{margin:0 0 16px}
   .blk:last-child{margin-bottom:0}
   .blk h4{margin:0 0 8px;font-size:12px;font-weight:800;letter-spacing:.1em;
@@ -115,6 +119,15 @@
   .blk.win li::before{background:var(--accent)}
   .blk.win li{color:var(--text)}
   .blk.win h4{color:var(--accent)}
+  .blk li strong{font-weight:800;color:var(--text)}
+
+  /* 하단 고정 '문서 목록' 버튼: 상단에 돌아가기 링크가 있으니 조금 내려 읽을 때부터 보인다 */
+  a[aria-label="문서 목록으로 돌아가기"]{transition:opacity .2s,visibility .2s}
+  a[aria-label="문서 목록으로 돌아가기"].is-hidden{opacity:0;visibility:hidden}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) a[aria-label="문서 목록으로 돌아가기"]{
+      box-shadow:0 10px 30px rgba(0,0,0,.55),0 0 0 4px rgba(13,16,22,.95) !important}
+  }
 
   .shots{display:grid;gap:14px;grid-template-columns:repeat(3,1fr);margin-top:20px}
   @media (max-width:700px){.shots{grid-template-columns:1fr}}
@@ -193,6 +206,7 @@
 </style>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <style>/* 태블릿: PC 전용 줄바꿈은 끄고 자연 줄바꿈 */@media (min-width:768px) and (max-width:1023px){br.md\:block{display:none!important}:where(p,li,td,dd,blockquote){text-wrap:pretty}}</style>
+<style>/* 휴대폰: 하단 고정 문서 목록 버튼을 작게 해 본문을 덜 가린다 */@media (max-width:640px){a[aria-label="문서 목록으로 돌아가기"]{padding:11px 22px !important;font-size:14.5px !important;bottom:16px !important;gap:7px !important}}</style>
 </head>
 <body>
 
@@ -226,7 +240,7 @@
     <div class="cols">
       <div class="box">
         <h3>경력</h3>
-        <p class="period" id="tenure">총&nbsp;1년 10개월</p>
+        <p class="period" id="tenure">총&nbsp;1년 11개월</p>
         <p class="org">아이지에스 (IGS)</p>
         <p class="orgsub">2024.12 ~ 현재 · 넷마블 계열사</p>
         <ul>
@@ -234,6 +248,7 @@
           <li>라이브 서비스 운영</li>
           <li>프로젝트 관리</li>
           <li>사내 스포트라이트상 개인 부문 수상&nbsp;(2026.09)</li>
+          <li>부서 AX 리드 선정&nbsp;(2026.10)</li>
         </ul>
       </div>
       <div class="box">
@@ -245,6 +260,35 @@
           <li>재학&nbsp;중 모바일 앱 2종 기획&#8288;·출시</li>
           <li>창작 보드게임 1종 기획&#8288;·실물 카드 제작</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 수상 -->
+  <section>
+    <h2>수상</h2>
+    <p class="sub">AI를 실무에 적용한 성과로 회사에서 받은 상입니다.</p>
+    <div class="awards">
+      <div class="award">
+        <span class="medal">🏆</span>
+        <div>
+          <b>사내 스포트라이트상 개인 부문 수상 <span class="yr">(2026.09)</span></b>
+          <span class="d">전사에서 소수 인원에게만 주어지는 상으로, 개인 부문 수상자로 선정되었습니다.<br>회사의 핵심 기조인 AX(AI&nbsp;전환)에 발맞춰, AI 기술을 실무에 선도적으로 적용하고 실질적인 업무 효율화를 달성한 <span style="white-space:nowrap">공로를 인정받았습니다.</span></span>
+        </div>
+      </div>
+      <div class="award">
+        <span class="medal">🥇</span>
+        <div>
+          <b>사내 업무 효율화 컨퍼런스 2회차 최우수작 <span class="yr">(2026.08)</span></b>
+          <span class="d">전 임직원이 업무 개선&#8288;·자동화 사례를 발표하는 사내 컨퍼런스 2회차에서 최우수작으로 선정되었습니다.<br>수상작: 상품 공지 자동 생성기</span>
+        </div>
+      </div>
+      <div class="award">
+        <span class="medal">🥈</span>
+        <div>
+          <b>사내 업무 효율화 컨퍼런스 3회차 우수작 <span class="yr">(2026.10)</span></b>
+          <span class="d">전 임직원이 업무 개선&#8288;·자동화 사례를 발표하는 사내 컨퍼런스 3회차에서 우수작으로 선정되었습니다.<br>수상작: 포럼 이벤트 분석&#8288;·기획 도구&#8288;(현 이벤트 운영 자동화 도구)</span>
+        </div>
       </div>
     </div>
   </section>
@@ -263,11 +307,39 @@
       <span class="bal-m">아이지에스 · 2024.12 ~ 현재 · 국내 및&nbsp;글로벌 4개 권역</span>
     </div>
 
-    <div class="award">
-      <span class="medal">🏅</span>
-      <div>
-        <b>사내 스포트라이트상 개인 부문 수상 (2026.09)</b>
-        <span class="d">전사 소수 인원에게만 수여되는 사내 포상에서 개인 부문 수상자로 선정되었습니다.<br>회사의 핵심 기조인 AX(AI&nbsp;전환)에 발맞춰, AI 기술을 실무에 선도적으로 적용하고 실질적인 업무 효율화를 달성한 <span style="white-space:nowrap">공로를 인정받았습니다.</span></span>
+    <!-- AX 리드 -->
+    <div class="job">
+      <div class="job-head">
+        <h3>🤖 부서 AX&#8288;(AI&nbsp;전환) 리드</h3>
+        <span class="role">2026.10 ~ 현재 · 팀당 1~2명</span>
+      </div>
+      <div class="award">
+        <span class="medal">🧭</span>
+        <div>
+          <b>주니어 연차 최초 AX 리드 선정</b>
+          <span class="d">팀당 1~2명이 맡고 주로 고연차&#8288;·파트장급이 선정되는 역할로, 주니어 연차로는 처음 선정되었습니다.<br>사내 AI 도구를 운영 실무에 먼저 도입하고 품질을 관리해 부서의 AI 전환 속도를 높이는 역할입니다.</span>
+        </div>
+      </div>
+      <div class="blk">
+        <h4>담당 업무</h4>
+        <ul>
+          <li class="bal-m">사내 AI 도구 4종&#8288;(번역, 공지 작성, CS 답변 초안, 커뮤니티 동향 리포트)&#8288;의 결과물 감수 및&nbsp;품질 관리</li>
+          <li class="bal-m">게임 고유 용어&#8288;·운영 정책&#8288;·톤앤매너를 AI 도구에 반영해 프로젝트에 맞는 결과물이 나오도록 조정</li>
+          <li class="bal-m">팀&nbsp;내 AI 도구 활용 지표&#8288;(경유율&#8288;·유지율)&#8288;와 활용 수준을 주간 단위로 취합</li>
+          <li class="bal-m">실무자가 겪는 문제&#8288;(용어 불일치, 정책 미반영&nbsp;등)&#8288;를 모아 개발&#8288;·본부 측에 개선안 제안</li>
+          <li class="bal-m">선행 적용 파트로서 시행착오를 정리해 AI 활용 프로세스와 가이드라인을 만들고 팀에 전파</li>
+          <li class="bal-m">실무자가 만든 툴 중 기능이 겹치는 것은 하나로 합쳐 고도화하고, 불편이 큰 업무는 직접 툴로 개발</li>
+        </ul>
+      </div>
+      <div class="blk win">
+        <h4>🏆 주요 활동</h4>
+        <ul>
+          <li class="bal-t">흩어져 있던 이벤트 당첨자 취합&#8288;·당첨 이력 대조 툴을 직접 만든 이벤트 운영 자동화 도구에 통합하고, 인게임 이벤트 공지 생성과 SNS 이벤트 기획&#8288;·취합 기능까지 더해 이벤트 업무를 한&nbsp;도구로 묶음</li>
+          <li class="bal-t">부서&nbsp;내 자체 개발 AI 툴과 사내 공유 사례를 한&nbsp;곳에 모으고, 여러 프로젝트에 확대 적용할&nbsp;수 있는지 프로젝트별로 검토</li>
+          <li class="bal-t">번역 AI 도구의 용어집&#8288;·고정 문구 기능을 프로젝트별로 인터뷰해, 실무에서 쓰이지 않는 원인&#8288;(매번 파일에 문구를 추가해야 하는 번거로움, 이해하기 어려운 안내&nbsp;등)&#8288;을 찾아냄</li>
+          <li class="bal-t">CS 답변 초안 도구 도입에 앞서 AI 정착 후 CS 업무 방식이 어떻게 바뀔지 단계별로 정리하고, 건의&#8288;·민원 자동 취합처럼 난도가 낮고 효과가 빠른 영역부터 적용하는 방향을 제안</li>
+          <li class="bal-m">커뮤니티 동향 AI 리포트를 기존 일일 리포트와 항목별로 비교해, 대체할&nbsp;수 있는 항목과 보완이 필요한 항목을 구분</li>
+        </ul>
       </div>
     </div>
 
@@ -430,22 +502,15 @@
     </div>
   </section>
 
-  <!-- AI 활용 개인 프로젝트 -->
+  <!-- AI 활용 업무 도구 -->
   <section>
-    <h2>AI 활용 개인 프로젝트</h2>
+    <h2>AI 활용 업무 도구</h2>
     <p class="sub">업무하며 겪은 불편을 AI를 활용해 직접 도구로 만들어 해결한 사례입니다. <br class="hidden md:block">그중 두&nbsp;건은 사내 컨퍼런스에서 수상했습니다. <br class="hidden md:block">사내 대외비 자료라 내부 명칭과 수치는 일반화해 적었습니다.</p>
 
     <div class="job">
       <div class="job-head">
         <h3>✨ 상품 공지 자동 생성기</h3>
-        <span class="role">단독 기획&#8288;·제작</span>
-      </div>
-      <div class="award">
-        <span class="medal">🥇</span>
-        <div>
-          <b>사내 업무 효율화 컨퍼런스 2회차 최우수작</b>
-          <span class="d">전 임직원이 업무 개선&#8288;·자동화 사례를 발표하는 사내 컨퍼런스 2회차에서 최우수작으로 선정되었습니다.</span>
-        </div>
+        <span class="role">단독 기획&#8288;·제작 · 🥇 컨퍼런스 최우수작</span>
       </div>
       <div class="shots2">
         <a class="banner" href="img/notice-tool-1.webp" target="_blank" rel="noopener" title="새 탭에서 원본 크기로 보기">
@@ -477,33 +542,28 @@
 
     <div class="job">
       <div class="job-head">
-        <h3>📊 포럼 이벤트 분석&#8288;·기획 도구</h3>
-        <span class="role">단독 기획&#8288;·제작</span>
-      </div>
-      <div class="award">
-        <span class="medal">🥈</span>
-        <div>
-          <b>사내 업무 효율화 컨퍼런스 3회차 우수작</b>
-          <span class="d">전 임직원이 업무 개선&#8288;·자동화 사례를 발표하는 사내 컨퍼런스 3회차에서 우수작으로 선정되었습니다.</span>
-        </div>
+        <h3>📊 이벤트 운영 자동화 도구</h3>
+        <span class="role">단독 기획&#8288;·제작 · 🥈 컨퍼런스 우수작</span>
       </div>
       <div class="shots2">
         <a class="banner" href="img/event-tool-1.webp" target="_blank" rel="noopener" title="새 탭에서 원본 크기로 보기">
-          <img src="img/event-tool-1.webp" alt="포럼 이벤트 도구 분석기 화면. 지난 공지에서 뽑아낸 항목과 누적 표" loading="lazy" decoding="async" width="1650" height="847">
+          <img src="img/event-tool-1.webp" alt="이벤트 운영 자동화 도구 분석기 화면. 지난 공지에서 뽑아낸 항목과 누적 표" loading="lazy" decoding="async" width="1650" height="847">
         </a>
         <a class="banner" href="img/event-tool-2.webp" target="_blank" rel="noopener" title="새 탭에서 원본 크기로 보기">
-          <img src="img/event-tool-2.webp" alt="포럼 이벤트 도구 기획기 화면. 주제 한 줄로 만들어진 초안과 미리보기" loading="lazy" decoding="async" width="1642" height="839">
+          <img src="img/event-tool-2.webp" alt="이벤트 운영 자동화 도구 기획기 화면. 주제 한 줄로 만들어진 초안과 미리보기" loading="lazy" decoding="async" width="1642" height="839">
         </a>
       </div>
       <p class="shotcap">이미지를 누르면 원본 크기로 열립니다. 화면에 보이는 이벤트 내용은 예시입니다.</p>
       <div class="blk">
         <h4>프로젝트 요약</h4>
         <ul>
-          <li class="bal-t">이벤트 공지를 붙여넣으면 참여&nbsp;수&#8288;·참여율&#8288;·보상&nbsp;등 6개 항목을 자동 추출하고, 주제 한&nbsp;줄로 공지 9개 항목이 채워지는 사내용 웹&nbsp;도구를 단독 제작</li>
-          <li class="bal-m">AI를 직접 연동해 복사&#8288;·붙여넣기 4단계를 없애고, 쌓인 과거 이벤트를 함께 실어 운영 톤에 맞는 초안이 나오도록 설계</li>
+          <li class="bal-t">포럼 이벤트의 분석&#8288;·기획&#8288;·당첨자 공지부터 인게임 이벤트 공지까지, 이벤트 운영 전 과정을 한&nbsp;곳에서 처리하는 사내용 웹&nbsp;도구를 단독 제작</li>
+          <li class="bal-m"><strong>포럼 이벤트:</strong> 지난 공지 분석, 주제 한&nbsp;줄로 공지 초안 작성, 당첨자 대조&#8288;·발표 공지까지 처리</li>
+          <li class="bal-m"><strong>인게임 이벤트:</strong> 기획서를 읽어 공지까지 작성하고, 기획서가 없는 프로젝트도 지난 공지를 바탕으로 새 공지를 생성</li>
+          <li class="bal-m">AI를 직접 연동하고 즐겨찾기 버튼 하나로 보던 화면을 불러와 복사&#8288;·붙여넣기 4단계를 없애고, 쌓인 과거 이벤트를 함께 실어 운영 톤에 맞는 초안이 나오도록 설계</li>
           <li class="bal-m">게시 전 자동 검사 10종&#8288;(요일&#8288;·날짜 순서 대조, 미승인 보상 교정, 빈칸&#8288;·오타&#8288;·중복 검출)&#8288;을 붙여 공지 사고를 차단</li>
           <li>색상&#8288;·배너&#8288;·말머리&#8288;·조판을 공지 소스에서 직접 읽는 구조로 만들어, 코드를 고치지 않고 다른 게임을 추가할&nbsp;수 있게 설계</li>
-          <li>HTML 시제품으로 쓸&nbsp;만한지 먼저 확인한&nbsp;뒤 웹앱으로 고도화</li>
+          <li class="bal-m">AX 리드 활동으로 SNS 이벤트 기획&#8288;·취합까지 범위를 확장</li>
         </ul>
       </div>
       <div class="blk win">
@@ -582,7 +642,8 @@
   var el = document.getElementById("tenure");
   if (!el) return;
   var now = new Date();
-  var m = (now.getFullYear() - 2024) * 12 + (now.getMonth() + 1 - 12);
+  // 입사한 달(2024.12)까지 포함해 센다
+  var m = (now.getFullYear() - 2024) * 12 + (now.getMonth() + 1 - 12) + 1;
   if (m < 1) return;
   var y = Math.floor(m / 12), r = m % 12;
   el.textContent = "총 " + (y ? y + "년" : "") + (y && r ? " " : "") + (r ? r + "개월" : "");
@@ -590,5 +651,14 @@
 </script>
 
 <a href="../index.html" aria-label="문서 목록으로 돌아가기" style="position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:60;display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:999px;background:#1f4fd8;color:#fff;font-size:16.5px;font-weight:800;letter-spacing:-.01em;text-decoration:none;font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;box-shadow:0 10px 30px rgba(31,79,216,.5),0 0 0 4px rgba(255,255,255,.95);white-space:nowrap"><span style="font-size:17px;line-height:1">←</span>문서 목록</a>
+<script>
+(function(){
+  var b = document.querySelector('a[aria-label="문서 목록으로 돌아가기"]');
+  if (!b) return;
+  function update(){ b.classList.toggle("is-hidden", window.scrollY < 300); }
+  update();
+  window.addEventListener("scroll", update, {passive:true});
+})();
+</script>
 </body>
 </html>
